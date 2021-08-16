@@ -82,7 +82,7 @@ tabs-within-sections
 \pdf_colorlinks true
 \pdf_backref false
 \pdf_pdfusetitle true
-\pdf_quoted_options "linkcolor=red"
+\pdf_quoted_options "linkcolor=red, urlcolor=blue"
 \papersize a4paper
 \use_geometry false
 \use_package amsmath 1
@@ -406,6 +406,229 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+ГРНТИ 
+\begin_inset CommandInset href
+LatexCommand href
+name "27.43.51"
+target "http://grnti.ru/?p1=27&p2=43&p3=51#51"
+literal "false"
+
+\end_inset
+
++
+\begin_inset CommandInset href
+LatexCommand href
+name "28.23.35"
+target "http://grnti.ru/?p1=28&p2=23&p3=35"
+literal "false"
+
+\end_inset
+
++
+\begin_inset CommandInset href
+LatexCommand href
+name "28.23.29"
+target "http://grnti.ru/?p1=28&p2=23&p3=29"
+literal "false"
+
+\end_inset
+
++
+\begin_inset CommandInset href
+LatexCommand href
+name "28.23.37"
+target "http://grnti.ru/?p1=28&p2=23&p3=37"
+literal "false"
+
+\end_inset
+
++
+\begin_inset CommandInset href
+LatexCommand href
+name "83.03.51"
+target "http://grnti.ru/?p1=83&p2=03&p3=51"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Искусственный интеллект в
+\begin_inset space ~
+\end_inset
+
+оценочной деятельности: практическое руководство по
+\begin_inset space ~
+\end_inset
+
+разработке систем поддержки принятия решений оценщиками с
+\begin_inset space ~
+\end_inset
+
+использованием языков программирования 
+\lang american
+R
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Python
+\lang russian
+ / К.
+\begin_inset space \thinspace{}
+\end_inset
+
+А.
+\begin_inset space ~
+\end_inset
+
+Мурашев 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes rld
+\end_inset
+
+---
+\end_layout
+
+\end_inset
+
+ Inkeri, Санкт-Петербург, 12
+\begin_inset space ~
+\end_inset
+
+августа 2021
+\begin_inset space ~
+\end_inset
+
+г.
+ – 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "End-of-all"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+с.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Данное произведение является результатом интеллектуальной деятельности и
+\begin_inset space ~
+\end_inset
+
+объектом авторского права.
+ Распространяется на
+\begin_inset space ~
+\end_inset
+
+условиях лицензии 
+\lang american
+Creative Commons Attribution-Share Alike 4.0 International (CC BY-SA 4.0)
+\lang russian
+, оригинальный текст которой доступен по
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "ссылке"
+target "https://creativecommons.org/licenses/by-sa/4.0/legalcode"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CC_BY-SA_4.0"
+literal "false"
+
+\end_inset
+
+, перевод которого на
+\begin_inset space ~
+\end_inset
+
+русский язык доступен по
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "ссылке"
+target "https://creativecommons.org/licenses/by-sa/4.0/legalcode.ru"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CC_BY-SA_4.0-RUS"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
@@ -440,12 +663,9 @@ LatexCommand tableofcontents
 \end_inset
 
 
-\begin_inset CommandInset toc
-LatexCommand lstlistoflistings
+\end_layout
 
-\end_inset
-
-
+\begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
