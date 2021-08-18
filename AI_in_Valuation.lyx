@@ -933,6 +933,18 @@ literal "false"
 
 \end_inset
 
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Python_site"
+literal "false"
+
+\end_inset
+
 , разработанный автором, а
 \begin_inset space ~
 \end_inset
@@ -2120,7 +2132,7 @@ LatexCommand tableofcontents
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
-bibfiles "Basic_principles,LaTeX,Murashev,Sci&Tech,ValuationStandards,R,Python,RussianLaws"
+bibfiles "Basic_principles,LaTeX,Murashev,Sci&Tech,ValuationStandards,R,Python,RussianLaws,Mathstat"
 
 \end_inset
 
@@ -2248,6 +2260,18 @@ literal "false"
 
 \end_inset
 
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:covid-19"
+literal "false"
+
+\end_inset
+
 , внёсшей дополнительный вклад в
 \begin_inset space ~
 \end_inset
@@ -2289,6 +2313,2817 @@ literal "false"
 \end_inset
 
 России.
+\end_layout
+
+\begin_layout Standard
+Актуальность предложенного автором исследования заключается во-первых в
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+оно
+\begin_inset space ~
+\end_inset
+
+даёт практический инструментарий, позволяющий делать обоснованные, поддающие
+ верификации выводы на
+\begin_inset space ~
+\end_inset
+
+основе использования исключительно объективных информации
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+данных,
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+По
+\begin_inset space ~
+\end_inset
+
+мнению автора, отличие между информацией и
+\begin_inset space ~
+\end_inset
+
+данными заключается в
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+под
+\begin_inset space ~
+\end_inset
+
+информацией понимаются:
+\end_layout
+
+\begin_layout Itemize
+знания о
+\begin_inset space ~
+\end_inset
+
+предметах, фактах, идеях и
+\begin_inset space ~
+\end_inset
+
+т.
+\begin_inset space \thinspace{}
+\end_inset
+
+д., которыми могут обмениваться люди в
+\begin_inset space ~
+\end_inset
+
+рамках конкретного контекста
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ISO:Information_tech"
+literal "false"
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+знания относительно фактов, событий, вещей, идей и
+\begin_inset space ~
+\end_inset
+
+понятий, которые в
+\begin_inset space ~
+\end_inset
+
+определённом контексте имеют конкретный смысл
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ISO:Inf_tech_voc"
+literal "false"
+
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Plain Layout
+таким образом, в
+\begin_inset space ~
+\end_inset
+
+контексте данного материала под
+\begin_inset space ~
+\end_inset
+
+информацией следует понимать совокупность сведений, образующих логическую
+ схему: теоремы, научные законы, формулы, эмпирические принципы, алгоритмы,
+ методы, законодательные и
+\begin_inset space ~
+\end_inset
+
+подзаконные акты и
+\begin_inset space ~
+\end_inset
+
+т.
+\begin_inset space \thinspace{}
+\end_inset
+
+п.
+\end_layout
+
+\begin_layout Plain Layout
+Данные
+\begin_inset space ~
+\end_inset
+
+же представляют собой:
+\end_layout
+
+\begin_layout Itemize
+формы представления информации, с
+\begin_inset space ~
+\end_inset
+
+которыми имеют дело информационные системы и
+\begin_inset space ~
+\end_inset
+
+их
+\begin_inset space ~
+\end_inset
+
+пользователи
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ISO:Information_tech"
+literal "false"
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+поддающееся многократной интерпретации представление информации в
+\begin_inset space ~
+\end_inset
+
+формализованном виде, пригодном для
+\begin_inset space ~
+\end_inset
+
+передачи, связи или
+\begin_inset space ~
+\end_inset
+
+обработки
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ISO:Inf_tech_voc"
+literal "false"
+
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Plain Layout
+таким образом, в
+\begin_inset space ~
+\end_inset
+
+контексте данного материала под
+\begin_inset space ~
+\end_inset
+
+данными следует понимать собой совокупность результатов наблюдений о
+\begin_inset space ~
+\end_inset
+
+свойствах тех
+\begin_inset space ~
+\end_inset
+
+или
+\begin_inset space ~
+\end_inset
+
+иных объектов и
+\begin_inset space ~
+\end_inset
+
+явлений, выраженных в
+\begin_inset space ~
+\end_inset
+
+объективной форме, предполагающей их
+\begin_inset space ~
+\end_inset
+
+многократные передачу и
+\begin_inset space ~
+\end_inset
+
+обработку.
+\end_layout
+
+\begin_layout Plain Layout
+Например: информацией является знание о
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+для
+\begin_inset space ~
+\end_inset
+
+обработки переменных выборки аналогов, имеющих распределение отличное от
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "нормального"
+target "http://www.machinelearning.ru/wiki/index.php?title=%D0%9D%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Distrib:Normal"
+literal "false"
+
+\end_inset
+
+, в
+\begin_inset space ~
+\end_inset
+
+общем случае, некорректно использовать 
+\begin_inset CommandInset href
+LatexCommand href
+name "параметрические методы"
+target "http://www.machinelearning.ru/wiki/index.php?title=%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9F%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D1%82%D0%B5%D1%81%D1%82%D1%8B"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Stat.test:par"
+literal "false"
+
+\end_inset
+
+ статистического анализа; данные в
+\begin_inset space ~
+\end_inset
+
+этом случае 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes rld
+\end_inset
+
+---
+\end_layout
+
+\end_inset
+
+ это
+\begin_inset space ~
+\end_inset
+
+непосредственно сама выборка.
+\end_layout
+
+\begin_layout Plain Layout
+Иными словами, оперируя терминологией 
+\begin_inset CommandInset href
+LatexCommand href
+name "архитектуры ЭВМ"
+target "https://ru.wikipedia.org/wiki/%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B0"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:Computer_architecture_rus"
+literal "false"
+
+\end_inset
+
+, данные 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes rld
+\end_inset
+
+---
+\end_layout
+
+\end_inset
+
+ набор значений переменных, информация 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes rld
+\end_inset
+
+---
+\end_layout
+
+\end_inset
+
+ набор инструкций.
+\end_layout
+
+\begin_layout Plain Layout
+Во
+\begin_inset space ~
+\end_inset
+
+избежание двусмысленности в
+\begin_inset space ~
+\end_inset
+
+тексте данного материала эти
+\begin_inset space ~
+\end_inset
+
+термины приводятся именно в
+\begin_inset space ~
+\end_inset
+
+тех
+\begin_inset space ~
+\end_inset
+
+смыслах, которые описаны выше.
+ В
+\begin_inset space ~
+\end_inset
+
+случае необходимости также используется более общий термин 
+\begin_inset Quotes rld
+\end_inset
+
+сведения
+\begin_inset Quotes rrd
+\end_inset
+
+, обобщающий оба
+\begin_inset space ~
+\end_inset
+
+вышеуказанных понятия.
+ В
+\begin_inset space ~
+\end_inset
+
+ряде случае, термины используются в
+\begin_inset space ~
+\end_inset
+
+соответствии с
+\begin_inset space ~
+\end_inset
+
+принятым значением в
+\begin_inset space ~
+\end_inset
+
+контексте устоявшихся словосочетаний.
+\end_layout
+
+\end_inset
+
+ непосредственно наблюдаемых на
+\begin_inset space ~
+\end_inset
+
+открытых рынках, без
+\begin_inset space ~
+\end_inset
+
+использования каких-либо иных их
+\begin_inset space ~
+\end_inset
+
+источников, подверженных субъективному влиянию со
+\begin_inset space ~
+\end_inset
+
+стороны их
+\begin_inset space ~
+\end_inset
+
+авторов.
+ Во-вторых, предложенные и
+\begin_inset space ~
+\end_inset
+
+рассмотренные в
+\begin_inset space ~
+\end_inset
+
+данной работе методы обладают весьма широким функционалом, позволяющим использов
+ать их
+\begin_inset space ~
+\end_inset
+
+при
+\begin_inset space ~
+\end_inset
+
+решении широкого круга задач, выходящих за
+\begin_inset space ~
+\end_inset
+
+рамки работы над
+\begin_inset space ~
+\end_inset
+
+конкретной оценкой.
+ Важность обеих причин автор видит в
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+на
+\begin_inset space ~
+\end_inset
+
+2021 год в
+\begin_inset space ~
+\end_inset
+
+России в
+\begin_inset space ~
+\end_inset
+
+сфере оценочной деятельности сложилась ситуация, которую можно охарактеризовать
+ тремя состояниями:
+\end_layout
+
+\begin_layout Itemize
+состояние неопределённости будущего отрасли;
+\end_layout
+
+\begin_layout Itemize
+состояние интеллектуального тупика;
+\end_layout
+
+\begin_layout Itemize
+состояние технологической отсталости.
+ 
+\end_layout
+
+\begin_layout Standard
+Первая проблема заключается в
+\begin_inset space ~
+\end_inset
+
+неопределённости как
+\begin_inset space ~
+\end_inset
+
+правового регулирования отрасли, так
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+её
+\begin_inset space ~
+\end_inset
+
+экономики.
+ Введённая около четырёх лет назад система квалификационных аттестатов оценщиков
+, на
+\begin_inset space ~
+\end_inset
+
+которую регулятор, заказчики и, возможно, часть самих оценщиков возлагали
+ надежду как
+\begin_inset space ~
+\end_inset
+
+на
+\begin_inset space ~
+\end_inset
+
+фильтр, позволяющий оставить в
+\begin_inset space ~
+\end_inset
+
+отрасли только квалифицированных специалистов, сократить предложение оценочных
+ услуг и, следовательно, способствовать росту вознаграждений за
+\begin_inset space ~
+\end_inset
+
+проведение оценки, не
+\begin_inset space ~
+\end_inset
+
+оправдала ожиданий.
+ Несмотря на
+\begin_inset space ~
+\end_inset
+
+существенное сокращение числа оценщиков, имеющих право подписывать отчёты
+ об
+\begin_inset space ~
+\end_inset
+
+оценке, не
+\begin_inset space ~
+\end_inset
+
+произошло никаких значимых изменений ни
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+части объёма предложения услуг, ни
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+части уровня цен на
+\begin_inset space ~
+\end_inset
+
+ них.
+ Фактически произошло лишь дальнейшее развитие уже
+\begin_inset space ~
+\end_inset
+
+существовавшего ранее института подписантов отчётов 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes xld
+\end_inset
+
+---
+\end_layout
+
+\end_inset
+
+ оценщиков, имеющих необходимые квалификационные документы и
+\begin_inset space ~
+\end_inset
+
+выпускающих от
+\begin_inset space ~
+\end_inset
+
+своего имени отчёты, в
+\begin_inset space ~
+\end_inset
+
+т.
+\begin_inset space \thinspace{}
+\end_inset
+
+ч.
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+те, в
+\begin_inset space ~
+\end_inset
+
+подготовке которых они
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+принимали участия.
+ В
+\begin_inset space ~
+\end_inset
+
+ряде случаев подписант мог и
+\begin_inset space ~
+\end_inset
+
+вовсе не
+\begin_inset space ~
+\end_inset
+
+читать отчёт либо даже не
+\begin_inset space ~
+\end_inset
+
+видеть его
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+силу своего присутствия в
+\begin_inset space ~
+\end_inset
+
+другом регионе, отличном от
+\begin_inset space ~
+\end_inset
+
+региона деятельности компании, выпустившей отчёт.
+ При
+\begin_inset space ~
+\end_inset
+
+этом, как
+\begin_inset space ~
+\end_inset
+
+ни
+\begin_inset space ~
+\end_inset
+
+странно, доход таких «специалистов» не
+\begin_inset space ~
+\end_inset
+
+вырос существенным образом.
+ Всё
+\begin_inset space ~
+\end_inset
+
+это
+\begin_inset space ~
+\end_inset
+
+очевидным образом приводит к
+\begin_inset space ~
+\end_inset
+
+недовольству регуляторов в
+\begin_inset space ~
+\end_inset
+
+адрес оценочного сообщества.
+ В
+\begin_inset space ~
+\end_inset
+
+таких условиях следует ожидать неизбежного дальнейшего ужесточения регулирования
+ и
+\begin_inset space ~
+\end_inset
+
+усугубления положения добросовестных оценщиков и
+\begin_inset space ~
+\end_inset
+
+оценочных компаний.
+ Вместе с
+\begin_inset space ~
+\end_inset
+
+тем было
+\begin_inset space ~
+\end_inset
+
+бы ошибочным считать, что
+\begin_inset space ~
+\end_inset
+
+виной всему являются исключительно сами оценщики и
+\begin_inset space ~
+\end_inset
+
+их
+\begin_inset space ~
+\end_inset
+
+работодатели.
+ В
+\begin_inset space ~
+\end_inset
+
+существенной степени проблемы квалификации и
+\begin_inset space ~
+\end_inset
+
+качества работы оценщиков вызваны не
+\begin_inset space ~
+\end_inset
+
+их
+\begin_inset space ~
+\end_inset
+
+нежеланием добросовестно выполнять свою работу, а
+\begin_inset space ~
+\end_inset
+
+отсутствием у
+\begin_inset space ~
+\end_inset
+
+заказчиков интереса к
+\begin_inset space ~
+\end_inset
+
+серьёзной качественной оценке.
+ Не
+\begin_inset space ~
+\end_inset
+
+секрет, что
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+большинстве случаев оценка является услугой, навязанной требованиями закона
+ либо кредитора, не
+\begin_inset space ~
+\end_inset
+
+нужной самому заказчику, которого очевидно волнует не
+\begin_inset space ~
+\end_inset
+
+качество отчёта об
+\begin_inset space ~
+\end_inset
+
+оценке, а
+\begin_inset space ~
+\end_inset
+
+соответствие определённой в
+\begin_inset space ~
+\end_inset
+
+нём стоимости ожиданиям и
+\begin_inset space ~
+\end_inset
+
+потребностям заказчика, его
+\begin_inset space ~
+\end_inset
+
+договорённостям с
+\begin_inset space ~
+\end_inset
+
+контрагентами.
+ В
+\begin_inset space ~
+\end_inset
+
+таких условиях, с
+\begin_inset space ~
+\end_inset
+
+одной стороны, экономика не
+\begin_inset space ~
+\end_inset
+
+создаёт спрос на
+\begin_inset space ~
+\end_inset
+
+качественную оценку, с
+\begin_inset space ~
+\end_inset
+
+другой 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes xld
+\end_inset
+
+---
+\end_layout
+
+\end_inset
+
+ сами оценщики не
+\begin_inset space ~
+\end_inset
+
+предлагают экономике интересные решения и
+\begin_inset space ~
+\end_inset
+
+новые ценности, которые могли
+\begin_inset space ~
+\end_inset
+
+бы принести в
+\begin_inset space ~
+\end_inset
+
+отрасль дополнительные финансовые потоки.
+\end_layout
+
+\begin_layout Standard
+Вторая проблема тесно связана с
+\begin_inset space ~
+\end_inset
+
+первой и
+\begin_inset space ~
+\end_inset
+
+выражается в
+\begin_inset space ~
+\end_inset
+
+том
+\begin_inset space ~
+\end_inset
+
+числе в
+\begin_inset space ~
+\end_inset
+
+наблюдаемом на
+\begin_inset space ~
+\end_inset
+
+протяжении последних примерно 10
+\begin_inset space ~
+\end_inset
+
+лет падении качества отчётов об
+\begin_inset space ~
+\end_inset
+
+оценке и
+\begin_inset space ~
+\end_inset
+
+общей примитивизации работы оценщика.
+ Суть данной проблемы можно кратко сформулировать в
+\begin_inset space ~
+\end_inset
+
+одной фразе: «раньше молодые оценщики спрашивали 
+\begin_inset Quotes xld
+\end_inset
+
+как проанализировать данные рынка и
+\begin_inset space ~
+\end_inset
+
+построить модель для
+\begin_inset space ~
+\end_inset
+
+оценки
+\begin_inset Quotes xrd
+\end_inset
+
+, сейчас они
+\begin_inset space ~
+\end_inset
+
+задают вопрос 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+,,
+\end_layout
+
+\end_inset
+
+где
+\begin_inset space ~
+\end_inset
+
+взять корректировку на
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+''X''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+''
+\end_layout
+
+\end_inset
+
+».
+ Установление метода корректировок в
+\begin_inset space ~
+\end_inset
+
+качестве доминирующего во
+\begin_inset space ~
+\end_inset
+
+всех случаях даже без
+\begin_inset space ~
+\end_inset
+
+анализа применимости других методов стало логичным итогом процесса деградации
+ качества отчётов об
+\begin_inset space ~
+\end_inset
+
+оценке.
+ При
+\begin_inset space ~
+\end_inset
+
+этом источником подобных корректировок чаще всего являются отнюдь не
+\begin_inset space ~
+\end_inset
+
+данные отрытого рынка.
+ Как
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+первом случае винить в
+\begin_inset space ~
+\end_inset
+
+этом только самих оценщиков было
+\begin_inset space ~
+\end_inset
+
+бы неправильным.
+ В
+\begin_inset space ~
+\end_inset
+
+условиях работы в
+\begin_inset space ~
+\end_inset
+
+зачастую весьма жёстких временных рамках и
+\begin_inset space ~
+\end_inset
+
+за
+\begin_inset space ~
+\end_inset
+
+небольшое вознаграждение, оценщик часто лишён возможности провести самостоятельн
+ый анализ тех
+\begin_inset space ~
+\end_inset
+
+или
+\begin_inset space ~
+\end_inset
+
+иных свойств открытого рынка, вследствие и
+\begin_inset space ~
+\end_inset
+
+по
+\begin_inset space ~
+\end_inset
+
+причине чего вынужден использовать внешние нерыночные данные в
+\begin_inset space ~
+\end_inset
+
+том
+\begin_inset space ~
+\end_inset
+
+числе и
+\begin_inset space ~
+\end_inset
+
+непроверенного качества.
+ Со
+\begin_inset space ~
+\end_inset
+
+временем это становится привычкой, убивающей творчество и
+\begin_inset space ~
+\end_inset
+
+стремление к
+\begin_inset space ~
+\end_inset
+
+поиску истины.
+\end_layout
+
+\begin_layout Standard
+Третья проблема также неразрывно связана с
+\begin_inset space ~
+\end_inset
+
+двумя первыми.
+ Отсутствие конкуренции, основанной на
+\begin_inset space ~
+\end_inset
+
+стремлении оказывать как
+\begin_inset space ~
+\end_inset
+
+можно более качественные услуги, недостаточная капитализация отрасли, выражающая
+ся в
+\begin_inset space ~
+\end_inset
+
+том
+\begin_inset space ~
+\end_inset
+
+числе в
+\begin_inset space ~
+\end_inset
+
+относительно невысоких зарплатах оценщиков, не
+\begin_inset space ~
+\end_inset
+
+вполне последовательное регулирование отрасли со
+\begin_inset space ~
+\end_inset
+
+стороны государства 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes xld
+\end_inset
+
+---
+\end_layout
+
+\end_inset
+
+ всё
+\begin_inset space ~
+\end_inset
+
+это
+\begin_inset space ~
+\end_inset
+
+создаёт условия, при
+\begin_inset space ~
+\end_inset
+
+которых у
+\begin_inset space ~
+\end_inset
+
+оценщиков отсутствуют стимул, а
+\begin_inset space ~
+\end_inset
+
+зачастую и
+\begin_inset space ~
+\end_inset
+
+возможность внедрять инновации.
+ 
+\end_layout
+
+\begin_layout Standard
+Данная работа служит следующей основной цели: дать в
+\begin_inset space ~
+\end_inset
+
+руки оценщика инструменты, позволяющие ему
+\begin_inset space ~
+\end_inset
+
+просто и
+\begin_inset space ~
+\end_inset
+
+быстро извлекать полезные сведения из
+\begin_inset space ~
+\end_inset
+
+сырых данных открытых рынков, интерпретировать их, выдвигать гипотезы, выбирать
+ среди них наиболее перспективные и
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+итоге получать готовые модели предсказания различных свойств объекта оценки,
+ в
+\begin_inset space ~
+\end_inset
+
+том
+\begin_inset space ~
+\end_inset
+
+числе его
+\begin_inset space ~
+\end_inset
+
+стоимости.
+ Есть некоторая надежда, что
+\begin_inset space ~
+\end_inset
+
+применение технологий искусственного интеллекта позволит, не
+\begin_inset space ~
+\end_inset
+
+увеличивая трудоёмкость, а
+\begin_inset space ~
+\end_inset
+
+скорее напротив, снижая её, повысить качество работы оценщика, усилить доказател
+ьную силу отчётов об
+\begin_inset space ~
+\end_inset
+
+оценке и
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+итоге позволит создать новые ценности, предлагаемые оценщиками экономике,
+ государству, потребителям, а
+\begin_inset space ~
+\end_inset
+
+главное всему обществу.
+\end_layout
+
+\begin_layout Standard
+Особенностью данной работы является её
+\begin_inset space ~
+\end_inset
+
+практическая направленность: в
+\begin_inset space ~
+\end_inset
+
+тексте содержатся все
+\begin_inset space ~
+\end_inset
+
+необходимые инструкции, формулы, описания и
+\begin_inset space ~
+\end_inset
+
+фрагменты программного кода либо ссылки на
+\begin_inset space ~
+\end_inset
+
+них, необходимые и
+\begin_inset space ~
+\end_inset
+
+достаточные для
+\begin_inset space ~
+\end_inset
+
+воспроизведения всех рассмотренных методов и
+\begin_inset space ~
+\end_inset
+
+их
+\begin_inset space ~
+\end_inset
+
+описания в
+\begin_inset space ~
+\end_inset
+
+отчётах об
+\begin_inset space ~
+\end_inset
+
+оценке.
+ 
+\end_layout
+
+\begin_layout Standard
+Данная работа состоит из
+\begin_inset space ~
+\end_inset
+
+двух частей.
+ Первая посвящена в
+\begin_inset space ~
+\end_inset
+
+большей степени теории, описанию методов, а
+\begin_inset space ~
+\end_inset
+
+также применению языка 
+\begin_inset CommandInset href
+LatexCommand href
+name "R"
+target "https://www.r-project.org/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "R_language"
+literal "false"
+
+\end_inset
+
+.
+ Вторая имеет большую практическую направленность и
+\begin_inset space ~
+\end_inset
+
+содержит руководства по
+\begin_inset space ~
+\end_inset
+
+применению языка 
+\begin_inset CommandInset href
+LatexCommand href
+name "Python"
+target "https://www.python.org/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Python_site"
+literal "false"
+
+\end_inset
+
+.
+ Объяснение данного факта содержится далее в
+\begin_inset space ~
+\end_inset
+
+разделе ССЫЛКА.
+ В
+\begin_inset space ~
+\end_inset
+
+работе будут рассмотрены следующие вопросы:
+\end_layout
+
+\begin_layout Enumerate
+автоматизированный сбор данных с
+\begin_inset space ~
+\end_inset
+
+веб-ресурсов;
+\end_layout
+
+\begin_layout Enumerate
+семантический анализ текстов объявлений;
+\end_layout
+
+\begin_layout Enumerate
+работа с
+\begin_inset space ~
+\end_inset
+
+геоданными;
+\end_layout
+
+\begin_layout Enumerate
+первичная интерпретация и
+\begin_inset space ~
+\end_inset
+
+визуализация данных открытых рынков;
+\end_layout
+
+\begin_layout Enumerate
+проверка статистических гипотез;
+\end_layout
+
+\begin_layout Enumerate
+задачи классификации;
+\end_layout
+
+\begin_layout Enumerate
+корреляционный анализ;
+\end_layout
+
+\begin_layout Enumerate
+регрессионный анализ;
+\end_layout
+
+\begin_layout Enumerate
+анализ временных рядов;
+\end_layout
+
+\begin_layout Enumerate
+задачи многомерного шкалирования;
+\end_layout
+
+\begin_layout Enumerate
+байесовская статистика;
+\end_layout
+
+\begin_layout Enumerate
+деревья классификации;
+\end_layout
+
+\begin_layout Enumerate
+случайные леса;
+\end_layout
+
+\begin_layout Enumerate
+нейронные сети;
+\end_layout
+
+\begin_layout Enumerate
+глубокое обучение;
+\end_layout
+
+\begin_layout Enumerate
+обучение с
+\begin_inset space ~
+\end_inset
+
+подкреплением;
+\end_layout
+
+\begin_layout Enumerate
+нечёткая логика.
+\end_layout
+
+\begin_layout Standard
+Вышеприведённый перечень не
+\begin_inset space ~
+\end_inset
+
+является исчерпывающим и
+\begin_inset space ~
+\end_inset
+
+будет дорабатываться по
+\begin_inset space ~
+\end_inset
+
+мере развития проекта.
+\end_layout
+
+\begin_layout Standard
+Данная работа основана на четырёх основополагающих принципах и
+\begin_inset space ~
+\end_inset
+
+предпосылках.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Принцип «вся
+\begin_inset space ~
+\end_inset
+
+информация об
+\begin_inset space ~
+\end_inset
+
+активе учтена в
+\begin_inset space ~
+\end_inset
+
+его
+\begin_inset space ~
+\end_inset
+
+цене»
+\emph default
+.
+ Данный принцип говорит о
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+существует функциональная зависимость между ценой актива
+\begin_inset space ~
+\end_inset
+
+(обязательства) и
+\begin_inset space ~
+\end_inset
+
+его
+\begin_inset space ~
+\end_inset
+
+свойствами.
+ Он
+\begin_inset space ~
+\end_inset
+
+тесно связан с
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Гипотезой эффективного рынка"
+target "https://en.wikipedia.org/wiki/Efficient-market_hypothesis"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Efficient-market-hypothesis"
+literal "false"
+
+\end_inset
+
+, лежащей в
+\begin_inset space ~
+\end_inset
+
+основе технического биржевого анализа.
+ При
+\begin_inset space ~
+\end_inset
+
+этом для
+\begin_inset space ~
+\end_inset
+
+целей настоящей работы данная гипотеза принимается в
+\begin_inset space ~
+\end_inset
+
+её
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "сильной форме эффективности"
+target "https://ru.wikipedia.org/wiki/Гипотеза_эффективного_рынка#Три_формы_рыночной_эффективности"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:strong-efficient-market-hypothesis"
+literal "false"
+
+\end_inset
+
+.
+ С
+\begin_inset space ~
+\end_inset
+
+точки зрения оценщика это
+\begin_inset space ~
+\end_inset
+
+означает, что
+\begin_inset space ~
+\end_inset
+
+нет
+\begin_inset space ~
+\end_inset
+
+необходимости искать какие-либо данные кроме тех, которые непосредственно
+ и
+\begin_inset space ~
+\end_inset
+
+объективно наблюдаются на
+\begin_inset space ~
+\end_inset
+
+рынке.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Принцип «максимального использования релевантных наблюдаемых исходных данных
+ и
+\begin_inset space ~
+\end_inset
+
+минимального использования ненаблюдаемых исходных данных»
+\emph default
+.
+ Данный принцип согласуется с
+\begin_inset space ~
+\end_inset
+
+требованиями п.
+\begin_inset space ~
+\end_inset
+
+3 
+\begin_inset CommandInset href
+LatexCommand href
+name "Международного стандарта финансовой отчётности 13 «Оценка справедливой стоимости»"
+target "https://normativ.kontur.ru/document?moduleId=1&documentId=326168#l0"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MSFO-13"
+literal "false"
+
+\end_inset
+
+ (
+\begin_inset CommandInset href
+LatexCommand href
+name "IFRS 13"
+target "http://eifrs.ifrs.org/eifrs/bnstandards/en/IFRS13.pdf"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IFRS-13"
+literal "false"
+
+\end_inset
+
+), а
+\begin_inset space ~
+\end_inset
+
+также, например, принципами 
+\lang american
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Всемирных стандартов оценки RICS"
+target "https://web.tresorit.com/l/oFpJF#xr3UGoxLvszsn4vAaHtjqw"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RVGS-Rus-TeX-source"
+literal "false"
+
+\end_inset
+
+ (
+\begin_inset CommandInset href
+LatexCommand href
+name "RICS valuation \"--- Global Standards"
+target "https://www.rics.org/eu/upholding-professional-standards/sector-standards/valuation/red-book/red-book-global/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RICS:RVGS-2020"
+literal "false"
+
+\end_inset
+
+)
+\lang russian
+ и
+\begin_inset space ~
+\end_inset
+
+основывается на
+\begin_inset space ~
+\end_inset
+
+них.
+ С
+\begin_inset space ~
+\end_inset
+
+точки зрения оценщика данный принцип означает, что
+\begin_inset space ~
+\end_inset
+
+лучшая практика оценки заключается в
+\begin_inset space ~
+\end_inset
+
+работе непосредственно с
+\begin_inset space ~
+\end_inset
+
+данными открытых рынков, а
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+чьей-либо их
+\begin_inset space ~
+\end_inset
+
+интерпретацией, существующей, например, в
+\begin_inset space ~
+\end_inset
+
+виде готовых наборов корректировок, порой весьма далёких от
+\begin_inset space ~
+\end_inset
+
+реальности.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+\begin_inset CommandInset href
+LatexCommand href
+name "Принцип KISS"
+target "https://en.wikipedia.org/wiki/KISS_principle"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "KISS-principle"
+literal "false"
+
+\end_inset
+
+
+\emph default
+ (
+\series bold
+\lang american
+k
+\series default
+eep 
+\series bold
+i
+\series default
+t
+\begin_inset space ~
+\end_inset
+
+
+\series bold
+s
+\series default
+imple 
+\series bold
+s
+\series default
+tupid
+\lang russian
+, вариации: 
+\series bold
+\lang american
+k
+\series default
+eep 
+\series bold
+i
+\series default
+t
+\begin_inset space ~
+\end_inset
+
+
+\series bold
+s
+\series default
+hort and
+\begin_inset space ~
+\end_inset
+
+
+\series bold
+s
+\series default
+imple, 
+\series bold
+k
+\series default
+eep 
+\series bold
+i
+\series default
+t
+\begin_inset space ~
+\end_inset
+
+
+\series bold
+s
+\series default
+imple and
+\begin_inset space ~
+\end_inset
+
+
+\series bold
+s
+\series default
+traightforward
+\lang russian
+ и
+\begin_inset space ~
+\end_inset
+
+т.
+\begin_inset space \thinspace{}
+\end_inset
+
+п.), предложенный американским авиаинженером 
+\begin_inset CommandInset href
+LatexCommand href
+name "Келли Джонсоном"
+target "https://en.wikipedia.org/wiki/Kelly\\_Johnson_(engineer)"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kelly-Johnson"
+literal "false"
+
+\end_inset
+
+, ставший официальным принципом проектирования и
+\begin_inset space ~
+\end_inset
+
+конструирования ВМС США с
+\begin_inset space ~
+\end_inset
+
+1960
+\begin_inset space ~
+\end_inset
+
+г.
+ Данный принцип заключается в
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+при
+\begin_inset space ~
+\end_inset
+
+разработке той
+\begin_inset space ~
+\end_inset
+
+или
+\begin_inset space ~
+\end_inset
+
+иной системы следует использовать самое простое решение из
+\begin_inset space ~
+\end_inset
+
+возможных.
+ Применительно к
+\begin_inset space ~
+\end_inset
+
+тематике данной работы это
+\begin_inset space ~
+\end_inset
+
+означает, что
+\begin_inset space ~
+\end_inset
+
+ в
+\begin_inset space ~
+\end_inset
+
+тех случаях, когда автор сталкивался с
+\begin_inset space ~
+\end_inset
+
+проблемой выбора способа решения задачи в
+\begin_inset space ~
+\end_inset
+
+условиях неопределённости преимуществ и
+\begin_inset space ~
+\end_inset
+
+недостатков возможных вариантов, он
+\begin_inset space ~
+\end_inset
+
+всегда выбирал самый простой способ.
+ Например в
+\begin_inset space ~
+\end_inset
+
+задаче кластеризации, выбирая между видами расстояний, автор делает выбор
+ в
+\begin_inset space ~
+\end_inset
+
+пользу 
+\begin_inset CommandInset href
+LatexCommand href
+name "евклидова"
+target "https://en.wikipedia.org/wiki/Euclidean_distance"
+literal "false"
+
+\end_inset
+
+ либо 
+\begin_inset CommandInset href
+LatexCommand href
+name "манхэттенского"
+target "https://en.wikipedia.org/wiki/Taxicab_geometry"
+literal "false"
+
+\end_inset
+
+ расстояний
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:Euclidian_distance,Wiki:Manhattan_distance"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Принцип «не дай алгоритму уничтожить здравый смысл»
+\emph default
+.
+ Данный принцип означает необходимость самостоятельного осмысления всех
+ результатов выполнения процедур, в
+\begin_inset space ~
+\end_inset
+
+т.
+\begin_inset space \thinspace{}
+\end_inset
+
+ч.
+ и
+\begin_inset space ~
+\end_inset
+
+промежуточных.
+ Возможны ситуации, когда полученные результаты могут противоречить здравому
+ смыслу и
+\begin_inset space ~
+\end_inset
+
+априорным знаниям о
+\begin_inset space ~
+\end_inset
+
+предметной области, которыми обладает оценщик либо пользователи его
+\begin_inset space ~
+\end_inset
+
+работы.
+ Следует избегать безоговорочного доверия к
+\begin_inset space ~
+\end_inset
+
+результатам, выдаваемым алгоритмами.
+ Если построенная модель противоречит априорным знаниям об
+\begin_inset space ~
+\end_inset
+
+окружающей реальности, то
+\begin_inset space ~
+\end_inset
+
+следует помнить, что
+\begin_inset space ~
+\end_inset
+
+другой реальности у
+\begin_inset space ~
+\end_inset
+
+нас
+\begin_inset space ~
+\end_inset
+
+нет, тогда как
+\begin_inset space ~
+\end_inset
+
+модель может быть скорректирована либо заменена на
+\begin_inset space ~
+\end_inset
+
+другую.
+\end_layout
+
+\begin_layout Standard
+Все
+\begin_inset space ~
+\end_inset
+
+описанные этапы действий описаны таким образом, что
+\begin_inset space ~
+\end_inset
+
+позволяют сразу
+\begin_inset space ~
+\end_inset
+
+же без
+\begin_inset space ~
+\end_inset
+
+каких-либо дополнительных исследований воспроизвести всё, что
+\begin_inset space ~
+\end_inset
+
+было реализовано в
+\begin_inset space ~
+\end_inset
+
+данной работе.
+ От
+\begin_inset space ~
+\end_inset
+
+пользователей потребуется только установить необходимые программные средства,
+ создать свой набор данных для
+\begin_inset space ~
+\end_inset
+
+анализа и
+\begin_inset space ~
+\end_inset
+
+загрузить его
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+пакет.
+ Все
+\begin_inset space ~
+\end_inset
+
+действия по
+\begin_inset space ~
+\end_inset
+
+установке и
+\begin_inset space ~
+\end_inset
+
+настройке описаны внутри данного руководства.
+ Важным аспектом является то
+\begin_inset space ~
+\end_inset
+
+обстоятельство, что
+\begin_inset space ~
+\end_inset
+
+при
+\begin_inset space ~
+\end_inset
+
+подготовке данного исследования использовалось исключительно 
+\begin_inset CommandInset href
+LatexCommand href
+name "свободное программное обеспечение"
+target "https://www.gnu.org/philosophy/free-sw.ru.html"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GNU:free_software,Wiki:free_software,digital_gov:free_software"
+literal "false"
+
+\end_inset
+
+.
+ Таким образом, любой читатель сможет воспроизвести все
+\begin_inset space ~
+\end_inset
+
+описанные действия без
+\begin_inset space ~
+\end_inset
+
+каких-либо затрат на
+\begin_inset space ~
+\end_inset
+
+приобретение тех
+\begin_inset space ~
+\end_inset
+
+или
+\begin_inset space ~
+\end_inset
+
+иных программных продуктов.
+\end_layout
+
+\begin_layout Standard
+От
+\begin_inset space ~
+\end_inset
+
+пользователей данного руководства не
+\begin_inset space ~
+\end_inset
+
+требуется наличие специальных познаний в
+\begin_inset space ~
+\end_inset
+
+области разработки программного обеспечения, 
+\lang american
+software engineering
+\lang russian
+ и
+\begin_inset space ~
+\end_inset
+
+иных аспектов 
+\lang american
+computer science
+\lang russian
+.
+ Некоторые понятия вроде «класс», «метод», «функция», «оператор», «регулярные
+ выражения» и
+\begin_inset space ~
+\end_inset
+
+т.
+\begin_inset space ~
+\end_inset
+
+п.
+ термины из
+\begin_inset space ~
+\end_inset
+
+сферы программирования могут встречаться в
+\begin_inset space ~
+\end_inset
+
+тексте руководства, однако их
+\begin_inset space ~
+\end_inset
+
+понимание либо непонимание пользователем не
+\begin_inset space ~
+\end_inset
+
+оказывает существенного влияния на
+\begin_inset space ~
+\end_inset
+
+восприятие материала в
+\begin_inset space ~
+\end_inset
+
+целом.
+ В
+\begin_inset space ~
+\end_inset
+
+отдельных случаях, когда понимание термина является существенным, как
+\begin_inset space ~
+\end_inset
+
+например в
+\begin_inset space ~
+\end_inset
+
+случае с
+\begin_inset space ~
+\end_inset
+
+термином «переменная», в
+\begin_inset space ~
+\end_inset
+
+тексте руководства приводится подробное объяснение смысла такого термина,
+ доступное для
+\begin_inset space ~
+\end_inset
+
+понимания неспециалиста.
+\end_layout
+
+\begin_layout Standard
+Также от
+\begin_inset space ~
+\end_inset
+
+пользователей руководства не
+\begin_inset space ~
+\end_inset
+
+требуется (хотя и
+\begin_inset space ~
+\end_inset
+
+является желательным) глубокое понимание математической статистики, дифференциал
+ьных вычислений, линейной алгебры, комбинаторики, методов исследования операций,
+ методов оптимизации и
+\begin_inset space ~
+\end_inset
+
+иных разделов математики и
+\begin_inset space ~
+\end_inset
+
+математической статистики, хотя и
+\begin_inset space ~
+\end_inset
+
+предполагается наличие таких познаний на
+\begin_inset space ~
+\end_inset
+
+уровне материала, включённого в
+\begin_inset space ~
+\end_inset
+
+школьную программу и
+\begin_inset space ~
+\end_inset
+
+программу технических и
+\begin_inset space ~
+\end_inset
+
+экономических специальностей вузов России.
+ В
+\begin_inset space ~
+\end_inset
+
+тексте руководства приводится описание смысла и
+\begin_inset space ~
+\end_inset
+
+техники всех применённых статистических методов, математических операций
+ и
+\begin_inset space ~
+\end_inset
+
+вычислений в
+\begin_inset space ~
+\end_inset
+
+объёме, достаточном, по
+\begin_inset space ~
+\end_inset
+
+мнению автора, для
+\begin_inset space ~
+\end_inset
+
+обеспечения доказательности при
+\begin_inset space ~
+\end_inset
+
+использовании методов, рассмотренных в
+\begin_inset space ~
+\end_inset
+
+данной работе.
+ Автор всегда приводит ссылки на
+\begin_inset space ~
+\end_inset
+
+материалы, подтверждающие приведённые им
+\begin_inset space ~
+\end_inset
+
+описания за
+\begin_inset space ~
+\end_inset
+
+исключением случаев общеизвестных либо очевидных сведений.
+ Особое внимание автор уделяет соблюдению требований к
+\begin_inset space ~
+\end_inset
+
+информации и
+\begin_inset space ~
+\end_inset
+
+данным, имеющим существенное значение для
+\begin_inset space ~
+\end_inset
+
+определения стоимости объекта оценки, установленных Федеральным законом
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "«Об оценочной деятельности в Российской Федерации»"
+target "https://normativ.kontur.ru/document?moduleId=1&documentId=396506&cwi=7508"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "135-FZ"
+literal "false"
+
+\end_inset
+
+, а
+\begin_inset space ~
+\end_inset
+
+также 
+\begin_inset CommandInset href
+LatexCommand href
+name "Федеральными стандартами оценки"
+target "https://www.consultant.ru/document/cons_doc_LAW_126896/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FSO-all"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Сведения, приведённые в
+\begin_inset space ~
+\end_inset
+
+настоящем руководстве, являются, по
+\begin_inset space ~
+\end_inset
+
+мнению автора, достаточными для
+\begin_inset space ~
+\end_inset
+
+обеспечения выполнения вышеуказанных требований к
+\begin_inset space ~
+\end_inset
+
+информации, содержащейся в
+\begin_inset space ~
+\end_inset
+
+отчёте об
+\begin_inset space ~
+\end_inset
+
+оценке.
+ Таким образом, использование описаний процедур, приведённых в
+\begin_inset space ~
+\end_inset
+
+настоящем руководстве, скорее всего должно быть достаточным при
+\begin_inset space ~
+\end_inset
+
+использовании изложенных в
+\begin_inset space ~
+\end_inset
+
+нём методик в
+\begin_inset space ~
+\end_inset
+
+целях осуществления оценочной деятельности и
+\begin_inset space ~
+\end_inset
+
+составлении отчёта об
+\begin_inset space ~
+\end_inset
+
+оценке.
+ Однако, автор рекомендует уточнять требования, предъявляемые к
+\begin_inset space ~
+\end_inset
+
+отчёту об
+\begin_inset space ~
+\end_inset
+
+оценке со
+\begin_inset space ~
+\end_inset
+
+стороны саморегулируемой организации, в
+\begin_inset space ~
+\end_inset
+
+которой состоит оценщик, а
+\begin_inset space ~
+\end_inset
+
+также со
+\begin_inset space ~
+\end_inset
+
+стороны заказчиков и
+\begin_inset space ~
+\end_inset
+
+регуляторов.
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+силу свободного характера лицензии, на
+\begin_inset space ~
+\end_inset
+
+условиях которой распространяется данная работа, она, равно как
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+любая её
+\begin_inset space ~
+\end_inset
+
+часть, может быть скопирована, воспроизведена, переработана либо использована
+ любым другим способом любым лицом в
+\begin_inset space ~
+\end_inset
+
+т.
+\begin_inset space \thinspace{}
+\end_inset
+
+ч.
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+коммерческих целях при
+\begin_inset space ~
+\end_inset
+
+условии распространения производных материалов на
+\begin_inset space ~
+\end_inset
+
+условиях такой
+\begin_inset space ~
+\end_inset
+
+же лицензии.
+ Таким образом, автор рекомендует использовать тексты, приведённые в
+\begin_inset space ~
+\end_inset
+
+настоящем руководстве для
+\begin_inset space ~
+\end_inset
+
+описания выполненных оценщиком процедур.
+\end_layout
+
+\begin_layout Standard
+По
+\begin_inset space ~
+\end_inset
+
+мнению автора, данное руководство и
+\begin_inset space ~
+\end_inset
+
+описанные в
+\begin_inset space ~
+\end_inset
+
+нём методы могут быть особенно полезны в
+\begin_inset space ~
+\end_inset
+
+следующих предметных областях:
+\end_layout
+
+\begin_layout Itemize
+оценка и
+\begin_inset space ~
+\end_inset
+
+переоценка залогов и
+\begin_inset space ~
+\end_inset
+
+их
+\begin_inset space ~
+\end_inset
+
+портфелей;
+\end_layout
+
+\begin_layout Itemize
+контроль за
+\begin_inset space ~
+\end_inset
+
+портфелями залогов со
+\begin_inset space ~
+\end_inset
+
+стороны регулятора банковской сферы;
+\end_layout
+
+\begin_layout Itemize
+оценка объектов, подлежащих страхованию и
+\begin_inset space ~
+\end_inset
+
+их
+\begin_inset space ~
+\end_inset
+
+портфелей со
+\begin_inset space ~
+\end_inset
+
+стороны страховщиков;
+\end_layout
+
+\begin_layout Itemize
+оценка больших групп активов внутри холдинговых компаний
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+предприятий крупного бизнеса;
+\end_layout
+
+\begin_layout Itemize
+оценка в
+\begin_inset space ~
+\end_inset
+
+целях автоматизированного налогового контроля;
+\end_layout
+
+\begin_layout Itemize
+государственная кадастровая оценка;
+\end_layout
+
+\begin_layout Itemize
+экспертиза отчётов об
+\begin_inset space ~
+\end_inset
+
+оценке, контроль за
+\begin_inset space ~
+\end_inset
+
+деятельностью оценщиков со
+\begin_inset space ~
+\end_inset
+
+стороны СРО.
+\end_layout
+
+\begin_layout Standard
+Иными словами, особенная ценность применения методов искусственного интеллекта
+ в
+\begin_inset space ~
+\end_inset
+
+оценке возникает там, где
+\begin_inset space ~
+\end_inset
+
+имеет место необходимость максимальной беспристрастности и
+\begin_inset space ~
+\end_inset
+
+незаинтересованности в
+\begin_inset space ~
+\end_inset
+
+конкретном значении стоимости.
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+данном руководстве не
+\begin_inset space ~
+\end_inset
+
+содержатся общие выводы касательно параметров открытых рынков как
+\begin_inset space ~
+\end_inset
+
+таковых, не
+\begin_inset space ~
+\end_inset
+
+выводятся общие формулы, применимые всегда и
+\begin_inset space ~
+\end_inset
+
+для
+\begin_inset space ~
+\end_inset
+
+всех объектов оценки.
+ Вместо этого в
+\begin_inset space ~
+\end_inset
+
+распоряжение пользователей предоставляется набор мощных инструментов, достаточны
+й для
+\begin_inset space ~
+\end_inset
+
+моделирования ценообразования на
+\begin_inset space ~
+\end_inset
+
+любом 
+\bar under
+открытом рынке
+\bar default
+, определения стоимости любого объекта оценки на
+\begin_inset space ~
+\end_inset
+
+основе 
+\bar under
+его
+\bar default
+
+\begin_inset space ~
+\end_inset
+
+актуальных данных.
+ В
+\begin_inset space ~
+\end_inset
+
+случае необходимости пользователь, применяя рассмотренные методы, может
+ самостоятельно разработать предсказательную модель для
+\begin_inset space ~
+\end_inset
+
+любых рынков и
+\begin_inset space ~
+\end_inset
+
+объектов.
  
 \end_layout
 
