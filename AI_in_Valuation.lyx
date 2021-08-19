@@ -47,7 +47,7 @@ tabs-within-sections
 \end_modules
 \maintain_unincluded_children false
 \language russian
-\language_package default
+\language_package babel
 \inputencoding utf8
 \fontencoding global
 \font_roman "cmr" "default"
@@ -352,18 +352,6 @@ literal "false"
 \end_inset
 
 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand cite
-key "UDK:519.2,UDK:519.8,UDK:519.682,UDK:004.891.2,UDK:330.4,UDK:338.5"
-literal "false"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -453,6 +441,10 @@ literal "false"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+М91
 \end_layout
 
 \begin_layout Standard
@@ -2147,7 +2139,7 @@ status open
 
 
 \backslash
-setcounter{chapter}{-1}
+setcounter{chapter}{0}
 \end_layout
 
 \end_inset
@@ -2157,6 +2149,13 @@ setcounter{chapter}{-1}
 
 \begin_layout Chapter
 Предисловие
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:1_Foreword"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3252,7 +3251,14 @@ status open
 \end_inset
 
 одной фразе: «раньше молодые оценщики спрашивали 
-\begin_inset Quotes xld
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+,,
+\end_layout
+
 \end_inset
 
 как проанализировать данные рынка и
@@ -3264,7 +3270,14 @@ status open
 \end_inset
 
 оценки
-\begin_inset Quotes xrd
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+''
+\end_layout
+
 \end_inset
 
 , сейчас они
@@ -3487,7 +3500,7 @@ status open
 \begin_inset space ~
 \end_inset
 
-оценщиков отсутствуют стимул, а
+оценщиков отсутствует стимул, а
 \begin_inset space ~
 \end_inset
 
@@ -4016,8 +4029,6 @@ literal "false"
 \end_inset
 
 также, например, принципами 
-\lang american
-
 \begin_inset CommandInset href
 LatexCommand href
 name "Всемирных стандартов оценки RICS"
@@ -4038,15 +4049,21 @@ literal "false"
 
 \end_inset
 
+
+\lang american
  (
+\lang english
+
 \begin_inset CommandInset href
 LatexCommand href
-name "RICS valuation \"--- Global Standards"
+name "RICS Valuation — Global Standards"
 target "https://www.rics.org/eu/upholding-professional-standards/sector-standards/valuation/red-book/red-book-global/"
 literal "false"
 
 \end_inset
 
+
+\lang american
 
 \begin_inset space ~
 \end_inset
@@ -4571,7 +4588,7 @@ computer science
 \end_inset
 
 т.
-\begin_inset space ~
+\begin_inset space \thinspace{}
 \end_inset
 
 п.
@@ -4978,7 +4995,7 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
-оценка объектов, подлежащих страхованию и
+оценка объектов, подлежащих страхованию, и
 \begin_inset space ~
 \end_inset
 
@@ -4991,6 +5008,14 @@ literal "false"
 \end_inset
 
 стороны страховщиков;
+\end_layout
+
+\begin_layout Itemize
+оценка объектов со
+\begin_inset space ~
+\end_inset
+
+стороны лизинговых компаний;
 \end_layout
 
 \begin_layout Itemize
@@ -5124,7 +5149,1133 @@ literal "false"
 \end_inset
 
 объектов.
- 
+ Забегая вперёд, можно сказать, что
+\begin_inset space ~
+\end_inset
+
+при
+\begin_inset space ~
+\end_inset
+
+решении конкретной практической задачи применение всех описанных методов
+ не
+\begin_inset space ~
+\end_inset
+
+является обязательным, а
+\begin_inset space ~
+\end_inset
+
+если быть точным 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes xld
+\end_inset
+
+---
+\end_layout
+
+\end_inset
+
+ явно избыточным.
+ В
+\begin_inset space ~
+\end_inset
+
+тексте руководства содержатся рекомендации по
+\begin_inset space ~
+\end_inset
+
+выбору методов на
+\begin_inset space ~
+\end_inset
+
+основе имеющихся свойств данных, рассматриваются сильные и
+\begin_inset space ~
+\end_inset
+
+слабые стороны каждого из них.
+\end_layout
+
+\begin_layout Standard
+Несмотря на
+\begin_inset space ~
+\end_inset
+
+изначально кажущуюся сложность и
+\begin_inset space ~
+\end_inset
+
+громоздкость методов, при
+\begin_inset space ~
+\end_inset
+
+более детальном знакомстве и
+\begin_inset space ~
+\end_inset
+
+погружении в
+\begin_inset space ~
+\end_inset
+
+проблематику становится ясно, что
+\begin_inset space ~
+\end_inset
+
+применение предложенных реализаций методов существенно сокращает время,
+ необходимое для
+\begin_inset space ~
+\end_inset
+
+выполнения расчёта относительно других методов сопоставимого качества, а
+\begin_inset space ~
+\end_inset
+
+сама процедура сводится к
+\begin_inset space ~
+\end_inset
+
+написанию и
+\begin_inset space ~
+\end_inset
+
+сохранению нескольких строк кода при
+\begin_inset space ~
+\end_inset
+
+первом применении и
+\begin_inset space ~
+\end_inset
+
+их
+\begin_inset space ~
+\end_inset
+
+вторичному многократному использованию для
+\begin_inset space ~
+\end_inset
+
+новых наборов данных при
+\begin_inset space ~
+\end_inset
+
+будущих исследованиях.
+\end_layout
+
+\begin_layout Standard
+Автор выражает надежду, что
+\begin_inset space ~
+\end_inset
+
+данное руководство станет для
+\begin_inset space ~
+\end_inset
+
+кого-то первым шагом на
+\begin_inset space ~
+\end_inset
+
+пути изучения языков 
+\begin_inset CommandInset href
+LatexCommand href
+name "R"
+target "https://www.r-project.org/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "R_language"
+literal "false"
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Python"
+target "https://www.python.org/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Python_site"
+literal "false"
+
+\end_inset
+
+, а
+\begin_inset space ~
+\end_inset
+
+также погружения в
+\begin_inset space ~
+\end_inset
+
+мир анализа данных, искусственного интеллекта и
+\begin_inset space ~
+\end_inset
+
+машинного обучения.
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:1_Foreword-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Технологическая основа
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:2-Tech_base"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Параметры использованного оборудования и
+\begin_inset space ~
+\end_inset
+
+программного обеспечения
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:2.1-Hard&Software"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+При
+\begin_inset space ~
+\end_inset
+
+выполнении всех описанных в
+\begin_inset space ~
+\end_inset
+
+данной работе процедур, равно как
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+написании её
+\begin_inset space ~
+\end_inset
+
+текста использовалась следующая конфигурация оборудования.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:hardware_config"
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Параметры использованного оборудования 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+№
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Категория
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Модель (характеристика)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Источник
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Процессор
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "4 × Intel ® Core ™ i7-7500U CPU @ 2.70GHz"
+target "https://ark.intel.com/content/www/ru/ru/ark/products/95451/intel-core-i7-7500u-processor-4m-cache-up-to-3-50-ghz.html"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Intel_i7_7500U"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Память
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11741076B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+При
+\begin_inset space ~
+\end_inset
+
+выполнении всех описанных в
+\begin_inset space ~
+\end_inset
+
+данной работе процедур, равно как
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+написании её
+\begin_inset space ~
+\end_inset
+
+текста использовалась следующая конфигурация программного обеспечения.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:software_config"
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Параметры использованного программного обеспечения
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+№
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Категория/наименование
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Значение/версия
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Источник
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Операционная система
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "Kubuntu 20.04"
+target "https://kubuntu.org/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kubuntu:official_site"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+KDE Plasma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "5.18.5"
+target "https://kde.org/plasma-desktop/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "KDE_plasma:official_site"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+KDE Frameworks
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "5.68.0"
+target "https://kde.org/plasma-desktop/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "KDE_plasma:official_site"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Qt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "5.12.8"
+target "https://www.qt.io/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Qt:official_site"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "4.1.1 (2021-08-10) \"--- \"Kick Things\""
+target "https://www.r-project.org/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "R_language"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RStudio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "1.4.1717"
+target "https://www.rstudio.com/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RStudio:official_site"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Git
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "2.25.1"
+target "https://git-scm.com/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Git:official_site"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Github Desktop
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "2.6.3-linux1"
+target "https://desktop.github.com/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GitHubDesktop:official_page"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Как
+\begin_inset space ~
+\end_inset
+
+видно из
+\begin_inset space ~
+\end_inset
+
+таблиц
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:hardware_config"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:software_config"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ для
+\begin_inset space ~
+\end_inset
+
+анализа данных и
+\begin_inset space ~
+\end_inset
+
+разработки систем поддержки принятия решений на
+\begin_inset space ~
+\end_inset
+
+основе искусственного интеллекта вполне достаточно оборудования, обладающего
+ средними характеристиками, а
+\begin_inset space ~
+\end_inset
+
+также свободных программных средств.
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:2.1-Hard&Software-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Обоснование выбора языков R и
+\begin_inset space ~
+\end_inset
+
+Python в
+\begin_inset space ~
+\end_inset
+
+качестве средства анализа данных
+\end_layout
+
+\begin_layout Standard
+End
+\end_layout
+
+\begin_layout Section
+Система контроля версий Git
+\end_layout
+
+\begin_layout Section
+Установка и
+\begin_inset space ~
+\end_inset
+
+настройка
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:2-Tech_base-End"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
