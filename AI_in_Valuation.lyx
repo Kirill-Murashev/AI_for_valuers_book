@@ -6897,6 +6897,17 @@ name "subsec:2.2.2-R_vs_Python"
 
 \end_layout
 
+\begin_layout Subsubsection
+Общие моменты
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.2.2.1-R&P-common"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 Можно с
 \begin_inset space ~
@@ -7931,7 +7942,50 @@ R
 \lang american
 R
 \lang russian
- является огромное количество библиотек и
+ является огромное количество библиотек
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+По
+\begin_inset space ~
+\end_inset
+
+состоянию на
+\begin_inset space ~
+\end_inset
+
+24 августа 2021 существует 18089 официальных библиотек, содержащихся на
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "официальной странице"
+target "https://cran.r-project.org/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CRAN:official_page"
+literal "false"
+
+\end_inset
+
+ проекта.
+\end_layout
+
+\end_inset
+
+ и
 \begin_inset space ~
 \end_inset
 
@@ -8033,14 +8087,368 @@ Python
 \end_inset
 
 уступающую, например С++.
- 
 \end_layout
 
 \begin_layout Standard
-End
+К
+\begin_inset space ~
+\end_inset
+
+недостаткам 
+\lang american
+Python
+\lang russian
+ можно отнести меньшее число библиотек, содержащих статистические процедуры.
+ Кроме того, нет
+\begin_inset space ~
+\end_inset
+
+такой
+\begin_inset space ~
+\end_inset
+
+же уверенности в
+\begin_inset space ~
+\end_inset
+
+безупречности их
+\begin_inset space ~
+\end_inset
+
+алгоритмов.
+ При
+\begin_inset space ~
+\end_inset
+
+этом следует отметить, что
+\begin_inset space ~
+\end_inset
+
+подобные риски присутствуют лишь в
+\begin_inset space ~
+\end_inset
+
+новых библиотеках, реализующих экспериментальные либо экзотические статистически
+е процедуры.
+ Для
+\begin_inset space ~
+\end_inset
+
+целей оценки как
+\begin_inset space ~
+\end_inset
+
+правило вполне достаточно уже
+\begin_inset space ~
+\end_inset
+
+относительно отработанных и
+\begin_inset space ~
+\end_inset
+
+проверенных библиотек.
+\end_layout
+
+\begin_layout Standard
+Подводя итог, можно сказать, что
+\begin_inset space ~
+\end_inset
+
+нет
+\begin_inset space ~
+\end_inset
+
+однозначного ответа, какой из
+\begin_inset space ~
+\end_inset
+
+вышеупомянутых языков является предпочтительным для
+\begin_inset space ~
+\end_inset
+
+целей анализа данных в
+\begin_inset space ~
+\end_inset
+
+оценке.
+ 
+\lang american
+R
+\lang russian
+ развивается, оптимизируется и
+\begin_inset space ~
+\end_inset
+
+всё больше избавляется от
+\begin_inset space ~
+\end_inset
+
+«детских болезней» неоптимизированности, для
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Python
+\lang russian
+ создаются новые мощные библиотеки статистического анализа.
+ Поэтому вопрос остаётся открытым.
+\end_layout
+
+\begin_layout Standard
+Следует кратко упомянуть о
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+помимо 
+\lang american
+R
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Python
+\lang russian
+ в
+\begin_inset space ~
+\end_inset
+
+целях анализа данных также используются вендорские программные продукты
+ такие как
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+
+\begin_inset CommandInset href
+LatexCommand href
+name "SAS"
+target "https://www.sas.com/en_us/home.html"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SAS:official_site"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "SPSS"
+target "https://www.ibm.com/products/spss-statistics"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SPSS:official_site"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Statistica"
+target "https://www.statistica.com/en/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Statistica:official_site"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Minitab"
+target "https://www.minitab.com/en-us/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Minitab:official_site"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Stata"
+target "https://www.stata.com/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Stata:0fficial_site"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Eviews"
+target "https://www.eviews.com/home.html"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Eviews:official_site"
+literal "false"
+
+\end_inset
+
+
+\lang russian
+ и
+\begin_inset space ~
+\end_inset
+
+ряд других.
+ Однако все
+\begin_inset space ~
+\end_inset
+
+они
+\begin_inset space ~
+\end_inset
+
+являются платными, при
+\begin_inset space ~
+\end_inset
+
+этом стоимость лицензии на
+\begin_inset space ~
+\end_inset
+
+самый мощный из
+\begin_inset space ~
+\end_inset
+
+них — 
+\lang american
+SAS
+\lang russian
+ начинается, как
+\begin_inset space ~
+\end_inset
+
+правило, от
+\begin_inset space ~
+\end_inset
+
+нескольких десятков тысяч долларов.
+ В
+\begin_inset space ~
+\end_inset
+
+остальном, кроме привычного для
+\begin_inset space ~
+\end_inset
+
+большинства пользователей графического интерфейса они
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+имеют явных преимуществ перед 
+\lang american
+R
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Python
+\lang russian
+, предоставляя при
+\begin_inset space ~
+\end_inset
+
+этом даже меньше возможностей.
+ 
 \begin_inset CommandInset label
 LatexCommand label
-name "subsec:2.2.2-R_vs_Python-End"
+name "subsubsec:2.2.2.1-R&P-common-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Современное состояние
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.2.2.2-R&P-current"
 
 \end_inset
 
@@ -8048,7 +8456,467 @@ name "subsec:2.2.2-R_vs_Python-End"
 \end_layout
 
 \begin_layout Standard
-End
+Вышеприведённый текст, содержащийся в
+\begin_inset space ~
+\end_inset
+
+предыдущей секции (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsubsec:2.2.2.1-R&P-common"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) был написан автором в
+\begin_inset space ~
+\end_inset
+
+2019
+\begin_inset space ~
+\end_inset
+
+году.
+ За
+\begin_inset space ~
+\end_inset
+
+прошедший период произошли некоторые изменения, требующие внимания.
+ В
+\begin_inset space ~
+\end_inset
+
+настоящее время 
+\lang american
+Python
+\lang russian
+ серьёзно опережает 
+\lang american
+R
+\begin_inset space ~
+\end_inset
+
+
+\lang russian
+по
+\begin_inset space ~
+\end_inset
+
+распространённости в
+\begin_inset space ~
+\end_inset
+
+среде аналитиков данных.
+ Можно говорить о
+\begin_inset space ~
+\end_inset
+
+некотором консенсусе, согласно которому 
+\lang american
+R
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+является средством разработки и
+\begin_inset space ~
+\end_inset
+
+анализа данных для
+\begin_inset space ~
+\end_inset
+
+научных целей, тогда
+\begin_inset space ~
+\end_inset
+
+как
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Python
+\lang russian
+ применяется в
+\begin_inset space ~
+\end_inset
+
+бизнес среде.
+ Несмотря на
+\begin_inset space ~
+\end_inset
+
+это, автор считает, что
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+целях анализа данных данные языки вполне взаимозаменяемы.
+ Некоторые библиотеки портированы из
+\begin_inset space ~
+\end_inset
+
+одного из
+\begin_inset space ~
+\end_inset
+
+них в
+\begin_inset space ~
+\end_inset
+
+другой.
+ При
+\begin_inset space ~
+\end_inset
+
+этом нельзя не
+\begin_inset space ~
+\end_inset
+
+признать, что
+\begin_inset space ~
+\end_inset
+
+за
+\begin_inset space ~
+\end_inset
+
+последние годы 
+\lang american
+R
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+существенно сдал позиции в
+\begin_inset space ~
+\end_inset
+
+пользу 
+\lang american
+Python
+\lang russian
+.
+ В
+\begin_inset space ~
+\end_inset
+
+особенности это
+\begin_inset space ~
+\end_inset
+
+справедливо именно для
+\begin_inset space ~
+\end_inset
+
+российского рынка разработки систем анализа данных.
+ Определённый пик интереса к
+\begin_inset space ~
+\end_inset
+
+R в
+\begin_inset space ~
+\end_inset
+
+России имел место в
+\begin_inset space ~
+\end_inset
+
+2015–2017 годах, после чего его
+\begin_inset space ~
+\end_inset
+
+популярность пошла на
+\begin_inset space ~
+\end_inset
+
+спад.
+ В
+\begin_inset space ~
+\end_inset
+
+мире пик интереса к
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+R
+\lang russian
+ пришёлся на
+\begin_inset space ~
+\end_inset
+
+2016–2018 годы после чего его
+\begin_inset space ~
+\end_inset
+
+популярность стабилизировалась.
+ Язык продолжает активно развивается.
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+российской практике коммерческого анализа данных его
+\begin_inset space ~
+\end_inset
+
+заказчики, как
+\begin_inset space ~
+\end_inset
+
+правило, требуют реализации на
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Python
+\lang russian
+, применение вместо него 
+\lang american
+R
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+чаще всего приходится обосновывать отдельно.
+ Таким образом, можно говорить о
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+применение 
+\lang american
+Python
+\lang russian
+ де
+\begin_inset space ~
+\end_inset
+
+факто является стандартом.
+ Кроме того, продвижению 
+\lang american
+Python
+\lang russian
+ во
+\begin_inset space ~
+\end_inset
+
+всём мире способствует позиция компаний интернет-гигантов, использующих
+ его
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+своих системах машинного обучения.
+ Следующим фактором успеха 
+\lang american
+Python
+\lang russian
+ является его
+\begin_inset space ~
+\end_inset
+
+широкое распространение в
+\begin_inset space ~
+\end_inset
+
+теме разработки нейронных сетей, также являющееся следствием практик крупных
+ IT-компаний.
+ Также 
+\lang american
+Python
+\lang russian
+ широко распространён и
+\begin_inset space ~
+\end_inset
+
+за
+\begin_inset space ~
+\end_inset
+
+пределами области анализа данных, что
+\begin_inset space ~
+\end_inset
+
+означает существенно большее число специалистов, владеющих им.
+ При
+\begin_inset space ~
+\end_inset
+
+этом для
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+R
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+разработан ряд уникальных отраслевых библиотек, содержащих специфические
+ функции.
+ 
+\lang american
+R
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+безоговорочно лидирует в
+\begin_inset space ~
+\end_inset
+
+области биоинформатики, моделирования химических процессов, социологии.
+\end_layout
+
+\begin_layout Standard
+При
+\begin_inset space ~
+\end_inset
+
+этом, R
+\begin_inset space ~
+\end_inset
+
+по-прежнему предоставляет существенно более широкие возможности визуализации,
+ а
+\begin_inset space ~
+\end_inset
+
+также позволяет легко разрабатывать веб-интерфейсы посредством 
+\lang american
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Shiny"
+target "https://shiny.rstudio.com/"
+literal "false"
+
+\end_inset
+
+
+\lang russian
+.
+ R
+\begin_inset space ~
+\end_inset
+
+имеет отличный инструмент написания документации к
+\begin_inset space ~
+\end_inset
+
+коду в
+\begin_inset space ~
+\end_inset
+
+процессе разработки самого кода — 
+\lang american
+
+\begin_inset CommandInset href
+LatexCommand href
+name "R Markdown"
+target "https://rmarkdown.rstudio.com/"
+literal "false"
+
+\end_inset
+
+
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Подводя итоги, можно сказать о
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+современным оценщикам следует иметь навыки разработки и
+\begin_inset space ~
+\end_inset
+
+анализа данных с
+\begin_inset space ~
+\end_inset
+
+использованием обоих этих языков: R
+\begin_inset space ~
+\end_inset
+
+поможет применять самые свежие методы и
+\begin_inset space ~
+\end_inset
+
+создавать качественные понятные пользователям описания и
+\begin_inset space ~
+\end_inset
+
+визуализации, Python пригодится там, где
+\begin_inset space ~
+\end_inset
+
+требуется разработка серьёзной промышленной системы, предназначенной для
+\begin_inset space ~
+\end_inset
+
+многократного выполнения одинаковых задач.
+ В
+\begin_inset space ~
+\end_inset
+
+целом
+\begin_inset space ~
+\end_inset
+
+же можно повторить основной тезис: данные языки в
+\begin_inset space ~
+\end_inset
+
+существенной степени взаимозаменяемы.
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.2.2.2-R&P-current-End"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.2.2-R_vs_Python-End"
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:2.2-R&Python_choose-End"
