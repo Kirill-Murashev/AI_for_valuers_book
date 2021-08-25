@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 1018 1064" xmlns:latexdraw="http://latexdraw.sourceforge.net/namespaces/latexdraw" version="1.1" baseProfile="full">
+    <g>
+        <g latexdraw:type="square" id="id1855646527">
+            <rect x="393.5" y="361.0" width="264.5" height="264.5" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id1839909971" fill="black" latexdraw:position="bl">
+            <text x="464.0" y="382.0">Central server</text>
+        </g>
+        <g latexdraw:type="text" id="id966848963" fill="black" latexdraw:position="bl">
+            <text x="456.0" y="424.0">Version database</text>
+        </g>
+        <g latexdraw:type="text" id="id207765470" fill="black" latexdraw:position="bl">
+            <text x="484.0" y="473.0">Version 3</text>
+        </g>
+        <g latexdraw:type="text" id="id324810584" fill="black" latexdraw:position="bl">
+            <text x="484.0" y="518.0">Version 2</text>
+        </g>
+        <g latexdraw:type="text" id="id1649498810" fill="black" latexdraw:position="bl">
+            <text x="487.0" y="563.0">Version 1</text>
+        </g>
+        <g latexdraw:type="text" id="id2057398064" fill="black" latexdraw:position="bl">
+            <text x="487.0" y="606.0">Version 0</text>
+        </g>
+        <g latexdraw:type="ellipse" id="id909873755">
+            <ellipse cx="523.0" cy="465.5" rx="56.0" ry="11.5" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id1439232252">
+            <ellipse cx="522.0" cy="512.0" rx="56.0" ry="15.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id2019588360">
+            <ellipse cx="519.5" cy="558.0" rx="55.5" ry="15.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id644790794">
+            <ellipse cx="523.5" cy="603.0" rx="60.5" ry="17.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1164777018">
+            <polyline points="519.0,477.0 519.0,495.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id962969966">
+            <polyline points="523.0,528.0 523.0,543.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1867905305">
+            <polyline points="520.0,573.0 520.0,585.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id1255436412">
+            <rect x="445.0" y="408.0" width="159.0" height="214.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id1516066454" fill="black" latexdraw:position="bl">
+            <text x="807.0" y="366.0">Computer 4</text>
+        </g>
+        <g latexdraw:type="text" id="id458344997" fill="black" latexdraw:position="bl">
+            <text x="833.0" y="403.0">File</text>
+        </g>
+        <g latexdraw:type="text" id="id833568108" fill="black" latexdraw:position="bl">
+            <text x="796.0" y="433.0">Version database</text>
+        </g>
+        <g latexdraw:type="text" id="id885107110" fill="black" latexdraw:position="bl">
+            <text x="814.0" y="470.0">Version 3</text>
+        </g>
+        <g latexdraw:type="text" id="id1227883529" fill="black" latexdraw:position="bl">
+            <text x="814.0" y="518.0">Version 2</text>
+        </g>
+        <g latexdraw:type="text" id="id783135509" fill="black" latexdraw:position="bl">
+            <text x="814.0" y="561.0">Version 1</text>
+        </g>
+        <g latexdraw:type="text" id="id117588173" fill="black" latexdraw:position="bl">
+            <text x="814.0" y="610.0">Version 0</text>
+        </g>
+        <g latexdraw:type="ellipse" id="id1283655548">
+            <ellipse cx="851.0" cy="602.5" rx="48.0" ry="13.5" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id1717276446">
+            <ellipse cx="851.5" cy="556.0" rx="42.5" ry="16.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id1415378714">
+            <ellipse cx="851.0" cy="509.0" rx="55.0" ry="15.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id1816865791">
+            <ellipse cx="855.5" cy="464.0" rx="49.5" ry="14.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id538885282">
+            <ellipse cx="851.5" cy="391.5" rx="51.5" ry="15.5" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id2065821341">
+            <rect x="741.0" y="318.0" width="236.0" height="323.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id444054914">
+            <rect x="780.0" y="408.0" width="155.0" height="214.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id1757962751">
+            <rect x="1.0" y="1.0" width="1.0" height="1.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id1266339912" fill="black" latexdraw:position="bl">
+            <text x="465.0" y="50.0">Computer 1</text>
+        </g>
+        <g latexdraw:type="text" id="id1588869321" fill="black" latexdraw:position="bl">
+            <text x="491.0" y="87.0">File</text>
+        </g>
+        <g latexdraw:type="text" id="id1328197657" fill="black" latexdraw:position="bl">
+            <text x="454.0" y="117.0">Version database</text>
+        </g>
+        <g latexdraw:type="text" id="id1047650663" fill="black" latexdraw:position="bl">
+            <text x="472.0" y="154.0">Version 3</text>
+        </g>
+        <g latexdraw:type="text" id="id596942449" fill="black" latexdraw:position="bl">
+            <text x="472.0" y="202.0">Version 2</text>
+        </g>
+        <g latexdraw:type="text" id="id1553565882" fill="black" latexdraw:position="bl">
+            <text x="472.0" y="245.0">Version 1</text>
+        </g>
+        <g latexdraw:type="text" id="id1185497416" fill="black" latexdraw:position="bl">
+            <text x="472.0" y="294.0">Version 0</text>
+        </g>
+        <g latexdraw:type="ellipse" id="id2011359779">
+            <ellipse cx="509.0" cy="286.5" rx="48.0" ry="13.5" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id1887606200">
+            <ellipse cx="509.5" cy="240.0" rx="42.5" ry="16.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id1615732554">
+            <ellipse cx="509.0" cy="193.0" rx="55.0" ry="15.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id1826730250">
+            <ellipse cx="513.5" cy="148.0" rx="49.5" ry="14.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id204668231">
+            <ellipse cx="509.5" cy="75.5" rx="51.5" ry="15.5" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id1752794668">
+            <rect x="360.0" y="2.0" width="236.0" height="323.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id2027778086">
+            <rect x="438.0" y="92.0" width="155.0" height="214.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id974599445" fill="black" latexdraw:position="bl">
+            <text x="131.0" y="385.0">Computer 2</text>
+        </g>
+        <g latexdraw:type="text" id="id1536207828" fill="black" latexdraw:position="bl">
+            <text x="157.0" y="422.0">File</text>
+        </g>
+        <g latexdraw:type="text" id="id1428248360" fill="black" latexdraw:position="bl">
+            <text x="120.0" y="452.0">Version database</text>
+        </g>
+        <g latexdraw:type="text" id="id1676237595" fill="black" latexdraw:position="bl">
+            <text x="138.0" y="489.0">Version 3</text>
+        </g>
+        <g latexdraw:type="text" id="id1616209390" fill="black" latexdraw:position="bl">
+            <text x="138.0" y="537.0">Version 2</text>
+        </g>
+        <g latexdraw:type="text" id="id1053146171" fill="black" latexdraw:position="bl">
+            <text x="138.0" y="580.0">Version 1</text>
+        </g>
+        <g latexdraw:type="text" id="id1627530460" fill="black" latexdraw:position="bl">
+            <text x="138.0" y="629.0">Version 0</text>
+        </g>
+        <g latexdraw:type="ellipse" id="id1218087524">
+            <ellipse cx="175.0" cy="621.5" rx="48.0" ry="13.5" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id61598860">
+            <ellipse cx="175.5" cy="575.0" rx="42.5" ry="16.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id270314662">
+            <ellipse cx="175.0" cy="528.0" rx="55.0" ry="15.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id1623744189">
+            <ellipse cx="179.5" cy="483.0" rx="49.5" ry="14.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id2090676586">
+            <ellipse cx="175.5" cy="410.5" rx="51.5" ry="15.5" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id537816569">
+            <rect x="65.0" y="337.0" width="236.0" height="323.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id1426234562">
+            <rect x="104.0" y="427.0" width="155.0" height="214.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id1584147088" fill="black" latexdraw:position="bl">
+            <text x="466.0" y="763.0">Computer 3</text>
+        </g>
+        <g latexdraw:type="text" id="id1963176010" fill="black" latexdraw:position="bl">
+            <text x="492.0" y="800.0">File</text>
+        </g>
+        <g latexdraw:type="text" id="id1410959329" fill="black" latexdraw:position="bl">
+            <text x="455.0" y="830.0">Version database</text>
+        </g>
+        <g latexdraw:type="text" id="id2038130522" fill="black" latexdraw:position="bl">
+            <text x="473.0" y="867.0">Version 3</text>
+        </g>
+        <g latexdraw:type="text" id="id1182591567" fill="black" latexdraw:position="bl">
+            <text x="473.0" y="915.0">Version 2</text>
+        </g>
+        <g latexdraw:type="text" id="id773165866" fill="black" latexdraw:position="bl">
+            <text x="473.0" y="958.0">Version 1</text>
+        </g>
+        <g latexdraw:type="text" id="id917192582" fill="black" latexdraw:position="bl">
+            <text x="473.0" y="1007.0">Version 0</text>
+        </g>
+        <g latexdraw:type="ellipse" id="id348708798">
+            <ellipse cx="510.0" cy="999.5" rx="48.0" ry="13.5" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id902263290">
+            <ellipse cx="510.5" cy="953.0" rx="42.5" ry="16.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id935930027">
+            <ellipse cx="510.0" cy="906.0" rx="55.0" ry="15.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id1483831003">
+            <ellipse cx="514.5" cy="861.0" rx="49.5" ry="14.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="ellipse" id="id177633092">
+            <ellipse cx="510.5" cy="788.5" rx="51.5" ry="15.5" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id72392525">
+            <rect x="374.0" y="700.0" width="236.0" height="323.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id2057466652">
+            <rect x="439.0" y="805.0" width="155.0" height="214.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id2063215949">
+            <polyline points="845.0,315.0 596.0,161.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-start="url(#arrow0-2063215949)" marker-end="url(#arrow1-2063215949)"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id727750668">
+            <polyline points="356.0,173.0 205.0,338.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-start="url(#arrow0-727750668)" marker-end="url(#arrow1-727750668)"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1412169017">
+            <polyline points="185.0,661.0 374.0,792.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-start="url(#arrow0-1412169017)" marker-end="url(#arrow1-1412169017)"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id152283082">
+            <polyline points="609.0,800.0 837.0,641.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-start="url(#arrow0-152283082)" marker-end="url(#arrow1-152283082)"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1818590779">
+            <polyline points="513.0,325.0 512.0,360.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-start="url(#arrow0-1818590779)" marker-end="url(#arrow1-1818590779)"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id184428071">
+            <polyline points="650.0,493.0 742.0,494.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-start="url(#arrow0-184428071)" marker-end="url(#arrow1-184428071)"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1446172248">
+            <polyline points="301.5,489.0 400.0,489.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-start="url(#arrow0-1446172248)" marker-end="url(#arrow1-1446172248)"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1295572914">
+            <polyline points="510.0,633.0 510.0,716.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-start="url(#arrow0-1295572914)" marker-end="url(#arrow1-1295572914)"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id773364695">
+            <polyline points="301.0,641.0 746.0,633.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-start="url(#arrow0-773364695)" marker-end="url(#arrow1-773364695)"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1831047292">
+            <polyline points="375.0,326.0 376.0,703.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-start="url(#arrow0-1831047292)" marker-end="url(#arrow1-1831047292)"/>
+        </g>
+    </g>
+    <defs>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="31.736" id="arrow0-2063215949">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="211.736" id="arrow1-2063215949">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="312.463" id="arrow0-727750668">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="132.463" id="arrow1-727750668">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="214.727" id="arrow0-1412169017">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="34.727" id="arrow1-1412169017">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="145.109" id="arrow0-152283082">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="325.109" id="arrow1-152283082">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="271.637" id="arrow0-1818590779">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="91.637" id="arrow1-1818590779">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="180.623" id="arrow0-184428071">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="0.623" id="arrow1-184428071">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="180" id="arrow0-1446172248">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="auto" id="arrow1-1446172248">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="270" id="arrow0-1295572914">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="90" id="arrow1-1295572914">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="178.97" id="arrow0-773364695">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="358.97" id="arrow1-773364695">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="269.848" id="arrow0-1831047292">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="89.848" id="arrow1-1831047292">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+    </defs>
+    <metadata>
+        <latexdraw:metadata>
+            <latexdraw:centreHoriz>false</latexdraw:centreHoriz>
+            <latexdraw:positionVert/>
+            <latexdraw:zoom>1.0</latexdraw:zoom>
+            <latexdraw:vpx>0.5</latexdraw:vpx>
+            <latexdraw:vpy>0.427</latexdraw:vpy>
+        </latexdraw:metadata>
+    </metadata>
+</svg>

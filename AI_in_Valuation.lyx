@@ -31,6 +31,18 @@
 %\usepackage{fancyhdr}
 %\fancyhf{}% Clear header footer
 \usepackage{epigraph} % работа с эпиграфами
+%\usepackage[usenames,dvipsnames]{pstricks}
+%\usepackage{pstricks-add}
+%\usepackage{epsfig}
+%\usepackage{pst-grad} % For gradients
+%\usepackage{pst-plot} % For axes
+%\usepackage[space]{grffile} % For spaces in paths
+%\usepackage{etoolbox} % For spaces in paths
+%\makeatletter % For spaces in paths
+%\patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+%\makeatother
+%\usepackage{xspace}
+\setcounter{chapter}{0}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -2125,22 +2137,6 @@ LatexCommand tableofcontents
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "Basic_principles,LaTeX,Mathstat,Murashev,Python,R,RussianLaws,Sci&Tech,ValuationStandards,ZHZL"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-setcounter{chapter}{0}
-\end_layout
 
 \end_inset
 
@@ -8797,7 +8793,11 @@ R
 \begin_inset space ~
 \end_inset
 
-этом, R
+этом, 
+\lang american
+R
+\lang russian
+
 \begin_inset space ~
 \end_inset
 
@@ -8820,7 +8820,11 @@ literal "false"
 
 \lang russian
 .
- R
+ 
+\lang american
+R
+\lang russian
+
 \begin_inset space ~
 \end_inset
 
@@ -8869,7 +8873,11 @@ literal "false"
 \begin_inset space ~
 \end_inset
 
-использованием обоих этих языков: R
+использованием обоих этих языков: 
+\lang american
+R
+\lang russian
+
 \begin_inset space ~
 \end_inset
 
@@ -8881,7 +8889,11 @@ literal "false"
 \begin_inset space ~
 \end_inset
 
-визуализации, Python пригодится там, где
+визуализации, 
+\lang american
+Python
+\lang russian
+ пригодится там, где
 \begin_inset space ~
 \end_inset
 
@@ -8927,7 +8939,1515 @@ name "sec:2.2-R&Python_choose-End"
 \end_layout
 
 \begin_layout Section
-Система контроля версий Git
+Система контроля версий 
+\lang american
+Git
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:2.3_Git"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Данный раздел не
+\begin_inset space ~
+\end_inset
+
+имеет отношения непосредственно к
+\begin_inset space ~
+\end_inset
+
+анализу данных, однако содержит сведения, полезные для
+\begin_inset space ~
+\end_inset
+
+комфортной работы при
+\begin_inset space ~
+\end_inset
+
+его
+\begin_inset space ~
+\end_inset
+
+осуществлении.
+ Кроме того, использование систем контроля версий де
+\begin_inset space ~
+\end_inset
+
+факто является стандартом при
+\begin_inset space ~
+\end_inset
+
+любой серьёзной разработке, особенно в
+\begin_inset space ~
+\end_inset
+
+случае совместной работы над
+\begin_inset space ~
+\end_inset
+
+одним проектом нескольких аналитиков.
+\end_layout
+
+\begin_layout Standard
+Система 
+\lang american
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Git"
+target "https://git-scm.com/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Git:official_site"
+literal "false"
+
+\end_inset
+
+
+\lang russian
+ — это
+\begin_inset space ~
+\end_inset
+
+одна из
+\begin_inset space ~
+\end_inset
+
+систем контроля версий.
+ Система контроля версий — это
+\begin_inset space ~
+\end_inset
+
+система, записывающая изменения в
+\begin_inset space ~
+\end_inset
+
+файл или
+\begin_inset space ~
+\end_inset
+
+набор файлов в
+\begin_inset space ~
+\end_inset
+
+течение времени и
+\begin_inset space ~
+\end_inset
+
+позволяющая вернуться позже к
+\begin_inset space ~
+\end_inset
+
+определённой версии.
+ Как
+\begin_inset space ~
+\end_inset
+
+правило подразумевается контроль версий файлов, содержащих исходный код
+ программного обеспечения, хотя возможен контроль версий практически любых
+ типов файлов
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Git:Book"
+literal "false"
+
+\end_inset
+
+.
+ Такие системы позволяют не
+\begin_inset space ~
+\end_inset
+
+только хранить версии файлов, но
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+содержат всю
+\begin_inset space ~
+\end_inset
+
+историю их
+\begin_inset space ~
+\end_inset
+
+изменения, позволяя отслеживать пошаговое изменение каждого бита файла.
+ Это
+\begin_inset space ~
+\end_inset
+
+бывает особенно полезно в
+\begin_inset space ~
+\end_inset
+
+тех
+\begin_inset space ~
+\end_inset
+
+случаях, когда необходимо иметь возможность 
+\begin_inset Quotes xld
+\end_inset
+
+откатить
+\begin_inset Quotes xrd
+\end_inset
+
+ изменения в
+\begin_inset space ~
+\end_inset
+
+случае наличия в
+\begin_inset space ~
+\end_inset
+
+них ошибок либо тогда, когда над
+\begin_inset space ~
+\end_inset
+
+одним и
+\begin_inset space ~
+\end_inset
+
+тем
+\begin_inset space ~
+\end_inset
+
+же проектом работает несколько разработчиков либо их
+\begin_inset space ~
+\end_inset
+
+команд.
+ Конечно
+\begin_inset space ~
+\end_inset
+
+же можно просто создавать полные копии всех файлов проекта.
+ Однако данный способ полезен лишь для
+\begin_inset space ~
+\end_inset
+
+создания бэкапов на
+\begin_inset space ~
+\end_inset
+
+случай каких-то аварийных ситуаций.
+ В
+\begin_inset space ~
+\end_inset
+
+обычной работе он, как
+\begin_inset space ~
+\end_inset
+
+минимум, неудобен, а, как
+\begin_inset space ~
+\end_inset
+
+максимум, просто не
+\begin_inset space ~
+\end_inset
+
+способен обеспечить пошаговое отслеживание изменений файлов и
+\begin_inset space ~
+\end_inset
+
+тем более слияние результатов нескольких команд, параллельно работающих
+ над
+\begin_inset space ~
+\end_inset
+
+одними и
+\begin_inset space ~
+\end_inset
+
+теми
+\begin_inset space ~
+\end_inset
+
+же файлами.
+ Для
+\begin_inset space ~
+\end_inset
+
+решения данной проблемы были разработаны локальные системы контроля версий,
+ содержащие базу данных всех изменений в
+\begin_inset space ~
+\end_inset
+
+файлах, примерная схема организации которых показана на
+\begin_inset space ~
+\end_inset
+
+рисунке
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "draw:local-vcs"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Локальная система контроля версий
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "draw:local-vcs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/2/local-vcs.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Современные системы контроля версия бывают централизованными и
+\begin_inset space ~
+\end_inset
+
+распределёнными.
+ Первые устроены таким образом, что
+\begin_inset space ~
+\end_inset
+
+вся
+\begin_inset space ~
+\end_inset
+
+история изменений файлов хранится на
+\begin_inset space ~
+\end_inset
+
+центральном сервере, на
+\begin_inset space ~
+\end_inset
+
+который пользователи отправляют свои изменения, и
+\begin_inset space ~
+\end_inset
+
+с
+\begin_inset space ~
+\end_inset
+
+которого они
+\begin_inset space ~
+\end_inset
+
+их получают.
+ Общая схема работы централизованной системы контроля версий приведена на
+\begin_inset space ~
+\end_inset
+
+рисунке
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "draw:central-vcs"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Недостатком такой системы являет её
+\begin_inset space ~
+\end_inset
+
+зависимость от
+\begin_inset space ~
+\end_inset
+
+работы центрального сервера.
+ В
+\begin_inset space ~
+\end_inset
+
+случае его
+\begin_inset space ~
+\end_inset
+
+остановки пользователи не
+\begin_inset space ~
+\end_inset
+
+смогут обрабатывать изменения, принимать и
+\begin_inset space ~
+\end_inset
+
+отправлять их.
+ Также существует риск полной потери всей истории в
+\begin_inset space ~
+\end_inset
+
+случае окончательного отказа сервера.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Схема работы централизованной системы контроля версий
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "draw:central-vcs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/2/central-vcs.pdf
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Распределённые системы контроля версия лишены данного недостатка, поскольку
+ у
+\begin_inset space ~
+\end_inset
+
+каждого пользователя хранится полная история изменений.
+ В
+\begin_inset space ~
+\end_inset
+
+связи с
+\begin_inset space ~
+\end_inset
+
+этим каждый пользователь может продолжать работать с
+\begin_inset space ~
+\end_inset
+
+системой контроля при
+\begin_inset space ~
+\end_inset
+
+отсутствии связи с
+\begin_inset space ~
+\end_inset
+
+сервером.
+ После восстановления работоспособности последнего, пользователь сможет
+ синхронизировать свою историю изменений с
+\begin_inset space ~
+\end_inset
+
+другими разработчиками.
+ Даже в
+\begin_inset space ~
+\end_inset
+
+случае полного отказа сервера команда сможет просто перевести хранение на
+\begin_inset space ~
+\end_inset
+
+другой и
+\begin_inset space ~
+\end_inset
+
+продолжить работу в
+\begin_inset space ~
+\end_inset
+
+прежнем режиме.
+ Общая схема работы распределённой системы приведена на
+\begin_inset space ~
+\end_inset
+
+рисунке
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "draw:distrib-vcs"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Схема работы распределённой системы контроля версий
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "draw:distrib-vcs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/2/distrib-vcs.pdf
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Особенностью работы системы 
+\lang american
+Git
+\lang russian
+ является заложенный в
+\begin_inset space ~
+\end_inset
+
+ней принцип работы.
+ В
+\begin_inset space ~
+\end_inset
+
+отличие от
+\begin_inset space ~
+\end_inset
+
+некоторых других систем контроля версий, принцип которых основан на
+\begin_inset space ~
+\end_inset
+
+хранении исходного файла и
+\begin_inset space ~
+\end_inset
+
+списка изменений к
+\begin_inset space ~
+\end_inset
+
+нему, 
+\lang american
+Git
+\lang russian
+ хранит состояние каждого файла после его
+\begin_inset space ~
+\end_inset
+
+сохранения, создавая его
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes xld
+\end_inset
+
+снимок
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ В
+\begin_inset space ~
+\end_inset
+
+терминологии 
+\lang american
+Git
+\lang russian
+ каждый такой снимок называется 
+\lang american
+commit
+\lang russian
+.
+ При
+\begin_inset space ~
+\end_inset
+
+этом создаются ссылки на
+\begin_inset space ~
+\end_inset
+
+каждый из
+\begin_inset space ~
+\end_inset
+
+файлов.
+ В
+\begin_inset space ~
+\end_inset
+
+случае, если при
+\begin_inset space ~
+\end_inset
+
+создании нового 
+\lang american
+commit
+\lang russian
+ 
+\lang american
+Git
+\lang russian
+ обнаруживает, что
+\begin_inset space ~
+\end_inset
+
+какие-то файлы не
+\begin_inset space ~
+\end_inset
+
+были изменены, система не
+\begin_inset space ~
+\end_inset
+
+включает сами файлы в
+\begin_inset space ~
+\end_inset
+
+новый 
+\lang american
+commit
+\lang russian
+, а
+\begin_inset space ~
+\end_inset
+
+лишь указывает ссылку на
+\begin_inset space ~
+\end_inset
+
+последнее актуальное состояние файла из
+\begin_inset space ~
+\end_inset
+
+предыдущего 
+\lang american
+commit
+\lang russian
+, обеспечивая таким образом эффективность дискового пространства.
+ При
+\begin_inset space ~
+\end_inset
+
+этом каждый 
+\lang american
+commit
+\lang russian
+ в
+\begin_inset space ~
+\end_inset
+
+целом ссылается на
+\begin_inset space ~
+\end_inset
+
+предыдущий, являющийся для
+\begin_inset space ~
+\end_inset
+
+него родительским.
+ На
+\begin_inset space ~
+\end_inset
+
+рисунке
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "draw:git-scheme-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ показана общая схема работы системы Git.
+ Линиями со
+\begin_inset space ~
+\end_inset
+
+сплошным заполнение показана передача нового состояния файла, возникшего
+ в
+\begin_inset space ~
+\end_inset
+
+результате внесения в
+\begin_inset space ~
+\end_inset
+
+него изменений, прерывистым — передача ссылки на
+\begin_inset space ~
+\end_inset
+
+состояние файла, не
+\begin_inset space ~
+\end_inset
+
+подвергавшегося изменениям, из
+\begin_inset space ~
+\end_inset
+
+прежнего 
+\lang american
+commit
+\lang russian
+.
+ На
+\begin_inset space ~
+\end_inset
+
+момент времени 0 (
+\lang american
+initial commit
+\lang russian
+) все
+\begin_inset space ~
+\end_inset
+
+файлы находились в
+\begin_inset space ~
+\end_inset
+
+состоянии 0.
+ Затем в файлы 
+\lang american
+B
+\lang russian
+ и 
+\lang american
+C
+\lang russian
+ были внесены изменения, тогда как файл 
+\lang american
+A
+\lang russian
+ остался в
+\begin_inset space ~
+\end_inset
+
+прежнем состоянии.
+ В
+\begin_inset space ~
+\end_inset
+
+процессе создания 
+\lang american
+commit
+\lang russian
+ №
+\begin_inset space \thinspace{}
+\end_inset
+
+1 
+\lang american
+Git
+\lang russian
+ сделал снимок состояния файлов B1 и C1, а
+\begin_inset space ~
+\end_inset
+
+также создал ссылку на
+\begin_inset space ~
+\end_inset
+
+состояние файла A0.
+ Далее изменения были внесены в
+\begin_inset space ~
+\end_inset
+
+файл 
+\lang american
+B
+\lang russian
+.
+ В
+\begin_inset space ~
+\end_inset
+
+процессе создания 
+\lang american
+commit
+\lang russian
+ №
+\begin_inset space \thinspace{}
+\end_inset
+
+2 
+\lang american
+Git
+\lang russian
+ сохранил состояние файла B2, а
+\begin_inset space ~
+\end_inset
+
+также создал ссылки на
+\begin_inset space ~
+\end_inset
+
+состояния файлов A0 и
+\begin_inset space ~
+\end_inset
+
+C1 в
+\begin_inset space ~
+\end_inset
+
+предыдущем 
+\lang american
+commit
+\lang russian
+ №
+\begin_inset space \thinspace{}
+\end_inset
+
+1.
+ Затем были внесены изменения во
+\begin_inset space ~
+\end_inset
+
+все
+\begin_inset space ~
+\end_inset
+
+три файла, в
+\begin_inset space ~
+\end_inset
+
+результате чего на
+\begin_inset space ~
+\end_inset
+
+этапе создания 
+\lang american
+commit
+\lang russian
+ №
+\begin_inset space \thinspace{}
+\end_inset
+
+3 
+\lang american
+Git
+\lang russian
+ сделал снимок состояний всех трёх файлов.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Общая схема работы 
+\lang american
+Git
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "draw:git-scheme-1"
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Images/2/git-scheme-1.pdf
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Внимательный читатель скорее всего обратил внимание на
+\begin_inset space ~
+\end_inset
+
+третий тип линий — пунктир, которому соответствует подпись 
+\lang american
+
+\begin_inset Quotes xld
+\end_inset
+
+hash
+\lang russian
+
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ Чтобы понять, каким образом в
+\begin_inset space ~
+\end_inset
+
+
+\lang english
+Git
+\lang russian
+ реализуется целостность версий, необходимо обратиться к
+\begin_inset space ~
+\end_inset
+
+понятию 
+\begin_inset CommandInset href
+LatexCommand href
+name "хеш-функции"
+target "https://habr.com/en/post/534596/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Habr:hash,Wiki:hash"
+literal "false"
+
+\end_inset
+
+.
+ Приведём основные определения.
+\end_layout
+
+\begin_layout Description
+Хеш
+\begin_inset space ~
+\end_inset
+
+функция
+\begin_inset space ~
+\end_inset
+
+(функция
+\begin_inset space ~
+\end_inset
+
+свёртки) — функция, представляющая собой 
+\begin_inset CommandInset href
+LatexCommand href
+name "детерминированный математический алгоритм"
+target "https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:determined-algorithm"
+literal "false"
+
+\end_inset
+
+, осуществляющая преобразование данных произвольной длины в
+\begin_inset space ~
+\end_inset
+
+результирующую битовую строку установленной длины.
+\end_layout
+
+\begin_layout Description
+Хеширование — преобразование, осуществляемой хеш-функцией.
+\end_layout
+
+\begin_layout Description
+Сообщение
+\begin_inset space ~
+\end_inset
+
+(ключ,
+\begin_inset space ~
+\end_inset
+
+входной
+\begin_inset space ~
+\end_inset
+
+массив) — исходные данные.
+\end_layout
+
+\begin_layout Description
+Хеш
+\begin_inset space ~
+\end_inset
+
+(хеш-сумма,
+\begin_inset space ~
+\end_inset
+
+хеш-код,
+\begin_inset space ~
+\end_inset
+
+сводка
+\begin_inset space ~
+\end_inset
+
+сообщения) — результат хеширования.
+\end_layout
+
+\begin_layout Standard
+Согласно 
+\begin_inset CommandInset href
+LatexCommand href
+name "Принципу Дирихле"
+target "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF_%D0%94%D0%B8%D1%80%D0%B8%D1%85%D0%BB%D0%B5_(%D0%BA%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D0%BA%D0%B0)"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:Dirichlet-principle_komb"
+literal "false"
+
+\end_inset
+
+, между хешем и
+\begin_inset space ~
+\end_inset
+
+сообщением в
+\begin_inset space ~
+\end_inset
+
+общем отсутствует однозначное соответствие.
+ При
+\begin_inset space ~
+\end_inset
+
+этом, число возможных значений хеша меньше числа возможных значений сообщения.
+ Ситуация, при
+\begin_inset space ~
+\end_inset
+
+которой применение одной и
+\begin_inset space ~
+\end_inset
+
+той
+\begin_inset space ~
+\end_inset
+
+же хеш-функции к
+\begin_inset space ~
+\end_inset
+
+двум различным сообщениям приводит к
+\begin_inset space ~
+\end_inset
+
+одинаковому значению хеша, называется 
+\begin_inset Quotes xld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "коллизией хеш функции"
+target "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%BB%D0%B8%D0%B7%D0%B8%D1%8F_%D1%85%D0%B5%D1%88-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Quotes xrd
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:hash-collision"
+literal "false"
+
+\end_inset
+
+.
+ Т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+коллизия имеет место тогда, когда 
+\begin_inset Formula $H(x)=H(y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Теоретическая 
+\begin_inset Quotes xld
+\end_inset
+
+идеальная
+\begin_inset Quotes xrd
+\end_inset
+
+ хеш-функция отвечает следующим требованиям:
+\end_layout
+
+\begin_layout Enumerate
+является детерминированной, то
+\begin_inset space ~
+\end_inset
+
+есть её
+\begin_inset space ~
+\end_inset
+
+применение к
+\begin_inset space ~
+\end_inset
+
+одному и
+\begin_inset space ~
+\end_inset
+
+тому
+\begin_inset space ~
+\end_inset
+
+же
+\begin_inset space ~
+\end_inset
+
+сообщению приводит к
+\begin_inset space ~
+\end_inset
+
+одному и
+\begin_inset space ~
+\end_inset
+
+тому
+\begin_inset space ~
+\end_inset
+
+же значению хеша любое число раз;
+\end_layout
+
+\begin_layout Enumerate
+значение хеша быстро вычисляется для
+\begin_inset space ~
+\end_inset
+
+любого сообщения;
+\end_layout
+
+\begin_layout Enumerate
+зная значение хеша, невозможно определить значение сообщения;
+\end_layout
+
+\begin_layout Enumerate
+невозможно найти такие два разных сообщения, применение хеширование к
+\begin_inset space ~
+\end_inset
+
+которым приводило
+\begin_inset space ~
+\end_inset
+
+бы
+\begin_inset space ~
+\end_inset
+
+к
+\begin_inset space ~
+\end_inset
+
+одинаковому значению хеша
+\begin_inset space ~
+\end_inset
+
+(т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+идеальная хеш-функция исключает возможность возникновения коллизии);
+\end_layout
+
+\begin_layout Enumerate
+любое изменение сообщения (вплоть до
+\begin_inset space ~
+\end_inset
+
+изменения значения одного бита) изменяет хеш настолько сильно, что
+\begin_inset space ~
+\end_inset
+
+новое и
+\begin_inset space ~
+\end_inset
+
+старое значения выглядят никак не
+\begin_inset space ~
+\end_inset
+
+связанными друг с
+\begin_inset space ~
+\end_inset
+
+другом.
+\end_layout
+
+\begin_layout Standard
+Как
+\begin_inset space ~
+\end_inset
+
+правило название хеш-функции содержит значение длины результирующей битовой
+ строки.
+ Например хеш-функция SHA3-512 возвращает строку длиной в
+\begin_inset space ~
+\end_inset
+
+512
+\begin_inset space ~
+\end_inset
+
+бит.
+ Воспользуемся 
+\begin_inset CommandInset href
+LatexCommand href
+name "одним"
+target "https://emn178.github.io/online-tools/sha3_512.html"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hash:online"
+literal "false"
+
+\end_inset
+
+ из
+\begin_inset space ~
+\end_inset
+
+онлайн-сервисов вычисления хеша и
+\begin_inset space ~
+\end_inset
+
+посчитаем его
+\begin_inset space ~
+\end_inset
+
+значение для
+\begin_inset space ~
+\end_inset
+
+названия данной книги.
+ Как
+\begin_inset space ~
+\end_inset
+
+видно на
+\begin_inset space ~
+\end_inset
+
+рисунке
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "draw:hash-example"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, результатом вычисления хеш-функции является строка длиной в
+\begin_inset space ~
+\end_inset
+
+512 бит, содержащая 128 шестнадцатеричных чисел.
+ При
+\begin_inset space ~
+\end_inset
+
+этом, можно наблюдать, что
+\begin_inset space ~
+\end_inset
+
+добавление точки в
+\begin_inset space ~
+\end_inset
+
+конце предложения полностью меняет значение хеша.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Пример вычисления хеша
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "draw:hash-example"
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Images/2/hash-SHA3-512.pdf
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Длина хеша в
+\begin_inset space ~
+\end_inset
+
+битах определяет максимальное количество сообщений, для
+\begin_inset space ~
+\end_inset
+
+которых может быть вычислен уникальный хеш.
+ Расчёт осуществляется по
+\begin_inset space ~
+\end_inset
+
+формуле.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+2^{\text{n}}\label{eq:hash-lenght}
+\end{equation}
+
+\end_inset
+
+, где n — длина строки в
+\begin_inset space ~
+\end_inset
+
+битах.
+\end_layout
+
+\begin_layout Standard
+Так, для
+\begin_inset space ~
+\end_inset
+
+функции SHA3-512 число сообщений, имеющих уникальный хеш составляет: 
+\begin_inset Formula $2^{512}\sim1.340781\times10^{154}$
+\end_inset
+
+.
+ Таким образом, можно говорить о
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+современный хеш-функции способны генерировать уникальный хеш для
+\begin_inset space ~
+\end_inset
+
+сообщений любой длины.
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:2.3_Git-End"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -8936,6 +10456,18 @@ name "sec:2.2-R&Python_choose-End"
 \end_inset
 
 настройка
+\end_layout
+
+\begin_layout Standard
+R
+\end_layout
+
+\begin_layout Standard
+RStudio
+\end_layout
+
+\begin_layout Standard
+Python
 \end_layout
 
 \begin_layout Standard

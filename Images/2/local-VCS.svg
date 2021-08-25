@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="180.6 -0 610 610" xmlns:latexdraw="http://latexdraw.sourceforge.net/namespaces/latexdraw" version="1.1" baseProfile="full">
+    <g>
+        <g latexdraw:type="ellipse" id="id1364737369">
+            <ellipse cx="343.0" cy="251.0" rx="118.0" ry="40.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id2138403998" fill="black" latexdraw:position="">
+            <text x="342.0" y="244.0">Local file</text>
+        </g>
+        <g latexdraw:type="square" id="id1604682198">
+            <rect x="201.60000000000008" y="20.999999999999993" width="568.0000000000005" height="568.0000000000005" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id570928735" fill="black" latexdraw:position="bl">
+            <text x="315.0" y="169.0">Control</text>
+        </g>
+        <g latexdraw:type="rectangle" id="id1357875600">
+            <rect x="254.0" y="45.0" width="466.0" height="65.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id1042727218" fill="black" latexdraw:position="bl">
+            <text x="399.0" y="80.0">Local machine</text>
+        </g>
+        <g latexdraw:type="rectangle" id="id204668231">
+            <rect x="488.0" y="137.0" width="264.0" height="433.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id705514638" fill="black" latexdraw:position="bl">
+            <text x="561.0" y="166.0">Versions database</text>
+        </g>
+        <g latexdraw:type="rectangle" id="id1881186240">
+            <rect x="531.0" y="215.0" width="193.0" height="59.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id504454278">
+            <rect x="531.0" y="293.0" width="193.0" height="59.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id428512638">
+            <rect x="531.0" y="373.0" width="193.0" height="59.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id514385005">
+            <rect x="531.0" y="455.0" width="193.0" height="59.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id1465498033" fill="black" latexdraw:position="bl">
+            <text x="600.0" y="250.0">Version 4</text>
+        </g>
+        <g latexdraw:type="text" id="id1177704890" fill="black" latexdraw:position="bl">
+            <text x="600.0" y="325.0">Version 3</text>
+        </g>
+        <g latexdraw:type="text" id="id1318568615" fill="black" latexdraw:position="bl">
+            <text x="600.0" y="405.0">Version 2</text>
+        </g>
+        <g latexdraw:type="text" id="id1124029296" fill="black" latexdraw:position="bl">
+            <text x="598.4000000000001" y="483.4">Version 1</text>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1746872839">
+            <polyline points="460.89999999999964,248.82499999999936 531.2999999999997,249.62499999999932 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id56639379">
+            <polyline points="624.8999999999996,275.2249999999992 624.0999999999995,294.4249999999993 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id208275880">
+            <polyline points="623.2999999999997,352.82499999999936 624.0999999999995,373.6249999999993 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1718192988">
+            <polyline points="625.6999999999998,432.0249999999992 624.8999999999996,455.2249999999992 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0"/>
+        </g>
+    </g>
+    <defs/>
+    <metadata>
+        <latexdraw:metadata>
+            <latexdraw:caption>Локальная система контроля версий</latexdraw:caption>
+            <latexdraw:label>draw:local-vcs</latexdraw:label>
+            <latexdraw:centreHoriz>true</latexdraw:centreHoriz>
+            <latexdraw:positionVert>h</latexdraw:positionVert>
+            <latexdraw:zoom>1.2500000000000002</latexdraw:zoom>
+            <latexdraw:vpx>0.483</latexdraw:vpx>
+            <latexdraw:vpy>0.385</latexdraw:vpy>
+        </latexdraw:metadata>
+    </metadata>
+</svg>

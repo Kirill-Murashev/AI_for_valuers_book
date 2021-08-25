@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 9 624 485" xmlns:latexdraw="http://latexdraw.sourceforge.net/namespaces/latexdraw" version="1.1" baseProfile="full">
+    <g>
+        <g latexdraw:type="text" id="id543987468" fill="black" latexdraw:position="bl">
+            <text x="22.0" y="61.0">Искусственный интеллект в оценочной деятельности </text>
+        </g>
+        <g latexdraw:type="rectangle" id="id643760512">
+            <rect x="16.0" y="30.0" width="455.0" height="42.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id454510926" fill="black" latexdraw:position="bl">
+            <text x="202.0" y="117.0">SHA3-512</text>
+        </g>
+        <g latexdraw:type="ellipse" id="id1180010895">
+            <ellipse cx="241.0" cy="110.5" rx="54.0" ry="15.5" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id602486945">
+            <polyline points="237.0,69.0 238.0,97.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-end="url(#arrow1-602486945)"/>
+        </g>
+        <g latexdraw:type="text" id="id975535095" fill="black" latexdraw:position="bl">
+            <text x="14.0" y="181.0">87501e8ba528a526f6316fc50d758a8f2b57460affc2e91acce770099e387f4e</text>
+        </g>
+        <g latexdraw:type="text" id="id1798978445" fill="black" latexdraw:position="bl">
+            <text x="13.0" y="201.0">7d1da04ba2702dde583e01be2233b71d8dd4be30f8b385fbdfeaf6d61a1ca540</text>
+        </g>
+        <g latexdraw:type="rectangle" id="id1538531358">
+            <rect x="7.0" y="153.0" width="580.0" height="73.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1157774782">
+            <polyline points="238.0,126.0 240.0,154.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-end="url(#arrow1-1157774782)"/>
+        </g>
+        <g latexdraw:type="text" id="id422925042" fill="black" latexdraw:position="bl">
+            <text x="20.0" y="308.0">Искусственный интеллект в оценочной деятельности. </text>
+        </g>
+        <g latexdraw:type="rectangle" id="id436472715">
+            <rect x="14.0" y="277.0" width="455.0" height="42.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id32859444" fill="black" latexdraw:position="bl">
+            <text x="200.0" y="364.0">SHA3-512</text>
+        </g>
+        <g latexdraw:type="ellipse" id="id812781882">
+            <ellipse cx="239.0" cy="357.5" rx="54.0" ry="15.5" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id424705937">
+            <polyline points="235.0,316.0 236.0,344.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-end="url(#arrow1-424705937)"/>
+        </g>
+        <g latexdraw:type="text" id="id596722518" fill="black" latexdraw:position="bl">
+            <text x="12.0" y="428.0">295e3f6238180a023b1fd1a761dd2252e9cf1906e9fbc97ce0519a70587dd182</text>
+        </g>
+        <g latexdraw:type="text" id="id689274521" fill="black" latexdraw:position="bl">
+            <text x="11.0" y="448.0">7004ffb841899b6ab0a86fdf8eb04f1fed8a613cb35c882fddcb43390a59a0c3</text>
+        </g>
+        <g latexdraw:type="rectangle" id="id464726932">
+            <rect x="5.0" y="400.0" width="580.0" height="73.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id567354170">
+            <polyline points="236.0,373.0 238.0,401.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-end="url(#arrow1-567354170)"/>
+        </g>
+    </g>
+    <defs>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="87.955" id="arrow1-602486945">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="85.914" id="arrow1-1157774782">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="87.955" id="arrow1-424705937">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="85.914" id="arrow1-567354170">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+    </defs>
+    <metadata>
+        <latexdraw:metadata>
+            <latexdraw:centreHoriz>false</latexdraw:centreHoriz>
+            <latexdraw:positionVert/>
+            <latexdraw:zoom>1.0</latexdraw:zoom>
+            <latexdraw:vpx>0.438</latexdraw:vpx>
+            <latexdraw:vpy>0.4</latexdraw:vpy>
+        </latexdraw:metadata>
+    </metadata>
+</svg>
