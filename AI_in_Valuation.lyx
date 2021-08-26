@@ -5657,7 +5657,7 @@ name "tab:software_config"
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="10" columns="4">
+<lyxtabular version="3" rows="12" columns="4">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -6111,7 +6111,7 @@ literal "false"
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6120,7 +6120,7 @@ literal "false"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6129,7 +6129,7 @@ Github Desktop
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6146,13 +6146,119 @@ literal "false"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 \begin_inset CommandInset citation
 LatexCommand cite
 key "GitHubDesktop:official_page"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Geogebra Classic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "6.0.660.0-offline"
+target "https://www.geogebra.org/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Geogebra:official-site"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LaTeXDraw
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "4.0.3-1"
+target "http://latexdraw.sourceforge.net/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaTeXDraw:page"
 literal "false"
 
 \end_inset
@@ -9980,11 +10086,11 @@ literal "false"
 \begin_inset space ~
 \end_inset
 
-результирующую битовую строку установленной длины.
+результирующую битовую строку фиксированной длины.
 \end_layout
 
 \begin_layout Description
-Хеширование — преобразование, осуществляемой хеш-функцией.
+Хеширование — преобразование, осуществляемое хеш-функцией.
 \end_layout
 
 \begin_layout Description
@@ -10249,9 +10355,30 @@ literal "false"
 \begin_inset space ~
 \end_inset
 
-правило название хеш-функции содержит значение длины результирующей битовой
+правило, название хеш-функции содержит значение длины результирующей битовой
  строки.
- Например хеш-функция SHA3-512 возвращает строку длиной в
+ Например хеш-функция 
+\begin_inset CommandInset href
+LatexCommand href
+name "SHA3-512"
+target "https://ru.wikipedia.org/wiki/SHA-3"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:SHA3"
+literal "false"
+
+\end_inset
+
+ возвращает строку длиной в
 \begin_inset space ~
 \end_inset
 
@@ -10430,11 +10557,95 @@ name "draw:hash-example"
 \begin_inset space ~
 \end_inset
 
-современный хеш-функции способны генерировать уникальный хеш для
+современные хеш-функции способны генерировать уникальный хеш для
 \begin_inset space ~
 \end_inset
 
 сообщений любой длины.
+\end_layout
+
+\begin_layout Standard
+Таким образом, 
+\lang american
+Git
+\lang russian
+ в
+\begin_inset space ~
+\end_inset
+
+процессе создания нового 
+\lang american
+commit
+\lang russian
+ сначала вычисляет его
+\begin_inset space ~
+\end_inset
+
+хеш-сумму, а
+\begin_inset space ~
+\end_inset
+
+затем фиксирует состояние.
+ При
+\begin_inset space ~
+\end_inset
+
+этом в
+\begin_inset space ~
+\end_inset
+
+каждом 
+\lang american
+commit
+\lang russian
+ присутствует ссылка на
+\begin_inset space ~
+\end_inset
+
+предыдущий, также имеющий свою хеш-сумму.
+ Таким образом, обеспечивается целостность истории изменений, поскольку
+ значение хеш-суммы каждого последующего 
+\lang american
+commit
+\lang russian
+ вычисляется на
+\begin_inset space ~
+\end_inset
+
+основе сообщения, содержащего в
+\begin_inset space ~
+\end_inset
+
+т.
+\begin_inset space \thinspace{}
+\end_inset
+
+ч.
+\begin_inset space ~
+\end_inset
+
+свою хеш-сумму.
+ В
+\begin_inset space ~
+\end_inset
+
+этом случае любая модификация содержимого данных, образующих любой 
+\lang american
+commit
+\lang russian
+, неизбежно приведёт к
+\begin_inset space ~
+\end_inset
+
+изменению всех последующих хешей, что
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+останется незамеченным.
 \end_layout
 
 \begin_layout Standard
@@ -10456,6 +10667,286 @@ name "sec:2.3_Git-End"
 \end_inset
 
 настройка
+\end_layout
+
+\begin_layout Subsection
+
+\lang american
+Git
+\lang russian
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.4.1-Git_install"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Установка на
+\begin_inset space ~
+\end_inset
+
+операционных системах 
+\lang american
+Debian
+\lang russian
+, 
+\lang american
+Ubuntu
+\lang russian
+, 
+\lang american
+Mint
+\lang russian
+ и
+\begin_inset space ~
+\end_inset
+
+т.
+\begin_inset space \thinspace{}
+\end_inset
+
+п.
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.4.1.1-Git_Deb_install"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+операционных системах, основанных на
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "ядре Linux"
+target "https://www.kernel.org/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Linux:kernel"
+literal "false"
+
+\end_inset
+
+, относящихся к
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "ветке Debian"
+target "https://en.wikipedia.org/wiki/Category:Debian-based_distributions"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:Debian-based"
+literal "false"
+
+\end_inset
+
+, 
+\lang american
+Git
+\lang russian
+ зачастую бывает уже
+\begin_inset space ~
+\end_inset
+
+установлен вместе с
+\begin_inset space ~
+\end_inset
+
+системой.
+ Чтобы проверить наличие 
+\lang american
+Git
+\lang russian
+ в
+\begin_inset space ~
+\end_inset
+
+командную строку терминала следует ввести:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+случае наличия 
+\lang american
+Git
+\lang russian
+ в
+\begin_inset space ~
+\end_inset
+
+системе, терминал возвратит длинное сообщение, начинающееся примерно следующим
+ образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+\end_layout
+
+\begin_layout Plain Layout
+
+[--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]        
+    [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+            [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+случае его
+\begin_inset space ~
+\end_inset
+
+отсутствия:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Command 'git' not found, did you mean:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Во
+\begin_inset space ~
+\end_inset
+
+втором случае следует использовать следующие команды:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sudo apt update -y
+\end_layout
+
+\begin_layout Plain Layout
+
+sudo apt install git -y
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Процесс проходит автоматически и
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+требует внимания со
+\begin_inset space ~
+\end_inset
+
+стороны пользователя.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.4.1.1-Git_Deb_install-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.4.1-Git_install-End"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
