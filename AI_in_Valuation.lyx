@@ -79,6 +79,7 @@ tabs-within-sections
 \output_sync 0
 \bibtex_command biber
 \index_command default
+\float_placement h
 \paperfontsize 12
 \spacing single
 \use_hyperref true
@@ -5657,7 +5658,7 @@ name "tab:software_config"
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="4">
+<lyxtabular version="3" rows="16" columns="4">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -6217,7 +6218,7 @@ literal "false"
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6226,7 +6227,7 @@ literal "false"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6235,7 +6236,7 @@ LaTeXDraw
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6252,7 +6253,7 @@ literal "false"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6263,6 +6264,158 @@ literal "false"
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Python
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.8.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Spyder
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.3.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PyCharm Community
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2021.2.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+19.12.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -6331,7 +6484,11 @@ noprefix "false"
 \begin_inset space ~
 \end_inset
 
-также свободных программных средств.
+также свободных или, по
+\begin_inset space ~
+\end_inset
+
+крайней мере, бесплатных программных средств.
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:2.1-Hard&Software-End"
@@ -9057,6 +9214,17 @@ name "sec:2.3_Git"
 
 \end_layout
 
+\begin_layout Subsection
+Общие сведения
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.3.1-Git_common"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 Данный раздел не
 \begin_inset space ~
@@ -10045,7 +10213,28 @@ literal "false"
 \end_inset
 
 .
- Приведём основные определения.
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.3.1-Git_common-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Хеш-функции
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.3.2-Git_hash"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Приведём основные определения.
 \end_layout
 
 \begin_layout Description
@@ -10646,6 +10835,1395 @@ commit
 \end_inset
 
 останется незамеченным.
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.3.2-Git_hash-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Начало работы с
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Git
+\lang russian
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.3.3-Git_begin"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+того, чтобы начать работать с
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Git
+\lang russian
+ прежде всего его
+\begin_inset space ~
+\end_inset
+
+конечно
+\begin_inset space ~
+\end_inset
+
+же следует установить.
+ Как
+\begin_inset space ~
+\end_inset
+
+правило, с
+\begin_inset space ~
+\end_inset
+
+этим не
+\begin_inset space ~
+\end_inset
+
+возникает никаких сложностей.
+ Однако всё
+\begin_inset space ~
+\end_inset
+
+же вопросы установки 
+\lang american
+Git
+\lang russian
+ кратко рассмотрены в
+\begin_inset space ~
+\end_inset
+
+подразделе
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:2.4.1-Git_install"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "subsec:2.4.1-Git_install"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "subsec:2.4.1-Git_install"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+–
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "subsec:2.4.1-Git_install-End"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+данном подразделе преимущественно рассматриваются аспекты работы с
+\begin_inset space ~
+\end_inset
+
+ним через командную строку.
+ Данный выбор обусловлен тем
+\begin_inset space ~
+\end_inset
+
+обстоятельством, что
+\begin_inset space ~
+\end_inset
+
+существует множество графических интерфейсов для
+\begin_inset space ~
+\end_inset
+
+работы с
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Git
+\lang russian
+, которые активно развиваются, меняют дизайн и
+\begin_inset space ~
+\end_inset
+
+расширяют функционал.
+ Кроме того, появляются новые продукты.
+ Среди такого разнообразия всегда можно выбрать какой-то наиболее близкий
+ для
+\begin_inset space ~
+\end_inset
+
+себя вариант.
+ Таким образом, автор не
+\begin_inset space ~
+\end_inset
+
+видит смысла останавливаться на
+\begin_inset space ~
+\end_inset
+
+разборе какого-то конкретного графического интерфейса.
+ Более важной задачей является изложение сути и
+\begin_inset space ~
+\end_inset
+
+основных принципов работы, понимание которых обеспечит успешную работы с
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Git
+\lang russian
+ безотносительно конкретных программных средств.
+ Кроме того, следует отметить, что
+\begin_inset space ~
+\end_inset
+
+практически все
+\begin_inset space ~
+\end_inset
+
+современные 
+\lang american
+
+\begin_inset CommandInset href
+LatexCommand href
+name "IDE"
+target "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:IDE"
+literal "false"
+
+\end_inset
+
+
+\lang russian
+ имеют свои средства и
+\begin_inset space ~
+\end_inset
+
+интерфейс для
+\begin_inset space ~
+\end_inset
+
+работы с
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Git
+\lang russian
+.
+ В
+\begin_inset space ~
+\end_inset
+
+дальнейшем в
+\begin_inset space ~
+\end_inset
+
+главах, посвящённых непосредственно применению 
+\lang american
+R
+\lang russian
+ и 
+\lang american
+Python
+\lang russian
+, будут рассмотрены вопросы использования 
+\lang american
+Git
+\lang russian
+ средствами 
+\lang american
+RStudio, Spyder
+\lang russian
+ и
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+PyCharm
+\lang russian
+.
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+данном подразделе описывается работа с
+\begin_inset space ~
+\end_inset
+
+Git через командную строку в
+\begin_inset space ~
+\end_inset
+
+операционной системе Kubuntu.
+ Большая часть изложенного применима для
+\begin_inset space ~
+\end_inset
+
+любой операционной системы.
+ Для
+\begin_inset space ~
+\end_inset
+
+начала работы с
+\begin_inset space ~
+\end_inset
+
+Git откроем терминал и
+\begin_inset space ~
+\end_inset
+
+выполним три основные настройки, а
+\begin_inset space ~
+\end_inset
+
+именно укажем:
+\end_layout
+
+\begin_layout Itemize
+имя пользователя;
+\end_layout
+
+\begin_layout Itemize
+адрес электронной почты;
+\end_layout
+
+\begin_layout Itemize
+текстовый редактор по
+\begin_inset space ~
+\end_inset
+
+умолчанию.
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+конфигурации Git существует специальная утилита 
+\emph on
+\lang american
+git
+\lang russian
+ 
+\lang american
+config
+\emph default
+\lang russian
+, имеющая три уровня глобальности настроек:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git config --system
+\end_layout
+
+\end_inset
+
+— системный уровень: затрагивает все
+\begin_inset space ~
+\end_inset
+
+репозитории всех пользователей системы;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git config --global
+\end_layout
+
+\end_inset
+
+— глобальный уровень: затрагивает все
+\begin_inset space ~
+\end_inset
+
+репозитории конкретного пользователя системы;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git config --local
+\end_layout
+
+\end_inset
+
+— локальный уровень: затрагивает конкретный репозиторий;
+\end_layout
+
+\begin_layout Standard
+Представим, что
+\begin_inset space ~
+\end_inset
+
+необходимо задать общие настройки конкретного пользователя, т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+использовать уровень 
+\lang american
+global
+\lang russian
+, что, может быть актуально, например, при
+\begin_inset space ~
+\end_inset
+
+использовании рабочего компьютера.
+ Сделаем следующие настройки:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git config --global user.name 
+\begin_inset Quotes xld
+\end_inset
+
+First.Second
+\begin_inset Quotes xrd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+git config --global user.email user-adress@host.com
+\end_layout
+
+\begin_layout Plain Layout
+
+git config --global core.editor 
+\begin_inset Quotes xld
+\end_inset
+
+kate
+\begin_inset Quotes xrd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— мы
+\begin_inset space ~
+\end_inset
+
+задали имя пользователя, адрес его
+\begin_inset space ~
+\end_inset
+
+электронной почты, отображаемые при
+\begin_inset space ~
+\end_inset
+
+выполнении 
+\lang american
+commit
+\lang russian
+, а
+\begin_inset space ~
+\end_inset
+
+также указали текстовый редактор по
+\begin_inset space ~
+\end_inset
+
+умолчанию.
+ В
+\begin_inset space ~
+\end_inset
+
+данном случае был указан редактор 
+\lang american
+Kate
+\lang russian
+.
+ Естественно можно указать любой другой удобный редактор.
+ В
+\begin_inset space ~
+\end_inset
+
+случае использования операционной системы 
+\lang american
+Windows
+\lang russian
+ необходимо указывать полный путь до
+\begin_inset space ~
+\end_inset
+
+исполняемого файла (имеет расширение .exe) текстового редактора, а
+\begin_inset space ~
+\end_inset
+
+также а.
+ Например, в
+\begin_inset space ~
+\end_inset
+
+случае использования 64-х разрядной Windows и
+\begin_inset space ~
+\end_inset
+
+ редактора 
+\begin_inset CommandInset href
+LatexCommand href
+name "Notepad++"
+target "https://notepad-plus-plus.org/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Notepad++:site"
+literal "false"
+
+\end_inset
+
+ команда может выглядеть так:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git config --global core.editor "'C:
+\backslash
+Program Files
+\backslash
+Notepad
+\backslash
+notepad.exe' -multiInst -notabbar -nosession -noPlugin"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— перечень команд для
+\begin_inset space ~
+\end_inset
+
+различных операционных систем и
+\begin_inset space ~
+\end_inset
+
+текстовых редакторов содержится на
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "соответствующей странице"
+target "https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config#ch_core_editor"
+literal "false"
+
+\end_inset
+
+ сайта Git
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Git:official_site"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+начала создадим тестовый каталог, с
+\begin_inset space ~
+\end_inset
+
+которым и
+\begin_inset space ~
+\end_inset
+
+будем работать в
+\begin_inset space ~
+\end_inset
+
+дальнейшем при
+\begin_inset space ~
+\end_inset
+
+обучении работе с
+\begin_inset space ~
+\end_inset
+
+Git.
+ Зайдём в
+\begin_inset space ~
+\end_inset
+
+папку, в
+\begin_inset space ~
+\end_inset
+
+которой хотим создать каталог и
+\begin_inset space ~
+\end_inset
+
+запустим терминал в
+\begin_inset space ~
+\end_inset
+
+ней.
+ После чего введём команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+mkdir git-lesson
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— мы
+\begin_inset space ~
+\end_inset
+
+только что
+\begin_inset space ~
+\end_inset
+
+создали новый каталог средствами командной строки.
+\end_layout
+
+\begin_layout Standard
+Затем введём команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+cd git-lesson
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— переходим в
+\begin_inset space ~
+\end_inset
+
+только что
+\begin_inset space ~
+\end_inset
+
+созданный каталог.
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+просмотра содержимого каталога используем следующую команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ls -la
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— собственно самой командой является 
+\family typewriter
+ls
+\family default
+, а
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes xld
+\end_inset
+
+
+\family typewriter
+-la
+\family default
+
+\begin_inset Quotes xrd
+\end_inset
+
+ представляет собой её
+\begin_inset space ~
+\end_inset
+
+аргументы: 
+\begin_inset Quotes xld
+\end_inset
+
+
+\family typewriter
+-l
+\family default
+
+\begin_inset Quotes xrd
+\end_inset
+
+ — отвечает за
+\begin_inset space ~
+\end_inset
+
+отображение файлов и
+\begin_inset space ~
+\end_inset
+
+подкаталогов списком, а
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Quotes xld
+\end_inset
+
+-a
+\begin_inset Quotes xrd
+\end_inset
+
+ — за
+\begin_inset space ~
+\end_inset
+
+отображение скрытых файлов и
+\begin_inset space ~
+\end_inset
+
+подкаталогов.
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+создания репозитория введём команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git init
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— Git ассоциирует текущую папку с
+\begin_inset space ~
+\end_inset
+
+новым репозиторием.
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+случае, если всё
+\begin_inset space ~
+\end_inset
+
+прошло хорошо, терминал возвратит следующее сообщение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Initialized empty Git repository in /home/.../git-lesson/.git/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Теперь ещё
+\begin_inset space ~
+\end_inset
+
+раз введём:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ls -la
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— следует обратить внимание на
+\begin_inset space ~
+\end_inset
+
+то, что
+\begin_inset space ~
+\end_inset
+
+появилась папка .git, в
+\begin_inset space ~
+\end_inset
+
+которой и
+\begin_inset space ~
+\end_inset
+
+будет храниться вся
+\begin_inset space ~
+\end_inset
+
+история версий проекта, содержащегося в
+\begin_inset space ~
+\end_inset
+
+папке git-lesson.
+\end_layout
+
+\begin_layout Standard
+Создадим первый файл внутри папки:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+touch file1.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— расширение указывает на
+\begin_inset space ~
+\end_inset
+
+то, что
+\begin_inset space ~
+\end_inset
+
+это файл языка 
+\lang american
+Python
+\lang russian
+.
+\end_layout
+
+\begin_layout Standard
+Система 
+\lang american
+Git
+\lang russian
+ уже
+\begin_inset space ~
+\end_inset
+
+должна была отследить наличие изменения состояния проекта, произошедшее
+ вследствие создания нового файла.
+ Для
+\begin_inset space ~
+\end_inset
+
+проверки изменений состояния используем команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git log
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— и
+\begin_inset space ~
+\end_inset
+
+получим сообщение следующего содержания:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+fatal: your current branch 'master' does not have any commits yet
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— дело в
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+истории изменений по-прежнему нет
+\begin_inset space ~
+\end_inset
+
+никаких записей.
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+получения дополнительных сведений используем команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git status
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— терминал возвратит следующее сообщение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+On branch master
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+No commits yet
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Untracked files:
+\end_layout
+
+\begin_layout Plain Layout
+
+  (use "git add <file>..." to include in what will be committed)
+\end_layout
+
+\begin_layout Plain Layout
+
+        file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+nothing added to commit but untracked files present (use "git add" to track)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— как видно, Git сообщает о
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+файл file1.py не
+\begin_inset space ~
+\end_inset
+
+отслеживается, кроме того, как
+\begin_inset space ~
+\end_inset
+
+следует из
+\begin_inset space ~
+\end_inset
+
+последней части сообщения терминала, в
+\begin_inset space ~
+\end_inset
+
+настоящее время вообще не
+\begin_inset space ~
+\end_inset
+
+фиксируются никакие изменения, поскольку ничего не
+\begin_inset space ~
+\end_inset
+
+было добавлено в
+\begin_inset space ~
+\end_inset
+
+лист отслеживания.
+ При
+\begin_inset space ~
+\end_inset
+
+этом сам
+\begin_inset space ~
+\end_inset
+
+Git предлагает использовать команду 
+\family typewriter
+git add
+\family default
+ для добавления файлов в
+\begin_inset space ~
+\end_inset
+
+него.
+ Прежде чем
+\begin_inset space ~
+\end_inset
+
+сделать это, необходимо разобраться в
+\begin_inset space ~
+\end_inset
+
+том, в
+\begin_inset space ~
+\end_inset
+
+каких состояниях, с
+\begin_inset space ~
+\end_inset
+
+точки зрения Git, могут в
+\begin_inset space ~
+\end_inset
+
+принципе находиться файлы.
+\end_layout
+
+\begin_layout Standard
+Все
+\begin_inset space ~
+\end_inset
+
+файлы, находящиеся в
+\begin_inset space ~
+\end_inset
+
+рабочем каталоге, могут иметь один из
+\begin_inset space ~
+\end_inset
+
+следующих статусов:
+\end_layout
+
+\begin_layout Itemize
+tracked — отслеживаемые, т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+находящиеся под
+\begin_inset space ~
+\end_inset
+
+версионным контролем;
+\end_layout
+
+\begin_layout Itemize
+untracked — не
+\begin_inset space ~
+\end_inset
+
+отслеживаемые, т.
+\begin_inset space ~
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+находящиеся под
+\begin_inset space ~
+\end_inset
+
+версионным контролем.
+\end_layout
+
+\begin_layout Standard
+Ко
+\begin_inset space ~
+\end_inset
+
+второй категории, как
+\begin_inset space ~
+\end_inset
+
+правило, относятся временные файлы, например логи, хранение которых в
+\begin_inset space ~
+\end_inset
+
+репозитории нецелесообразно.
+ Файлы первой категории могут находиться в
+\begin_inset space ~
+\end_inset
+
+одной из следующих состояний:
+\end_layout
+
+\begin_layout Itemize
+initial — начальное состояние файла, в
+\begin_inset space ~
+\end_inset
+
+котором он
+\begin_inset space ~
+\end_inset
+
+находился в
+\begin_inset space ~
+\end_inset
+
+момент включения его
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+лист отслеживания, т.
+\begin_inset space ~
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+сообщения ему
+\begin_inset space ~
+\end_inset
+
+статуса 
+\lang american
+tracked
+\lang russian
+.
+\end_layout
+
+\begin_layout Itemize
+modified — состояние файла после внесения в
+\begin_inset space ~
+\end_inset
+
+него изменений и
+\begin_inset space ~
+\end_inset
+
+его сохранения;
+\end_layout
+
+\begin_layout Itemize
+staged — промежуточное состояние файла, в
+\begin_inset space ~
+\end_inset
+
+котором он
+\begin_inset space ~
+\end_inset
+
+находится после передачи его
+\begin_inset space ~
+\end_inset
+
+состояния Git, но
+\begin_inset space ~
+\end_inset
+
+до
+\begin_inset space ~
+\end_inset
+
+формирования последним его
+\begin_inset space ~
+\end_inset
+
+снимка.
+\end_layout
+
+\begin_layout Itemize
+committed — состояние файла, зафиксированное Git, и
+\begin_inset space ~
+\end_inset
+
+представляющее его
+\begin_inset space ~
+\end_inset
+
+версию, к
+\begin_inset space ~
+\end_inset
+
+которой впоследствии будет возможно вернуться.
+\end_layout
+
+\begin_layout Standard
+Соответственно после внесения новых изменений файл, находящийся в
+\begin_inset space ~
+\end_inset
+
+состоянии commited переходит в
+\begin_inset space ~
+\end_inset
+
+состоянии
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.3.3-Git_begin-End"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10689,7 +12267,15 @@ name "subsec:2.4.1-Git_install"
 \begin_inset space ~
 \end_inset
 
-операционных системах 
+операционных системах, основанных на
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Debian
+\lang russian
+: 
 \lang american
 Debian
 \lang russian
@@ -10800,6 +12386,7 @@ Git
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
 inline false
 status open
 
@@ -10832,6 +12419,7 @@ Git
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
 inline false
 status open
 
@@ -10866,6 +12454,7 @@ usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
 inline false
 status open
 
@@ -10889,6 +12478,7 @@ Command 'git' not found, did you mean:
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
 inline false
 status open
 
@@ -10921,14 +12511,6 @@ sudo apt install git -y
 \end_inset
 
 стороны пользователя.
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
-End
 \begin_inset CommandInset label
 LatexCommand label
 name "subsubsec:2.4.1.1-Git_Deb_install-End"
@@ -10938,8 +12520,388 @@ name "subsubsec:2.4.1.1-Git_Deb_install-End"
 
 \end_layout
 
+\begin_layout Subsubsection
+Установка на
+\begin_inset space ~
+\end_inset
+
+операционной системе 
+\lang american
+Windows
+\lang russian
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.4.1.2-Git_Win_install"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-End
+Установка 
+\lang american
+Git
+\lang russian
+ на
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Windows
+\lang russian
+ осуществляется обычным для
+\begin_inset space ~
+\end_inset
+
+данной операционной системы образом.
+ Необходимо загрузить установочный файл с
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "соответствующей страницы"
+target "https://git-scm.com/download/win"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Git:install-win"
+literal "false"
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+запустить процесс установки, желательно приняв при
+\begin_inset space ~
+\end_inset
+
+этом все
+\begin_inset space ~
+\end_inset
+
+настройки по
+\begin_inset space ~
+\end_inset
+
+умолчанию.
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.4.1.2-Git_Win_install-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Установка на
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+macOS
+\lang russian
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.4.1.3-Git_Mac_install"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Существует несколько способов установки 
+\lang american
+Git
+\lang russian
+ на
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+macOS
+\lang russian
+.
+ Их
+\begin_inset space ~
+\end_inset
+
+перечень приведён на
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "соответствующей странице"
+target "https://git-scm.com/download/mac"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Git:install:macOS"
+literal "false"
+
+\end_inset
+
+ сайта 
+\lang american
+Git
+\lang russian
+.
+ Следует отметить, что
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+случае наличия в
+\begin_inset space ~
+\end_inset
+
+системе 
+\lang american
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Xcode"
+target "https://developer.apple.com/xcode/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Xcode:page"
+literal "false"
+
+\end_inset
+
+
+\lang russian
+ 
+\lang american
+Git
+\lang russian
+ также уже
+\begin_inset space ~
+\end_inset
+
+присутствует, и
+\begin_inset space ~
+\end_inset
+
+его
+\begin_inset space ~
+\end_inset
+
+установка не
+\begin_inset space ~
+\end_inset
+
+требуется.
+ В
+\begin_inset space ~
+\end_inset
+
+данном материала приводится один из
+\begin_inset space ~
+\end_inset
+
+возможных способов.
+ Для
+\begin_inset space ~
+\end_inset
+
+начала необходимо установить менеджер пакетов 
+\lang american
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Homebrew"
+target "https://brew.sh/"
+literal "false"
+
+\end_inset
+
+
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Homebrew:site"
+literal "false"
+
+\end_inset
+
+.
+ Для
+\begin_inset space ~
+\end_inset
+
+этого в
+\begin_inset space ~
+\end_inset
+
+командной строке терминала необходимо ввести следующую команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=left,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD
+/install.sh)"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+После
+\begin_inset space ~
+\end_inset
+
+этого можно перейти к
+\begin_inset space ~
+\end_inset
+
+установке самого 
+\lang american
+Git
+\lang russian
+.
+ Для
+\begin_inset space ~
+\end_inset
+
+этого в
+\begin_inset space ~
+\end_inset
+
+командной строке терминала необходимо ввести следующую команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+brew install git
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Как
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+случае, описанном выше в
+\begin_inset space ~
+\end_inset
+
+секции
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "subsubsec:2.4.1.1-Git_Deb_install"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+–
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "subsubsec:2.4.1.1-Git_Deb_install-End"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, процесс проходит автоматически и
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+требует внимания со
+\begin_inset space ~
+\end_inset
+
+стороны пользователя.
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.4.1.3-Git_Mac_install-End"
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:2.4.1-Git_install-End"
