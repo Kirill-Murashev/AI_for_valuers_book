@@ -10853,7 +10853,11 @@ name "subsec:2.3.2-Git_hash-End"
 \lang american
 Git
 \lang russian
+ и
+\begin_inset space ~
+\end_inset
 
+основные команды
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:2.3.3-Git_begin"
@@ -12208,11 +12212,2080 @@ committed — состояние файла, зафиксированное Git,
 \begin_inset space ~
 \end_inset
 
-состоянии commited переходит в
+состоянии 
+\lang american
+committed
+\lang russian
+, переходит в
 \begin_inset space ~
 \end_inset
 
-состоянии
+состояние 
+\lang american
+modified
+\lang russian
+, после чего возможен новый цикл преобразований его
+\begin_inset space ~
+\end_inset
+
+статуса.
+ Схема изменений состояния файлов приведена на
+\begin_inset space ~
+\end_inset
+
+рисунке
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "draw:git-statuses_scheme"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Схема состояний файлов в
+\begin_inset space ~
+\end_inset
+
+системе Git
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "draw:git-statuses_scheme"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/2/git-status-scheme.pdf
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+перевода файла из
+\begin_inset space ~
+\end_inset
+
+состояния 
+\lang american
+modified
+\lang russian
+ в
+\begin_inset space ~
+\end_inset
+
+состояние 
+\lang american
+staged
+\lang russian
+ следует использовать команду
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git add <file.name1> <file.name2> 
+\end_layout
+
+\end_inset
+
+— данная процедура также называется добавлением файла в индекс.
+ Индекс — область памяти, в
+\begin_inset space ~
+\end_inset
+
+которой находятся файлы, подготовленные для
+\begin_inset space ~
+\end_inset
+
+включения в
+\begin_inset space ~
+\end_inset
+
+commit.
+\end_layout
+
+\begin_layout Standard
+Далее для
+\begin_inset space ~
+\end_inset
+
+выполнения процедуры 
+\lang american
+commit
+\lang russian
+ даётся команда
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git commit -m 
+\begin_inset Quotes xld
+\end_inset
+
+message
+\begin_inset Quotes xrd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— аргумент 
+\family typewriter
+\lang american
+-m
+\family default
+\lang russian
+ и
+\begin_inset space ~
+\end_inset
+
+следующее за
+\begin_inset space ~
+\end_inset
+
+ним
+\begin_inset space ~
+\end_inset
+
+сообщение служат для
+\begin_inset space ~
+\end_inset
+
+задания краткого описания того, какие изменения были внесены.
+ Рекомендуется давать содержательные комментарии, позволяющие понять смысл
+ изменений.
+\end_layout
+
+\begin_layout Standard
+Как
+\begin_inset space ~
+\end_inset
+
+видно, не
+\begin_inset space ~
+\end_inset
+
+обязательно совершать процедуру 
+\lang american
+commit
+\lang russian
+ сразу в
+\begin_inset space ~
+\end_inset
+
+отношении всех файлов, находящихся в
+\begin_inset space ~
+\end_inset
+
+состоянии 
+\lang american
+modified
+\lang russian
+.
+ Существует возможность группировать их
+\begin_inset space ~
+\end_inset
+
+и, посредством перевода конкретных файлов в
+\begin_inset space ~
+\end_inset
+
+состояние 
+\lang american
+staged
+\lang russian
+, формировать группы файлов, чьё
+\begin_inset space ~
+\end_inset
+
+состояние подлежит фиксации.
+\end_layout
+
+\begin_layout Standard
+Добавим файл 
+\family typewriter
+\lang american
+file.py
+\family default
+\lang russian
+ в
+\begin_inset space ~
+\end_inset
+
+индекс.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git add file1.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Далее снова проверим статус:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git status
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— на
+\begin_inset space ~
+\end_inset
+
+этот раз терминал возвратит новое сообщение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+On branch master
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+No commits yet
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Changes to be committed:
+\end_layout
+
+\begin_layout Plain Layout
+
+  (use "git rm --cached <file>..." to unstage)
+\end_layout
+
+\begin_layout Plain Layout
+
+        new file:   file1.py 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Как
+\begin_inset space ~
+\end_inset
+
+можно видеть, теперь Git 
+\begin_inset Quotes xld
+\end_inset
+
+видит
+\begin_inset Quotes xrd
+\end_inset
+
+ файл file1.py и
+\begin_inset space ~
+\end_inset
+
+готов сделать 
+\begin_inset Quotes xld
+\end_inset
+
+снимок
+\begin_inset Quotes xrd
+\end_inset
+
+ нового состояния репозитория.
+ Для
+\begin_inset space ~
+\end_inset
+
+выполнения процедуры commit введём команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git commit -m 
+\begin_inset Quotes xld
+\end_inset
+
+First commit
+\begin_inset Quotes xrd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— мы
+\begin_inset space ~
+\end_inset
+
+только что
+\begin_inset space ~
+\end_inset
+
+сделали первый commit, т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+зафиксировали состояние репозитория.
+ Терминал возвратит следующее сообщение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+[master (root-commit) 1306b16] First commit
+\end_layout
+
+\begin_layout Plain Layout
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+\end_layout
+
+\begin_layout Plain Layout
+
+ create mode 100644 file1.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Теперь повторим ранее уже использованную команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git log
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— терминал в
+\begin_inset space ~
+\end_inset
+
+отличие от
+\begin_inset space ~
+\end_inset
+
+первого раза, когда мы
+\begin_inset space ~
+\end_inset
+
+наблюдали сообщение о
+\begin_inset space ~
+\end_inset
+
+невозможности выведения сведений о
+\begin_inset space ~
+\end_inset
+
+событиях в
+\begin_inset space ~
+\end_inset
+
+репозитории, на
+\begin_inset space ~
+\end_inset
+
+этот раз возвращает осмысленное сообщение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+commit 1306b16f5fe40ccf8b141d716d9313df8e1983a1 (HEAD -> master) Author:
+ Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Tue Aug 31 19:03:49 2021 +0200
+\end_layout
+
+\begin_layout Plain Layout
+
+    First commit 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— можно увидеть хеш-сумму данного 
+\lang american
+commit
+\lang russian
+, его
+\begin_inset space ~
+\end_inset
+
+автора, а
+\begin_inset space ~
+\end_inset
+
+также время создания 
+\lang american
+commit
+\lang russian
+ и
+\begin_inset space ~
+\end_inset
+
+сопроводительное сообщение к
+\begin_inset space ~
+\end_inset
+
+нему.
+ Для
+\begin_inset space ~
+\end_inset
+
+получения более детальных сведений можно использовать команду 
+\family typewriter
+\lang american
+git show
+\family default
+\lang russian
+, сообщив ей
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+качестве аргумента хеш-сумму интересующего 
+\lang american
+commit
+\lang russian
+.
+ Сделаем это, скопировав и
+\begin_inset space ~
+\end_inset
+
+вставив значение хеш-суммы:
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Для
+\begin_inset space ~
+\end_inset
+
+копирования и
+\begin_inset space ~
+\end_inset
+
+вставки в
+\begin_inset space ~
+\end_inset
+
+окне терминала следует использовать сочетания клавиш ctrl+shift+c, ctrl+shift+v
+ соответственно.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git show 1306b16f5fe40ccf8b141d716d9313df8e1983a1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— в
+\begin_inset space ~
+\end_inset
+
+качестве аргумента команды в
+\begin_inset space ~
+\end_inset
+
+данном случае была использована хеш-сумма.
+ Терминал возвратит сообщение с
+\begin_inset space ~
+\end_inset
+
+данными об
+\begin_inset space ~
+\end_inset
+
+интересующем commit:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+commit 1306b16f5fe40ccf8b141d716d9313df8e1983a1 (HEAD -> master)
+\end_layout
+
+\begin_layout Plain Layout
+
+Author: Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Tue Aug 31 19:03:49 2021 +0300
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    First commit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+diff --git a/file1.py b/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+new file mode 100644
+\end_layout
+
+\begin_layout Plain Layout
+
+index 0000000..e69de29 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+дополнение к
+\begin_inset space ~
+\end_inset
+
+уже имеющимся данным приводятся сведения о
+\begin_inset space ~
+\end_inset
+
+том, какие именное изменения имели место.
+ В
+\begin_inset space ~
+\end_inset
+
+данном случае видно, что
+\begin_inset space ~
+\end_inset
+
+имело место добавление в
+\begin_inset space ~
+\end_inset
+
+репозиторий нового файла.
+\end_layout
+
+\begin_layout Standard
+Примерно такие
+\begin_inset space ~
+\end_inset
+
+же сведения можно получить в
+\begin_inset space ~
+\end_inset
+
+случае использования команды 
+\family typewriter
+git log
+\family default
+ с
+\begin_inset space ~
+\end_inset
+
+аргументом 
+\family typewriter
+-p
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git log -p
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+commit 1306b16f5fe40ccf8b141d716d9313df8e1983a1 (HEAD -> master) Author:
+ Kirill Murashev <kirill.murashev@gmail.com> Date:   Tue Aug 31 19:03:49 2021
+ +0300
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    First commit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+diff --git a/file1.py b/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+new file mode 100644
+\end_layout
+
+\begin_layout Plain Layout
+
+index 0000000..e69de29 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— в
+\begin_inset space ~
+\end_inset
+
+данном случае сообщения вообще идентичны.
+\end_layout
+
+\begin_layout Standard
+Рассмотрим ещё
+\begin_inset space ~
+\end_inset
+
+одну полезную команду 
+\family typewriter
+git restore
+\family default
+.
+ Данная команда возвращает состояние файла к
+\begin_inset space ~
+\end_inset
+
+тому состоянию, которое было зафиксировано при
+\begin_inset space ~
+\end_inset
+
+создании последнего commit.
+ Рассмотрим пример.
+ Откроем файл file1.py в
+\begin_inset space ~
+\end_inset
+
+редакторе Kate
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Естественно редактор может быть любой
+\end_layout
+
+\end_inset
+
+ непосредственно из
+\begin_inset space ~
+\end_inset
+
+терминала:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+kate file.py 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— далее напишем в
+\begin_inset space ~
+\end_inset
+
+нём любой текст и
+\begin_inset space ~
+\end_inset
+
+сохраним файл.
+ После чего проверим его
+\begin_inset space ~
+\end_inset
+
+статус с
+\begin_inset space ~
+\end_inset
+
+помощью уже
+\begin_inset space ~
+\end_inset
+
+известной команды 
+\family typewriter
+git status
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$git status
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+On branch master
+\end_layout
+
+\begin_layout Plain Layout
+
+Changes not staged for commit:
+\end_layout
+
+\begin_layout Plain Layout
+
+   (use "git add <file>..." to update what will be committed)
+\end_layout
+
+\begin_layout Plain Layout
+
+  (use "git restore <file>..." to discard changes in working directory)
+\end_layout
+
+\begin_layout Plain Layout
+
+        modified:   file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— как
+\begin_inset space ~
+\end_inset
+
+видим, Git обнаружил изменение файла.
+ Теперь введём команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git restore file.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— файл, возвращён в
+\begin_inset space ~
+\end_inset
+
+состояние, в
+\begin_inset space ~
+\end_inset
+
+котором он
+\begin_inset space ~
+\end_inset
+
+находился на
+\begin_inset space ~
+\end_inset
+
+момент создания последнего commit, т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+снова является пустым, в
+\begin_inset space ~
+\end_inset
+
+чём легко убедиться, открыв его.
+\end_layout
+
+\begin_layout Standard
+Следующей рассматриваемой командой будет 
+\family typewriter
+git diff
+\family default
+.
+ Данная команда позволят понять, какие именно изменения были внесены в
+\begin_inset space ~
+\end_inset
+
+файл.
+ Вновь откроем файл file1.py в
+\begin_inset space ~
+\end_inset
+
+текстовом редакторе.
+ Введём в
+\begin_inset space ~
+\end_inset
+
+него текст, например 
+\begin_inset Quotes xld
+\end_inset
+
+Liberte, egalite, fraternite
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ После чего сохраним файл.
+ Выполним команду 
+\family typewriter
+git diff
+\family default
+ и
+\begin_inset space ~
+\end_inset
+
+посмотрим на
+\begin_inset space ~
+\end_inset
+
+результат.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$git diff
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+diff --git a/file1.py b/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+index e69de29..72d6a2a 100644
+\end_layout
+
+\begin_layout Plain Layout
+
+--- a/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
++++ b/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+@@ -0,0 +1 @@
+\end_layout
+
+\begin_layout Plain Layout
+
++Liberte, egalite, fraternite
+\end_layout
+
+\end_inset
+
+— в
+\begin_inset space ~
+\end_inset
+
+нижней части сообщения терминала после символа 
+\begin_inset Quotes xld
+\end_inset
+
++
+\begin_inset Quotes xrd
+\end_inset
+
+ мы
+\begin_inset space ~
+\end_inset
+
+видим добавленный в
+\begin_inset space ~
+\end_inset
+
+файл текст.
+ Git всегда отображает добавленный текст после знака 
+\begin_inset Quotes xld
+\end_inset
+
+
+\color green
++
+\color inherit
+
+\begin_inset Quotes xrd
+\end_inset
+
+, а
+\begin_inset space ~
+\end_inset
+
+удалённый после знака 
+\begin_inset Quotes xld
+\end_inset
+
+
+\color red
+-
+\color inherit
+
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ Проверим статус файла:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git status
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+On branch master
+\end_layout
+
+\begin_layout Plain Layout
+
+Changes not staged for commit:
+\end_layout
+
+\begin_layout Plain Layout
+
+  (use "git add <file>..." to update what will be committed)
+\end_layout
+
+\begin_layout Plain Layout
+
+ (use "git restore <file>..." to discard changes in working directory)
+\end_layout
+
+\begin_layout Plain Layout
+
+        modified:   file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+\end_layout
+
+\end_inset
+
+— Git зафиксировал изменения файла.
+ Теперь добавим файл в
+\begin_inset space ~
+\end_inset
+
+индекс, т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+изменим его
+\begin_inset space ~
+\end_inset
+
+состояние на
+\begin_inset space ~
+\end_inset
+
+staged:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git add file1.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— далее ещё раз проверим статус файла:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git status
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+On branch master
+\end_layout
+
+\begin_layout Plain Layout
+
+Changes to be committed:
+\end_layout
+
+\begin_layout Plain Layout
+
+  (use "git restore --staged <file>..." to unstage)
+\end_layout
+
+\begin_layout Plain Layout
+
+        modified:   file1.py 
+\end_layout
+
+\end_inset
+
+— Git перевёл файл в
+\begin_inset space ~
+\end_inset
+
+состояние staged.
+ Для
+\begin_inset space ~
+\end_inset
+
+того, чтобы ещё
+\begin_inset space ~
+\end_inset
+
+раз просмотреть изменения в
+\begin_inset space ~
+\end_inset
+
+файле, находящемся в
+\begin_inset space ~
+\end_inset
+
+состоянии staged можно использовать ту
+\begin_inset space ~
+\end_inset
+
+же команду 
+\family typewriter
+git diff
+\family default
+, при условии сообщения ей
+\begin_inset space ~
+\end_inset
+
+аргумента 
+\family typewriter
+--staged
+\family default
+, без
+\begin_inset space ~
+\end_inset
+
+которого она
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+сможет отобразить изменения, поскольку они
+\begin_inset space ~
+\end_inset
+
+уже были включены в
+\begin_inset space ~
+\end_inset
+
+индекс.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$git diff --staged
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+diff --git a/file1.py b/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+index e69de29..d77d790 100644
+\end_layout
+
+\begin_layout Plain Layout
+
+--- a/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
++++ b/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+@@ -0,0 +1 @@
+\end_layout
+
+\begin_layout Plain Layout
+
++Liberte, egalite, fraternite 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выполним commit:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git commit -m 
+\begin_inset Quotes xld
+\end_inset
+
+Second commit
+\begin_inset Quotes xrd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— терминал возвратит сообщение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+[master 700a993] Second commit
+\end_layout
+
+\begin_layout Plain Layout
+
+ 1 file changed, 1 insertion(+) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— посмотрим на
+\begin_inset space ~
+\end_inset
+
+историю изменений:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git log
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+commit 700a993db7c5f682c33a087cb882728adc485198 (HEAD -> master)
+\end_layout
+
+\begin_layout Plain Layout
+
+Author: Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Tue Aug 31 20:51:06 2021 +0200
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Second commit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+commit 1306b16f5fe40ccf8b141d716d9313df8e1983a1
+\end_layout
+
+\begin_layout Plain Layout
+
+Author: Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Tue Aug 31 19:03:49 2021 +0200
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    First commit 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— можно наблюдать сведения о
+\begin_inset space ~
+\end_inset
+
+двух выполненных commit.
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+случае использования той
+\begin_inset space ~
+\end_inset
+
+же команды с
+\begin_inset space ~
+\end_inset
+
+аргументом 
+\family typewriter
+-p
+\family default
+ можно увидеть всю историю конкретных изменений.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git log -p
+\end_layout
+
+\begin_layout Plain Layout
+
+commit 700a993db7c5f682c33a087cb882728adc485198 (HEAD -> master)
+\end_layout
+
+\begin_layout Plain Layout
+
+Author: Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Tue Aug 31 20:51:06 2021 +0300
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Second commit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+diff --git a/file1.py b/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+index e69de29..d77d790 100644
+\end_layout
+
+\begin_layout Plain Layout
+
+--- a/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
++++ b/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+@@ -0,0 +1 @@
+\end_layout
+
+\begin_layout Plain Layout
+
++Liberte, egalite, fraternite
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+commit 1306b16f5fe40ccf8b141d716d9313df8e1983a1
+\end_layout
+
+\begin_layout Plain Layout
+
+Author: Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Tue Aug 31 19:03:49 2021 +0300
+\end_layout
+
+\begin_layout Plain Layout
+
+    First commit
+\end_layout
+
+\begin_layout Plain Layout
+
+diff --git a/file1.py b/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+new file mode 100644
+\end_layout
+
+\begin_layout Plain Layout
+
+index 0000000..e69de29 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Существует упрощённый способ передачи Git сведений для
+\begin_inset space ~
+\end_inset
+
+совершения commit.
+ Вместо последовательного ввода команд 
+\family typewriter
+git add
+\family default
+ с
+\begin_inset space ~
+\end_inset
+
+указанием перечня файлов и
+\begin_inset space ~
+\end_inset
+
+
+\family typewriter
+git commit
+\family default
+ можно использовать единую команду 
+\family typewriter
+git commit
+\family default
+ с
+\begin_inset space ~
+\end_inset
+
+аргументами 
+\family typewriter
+-am
+\family default
+.
+ Второй аргумент, как
+\begin_inset space ~
+\end_inset
+
+уже было сказано ранее, необходим для
+\begin_inset space ~
+\end_inset
+
+формирования сообщения, сопровождающего commit.
+ Первый
+\begin_inset space ~
+\end_inset
+
+же заменяет собой предварительное использование команды 
+\family typewriter
+git add
+\family default
+, указывая Git на
+\begin_inset space ~
+\end_inset
+
+необходимость включения в
+\begin_inset space ~
+\end_inset
+
+индекс всех отслеживаемых файлов, т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+имеющих статус tracked.
+ Внесём любые изменения в
+\begin_inset space ~
+\end_inset
+
+файл file1.py.
+ Проверим наличие изменений:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git status
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+On branch master
+\end_layout
+
+\begin_layout Plain Layout
+
+Changes not staged for commit:
+\end_layout
+
+\begin_layout Plain Layout
+
+  (use "git add <file>..." to update what will be committed)
+\end_layout
+
+\begin_layout Plain Layout
+
+  use "git restore <file>..." to discard changes in working directory)
+\end_layout
+
+\begin_layout Plain Layout
+
+        modified:   file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— после чего выполним добавление в
+\begin_inset space ~
+\end_inset
+
+индекс и
+\begin_inset space ~
+\end_inset
+
+commit одной командой.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git commit -am "Third commit"
+\end_layout
+
+\begin_layout Plain Layout
+
+[master fbff919] Third commit
+\end_layout
+
+\begin_layout Plain Layout
+
+ 1 file changed, 1 insertion(+) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— проверим историю:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git log -p
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+commit fbff919fab14ab6d41c993d3b86253c41037e075 (HEAD -> master)
+\end_layout
+
+\begin_layout Plain Layout
+
+Author: Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Tue Aug 31 21:25:45 2021 +0300
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Third commit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+diff --git a/file1.py b/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+index d77d790..bf6409f 100644
+\end_layout
+
+\begin_layout Plain Layout
+
+--- a/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
++++ b/file1.py @@ -1 +1,2 @@
+\end_layout
+
+\begin_layout Plain Layout
+
+ Liberte, egalite, fraternite
+\end_layout
+
+\begin_layout Plain Layout
+
++Жизнь, свобода, собственность
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+commit 700a993db7c5f682c33a087cb882728adc485198
+\end_layout
+
+\begin_layout Plain Layout
+
+Author: Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Tue Aug 31 20:51:06 2021 +0300
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Second commit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+diff --git a/file1.py b/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+index e69de29..d77d790 100644
+\end_layout
+
+\begin_layout Plain Layout
+
+--- a/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
++++ b/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+@@ -0,0 +1 @@
+\end_layout
+
+\begin_layout Plain Layout
+
++Liberte, egalite, fraternite
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+commit 1306b16f5fe40ccf8b141d716d9313df8e1983a1
+\end_layout
+
+\begin_layout Plain Layout
+
+Author: Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Tue Aug 31 19:03:49 2021 +0300
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    First commit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+diff --git a/file1.py b/file1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+new file mode 100644
+\end_layout
+
+\begin_layout Plain Layout
+
+index 0000000..e69de29 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— можно наблюдать уже
+\begin_inset space ~
+\end_inset
+
+три commit.
+\end_layout
+
+\begin_layout Subsection
+Исключение файлов из
+\begin_inset space ~
+\end_inset
+
+списка отслеживания
+\end_layout
+
+\begin_layout Subsection
+Ветки проекта, указатели
+\end_layout
+
+\begin_layout Subsection
+Работа с ГитХаб
+\end_layout
+
+\begin_layout Subsection
+Rebase
+\end_layout
+
+\begin_layout Subsection
+Работа с
+\begin_inset space ~
+\end_inset
+
+Git в
+\begin_inset space ~
+\end_inset
+
+IDE
 \end_layout
 
 \begin_layout Standard
