@@ -5029,6 +5029,14 @@ literal "false"
 \end_layout
 
 \begin_layout Itemize
+мониторинг стоимости государственного и
+\begin_inset space ~
+\end_inset
+
+муниципального имущества;
+\end_layout
+
+\begin_layout Itemize
 оценка в
 \begin_inset space ~
 \end_inset
@@ -14942,15 +14950,306 @@ $ git commit -m "Fifth commit"
 \end_layout
 
 \begin_layout Standard
-— далее проверим статус:
+— далее посмотрим историю изменений:
 \end_layout
 
 \begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git log
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+commit 7abee55d2631cf7cf2e94e58f30f36b2be807948 (HEAD -> master)
+\end_layout
+
+\begin_layout Plain Layout
+
+Author: Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Wed Sep 1 19:52:04 2021 +0300
+\end_layout
+
+\begin_layout Plain Layout
+
+    Fifth commit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+commit 284073c521af8b73e16f324698f24040e4b9ee7e
+\end_layout
+
+\begin_layout Plain Layout
+
+Author: Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Wed Sep 1 18:16:46 2021 +0300
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Fourth commit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+commit fbff919fab14ab6d41c993d3b86253c41037e075
+\end_layout
+
+\begin_layout Plain Layout
+
+Author: Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Tue Aug 31 21:25:45 2021 +0300
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Third commit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+commit 700a993db7c5f682c33a087cb882728adc485198
+\end_layout
+
+\begin_layout Plain Layout
+
+Author: Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Tue Aug 31 20:51:06 2021 +0300
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Second commit
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+commit 1306b16f5fe40ccf8b141d716d9313df8e1983a1
+\end_layout
+
+\begin_layout Plain Layout
+
+Author: Kirill Murashev <kirill.murashev@gmail.com>
+\end_layout
+
+\begin_layout Plain Layout
+
+Date:   Tue Aug 31 19:03:49 2021 +0300
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    First commit 
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
 \begin_layout Standard
-EndEnd
+— проверим наличие файла в
+\begin_inset space ~
+\end_inset
+
+каталоге:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ ls -la
+\end_layout
+
+\begin_layout Plain Layout
+
+total 0
+\end_layout
+
+\begin_layout Plain Layout
+
+drwx------ 1 kaarlahti root  0 jaan   1  1970 .
+\end_layout
+
+\begin_layout Plain Layout
+
+drwx------ 1 kaarlahti root  0 jaan   1  1970 ..
+\end_layout
+
+\begin_layout Plain Layout
+
+-rwx------ 1 kaarlahti root 84 sept   1 19:08 file-1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+drwx------ 1 kaarlahti root  0 jaan   1  1970 .git 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— а
+\begin_inset space ~
+\end_inset
+
+также его
+\begin_inset space ~
+\end_inset
+
+статус:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git status
+\end_layout
+
+\begin_layout Plain Layout
+
+On branch master
+\end_layout
+
+\begin_layout Plain Layout
+
+Untracked files:
+\end_layout
+
+\begin_layout Plain Layout
+
+  (use "git add <file>..." to include in what will be committed)
+\end_layout
+
+\begin_layout Plain Layout
+
+        file-1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+nothing added to commit but untracked files present (use "git add" to track)
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— файл присутствует в
+\begin_inset space ~
+\end_inset
+
+каталоге и
+\begin_inset space ~
+\end_inset
+
+имеет статус untracked.
+\end_layout
+
+\begin_layout Standard
+Вернём файл в
+\begin_inset space ~
+\end_inset
+
+индекс.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git add file-1.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— файл вновь имеет статус tracked.
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:2.3.3-Git_begin-End"
@@ -14966,10 +15265,2049 @@ name "subsec:2.3.3-Git_begin-End"
 \end_inset
 
 списка отслеживания
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:3.3.4-Gitignore"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+процессе разработки нередко возникают файлы, отслеживание которых скорее
+ всего является нецелесообразным, например файлы, содержащие логи.
+ При
+\begin_inset space ~
+\end_inset
+
+этом их
+\begin_inset space ~
+\end_inset
+
+постоянное присутствие в
+\begin_inset space ~
+\end_inset
+
+списке файлов, имеющих статус untracked, осложняет работы и
+\begin_inset space ~
+\end_inset
+
+также является нежелательным.
+ В
+\begin_inset space ~
+\end_inset
+
+связи с
+\begin_inset space ~
+\end_inset
+
+этим существует механизм исключения ряда файлов или
+\begin_inset space ~
+\end_inset
+
+подкаталогов из
+\begin_inset space ~
+\end_inset
+
+под
+\begin_inset space ~
+\end_inset
+
+всей системы версионирования, называемый 
+\emph on
+gitignore
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Выполним ряд
+\begin_inset space ~
+\end_inset
+
+процедур.
+ До
+\begin_inset space ~
+\end_inset
+
+этого все
+\begin_inset space ~
+\end_inset
+
+действия выполнялись путём последовательного ввода команд.
+ В
+\begin_inset space ~
+\end_inset
+
+данном случае будет показано, как
+\begin_inset space ~
+\end_inset
+
+можно использовать заготовленные скрипты.
+ Использование скриптов является очень удобным тогда, когда существует необходим
+ость многократного ввода длинной последовательности команд.
+ В
+\begin_inset space ~
+\end_inset
+
+рассматриваемом примере будет рассмотрена последовательность всего из
+\begin_inset space ~
+\end_inset
+
+пяти команд.
+ Для
+\begin_inset space ~
+\end_inset
+
+создания скрипта необходимо написать его
+\begin_inset space ~
+\end_inset
+
+текст в
+\begin_inset space ~
+\end_inset
+
+текстовом редакторе, сохранить файл с
+\begin_inset space ~
+\end_inset
+
+расширением txt (например script1.txt), после чего запустить терминал в
+\begin_inset space ~
+\end_inset
+
+каталоге с
+\begin_inset space ~
+\end_inset
+
+файлом и
+\begin_inset space ~
+\end_inset
+
+указать системе на
+\begin_inset space ~
+\end_inset
+
+то, что
+\begin_inset space ~
+\end_inset
+
+данный файл является исполняемым, т.
+\begin_inset space ~
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+передать ему
+\begin_inset space ~
+\end_inset
+
+права execute.
+ Напишем скрипт:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=left,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#создаём подкаталог
+\end_layout
+
+\begin_layout Plain Layout
+
+mkdir log
+\end_layout
+
+\begin_layout Plain Layout
+
+#переходим в новый подкаталог
+\end_layout
+
+\begin_layout Plain Layout
+
+cd log/
+\end_layout
+
+\begin_layout Plain Layout
+
+#создаём файл
+\end_layout
+
+\begin_layout Plain Layout
+
+touch log.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+#возвращаемся в каталог верхнего уровня
+\end_layout
+
+\begin_layout Plain Layout
+
+cd ..
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+#проверяем статус
+\end_layout
+
+\begin_layout Plain Layout
+
+git status
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— смысл того, что
+\begin_inset space ~
+\end_inset
+
+выполняет команда раскрыт в
+\begin_inset space ~
+\end_inset
+
+комментарии, предшествующем ей.
+ Следует обратить внимание на
+\begin_inset space ~
+\end_inset
+
+то, что
+\begin_inset space ~
+\end_inset
+
+команды, передаваемые терминалу пишутся на
+\begin_inset space ~
+\end_inset
+
+языке 
+\begin_inset CommandInset href
+LatexCommand href
+name "Bash"
+target "https://en.wikipedia.org/wiki/Bash_(Unix_shell)"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:Bash"
+literal "false"
+
+\end_inset
+
+, в
+\begin_inset space ~
+\end_inset
+
+котором игнорируется всё, что
+\begin_inset space ~
+\end_inset
+
+написано в
+\begin_inset space ~
+\end_inset
+
+строке после символа 
+\begin_inset Quotes xld
+\end_inset
+
+#
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ Передадим файлу права execute путём ввода команд в
+\begin_inset space ~
+\end_inset
+
+терминала, запущенном из
+\begin_inset space ~
+\end_inset
+
+каталога, содержащего файл.
+ Можно использовать любую (двоичную либо символическую) запись:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+chmod u+x script
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— либо:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+chmod 744 script
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— для
+\begin_inset space ~
+\end_inset
+
+проверки наличия прав в
+\begin_inset space ~
+\end_inset
+
+системе Kubuntu и
+\begin_inset space ~
+\end_inset
+
+многих других можно использовать команду:
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ls -l script1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— в
+\begin_inset space ~
+\end_inset
+
+случае наличия прав execute терминал возвратит ответ, содержащий имя файла,
+ выделенное 
+\color green
+зелёным
+\color inherit
+ цветом.
+\end_layout
+
+\begin_layout Standard
+Теперь следует вернуться в
+\begin_inset space ~
+\end_inset
+
+окно терминала, запущенное в
+\begin_inset space ~
+\end_inset
+
+каталоге изучаемого репозитория после чего просто ввести
+\begin_inset space ~
+\end_inset
+
+нём полный путь до
+\begin_inset space ~
+\end_inset
+
+созданного скрипта:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+~/.../Scripts/script1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— в
+\begin_inset space ~
+\end_inset
+
+случае правильных действий терминал возвратит сообщение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+On branch maste
+\end_layout
+
+\begin_layout Plain Layout
+
+r Changes to be committed:
+\end_layout
+
+\begin_layout Plain Layout
+
+  (use "git restore --staged <file>..." to unstage)
+\end_layout
+
+\begin_layout Plain Layout
+
+        new file:   file-1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Untracked files:
+\end_layout
+
+\begin_layout Plain Layout
+
+  (use "git add <file>..." to include in what will be committed)
+\end_layout
+
+\begin_layout Plain Layout
+
+        log/ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+данном случае автор использовал заготовленный bash скрипт.
+ Аналогичного результата можно добиться путём простого последовательного
+ ввода команд.
+ Подробнее о
+\begin_inset space ~
+\end_inset
+
+запуске скриптов в
+\begin_inset space ~
+\end_inset
+
+операционных системах, основанных на
+\begin_inset space ~
+\end_inset
+
+ядре Linux, можно прочитать, например 
+\begin_inset CommandInset href
+LatexCommand href
+name "здесь"
+target "https://wiki.merionet.ru/servernye-resheniya/63/kak-zapustit-bash-skript-v-linux/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bash:script1"
+literal "false"
+
+\end_inset
+
+.
+ Возвращаясь к
+\begin_inset space ~
+\end_inset
+
+теме Git, отметим, что
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+каталоге появилась неотслеживаемая папка log.
+ Создадим файл с
+\begin_inset space ~
+\end_inset
+
+именем .gitignore:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+kate .gitignore
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— при
+\begin_inset space ~
+\end_inset
+
+этом сразу
+\begin_inset space ~
+\end_inset
+
+же откроется окно текстового редактора.
+ Следует сделать небольшое отступление и
+\begin_inset space ~
+\end_inset
+
+сказать о
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+состав файлов и
+\begin_inset space ~
+\end_inset
+
+папок, подлежащих исключению из
+\begin_inset space ~
+\end_inset
+
+списка, подлежащего версионированию, в
+\begin_inset space ~
+\end_inset
+
+существенной степени зависит от
+\begin_inset space ~
+\end_inset
+
+используемого языка программирования.
+ В
+\begin_inset space ~
+\end_inset
+
+дальнейшем будут рассмотрены вопросы автоматизации создания файла .gitignore.
+ Сейчас
+\begin_inset space ~
+\end_inset
+
+же кратко рассмотрим заготовленные файлы для
+\begin_inset space ~
+\end_inset
+
+языков Python и
+\begin_inset space ~
+\end_inset
+
+R.
+ Ниже приводится примерное содержание файла .gitignore, предназначенного
+ для
+\begin_inset space ~
+\end_inset
+
+репозитория, содержащего код на
+\begin_inset space ~
+\end_inset
+
+языке Python:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=left,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Byte-compiled / optimized / DLL files
+\end_layout
+
+\begin_layout Plain Layout
+
+__pycache__/
+\end_layout
+
+\begin_layout Plain Layout
+
+*.py[cod]
+\end_layout
+
+\begin_layout Plain Layout
+
+*$py.class
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# C extensions
+\end_layout
+
+\begin_layout Plain Layout
+
+*.so
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Distribution / packaging
+\end_layout
+
+\begin_layout Plain Layout
+
+.Python
+\end_layout
+
+\begin_layout Plain Layout
+
+build/
+\end_layout
+
+\begin_layout Plain Layout
+
+develop-eggs/
+\end_layout
+
+\begin_layout Plain Layout
+
+dist/
+\end_layout
+
+\begin_layout Plain Layout
+
+downloads/
+\end_layout
+
+\begin_layout Plain Layout
+
+eggs/
+\end_layout
+
+\begin_layout Plain Layout
+
+.eggs/
+\end_layout
+
+\begin_layout Plain Layout
+
+lib/
+\end_layout
+
+\begin_layout Plain Layout
+
+lib64/
+\end_layout
+
+\begin_layout Plain Layout
+
+parts/
+\end_layout
+
+\begin_layout Plain Layout
+
+sdist/
+\end_layout
+
+\begin_layout Plain Layout
+
+var/
+\end_layout
+
+\begin_layout Plain Layout
+
+wheels/
+\end_layout
+
+\begin_layout Plain Layout
+
+share/
+\end_layout
+
+\begin_layout Plain Layout
+
+python-wheels/
+\end_layout
+
+\begin_layout Plain Layout
+
+*.egg-info/
+\end_layout
+
+\begin_layout Plain Layout
+
+.installed.cfg
+\end_layout
+
+\begin_layout Plain Layout
+
+*.egg MANIFEST
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# PyInstaller
+\end_layout
+
+\begin_layout Plain Layout
+
+#  Usually these files are written by a python script from a template
+\end_layout
+
+\begin_layout Plain Layout
+
+#  before PyInstaller builds the exe, so as to inject date/other infos into
+ it.
+\end_layout
+
+\begin_layout Plain Layout
+
+*.manifest
+\end_layout
+
+\begin_layout Plain Layout
+
+*.spec
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Installer logs
+\end_layout
+
+\begin_layout Plain Layout
+
+pip-log.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+pip-delete-this-directory.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Unit test / coverage reports
+\end_layout
+
+\begin_layout Plain Layout
+
+htmlcov/
+\end_layout
+
+\begin_layout Plain Layout
+
+.tox/
+\end_layout
+
+\begin_layout Plain Layout
+
+.nox/
+\end_layout
+
+\begin_layout Plain Layout
+
+.coverage
+\end_layout
+
+\begin_layout Plain Layout
+
+.coverage.*
+\end_layout
+
+\begin_layout Plain Layout
+
+.cache nosetests.xml
+\end_layout
+
+\begin_layout Plain Layout
+
+coverage.xml
+\end_layout
+
+\begin_layout Plain Layout
+
+*.cover
+\end_layout
+
+\begin_layout Plain Layout
+
+*.py,cover
+\end_layout
+
+\begin_layout Plain Layout
+
+.hypothesis/
+\end_layout
+
+\begin_layout Plain Layout
+
+.pytest_cache/
+\end_layout
+
+\begin_layout Plain Layout
+
+cover/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Translations
+\end_layout
+
+\begin_layout Plain Layout
+
+*.mo
+\end_layout
+
+\begin_layout Plain Layout
+
+*.pot
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Django stuff:
+\end_layout
+
+\begin_layout Plain Layout
+
+*.log
+\end_layout
+
+\begin_layout Plain Layout
+
+local_settings.py
+\end_layout
+
+\begin_layout Plain Layout
+
+db.sqlite3
+\end_layout
+
+\begin_layout Plain Layout
+
+db.sqlite3-journal
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Flask stuff:
+\end_layout
+
+\begin_layout Plain Layout
+
+instance/
+\end_layout
+
+\begin_layout Plain Layout
+
+.webassets-cache
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Scrapy stuff:
+\end_layout
+
+\begin_layout Plain Layout
+
+.scrapy
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Sphinx documentation
+\end_layout
+
+\begin_layout Plain Layout
+
+docs/_build/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# PyBuilder
+\end_layout
+
+\begin_layout Plain Layout
+
+.pybuilder/
+\end_layout
+
+\begin_layout Plain Layout
+
+target/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Jupyter Notebook
+\end_layout
+
+\begin_layout Plain Layout
+
+.ipynb_checkpoints
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# IPython
+\end_layout
+
+\begin_layout Plain Layout
+
+profile_default/
+\end_layout
+
+\begin_layout Plain Layout
+
+ipython_config.py
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# pyenv
+\end_layout
+
+\begin_layout Plain Layout
+
+#   For a library or package, you might want to ignore these files since
+ the code is
+\end_layout
+
+\begin_layout Plain Layout
+
+#   intended to run in multiple environments; otherwise, check them in:
+\end_layout
+
+\begin_layout Plain Layout
+
+# .python-version
+\end_layout
+
+\begin_layout Plain Layout
+
+# pipenv
+\end_layout
+
+\begin_layout Plain Layout
+
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock
+ in version control.
+\end_layout
+
+\begin_layout Plain Layout
+
+#   However, in case of collaboration, if having platform-specific dependencies
+ or dependencies
+\end_layout
+
+\begin_layout Plain Layout
+
+#   having no cross-platform support, pipenv may install dependencies that
+ don't work, or not
+\end_layout
+
+\begin_layout Plain Layout
+
+#   install all needed dependencies.
+\end_layout
+
+\begin_layout Plain Layout
+
+#Pipfile.lock
+\end_layout
+
+\begin_layout Plain Layout
+
+# PEP 582; used by e.g.
+ github.com/David-OConnor/pyflow
+\end_layout
+
+\begin_layout Plain Layout
+
+__pypackages__/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Celery stuff
+\end_layout
+
+\begin_layout Plain Layout
+
+celerybeat-schedule
+\end_layout
+
+\begin_layout Plain Layout
+
+celerybeat.pid
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# SageMath parsed files
+\end_layout
+
+\begin_layout Plain Layout
+
+*.sage.py
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Environments
+\end_layout
+
+\begin_layout Plain Layout
+
+.env
+\end_layout
+
+\begin_layout Plain Layout
+
+.venv
+\end_layout
+
+\begin_layout Plain Layout
+
+env/
+\end_layout
+
+\begin_layout Plain Layout
+
+venv/
+\end_layout
+
+\begin_layout Plain Layout
+
+ENV/
+\end_layout
+
+\begin_layout Plain Layout
+
+env.bak/
+\end_layout
+
+\begin_layout Plain Layout
+
+venv.bak/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Spyder project settings
+\end_layout
+
+\begin_layout Plain Layout
+
+.spyderproject
+\end_layout
+
+\begin_layout Plain Layout
+
+.spyproject
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Rope project settings
+\end_layout
+
+\begin_layout Plain Layout
+
+.ropeproject
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# mkdocs documentation
+\end_layout
+
+\begin_layout Plain Layout
+
+/site
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# mypy
+\end_layout
+
+\begin_layout Plain Layout
+
+.mypy_cache/
+\end_layout
+
+\begin_layout Plain Layout
+
+.dmypy.json dmypy.json
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Pyre type checker
+\end_layout
+
+\begin_layout Plain Layout
+
+.pyre/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# pytype static type analyzer
+\end_layout
+
+\begin_layout Plain Layout
+
+.pytype/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Cython debug symbols
+\end_layout
+
+\begin_layout Plain Layout
+
+cython_debug/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#учебная строка, добавлена автором
+\end_layout
+
+\begin_layout Plain Layout
+
+log/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— можно сказать, что
+\begin_inset space ~
+\end_inset
+
+файл содержит в
+\begin_inset space ~
+\end_inset
+
+себе в
+\begin_inset space ~
+\end_inset
+
+т.
+\begin_inset space \thinspace{}
+\end_inset
+
+ч.
+\begin_inset space ~
+\end_inset
+
+набор относительно простых регулярных выражений.
+ В
+\begin_inset space ~
+\end_inset
+
+частности символ 
+\begin_inset Quotes xld
+\end_inset
+
+*
+\begin_inset Quotes xrd
+\end_inset
+
+ означает возможность наличия любых символов.
+ Заключение последовательности символов в
+\begin_inset space ~
+\end_inset
+
+квадратные скобки означает возможность присутствия на
+\begin_inset space ~
+\end_inset
+
+данном месте любого из
+\begin_inset space ~
+\end_inset
+
+них.
+ В
+\begin_inset space ~
+\end_inset
+
+частности в
+\begin_inset space ~
+\end_inset
+
+строке 3 содержится указание на
+\begin_inset space ~
+\end_inset
+
+необходимость игнорирования файлов, имеющих любое имя и
+\begin_inset space ~
+\end_inset
+
+одно из
+\begin_inset space ~
+\end_inset
+
+следующих расширений: .pyc, .pyo, pyd.
+\end_layout
+
+\begin_layout Standard
+Примерное содержание файла .gitignore, предназначенного для
+\begin_inset space ~
+\end_inset
+
+репозитория, содержащего код на
+\begin_inset space ~
+\end_inset
+
+языке R:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=right,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# History files
+\end_layout
+
+\begin_layout Plain Layout
+
+.Rhistory
+\end_layout
+
+\begin_layout Plain Layout
+
+.Rapp.history
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Session Data files
+\end_layout
+
+\begin_layout Plain Layout
+
+.RData
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# User-specific files
+\end_layout
+
+\begin_layout Plain Layout
+
+.Ruserdata
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Example code in package build process
+\end_layout
+
+\begin_layout Plain Layout
+
+*-Ex.R
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Output files from R CMD build
+\end_layout
+
+\begin_layout Plain Layout
+
+/*.tar.gz
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Output files from R CMD check
+\end_layout
+
+\begin_layout Plain Layout
+
+/*.Rcheck/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# RStudio files
+\end_layout
+
+\begin_layout Plain Layout
+
+.Rproj.user/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# produced vignettes
+\end_layout
+
+\begin_layout Plain Layout
+
+vignettes/*.html
+\end_layout
+
+\begin_layout Plain Layout
+
+vignettes/*.pdf
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+\end_layout
+
+\begin_layout Plain Layout
+
+.httr-oauth
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# knitr and R markdown default cache directories
+\end_layout
+
+\begin_layout Plain Layout
+
+*_cache/
+\end_layout
+
+\begin_layout Plain Layout
+
+/cache/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Temporary files created by R markdown
+\end_layout
+
+\begin_layout Plain Layout
+
+*.utf8.md
+\end_layout
+
+\begin_layout Plain Layout
+
+*.knit.md
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# R Environment Variables
+\end_layout
+
+\begin_layout Plain Layout
+
+.Renviron
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# pkgdown
+\end_layout
+
+\begin_layout Plain Layout
+
+site docs/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# translation temp files
+\end_layout
+
+\begin_layout Plain Layout
+
+po/*~
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#учебная строка, добавлена автором
+\end_layout
+
+\begin_layout Plain Layout
+
+log/
+\end_layout
+
+\end_inset
+
+— используем любой из
+\begin_inset space ~
+\end_inset
+
+указанных файлов, сохраним его
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+проверим статус:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git status
+\end_layout
+
+\begin_layout Plain Layout
+
+On branch master
+\end_layout
+
+\begin_layout Plain Layout
+
+Changes to be committed:
+\end_layout
+
+\begin_layout Plain Layout
+
+  (use "git restore --staged <file>..." to unstage)
+\end_layout
+
+\begin_layout Plain Layout
+
+        new file:   file-1.py
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Untracked files:
+\end_layout
+
+\begin_layout Plain Layout
+
+  (use "git add <file>..." to include in what will be committed)
+\end_layout
+
+\begin_layout Plain Layout
+
+       .gitignore
+\end_layout
+
+\end_inset
+
+— как
+\begin_inset space ~
+\end_inset
+
+видим папка log пропала и
+\begin_inset space ~
+\end_inset
+
+появился файл .gitignore.
+ Добавим его
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+индекс:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git add .gitignore
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— а
+\begin_inset space ~
+\end_inset
+
+затем выполним commit:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git commit -m "Sixth commit"
+\end_layout
+
+\begin_layout Plain Layout
+
+[master e4adf82] Sixth commit
+\end_layout
+
+\begin_layout Plain Layout
+
+ 2 files changed, 142 insertions(+)
+\end_layout
+
+\begin_layout Plain Layout
+
+ create mode 100644 .gitignore
+\end_layout
+
+\begin_layout Plain Layout
+
+ create mode 100644 file-1.py 
+\end_layout
+
+\end_inset
+
+— теперь в
+\begin_inset space ~
+\end_inset
+
+случае создания в
+\begin_inset space ~
+\end_inset
+
+каталоге любого файла, чьё
+\begin_inset space ~
+\end_inset
+
+имя подпадает под
+\begin_inset space ~
+\end_inset
+
+правила, описанные в
+\begin_inset space ~
+\end_inset
+
+файле .gitignore, он
+\begin_inset space ~
+\end_inset
+
+сразу
+\begin_inset space ~
+\end_inset
+
+же исключается из
+\begin_inset space ~
+\end_inset
+
+списка наблюдения со
+\begin_inset space ~
+\end_inset
+
+стороны системы версионирования.
+ Забегая вперёд, можно сказать, что, чаще всего отсутствует необходимость
+ создавать такой файл вручную.
+ Данная функция реализована во
+\begin_inset space ~
+\end_inset
+
+многих
+\begin_inset space ~
+\end_inset
+
+IDE и
+\begin_inset space ~
+\end_inset
+
+будет рассмотрена далее.
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:3.3.4-Gitignore-End"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Ветки проекта, указатели
+Ветки проекта
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.3.5-Branches"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+предыдущих подразделах рассматривалась линейная модель созданий версий,
+ которые последовательно формировались одна за
+\begin_inset space ~
+\end_inset
+
+другой путём проведений процедуры commit.
+ Git позволяет осуществлять ветвление версий.
+ Посмотрим на
+\begin_inset space ~
+\end_inset
+
+текущий статус репозитория:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git status
+\end_layout
+
+\begin_layout Plain Layout
+
+On branch master nothing to commit, working tree clean 
+\end_layout
+
+\end_inset
+
+— обратим внимание на
+\begin_inset space ~
+\end_inset
+
+сообщение, возвращённое терминалом, содержащее ссылку на
+\begin_inset space ~
+\end_inset
+
+некую branch master.
+ Для
+\begin_inset space ~
+\end_inset
+
+того, чтобы разобраться в
+\begin_inset space ~
+\end_inset
+
+данном вопросе, следует вспомнить основные принципы работы Git, описанные
+ в
+\begin_inset space ~
+\end_inset
+
+подразделах
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:2.3.1-Git_common"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+–
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:2.3.2-Git_hash"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "subsec:2.3.1-Git_common"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+–
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "subsec:2.3.2-Git_hash-End"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Каждый commit имеет хеш-сумму, содержащую в
+\begin_inset space ~
+\end_inset
+
+т\SpecialChar endofsentence
+ч.
+\begin_inset space ~
+\end_inset
+
+ссылку на
+\begin_inset space ~
+\end_inset
+
+предыдущий commit.
+ Таким образом формируется неразрывная цепочка версий.
+ Помимо этого в
+\begin_inset space ~
+\end_inset
+
+Git реализована работа указателя Head, представляющего собой метку, указывающую
+ на
+\begin_inset space ~
+\end_inset
+
+один из
+\begin_inset space ~
+\end_inset
+
+commit.
+ Местонахождение этой метки указывает Git, в
+\begin_inset space ~
+\end_inset
+
+каком именно состоянии репозиторий находится в
+\begin_inset space ~
+\end_inset
+
+данный момент.
+ При
+\begin_inset space ~
+\end_inset
+
+каждом выполнении commit указатель Head смещается на
+\begin_inset space ~
+\end_inset
+
+новый commit.
+ Схема работы указателя Head показана на
+\begin_inset space ~
+\end_inset
+
+рисунке
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "draw:Head-scheme"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Схема работы указателя Head
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "draw:Head-scheme"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Images/2/commits-cons.pdf
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.3.5-Branches-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+указатели
 \end_layout
 
 \begin_layout Subsection
@@ -15014,11 +17352,7 @@ name "sec:2.3_Git-End"
 \end_layout
 
 \begin_layout Subsection
-
-\lang american
 Git
-\lang russian
-
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:2.4.1-Git_install"
