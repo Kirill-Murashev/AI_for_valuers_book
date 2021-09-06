@@ -11246,7 +11246,7 @@ status open
 
 \begin_layout Plain Layout
 
-git config --system
+$ git config --system
 \end_layout
 
 \end_inset
@@ -11266,7 +11266,7 @@ status open
 
 \begin_layout Plain Layout
 
-git config --global
+$ git config --global
 \end_layout
 
 \end_inset
@@ -11286,7 +11286,7 @@ status open
 
 \begin_layout Plain Layout
 
-git config --local
+$ git config --local
 \end_layout
 
 \end_inset
@@ -11327,7 +11327,7 @@ status open
 
 \begin_layout Plain Layout
 
-git config --global user.name 
+$ git config --global user.name 
 \begin_inset Quotes xld
 \end_inset
 
@@ -11340,12 +11340,12 @@ First.Second
 
 \begin_layout Plain Layout
 
-git config --global user.email user-adress@host.com
+$ git config --global user.email user-adress@host.com
 \end_layout
 
 \begin_layout Plain Layout
 
-git config --global core.editor 
+$ git config --global core.editor 
 \begin_inset Quotes xld
 \end_inset
 
@@ -11454,7 +11454,7 @@ status open
 
 \begin_layout Plain Layout
 
-git config --global core.editor "'C:
+$ git config --global core.editor "'C:
 \backslash
 Program Files
 \backslash
@@ -11559,7 +11559,7 @@ status open
 
 \begin_layout Plain Layout
 
-mkdir git-lesson
+$ mkdir git-lesson
 \end_layout
 
 \end_inset
@@ -11591,7 +11591,7 @@ status open
 
 \begin_layout Plain Layout
 
-cd git-lesson
+$ cd git-lesson
 \end_layout
 
 \end_inset
@@ -11627,7 +11627,7 @@ status open
 
 \begin_layout Plain Layout
 
-ls -la
+$ ls -la
 \end_layout
 
 \end_inset
@@ -11719,7 +11719,7 @@ status open
 
 \begin_layout Plain Layout
 
-git init
+$ git init
 \end_layout
 
 \end_inset
@@ -11755,7 +11755,7 @@ status open
 
 \begin_layout Plain Layout
 
-Initialized empty Git repository in /home/.../git-lesson/.git/
+> Initialized empty Git repository in /home/.../git-lesson/.git/
 \end_layout
 
 \end_inset
@@ -11779,7 +11779,7 @@ status open
 
 \begin_layout Plain Layout
 
-ls -la
+$ ls -la
 \end_layout
 
 \end_inset
@@ -11826,7 +11826,7 @@ status open
 
 \begin_layout Plain Layout
 
-touch file1.py
+$ touch file1.py
 \end_layout
 
 \end_inset
@@ -11876,7 +11876,7 @@ status open
 
 \begin_layout Plain Layout
 
-git log
+$ git log
 \end_layout
 
 \end_inset
@@ -11900,7 +11900,7 @@ status open
 
 \begin_layout Plain Layout
 
-fatal: your current branch 'master' does not have any commits yet
+> fatal: your current branch 'master' does not have any commits yet
 \end_layout
 
 \end_inset
@@ -11943,7 +11943,7 @@ status open
 
 \begin_layout Plain Layout
 
-git status
+$ git status
 \end_layout
 
 \end_inset
@@ -11963,7 +11963,7 @@ status open
 
 \begin_layout Plain Layout
 
-On branch master
+> On branch master
 \end_layout
 
 \begin_layout Plain Layout
@@ -12381,7 +12381,7 @@ status open
 
 \begin_layout Plain Layout
 
-git add <file.name1> <file.name2> 
+$ git add <file.name1> <file.name2> 
 \end_layout
 
 \end_inset
@@ -12422,7 +12422,7 @@ status open
 
 \begin_layout Plain Layout
 
-git commit -m 
+$ git commit -m 
 \begin_inset Quotes xld
 \end_inset
 
@@ -12533,7 +12533,7 @@ status open
 
 \begin_layout Plain Layout
 
-git add file1.py
+$ git add file1.py
 \end_layout
 
 \end_inset
@@ -12553,7 +12553,7 @@ status open
 
 \begin_layout Plain Layout
 
-git status
+$ git status
 \end_layout
 
 \end_inset
@@ -12577,7 +12577,7 @@ status open
 
 \begin_layout Plain Layout
 
-On branch master
+> On branch master
 \end_layout
 
 \begin_layout Plain Layout
@@ -12654,7 +12654,7 @@ status open
 
 \begin_layout Plain Layout
 
-git commit -m 
+$ git commit -m 
 \begin_inset Quotes xld
 \end_inset
 
@@ -12699,7 +12699,7 @@ status open
 
 \begin_layout Plain Layout
 
-[master (root-commit) 1306b16] First commit
+> [master (root-commit) 1306b16] First commit
 \end_layout
 
 \begin_layout Plain Layout
@@ -12718,7 +12718,11 @@ status open
 \end_layout
 
 \begin_layout Standard
-Теперь повторим ранее уже использованную команду:
+Теперь повторим ранее уже
+\begin_inset space ~
+\end_inset
+
+использованную команду:
 \end_layout
 
 \begin_layout Standard
@@ -12729,7 +12733,7 @@ status open
 
 \begin_layout Plain Layout
 
-git log
+$ git log
 \end_layout
 
 \end_inset
@@ -12777,7 +12781,7 @@ status open
 
 \begin_layout Plain Layout
 
-commit 1306b16f5fe40ccf8b141d716d9313df8e1983a1 (HEAD -> master) Author:
+> commit 1306b16f5fe40ccf8b141d716d9313df8e1983a1 (HEAD -> master) Author:
  Kirill Murashev <kirill.murashev@gmail.com>
 \end_layout
 
@@ -12883,7 +12887,7 @@ status open
 
 \begin_layout Plain Layout
 
-git show 1306b16f5fe40ccf8b141d716d9313df8e1983a1
+$ git show 1306b16f5fe40ccf8b141d716d9313df8e1983a1
 \end_layout
 
 \end_inset
@@ -12920,7 +12924,7 @@ status open
 
 \begin_layout Plain Layout
 
-commit 1306b16f5fe40ccf8b141d716d9313df8e1983a1 (HEAD -> master)
+> commit 1306b16f5fe40ccf8b141d716d9313df8e1983a1 (HEAD -> master)
 \end_layout
 
 \begin_layout Plain Layout
@@ -13036,7 +13040,7 @@ $ git log -p
 
 \begin_layout Plain Layout
 
-commit 1306b16f5fe40ccf8b141d716d9313df8e1983a1 (HEAD -> master) Author:
+> commit 1306b16f5fe40ccf8b141d716d9313df8e1983a1 (HEAD -> master) Author:
  Kirill Murashev <kirill.murashev@gmail.com> Date:   Tue Aug 31 19:03:49 2021
  +0300
 \end_layout
@@ -13131,7 +13135,7 @@ status open
 
 \begin_layout Plain Layout
 
-kate file.py 
+$ kate file.py 
 \end_layout
 
 \end_inset
@@ -13176,7 +13180,7 @@ status open
 
 \begin_layout Plain Layout
 
-$git status
+$ git status
 \end_layout
 
 \begin_layout Plain Layout
@@ -13185,7 +13189,7 @@ $git status
 
 \begin_layout Plain Layout
 
-On branch master
+> On branch master
 \end_layout
 
 \begin_layout Plain Layout
@@ -13239,7 +13243,7 @@ status open
 
 \begin_layout Plain Layout
 
-git restore file.py
+$ git restore file.py
 \end_layout
 
 \end_inset
@@ -13341,7 +13345,7 @@ $git diff
 
 \begin_layout Plain Layout
 
-diff --git a/file1.py b/file1.py
+> diff --git a/file1.py b/file1.py
 \end_layout
 
 \begin_layout Plain Layout
@@ -13441,7 +13445,7 @@ $ git status
 
 \begin_layout Plain Layout
 
-On branch master
+> On branch master
 \end_layout
 
 \begin_layout Plain Layout
@@ -13507,7 +13511,7 @@ status open
 
 \begin_layout Plain Layout
 
-git add file1.py
+$ git add file1.py
 \end_layout
 
 \end_inset
@@ -13536,7 +13540,7 @@ $ git status
 
 \begin_layout Plain Layout
 
-On branch master
+> On branch master
 \end_layout
 
 \begin_layout Plain Layout
@@ -13624,7 +13628,7 @@ status open
 
 \begin_layout Plain Layout
 
-$git diff --staged
+$ git diff --staged
 \end_layout
 
 \begin_layout Plain Layout
@@ -13633,7 +13637,7 @@ $git diff --staged
 
 \begin_layout Plain Layout
 
-diff --git a/file1.py b/file1.py
+> diff --git a/file1.py b/file1.py
 \end_layout
 
 \begin_layout Plain Layout
@@ -13678,7 +13682,7 @@ status open
 
 \begin_layout Plain Layout
 
-git commit -m 
+$ git commit -m 
 \begin_inset Quotes xld
 \end_inset
 
@@ -13706,7 +13710,7 @@ status open
 
 \begin_layout Plain Layout
 
-[master 700a993] Second commit
+> [master 700a993] Second commit
 \end_layout
 
 \begin_layout Plain Layout
@@ -13744,7 +13748,7 @@ $ git log
 
 \begin_layout Plain Layout
 
-commit 700a993db7c5f682c33a087cb882728adc485198 (HEAD -> master)
+> commit 700a993db7c5f682c33a087cb882728adc485198 (HEAD -> master)
 \end_layout
 
 \begin_layout Plain Layout
@@ -13840,7 +13844,7 @@ $ git log -p
 
 \begin_layout Plain Layout
 
-commit 700a993db7c5f682c33a087cb882728adc485198 (HEAD -> master)
+> commit 700a993db7c5f682c33a087cb882728adc485198 (HEAD -> master)
 \end_layout
 
 \begin_layout Plain Layout
@@ -14034,7 +14038,7 @@ $ git status
 
 \begin_layout Plain Layout
 
-On branch master
+> On branch master
 \end_layout
 
 \begin_layout Plain Layout
@@ -14096,7 +14100,7 @@ $ git commit -am "Third commit"
 
 \begin_layout Plain Layout
 
-[master fbff919] Third commit
+> [master fbff919] Third commit
 \end_layout
 
 \begin_layout Plain Layout
@@ -14130,7 +14134,7 @@ $ git log -p
 
 \begin_layout Plain Layout
 
-commit fbff919fab14ab6d41c993d3b86253c41037e075 (HEAD -> master)
+> commit fbff919fab14ab6d41c993d3b86253c41037e075 (HEAD -> master)
 \end_layout
 
 \begin_layout Plain Layout
@@ -14368,7 +14372,7 @@ $ git status
 
 \begin_layout Plain Layout
 
-On branch master
+> On branch master
 \end_layout
 
 \begin_layout Plain Layout
@@ -14428,7 +14432,7 @@ Fourth commit
 
 \begin_layout Plain Layout
 
-[master 284073c] Fourth commit
+> [master 284073c] Fourth commit
 \end_layout
 
 \begin_layout Plain Layout
@@ -14467,7 +14471,7 @@ status open
 
 \begin_layout Plain Layout
 
-git rm file-1.py
+$ git rm file-1.py
 \end_layout
 
 \end_inset
@@ -14492,7 +14496,7 @@ $ git status
 
 \begin_layout Plain Layout
 
-On branch master
+> On branch master
 \end_layout
 
 \begin_layout Plain Layout
@@ -14552,7 +14556,7 @@ status open
 
 \begin_layout Plain Layout
 
-git restore --staged file-1.py
+$ git restore --staged file-1.py
 \end_layout
 
 \end_inset
@@ -14585,7 +14589,7 @@ $ git status
 
 \begin_layout Plain Layout
 
-On branch master
+> On branch master
 \end_layout
 
 \begin_layout Plain Layout
@@ -14662,7 +14666,7 @@ status open
 
 \begin_layout Plain Layout
 
-git restore file-1.py
+$ git restore file-1.py
 \end_layout
 
 \end_inset
@@ -14695,7 +14699,7 @@ $ git status
 
 \begin_layout Plain Layout
 
-On branch master nothing to commit, working tree clean 
+> On branch master nothing to commit, working tree clean 
 \end_layout
 
 \end_inset
@@ -14791,7 +14795,7 @@ $  git rm --cached file-1.py
 
 \begin_layout Plain Layout
 
-rm 'file-1.py' 
+>rm 'file-1.py' 
 \end_layout
 
 \end_inset
@@ -14844,7 +14848,7 @@ $ git status
 
 \begin_layout Plain Layout
 
-On branch master
+> On branch master
 \end_layout
 
 \begin_layout Plain Layout
@@ -14919,29 +14923,29 @@ $ ls -la
 
 \begin_layout Plain Layout
 
-total 0
+> total 0
 \backslash
 
 \end_layout
 
 \begin_layout Plain Layout
 
-drwx------ 1 kaarlahti root  0 jaan   1  1970 .
+drwx------ 1 user.name root  0 jaan   1  1970 .
 \end_layout
 
 \begin_layout Plain Layout
 
-drwx------ 1 kaarlahti root  0 jaan   1  1970 ..
+drwx------ 1 user.name root  0 jaan   1  1970 ..
 \end_layout
 
 \begin_layout Plain Layout
 
--rwx------ 1 kaarlahti root 84 sept   1 19:08 file-1.py
+-rwx------ 1 user.name root 84 sept   1 19:08 file-1.py
 \end_layout
 
 \begin_layout Plain Layout
 
-drwx------ 1 kaarlahti root  0 jaan   1  1970 .git 
+drwx------ 1 user.name root  0 jaan   1  1970 .git 
 \end_layout
 
 \end_inset
@@ -14974,7 +14978,7 @@ $ git commit -m "Fifth commit"
 
 \begin_layout Plain Layout
 
-[master 7abee55] Fifth commit
+> [master 7abee55] Fifth commit
 \end_layout
 
 \begin_layout Plain Layout
@@ -15013,7 +15017,7 @@ $ git log
 
 \begin_layout Plain Layout
 
-commit 7abee55d2631cf7cf2e94e58f30f36b2be807948 (HEAD -> master)
+> commit 7abee55d2631cf7cf2e94e58f30f36b2be807948 (HEAD -> master)
 \end_layout
 
 \begin_layout Plain Layout
@@ -15169,27 +15173,27 @@ $ ls -la
 
 \begin_layout Plain Layout
 
-total 0
+> total 0
 \end_layout
 
 \begin_layout Plain Layout
 
-drwx------ 1 kaarlahti root  0 jaan   1  1970 .
+drwx------ 1 user.name root  0 jaan   1  1970 .
 \end_layout
 
 \begin_layout Plain Layout
 
-drwx------ 1 kaarlahti root  0 jaan   1  1970 ..
+drwx------ 1 user.name root  0 jaan   1  1970 ..
 \end_layout
 
 \begin_layout Plain Layout
 
--rwx------ 1 kaarlahti root 84 sept   1 19:08 file-1.py
+-rwx------ 1 user.name root 84 sept   1 19:08 file-1.py
 \end_layout
 
 \begin_layout Plain Layout
 
-drwx------ 1 kaarlahti root  0 jaan   1  1970 .git 
+drwx------ 1 user.name root  0 jaan   1  1970 .git 
 \end_layout
 
 \end_inset
@@ -15222,7 +15226,7 @@ $ git status
 
 \begin_layout Plain Layout
 
-On branch master
+> On branch master
 \end_layout
 
 \begin_layout Plain Layout
@@ -15283,7 +15287,7 @@ status open
 
 \begin_layout Plain Layout
 
-git add file-1.py
+$ git add file-1.py
 \end_layout
 
 \end_inset
@@ -15601,7 +15605,7 @@ status open
 
 \begin_layout Plain Layout
 
-chmod u+x script
+$ chmod u+x script
 \end_layout
 
 \end_inset
@@ -15621,7 +15625,7 @@ status open
 
 \begin_layout Plain Layout
 
-chmod 744 script
+$ chmod 744 script
 \end_layout
 
 \end_inset
@@ -15650,7 +15654,7 @@ status open
 
 \begin_layout Plain Layout
 
-ls -l script1
+$ ls -l script1
 \end_layout
 
 \end_inset
@@ -15699,7 +15703,7 @@ status open
 
 \begin_layout Plain Layout
 
-~/.../Scripts/script1
+$ ~/.../Scripts/script1
 \end_layout
 
 \end_inset
@@ -15723,7 +15727,7 @@ status open
 
 \begin_layout Plain Layout
 
-On branch maste
+> On branch maste
 \end_layout
 
 \begin_layout Plain Layout
@@ -15835,7 +15839,7 @@ status open
 
 \begin_layout Plain Layout
 
-kate .gitignore
+$ kate .gitignore
 \end_layout
 
 \end_inset
@@ -16934,7 +16938,7 @@ $ git status
 
 \begin_layout Plain Layout
 
-On branch master
+> On branch master
 \end_layout
 
 \begin_layout Plain Layout
@@ -17001,7 +17005,7 @@ status open
 
 \begin_layout Plain Layout
 
-git add .gitignore
+$ git add .gitignore
 \end_layout
 
 \end_inset
@@ -17030,7 +17034,7 @@ $ git commit -m "Sixth commit"
 
 \begin_layout Plain Layout
 
-[master e4adf82] Sixth commit
+> [master e4adf82] Sixth commit
 \end_layout
 
 \begin_layout Plain Layout
@@ -17158,7 +17162,7 @@ $ git status
 
 \begin_layout Plain Layout
 
-On branch master nothing to commit, working tree clean 
+> On branch master nothing to commit, working tree clean 
 \end_layout
 
 \end_inset
@@ -17366,7 +17370,7 @@ $ git log
 
 \begin_layout Plain Layout
 
-commit e4adf8280c5d95a6f5796dba8e028012565de958
+> commit e4adf8280c5d95a6f5796dba8e028012565de958
 \end_layout
 
 \begin_layout Plain Layout
@@ -17595,7 +17599,7 @@ status open
 
 \begin_layout Plain Layout
 
-git branch Develop
+$ git branch Develop
 \end_layout
 
 \end_inset
@@ -17616,7 +17620,7 @@ status open
 
 \begin_layout Plain Layout
 
-git checkout Develop
+$ git checkout Develop
 \end_layout
 
 \end_inset
@@ -17895,6 +17899,7 @@ $ git branch -a
 
 \begin_layout Plain Layout
 
+>
 \end_layout
 
 \begin_layout Plain Layout
@@ -17954,7 +17959,7 @@ status open
 
 \begin_layout Plain Layout
 
-git checkout master
+$ git checkout master
 \end_layout
 
 \end_inset
@@ -17983,7 +17988,7 @@ status open
 
 \begin_layout Plain Layout
 
-git merge develop
+$ git merge develop
 \end_layout
 
 \end_inset
@@ -18048,7 +18053,7 @@ status open
 
 \begin_layout Plain Layout
 
-git branch-d develop
+$ git branch-d develop
 \end_layout
 
 \end_inset
@@ -18205,7 +18210,7 @@ status open
 
 \begin_layout Plain Layout
 
-git chekout -b <branch.name>
+$ git chekout -b <branch.name>
 \end_layout
 
 \end_inset
@@ -18255,6 +18260,17 @@ Github
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:2.3.6-GitHub"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Начало
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.3.6.1-GitHub_begin"
 
 \end_inset
 
@@ -18753,13 +18769,1297 @@ literal "false"
 \end_inset
 
 .
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.3.6.1-GitHub_begin-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Настройка соединения с
+\begin_inset space ~
+\end_inset
+
+удалённым репозиторием посредством протокола SSH
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.3.6.2-GitHub_SSH"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+установления связи с
+\begin_inset space ~
+\end_inset
+
+удалённым репозиторием GitHub посредством протокола SSH необходимо осуществить
+ ряд действий, а
+\begin_inset space ~
+\end_inset
+
+именно генерировать пару SSH-ключей, а
+\begin_inset space ~
+\end_inset
+
+затем добавить их
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+профиль аккаунта на
+\begin_inset space ~
+\end_inset
+
+портале GitHub.
+\end_layout
+
+\begin_layout Paragraph
+Проверка наличия существующих SSH-ключей.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.3.6.2.1-GitHub-SSH-Check_exist"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+начала необходимо проверить наличие существующих ключей.
+ Для
+\begin_inset space ~
+\end_inset
+
+этого следует запустить Терминал и
+\begin_inset space ~
+\end_inset
+
+ввести команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ ls -al ~/.ssh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— в
+\begin_inset space ~
+\end_inset
+
+случае наличия существующих ключей Терминал возвратит примерно следующее
+ сообщение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+> total 20
+\end_layout
+
+\begin_layout Plain Layout
+
+drwx------  2 user.name user.name 4096 aug   14 14:42 .
+\end_layout
+
+\begin_layout Plain Layout
+
+drwxr-xr-x 36 user.name user.name 4096 sept   1 09:14 ..
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+-rw-------  1 user.name user.name  464 aug   11 11:05 id_ed25519 
+\end_layout
+
+\begin_layout Plain Layout
+
+-rw-r--r--  1 user.name user.name  107 aug   11 10:04 id_ed25519.pub 
+\end_layout
+
+\begin_layout Plain Layout
+
+-rw-r--r--  1 user.name user.name 1326 aug   11 19:08 known_hosts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— в
+\begin_inset space ~
+\end_inset
+
+этом случае можно пропустить второй этап, описанный в
+\begin_inset space ~
+\end_inset
+
+подсекции
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "par:2.3.6.2.2-GitHub-SSH-Keygen"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+–
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "par:2.3.6.2.2-GitHub-SSH-Keygen-End"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, и
+\begin_inset space ~
+\end_inset
+
+перейти к
+\begin_inset space ~
+\end_inset
+
+третьему этапу, описанному в
+\begin_inset space ~
+\end_inset
+
+подсекции
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "par:2.3.6.2.3-GitHub-SSH-Add"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+–
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "par:2.3.6.2.3-GitHub-SSH-Add-End"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ В
+\begin_inset space ~
+\end_inset
+
+случае отсутствия существующей пары необходимо осуществить её
+\begin_inset space ~
+\end_inset
+
+генерацию.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.3.6.2.1-GitHub-SSH-Check_exist-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Генерация новой пары ключей.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.3.6.2.2-GitHub-SSH-Keygen"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+создания пары ключей на
+\begin_inset space ~
+\end_inset
+
+основе алгоритма RSA, необходимо запустить Терминал и
+\begin_inset space ~
+\end_inset
+
+выполнить команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ ssh-keygen -t rsa -b 4096 -C "user.name@host.com"
+\end_layout
+
+\end_inset
+
+— указав при
+\begin_inset space ~
+\end_inset
+
+этот тот
+\begin_inset space ~
+\end_inset
+
+адрес электронной почты, который указан в
+\begin_inset space ~
+\end_inset
+
+профиле на
+\begin_inset space ~
+\end_inset
+
+GitHub.
+ Помимо адреса электронной почты аргументами команды являются: алгоритм
+ генерации ключа и
+\begin_inset space ~
+\end_inset
+
+его
+\begin_inset space ~
+\end_inset
+
+длина
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+битах.
+ Следует сказать, что
+\begin_inset space ~
+\end_inset
+
+алгоритм RSA не
+\begin_inset space ~
+\end_inset
+
+является единственным О
+\begin_inset space ~
+\end_inset
+
+различиях между алгоритмами 
+\begin_inset CommandInset href
+LatexCommand href
+name "RSA"
+target "https://ru.wikipedia.org/wiki/RSA"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:RSA-algorythm"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "DSA"
+target "https://ru.wikipedia.org/wiki/DSA"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:DSA-algorythm"
+literal "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "ECDSA"
+target "https://ru.wikipedia.org/wiki/ECDSA"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:ECDSA-algorythm"
+literal "false"
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Ed25519"
+target "https://ed25519.cr.yp.to/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ED25519-algorythm"
+literal "false"
+
+\end_inset
+
+ можно почитать в
+\begin_inset space ~
+\end_inset
+
+следующих статьях и
+\begin_inset space ~
+\end_inset
+
+комментариях к
+\begin_inset space ~
+\end_inset
+
+ним: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Geeksfor:RSA-vs-DSA,Stack:RSA-vs-DSA,Medium:Ed25519"
+literal "false"
+
+\end_inset
+
+.
+ В
+\begin_inset space ~
+\end_inset
+
+целом, можно сказать, что
+\begin_inset space ~
+\end_inset
+
+для
+\begin_inset space ~
+\end_inset
+
+целей обучения анализу данных, равно как
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+для
+\begin_inset space ~
+\end_inset
+
+большинства практических целей оценщиков нет
+\begin_inset space ~
+\end_inset
+
+существенной разницы в
+\begin_inset space ~
+\end_inset
+
+том, какой алгоритм будет использован при
+\begin_inset space ~
+\end_inset
+
+создании пары ключей.
+ Однако, с
+\begin_inset space ~
+\end_inset
+
+точки зрения соответствия лучшим практикам и
+\begin_inset space ~
+\end_inset
+
+современным тенденциям можно сказать следующее:
+\end_layout
+
+\begin_layout Enumerate
+Алгоритм DSA несколько устарел и
+\begin_inset space ~
+\end_inset
+
+подвержен уязвимости, поскольку решение проблемы вычислительной сложности
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "взятия логарифмов в конечных полях"
+target "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D1%81%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D0%BE%D0%B5_%D0%BB%D0%BE%D0%B3%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:discret_log"
+literal "false"
+
+\end_inset
+
+, на
+\begin_inset space ~
+\end_inset
+
+которой он
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+был
+\begin_inset space ~
+\end_inset
+
+основан, было найдено в
+\begin_inset space ~
+\end_inset
+
+2013
+\begin_inset space ~
+\end_inset
+
+году.
+\end_layout
+
+\begin_layout Enumerate
+Схожий с
+\begin_inset space ~
+\end_inset
+
+DSA алгоритм ECDSA лишён указанного недостатка, поскольку основан не
+\begin_inset space ~
+\end_inset
+
+на
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "конечном числовом поле"
+target "https://ru.wikipedia.org/wiki/Конечное_поле"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:Galois_field"
+literal "false"
+
+\end_inset
+
+, а
+\begin_inset space ~
+\end_inset
+
+на
+\begin_inset space ~
+\end_inset
+
+группе точек 
+\begin_inset CommandInset href
+LatexCommand href
+name "эллиптической кривой"
+target "https://ru.wikipedia.org/wiki/Эллиптическая_кривая"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:elliptic_curve"
+literal "false"
+
+\end_inset
+
+.
+ При
+\begin_inset space ~
+\end_inset
+
+этом криптографическая стойкость алгоритма в
+\begin_inset space ~
+\end_inset
+
+существенной степени зависит от
+\begin_inset space ~
+\end_inset
+
+возможности компьютера генерировать случайные числа.
+\end_layout
+
+\begin_layout Enumerate
+Алгоритм RSA обеспечивает достаточную надёжность при
+\begin_inset space ~
+\end_inset
+
+условии достаточной длины ключа.
+ Длина ключа в
+\begin_inset space ~
+\end_inset
+
+3072 либо 4096 бит является достаточной.
+ Данный алгоритм является рекомендуемым в
+\begin_inset space ~
+\end_inset
+
+том
+\begin_inset space ~
+\end_inset
+
+случае, если нет
+\begin_inset space ~
+\end_inset
+
+возможности использовать алгоритм Ed25519.
+\end_layout
+
+\begin_layout Enumerate
+Алгоритм Ed25519 является предпочтительным во
+\begin_inset space ~
+\end_inset
+
+всех случаях, когда система технически способна работать с
+\begin_inset space ~
+\end_inset
+
+ним.
+ Данный алгоритм обеспечивает хорошую криптостойкость, при
+\begin_inset space ~
+\end_inset
+
+этом работа с
+\begin_inset space ~
+\end_inset
+
+ключами происходит существенно быстрее, чем
+\begin_inset space ~
+\end_inset
+
+при
+\begin_inset space ~
+\end_inset
+
+использовании алгоритма RSA.
+ Длина публичного ключа составляет всего 68
+\begin_inset space ~
+\end_inset
+
+символов, тогда как
+\begin_inset space ~
+\end_inset
+
+RSA генерирует публичный ключ длиной в
+\begin_inset space ~
+\end_inset
+
+544 символа (при
+\begin_inset space ~
+\end_inset
+
+3072 бит).
+\end_layout
+
+\begin_layout Standard
+Таким образом, вместо вышеуказанной команды рекомендуется использовать команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ ssh-keygen -t ed25519 -C "user.name@host.com"
+\end_layout
+
+\end_inset
+
+— адрес электронной почты также должен совпадать с
+\begin_inset space ~
+\end_inset
+
+тем, который указан в
+\begin_inset space ~
+\end_inset
+
+профиле на
+\begin_inset space ~
+\end_inset
+
+портале GitHub.
+ Терминал возвратит сообщение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+> Enter a file in which to save the key (/home/user.name/.ssh/id_ed25519):
+ [Press enter]
+\end_layout
+
+\end_inset
+
+— предложив нажать Enter для
+\begin_inset space ~
+\end_inset
+
+сохранения ключей в
+\begin_inset space ~
+\end_inset
+
+каталоге по
+\begin_inset space ~
+\end_inset
+
+умолчанию.
+ Следует согласиться с
+\begin_inset space ~
+\end_inset
+
+предложением и
+\begin_inset space ~
+\end_inset
+
+перейти к
+\begin_inset space ~
+\end_inset
+
+этапу создания пароля:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+\end_layout
+
+\begin_layout Plain Layout
+
+> Enter same passphrase again: [Type passphrase again]
+\end_layout
+
+\end_inset
+
+— ключи SSH готовы.
+ Для
+\begin_inset space ~
+\end_inset
+
+возможности работы с
+\begin_inset space ~
+\end_inset
+
+ними необходимо добавить их
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+ssh-agent.
+ Для
+\begin_inset space ~
+\end_inset
+
+этого сначала необходимо запустить ssh-agent в
+\begin_inset space ~
+\end_inset
+
+фоновом режиме, выполнив последовательно две
+\begin_inset space ~
+\end_inset
+
+команды:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ sudo -s -H
+\end_layout
+
+\begin_layout Plain Layout
+
+$ eval "$(ssh-agent -s)"
+\end_layout
+
+\end_inset
+
+— далее осуществляется добавление самого ключа:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ ssh-add ~/.ssh/id_ed25519
+\end_layout
+
+\end_inset
+
+— ключи зарегистрированы в
+\begin_inset space ~
+\end_inset
+
+ssh-agent и
+\begin_inset space ~
+\end_inset
+
+могут быть использованы для
+\begin_inset space ~
+\end_inset
+
+взаимодействия с
+\begin_inset space ~
+\end_inset
+
+порталом GitHub.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.3.6.2.2-GitHub-SSH-Keygen-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Добавление публичного ключа на
+\begin_inset space ~
+\end_inset
+
+портал GitHub.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.3.6.2.3-GitHub-SSH-Add"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+того, чтобы
+\begin_inset space ~
+\end_inset
+
+добавить в
+\begin_inset space ~
+\end_inset
+
+профиль на
+\begin_inset space ~
+\end_inset
+
+портале GitHub публичный ssh ключ необходимо получить его
+\begin_inset space ~
+\end_inset
+
+значение.
+ Для
+\begin_inset space ~
+\end_inset
+
+начала следует установить xclip:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ sudo apt-get update
+\end_layout
+
+\begin_layout Plain Layout
+
+$ sudo apt-get install xclip
+\end_layout
+
+\end_inset
+
+— теперь существует возможность автоматически копировать возвращаемые терминалом
+ сообщения в
+\begin_inset space ~
+\end_inset
+
+буфер обмена.
+ Сделаем это:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+xclip -selection clipboard < ~/.ssh/id_ed25519.pub
+\end_layout
+
+\end_inset
+
+— в
+\begin_inset space ~
+\end_inset
+
+данный момент буфер обмена содержит значение публичного ssh ключа.
+ После этого необходимо зайти в
+\begin_inset space ~
+\end_inset
+
+свой профиль на
+\begin_inset space ~
+\end_inset
+
+портале GitHub и
+\begin_inset space ~
+\end_inset
+
+найти пункт меню 
+\series bold
+Settings
+\series default
+, а
+\begin_inset space ~
+\end_inset
+
+затем 
+\series bold
+SSH and
+\begin_inset space ~
+\end_inset
+
+GPG keys
+\series default
+.
+ После этого следует нажать на
+\begin_inset space ~
+\end_inset
+
+кнопку 
+\series bold
+New SSH key
+\series default
+.
+ Откроется меню, состоящее из
+\begin_inset space ~
+\end_inset
+
+двух полей: заголовка и
+\begin_inset space ~
+\end_inset
+
+значение ключа.
+ В
+\begin_inset space ~
+\end_inset
+
+поле заголовка можно ввести любые символы, например имя, фамилию и
+\begin_inset space ~
+\end_inset
+
+должность.
+ В
+\begin_inset space ~
+\end_inset
+
+поле значения ключа необходимо вставить содержимое буфера обмена.
+ Существует семь возможных начальных символов ключа:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes xld
+\end_inset
+
+ssh-rsa
+\begin_inset Quotes xrd
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes xld
+\end_inset
+
+ecdsa-sha2-nistp256
+\begin_inset Quotes xrd
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes xld
+\end_inset
+
+ecdsa-sha2-nistp384
+\begin_inset Quotes xrd
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes xld
+\end_inset
+
+ecdsa-sha2-nistp521
+\begin_inset Quotes xrd
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes xld
+\end_inset
+
+ssh-ed25519
+\begin_inset Quotes xrd
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes xld
+\end_inset
+
+sk-ecdsa-sha2-nistp256@openssh.com
+\begin_inset Quotes xrd
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes xld
+\end_inset
+
+sk-
+\begin_inset Quotes xld
+\end_inset
+
+ssh-ed25519@openssh.com
+\begin_inset Quotes xrd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— в
+\begin_inset space ~
+\end_inset
+
+зависимости от
+\begin_inset space ~
+\end_inset
+
+применённого алгоритма.
+ В
+\begin_inset space ~
+\end_inset
+
+случае совпадения практического значения с
+\begin_inset space ~
+\end_inset
+
+одним из
+\begin_inset space ~
+\end_inset
+
+возможных, можно сделать вывод о
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+все подготовительные операции были выполнены корректно.
+ Нет
+\begin_inset space ~
+\end_inset
+
+необходимости вглядываться в
+\begin_inset space ~
+\end_inset
+
+имеющееся на
+\begin_inset space ~
+\end_inset
+
+практике значение: система в
+\begin_inset space ~
+\end_inset
+
+любом случае не
+\begin_inset space ~
+\end_inset
+
+зарегистрирует ключ, не
+\begin_inset space ~
+\end_inset
+
+отвечающий требованиям по
+\begin_inset space ~
+\end_inset
+
+маске.
+ В
+\begin_inset space ~
+\end_inset
+
+том
+\begin_inset space ~
+\end_inset
+
+случае, если ключ прошёл валидацию, кнопка Add SHH key, расположенная ниже
+ поля, станет активной.
+ После её
+\begin_inset space ~
+\end_inset
+
+нажатия произойдёт добавление ключа.
+\end_layout
+
+\begin_layout Standard
+Перед началом использования связи по
+\begin_inset space ~
+\end_inset
+
+SSH протоколу рекомендуется провести проверку.
+ Для
+\begin_inset space ~
+\end_inset
+
+этого в
+\begin_inset space ~
+\end_inset
+
+терминале следует ввести команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ ssh -T git@github.com
+\end_layout
+
+\end_inset
+
+— терминал запросит ввести пароль, установленный при
+\begin_inset space ~
+\end_inset
+
+генерации ключей.
+ В
+\begin_inset space ~
+\end_inset
+
+случае установления успешной связи терминал возвратит сообщение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Hi Kirill-Murashev! You've successfully authenticated, but GitHub does not
+ provide shell access.
+ 
+\end_layout
+
+\end_inset
+
+— связь установлена, возможна работа с
+\begin_inset space ~
+\end_inset
+
+удалённым репозиторием.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.3.6.2.3-GitHub-SSH-Add-End"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.3.6.2-GitHub_SSH-End"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.3.6-GitHub-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Создание и
+\begin_inset space ~
+\end_inset
+
+установка GPG ключа.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.3.6.2.4-GitHub-GPG"
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
 End
 \begin_inset CommandInset label
 LatexCommand label
-name "subsec:2.3.6-GitHub-End"
+name "par:2.3.6.2.4-GitHub-GPG-End"
 
 \end_inset
 
