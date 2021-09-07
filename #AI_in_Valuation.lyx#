@@ -21104,6 +21104,22 @@ name "subsubsec:2.3.6.4-GitHub-Connect"
 
 \end_layout
 
+\begin_layout Paragraph
+Отправка содержимого локального репозитория в
+\begin_inset space ~
+\end_inset
+
+удалённый.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "par:3.3.6.4.1-GitHub-Connect-L2R"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 В
 \begin_inset space ~
@@ -21271,7 +21287,7 @@ git push origin master
 — где:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 
 \series bold
 push
@@ -21283,7 +21299,7 @@ push
 действие, которое необходимо выполнить;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 
 \series bold
 origin
@@ -21295,7 +21311,7 @@ origin
 который следует отправить данные;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 
 \series bold
 master
@@ -21305,6 +21321,269 @@ master
 \end_inset
 
 которую необходимо отправить данные.
+\end_layout
+
+\begin_layout Standard
+Содержимое локального репозитория в
+\begin_inset space ~
+\end_inset
+
+том состоянии, в
+\begin_inset space ~
+\end_inset
+
+котором оно
+\begin_inset space ~
+\end_inset
+
+было
+\begin_inset space ~
+\end_inset
+
+зафиксировано в
+\begin_inset space ~
+\end_inset
+
+последнем commit, отправлено в
+\begin_inset space ~
+\end_inset
+
+удалённый репозиторий на
+\begin_inset space ~
+\end_inset
+
+портале GitHub.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:3.3.6.4.1-GitHub-Connect-L2R-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Получение содержимого удалённого репозитория.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "par:3.3.6.4.2-GitHub-Connect-R2L"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+получение содержимого удалённого репозитория на
+\begin_inset space ~
+\end_inset
+
+локальный компьютер необходимо выбрать каталог, в
+\begin_inset space ~
+\end_inset
+
+который планируется загрузка и
+\begin_inset space ~
+\end_inset
+
+запустить из
+\begin_inset space ~
+\end_inset
+
+него Терминал.
+ При
+\begin_inset space ~
+\end_inset
+
+этом следует иметь ввиду, что
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+данном каталоге будет сформирована новая папка, имя
+\begin_inset space ~
+\end_inset
+
+которой будет повторять имя
+\begin_inset space ~
+\end_inset
+
+удалённого репозитория — источника.
+ Далее следует использовать команду 
+\family typewriter
+git clone
+\family default
+, аргументом которой будет являться ссылка на
+\begin_inset space ~
+\end_inset
+
+удалённый репозиторий.
+ Следующие команды предназначены для
+\begin_inset space ~
+\end_inset
+
+создания локальной копии репозиториев полезных, а
+\begin_inset space ~
+\end_inset
+
+зачастую и
+\begin_inset space ~
+\end_inset
+
+необходимых для
+\begin_inset space ~
+\end_inset
+
+изучения данного материала:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git clone git@github.com:Kirill-Murashev/AI_for_valuers_book.git
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— создание локальной копии исходного кода данного руководства, его
+\begin_inset space ~
+\end_inset
+
+актуальной версии в
+\begin_inset space ~
+\end_inset
+
+формате PDF, а
+\begin_inset space ~
+\end_inset
+
+также дополнительных материалов, использованных при
+\begin_inset space ~
+\end_inset
+
+создании.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git clone git@github.com:Kirill-Murashev/AI_for_valuers_R_source.git
+\end_layout
+
+\end_inset
+
+— создание локальной копии репозитория, содержащего код на
+\begin_inset space ~
+\end_inset
+
+языке R, предназначенного для
+\begin_inset space ~
+\end_inset
+
+выполнения процедур, описанных в
+\begin_inset space ~
+\end_inset
+
+данном руководстве.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git@github.com:Kirill-Murashev/AI_for_valuers_Python_source.git
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— создание локальной копии репозитория, содержащего код на
+\begin_inset space ~
+\end_inset
+
+языке Python, предназначенного для
+\begin_inset space ~
+\end_inset
+
+выполнения процедур, описанных в
+\begin_inset space ~
+\end_inset
+
+данном руководстве.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:3.3.6.4.2-GitHub-Connect-R2L-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Обновление репозитория.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.3.6.4.3-GitHub-Connect-Renew"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+процессе работы особенно в
+\begin_inset space ~
+\end_inset
+
+случае совместной работы нескольких специалистов над
+\begin_inset space ~
+\end_inset
+
+одним проектом возникает необходимость
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.3.6.4.3-GitHub-Connect-Renew-End"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
