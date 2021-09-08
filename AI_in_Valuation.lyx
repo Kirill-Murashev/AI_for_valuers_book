@@ -147,6 +147,14 @@ tabs-within-sections
 \begin_body
 
 \begin_layout Titlehead
+
+\lang american
+Release
+\lang russian
+ 0.0001.0001
+\end_layout
+
+\begin_layout Subject
 Цифровая экономика
 \end_layout
 
@@ -1775,40 +1783,69 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Реквизиты для
+Перед началом работы рекомендуется установить Git (см.
 \begin_inset space ~
 \end_inset
 
-оказания помощи проекту.
+подраздел
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "subsec:2.4.1-Git_install"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+–
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "subsec:2.4.1-Git_install-End"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), выбрать каталог на
+\begin_inset space ~
+\end_inset
+
+локальной компьюетере и
+\begin_inset space ~
+\end_inset
+
+выполнить следующие команды:
 \end_layout
 
 \begin_layout Standard
-Тинькоф: +79219597644
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git clone git@github.com:Kirill-Murashev/AI_for_valuers_book.git
 \end_layout
 
-\begin_layout Standard
-BTC: bc1qjzwtk3hc7ft9cf2a3u77cxfklgnw93jktyjfsl?time=1627474534&exp=86400
+\begin_layout Plain Layout
+
+$ git clone git@github.com:Kirill-Murashev/AI_for_valuers_R_source.git
 \end_layout
 
-\begin_layout Standard
-ETH: 
+\begin_layout Plain Layout
+
+$ git@github.com:Kirill-Murashev/AI_for_valuers_Python_source.git
 \end_layout
 
-\begin_layout Standard
-Monero: 45ho 6Na3 dzoW DwYp 4ebD BXBr 6CuC F9L5 NGCD ccpa w2W4 W15a fiMM
- dGmf dhnp e6hP JSXk 9Mwm o9Up kh3a ek96 LFEa BZYX zGQ
-\end_layout
+\end_inset
 
-\begin_layout Standard
-USDT: 0x885e0b0E0bDCFE48750Be534f284EFfbEf6d247C
-\end_layout
 
-\begin_layout Standard
-EURT: 0x885e0b0E0bDCFE48750Be534f284EFfbEf6d247C
-\end_layout
-
-\begin_layout Standard
-CNHT: 0x885e0b0E0bDCFE48750Be534f284EFfbEf6d247C
 \end_layout
 
 \begin_layout Standard
@@ -2164,11 +2201,27 @@ status open
 
 
 \backslash
-epigraph{<<Лучший способ в чём-то разобраться до конца 
-\begin_inset Quotes xld
+epigraph{<<Лучший способ в чём-то разобраться --- это попробовать научить
+ этому другого>>.
+\backslash
+par Народная мудрость}
+\end_layout
+
 \end_inset
 
---- это попробовать научить этому компьютер>>.
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+epigraph{<<Лучший способ в чём-то разобраться до конца --- это попробовать
+ научить этому компьютер>>.
 \backslash
 par Дональд~Э.~Кнут}
 \end_layout
@@ -18169,7 +18222,7 @@ merge conflict, будет рассмотрена в
 
 \begin_inset CommandInset ref
 LatexCommand vref
-reference "2.3.8-Git_IDE"
+reference "2.3.7-Git-IDE"
 plural "false"
 caps "false"
 noprefix "false"
@@ -18179,7 +18232,7 @@ noprefix "false"
 –
 \begin_inset CommandInset ref
 LatexCommand pageref
-reference "2.3.8-Git_IDE-End"
+reference "2.3.7-Git-IDE-End"
 plural "false"
 caps "false"
 noprefix "false"
@@ -21104,6 +21157,22 @@ name "subsubsec:2.3.6.4-GitHub-Connect"
 
 \end_layout
 
+\begin_layout Paragraph
+Отправка содержимого локального репозитория в
+\begin_inset space ~
+\end_inset
+
+удалённый.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "par:3.3.6.4.1-GitHub-Connect-L2R"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 В
 \begin_inset space ~
@@ -21271,7 +21340,7 @@ git push origin master
 — где:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 
 \series bold
 push
@@ -21283,7 +21352,7 @@ push
 действие, которое необходимо выполнить;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 
 \series bold
 origin
@@ -21295,7 +21364,7 @@ origin
 который следует отправить данные;
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 
 \series bold
 master
@@ -21308,7 +21377,521 @@ master
 \end_layout
 
 \begin_layout Standard
-End
+Содержимое локального репозитория в
+\begin_inset space ~
+\end_inset
+
+том состоянии, в
+\begin_inset space ~
+\end_inset
+
+котором оно
+\begin_inset space ~
+\end_inset
+
+было
+\begin_inset space ~
+\end_inset
+
+зафиксировано в
+\begin_inset space ~
+\end_inset
+
+последнем commit, отправлено в
+\begin_inset space ~
+\end_inset
+
+удалённый репозиторий на
+\begin_inset space ~
+\end_inset
+
+портале GitHub.
+ При
+\begin_inset space ~
+\end_inset
+
+этом создаётся дополнительный указатель remotes/origin/master, называемый
+ веткой слежения.
+ Данный указатель следует для
+\begin_inset space ~
+\end_inset
+
+хранения данных о
+\begin_inset space ~
+\end_inset
+
+том, на
+\begin_inset space ~
+\end_inset
+
+каком commit находится указатель Head в
+\begin_inset space ~
+\end_inset
+
+ветке master на
+\begin_inset space ~
+\end_inset
+
+удалённом сервере orogin.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "par:3.3.6.4.1-GitHub-Connect-L2R-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Получение содержимого удалённого репозитория.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "par:3.3.6.4.2-GitHub-Connect-R2L"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+получение содержимого удалённого репозитория на
+\begin_inset space ~
+\end_inset
+
+локальный компьютер необходимо выбрать каталог, в
+\begin_inset space ~
+\end_inset
+
+который планируется загрузка и
+\begin_inset space ~
+\end_inset
+
+запустить из
+\begin_inset space ~
+\end_inset
+
+него Терминал.
+ При
+\begin_inset space ~
+\end_inset
+
+этом следует иметь ввиду, что
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+данном каталоге будет сформирована новая папка, имя
+\begin_inset space ~
+\end_inset
+
+которой будет повторять имя
+\begin_inset space ~
+\end_inset
+
+удалённого репозитория — источника.
+ Далее следует использовать команду 
+\family typewriter
+git clone
+\family default
+, аргументом которой будет являться ссылка на
+\begin_inset space ~
+\end_inset
+
+удалённый репозиторий.
+ Следующие команды предназначены для
+\begin_inset space ~
+\end_inset
+
+создания локальной копии репозиториев полезных, а
+\begin_inset space ~
+\end_inset
+
+зачастую и
+\begin_inset space ~
+\end_inset
+
+необходимых для
+\begin_inset space ~
+\end_inset
+
+изучения данного материала:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git clone git@github.com:Kirill-Murashev/AI_for_valuers_book.git
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— создание локальной копии исходного кода данного руководства, его
+\begin_inset space ~
+\end_inset
+
+версии в
+\begin_inset space ~
+\end_inset
+
+формате PDF, а
+\begin_inset space ~
+\end_inset
+
+также дополнительных материалов, использованных при
+\begin_inset space ~
+\end_inset
+
+создании.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git clone git@github.com:Kirill-Murashev/AI_for_valuers_R_source.git
+\end_layout
+
+\end_inset
+
+— создание локальной копии репозитория, содержащего код на
+\begin_inset space ~
+\end_inset
+
+языке R, предназначенного для
+\begin_inset space ~
+\end_inset
+
+выполнения процедур, описанных в
+\begin_inset space ~
+\end_inset
+
+данном руководстве.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ git@github.com:Kirill-Murashev/AI_for_valuers_Python_source.git
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— создание локальной копии репозитория, содержащего код на
+\begin_inset space ~
+\end_inset
+
+языке Python, предназначенного для
+\begin_inset space ~
+\end_inset
+
+выполнения процедур, описанных в
+\begin_inset space ~
+\end_inset
+
+данном руководстве.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:3.3.6.4.2-GitHub-Connect-R2L-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Обновление репозитория.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.3.6.4.3-GitHub-Connect-Renew"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+процессе работы особенно в
+\begin_inset space ~
+\end_inset
+
+случае совместной работы нескольких специалистов над
+\begin_inset space ~
+\end_inset
+
+одним проектом возникает необходимость частой синхронизации локальных репозитори
+ев разработчиков.
+ Для
+\begin_inset space ~
+\end_inset
+
+выполнения обновления содержимого локального репозитория следует зайти в
+\begin_inset space ~
+\end_inset
+
+его
+\begin_inset space ~
+\end_inset
+
+локальный каталог, запустить Терминал и
+\begin_inset space ~
+\end_inset
+
+использовать команду 
+\family typewriter
+git pull
+\family default
+, в
+\begin_inset space ~
+\end_inset
+
+качестве аргументов которой указываются имена сервера и
+\begin_inset space ~
+\end_inset
+
+ветки:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git pull origin master
+\end_layout
+
+\end_inset
+
+— Git загрузит изменения в
+\begin_inset space ~
+\end_inset
+
+случае их
+\begin_inset space ~
+\end_inset
+
+наличия.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Поскольку данный проект активно развивается, автор рекомендует выполнять
+ обновление репозиториев, содержащих текст данного руководства и
+\begin_inset space ~
+\end_inset
+
+программный код, не
+\begin_inset space ~
+\end_inset
+
+реже одного раза в
+\begin_inset space ~
+\end_inset
+
+месяц.
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+процессе совместной работы нескольких специалистов может возникнуть ситуация,
+ при
+\begin_inset space ~
+\end_inset
+
+которой они
+\begin_inset space ~
+\end_inset
+
+оба
+\begin_inset space ~
+\end_inset
+
+захотят отправить свои изменения на
+\begin_inset space ~
+\end_inset
+
+сервер.
+ В
+\begin_inset space ~
+\end_inset
+
+Git предусмотрена защита: разработчик, отправивший свои изменения позже,
+ получит сообщение об
+\begin_inset space ~
+\end_inset
+
+ошибке и
+\begin_inset space ~
+\end_inset
+
+предложение выполнить 
+\family typewriter
+git pull
+\family default
+ в
+\begin_inset space ~
+\end_inset
+
+том
+\begin_inset space ~
+\end_inset
+
+случае, если его
+\begin_inset space ~
+\end_inset
+
+изменения конфликтуют с
+\begin_inset space ~
+\end_inset
+
+изменениями первого разработчика, т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+сервер не
+\begin_inset space ~
+\end_inset
+
+может выполнить процедуру fast forward.
+ Во
+\begin_inset space ~
+\end_inset
+
+избежание такой ситуации рекомендуется всегда сначала использовать команду
+ 
+\family typewriter
+git pull
+\family default
+, обновляющую данные о
+\begin_inset space ~
+\end_inset
+
+том, на
+\begin_inset space ~
+\end_inset
+
+каком commit находится указатель Head на
+\begin_inset space ~
+\end_inset
+
+сервере, и
+\begin_inset space ~
+\end_inset
+
+загружающую изменения.
+ Для
+\begin_inset space ~
+\end_inset
+
+обновления данных и
+\begin_inset space ~
+\end_inset
+
+перемещения ветки слежения без
+\begin_inset space ~
+\end_inset
+
+загрузки новых commit с
+\begin_inset space ~
+\end_inset
+
+сервера можно использовать команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git fetch origin
+\end_layout
+
+\end_inset
+
+— а
+\begin_inset space ~
+\end_inset
+
+затем использовать команду:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git merge origin/master
+\end_layout
+
+\end_inset
+
+— использование последовательности этих команд равнозначно использованию
+ одной команды 
+\family typewriter
+git pull
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.3.6.4.3-GitHub-Connect-Renew-End"
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "subsubsec:2.3.6.4-GitHub-Connect-End"
@@ -21316,14 +21899,6 @@ name "subsubsec:2.3.6.4-GitHub-Connect-End"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Rebase
-\end_layout
-
-\begin_layout Standard
-End
 \end_layout
 
 \begin_layout Subsection
@@ -21338,7 +21913,26 @@ Git в
 IDE
 \begin_inset CommandInset label
 LatexCommand label
-name "2.3.8-Git_IDE"
+name "2.3.7-Git-IDE"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Работа
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+RStudio
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.3.7.1-Git-IDE-RStudio"
 
 \end_inset
 
@@ -21349,7 +21943,22 @@ name "2.3.8-Git_IDE"
 End
 \begin_inset CommandInset label
 LatexCommand label
-name "2.3.8-Git_IDE-End"
+name "subsubsec:2.3.7.1-Git-IDE-RStudio-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Работа в
+\begin_inset space ~
+\end_inset
+
+Spyder
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.3.7.2-Git-IDE-Spyder"
 
 \end_inset
 
@@ -21357,9 +21966,158 @@ name "2.3.8-Git_IDE-End"
 \end_layout
 
 \begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.3.7.2-Git-IDE-Spyder-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Работа в
+\begin_inset space ~
+\end_inset
+
+PyCharm
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.3.7.3-Git-IDE-PyCharm"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.3.7.2-Git-IDE-PyCharm-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "2.3.7-Git-IDE-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Заключение
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.3.8-Git-Conclusion"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Данный раздел содержал лишь основные сведения и
+\begin_inset space ~
+\end_inset
+
+инструкции по
+\begin_inset space ~
+\end_inset
+
+работе с
+\begin_inset space ~
+\end_inset
+
+Git и
+\begin_inset space ~
+\end_inset
+
+Github, достаточные для
+\begin_inset space ~
+\end_inset
+
+первичной настройки и
+\begin_inset space ~
+\end_inset
+
+начала работы.
+ Для
+\begin_inset space ~
+\end_inset
+
+более подробного ознакомления с
+\begin_inset space ~
+\end_inset
+
+Git и
+\begin_inset space ~
+\end_inset
+
+Github можно порекомендовать просмотр данного 
+\begin_inset CommandInset href
+LatexCommand href
+name "видеоурока"
+target "https://www.youtube.com/watch?v=SEvR78OhGtw"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Youtube:Git-1"
+literal "false"
+
+\end_inset
+
+, а
+\begin_inset space ~
+\end_inset
+
+также изучение 
+\begin_inset CommandInset href
+LatexCommand href
+name "официального руководства"
+target "https://git-scm.com/book/ru/v2"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Git:Book"
+literal "false"
+
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Git-Conclusion-End"
+
+\end_inset
+
 
 \lang american
-End
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:2.3_Git-End"
@@ -22037,16 +22795,964 @@ name "subsec:2.4.1-Git_install-End"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection
 R
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.4.2-R-Install"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Установка на
+\begin_inset space ~
+\end_inset
+
+операционных системах, основанных на
+\begin_inset space ~
+\end_inset
+
+
+\lang american
+Debian
+\lang russian
+: 
+\lang american
+Debian
+\lang russian
+, 
+\lang american
+Ubuntu
+\lang russian
+, 
+\lang american
+Mint
+\lang russian
+ и
+\begin_inset space ~
+\end_inset
+
+т.
+\begin_inset space \thinspace{}
+\end_inset
+
+п.
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.4.2.1-R-Install-Deb"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Установка на
+\begin_inset space ~
+\end_inset
+
+операционных системах Ubuntu, Mint и
+\begin_inset space ~
+\end_inset
+
+производных от
+\begin_inset space ~
+\end_inset
+
+них.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.4.2.1.1-R-Install-Deb-Ubuntu"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Как
+\begin_inset space ~
+\end_inset
+
+правило для
+\begin_inset space ~
+\end_inset
+
+установки достаточно зайти в
+\begin_inset space ~
+\end_inset
+
+Центр приложений, ввести в
+\begin_inset space ~
+\end_inset
+
+строку поиска 
+\begin_inset Quotes xld
+\end_inset
+
+СRAN
+\begin_inset Quotes xrd
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+установить R посредством графического интерфейса.
+ Однако, в
+\begin_inset space ~
+\end_inset
+
+зависимости от
+\begin_inset space ~
+\end_inset
+
+дистрибутива есть вероятность получения относительно устаревшей версии.
+ Для
+\begin_inset space ~
+\end_inset
+
+получения сведений о
+\begin_inset space ~
+\end_inset
+
+текущей версии R следует зайти на
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "официальный сайт"
+target "https://www.r-project.org/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "R_language"
+literal "false"
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+узнать там номер и
+\begin_inset space ~
+\end_inset
+
+дату последнего релиза.
+ На
+\begin_inset space ~
+\end_inset
+
+момент написания данных строк таковой является версия 4.1.1 (Kick Things)
+ от 2021-08-10.
+ Для
+\begin_inset space ~
+\end_inset
+
+проверки версии, установленной в
+\begin_inset space ~
+\end_inset
+
+системе в
+\begin_inset space ~
+\end_inset
+
+Терминале следует ввести команду:
+\end_layout
+
+\begin_layout Standard
+— в
+\begin_inset space ~
+\end_inset
+
+случае автора терминал возвратил сообщение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+R version 4.1.1 (2021-08-10) -- "Kick Things"
+\end_layout
+
+\begin_layout Plain Layout
+
+Copyright (C) 2021 The R Foundation for Statistical Computing
+\end_layout
+
+\begin_layout Plain Layout
+
+Platform: x86_64-pc-linux-gnu (64-bit)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+\end_layout
+
+\begin_layout Plain Layout
+
+You are welcome to redistribute it under certain conditions.
+\end_layout
+
+\begin_layout Plain Layout
+
+Type 'license()' or 'licence()' for distribution details.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  Natural language support but running in an English locale
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+R is a collaborative project with many contributors.
+\end_layout
+
+\begin_layout Plain Layout
+
+Type 'contributors()' for more information and 'citation()' on how to cite
+ R or R packages in publications.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Type 'demo()' for some demos, 'help()' for on-line help, or 'help.start()'
+ for an HTML browser interface to help.
+\end_layout
+
+\begin_layout Plain Layout
+
+Type 'q()' to quit R.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— версия соответствует последнему релизу.
+ В
+\begin_inset space ~
+\end_inset
+
+большинстве случаев установка и
+\begin_inset space ~
+\end_inset
+
+использование не
+\begin_inset space ~
+\end_inset
+
+самой последней версии не
+\begin_inset space ~
+\end_inset
+
+вызывает никаких проблем.
+ Однако, в
+\begin_inset space ~
+\end_inset
+
+случае, если есть стремление использовать самых свежий стабильный релиз
+ следует отказаться от
+\begin_inset space ~
+\end_inset
+
+установки через Центр приложений и
+\begin_inset space ~
+\end_inset
+
+выполнить следующую последовательность команд.
+ Сначала необходимо добавить доверенный ключ:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD
+57CBB651716619E084DAB9
+\end_layout
+
+\end_inset
+
+— система возвратит следующее сообщение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Executing: /tmp/apt-key-gpghome.cul0ddtmN1/gpg.1.sh --keyserver keyserver.ubuntu.com
+ --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+\end_layout
+
+\begin_layout Plain Layout
+
+gpg: key 51716619E084DAB9: public key "Michael Rutter <marutter@gmail.com>"
+ imported
+\end_layout
+
+\begin_layout Plain Layout
+
+gpg: Total number processed:
+\end_layout
+
+\begin_layout Plain Layout
+
+1 gpg:               imported: 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— ключ добавлен, можно добавить репозиторий:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu
+ focal-cran40/'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— далее обновляем зависимости и
+\begin_inset space ~
+\end_inset
+
+устанавливаем R:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ sudo apt update -y
+\end_layout
+
+\begin_layout Plain Layout
+
+$ sudo apt install r-base
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— R
+\begin_inset space ~
+\end_inset
+
+установлен и
+\begin_inset space ~
+\end_inset
+
+готов к
+\begin_inset space ~
+\end_inset
+
+использованию.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.4.2.1.1-R-Install-Deb-Ubuntu-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Установка на
+\begin_inset space ~
+\end_inset
+
+операционной системе Debian.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.4.2.1.2-R-Install-Deb-Deb"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Одной из
+\begin_inset space ~
+\end_inset
+
+основных особенности операционной системы 
+\begin_inset CommandInset href
+LatexCommand href
+name "Debian"
+target "https://www.debian.org"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Debian:site"
+literal "false"
+
+\end_inset
+
+ является её
+\begin_inset space ~
+\end_inset
+
+стабильность и
+\begin_inset space ~
+\end_inset
+
+надёжность.
+ В
+\begin_inset space ~
+\end_inset
+
+особенности это
+\begin_inset space ~
+\end_inset
+
+касается её
+\begin_inset space ~
+\end_inset
+
+ветки stable.
+ Однако достоинства и
+\begin_inset space ~
+\end_inset
+
+недостатки часто являются продолжением друг друга.
+ Многие приложения, доступные из
+\begin_inset space ~
+\end_inset
+
+стандартных репозиториев Debian могут быть представлены в
+\begin_inset space ~
+\end_inset
+
+версиях, отстающих от
+\begin_inset space ~
+\end_inset
+
+актуальных на
+\begin_inset space ~
+\end_inset
+
+0.5–2 года.
+ Таким образом, в
+\begin_inset space ~
+\end_inset
+
+случае использования операционной системы Debian ветки stable рекомендуется
+ провести самостоятельную установку актуальной версии R.
+ Следует выполнить последовательность команд:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ sudo apt install dirmngr --install-recommends
+\end_layout
+
+\end_inset
+
+— либо, в
+\begin_inset space ~
+\end_inset
+
+случае её
+\begin_inset space ~
+\end_inset
+
+недоступности:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ sudo apt install software-properties-common
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— обе
+\begin_inset space ~
+\end_inset
+
+эти
+\begin_inset space ~
+\end_inset
+
+команды добавляют необходимый в
+\begin_inset space ~
+\end_inset
+
+дальнейшем инструмент 
+\family typewriter
+add-apt-repository
+\family default
+.
+ Далее устанавливаем инструмент, необходимый для
+\begin_inset space ~
+\end_inset
+
+обеспечения работы протокола https при
+\begin_inset space ~
+\end_inset
+
+передаче данных из
+\begin_inset space ~
+\end_inset
+
+репозитория:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ sudo apt install apt-transport-https
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Далее добавляем доверенный ключ:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2
+AD5F960A256A04AF'
+\end_layout
+
+\end_inset
+
+— система возвратит сообщение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Executing: /tmp/apt-key-gpghome.y6W4E0Gtfp/gpg.1.sh --keyserver keys.gnupg.net
+ --recv-key E19F5F87128899B192B1A2C2AD5F960A256A04AF
+\end_layout
+
+\begin_layout Plain Layout
+
+gpg: key AD5F960A256A04AF: 4 signatures not checked due to missing keys
+ gpg: key AD5F960A256A04AF: public key "Johannes Ranke (Wissenschaftlicher
+ Berater) <johannes.ranke@jrwb.de>" imported
+\end_layout
+
+\begin_layout Plain Layout
+
+gpg: Total number processed: 1
+\end_layout
+
+\begin_layout Plain Layout
+
+gpg:               imported: 1
+\end_layout
+
+\end_inset
+
+— теперь можно перейти к
+\begin_inset space ~
+\end_inset
+
+установке самого R.
+ Следует обратить внимание на
+\begin_inset space ~
+\end_inset
+
+тот
+\begin_inset space ~
+\end_inset
+
+факт, что
+\begin_inset space ~
+\end_inset
+
+содержание аргумента приведённой ниже команды зависит от
+\begin_inset space ~
+\end_inset
+
+используемой версии OS Debian.
+ На
+\begin_inset space ~
+\end_inset
+
+момент написания этих строк текущей стабильной версией является Debian 11
+ 
+\begin_inset Quotes xld
+\end_inset
+
+bullseye
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ В
+\begin_inset space ~
+\end_inset
+
+этом случае команда будет выглядеть следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ deb http://cloud.r-project.org/bin/linux/debian bullseye-cran40/
+\end_layout
+
+\end_inset
+
+— для
+\begin_inset space ~
+\end_inset
+
+получения дополнительных сведений следует обращаться к
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "соответствующей странице"
+target "https://cran.r-project.org/bin/linux/debian/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CRAN:Debian"
+literal "false"
+
+\end_inset
+
+ сайта R.
+ Далее следует выполнить последовательность команд:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ sudo apt update -y
+\end_layout
+
+\begin_layout Plain Layout
+
+$ sudo apt install r-base
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— R
+\begin_inset space ~
+\end_inset
+
+установлен и
+\begin_inset space ~
+\end_inset
+
+готов к
+\begin_inset space ~
+\end_inset
+
+использованию.
+\begin_inset CommandInset label
+LatexCommand label
+name "par:2.4.2.1.2-R-Install-Deb-Deb-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.4.2.1-R-Install-Deb-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Установка на
+\begin_inset space ~
+\end_inset
+
+операционных системах Windows и macOS
+\lang american
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.4.2.2-R-Install-Win"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+данном случае установка не
+\begin_inset space ~
+\end_inset
+
+требует никаких специфических действий и
+\begin_inset space ~
+\end_inset
+
+осуществляется путём загрузки установочного файла с
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "соответствующей страницы"
+target "https://cran.r-project.org/"
+literal "false"
+
+\end_inset
+
+ сайта R
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "R_language"
+literal "false"
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+запуска установщика.
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.4.2.2-R-Install-Win-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 RStudio
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:2.4.3-RStudio-Install"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Независимо от
+\begin_inset space ~
+\end_inset
+
+используемой операционной системы самым простым способом установки RStudio
+ является загрузка установочного образа, соответствующего операционной системе,
+ со
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "страницы"
+target "https://www.rstudio.com/products/rstudio/download/#download"
+literal "false"
+
+\end_inset
+
+ сайта RStudio
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RStudio:official_site"
+literal "false"
+
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.4.3.1-RStudio-Install-Deb-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Python
+\end_layout
+
+\begin_layout Standard
+End
+\end_layout
+
+\begin_layout Subsection
+Spyder
+\end_layout
+
+\begin_layout Standard
+End
+\end_layout
+
+\begin_layout Subsection
+PyCharm
+\end_layout
+
+\begin_layout Standard
+End
+\end_layout
+
+\begin_layout Subsection
+SQL
+\end_layout
+
+\begin_layout Standard
+End
 \end_layout
 
 \begin_layout Standard
@@ -22058,6 +23764,724 @@ name "chap:2-Tech_base-End"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Теоретическая част
+\end_layout
+
+\begin_layout Chapter
+Математическая основа анализа данных
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:3-Statistic"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:3-Statistic-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Основные понятия
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:4-Basic-Def"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Что
+\begin_inset space ~
+\end_inset
+
+было раньше: курица или
+\begin_inset space ~
+\end_inset
+
+яйцо? Соотношение понятий 
+\lang american
+statistics, machine learning, data mining, artificial intelligence
+\lang russian
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:4.1-Stat-DM-ML-AI"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+На
+\begin_inset space ~
+\end_inset
+
+сегодняшний день можно говорить о
+\begin_inset space ~
+\end_inset
+
+существовании множества понятий, описывающих применение математических и
+\begin_inset space ~
+\end_inset
+
+статистических методов при
+\begin_inset space ~
+\end_inset
+
+решении практических задач.
+ В
+\begin_inset space ~
+\end_inset
+
+целом, можно без
+\begin_inset space ~
+\end_inset
+
+преувеличения сказать, что
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+настоящее время нет
+\begin_inset space ~
+\end_inset
+
+такой области деятельности человека, в
+\begin_inset space ~
+\end_inset
+
+которой
+\begin_inset space ~
+\end_inset
+
+бы не
+\begin_inset space ~
+\end_inset
+
+применялись математические методы и
+\begin_inset space ~
+\end_inset
+
+модели.
+ Невозможно охватить все
+\begin_inset space ~
+\end_inset
+
+аспекты применения математических методов — в
+\begin_inset space ~
+\end_inset
+
+данном разделе будут рассмотрены лишь интересующие нас
+\begin_inset space ~
+\end_inset
+
+вопросы анализа данных применительно к
+\begin_inset space ~
+\end_inset
+
+оценке.
+ Существует несколько общепринятых понятий, описывающих группы методов и
+\begin_inset space ~
+\end_inset
+
+подходов, применяемых при
+\begin_inset space ~
+\end_inset
+
+анализе данных и
+\begin_inset space ~
+\end_inset
+
+укоренившихся в
+\begin_inset space ~
+\end_inset
+
+сознании общества.
+ В
+\begin_inset space ~
+\end_inset
+
+таблице
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Stat-DM-ML-AI"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ приводится перечень наиболее распространённых терминов.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Перечень понятий, описывающих группы методов анализа данных 
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Stat-DM-ML-AI"
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+№
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Английский термин
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Русский термин
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+Statistics
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Математическая статистика
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+Machine Learning
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Машинное обучение
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+Data mining
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Интеллектуальный анализ данных
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+Artificial intelligence
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Искусственный интеллект
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Из
+\begin_inset space ~
+\end_inset
+
+таблицы
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Stat-DM-ML-AI"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ следует, существуют как
+\begin_inset space ~
+\end_inset
+
+минимум, четыре разных понятия, описывающих широкую, но
+\begin_inset space ~
+\end_inset
+
+всё
+\begin_inset space ~
+\end_inset
+
+же единую с
+\begin_inset space ~
+\end_inset
+
+точки зрения конечной цели область.
+ Целью данного раздела является попытка разобраться в
+\begin_inset space ~
+\end_inset
+
+следующих вопросах:
+\end_layout
+
+\begin_layout Itemize
+что
+\begin_inset space ~
+\end_inset
+
+представляет из
+\begin_inset space ~
+\end_inset
+
+себя каждое направление;
+\end_layout
+
+\begin_layout Itemize
+что
+\begin_inset space ~
+\end_inset
+
+есть
+\begin_inset space ~
+\end_inset
+
+общего у
+\begin_inset space ~
+\end_inset
+
+них, и
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+чём
+\begin_inset space ~
+\end_inset
+
+они
+\begin_inset space ~
+\end_inset
+
+различаются;
+\end_layout
+
+\begin_layout Itemize
+какие именно методы и
+\begin_inset space ~
+\end_inset
+
+средства используются в
+\begin_inset space ~
+\end_inset
+
+каждом из
+\begin_inset space ~
+\end_inset
+
+этих направлений;
+\end_layout
+
+\begin_layout Itemize
+чем
+\begin_inset space ~
+\end_inset
+
+мы
+\begin_inset space ~
+\end_inset
+
+будем заниматься в
+\begin_inset space ~
+\end_inset
+
+процессе изучения данной работы.
+\end_layout
+
+\begin_layout Standard
+Следует отметить, что
+\begin_inset space ~
+\end_inset
+
+на
+\begin_inset space ~
+\end_inset
+
+сегодняшний день в
+\begin_inset space ~
+\end_inset
+
+вопросе того, как
+\begin_inset space ~
+\end_inset
+
+именно следует разделять эти
+\begin_inset space ~
+\end_inset
+
+понятия, отсутствует консенсус.
+ На
+\begin_inset space ~
+\end_inset
+
+эту
+\begin_inset space ~
+\end_inset
+
+тему продолжают вестись дискуссии.
+ Забегая вперёд, можно сказать, что
+\begin_inset space ~
+\end_inset
+
+скорее всего нет
+\begin_inset space ~
+\end_inset
+
+смысла говорить о
+\begin_inset space ~
+\end_inset
+
+жёстком разделении этих понятий.
+ Едва
+\begin_inset space ~
+\end_inset
+
+большинство конкретных методов могут применяться в
+\begin_inset space ~
+\end_inset
+
+рамках каждого из
+\begin_inset space ~
+\end_inset
+
+этих направлений.
+ И
+\begin_inset space ~
+\end_inset
+
+всё
+\begin_inset space ~
+\end_inset
+
+же, по
+\begin_inset space ~
+\end_inset
+
+мнению автора, вопрос соотношения вышеуказанных понятий заслуживает должного
+ внимания.
+ Следует отметить, что
+\begin_inset space ~
+\end_inset
+
+бо́льшая часть рассуждений и выводов, сделанных в
+\begin_inset space ~
+\end_inset
+
+данном разделе, является не
+\begin_inset space ~
+\end_inset
+
+более чем
+\begin_inset space ~
+\end_inset
+
+мнением автора и
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+должна рассматриваться как-то иначе.
+\end_layout
+
+\begin_layout Standard
+Вряд
+\begin_inset space ~
+\end_inset
+
+ли требуется много слов для
+\begin_inset space ~
+\end_inset
+
+того, чтобы объяснить, что
+\begin_inset space ~
+\end_inset
+
+представляет собой математическая статистика.
+ В
+\begin_inset space ~
+\end_inset
+
+целом, можно сказать, что
+\begin_inset space ~
+\end_inset
+
+данный раздел математики тесно связан с
+\begin_inset space ~
+\end_inset
+
+Теорией вероятности и
+\begin_inset space ~
+\end_inset
+
+использует единый с
+\begin_inset space ~
+\end_inset
+
+ней понятийный аппарат.
+ В
+\begin_inset space ~
+\end_inset
+
+целом, можно сказать, что
+\begin_inset space ~
+\end_inset
+
+методы математической статистики основываются на
+\begin_inset space ~
+\end_inset
+
+свойствах данных (например распределениях) , исходят из
+\begin_inset space ~
+\end_inset
+
+базовой предпосылки о
+\begin_inset space ~
+\end_inset
+
+случайности распределения значений переменных, и
+\begin_inset space ~
+\end_inset
+
+предназначены для
+\begin_inset space ~
+\end_inset
+
+построения интерпретируемых моделей, описывающих взаимосвязь между данными.
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:4.1-Stat-DM-ML-AI-End"
+
+\end_inset
+
+№
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:4-Basic-Def-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Начало работы с
+\begin_inset space ~
+\end_inset
+
+R
+\end_layout
+
+\begin_layout Chapter
+Автоматизированный сбор данных
 \end_layout
 
 \begin_layout Standard
