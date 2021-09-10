@@ -43,6 +43,7 @@
 %\makeatother
 %\usepackage{xspace}
 \setcounter{chapter}{0}
+%\usepackage[utf8]{inputenc}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -1815,7 +1816,7 @@ noprefix "false"
 \begin_inset space ~
 \end_inset
 
-локальной компьюетере и
+локальном компьютере и
 \begin_inset space ~
 \end_inset
 
@@ -1840,7 +1841,7 @@ $ git clone git@github.com:Kirill-Murashev/AI_for_valuers_R_source.git
 
 \begin_layout Plain Layout
 
-$ git@github.com:Kirill-Murashev/AI_for_valuers_Python_source.git
+$ git clone git@github.com:Kirill-Murashev/AI_for_valuers_Python_source.git
 \end_layout
 
 \end_inset
@@ -2176,6 +2177,34 @@ LatexCommand tableofcontents
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "Basic_principles,LaTeX,Mathstat,Murashev,Python,R,RussianLaws,Sci&Tech,ValuationStandards,ZHZL"
+
+\end_inset
+
+
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \end_inset
 
@@ -23983,7 +24012,7 @@ name "tab:Stat-DM-ML-AI"
 \begin_inset Text
 
 \begin_layout Plain Layout
-Английский термин
+Англоязычный термин
 \end_layout
 
 \end_inset
@@ -23992,7 +24021,7 @@ name "tab:Stat-DM-ML-AI"
 \begin_inset Text
 
 \begin_layout Plain Layout
-Русский термин
+Русскоязычный термин
 \end_layout
 
 \end_inset
@@ -24397,7 +24426,11 @@ noprefix "false"
 \begin_inset space ~
 \end_inset
 
-представляет собой математическая статистика.
+представляет собой 
+\series bold
+математическая статистика
+\series default
+.
  В
 \begin_inset space ~
 \end_inset
@@ -24419,6 +24452,69 @@ noprefix "false"
 \end_inset
 
 ней понятийный аппарат.
+ При
+\begin_inset space ~
+\end_inset
+
+этом, математическая статистика допускает как
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "частотный"
+target "https://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D1%81%D1%82%D0%BE%D1%82%D0%BD%D0%B0%D1%8F_%D0%B2%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:Freq-probability"
+literal "false"
+
+\end_inset
+
+, так
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "байесовский"
+target "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B9%D0%B5%D1%81%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F_%D0%B2%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:Bayes-prob"
+literal "false"
+
+\end_inset
+
+ подход к
+\begin_inset space ~
+\end_inset
+
+понятию вероятности.
  В
 \begin_inset space ~
 \end_inset
@@ -24427,11 +24523,12 @@ noprefix "false"
 \begin_inset space ~
 \end_inset
 
-методы математической статистики основываются на
+методы математической статистики, основанные на частотной вероятности, основываю
+тся на
 \begin_inset space ~
 \end_inset
 
-свойствах данных (например распределениях) , исходят из
+свойствах данных (например распределениях), исходят из
 \begin_inset space ~
 \end_inset
 
@@ -24439,7 +24536,12 @@ noprefix "false"
 \begin_inset space ~
 \end_inset
 
-случайности распределения значений переменных, и
+случайности распределения значений переменных, случайности каких-либо различий
+ между выборками и
+\begin_inset space ~
+\end_inset
+
+отсутствии значимых зависимостей между переменными и
 \begin_inset space ~
 \end_inset
 
@@ -24448,21 +24550,2355 @@ noprefix "false"
 \end_inset
 
 построения интерпретируемых моделей, описывающих взаимосвязь между данными.
+ Как
+\begin_inset space ~
+\end_inset
+
+правило, применение методов статистики начинается со
+\begin_inset space ~
+\end_inset
+
+спецификации модели, методы которой, в
+\begin_inset space ~
+\end_inset
+
+общем случае, позволяют вывести конкретную модель на
+\begin_inset space ~
+\end_inset
+
+основе минимизации функции потерь, неизбежных вследствие наличия 
+\begin_inset Quotes xld
+\end_inset
+
+шума
+\begin_inset Quotes xrd
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Diff:Stat-ML-DM-AI"
+literal "false"
+
+\end_inset
+
+.
+ Сильной стороной математической статистики является хорошая интерпретируемость
+ результатов, а
+\begin_inset space ~
+\end_inset
+
+также возможность применения в
+\begin_inset space ~
+\end_inset
+
+условиях ограниченного числа наблюдений.
+ Слабой стороной является зависимость от
+\begin_inset space ~
+\end_inset
+
+распределения значений переменных, возможность работы только с
+\begin_inset space ~
+\end_inset
+
+
+\emph on
+данными, характеризующими отношения
+\emph default
+.
+ Классическим примером применения методов математической статистики является
+ построение линейной регрессионной модели.
 \end_layout
 
 \begin_layout Standard
-End
+
+\series bold
+Машинное обучение
+\series default
+ представляет построение алгоритмов, способных обучаться.
+ Обучением алгоритма
+\begin_inset space ~
+\end_inset
+
+(программы) на
+\begin_inset space ~
+\end_inset
+
+основе опыта считается такой процесс, при
+\begin_inset space ~
+\end_inset
+
+котором по
+\begin_inset space ~
+\end_inset
+
+мере обучения производительность этого алгоритма (программы) возрастает
+ в
+\begin_inset space ~
+\end_inset
+
+соответствии с
+\begin_inset space ~
+\end_inset
+
+некой производительности.
+ Основным направление машинного обучения является обучение по
+\begin_inset space ~
+\end_inset
+
+прецедентам.
+ Автоматический сбор и
+\begin_inset space ~
+\end_inset
+
+распознавание исходных данных также относятся к
+\begin_inset space ~
+\end_inset
+
+задачам машинного обучения.
+ При
+\begin_inset space ~
+\end_inset
+
+этом многие методы машинного обучения напрямую взяты из
+\begin_inset space ~
+\end_inset
+
+математической статистики
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Diff:Stat-ML-DM-AI"
+literal "false"
+
+\end_inset
+
+.
+ Машинное обучение находится на
+\begin_inset space ~
+\end_inset
+
+стыке математической статистики, методов оптимизации и
+\begin_inset space ~
+\end_inset
+
+классических математических дисциплин, но
+\begin_inset space ~
+\end_inset
+
+также имеет собственную специфику, связанную с
+\begin_inset space ~
+\end_inset
+
+проблемами 
+\begin_inset CommandInset href
+LatexCommand href
+name "вычислительной эффективности"
+target "http://www.machinelearning.ru/wiki/index.php?title=%D0%92%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MLRU:Comput-complex-theory"
+literal "false"
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "переобучения"
+target "http://www.machinelearning.ru/wiki/index.php?title=%D0%9F%D0%B5%D1%80%D0%B5%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MLRU:Overfitting"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MLRU:Machinelearning"
+literal "false"
+
+\end_inset
+
+.
+ Примером применения методов машинного обучения является построение случайного
+ леса решающих деревьев.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Интеллектуальный анализ данных
+\series default
+ в
+\begin_inset space ~
+\end_inset
+
+узком смысле, предложенном в
+\begin_inset space ~
+\end_inset
+
+1992
+\begin_inset space ~
+\end_inset
+
+году 
+\begin_inset CommandInset href
+LatexCommand href
+name "Г. И. Пятецким-Шапиро"
+target "https://ru.wikipedia.org/wiki/Пятецкий-Шапиро,_Илья_Иосифович"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Г. И. Пятецким-Шапиро"
+target "https://ru.wikipedia.org/wiki/Пятецкий-Шапиро,_Илья_Иосифович"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:Pyateczkij-Shapiro"
+literal "false"
+
+\end_inset
+
+, представляет собой процесс обнаружения в сырых данных ранее неизвестных,
+ нетривиальных, практически полезных, доступных интерпретации знаний, необходимы
+х для
+\begin_inset space ~
+\end_inset
+
+принятия решений в
+\begin_inset space ~
+\end_inset
+
+различных сферах человеческой деятельности
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MLRU:Data-mining"
+literal "false"
+
+\end_inset
+
+.
+ В
+\begin_inset space ~
+\end_inset
+
+широком смысле интеллектуальный анализ данных представляет собой применение
+ человеком методов математической статистики и
+\begin_inset space ~
+\end_inset
+
+машинного обучения применительно к
+\begin_inset space ~
+\end_inset
+
+конкретным данным для
+\begin_inset space ~
+\end_inset
+
+решения конкретных задач.
+ Как
+\begin_inset space ~
+\end_inset
+
+правило, речь идёт
+\begin_inset space ~
+\end_inset
+
+о
+\begin_inset space ~
+\end_inset
+
+большом и
+\begin_inset space ~
+\end_inset
+
+сложном наборе данных.
+ Целью применения методов интеллектуального анализа данных чаще всего является
+ получение знаний в
+\begin_inset space ~
+\end_inset
+
+тех областях, в
+\begin_inset space ~
+\end_inset
+
+которых их
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+хватает либо предсказание точных значений будущих наблюдений.
+ При
+\begin_inset space ~
+\end_inset
+
+этом, как правило, нет
+\begin_inset space ~
+\end_inset
+
+цели формирования выводов о
+\begin_inset space ~
+\end_inset
+
+свойствах данных либо эта
+\begin_inset space ~
+\end_inset
+
+цель второстепенна
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Diff:Stat-ML-DM-AI"
+literal "false"
+
+\end_inset
+
+.
+ Концепция интеллектуального анализа данных базируется на
+\begin_inset space ~
+\end_inset
+
+следующих предпосылках:
+\end_layout
+
+\begin_layout Itemize
+данные могут быть неточными, неполными (содержать пропуски), противоречивыми,
+ разнородными, косвенными, и
+\begin_inset space ~
+\end_inset
+
+при
+\begin_inset space ~
+\end_inset
+
+этом иметь гигантские объёмы, вследствие чего их
+\begin_inset space ~
+\end_inset
+
+интерпретация в
+\begin_inset space ~
+\end_inset
+
+конкретном случае требует значительных интеллектуальных усилий; 
+\end_layout
+
+\begin_layout Itemize
+сами алгоритмы анализа данных могут обладать элементами машинного 
+\begin_inset Quotes xld
+\end_inset
+
+интеллекта», в
+\begin_inset space ~
+\end_inset
+
+частности, способностью обучаться по
+\begin_inset space ~
+\end_inset
+
+прецедентам, т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+ общие выводы на
+\begin_inset space ~
+\end_inset
+
+основе частных наблюдений, при
+\begin_inset space ~
+\end_inset
+
+этом разработка подобных алгоритмов также требует значительных интеллектуальных
+ усилий;
+\end_layout
+
+\begin_layout Itemize
+процессы переработки сырых данных в
+\begin_inset space ~
+\end_inset
+
+структурированные, структурированных в
+\begin_inset space ~
+\end_inset
+
+информацию, а
+\begin_inset space ~
+\end_inset
+
+информации в
+\begin_inset space ~
+\end_inset
+
+знания уже
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+могут быть выполнены вручную, и
+\begin_inset space ~
+\end_inset
+
+требуют нетривиальной автоматизации
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MLRU:Data-mining"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Понятие 
+\series bold
+искусственный интеллект
+\series default
+ представляет собой область деятельности, включающую в
+\begin_inset space ~
+\end_inset
+
+себя науку и
+\begin_inset space ~
+\end_inset
+
+технологии, направленную на
+\begin_inset space ~
+\end_inset
+
+создание искусственных интеллектуальных агентов, т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+алгоритмов и
+\begin_inset space ~
+\end_inset
+
+компьютерных программ, способных действовать так, как
+\begin_inset space ~
+\end_inset
+
+мог
+\begin_inset space ~
+\end_inset
+
+бы действовать настоящий интеллектуальный агент, например человек.
+ Искусственный интеллект не
+\begin_inset space ~
+\end_inset
+
+обязательно должен основываться на
+\begin_inset space ~
+\end_inset
+
+индуктивных методах.
+ Например, он
+\begin_inset space ~
+\end_inset
+
+может быть просто настроен на
+\begin_inset space ~
+\end_inset
+
+увеличение значений некой переменной X всеми доступными способами безотносительн
+о конкретных применяемых при
+\begin_inset space ~
+\end_inset
+
+этом алгоритмов.
+ В
+\begin_inset space ~
+\end_inset
+
+определённом смысле любые успешные действия машины, осуществляемые ей
+\begin_inset space ~
+\end_inset
+
+одновременно не
+\begin_inset space ~
+\end_inset
+
+детерминировано и
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+случайным образом, можно назвать искусственным интеллектом
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Diff:Stat-ML-DM-AI,MLRU:AI"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Следует отметить, что
+\begin_inset space ~
+\end_inset
+
+данное понятие очень популярно в
+\begin_inset space ~
+\end_inset
+
+массовой культуре, искусстве и
+\begin_inset space ~
+\end_inset
+
+общественном сознании, вследствие чего подвержено неверному толкованию.
+ Современное понятие искусственного интеллекта, а
+\begin_inset space ~
+\end_inset
+
+также современное состояние науки о
+\begin_inset space ~
+\end_inset
+
+нём не
+\begin_inset space ~
+\end_inset
+
+предполагают создание искусственного интеллекта равного человеческому либо
+ хоть сколько-нибудь сопоставимого с
+\begin_inset space ~
+\end_inset
+
+ним.
+ Более того, в
+\begin_inset space ~
+\end_inset
+
+случае необходимости проведения параллелей с
+\begin_inset space ~
+\end_inset
+
+биологическими интеллектуальными агентами, правильнее говорить не
+\begin_inset space ~
+\end_inset
+
+об
+\begin_inset space ~
+\end_inset
+
+искусственном интеллекте, а
+\begin_inset space ~
+\end_inset
+
+об
+\begin_inset space ~
+\end_inset
+
+искусственных инстинктах и
+\begin_inset space ~
+\end_inset
+
+рефлексах.
+ Стремление
+\begin_inset space ~
+\end_inset
+
+минимизировать функцию ошибки при
+\begin_inset space ~
+\end_inset
+
+построении модели линейной регрессии можно сравнить с
+\begin_inset space ~
+\end_inset
+
+инстинктом, а
+\begin_inset space ~
+\end_inset
+
+попытку перебора её
+\begin_inset space ~
+\end_inset
+
+коэффициентов — с
+\begin_inset space ~
+\end_inset
+
+рефлексом.
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+определённом смысле можно сказать, что
+\begin_inset space ~
+\end_inset
+
+правильнее говорить не
+\begin_inset space ~
+\end_inset
+
+о
+\begin_inset space ~
+\end_inset
+
+создании интеллектуальных агентов
+\begin_inset space ~
+\end_inset
+
+(вопрос того, что
+\begin_inset space ~
+\end_inset
+
+такое интеллект, чем
+\begin_inset space ~
+\end_inset
+
+он
+\begin_inset space ~
+\end_inset
+
+отличается от
+\begin_inset space ~
+\end_inset
+
+сознания, разума, воли — является слишком сложным и
+\begin_inset space ~
+\end_inset
+
+выходит за
+\begin_inset space ~
+\end_inset
+
+рамки науки о
+\begin_inset space ~
+\end_inset
+
+искусственном интеллекте), а
+\begin_inset space ~
+\end_inset
+
+о
+\begin_inset space ~
+\end_inset
+
+создании рациональных агентов, т.
+\begin_inset space \thinspace{}
+\end_inset
+
+е.
+ таких, которые обеспечивают принятие рациональных, а
+\begin_inset space ~
+\end_inset
+
+по возможности оптимальных, решений на
+\begin_inset space ~
+\end_inset
+
+основе фактически доступных данных
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Diff:Stat-ML-DM-AI"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Подытоживая всё
+\begin_inset space ~
+\end_inset
+
+вышесказанное можно повторить, что
+\begin_inset space ~
+\end_inset
+
+чёткое разграничение этих четырёх понятий нецелесообразно, а
+\begin_inset space ~
+\end_inset
+
+скорее всего
+\begin_inset space ~
+\end_inset
+
+невозможно.
+ Ниже приводятся краткие выводы, сделанные автором в
+\begin_inset space ~
+\end_inset
+
+ходе изучения вопроса соотношения данных понятий:
+\end_layout
+
+\begin_layout Description
+Математическая
+\begin_inset space ~
+\end_inset
+
+статистика — наука и
+\begin_inset space ~
+\end_inset
+
+совокупность практических методов, нацеленные на
+\begin_inset space ~
+\end_inset
+
+количественный анализ данных, описание их
+\begin_inset space ~
+\end_inset
+
+свойств и
+\begin_inset space ~
+\end_inset
+
+построение моделей.
+ Основывается на
+\begin_inset space ~
+\end_inset
+
+вероятностных моделях.
+ При
+\begin_inset space ~
+\end_inset
+
+этом использование компьютера не
+\begin_inset space ~
+\end_inset
+
+является обязательным.
+\end_layout
+
+\begin_layout Description
+Машинное
+\begin_inset space ~
+\end_inset
+
+обучение — область деятельности, нацеленная на
+\begin_inset space ~
+\end_inset
+
+создание алгоритмов способных обучаться, а
+\begin_inset space ~
+\end_inset
+
+также
+\begin_inset space ~
+\end_inset
+
+оптимизацию вычислений.
+ При
+\begin_inset space ~
+\end_inset
+
+этом конечной целью данных алгоритмов является предсказание значений новых
+ наблюдений.
+ Как правило, не
+\begin_inset space ~
+\end_inset
+
+фокусируется на
+\begin_inset space ~
+\end_inset
+
+свойствах данных.
+ Чаще основывается на
+\begin_inset space ~
+\end_inset
+
+байесовском подходе к
+\begin_inset space ~
+\end_inset
+
+вероятности.
+ Использование компьютера является обязательным, при
+\begin_inset space ~
+\end_inset
+
+этом важную роль играет вычислительная эффективность.
+\end_layout
+
+\begin_layout Description
+Интеллектуальный
+\begin_inset space ~
+\end_inset
+
+анализ
+\begin_inset space ~
+\end_inset
+
+данных — область деятельности, направленная на
+\begin_inset space ~
+\end_inset
+
+получение новых знаний и
+\begin_inset space ~
+\end_inset
+
+объяснение закономерностей в
+\begin_inset space ~
+\end_inset
+
+конкретной области путём применения методов статистики и
+\begin_inset space ~
+\end_inset
+
+машинного обучения.
+ Фокусируется на
+\begin_inset space ~
+\end_inset
+
+практическом применении, оптимизации наборов данных.
+ Использование компьютера является обязательным.
+\end_layout
+
+\begin_layout Description
+Искусственный
+\begin_inset space ~
+\end_inset
+
+интеллект — область деятельности, направленная на
+\begin_inset space ~
+\end_inset
+
+создание рациональных агентов, способных применять любые доступные методы
+ для
+\begin_inset space ~
+\end_inset
+
+формирования рациональных решений на
+\begin_inset space ~
+\end_inset
+
+основе всех доступных данных.
+ Компьютер сам
+\begin_inset space ~
+\end_inset
+
+является агентом.
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+таблице
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:ML-AI"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ приведены обобщающие сведения.
+ Возникает вопрос: чем
+\begin_inset space ~
+\end_inset
+
+именно мы
+\begin_inset space ~
+\end_inset
+
+будем заниматься в
+\begin_inset space ~
+\end_inset
+
+процессе работы с
+\begin_inset space ~
+\end_inset
+
+данным руководством.
+ С
+\begin_inset space ~
+\end_inset
+
+одной стороны, как
+\begin_inset space ~
+\end_inset
+
+уже было сказано выше, нельзя провести жёсткое разграничение между всеми
+ этими понятиями.
+ С
+\begin_inset space ~
+\end_inset
+
+другой, каждое из
+\begin_inset space ~
+\end_inset
+
+этих направлений деятельности имеет свою специфику.
+ Кроме того, нельзя забывать о
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+целью данной работы является применение современных технологий анализа данных
+ в
+\begin_inset space ~
+\end_inset
+
+конкретной области деятельности — оценке стоимости.
+ Для
+\begin_inset space ~
+\end_inset
+
+начала можно сделать краткий обзор уже
+\begin_inset space ~
+\end_inset
+
+существующих в
+\begin_inset space ~
+\end_inset
+
+российской практике разработок в
+\begin_inset space ~
+\end_inset
+
+каждом направлении.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Математическая статистика
+\series default
+ в
+\begin_inset space ~
+\end_inset
+
+российской оценочной практике применяется сравнительно давно.
+ Существует некоторый набор литературы и
+\begin_inset space ~
+\end_inset
+
+методических материалов, посвящённых применению её
+\begin_inset space ~
+\end_inset
+
+методов в
+\begin_inset space ~
+\end_inset
+
+оценке.
+ Можно вспомнить ряд 
+\bar under
+работ
+\bar default
+ С.
+\begin_inset space \thinspace{}
+\end_inset
+
+В.
+\begin_inset space \thinspace{}
+\end_inset
+
+Грибовского, Н.
+\begin_inset space \thinspace{}
+\end_inset
+
+П.
+\begin_inset space \thinspace{}
+\end_inset
+
+Баринова, В.
+\begin_inset space \thinspace{}
+\end_inset
+
+Г.
+\begin_inset space \thinspace{}
+\end_inset
+
+Мисовца, а
+\begin_inset space ~
+\end_inset
+
+также иных авторов, 
+\bar under
+посвящённых
+\bar default
+ вопросам применения математических методов в
+\begin_inset space ~
+\end_inset
+
+оценочной деятельности.
+ Основным предметом интереса данных работ чаще всего выступает применение
+ корреляционного и
+\begin_inset space ~
+\end_inset
+
+регрессионного анализа в
+\begin_inset space ~
+\end_inset
+
+их
+\begin_inset space ~
+\end_inset
+
+параметрических вариантах.
+ Как
+\begin_inset space ~
+\end_inset
+
+правило в
+\begin_inset space ~
+\end_inset
+
+них
+\begin_inset space ~
+\end_inset
+
+рассматривается применение программного продукта 
+\lang american
+Microsoft
+\lang russian
+ 
+\lang american
+Excel
+\lang russian
+ в
+\begin_inset space ~
+\end_inset
+
+качестве основного и
+\begin_inset space ~
+\end_inset
+
+единственного инструмента анализа.
+ Не
+\begin_inset space ~
+\end_inset
+
+погружаясь в
+\begin_inset space ~
+\end_inset
+
+рассуждения о
+\begin_inset space ~
+\end_inset
+
+методах, предлагаемых в
+\begin_inset space ~
+\end_inset
+
+данных работах, их
+\begin_inset space ~
+\end_inset
+
+достоинствах и
+\begin_inset space ~
+\end_inset
+
+недостатках, в
+\begin_inset space ~
+\end_inset
+
+целом, можно высказать некоторое сожаление о
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+данное направление развития оценки в
+\begin_inset space ~
+\end_inset
+
+принципе не
+\begin_inset space ~
+\end_inset
+
+получает широкого распространения, почти полностью уступая место практикам
+ оценки, основанным на
+\begin_inset space ~
+\end_inset
+
+применении минимального числа наблюдений, называемых в
+\begin_inset space ~
+\end_inset
+
+терминологии оценки объектами-аналогами, и
+\begin_inset space ~
+\end_inset
+
+последующей корректировки значений на
+\begin_inset space ~
+\end_inset
+
+основе неких 
+\begin_inset Quotes xld
+\end_inset
+
+справочников
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ Таким образом, можно сказать, что
+\begin_inset space ~
+\end_inset
+
+применение методов математической статистики в
+\begin_inset space ~
+\end_inset
+
+оценке не
+\begin_inset space ~
+\end_inset
+
+является чем-то принципиально новым.
+ Данная работа также будет включать существенный объём материала, посвящённого
+ их
+\begin_inset space ~
+\end_inset
+
+применению.
+ Как
+\begin_inset space ~
+\end_inset
+
+уже было сказано выше, одним из
+\begin_inset space ~
+\end_inset
+
+достоинств математической статистики является хорошая интерпретируемость
+ результатов, что
+\begin_inset space ~
+\end_inset
+
+является важным в
+\begin_inset space ~
+\end_inset
+
+условиях необходимости их
+\begin_inset space ~
+\end_inset
+
+доказывания и
+\begin_inset space ~
+\end_inset
+
+защиты.
+ Ещё
+\begin_inset space ~
+\end_inset
+
+одной сильной стороной является развитый аппарат описательных методов, позволяющ
+ий делать общие выводы о
+\begin_inset space ~
+\end_inset
+
+свойствах данных, в
+\begin_inset space ~
+\end_inset
+
+нашем случае — свойствах открытых рынков.
+ Таким образом, рассмотрение и
+\begin_inset space ~
+\end_inset
+
+применение методов математической статистики представляется необходимым.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Машинное обучение
+\series default
+ пока что
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+получило широкого распространения в
+\begin_inset space ~
+\end_inset
+
+среде профессиональных оценщиков.
+ При
+\begin_inset space ~
+\end_inset
+
+этом уже
+\begin_inset space ~
+\end_inset
+
+существует ряд сервисов, позволяющих предсказывать стоимость объектов на
+\begin_inset space ~
+\end_inset
+
+основе методов машинного обучения.
+ Примером является 
+\begin_inset CommandInset href
+LatexCommand href
+name "Калькулятор недвижимости"
+target "https://spb.cian.ru/kalkulator-nedvizhimosti/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cian:calc"
+literal "false"
+
+\end_inset
+
+, созданный Циан.Групп.
+ По
+\begin_inset space ~
+\end_inset
+
+мнению автора, необходимость применения методов машинного обучения обусловлена
+ в
+\begin_inset space ~
+\end_inset
+
+частности тем, что
+\begin_inset space ~
+\end_inset
+
+существенная часть данных открытых рынков не
+\begin_inset space ~
+\end_inset
+
+относится не
+\begin_inset space ~
+\end_inset
+
+только к
+\begin_inset space ~
+\end_inset
+
+
+\emph on
+данным, характеризующим отношения
+\emph default
+, но
+\begin_inset space ~
+\end_inset
+
+в
+\begin_inset space ~
+\end_inset
+
+принципе не
+\begin_inset space ~
+\end_inset
+
+представляет собой количественные данные.
+ Адрес, конструктивные особенности, техническое состояние — всё
+\begin_inset space ~
+\end_inset
+
+это качественные данные, с
+\begin_inset space ~
+\end_inset
+
+трудом поддающиеся какой-либо трансформации в
+\begin_inset space ~
+\end_inset
+
+количественные.
+ Существуют методы квалиметрии, позволяющие провести преобразование качественных
+ данных в
+\begin_inset space ~
+\end_inset
+
+количественные, однако в
+\begin_inset space ~
+\end_inset
+
+любом случае на
+\begin_inset space ~
+\end_inset
+
+выходе могут быть получены лишь порядковые данные, применение к
+\begin_inset space ~
+\end_inset
+
+которым методов математической статистики возможно лишь в
+\begin_inset space ~
+\end_inset
+
+ограниченном объёме.
+ При
+\begin_inset space ~
+\end_inset
+
+этом многие методы машинного обучения свободны от
+\begin_inset space ~
+\end_inset
+
+зависимости от
+\begin_inset space ~
+\end_inset
+
+типа исходных данных, а
+\begin_inset space ~
+\end_inset
+
+также вида их
+\begin_inset space ~
+\end_inset
+
+распределения.
+ Кроме того, существует необходимость автоматизации сбора исходных данных.
+ Ситуация, при
+\begin_inset space ~
+\end_inset
+
+которой оценщики либо их
+\begin_inset space ~
+\end_inset
+
+помощники вручную копируют данные с
+\begin_inset space ~
+\end_inset
+
+сайтов объявлений, а
+\begin_inset space ~
+\end_inset
+
+затем вручную вставляют в
+\begin_inset space ~
+\end_inset
+
+свои рабочие материалы, выгляди нелепой для
+\begin_inset space ~
+\end_inset
+
+2021 года.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Интеллектуальный анализ данных
+\series default
+ представляет собой междисциплинарное направление деятельности.
+ Очевидно, что
+\begin_inset space ~
+\end_inset
+
+планирование исследования, выбор источников данных, поиск и
+\begin_inset space ~
+\end_inset
+
+объяснение закономерностей, соотнесение промежуточных и
+\begin_inset space ~
+\end_inset
+
+
+\bar under
+итоговых результатов
+\bar default
+ с
+\begin_inset space ~
+\end_inset
+
+априорными знаниями, 
+\bar under
+их
+\bar default
+
+\begin_inset space ~
+\end_inset
+
+интерпретация и
+\begin_inset space ~
+\end_inset
+
+описание, — всё
+\begin_inset space ~
+\end_inset
+
+это является важной частью деятельности оценщика.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Искусственный интеллект
+\series default
+ не
+\begin_inset space ~
+\end_inset
+
+имеет однозначного и
+\begin_inset space ~
+\end_inset
+
+точного определения.
+ Любой недетерминированный алгоритм, позволяющий решать практические задачи
+ неслучайным образом может считаться реализацией искусственного интеллекта.
+\end_layout
+
+\begin_layout Standard
+Таким образом, все
+\begin_inset space ~
+\end_inset
+
+четыре направления представляют интерес и
+\begin_inset space ~
+\end_inset
+
+будут рассматриваться в
+\begin_inset space ~
+\end_inset
+
+данной работе.
+ Можно лишь в
+\begin_inset space ~
+\end_inset
+
+очередной раз повторить мысль о
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+любое их
+\begin_inset space ~
+\end_inset
+
+разделение носит приблизительный и
+\begin_inset space ~
+\end_inset
+
+отчасти условный характер.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap table
+lines 0
+placement O
+overhang 0in
+width "100text%"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Обобщение сведений
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:ML-AI"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="5">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="20text%">
+<column alignment="center" valignment="middle" width="20text%">
+<column alignment="center" valignment="middle" width="20text%">
+<column alignment="center" valignment="middle" width="20text%">
+<column alignment="center" valignment="middle" width="20text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Математическая статистика
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Машинное обучение
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Интеллектуальный анализ данных
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Искусственный интеллект
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Приоритетный подход к вероятности
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Частотный
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Байесовский
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Оба
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Байесовский
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Опирается на свойства данных
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Да
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Нет
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Да
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Нет
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Требовательность к количеству наблюдений
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Умеренная
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Высокая
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Высокая
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Средняя
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Применение компьютера
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Желательно
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Обязательно
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Обязательно
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Обязательно
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Основной инструмент
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Python
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+R и Python
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Python
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Включает в
+\begin_inset space ~
+\end_inset
+
+себя методы подготовки эксперимента и
+\begin_inset space ~
+\end_inset
+
+отбора данных
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Нет
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Нет
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Да
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Нет
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Предполагает наличие знаний в
+\begin_inset space ~
+\end_inset
+
+области, в
+\begin_inset space ~
+\end_inset
+
+которой проводится эксперимент
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Нет
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Нет
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Да
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Нет
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Стремится к
+\begin_inset space ~
+\end_inset
+
+вычислительной эффективности
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Нет
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Да
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Да
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Да
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Позволяет делать общие выводы о
+\begin_inset space ~
+\end_inset
+
+свойствах данных
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Да
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Нет
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Да
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Нет
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Позволяет давать точные прогнозы значений новых наблюдений
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Частично
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Да
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Да
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Да
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Основная область знаний, к
+\begin_inset space ~
+\end_inset
+
+которой относится направление
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Математика
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Информатика
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Междисциплинарная
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Информатика
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Обеспечивает хорошую интерпретацию результатов
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+В большинстве случаев
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Не всегда
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Да
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Нет
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:4.1-Stat-DM-ML-AI-End"
 
 \end_inset
 
-№
+
 \end_layout
 
 \begin_layout Standard
-End
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:4-Basic-Def-End"
