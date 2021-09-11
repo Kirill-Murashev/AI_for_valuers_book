@@ -26120,7 +26120,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Математическая статистика
 \end_layout
 
@@ -26131,7 +26131,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Машинное обучение
 \end_layout
 
@@ -26142,7 +26142,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Интеллектуальный анализ данных
 \end_layout
 
@@ -26153,7 +26153,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Искусственный интеллект
 \end_layout
 
@@ -26166,7 +26166,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Приоритетный подход к вероятности
 \end_layout
 
@@ -26177,7 +26177,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Частотный
 \end_layout
 
@@ -26188,7 +26188,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Байесовский
 \end_layout
 
@@ -26199,7 +26199,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Оба
 \end_layout
 
@@ -26210,7 +26210,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Байесовский
 \end_layout
 
@@ -26223,7 +26223,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Опирается на свойства данных
 \end_layout
 
@@ -26234,7 +26234,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Да
 \end_layout
 
@@ -26245,7 +26245,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Нет
 \end_layout
 
@@ -26256,7 +26256,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Да
 \end_layout
 
@@ -26267,7 +26267,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Нет
 \end_layout
 
@@ -26280,7 +26280,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Требовательность к количеству наблюдений
 \end_layout
 
@@ -26291,7 +26291,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Умеренная
 \end_layout
 
@@ -26302,7 +26302,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Высокая
 \end_layout
 
@@ -26313,7 +26313,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Высокая
 \end_layout
 
@@ -26324,7 +26324,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Средняя
 \end_layout
 
@@ -26337,7 +26337,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Применение компьютера
 \end_layout
 
@@ -26348,7 +26348,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Желательно
 \end_layout
 
@@ -26359,7 +26359,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Обязательно
 \end_layout
 
@@ -26370,7 +26370,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Обязательно
 \end_layout
 
@@ -26381,7 +26381,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Обязательно
 \end_layout
 
@@ -26394,7 +26394,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Основной инструмент
 \end_layout
 
@@ -26405,7 +26405,7 @@ name "tab:ML-AI"
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 R
 \end_layout
 
@@ -26416,7 +26416,7 @@ R
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Python
 \end_layout
 
@@ -26427,7 +26427,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 R и Python
 \end_layout
 
@@ -26438,7 +26438,7 @@ R и Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Python
 \end_layout
 
@@ -26451,7 +26451,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Включает в
 \begin_inset space ~
 \end_inset
@@ -26470,7 +26470,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Нет
 \end_layout
 
@@ -26481,7 +26481,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Нет
 \end_layout
 
@@ -26492,7 +26492,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Да
 \end_layout
 
@@ -26503,7 +26503,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Нет
 \end_layout
 
@@ -26516,7 +26516,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Предполагает наличие знаний в
 \begin_inset space ~
 \end_inset
@@ -26535,7 +26535,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Нет
 \end_layout
 
@@ -26546,7 +26546,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Нет
 \end_layout
 
@@ -26557,7 +26557,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Да
 \end_layout
 
@@ -26568,7 +26568,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Нет
 \end_layout
 
@@ -26581,7 +26581,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Стремится к
 \begin_inset space ~
 \end_inset
@@ -26596,7 +26596,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Нет
 \end_layout
 
@@ -26607,7 +26607,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Да
 \end_layout
 
@@ -26618,7 +26618,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Да
 \end_layout
 
@@ -26629,7 +26629,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Да
 \end_layout
 
@@ -26642,7 +26642,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Позволяет делать общие выводы о
 \begin_inset space ~
 \end_inset
@@ -26657,7 +26657,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Да
 \end_layout
 
@@ -26668,7 +26668,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Нет
 \end_layout
 
@@ -26679,7 +26679,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Да
 \end_layout
 
@@ -26690,7 +26690,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Нет
 \end_layout
 
@@ -26703,7 +26703,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Позволяет давать точные прогнозы значений новых наблюдений
 \end_layout
 
@@ -26714,7 +26714,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Частично
 \end_layout
 
@@ -26725,7 +26725,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Да
 \end_layout
 
@@ -26736,7 +26736,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Да
 \end_layout
 
@@ -26747,7 +26747,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Да
 \end_layout
 
@@ -26760,7 +26760,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Основная область знаний, к
 \begin_inset space ~
 \end_inset
@@ -26775,7 +26775,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Математика
 \end_layout
 
@@ -26786,7 +26786,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Информатика
 \end_layout
 
@@ -26797,7 +26797,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Междисциплинарная
 \end_layout
 
@@ -26808,7 +26808,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Информатика
 \end_layout
 
@@ -26821,7 +26821,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Обеспечивает хорошую интерпретацию результатов
 \end_layout
 
@@ -26832,7 +26832,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 В большинстве случаев
 \end_layout
 
@@ -26843,7 +26843,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Не всегда
 \end_layout
 
@@ -26854,7 +26854,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Да
 \end_layout
 
@@ -26865,7 +26865,7 @@ Python
 
 \begin_layout Plain Layout
 
-\size footnotesize
+\size scriptsize
 Нет
 \end_layout
 
@@ -26909,11 +26909,377 @@ name "chap:4-Basic-Def-End"
 \end_layout
 
 \begin_layout Chapter
-Начало работы с
+Каллиграфия анализа данных: краткое стилевое руководство
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:5-Calligraphy"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Как
+\begin_inset space ~
+\end_inset
+
+известно, код чаще читают, чем
+\begin_inset space ~
+\end_inset
+
+пишут.
+ Чтобы код мог быть прочитан и
+\begin_inset space ~
+\end_inset
+
+понят не
+\begin_inset space ~
+\end_inset
+
+только со
+\begin_inset space ~
+\end_inset
+
+стороны его
+\begin_inset space ~
+\end_inset
+
+автора следует придерживаться рекомендаций т.
+\begin_inset space \thinspace{}
+\end_inset
+
+н.
+\begin_inset space ~
+\end_inset
+
+стилевых руководств.
+\end_layout
+
+\begin_layout Section
+Стилевое руководство по
 \begin_inset space ~
 \end_inset
 
 R
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:5.1-Calligraphy-R"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+отличие от
+\begin_inset space ~
+\end_inset
+
+Python, в
+\begin_inset space ~
+\end_inset
+
+R нет
+\begin_inset space ~
+\end_inset
+
+единого стилевого стандарта.
+ Существует как
+\begin_inset space ~
+\end_inset
+
+минимум четыре
+\begin_inset space ~
+\end_inset
+
+руководства:
+\end_layout
+
+\begin_layout Itemize
+руководство, разработанное 
+\begin_inset CommandInset href
+LatexCommand href
+name "Hadley Alexander Wickham"
+target "http://hadley.nz/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hadley-Wickham:site"
+literal "false"
+
+\end_inset
+
+ — 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Advanced R. Style Guide"
+target "http://adv-r.had.co.nz/Style.html"
+literal "false"
+
+\end_inset
+
+
+\emph default
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AdvR:style-guide"
+literal "false"
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+расширенная версия предыдущего — 
+\emph on
+\lang american
+
+\begin_inset CommandInset href
+LatexCommand href
+name "The tidyverse style guide"
+target "https://style.tidyverse.org/index.html"
+literal "false"
+
+\end_inset
+
+
+\emph default
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tidyverse:styleguide"
+literal "false"
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+руководство от
+\begin_inset space ~
+\end_inset
+
+компании Google, представляющее собой 
+\begin_inset CommandInset href
+LatexCommand href
+name "форк"
+target "https://ru.wikipedia.org/wiki/%D0%A4%D0%BE%D1%80%D0%BA"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:fork"
+literal "false"
+
+\end_inset
+
+ The tidyverse style guide — 
+\emph on
+\lang american
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Google’s R Style Guide"
+target "https://google.github.io/styleguide/Rguide.html"
+literal "false"
+
+\end_inset
+
+
+\emph default
+\lang russian
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Google:RStyle-guide"
+literal "false"
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+руководство от
+\begin_inset space ~
+\end_inset
+
+проекта Bioconductor — 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Coding Style"
+target "https://www.bioconductor.org/developers/how-to/coding-style/"
+literal "false"
+
+\end_inset
+
+
+\emph default
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bioconductor:RStyle"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Также существует 
+\begin_inset CommandInset href
+LatexCommand href
+name "пост"
+target "https://habr.com/en/post/454432/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Habr:RStyle"
+literal "false"
+
+\end_inset
+
+ на
+\begin_inset space ~
+\end_inset
+
+портале Habr.com, обобщающий опыт применения стилевых руководств.
+ Далее приводятся некоторые наиболее важные, по
+\begin_inset space ~
+\end_inset
+
+мнению автора, стилевые принципы написания кода на
+\begin_inset space ~
+\end_inset
+
+R.
+ Кроме того, рекомендуется установка пакета 
+\begin_inset CommandInset href
+LatexCommand href
+name "formatR"
+target "https://cran.r-project.org/web/packages/formatR/index.html"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rpack:formatR"
+literal "false"
+
+\end_inset
+
+, автоматизирующего часть задач по
+\begin_inset space ~
+\end_inset
+
+стилистическому оформлению кода.
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:5.1-Calligraphy-R-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Стилевое руководство по
+\begin_inset space ~
+\end_inset
+
+Python
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:5.1-Calligraphy-Python"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:5.1-Calligraphy-Python-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:5-Calligraphy-End"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
