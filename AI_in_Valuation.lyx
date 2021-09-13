@@ -13,11 +13,11 @@
 %\setcounter{chapter}{-1}
 %\newcounter{chapter}[part]
 \newcounter{ChapCounter}[chapter] % Создание счётчика, подчинение его Главе
-\newcounter{SecCounter}[section] % Создание счётчика, подчинение его Надразделу
-\newcounter{SubSecCounter}[subsection] % Создание счётчика, подчинение его Разделу
-\newcounter{SubSubSecCounter}[subsubsection] % Создание счётчика, подчинение его Подразделу
-\newcounter{ParCounter}[paragraph] % Создание счётчика, подчинение его Параграфу
-\newcounter{SubParCounter}[subparagraph] % Создание счётчика, подчинение его Подпараграфу
+\newcounter{SecCounter}[section] % Создание счётчика, подчинение его Разделу
+\newcounter{SubSecCounter}[subsection] % Создание счётчика, подчинение его Подразделу
+\newcounter{SubSubSecCounter}[subsubsection] % Создание счётчика, подчинение его Секции
+\newcounter{ParCounter}[paragraph] % Создание счётчика, подчинение его Подсекции
+\newcounter{SubParCounter}[subparagraph] % Создание счётчика, подчинение его Параграфу
 \usepackage{indentfirst}            % красная строка
 \usepackage{misccorr}               % доработки для babel
 \frenchspacing                      % французский стиль пробелов
@@ -26945,7 +26945,7 @@ name "chap:5-Calligraphy"
 \begin_inset space ~
 \end_inset
 
-автора следует придерживаться рекомендаций т.
+автора, последнему следует придерживаться рекомендаций т.
 \begin_inset space \thinspace{}
 \end_inset
 
@@ -27205,7 +27205,11 @@ literal "false"
 \begin_inset space ~
 \end_inset
 
-R.
+R, применяемые им
+\begin_inset space ~
+\end_inset
+
+самим.
  Кроме того, рекомендуется установка пакета 
 \begin_inset CommandInset href
 LatexCommand href
@@ -27232,6 +27236,1697 @@ literal "false"
 \end_inset
 
 стилистическому оформлению кода.
+ Некоторые из
+\begin_inset space ~
+\end_inset
+
+приведённых ниже принципов не
+\begin_inset space ~
+\end_inset
+
+являются единственно верными и
+\begin_inset space ~
+\end_inset
+
+допускают вариации.
+ Все
+\begin_inset space ~
+\end_inset
+
+рекомендуемые варианты изложены, как
+\begin_inset space ~
+\end_inset
+
+уже было сказано выше, в
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AdvR:style-guide,Tidyverse:styleguide,Google:RStyle-guide,Bioconductor:RStyle"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Имена файлов и
+\begin_inset space ~
+\end_inset
+
+путей к
+\begin_inset space ~
+\end_inset
+
+ним
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:5.1.1-Calligraphy-R-Filenames"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Имена файлов скриптов и
+\begin_inset space ~
+\end_inset
+
+путь к
+\begin_inset space ~
+\end_inset
+
+ним должны содержать только латинские буквы, цифры и
+\begin_inset space ~
+\end_inset
+
+специальные символы.
+ Использование пробелов и
+\begin_inset space ~
+\end_inset
+
+кириллических букв не допускается.
+ Следует назначать информативные имена.
+ Основными расширениями имён файлов, содержащих код
+\begin_inset space ~
+\end_inset
+
+на
+\begin_inset space ~
+\end_inset
+
+R являются:
+\end_layout
+
+\begin_layout Itemize
+.R — расширение скриптов;
+\end_layout
+
+\begin_layout Itemize
+.Rmd — расширение файлов 
+\begin_inset CommandInset href
+LatexCommand href
+name "R Markdown"
+target "https://rmarkdown.rstudio.com/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RMarkdown:site"
+literal "false"
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "R Notebook"
+target "https://www.middleprofessor.com/files/applied-biostatistics_bookdown/_book/organization-r-projects-and-r-notebooks.html"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RNotebook:chapter2"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Таким образом:
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\backslash
+home
+\backslash
+username
+\backslash
+my-projects
+\backslash
+depreciation
+\backslash
+auto
+\backslash
+r-code
+\backslash
+gazelle_dep.R — 
+\emph on
+правильно
+\emph default
+;
+\end_layout
+
+\begin_layout Itemize
+
+\backslash
+home
+\backslash
+username
+\backslash
+my-projects
+\backslash
+износ
+\backslash
+транспорт
+\backslash
+R-code
+\backslash
+gazelle_dep.R — 
+\emph on
+неправильно
+\emph default
+;
+\end_layout
+
+\begin_layout Itemize
+
+\backslash
+home
+\backslash
+username
+\backslash
+my projects
+\backslash
+depreciation
+\backslash
+auto
+\backslash
+r code
+\backslash
+gazelle_dep.R — 
+\emph on
+неправильно
+\emph default
+;
+\end_layout
+
+\begin_layout Itemize
+
+\backslash
+home
+\backslash
+username
+\backslash
+my projects
+\backslash
+AAA
+\backslash
+BBB
+\backslash
+CCC
+\backslash
+589509380943.R — 
+\emph on
+неправильно
+\emph default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+случае необходимости последовательного запуска файлов, их
+\begin_inset space ~
+\end_inset
+
+имена следует предварять цифрами, соответствующими порядку запуска, например:
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+000-load.R
+\end_layout
+
+\begin_layout Plain Layout
+
+001-parce.R
+\end_layout
+
+\begin_layout Plain Layout
+
+002-analyze.R
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+009-visualize.R
+\end_layout
+
+\begin_layout Plain Layout
+
+010-results.R
+\end_layout
+
+\end_inset
+
+— в
+\begin_inset space ~
+\end_inset
+
+случае возникновения впоследствии необходимости добавления файла между уже
+\begin_inset space ~
+\end_inset
+
+существующими, можно использовать добавление букв к
+\begin_inset space ~
+\end_inset
+
+цифровому префиксу:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+002aa-analyze.R
+\end_layout
+
+\begin_layout Plain Layout
+
+002ab-check.R
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+именах файлов следует использовать только строчные буквы.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AdvR:style-guide,Tidyverse:styleguide"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:5.1.1-Calligraphy-R-Filenames-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Синтаксис
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:5.1.2-Calligraphy-R-Syntax"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Имена классов, функций и
+\begin_inset space ~
+\end_inset
+
+переменных
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:5.1.2.1-Calligraphy-R-Objectsnames"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+данном вопросе до
+\begin_inset space ~
+\end_inset
+
+сих
+\begin_inset space ~
+\end_inset
+
+пор
+\begin_inset space ~
+\end_inset
+
+нет
+\begin_inset space ~
+\end_inset
+
+единства.
+ В
+\begin_inset space ~
+\end_inset
+
+целом можно говорить о
+\begin_inset space ~
+\end_inset
+
+пяти возможных вариантах:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+lowerCamel
+\end_layout
+
+\begin_layout Plain Layout
+
+period.separation
+\end_layout
+
+\begin_layout Plain Layout
+
+lower_case_with_underscores
+\end_layout
+
+\begin_layout Plain Layout
+
+allowercase
+\end_layout
+
+\begin_layout Plain Layout
+
+UpperCamel
+\end_layout
+
+\end_inset
+
+— 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AdvR:style-guide,Tidyverse:styleguide"
+literal "false"
+
+\end_inset
+
+ рекомендуют использовать стиль 
+\emph on
+\lang american
+lower_case_with_underscores
+\emph default
+\lang russian
+ во
+\begin_inset space ~
+\end_inset
+
+всех случаях, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Google:RStyle-guide"
+literal "false"
+
+\end_inset
+
+ — 
+\emph on
+\lang american
+lower_case_with_underscores
+\emph default
+\lang russian
+ для
+\begin_inset space ~
+\end_inset
+
+переменных и
+\begin_inset space ~
+\end_inset
+
+
+\emph on
+\lang american
+UpperCamel
+\emph default
+\lang russian
+ для
+\begin_inset space ~
+\end_inset
+
+функций, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bioconductor:RStyle"
+literal "false"
+
+\end_inset
+
+ — 
+\emph on
+lowerCamel
+\emph default
+ для
+\begin_inset space ~
+\end_inset
+
+переменных и
+\begin_inset space ~
+\end_inset
+
+функций и
+\begin_inset space ~
+\end_inset
+
+
+\emph on
+UpperCamel
+\emph default
+ для
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "классов"
+target "https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B0%D1%81%D1%81_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:class-CS"
+literal "false"
+
+\end_inset
+
+.
+ При
+\begin_inset space ~
+\end_inset
+
+этом в
+\begin_inset space ~
+\end_inset
+
+самом R изначально реализован стиль 
+\emph on
+period.separator
+\emph default
+ как
+\begin_inset space ~
+\end_inset
+
+для
+\begin_inset space ~
+\end_inset
+
+классов, так
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+для
+\begin_inset space ~
+\end_inset
+
+функций, при
+\begin_inset space ~
+\end_inset
+
+этом часть функций имеет названия в
+\begin_inset space ~
+\end_inset
+
+стиле 
+\emph on
+allowercase
+\emph default
+.
+ Автор использует следующий вариант:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+имена классов
+\series default
+ — UpperCamel;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+имена функций
+\series default
+ — lowerCamel;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+имена переменных
+\series default
+ — lower_case_with_underscores.
+\end_layout
+
+\begin_layout Standard
+Данный выбор обусловлен желанием избежать использовать точек в
+\begin_inset space ~
+\end_inset
+
+именах, поскольку использование точек лучше зарезервировать за
+\begin_inset space ~
+\end_inset
+
+объектами системы 
+\begin_inset CommandInset href
+LatexCommand href
+name "S3"
+target "http://adv-r.had.co.nz/S3.html"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AdvR:S3"
+literal "false"
+
+\end_inset
+
+.
+ Использование стиля lowerCamel в
+\begin_inset space ~
+\end_inset
+
+именах переменных приводит к
+\begin_inset space ~
+\end_inset
+
+плохой читаемости в
+\begin_inset space ~
+\end_inset
+
+случае их
+\begin_inset space ~
+\end_inset
+
+значительной длины.
+ Приведённый выше подход к
+\begin_inset space ~
+\end_inset
+
+названиям является лишь обобщением опыта автора и
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+может считаться единственно верным или
+\begin_inset space ~
+\end_inset
+
+даже просто предпочтительным.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Habr:RStyle,AdvR:style-guide,Tidyverse:styleguide,Google:RStyle-guide,Bioconductor:RStyle"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:5.1.2.1-Calligraphy-R-Objectsnames-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Использование пробелов
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:5.1.2.2-Calligraphy-R-Spaces"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Во
+\begin_inset space ~
+\end_inset
+
+всех случаях пробел ставится после запятой и
+\begin_inset space ~
+\end_inset
+
+никогда не
+\begin_inset space ~
+\end_inset
+
+ставится перед ней:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true,showspaces=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#Правильно:
+\end_layout
+
+\begin_layout Plain Layout
+
+x[, 1]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Неправильно:
+\end_layout
+
+\begin_layout Plain Layout
+
+x[,1]
+\end_layout
+
+\begin_layout Plain Layout
+
+x[ ,1]
+\end_layout
+
+\begin_layout Plain Layout
+
+x[ , 1]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+общем случае пробел не
+\begin_inset space ~
+\end_inset
+
+ставится ни
+\begin_inset space ~
+\end_inset
+
+до, ни
+\begin_inset space ~
+\end_inset
+
+после как
+\begin_inset space ~
+\end_inset
+
+открывающих, так и
+\begin_inset space ~
+\end_inset
+
+закрывающих круглых скобок:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true,showspaces=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#Правильно:
+\end_layout
+
+\begin_layout Plain Layout
+
+mean(x, na.rm = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Неправильно:
+\end_layout
+
+\begin_layout Plain Layout
+
+mean (x, na.rm = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+mean( x, na.rm = TRUE )
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Из
+\begin_inset space ~
+\end_inset
+
+этого правила существует исключение: при
+\begin_inset space ~
+\end_inset
+
+использовании операторов 
+\lang american
+if
+\lang russian
+, 
+\lang american
+for
+\lang russian
+ и 
+\lang american
+while
+\lang russian
+ после них
+\begin_inset space ~
+\end_inset
+
+перед открывающей скобкой ставится пробел:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true,showspaces=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+if (debug) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  show(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+if(debug){
+\end_layout
+
+\begin_layout Plain Layout
+
+  show(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пробел также ставится после закрывающей круглой скобки для
+\begin_inset space ~
+\end_inset
+
+сообщения функции её
+\begin_inset space ~
+\end_inset
+
+аргументов, заключаемых в
+\begin_inset space ~
+\end_inset
+
+фигурные скобки:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true,showspaces=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#Правильно:
+\end_layout
+
+\begin_layout Plain Layout
+
+function(x) {}
+\end_layout
+
+\begin_layout Plain Layout
+
+#Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+function (x) {}
+\end_layout
+
+\begin_layout Plain Layout
+
+function(x){}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Оператор охвата 
+\family typewriter
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true,showspaces=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+{{ }}
+\end_layout
+
+\end_inset
+
+
+\family default
+ должен содержать внутренние пробелы:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true,showspaces=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+max_by <- function(data, var, by) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  data %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+    group_by({{ by }}) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+    summarise(maximum = max({{ var }}, na.rm = TRUE))
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+max_by <- function(data, var, by) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  data %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+    group_by({{by}}) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+    summarise(maximum = max({{var}}, na.rm = TRUE))
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Большинство операторов в
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "инфиксной нотации"
+target "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%84%D0%B8%D0%BA%D1%81%D0%BD%D0%B0%D1%8F_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:infix-not"
+literal "false"
+
+\end_inset
+
+ т.
+\begin_inset space ~
+\end_inset
+
+е.
+\begin_inset space ~
+\end_inset
+
+таких операторов, которые расположены между операндами, например 
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true,showstringspaces=false"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+=, +, -, /, <-
+\end_layout
+
+\end_inset
+
+, отделяются пробелами:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#Правильно:
+\end_layout
+
+\begin_layout Plain Layout
+
+height <- (feet * 12) + inches
+\end_layout
+
+\begin_layout Plain Layout
+
+mean(x, na.rm = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Неправильно:
+\end_layout
+
+\begin_layout Plain Layout
+
+height<-feet*12+inches
+\end_layout
+
+\begin_layout Plain Layout
+
+mean(x, na.rm=TRUE)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Существует ряд исключений из
+\begin_inset space ~
+\end_inset
+
+этого правила:
+\end_layout
+
+\begin_layout Itemize
+операторы с
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "наиболее высоким приоритетом"
+target "https://style.tidyverse.org/syntax.html"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "R:operators"
+literal "false"
+
+\end_inset
+
+:
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+::, :::, $, @, [, [[, ^
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "унарный"
+target "https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D1%83%D1%81"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+-
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wiki:minus"
+literal "false"
+
+\end_inset
+
+, унарный
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
++
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+:
+\end_layout
+
+\end_inset
+
+ используются без
+\begin_inset space ~
+\end_inset
+
+пробелов:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+sqrt(x^2 + y^2)
+\end_layout
+
+\begin_layout Plain Layout
+
+df$z x <- 1:10
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+sqrt(x ^ 2 + y ^ 2)
+\end_layout
+
+\begin_layout Plain Layout
+
+df $ z x <- 1 : 10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+односторонние формулы, в
+\begin_inset space ~
+\end_inset
+
+которых правая часть является единственным идентификатором:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#Правильно:
+\end_layout
+
+\begin_layout Plain Layout
+
+~foo
+\end_layout
+
+\begin_layout Plain Layout
+
+tribble(
+\end_layout
+
+\begin_layout Plain Layout
+
+  ~col1, ~col2,   "a",   "b"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+~ foo
+\end_layout
+
+\begin_layout Plain Layout
+
+tribble(
+\end_layout
+
+\begin_layout Plain Layout
+
+  ~ col1, ~ col2,   "a", "b"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— при
+\begin_inset space ~
+\end_inset
+
+этом односторонние формулы, имеющие сложный идентификатор в
+\begin_inset space ~
+\end_inset
+
+правой части, требуют пробелов:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+~ .x + .y
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+~.x + .y
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+специфические выражения tidy: 
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+!!, !!!
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#Правильно:
+\end_layout
+
+\begin_layout Plain Layout
+
+call(!!xyz)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Неправильно:
+\end_layout
+
+\begin_layout Plain Layout
+
+call(!! xyz)
+\end_layout
+
+\begin_layout Plain Layout
+
+call( !! xyz)
+\end_layout
+
+\begin_layout Plain Layout
+
+call(! !xyz)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+оператор вызова помощи:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#Правильно:
+\end_layout
+
+\begin_layout Plain Layout
+
+package?stats
+\end_layout
+
+\begin_layout Plain Layout
+
+?mean
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+package ? stats 
+\end_layout
+
+\begin_layout Plain Layout
+
+? mean
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Использование дополнительных пробелов целесообразно в
+\begin_inset space ~
+\end_inset
+
+случае необходимости выравнивания строк по
+\begin_inset space ~
+\end_inset
+
+операторам
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+=
+\end_layout
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+<-
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true,showspaces=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+list(
+\end_layout
+
+\begin_layout Plain Layout
+
+  total = a + b + c,
+\end_layout
+
+\begin_layout Plain Layout
+
+  mean  = (a + b + c) / n
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+— при
+\begin_inset space ~
+\end_inset
+
+этом в
+\begin_inset space ~
+\end_inset
+
+любом случае нельзя ставить пробелы там, где
+\begin_inset space ~
+\end_inset
+
+это
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+рекомендуется либо запрещено.
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:5.1.2.2-Calligraphy-R-Spaces-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+End
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:5.1.2-Calligraphy-R-Syntax-End"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
