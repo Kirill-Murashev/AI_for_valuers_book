@@ -23252,6 +23252,49 @@ name "par:2.4.2.1.1-R-Install-Deb-Ubuntu-End"
 
 \end_layout
 
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+успешной установки библиотек в
+\begin_inset space ~
+\end_inset
+
+дальнейшем рекомендуется выполнить следующие команды:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+$ sudo apt update
+\end_layout
+
+\begin_layout Plain Layout
+
+sudo apt install libxml2-dev
+\end_layout
+
+\begin_layout Plain Layout
+
+sudo apt install libcurl4-openssl-dev
+\end_layout
+
+\begin_layout Plain Layout
+
+sudo apt install libssl-dev
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Paragraph
 Установка на
 \begin_inset space ~
@@ -23800,10 +23843,41 @@ name "chap:2-Tech_base-End"
 \end_layout
 
 \begin_layout Chapter
-Математическая основа анализа данных
+Исходные данные и
+\begin_inset space ~
+\end_inset
+
+информация
 \begin_inset CommandInset label
 LatexCommand label
-name "chap:3-Statistic"
+name "chap:3-Inputs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+данной главе содержатся сведения об
+\begin_inset space ~
+\end_inset
+
+использованных наборах данных, а
+\begin_inset space ~
+\end_inset
+
+также некоторых стандартных значениях.
+\end_layout
+
+\begin_layout Section
+Использованные наборы данных
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:3.1-Datasets"
 
 \end_inset
 
@@ -23814,7 +23888,245 @@ name "chap:3-Statistic"
 End
 \begin_inset CommandInset label
 LatexCommand label
-name "chap:3-Statistic-End"
+name "sec:3.1-Datasets-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Стандартные значения
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:3.2-Stand-Val"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если не
+\begin_inset space ~
+\end_inset
+
+указано иное, использовались следующие значения.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Стандартные значения
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:st-val"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Наименование показателя
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Значение
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Начальное положение датчика псевдослучайных чисел
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1703
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Алгоритм генерации псевдослучайных чисел при использовании R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mersenne Twister
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:3.2-Stand-Val-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:3-Inputs-End"
 
 \end_inset
 
@@ -27605,7 +27917,7 @@ name "subsec:5.1.2-Calligraphy-R-Syntax"
 переменных
 \begin_inset CommandInset label
 LatexCommand label
-name "subsubsec:5.1.2.1-Calligraphy-R-Objectsnames"
+name "subsubsec:5.1.2.1-Calligraphy-R-Syntax-Objectsnames"
 
 \end_inset
 
@@ -27933,7 +28245,7 @@ literal "false"
 
 \begin_inset CommandInset label
 LatexCommand label
-name "subsubsec:5.1.2.1-Calligraphy-R-Objectsnames-End"
+name "subsubsec:5.1.2.1-Calligraphy-R-Syntax-Objectsnames-End"
 
 \end_inset
 
@@ -27944,11 +28256,23 @@ name "subsubsec:5.1.2.1-Calligraphy-R-Objectsnames-End"
 Использование пробелов
 \begin_inset CommandInset label
 LatexCommand label
-name "subsubsec:5.1.2.2-Calligraphy-R-Spaces"
+name "subsubsec:5.1.2.2-Calligraphy-R-Syntax-Spaces"
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Отступ в
+\begin_inset space ~
+\end_inset
+
+начале строки осуществляется двумя пробелами, не
+\begin_inset space ~
+\end_inset
+
+табуляцией.
 \end_layout
 
 \begin_layout Standard
@@ -27975,7 +28299,7 @@ status open
 
 \begin_layout Plain Layout
 
-#Правильно:
+# Правильно:
 \end_layout
 
 \begin_layout Plain Layout
@@ -27989,7 +28313,7 @@ x[, 1]
 
 \begin_layout Plain Layout
 
-#Неправильно:
+# Неправильно:
 \end_layout
 
 \begin_layout Plain Layout
@@ -28048,7 +28372,7 @@ status open
 
 \begin_layout Plain Layout
 
-#Правильно:
+# Правильно:
 \end_layout
 
 \begin_layout Plain Layout
@@ -28062,7 +28386,7 @@ mean(x, na.rm = TRUE)
 
 \begin_layout Plain Layout
 
-#Неправильно:
+# Неправильно:
 \end_layout
 
 \begin_layout Plain Layout
@@ -28116,7 +28440,7 @@ status open
 
 \begin_layout Plain Layout
 
-#Правильно
+# Правильно
 \end_layout
 
 \begin_layout Plain Layout
@@ -28140,7 +28464,7 @@ if (debug) {
 
 \begin_layout Plain Layout
 
-#Неправильно
+# Неправильно
 \end_layout
 
 \begin_layout Plain Layout
@@ -28187,7 +28511,7 @@ status open
 
 \begin_layout Plain Layout
 
-#Правильно:
+# Правильно:
 \end_layout
 
 \begin_layout Plain Layout
@@ -28197,7 +28521,7 @@ function(x) {}
 
 \begin_layout Plain Layout
 
-#Неправильно
+# Неправильно
 \end_layout
 
 \begin_layout Plain Layout
@@ -28244,7 +28568,7 @@ status open
 
 \begin_layout Plain Layout
 
-#Правильно
+# Правильно
 \end_layout
 
 \begin_layout Plain Layout
@@ -28278,7 +28602,7 @@ max_by <- function(data, var, by) {
 
 \begin_layout Plain Layout
 
-#Неправильно
+# Неправильно
 \end_layout
 
 \begin_layout Plain Layout
@@ -28369,7 +28693,7 @@ status open
 
 \begin_layout Plain Layout
 
-#Правильно:
+# Правильно:
 \end_layout
 
 \begin_layout Plain Layout
@@ -28388,7 +28712,7 @@ mean(x, na.rm = TRUE)
 
 \begin_layout Plain Layout
 
-#Неправильно:
+# Неправильно:
 \end_layout
 
 \begin_layout Plain Layout
@@ -28422,7 +28746,7 @@ mean(x, na.rm=TRUE)
 
 \begin_inset CommandInset href
 LatexCommand href
-name "наиболее высоким приоритетом"
+name "наиболее высоким приоритетом исполнения"
 target "https://style.tidyverse.org/syntax.html"
 literal "false"
 
@@ -28539,7 +28863,7 @@ status open
 
 \begin_layout Plain Layout
 
-#Правильно
+# Правильно
 \end_layout
 
 \begin_layout Plain Layout
@@ -28558,7 +28882,7 @@ df$z x <- 1:10
 
 \begin_layout Plain Layout
 
-#Неправильно
+# Неправильно
 \end_layout
 
 \begin_layout Plain Layout
@@ -28592,7 +28916,7 @@ status open
 
 \begin_layout Plain Layout
 
-#Правильно:
+# Правильно:
 \end_layout
 
 \begin_layout Plain Layout
@@ -28621,7 +28945,7 @@ tribble(
 
 \begin_layout Plain Layout
 
-#Неправильно
+# Неправильно
 \end_layout
 
 \begin_layout Plain Layout
@@ -28668,7 +28992,7 @@ status open
 
 \begin_layout Plain Layout
 
-#Правильно
+# Правильно
 \end_layout
 
 \begin_layout Plain Layout
@@ -28682,7 +29006,7 @@ status open
 
 \begin_layout Plain Layout
 
-#Неправильно
+# Неправильно
 \end_layout
 
 \begin_layout Plain Layout
@@ -28720,7 +29044,7 @@ status open
 
 \begin_layout Plain Layout
 
-#Правильно:
+# Правильно:
 \end_layout
 
 \begin_layout Plain Layout
@@ -28734,7 +29058,7 @@ call(!!xyz)
 
 \begin_layout Plain Layout
 
-#Неправильно:
+# Неправильно:
 \end_layout
 
 \begin_layout Plain Layout
@@ -28769,7 +29093,7 @@ status open
 
 \begin_layout Plain Layout
 
-#Правильно:
+# Правильно:
 \end_layout
 
 \begin_layout Plain Layout
@@ -28788,7 +29112,7 @@ package?stats
 
 \begin_layout Plain Layout
 
-#Неправильно
+# Неправильно
 \end_layout
 
 \begin_layout Plain Layout
@@ -28907,7 +29231,18 @@ list(
 рекомендуется либо запрещено.
 \begin_inset CommandInset label
 LatexCommand label
-name "subsubsec:5.1.2.2-Calligraphy-R-Spaces-End"
+name "subsubsec:5.1.2.2-Calligraphy-R-Syntax-Spaces-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Вызов функций
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:5.1.2.3-Calligraphy-R-Syntax-Functions-call"
 
 \end_inset
 
@@ -28915,11 +29250,1432 @@ name "subsubsec:5.1.2.2-Calligraphy-R-Spaces-End"
 \end_layout
 
 \begin_layout Standard
-End
+Аргументы функций делятся на
+\begin_inset space ~
+\end_inset
+
+две категории: одни сообщают ей данные, другие — детали обработки этих данных.
+ При
+\begin_inset space ~
+\end_inset
+
+вызове функций имена аргументов чаще всего опускаются в
+\begin_inset space ~
+\end_inset
+
+случае использования 
+\bar under
+значений
+\bar default
+ аргументов по
+\begin_inset space ~
+\end_inset
+
+умолчанию и
+\begin_inset space ~
+\end_inset
+
+приводятся в
+\begin_inset space ~
+\end_inset
+
+случае 
+\bar under
+их
+\bar default
+
+\begin_inset space ~
+\end_inset
+
+изменения.
 \end_layout
 
 \begin_layout Standard
-End
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+mean(1:10, na.rm = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+mean(x = 1:10, , FALSE)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Следует избегать использования присваивания непосредственно при
+\begin_inset space ~
+\end_inset
+
+вызове функции.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+x <- complicated_function()
+\end_layout
+
+\begin_layout Plain Layout
+
+if (nzchar(x) < 1) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  # do something
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+if (nzchar(x <- complicated_function()) < 1) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  # do something
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:5.1.2.3-subsubsec:5.1.2.2-Calligraphy-R-Syntax-Functions-call-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Контроль исполнения кода
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:5.1.2.4-Calligraphy-R-Syntax-Code_flow"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Фигурные скобки
+\series default
+ являются важнейшим элементов структурирования кода и
+\begin_inset space ~
+\end_inset
+
+построения его
+\begin_inset space ~
+\end_inset
+
+иерархии.
+ Следует придерживаться следующих правил их
+\begin_inset space ~
+\end_inset
+
+применения:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ всегда является последним символом строки.
+ Относящийся к
+\begin_inset space ~
+\end_inset
+
+ней код располагается на
+\begin_inset space ~
+\end_inset
+
+той
+\begin_inset space ~
+\end_inset
+
+же строке;
+\end_layout
+
+\begin_layout Itemize
+содержимое следующей строки размещается с
+\begin_inset space ~
+\end_inset
+
+отступом в
+\begin_inset space ~
+\end_inset
+
+два пробела;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ всегда является первым символом строки.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true,showspaces=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+if (y < 0 && debug) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  message("y is negative")
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (y == 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  if (x > 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    log(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+  } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+    message("x is negative or zero")
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+} else {
+\end_layout
+
+\begin_layout Plain Layout
+
+  y^x
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+test_that("call1 returns an ordered factor", {
+\end_layout
+
+\begin_layout Plain Layout
+
+  expect_s3_class(call1(x, y), c("factor", "ordered"))
+\end_layout
+
+\begin_layout Plain Layout
+
+})
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tryCatch(   
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+    x <- scan()
+\end_layout
+
+\begin_layout Plain Layout
+
+    cat("Total: ", sum(x), "
+\backslash
+n", sep = "")
+\end_layout
+
+\begin_layout Plain Layout
+
+  },
+\end_layout
+
+\begin_layout Plain Layout
+
+  interrupt = function(e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    message("Aborted by user")
+\end_layout
+
+\begin_layout Plain Layout
+
+  } )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+if (y < 0 && debug) {
+\end_layout
+
+\begin_layout Plain Layout
+
+message("Y is negative")
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (y == 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (x > 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+      log(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+    } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+  message("x is negative or zero")
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+} else { y ^ x }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Допускается опускать фигурные скобки в
+\begin_inset space ~
+\end_inset
+
+тех случаях, когда выражение является очень простым и
+\begin_inset space ~
+\end_inset
+
+помещается на
+\begin_inset space ~
+\end_inset
+
+одной строке при
+\begin_inset space ~
+\end_inset
+
+условии, если это
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+вызовет каких-либо побочных эффектов.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+y <- 10
+\end_layout
+
+\begin_layout Plain Layout
+
+x <- if (y < 20) "Too low" else "Too high"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вызов функций, влияющих на
+\begin_inset space ~
+\end_inset
+
+поток исполнения (такие как
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+return()
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+stop()
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+continue
+\end_layout
+
+\end_inset
+
+ следует сопровождать их
+\begin_inset space ~
+\end_inset
+
+заключением в
+\begin_inset space ~
+\end_inset
+
+фигурные скобки.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+if (y < 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  stop("Y is negative")
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+find_abs <- function(x) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  if (x > 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    return(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+  x * -1
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+if (y < 0) stop("Y is negative")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (y < 0)   stop("Y is negative")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+find_abs <- function(x) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  if (x > 0) return(x)   x * -1
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Следует избегать неявного объявления типа в
+\begin_inset space ~
+\end_inset
+
+выражениях 
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+if
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+if (length(x) > 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  # do something
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+if (length(x)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  # do something
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:5.1.2.4-Calligraphy-R-Syntax-Code_flow-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Длина строки
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:5.1.2.5-Calligraphy-R-Syntax-Lenght"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рекомендуемая длина строки — 80 символов.
+ В
+\begin_inset space ~
+\end_inset
+
+случае выхода за
+\begin_inset space ~
+\end_inset
+
+неё рекомендуется на
+\begin_inset space ~
+\end_inset
+
+несколько функций.
+ В
+\begin_inset space ~
+\end_inset
+
+случае, если это
+\begin_inset space ~
+\end_inset
+
+невозможно, следует использовать следующую форму записи: одна строка содержит
+ вызов функции, вторая и
+\begin_inset space ~
+\end_inset
+
+последующие каждый её
+\begin_inset space ~
+\end_inset
+
+аргумент отдельно, последняя строка содержит закрывающую круглую скобку.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+do_something_very_complicated(
+\end_layout
+
+\begin_layout Plain Layout
+
+  something = "that",
+\end_layout
+
+\begin_layout Plain Layout
+
+  requires = many,
+\end_layout
+
+\begin_layout Plain Layout
+
+  arguments = "some of which may be long"
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+do_something_very_complicated("that", requires, many, arguments,
+\end_layout
+
+\begin_layout Plain Layout
+
+                              "some of which may be long"
+\end_layout
+
+\begin_layout Plain Layout
+
+                              )
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+При
+\begin_inset space ~
+\end_inset
+
+этом допускается размещение аргументов, не
+\begin_inset space ~
+\end_inset
+
+содержащих их
+\begin_inset space ~
+\end_inset
+
+названий, на
+\begin_inset space ~
+\end_inset
+
+одной строке:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+map(x, f,
+\end_layout
+
+\begin_layout Plain Layout
+
+  extra_argument_a = 10,
+\end_layout
+
+\begin_layout Plain Layout
+
+  extra_argument_b = c(1, 43, 390, 210209)
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Также на
+\begin_inset space ~
+\end_inset
+
+одной строке следует размещать связанные между собой аргументы:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+paste0(
+\end_layout
+
+\begin_layout Plain Layout
+
+  "Requirement: ", requires, "
+\backslash
+n",
+\end_layout
+
+\begin_layout Plain Layout
+
+  "Result: ", result, "
+\backslash
+n" )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+paste0(
+\end_layout
+
+\begin_layout Plain Layout
+
+  "Requirement: ", requires,
+\end_layout
+
+\begin_layout Plain Layout
+
+  "
+\backslash
+n", "Result: ",
+\end_layout
+
+\begin_layout Plain Layout
+
+  result, "
+\backslash
+n")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Не
+\begin_inset space ~
+\end_inset
+
+следует использовать 
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+;
+\end_layout
+
+\end_inset
+
+ в
+\begin_inset space ~
+\end_inset
+
+конце строки равно как
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+для
+\begin_inset space ~
+\end_inset
+
+разделения команд внутри одной строки.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:5.1.2.5-Calligraphy-R-Syntax-Lenght-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Оператор присвоения
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:5.1.2.6-Calligraphy-R-Syntax-Assignment"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Оператором присвоения
+\series default
+ в
+\begin_inset space ~
+\end_inset
+
+R является
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+<-
+\end_layout
+
+\end_inset
+
+, а
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+=
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+x <- 5
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+x = 5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:5.1.2.6-Calligraphy-R-Syntax-Assignment-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Текстовые и
+\begin_inset space ~
+\end_inset
+
+логические векторы
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.1.2.7-Calligraphy-R-Syntax-Text"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В
+\begin_inset space ~
+\end_inset
+
+общем случае следует использовать
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes xld
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, а
+\begin_inset space ~
+\end_inset
+
+не
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+'
+\end_layout
+
+\end_inset
+
+.
+ При
+\begin_inset space ~
+\end_inset
+
+этом 
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+'
+\end_layout
+
+\end_inset
+
+ используются в
+\begin_inset space ~
+\end_inset
+
+качестве внешних кавычек, в
+\begin_inset space ~
+\end_inset
+
+случае наличия внутреннего выражения, заключённого в
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Quotes xld
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R,breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Правильно
+\end_layout
+
+\begin_layout Plain Layout
+
+"Text"
+\end_layout
+
+\begin_layout Plain Layout
+
+'Text with "quotes"'
+\end_layout
+
+\begin_layout Plain Layout
+
+'<a href="http://style.tidyverse.org">A link</a>'
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Неправильно
+\end_layout
+
+\begin_layout Plain Layout
+
+'Text'
+\end_layout
+
+\begin_layout Plain Layout
+
+'Text with "double" and 
+\backslash
+'single
+\backslash
+' quotes'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Следует использовать 
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+TRUE
+\end_layout
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+FALSE
+\end_layout
+
+\end_inset
+
+ вместо 
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+T
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+и
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+F
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+написания комментария следует использовать
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=R,basicstyle={\ttfamily},breaklines=true"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+#
+\end_layout
+
+\end_inset
+
+ и
+\begin_inset space ~
+\end_inset
+
+пробел после него.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tidyverse:styleguide"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsubsec:2.1.2.7-Calligraphy-R-Syntax-Text-End"
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:5.1.2-Calligraphy-R-Syntax-End"
@@ -28979,6 +30735,168 @@ name "chap:5-Calligraphy-End"
 
 \begin_layout Chapter
 Автоматизированный сбор данных
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:6-Parcing"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Одной из
+\begin_inset space ~
+\end_inset
+
+важнейших первичных задач оценщика является непосредственный сбор данных
+ открытого рынка.
+ Как
+\begin_inset space ~
+\end_inset
+
+правило, такой сбор осуществляется в
+\begin_inset space ~
+\end_inset
+
+ИТС 
+\begin_inset Quotes xld
+\end_inset
+
+Интернет
+\begin_inset Quotes xrd
+\end_inset
+
+.
+ Для
+\begin_inset space ~
+\end_inset
+
+того, чтобы
+\begin_inset space ~
+\end_inset
+
+разобраться в
+\begin_inset space ~
+\end_inset
+
+том, что
+\begin_inset space ~
+\end_inset
+
+представляет из
+\begin_inset space ~
+\end_inset
+
+себя web-страница может быть полезным изучение книги 
+\lang american
+Interactive Data Visualization for
+\begin_inset space ~
+\end_inset
+
+the
+\begin_inset space ~
+\end_inset
+
+Web
+\lang russian
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Interactive Data Visualization for the Web"
+target "http://www.hdip-data-analytics.com/_media/resources/interactive_data_visualization_for_the_web_2nd_edition.pdf"
+literal "false"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Data-for-web"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+R
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:6.1-Parcing-R"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+выполнения поставленных в
+\begin_inset space ~
+\end_inset
+
+данном разделе задач, потребуются следующие библиотеки:
+\end_layout
+
+\begin_layout Enumerate
+
+\lang american
+tidyverse
+\lang russian
+;
+\end_layout
+
+\begin_layout Enumerate
+
+\lang american
+rvest
+\lang russian
+.
+\end_layout
+
+\begin_layout Standard
+Для
+\begin_inset space ~
+\end_inset
+
+начала следует запустить RStudio.
+ Для
+\begin_inset space ~
+\end_inset
+
+того, чтобы 
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:6.1-Parcing-R-End"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+End
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:6-Parcing-End"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
