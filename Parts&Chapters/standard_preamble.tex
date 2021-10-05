@@ -1,0 +1,245 @@
+% Лицензия
+% Apache License Version 2.0, January 2004
+% http://www.apache.org/licenses/
+% Copyright [2020] [Kirill A. Murashev]
+% Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+% http://www.apache.org/licenses/LICENSE-2.0
+% Unless required by applicable law or agreed to in writing, software
+% distributed under the License is distributed on an "AS IS" BASIS,
+% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+% See the License for the specific language governing permissions and limitations under the License.
+
+
+%%% Работа с русским языком
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в формулах
+\usepackage{fontspec}
+\defaultfontfeatures{Renderer=Basic,Ligatures={TeX}}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+\usepackage[english,russian]{babel}
+%\usepackage[T1,T2A]{fontenc}			% кодировка
+%\usepackage[lutf8]{luainputenc}			% кодировка исходного текста
+%\usepackage[english,russian]{babel}	% локализация и переносы
+\usepackage{indentfirst}            % красная строка
+\usepackage{misccorr}               % доработки для babel
+\frenchspacing                      % французский стиль пробелов
+
+%\usepackage{beton} %изменение шрифта для тёмной цветовой схемы
+%\usepackage{concrete}
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+%% Номера формул
+%\mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумерация формул слева
+
+%% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+	{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{Images/}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков текстом
+
+%%% Работа с таблицами
+\usepackage{array, tabularx, tabulary, booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
+
+%%% Теоремы
+\theoremstyle{plain} % Это стиль по умолчанию, его можно не переопределять.
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{proposition}[theorem]{Утверждение}
+
+\theoremstyle{definition} % "Определение"
+\newtheorem{corollary}{Следствие}[theorem]
+\newtheorem{problem}{Задача}[section]
+
+\theoremstyle{remark} % "Примечание"
+\newtheorem*{nonum}{Решение}
+
+%%% Программирование
+\usepackage{etoolbox} % логические операторы
+
+\usepackage{lastpage} % Узнать, сколько всего страниц в документе.
+
+\usepackage{keyval}
+
+\usepackage{totcount} % Узнать, сколько всего объектов в документе.
+
+%\usepackage{xcolor-solarized}
+
+%%% Страница
+%\usepackage{extsizes} % Возможность сделать 14-й шрифт
+%\usepackage{geometry} % Простой способ задавать поля
+%	\geometry{top=25mm}
+%	\geometry{bottom=35mm}
+%	\geometry{left=35mm}
+%	\geometry{right=20mm}
+%
+
+%\usepackage{fancyhdr} % Колонтитулы
+%	\pagestyle{fancy}
+%\renewcommand{\headrulewidth}{0pt}  % Толщина линейки, отчеркивающей верхний колонтитул
+%\fancyhf{}
+%\lhead{Часть \thepart}
+%\chead{Глава \thechapter}
+%\rhead{Раздел \thesection}
+%\lfoot{version 0.251}
+%\cfoot{\today} % По умолчанию здесь номер страницы
+%\rfoot{\thepage/\ref{LastPage}}
+%\pagestyle{fancy}
+
+%\usepackage{setspace} % Интерлиньяж
+%\onehalfspacing % Интерлиньяж 1.5
+%\doublespacing % Интерлиньяж 2
+%\singlespacing % Интерлиньяж 1
+
+\usepackage{soul} % Модификаторы начертания
+
+\usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor} % Подключение пакета для задания цвета
+
+%\definecolor{Backcolor}{HTML}{042029} % Задание цвета для фона
+%\definecolor{Textcolor}{HTML}{819090} % Задание цвета для текста
+%\pagecolor{Backcolor}                 % Подключение тёмной
+%\color{Textcolor}                     % темы
+
+\usepackage{csquotes} % Ещё инструменты для ссылок
+
+\usepackage[backend=biber,bibencoding=utf8,sorting=ynt,maxcitenames=5,sortupper=true,date=iso]{biblatex} % подключение пакета для работы с автоматизированной библиографией
+
+%\usepackage[style=authoryear,maxcitenames=2,backend=biber,sorting=nty]{biblatex}
+
+%\renewcommand\bibname{Источники информации} % Переопределение названия для библиографии
+
+\usepackage{multicol} % Несколько колонок
+
+\usepackage{microtype}              %<-- added for better inter word spacing
+
+\usepackage{tabularx}
+
+\usepackage{tikz} % Работа с графикой
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+\usepackage{eqlist}
+
+\usepackage{desclist} % Дополнительное окружение для списка Глоссария
+
+\usepackage{lineno} % Нумерация строк
+
+\setcounter{tocdepth}{8} % Глубина оглавления
+
+% подавление висячих строк
+\clubpenalty=400 % Разрешение = 300, абсолютный запрет = 10000
+\widowpenalty=400 % Увеличиваем эти числа до тех пор, пока не начнёт увеличиваться количество страниц.
+
+% Выбор между разрежением и переполнением
+\tolerance=500 % max=10000, default=200
+
+\looseness=-1 % иногда можно удлинять страницу на одну строку.
+
+\hfuzz=2.5pt % иногда можно вылезти за край строки на 2.5 pt.
+
+\usepackage{calc} % Вычисления
+
+\usepackage{scrlayer-scrpage} % Стиль страницы
+
+\usepackage{lineno} % нумерация строк
+
+%\pagestyle{scrpage}
+
+%\usepackage{concrete}
+
+\usepackage{booktabs}
+
+\usepackage[owncaptions]{vhistory} % Log of versions
+
+\usepackage{progressbar} % Формирование линейки, показывающей прогресс в работе
+
+\usepackage{epigraph} % работа с эпиграфами
+
+\usepackage {listings}
+\lstloadlanguages{[Latex]Tex, bash, R, Python, SQL}
+\lstset{extendedchars=true , % включаем не латиницу
+frame=tb, % рамка сверху и снизу
+commentstyle=\itshape , % шрифт для комментариев
+stringstyle =\ttfamily % шрифт для строк
+%keywordstyle=\color{blue}
+}
+
+%\usepackage{titling} %дополнительная настройка титульного листа
+
+\setcounter{secnumdepth}{8} % Установка глубины нумерации заголовков
+
+% Работа с гиперрсылками, подключается последним
+\usepackage{hyperref}       % Подключение пакета для работы с гиперссылками
+\hypersetup{				% Гиперссылки
+	unicode=true,           % русские буквы в раздела PDF
+	pdftitle={Искусственный интеллект в~оценке стоимости},   % Заголовок
+	pdfauthor={К.\,А.~Мурашев},      % Автор
+	pdfsubject={Системы поддержки принятия решений, основанные на искусственном интеллекте},      % Тема
+	pdfcreator={К.\,А.~Мурашев}, % Создатель
+	pdfproducer={К.\,А.~Мурашев}, % Производитель
+	pdfkeywords={Искусственный интеллект, машинное обучение, математические методы, оценочная деятельность, цифровая экономика, Data Science, анализ данных} % Ключевые слова
+	colorlinks=true,       	% false: ссылки в рамках; true: цветные ссылки
+	linkcolor=red,          % внутренние ссылки
+	citecolor=green,        % на библиографию
+	filecolor=magenta,      % на файлы
+	urlcolor=blue           % на URL
+}
+
+%\usepackage{url}
+
+%\usepackage{totpages}
+
+%\usepackage[strings]{underscore}
+
+%\author{К.\,А.~Мурашев\thanks {\href{kirill.murashev@tutanota.de}{kirill.murashev@tutanota.de}, \href{https://t.me/Maas\_88}{https://t.me/Maas\_88}, \href{https://www.facebook.com/murashev.kirill}{https://www.facebook.com/murashev.kirill}}}
+%\title{\Large Современные системы поддержки принятия решений оценщиками, основанные на~применении методов машинного обучения: практическое руководство по~применению языка программирования R в~повседневной практике оценщика}
+%\date{\today}
+
+%\normalsize
+
+% Макрос для рисунков, обтекаемых текстом
+\newcommand*{\EpsWrapD}[7]{%
+	\begin{wrapfigure}[#5]{#3}{#2 \textwidth} % #3=l,r,L,R
+		\begin{center} \sffamily
+			\includegraphics*[width= #2 \textwidth ]{#1} % 1-имя файла и метка заодно,
+			% 2-ширина рисунка (доля от ширины страницы)
+			\vspace{-#7mm} % #7: сократить расстояние между подписью снизу и рисунком
+			\caption{\label{fig:#1}#4} % #4 - подпись под рисунком
+			\vspace{-#6pt}
+		\end{center}% #6: сократить расстояние между подписью снизу и текстом после таблицы 
+	\end{wrapfigure}}
+%
+% макрос для создания таблицы, обтекаемой текстом
+\newcommand*{\TableBE}[5]{
+	\begin{table}[#1] %\captionabove
+		\vspace*{-#5mm}
+		\centering \sffamily \caption{\label{tab:#2}#3} \begin{tabular}{#4} \toprule }
+		
+		\newcommand*{\TableEN}[3]{
+			\bottomrule \end{tabular}
+		\vspace{-#2mm} \small \begin{flushleft} #1 \end{flushleft}
+		\vspace{-#3mm}
+\end{table}}
+
+
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/Basic_principles.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/LaTeX.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/Mathstat.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/Murashev.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/Python.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/R.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/RussianLaws.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/Sci&Tech.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/ValuationStandards.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/ZHZL.bib}
+
