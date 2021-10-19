@@ -1,0 +1,34 @@
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ffqqtt}{rgb}{1,0,0.2}
+\definecolor{qqqqcc}{rgb}{0,0,0.8}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-5.2972394098048605,
+xmax=399.41185149928646,
+ymin=-0.9891960601623897,
+ymax=31.189957407160914,
+xtick={0,10,...,390},
+ytick={0,2,...,30},]
+\clip(-5.2972394098048605,-0.9891960601623897) rectangle (399.41185149928646,31.189957407160914);
+\draw[line width=2pt,color=qqwuqq,smooth,samples=100,domain=0.0000019281951454281693:399.41185149928646] plot(\x,{1+ln((\x))/ln(2)});
+\draw[line width=2pt,color=qqqqcc,smooth,samples=100,domain=0.0000019281951454281693:399.41185149928646] plot(\x,{5*ln((\x))/ln(10)});
+\draw[line width=2pt,color=ffqqtt,smooth,samples=100,domain=0.0000019281951454281693:399.41185149928646] plot(\x,{sqrt((\x))});
+\begin{scriptsize}
+\draw[color=qqwuqq] (27.36907028399178,0.7772254758418694) node {$Sturgess: y = 1 + log(2, x)$};
+\draw[color=qqqqcc] (28.428518165952752,0.3330966325036557) node {$BruksKarruzer: y = 5log(10, x)$};
+\draw[color=ffqqtt] (28.075368871965757,1.2819173432716577) node {$HeinholdGaede: y = sqrt(x)$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
