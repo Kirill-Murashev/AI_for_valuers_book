@@ -1,71 +1,31 @@
-В~1970--1980-е годы был~проведён ряд исследований, основанных на~использовании критерия близости в~виде энтропийного коэффициента $k_\partial$. Понятий энтропийного коэффициента как~числовой характеристики формы распределения впервые было предложено П.~В.~Новицким в~\cite{Nowiczkij:Entrop-koef}. В~случае c~гистограммой в~соответствии с~\cite{Nowiczkij:Elektrich} эта~оценка вычисляется как
-\begin{equation}\label{eq:hist_Nowiczkij}
-k_\partial = \frac{dn}{2\sigma}10^{-\frac{1}{n}\sum\limits_{j=1}^n n_j \log_{10}n_j},
-\end{equation}
-где~$d$ "--- ширина столбца гистограммы,
-$\sigma$ "--- стандартное отклонение,
-$m$ "--- число столбцов гистограммы,
-$n_j$ "--- число наблюдений в~j-ном столбце.
-
-В~результате работ  под~руководством З.\,Таушанова, основанных на~вышеуказанном принципе, в~1973~году в~работе~\cite{Taushanow-k-hist} было выведено соотношение
-\begin{equation}\label{eq:hist_Taushanow}
-k = 4 \log_{10}{n}
-\end{equation}
-
-D~1981 году дальнейшее развитие формулы \ref{eq:hist_Taushanow} со~стороны Е.\,Тоневой привело к~разработке соотношения
-\begin{equation}\label{eq:hist_Tonewa}
-k = 5 \lg n - 5 == 5 \lg (\frac{n}{10})
-\end{equation}
-На~рисунках \ref{fig:k-hist-n5} и~\ref{fig:k-hist-n6} реализована визуализация функции зависимости $k$ от~$n$ при~использовании методов, основанных на~энтропийном коэффициенте.
-\begin{figure}[ht]
-	\centering % Центрируем картинку
-	\includegraphics[width=\textwidth]{k-hist-5.pdf}
-	\caption{Визуализация числа~k при~$n < 3000$ в~случае использования методов, основанных на~энтропийном коэффициенте\label{fig:k-hist-n5}
-\end{figure}
-	
-\begin{figure}[ht]
-		\centering % Центрируем картинку
-		\includegraphics[width=\textwidth]{k-hist-6.pdf}
-		\caption{Визуализация числа~k при~$n < 50000$ в~случае использования методов, основанных на~энтропийном коэффициенте}\label{fig:k-hist-n6}
-\end{figure}
-	
-\subparagraph{Методы определения числа $k$ на~основе четвёртого центрального момента}
-\par
-
-Следует отметить, что~все исследования, описанные в~\ref*{k-hist:common-methods}--\ref{k-hist:entrop-methods}, начиная с~работ Стёрджесса, закачивая исследованиями энтропийного коэффициента, рассматривают $k$ исключительно как~функцию~$n$, расходясь только в~выборе вида этой функции.
-
-Принципиально новый подход был~предложен в~1975 году И.~У.~Алексеевой в~работе~\cite{Alekseewa:k-hist}. Согласно выводам, сделанным автором данной работы, $k$ существенно зависит от~значения \emph{коэффициента контрэксцесса}, являющегося величиной обратной \emph{коэффициенту эксцесса}, представляющего в~свою очередь относительную меру \textbf{четвёртого центрального момента}. Вопросы \emph{центральных моментов} рассмотрены в~\ref{moments}. Следует отметить, что~все~центральные моменты взаимосвязаны между собой, таким образом, значение четвёртого содержит в~себе информацию о~первых трёх, что~означает учёт обширной информации о~об~изучаемых данных.
-\begin{equation}\label{eq:hist_Alekseewa-0}
-k = \frac{4}{\xi}\lg\frac{n}{10},
-\end{equation}
-где $\xi$ "--- значение контрэксцесса
-\begin{equation}\label{eq:kontr-kurtosis}
-\xi = \frac{1}{\sqrt{\varepsilon}} == \frac{S^2}{\sqrt{\mu_4}},
-\end{equation},
-где $\varepsilon$ "--- значение эксцесса,
-$S$ "--- дисперсия,
-$\mu_4$ "--- четвёртый центральный момент.
-
-Как~было сказано ранее, детальное рассмотрение вопросов центральных моментов проводится в~\ref{moments}.
-
-Формула~\ref{eq:hist_Alekseewa-0} открывает новые возможности анализа при~первичной интерпретации и~визуализации данных. Полученный в~\cite{Alekseewa:k-hist} сдвиг функции $k = f(n)$ может быть аппроксимирован в~зависимости от~значения эксцесса выражениями
-\begin{equation}\label{eq:hist_Alekseewa-01}
-A(\varepsilon) = \frac{\varepsilon + 1.5}{6}
-\end{equation}
-либо
-\begin{equation}\label{eq:hist_Alekseewa-02}
-A(\varepsilon) = \frac{\varepsilon^0.8}{3}.
-\end{equation}
-Вследствие этого дальнейшее развитие формулы~\ref{eq:hist_Alekseewa-0} привело к~разработке соотношений
-\begin{equation}\label{eq:hist_Alekseewa-1}
-k = \frac{\varepsilon+1.5}{6} n^0.4,
-\end{equation}
-а~также
-\begin{equation}\label{eq:hist_Alekseewa-2}
-k = \frac{1}{3}\sqrt[5]{\varepsilon^4 n^2} == \frac{1}{3} \sqrt[5]{\frac{n^2}{\xi^8}}.
-\end{equation}
-Далее на~основе формулы~\ref{eq:hist_Alekseewa-0} было выведено правило, согласно которому
-\begin{equation}\label{eq:hist-Alekseewa_3}
-0.55n^0.4 \leq k \leq 1.25n^0.4
-\end{equation}
-При~этом рекомендуется выбирать нечётный $k$, поскольку в~противном случае возникает эффект принудительного уплощения центра гистограммы~\cite{Nowiczkij:oczenka-pogresh}.
+    5  & И\,Хайнхольд, К\,Гаеде & 1965 & $k = \sqrt{n}$ & \ref{eq:hist_Heinholds&Gaede} & \cite{Ingenieur-Statistik}
+		\\ \hline
+		\multicolumn{6}{c}{Основанные на~критерии согласия~$\chi^2$}
+		\\ \hline
+		6  & Х.\,Манн, А.\,Вальд & 1942 & $k \approx 4 \sqrt[5]{2} (\frac{n}{t})^{0.4}$ & \ref{eq:hist_Mann&Wald} & \cite{Mann-Wald:Number-of-Class-Intervals}
+		\\ \hline
+		\multicolumn{6}{c}{Основанные на~критерии согласия~$\chi^2$}
+		\\ \hline
+		7  & К.\,Уильямс & 1950 & $k \approx 2 \sqrt[5]{2} (\frac{n}{t})^{0.4}$ & \ref{eq:hist_Williams} & \cite{Williams:choice-of-k}
+		\\ \hline
+		8  & Г.\,Хан, С\,Шапиро & 1967 & $k = 4 [0.75 (n-1)^2]^0.2$ & \ref{eq:hist_Hahn&Shapiro} & \cite{Hahn&Shapiro:StatModelEng}
+		\\ \hline
+		9 & Г.\,Хан, С\,Шапиро & 1967 & $k = 1.9n^{0.4}$ & \ref{eq:hist_Hahn&Shapiro} & \cite{Hahn&Shapiro:StatModelEng}
+		\\ \hline
+		10 & М.\,Кендалл, А\,Стюарт & 1970 & $k \leq b [\sqrt{2}\frac{(n-1)}{t_{1}+t_{2}}]^{0.4}$ & \ref{eq:hist_Kendall&Stuart} & \cite{Stat-vyvody-i-svyazi}
+		\\ \hline
+		\multicolumn{6}{c}{Основанные на~энтропийном коэффициенте}
+		\\ \hline
+		11 & З.\,Таушанов & 1973 & $k = 4 \log_{10}{n}$ & \ref{eq:hist_Taushanow} & \cite{Taushanow-k-hist}
+		\\ \hline
+		12 & Е.\,Тонева & 1981 & $k = 5 \lg n - 5 \equiv 5 \lg (\frac{n}{10})$ & \ref{eq:hist_Tonewa} & \cite{Tonewa:k-hist}
+		\\ \hline
+		\multicolumn{6}{c}{Основанные на~четвёртом центральном моменте}
+		\\ \hline
+		13 & И\,Алексеева & 1975 & $k = \frac{4}{\xi}\lg\frac{n}{10}$ & \ref{eq:hist_Alekseewa-0} &\cite{Alekseewa:k-hist}
+		\\ \hline
+		14 & П\,Новицкий & 1991 & $k = \frac{\varepsilon+1.5}{6} n^{0.4}$ & \ref{eq:hist_Alekseewa-1} & \cite{Nowiczkij:oczenka-pogresh}
+		\\ \hline
+		15 & П\,Новицкий & 1991 & $k = \frac{1}{3}\sqrt[5]{\varepsilon^4 n^2} \equiv \frac{1}{3} \sqrt[5]{\frac{n^2}{\xi^8}}$ & \ref{eq:hist_Alekseewa-2} & \cite{Nowiczkij:oczenka-pogresh}
+		\\ \hline
+		16 & П\,Новицкий & 1991 & $0.55n^{0.4} \leq k \leq 1.25n^{0.4}$ & \ref{eq:hist-Alekseewa_3} & \cite{Nowiczkij:oczenka-pogresh} \hline

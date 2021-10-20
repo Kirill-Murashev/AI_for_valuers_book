@@ -12,6 +12,8 @@
 	Какую~бы работу не~выполнял оценщик, во~всех случаях он~имеет дело с~информацией и~данными. Часто эти~данные представляют собой числа либо могут быть формализованы иным образом. В~любом случае требуется алгоритмическая обработка входных данных и~преобразование их~в~информацию, а~в~некоторых случаях "--- в~знания. Целью данного фрагмента является формирование общих представлений об~основных понятиях и~методах математической статистики, необходимых современному оценщику. Автор постарался прибегать к~минимальному числу формул и~сложных определений, хотя это~и~не~вполне получилось. Поскольку конечной целью всей работы является цифровизация оценочной деятельности, в~тексте приводятся короткие листинги на~языках R и~Python, позволяющие реализовать то, о~чём говорится в~тексте. В~данном фрагменте рассматривается \href{https://ru.wikipedia.org/wiki/Частотная_вероятность}{частотный подход} к~вероятности~\cite{Wiki:Freq-probability}. Вопросы  \href{https://ru.wikipedia.org/wiki/Байесовская_вероятность}{байесовской вероятности}~\cite{Wiki:Bayes-prob} рассмотрены в~отдельном материале.
 \end{abstract}
 
+\tableofcontents
+
 \section{Что~есть математическая статистика?}
 У~термина <<статистика>> существует несколько определений. Статистикой называют:
 	\begin{itemize}
@@ -289,11 +291,11 @@ k = 1 + 3.3\lg n,
 \end{equation}
 Некоторые рассуждения, касающиеся данных формул, приведены в~\cite{Wand:Data-Based-Hist}.
 В~работе~\cite{Shtorm:MathStat} без~ссылки на~первоисточник предлагается формула Брукса и~Каррузера
-\begin{equation}\label{eq:hist_Bruks&Karruzer}
+\begin{equation}\label{eq:hist-Bruks-Karruzer}
 k = 5 \lg n.
 \end{equation}
 В~1965 году в~книге~\cite{Ingenieur-Statistik} И.~Хайнхольд и~К.~Гаеде указывают соотношение
-\begin{equation}\label{eq:hist_Heinholds&Gaede}
+\begin{equation}\label{eq:hist_Heinholds-Gaede}
 k = \sqrt{n}.
 \end{equation}
 На~рисунках \ref{fig:k-hist-n1},~\ref{fig:k-hist-n2} показан прирост $k$ при~$n < 400$ и~при~$ n < 50000$ соответственно.
@@ -314,11 +316,11 @@ k = \sqrt{n}.
 Сам~по~себе критерий $\chi ^ {2}$ не~может быть использован без~разбиения выборки на~интервалы, в~которых производится вычисление частных разностей между теоретической моделью и~эмпирической выборкой~\cite{Nowiczkij:oczenka-pogresh}. Исходной предпосылкой эффективности применения критерия $\chi^{2}$ является использование интервалов, имеющих не~равную длину, а~равную вероятность в~соответствии с~теоретической моделью. Следует сказать, что~число $m$ интервалов равной длины и~число $k$ равной вероятности могут существенно отличаться.
 
 В~1942 году Х.~Манном и~А.~Вальдом было установлено, что~при~$n \longrightarrow \infty$ оптимальное число равновероятных интервалов $k$ может быть определено по~формуле
-\begin{equation}\label{eq:hist_Mann&Wald}
+\begin{equation}\label{eq:hist_Mann-Wald}
 k \approx 4 \sqrt[5]{2} (\frac{n}{t})^{0.4},
 \end{equation}
 где $t$ "--- квантиль нормального распределения, соответствующий заданной вероятности
-\begin{equation}\label{eq:hist_Mann&Wald1}
+\begin{equation}\label{eq:hist_Mann-Wald1}
 P = 1 - p,
 \end{equation}
 где $p$ "--- принятый уровень значимости~\cite{Mann-Wald:Number-of-Class-Intervals}.
@@ -327,15 +329,15 @@ P = 1 - p,
 \begin{equation}\label{eq:hist_Williams}
 k \approx 2 \sqrt[5]{2} (\frac{n}{t})^{0.4},
 \end{equation}
-В~1973~году М.~Кендалом и~А.~Стюартом в~работе~\cite{Stat-vyvody-i-svyazi} было предложено дальнейшее развитие формулы~\ref{eq:hist_Mann&Wald}
-\begin{equation}\label{eq:hist_Kendall&Stuart}
+В~1973~году М.~Кендалом и~А.~Стюартом в~работе~\cite{Stat-vyvody-i-svyazi} было предложено дальнейшее развитие формулы~\ref{eq:hist_Mann-Wald}
+\begin{equation}\label{eq:hist_Kendall-Stuart}
 k \leq b [\sqrt{2}\frac{(n-1)}{t_{1}+t_{2}}]^{0.4},
 \end{equation}
 В~1967~году Г.~Хан и~С.~Шапиро в~работе \cite{Hahn&Shapiro:StatModelEng} предложили упрощённый вариант формулы
-\begin{equation}\label{eq:hist_Hahn&Shapiro}
+\begin{equation}\label{eq:hist_Hahn-Shapiro}
 k = 4 [0.75 (n-1)^2]^{0.2},
 \end{equation}
-что может быть получено при~подстановке в~формулу~\ref{eq:hist_Kendall&Stuart} $b = 4, t = 1.645$. В~случае $b = 2$ выражение принимает вид
+что может быть получено при~подстановке в~формулу~\ref{eq:hist_Kendall-Stuart} $b = 4, t = 1.645$. В~случае $b = 2$ выражение принимает вид
 \begin{equation}\label{eq:hist_Hahn&Shapiro2}
 k = 1.9n^{0.4}
 \end{equation}
@@ -440,39 +442,59 @@ k = \frac{1}{3}\sqrt[5]{\varepsilon^4 n^2} \equiv \frac{1}{3} \sqrt[5]{\frac{n^2
 		\item зависимость $k$ от~$n$ лучше всего аппроксимируется выражением $k=A n^{0.4}$, где~$A$ описывается выражениями \ref{eq:hist_Alekseewa-01}, \ref{eq:hist_Alekseewa-02}.
 	\end{enumerate}
 
-Далее в~таблице приводятся сводные данные по~всем методам.
+Далее в~таблице~\ref{tab:k-hist-compr} приводятся сводные данные по~всем методам.
 
 \begin{table}[ht]
-	\caption{Обобщение сведений о~методах определения числа интервалов при~построении гистограмм}
+	\caption{Обобщение сведений о~методах определения числа интервалов при~построении гистограмм} \label{tab:k-hist-compr}
 	\centering% центрируем таблицу
 	\begin{tabularx}{\textwidth}{XXXXXX} 
-		№  & Автор & Год & Формула & Номер & Источник                                                       \\
-		\multicolumn{6}{l}{Основанные только на количестве \$n\$}                                           \\
-		1  &       &     &         &       &                                                                \\
-		2  &       &     &         &       &                                                                \\
-		3  &       &     &         &       &                                                                \\
-		4  &       &     &         &       &                                                                \\
-		5  &       &     &         &       &                                                                \\
-		\multicolumn{6}{l}{Основанные на\textasciitilde{}критерии согласия \$\textbackslash{}chi\^{}2\$}    \\
-		6  &       &     &         &       &                                                                \\
-		7  &       &     &         &       &                                                                \\
-		8  &       &     &         &       &                                                                \\
-		9  &       &     &         &       &                                                                \\
-		10 &       &     &         &       &                                                                \\
-		\multicolumn{6}{l}{Основанные на\textasciitilde{}энтропийном коэффициенте}                          \\
-		11 &       &     &         &       &                                                                \\
-		12 &       &     &         &       &                                                                \\
-		\multicolumn{6}{l}{Основанные на\textasciitilde{}центральном моменте 4-го порядка}                  \\
-		13 &       &     &         &       &                                                                \\
-		14 &       &     &         &       &                                                                \\
-		15 &       &     &         &       &                                                                \\
-		16 &       &     &         &       &                                                                                                                    
-				\end{tabularx}
+		\hline
+		№  & Автор & Год & Формула & Номер & Источник 
+		\\ \hline \hline
+		\multicolumn{6}{c}{Основанные только на количестве $n$}
+		\\ \hline   
+		1  & Г.\,Стёрджесс & 1926 & $k = \frac{range}{1 + \log_2 n}$ & \ref{eq:hist_Sturgess-1}  & \cite{Sturgess:hist-intervals}, \cite{Wand:Data-Based-Hist}                                                                \\ \hline
+		2  & Г.\,Стёрджесс & 1926 & $k = 1+\log_2 n$ & \ref{eq:hist_Sturgess-2} & \cite{Sturgess:hist-intervals},\cite{Wand:Data-Based-Hist}                              \\ \hline
+		3  & Г.\,Стёрджесс & 1926 & $k = 1 + 3.3\lg n$ & \ref{eq:hist_Sturgess-2} & \cite{Sturgess:hist-intervals},\cite{Wand:Data-Based-Hist}                              \\ \hline
+		4  &Брукс, Каррузер &?&$k = 5 \lg n$&\ref{eq:hist-Bruks-Karruzer}&\cite{Shtorm:MathStat}
+		\\ \hline 
+		5  & И\,Хайнхольд, К\,Гаеде & 1965 & $k = \sqrt{n}$ & \ref{eq:hist_Heinholds-Gaede} & \cite{Ingenieur-Statistik}
+		\\ \hline
+		\multicolumn{6}{c}{Основанные на~критерии согласия~$\chi^2$}
+		\\ \hline
+		6  & Х.\,Манн, А.\,Вальд & 1942 & $k \approx 4 \sqrt[5]{2} (\frac{n}{t})^{0.4}$ & \ref{eq:hist_Mann-Wald} & \cite{Mann-Wald:Number-of-Class-Intervals}
+		\\ \hline
+		7  & К.\,Уильямс & 1950 & $k \approx 2 \sqrt[5]{2} (\frac{n}{t})^{0.4}$ & \ref{eq:hist_Williams} & \cite{Williams:choice-of-k}
+		\\ \hline
+		8  & Г.\,Хан, С\,Шапиро & 1967 & $k = 4 [0.75 (n-1)^2]^0.2$ & \ref{eq:hist_Hahn-Shapiro} & \cite{Hahn&Shapiro:StatModelEng}
+		\\ \hline
+		9 & Г.\,Хан, С\,Шапиро & 1967 & $k = 1.9n^{0.4}$ & \ref{eq:hist_Hahn-Shapiro} & \cite{Hahn&Shapiro:StatModelEng}
+		\\ \hline
+		10 & М.\,Кендалл, А\,Стюарт & 1970 & $k \leq b [\sqrt{2}\frac{(n-1)}{t_{1}+t_{2}}]^{0.4}$ & \ref{eq:hist_Kendall-Stuart} & \cite{Stat-vyvody-i-svyazi}
+		\\ \hline
+		\multicolumn{6}{c}{Основанные на~энтропийном коэффициенте}
+		\\ \hline
+		11 & З.\,Таушанов & 1973 & $k = 4 \log_{10}{n}$ & \ref{eq:hist_Taushanow} & \cite{Taushanow-k-hist}
+		\\ \hline
+		12 & Е.\,Тонева & 1981 & $k = 5 \lg n - 5 \equiv 5 \lg (\frac{n}{10})$ & \ref{eq:hist_Tonewa} & \cite{Tonewa:k-hist}
+		\\ \hline
+		\multicolumn{6}{c}{Основанные на~четвёртом центральном моменте}
+		\\ \hline
+		13 & И\,Алексеева & 1975 & $k = \frac{4}{\xi}\lg\frac{n}{10}$ & \ref{eq:hist_Alekseewa-0} &\cite{Alekseewa:k-hist}
+		\\ \hline
+		14 & П\,Новицкий & 1991 & $k = \frac{\varepsilon+1.5}{6} n^{0.4}$ & \ref{eq:hist_Alekseewa-1} & \cite{Nowiczkij:oczenka-pogresh}
+		\\ \hline
+		15 & П\,Новицкий & 1991 & $k = \frac{1}{3}\sqrt[5]{\varepsilon^4 n^2} \equiv \frac{1}{3} \sqrt[5]{\frac{n^2}{\xi^8}}$ & \ref{eq:hist_Alekseewa-2} & \cite{Nowiczkij:oczenka-pogresh}
+		\\ \hline
+		16 & П\,Новицкий & 1991 & $0.55n^{0.4} \leq k \leq 1.25n^{0.4}$ & \ref{eq:hist-Alekseewa_3} & \cite{Nowiczkij:oczenka-pogresh}
+		\\ \hline
+		\end{tabularx}
 \end{table}
-
 
 \paragraph{Реализация}
 \par
+Создадим функции, рассчитывающие число k в~соответствии с~рассмотренными в~\ref{hist-number-of-k} методами. Данное действие не~является обязательным. По~умолчанию R строит гистограммы с~числом $k$, определённым на~основе формулы Стёрджесса (формулы~\ref{eq:hist_Sturgess-3}). Вопросы программирования на~R и~Python рассматриваются в~соответствующих фрагментах. Здесь следует сказать лишь то, можно написать формулу для~конкретного случая и~набора данных, однако хорошей практикой является создание функций, их~сохранение и~многократное использование в~дальнейшей работе.
+
 
 \subsubsection{Ядерная оценка плотности}
 \subsection{Меры центральной тенденции}
