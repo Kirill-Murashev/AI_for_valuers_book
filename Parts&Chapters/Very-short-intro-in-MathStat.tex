@@ -211,7 +211,7 @@ df[col] = df[col].astype('category')
 
 $k$ "--- количество частей, на которые разбиты наблюдения,
 \par
-определяется количество наблюдений, попавших в каждую часть. Далее на~прямой $a\ldots b$ строят прямоугольники, высота $h$ которых может быть пропорциональна количеству наблюдений, попавших в~отрезок.
+определяется число наблюдений, попавших в каждую часть. Далее на~прямой $a\ldots b$ строят прямоугольники, высота $h$ которых может быть пропорциональна количеству наблюдений, попавших в~отрезок.
 \begin{equation}\label{eq:hist-simple-prop}
 h_{i} \propto n_{i},
 \end{equation}
@@ -233,8 +233,8 @@ $n$ "--- общее число наблюдений,
 
 $\Delta_{i}$ "--- шаг разбиения.
 
-Использование данной формулы обеспечивает выполнения условие равенства суммы площадей всех
-прямоугольников единице. Выполнение данного условия является необходимым с~точки зрения обеспечения возможности сравнивать гистограммы, построенные на~выборках с~разным количеством наблюдений, тогда как~в~случае определения высоты столбцов по~формуле~\ref{eq:hist-simple-prop} она~будет зависеть от~свойств конкретного единичного набора данных.
+Использование данной формулы обеспечивает выполнение условия равенства суммы площадей всех
+прямоугольников единице и~является необходимым с~точки зрения обеспечения возможности сравнивать гистограммы, построенные на~выборках с~разным количеством наблюдений, тогда как~в~случае определения высоты столбцов по~формуле~\ref{eq:hist-simple-prop} она~будет зависеть от~свойств конкретного единичного набора данных.
 Второй довод в~пользу использования формулы \ref{eq:hist-scienced} заключается в~следующем. В~силу равенства суммы площадей прямоугольников единице, данный способ обеспечивает отображение плотности распределения вероятности значений наблюдений.
 В~таком случае можно, хоть~и~не~в~явном виде, говорить о~возможности определения вероятности того, что~измеряемые нами значения наблюдений попадут в~интервал $[a, b]$. В~этом случае получается, что~данная вероятность может быть рассчитана как~интеграл от~плотности вероятности.
 \begin{equation}\label{eq:prob-integral}
@@ -275,6 +275,7 @@ k = 12 \pm 2 \ldots 3.
 k = \frac{range}{1 + \log_2 n},
 \end{equation}
 где \foreignlanguage{english}{range} "--- размах,
+
 n "--- число наблюдений.
 
 В~той~же работе были предложены формулы:
@@ -333,6 +334,11 @@ k \approx 2 \sqrt[5]{2} (\frac{n}{t})^{0.4},
 \begin{equation}\label{eq:hist_Kendall-Stuart}
 k \leq b [\sqrt{2}\frac{(n-1)}{t_{1}+t_{2}}]^{0.4},
 \end{equation}
+где $2 \leq b \leq 4$ 
+
+$t_1, t_2$ "--- некоторые задаваемые квантили
+
+
 В~1967~году Г.~Хан и~С.~Шапиро в~работе \cite{Hahn&Shapiro:StatModelEng} предложили упрощённый вариант формулы
 \begin{equation}\label{eq:hist_Hahn-Shapiro}
 k = 4 [0.75 (n-1)^2]^{0.2},
@@ -405,7 +411,9 @@ k = \frac{4}{\xi}\lg\frac{n}{10},
 \xi = \frac{1}{\sqrt{\varepsilon}} == \frac{S^2}{\sqrt{\mu_4}},
 \end{equation},
 где $\varepsilon$ "--- значение эксцесса,
+
 $S$ "--- дисперсия,
+
 $\mu_4$ "--- четвёртый центральный момент.
 
 Как~было сказано ранее, детальное рассмотрение вопросов центральных моментов проводится в~\ref{moments}.
@@ -447,7 +455,7 @@ k = \frac{1}{3}\sqrt[5]{\varepsilon^4 n^2} \equiv \frac{1}{3} \sqrt[5]{\frac{n^2
 \begin{table}[ht]
 	\caption{Обобщение сведений о~методах определения числа интервалов при~построении гистограмм} \label{tab:k-hist-compr}
 	\centering% центрируем таблицу
-	\begin{tabularx}{\textwidth}{XXXXXX} 
+	\begin{tabularx}{\textwidth}{lXcXcc} 
 		\hline
 		№  & Автор & Год & Формула & Номер & Источник 
 		\\ \hline \hline
@@ -466,7 +474,7 @@ k = \frac{1}{3}\sqrt[5]{\varepsilon^4 n^2} \equiv \frac{1}{3} \sqrt[5]{\frac{n^2
 		\\ \hline
 		7  & К.\,Уильямс & 1950 & $k \approx 2 \sqrt[5]{2} (\frac{n}{t})^{0.4}$ & \ref{eq:hist_Williams} & \cite{Williams:choice-of-k}
 		\\ \hline
-		8  & Г.\,Хан, С\,Шапиро & 1967 & $k = 4 [0.75 (n-1)^2]^0.2$ & \ref{eq:hist_Hahn-Shapiro} & \cite{Hahn&Shapiro:StatModelEng}
+		8  & Г.\,Хан, С\,Шапиро & 1967 & $k = 4 [0.75 (n-1)^2]^{0.2}$ & \ref{eq:hist_Hahn-Shapiro} & \cite{Hahn&Shapiro:StatModelEng}
 		\\ \hline
 		9 & Г.\,Хан, С\,Шапиро & 1967 & $k = 1.9n^{0.4}$ & \ref{eq:hist_Hahn-Shapiro} & \cite{Hahn&Shapiro:StatModelEng}
 		\\ \hline
@@ -493,8 +501,225 @@ k = \frac{1}{3}\sqrt[5]{\varepsilon^4 n^2} \equiv \frac{1}{3} \sqrt[5]{\frac{n^2
 
 \paragraph{Реализация}
 \par
-Создадим функции, рассчитывающие число k в~соответствии с~рассмотренными в~\ref{hist-number-of-k} методами. Данное действие не~является обязательным. По~умолчанию R строит гистограммы с~числом $k$, определённым на~основе формулы Стёрджесса (формулы~\ref{eq:hist_Sturgess-3}). Вопросы программирования на~R и~Python рассматриваются в~соответствующих фрагментах. Здесь следует сказать лишь то, можно написать формулу для~конкретного случая и~набора данных, однако хорошей практикой является создание функций, их~сохранение и~многократное использование в~дальнейшей работе.
+Создадим функции, рассчитывающие число k в~соответствии с~рассмотренными в~\ref{hist-number-of-k} методами. Данное действие не~является обязательным. По~умолчанию R строит гистограммы с~числом $k$, определённым на~основе формулы Стёрджесса (формулы~\ref{eq:hist_Sturgess-3}). Вопросы программирования на~R и~Python рассматриваются в~соответствующих фрагментах. Здесь следует сказать лишь то, можно написать формулу для~конкретного случая и~набора данных, однако хорошей практикой является создание функций, их~сохранение и~многократное использование в~дальнейшей работе. Важно помнить, что~переменные, создаваемые внутри тела функции, не~возникают в~глобальном окружении, вследствие этого им~можно присваивать любые имена. В~скрипте~\ref{lis:optimal-k-R} приведён код, позволяющий определить k всеми 15-ю рассмотренными выше способами. Файл со~скриптом доступен в~репозитории по~\href{https://github.com/Kirill-Murashev/AI_for_valuers_R_source/tree/main/Hist}{ссылке}~\cite{R_source_github}.
 
+\begin{lstlisting}[caption = Создание функций для~автоматизированного определения оптимального значения k, firstnumber=1, language = R, firstnumber=1, numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, label= lis:optimal-k-R]
+kHistSturgess0 <- function(x, na.omit = FALSE){
+n   <- NROW(x)
+ks0 = (max(x)-min(x))/(1+log2(n)) 
+return(c(ks0))                              
+}                                               
+
+# создать функцию для первой версии формулы Стёрджесса
+kHistSturgess1 <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                              
+ks1 = (1+log2(n))                             
+return(ks1)                                     
+}                                                             
+
+# создать функцию для второй версии формулы Стёрджесса
+kHistSturgess2 <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                                
+ks2 = (1+(3.3*log10(n)))                     
+return(ks2)                                   
+}                                             
+
+# создать функцию для формулы Брукса и Каррузера
+kHistBruksKarruzer <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                                    
+kbk = 5*log10(n)                                  
+return(kbk)                                       
+}                                                   
+
+# создать функцию для формулы Хайнхольда и Гаеде
+kHistHeinholdGaede <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                                    
+khg = sqrt(n)                                     
+return(khg)                                      
+}                                                   
+
+# создать функцию для формулы Манна и Вальда
+kHistMannWald <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                               
+kmw = (4*(2^(1/5)))*((n/qnorm(0.95))^0.4)   
+return(kmw)                                   
+}                                             
+
+# создать функцию для формулы Уильямса
+kHistWilliams <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                               
+kwi = (2*(2^(1/5)))*((n/qnorm(0.95))^0.4)    
+return(kwi)                                   
+}                                            
+
+# создать функцию для первой формулы Хана и Шапиро
+kHistHahnShapiro <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                                 
+khs = 4*(0.75*((n-1)^2)^0.2)                   
+return(khs)                                   
+}                                                 
+
+# создать функцию для второй формулы Хана и Шапиро
+kHistShapiroHahn <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                                  
+ksh = 1.9*(n^0.4)                              
+return(ksh)                                     
+}                                                
+
+# создать функцию для формулы Кендалла и Стюарта
+kHistKendallStuart <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                                   
+b = 2                                            
+t1 = qnorm(0.95)                                
+t2 = 0                                           
+kks = b*(sqrt(2)*(((n-1)/(t1+t2))^0.4))          
+return(kks)                                    
+}                                                  
+
+# создать функцию для формулы Таушанова
+kHistTaushanow <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                                
+kta = 4*log10(n)                             
+return(kta)                                     
+}                                              
+
+# создать функцию для формулы Тоневой
+kHistTonewa <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                            
+kto = 5*log10(n)-5                         
+return(kto)                               
+}                                           
+
+# создать функцию для формулы Алексеевой
+kHistAlekseewa <- function(x, na.omit = FALSE){
+n   <- NROW(x)                               
+kurt = kurtosis(x)                          
+counterkurt = 1/(sqrt(kurt))                 
+kal = (4/counterkurt)*(log10(n/10))         
+return(kal)                                 
+}                                             
+
+# создать функцию для первой формулы Новицкого
+kHistNowiczkij1 <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                                
+kurt = kurtosis(x)                             
+kn1 = ((kurt+1.5)/6)*(n^0.4)                  
+return(kn1)                                   
+}                                               
+
+# создать функцию для второй формулы Новицкого
+kHistNowiczkij2 <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                                
+kurt = kurtosis(x)                             
+kn2 = (((kurt^4)*(n^2))^(1/5))*(1/3)           
+return(kn2)                                    
+}                                               
+
+# создать функцию для третьей формулы Новицкого
+kHistNowiczkij3_min <- function(x, na.omit = FALSE){ 
+n   <- NROW(x)                                     
+kurt = kurtosis(x)                                 
+kn3min = 0.55*(n^0.4)                             
+return(kn3min)                                    
+}                                                   
+
+# создать функцию для третьей формулы Новицкого
+kHistNowiczkij3_max <- function(x, na.omit = FALSE){
+n   <- NROW(x)                                   
+kurt = kurtosis(x)                                
+kn3max = 1.25*(n^0.4)                             
+return(kn3max)                                    
+}                                                   
+
+optimalK <- function(x, na.omit = FALSE){ 
+ks0 <- kHistSturgess0(x)
+ks1 <- kHistSturgess1(x)
+ks2 <- kHistSturgess2(x)
+kbk <- kHistBruksKarruzer(x)
+khg <- kHistHeinholdGaede(x)
+kmw <- kHistMannWald(x)
+kwi <- kHistWilliams(x)
+khs <- kHistHahnShapiro(x) 
+ksh <- kHistShapiroHahn(x)
+kks <- kHistKendallStuart(x)
+kta <- kHistTaushanow(x)
+kto <- kHistTonewa(x)
+kal <- kHistAlekseewa(x)
+kn1 <- kHistNowiczkij1(x)
+kn2 <- kHistNowiczkij2(x)
+kn3_min <- kHistNowiczkij3_min(x)
+kn3_max <- kHistNowiczkij3_max(x)
+optimal_k <- return(c(ks0, ks1, ks2, kbk, khg, kmw, kwi, khs, ksh, kks, kta, kto, kal, kn1, kn2, kn3_min, kn3_max))
+return(k)
+}
+\end{lstlisting}
+
+Далее применим функции к~набору данных <<almatyFlats>> (см.~скрипт\ref{lis:optimal-k-almaty}).
+\begin{lstlisting}[float, caption = Создание функций для~автоматизированного определения оптимального значения k, firstnumber=1, language = R, firstnumber=1, numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, label= lis:optimal-k-almaty]
+optimal_k <- optimalK(almatyFlats$price.m)  
+function_name<- c("Sturgess0", "Sturgess1", "Sturgess2", "BruksKarruzer", "HeinholdGaede", "MannWald", "Williams", "HahnShapiro", "ShapiroHahn", "KendallStuart", "Taushanow", "Tonewa", "Alekseewa", "Nowiczkij1", "Nowiczkij2", "Nowiczkij3_min", "Nowiczkij3_max")
+k_optimal <- tibble(function_name, optimal_k)
+\end{lstlisting}
+
+ В~результате были получены следующие значения k~(см.~таблицу~\ref{tab:k-hist-optimal-almaty}).
+ 
+ Для~сравнения также был проведён анализ оптимального $k$ для~рынка квартир городской агломерации Санкт-Петербург. Для~этого взят набор данных <<spba\_flats\_210928>>~\cite{ds:spba_flats_210928}, собранный автором 28~сентября~2021 года путём парсинга сайта \href{cian.ru}{cian.ru} и~содержащий сведения о~34821 предложениях. Все~наборы данных, использованные при~составлении данного фрагмента, доступны в~\href{https://github.com/Kirill-Murashev/datasets}{репозитории}. Результаты расчётов $k$ приведены в~таблице~\ref{tab:k-hist-optimal-spba}.
+
+\begin{table}[ht]
+	\caption{Оптимальное значение $k$ для~переменной, содержащей сведения об~удельной цене предложения на~квартиры в~г.~Алматы, полученное различными методами} \label{tab:k-hist-optimal-almaty}
+	\centering% центрируем таблицу
+	\begin{tabularx}{\textwidth}{lXX} 
+		\hline
+		№  & Метод & Значение $k$ 
+		\\ \hline \hline
+	1 & Sturgess0 & 66513.973 \\ 
+	2 & Sturgess1 & 12.202 \\ 
+	3 & Sturgess2 & 12.128 \\ 
+	4 & BruksKarruzer & 16.860 \\ 
+	5 & HeinholdGaede & 48.528 \\ 
+	6 & MannWald & 84.064 \\ 
+	7 & Williams & 42.032 \\ 
+	8 & HahnShapiro & 66.964 \\ 
+	9 & ShapiroHahn & 42.418 \\ 
+	10 & KendallStuart & 51.739 \\ 
+	11 & Taushanow & 13.488 \\ 
+	12 & Tonewa & 11.860 \\ 
+	13 & Alekseewa & 25.219 \\ 
+	14 & Nowiczkij1 & 31.869 \\ 
+	15 & Nowiczkij2 & 35.560 \\ 
+	16 & Nowiczkij3\_min & 12.279 \\ 
+	17 & Nowiczkij3\_max & 27.907 \\
+	\hline	
+	\end{tabularx}
+\end{table}
+
+\begin{table}[ht]
+	\caption{Оптимальное значение $k$ для~переменной, содержащей сведения об~удельной цене предложения на~квартиры в~городской агломерации Санкт-Петербург, полученное различными методами} \label{tab:k-hist-optimal-spba}
+	\centering% центрируем таблицу
+	\begin{tabularx}{\textwidth}{lXX} 
+		\hline
+		№  & Метод & Значение $k$ 
+		\\ \hline \hline
+		1 & Sturgess0 & 100989.27 \\ 
+		2 & Sturgess1 & 16.09 \\ 
+		3 & Sturgess2 & 15.99 \\ 
+		4 & BruksKarruzer & 22.71 \\ 
+		5 & HeinholdGaede & 186.60 \\ 
+		6 & MannWald & 246.92 \\ 
+		7 & Williams & 123.46 \\ 
+		8 & HahnShapiro & 196.72 \\ 
+		9 & ShapiroHahn & 124.59 \\ 
+		10 & KendallStuart & 151.99 \\ 
+		11 & Taushanow & 18.17 \\ 
+		12 & Tonewa & 17.71 \\ 
+		13 & Alekseewa & 97.56 \\ 
+		14 & Nowiczkij1 & 534.62 \\ 
+		15 & Nowiczkij2 & 479.03 \\ 
+		16 & Nowiczkij3\_min & 36.07 \\ 
+		17 & Nowiczkij3\_max & 81.97 \\
+		\hline	
+	\end{tabularx}
+\end{table}
 
 \subsubsection{Ядерная оценка плотности}
 \subsection{Меры центральной тенденции}
