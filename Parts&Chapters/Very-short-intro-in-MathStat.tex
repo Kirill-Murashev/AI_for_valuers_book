@@ -649,7 +649,8 @@ kn1 <- kHistNowiczkij1(x)
 kn2 <- kHistNowiczkij2(x)
 kn3_min <- kHistNowiczkij3_min(x)
 kn3_max <- kHistNowiczkij3_max(x)
-optimal_k <- return(c(ks0, ks1, ks2, kbk, khg, kmw, kwi, khs, ksh, kks, kta, kto, kal, kn1, kn2, kn3_min, kn3_max))
+optimal_k <- return(c(ks0, ks1, ks2, kbk, khg, kmw, kwi,
+	khs, ksh, kks, kta, kto, kal, kn1, kn2, kn3_min, kn3_max))
 return(k)
 }
 \end{lstlisting}
@@ -657,13 +658,29 @@ return(k)
 Далее применим функции к~набору данных <<almatyFlats>> (см.~скрипт\ref{lis:optimal-k-almaty}).
 \begin{lstlisting}[float, caption = Создание функций для~автоматизированного определения оптимального значения k, firstnumber=1, language = R, firstnumber=1, numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, label= lis:optimal-k-almaty]
 optimal_k <- optimalK(almatyFlats$price.m)  
-function_name<- c("Sturgess0", "Sturgess1", "Sturgess2", "BruksKarruzer", "HeinholdGaede", "MannWald", "Williams", "HahnShapiro", "ShapiroHahn", "KendallStuart", "Taushanow", "Tonewa", "Alekseewa", "Nowiczkij1", "Nowiczkij2", "Nowiczkij3_min", "Nowiczkij3_max")
+function_name<- c("Sturgess0",
+	 "Sturgess1",
+	 "Sturgess2",
+	 "BruksKarruzer",
+	 "HeinholdGaede",
+	 "MannWald",
+	 "Williams",
+	 "HahnShapiro",
+	 "ShapiroHahn",
+	 "KendallStuart",
+	 "Taushanow",
+	 "Tonewa",
+	 "Alekseewa",
+	 "Nowiczkij1",
+	 "Nowiczkij2",
+	 "Nowiczkij3_min",
+	 "Nowiczkij3_max")
 k_optimal <- tibble(function_name, optimal_k)
 \end{lstlisting}
 
  В~результате были получены следующие значения k~(см.~таблицу~\ref{tab:k-hist-optimal-almaty}).
  
- Для~сравнения также был проведён анализ оптимального $k$ для~рынка квартир городской агломерации Санкт-Петербург. Для~этого взят набор данных <<spba\_flats\_210928>>~\cite{ds:spba_flats_210928}, собранный автором 28~сентября~2021 года путём парсинга сайта \href{cian.ru}{cian.ru} и~содержащий сведения о~34821 предложениях. Все~наборы данных, использованные при~составлении данного фрагмента, доступны в~\href{https://github.com/Kirill-Murashev/datasets}{репозитории}. Результаты расчётов $k$ приведены в~таблице~\ref{tab:k-hist-optimal-spba}.
+ Для~сравнения также был проведён анализ оптимального $k$ для~рынка квартир городской агломерации Санкт-Петербург. Для~этого взят набор данных <<spba\_flats\_210928>>~\cite{ds:spba-flats-210928}, собранный автором 28~сентября~2021 года путём парсинга сайта \href{cian.ru}{cian.ru} и~содержащий сведения о~34821 предложениях. Все~наборы данных, использованные при~составлении данного фрагмента, доступны в~\href{https://github.com/Kirill-Murashev/datasets}{репозитории}~\cite{R_source_github}. Результаты расчётов $k$ приведены в~таблице~\ref{tab:k-hist-optimal-spba}.
 
 \begin{table}[ht]
 	\caption{Оптимальное значение $k$ для~переменной, содержащей сведения об~удельной цене предложения на~квартиры в~г.~Алматы, полученное различными методами} \label{tab:k-hist-optimal-almaty}
@@ -720,6 +737,59 @@ k_optimal <- tibble(function_name, optimal_k)
 		\hline	
 	\end{tabularx}
 \end{table}
+
+Далее выставим число интервалов по~умолчанию и~построим гистограмму для~рынка Алматы, см.~рисунок~\ref{fig:hist-almaty-1}.
+
+\begin{figure}[ht]
+	\centering % Центрируем картинку
+	\includegraphics[width=\textwidth]{hist-almaty-1.pdf}
+	\caption{Гистограмма удельных цен на~рынке города Алматы (лето 2019~г.)}\label{fig:hist-almaty-1}
+\end{figure}
+
+Затем применим формулу~\ref{eq:hist_Alekseewa-01} для~определения числа $k$ и~добавим на~график кривые плотности теоретического нормального и~эмпирического распределений, см.~рисунок~\ref{fig:hist-almaty-2}.
+
+\begin{figure}[ht]
+	\centering % Центрируем картинку
+	\includegraphics[width=\textwidth]{hist-almaty-2.pdf}
+	\caption{Гистограмма удельных цен на~рынке города Алматы (лето 2019~г.), совмещённая с~кривыми плотности теоретического нормального и~эмпирического распределений}\label{fig:hist-almaty-2}
+\end{figure}
+
+Для~сравнения построим гистограмму для~аналогичной переменной набора данных \cite{ds:spba-flats-210928}, см.~рисунок~\ref{fig:hist-spba-flats-1}.
+
+\begin{figure}[ht]
+	\centering % Центрируем картинку
+	\includegraphics[width=\textwidth]{hist-spba-flats-1.pdf}
+	\caption{Гистограмма удельных цен на~рынке города Алматы (лето 2019~г.), совмещённая с~кривыми плотности теоретического нормального и~эмпирического распределений}\label{fig:hist-spba-flats-1}
+\end{figure}
+Подытоживая вышесказанное, следует повторить, что~в~первую очередь надо смотреть на~площади столбцов, поскольку они~содержат информацию о~вероятности.
+Скрипты для~построения приведённых гистограмм приведены в~листингах~\ref{lis:hist-almaty-1}, \ref{lis:hist-almaty-2}, \ref{lis:hist-spba-flats-1}.  
+
+\begin{lstlisting}[float, caption = Построение простой гистограммы для~г.~Алматы, firstnumber=1, language = R, firstnumber=1, numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, label= lis:hist-almaty-1]
+hist(almatyFlats$price.m,
+	freq = FALSE,
+	xlab = "price, kaz rubles",
+	ylab = "probability",
+	main = "Price per meter histogram, Almaty, summer 2019")
+\end{lstlisting}
+
+\begin{lstlisting}[float, caption = Построение гистограммы\, совмещённой с~кривыми плотности теоретического нормального и~эмпирического распределений для~г.~Алматы, firstnumber=1, language = R, firstnumber=1, numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, label= lis:hist-almaty-2]
+histDist(almatyFlats$price.m,
+ 	nbins = kHistNowiczkij1(almatyFlats$price.m),
+	xlab = "price, kaz rubles",
+	ylab = "probability",
+	main = "Price per meter histogram, Almaty, summer 2019")
+lines(density(almatyFlats$price.m))
+\end{lstlisting}
+
+\begin{lstlisting}[float, caption = Построение гистограммы\, совмещённой с~кривыми плотности теоретического нормального и~эмпирического распределений для~городской агломерации Санкт-Петербург, firstnumber=1, language = R, firstnumber=1, numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt, label= lis:hist-spba-flats-1]
+histDist(spbaFlats$price_m,
+	nbins = kHistAlekseewa(spbaFlats$price_m),
+	xlab = "price, rub",
+	ylab = "probability",
+	main = "Price per meter, histogram, SPBA (2021-09-28)")  
+lines(density(spbaFlats$price_m))
+\end{lstlisting}
+
 
 \subsubsection{Ядерная оценка плотности}
 \subsection{Меры центральной тенденции}
