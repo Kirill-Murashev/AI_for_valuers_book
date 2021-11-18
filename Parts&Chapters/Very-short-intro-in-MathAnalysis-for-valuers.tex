@@ -911,6 +911,7 @@ $\frac{h}{b_h}=\frac{a_h}{h} \Rightarrow h^2=a_{h}b_{h} \Rightarrow h=\sqrt{a_h 
 \end{figure}
 
 \paragraph{Тригонометрические функции острого угла прямоугольного треугольника}
+\subparagraph{Определения функций}
 \begin{description}
 	\item[Синусом] острого угла прямоугольного треугольника называется отношение противолежащего катета к~гипотенузе.
 \end{description}
@@ -941,19 +942,43 @@ $\frac{h}{b_h}=\frac{a_h}{h} \Rightarrow h^2=a_{h}b_{h} \Rightarrow h=\sqrt{a_h 
 \begin{table}[ht]
 	\caption{Соотношения тригонометрических функций}  \label{tab:trig-func-rel}
 	\centering% центрируем таблицу
+	\small
 	\begin{tabularx}{\textwidth}{>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}} 
 		\hline
-		        &\sin    &\cos                &\tg    &\ctg &\sec  &\cosec   \\
+		&\sin    &\cos                &\tg    &\ctg &\sec  &\cosec   \\
 		\hline
-		\sin x  &\sin x  &\sqrt{1-\cos^{2} x}&\dfrac{\tg x}{\sqrt{1+\tg^{2} x}}&\dfrac{1}{\sqrt{\ctg^{2} x +1}}&\dfrac{\sec^{2} x-1}{\sec x}&\dfrac{1}{\cosec x}\\
-		\cos x  &        &\cos x&      &      &       &   \\
-		\tg x   &        &      &\tg x &      &       &   \\
-		\ctg x  &        &      &      &\ctg x&       &   \\
-		\sec x  &        &      &      &      &\sec x &   \\
-		\cosec x&        &      &      &      &       &\cosec x\\
+		\sin x=&\sin x  &\sqrt{1-\cos^{2} x}&\dfrac{\tg x}{\sqrt{1+\tg^{2} x}}&\dfrac{1}{\sqrt{\ctg^{2} x +1}}&\dfrac{\sec^{2} x-1}{\sec x}&\dfrac{1}{\cosec x}\\
+		\hline
+		\cos x=&\sqrt{1-\sin^{2} x}&\cos x&\dfrac{1}{\sqrt{1+\tg^{2}x}}&\dfrac{\ctg x}{\sqrt{\ctg^2 x +1}}&\dfrac{1}{\sec x}&\dfrac{\sqrt{\cosec^2 x - 1}}{\cosec x}\\
+		\hline
+		\tg x=&\dfrac{\sin x}{\sqrt{1-\sin^2 x}}&\dfrac{\sqrt{1-\cos^2 x}}{\cos x}&\tg x&\dfrac{1}{\ctg x}&\sqrt{\sec^2 x -1}&\dfrac{1}{\sqrt{\cosec^2 x -1}}\\
+		\hline
+		\ctg x=&\dfrac{\sqrt{1-\sin^2 x}}{\sin x}&\dfrac{\cos x}{\sqrt{1-\cos^2 x}}&\dfrac{1}{\tg x}&\ctg x&\dfrac{1}{\sqrt{\sec^2 x -1}}&\sqrt{\cosec^2 x -1}\\
+		\hline
+		\sec x=&\dfrac{1}{\sqrt{1-\sin^2 x}}&\dfrac{1}{\cos x}&\sqrt{1+\tg^2 x}&\dfrac{\sqrt{\ctg^2 x +1}}{\ctg x}&\sec x &\dfrac{\cosec x}{\sqrt{\cosec^2 x-1}}\\
+		\hline	
+		\cosec x=&\dfrac{1}{\sin x}&\dfrac{1}{\sqrt{1-\cos^2 x}}&\dfrac{\sqrt{1+\tg^2 x}}{\tg x}&\sqrt{\ctg^2 x+1}&\dfrac{\sec x}{\sqrt{\sec^2 x -1}}&\cosec x\\
 		\hline
 	\end{tabularx}
+\normalsize
 \end{table}
+\subparagraph{Тригонометрические тождества}
+\begin{equation}\label{eq:trigon-identity-1}
+\sin^2 \alpha + \cos^2 \alpha =1:\ \forall \alpha
+\end{equation}
+Данное выражение называется основным тригонометрическим тождеством.
+Другие тождества приведены ниже.
+\begin{equation}\label{eq:trigon-identity-2}
+\tg^2 \alpha +1 = \frac{1}{\cos^2 \alpha} = \sec^2 \alpha:\ \alpha \neq \frac{\pi}{2} + \pi n:\ n \in \mathbb{Z}
+\end{equation}
+
+\begin{equation}\label{eq:trigon-identity-3}
+\ctg^2 \alpha + 1 = \frac{1}{\sin^2 \alpha} = \cosec^2 \alpha:\ \alpha \neq \pi n,\ n \in \mathbb{Z}
+\end{equation}
+
+\begin{equation}\label{eq:trigon-identity-4}
+\tg \alpha \ctg \alpha = 1:\ \alpha \neq \frac{\pi n}{2},\ n \in \mathbb{Z}
+\end{equation}
 
 \subsubsection{Многоугольники}
 
