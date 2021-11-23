@@ -306,13 +306,20 @@ a_{2}x+b_{2}y+c_{2}=0
 \end{Thexmpl}
 
 \subsubsection{Уравнения с~двумя неизвестными}\label{Two-unknown-1}
-В~общем виде уравнение с~двумя неизвестными может быть записано следующим образом.
-\begin{equation}\label{eq:two-unknown}
+\begin{description}
+	\item[Уравнения с~двумя неизвестными] "--- уравнения вида
+	\begin{equation}\label{eq:two-unknown-1}
+	f(x,y)=0
+	\end{equation}
+\end{description}
+\paragraph{Уравнения с~двумя неизвестными, имеющие бесконечное число решений}
+Частный случай таких уравнений может быть записан следующим образом.
+\begin{equation}\label{eq:two-unknown-2}
 ax+by+c=0:\ a \vee b \neq 0
 \end{equation}
-Подобные уравнения имеют бесконечное число решений, которые могут быть представлены графически.
+Такие уравнения имеют бесконечное число решений, которые могут быть представлены графически.
 
-\begin{Thexmpl}\label{ex:two-unknown}
+\begin{Thexmpl}\label{ex:two-unknown-1}
 	Дано:
 	
 	$\begin{aligned}
@@ -329,23 +336,64 @@ ax+by+c=0:\ a \vee b \neq 0
 \begin{figure}[ht]
 	\centering % Центрируем картинку
 	\includegraphics[width=0.5\textwidth]{two-unknown.pdf}
-	\caption{Графическое решение уравнения с~двумя неизвестными}\label{fig:two-unknown}
+	\caption{Графическое решение уравнения с~двумя неизвестными и~окружность, задаваемая уравнением}\label{fig:two-unknown}
 \end{figure}
+
+\paragraph{Однородные уравнения}
+\begin{description}
+	\item[Уравнения с~двумя неизвестными] "--- уравнения вида
+	\begin{equation}\label{eq:two-unknown-3}
+	p(x,y)=0,
+	\end{equation}
+\end{description}
+где ${\textstyle p(x,y)}$ "--- многочлен следующего вида:
+\begin{equation}\label{eq:two-unknown-4}
+p(x,y)=a_{n}x^{n}+a_{n-1}x^{n-1}y+\ldots+a_{1}xy^{n-1}+a_{0}y^{n}.
+\end{equation}
+Таким образом, показатель степени ${\textstyle x}$ повышается, ${\textstyle y}$ "--- понижается.
+
+\begin{Thexmpl}\label{ex:two-unknown-2}
+	${\textstyle x^3+4xy^2-5y^3=0}$
+	
+	Разделим всё~выражение на~${\textstyle y^3}$
+	
+	${\textstyle x^3+4xy^2-5y^3=0|:y^3\neq 0 \Leftrightarrow  (\dfrac{x}{y})^3+4(\dfrac{x}{y})-5=0}$
+	
+	Заменим ${\textstyle \dfrac{x}{y}}$ на~${\textstyle t}$.
+	
+	Тогда ${\textstyle t^3+4t-5=0 \Leftrightarrow t=1 \Rightarrow x=y}$. 	
+\end{Thexmpl}
+
+\paragraph{Практическое применение уравнений с~двумя неизвестными}\label{two-unknown-practice}
+Графиком уравнения ${\textstyle p(x,y)=0}$ является множество точек на~координатной плоскости, удовлетворяющих данному уравнению.
+
+Расстояние между двумя точками ${\textstyle A(x_{1},y_{1}),\ B(x_{0},y_{0})}$ на~координатной плоскости, то~есть длина отрезка ${\textstyle AB}$ вычисляется по~формуле:
+\begin{equation}\label{eq:dist-between-points}
+|AB|=\sqrt{(x_{1}-x_{0})^2+(y_{1}-y_{0})^2}.
+\end{equation}
+Из~данной формулы следует, например уравнение окружности с~центром ${\textstyle O(x_{0},y_{0})}$ и~радиусом~${\textstyle R}$.
+\begin{equation}\label{eq:circle-equation}
+(x_{1}-x_{0})^{2}+(y_{1}-y_{0})^2=R^2
+\end{equation}
+Примеры окружностей, заданных уравнением, показаны на~\ref{fig:two-unknown}.
 
 \subsubsection{Операции со~степенями с~натуральными и~нулевым показателями}
 
 Свойствами степени с~натуральным показателем являются:
 \begin{equation}\label{eq:nat-degrees-prop-1}
 	\begin{aligned}
-	a^n*a^m &= a^{n+m} \\
+	a^n \times a^m &= a^{n+m} \\
 	\frac{a^n}{a^m} &=a^{n-m} \\
 	a^{n^{m}} &= a^{nm} \\
 	a^n \times b^n &= (ab)^n \\
-	\frac{a^n}{b^n} &= \frac({a}{b})^n \\
+	\frac{a^n}{b^n} &= (\frac{a}{b})^n \\
 	a^0 &= 1: a \neq 0 \\
-	0^0 &= \neq \ \exists.
+	0^0 &\not\exists.
 	\end{aligned}
 \end{equation}
+
+
+
 
 \subsubsection{Понятие одночлена и~операции с~ним}
 \begin{description}
@@ -714,7 +762,259 @@ f(x)>0 \Leftrightarrow g(x)>0,
 \end{equation}
 если они~имеют одинаковое решение, либо оба~не~имеют решения вовсе. Равносильное неравенство может быть получено путём умножения неравенства на~выражение. В~случае положительного значения результата выражения, знак неравенства сохраняется, при~отрицательном "--- меняется на~противоположный.
 
-Общая схема решения таких неравенств заключается к~поиску их~корней путём приравнивания к~нулю каждого члена и~проверки соблюдения знака при~подстановке значений больше и~меньше каждого корня.
+Общая схема решения таких неравенств заключается к~поиску их~корней путём приравнивания к~нулю каждого члена и~проверки соблюдения знака при~подстановке значений больше и~меньше каждого корня. При~этом важным свойством является чередование знаков вокруг корней, получаемых из~членов, стоящих в~любой нечётной степени, включая первую, и~их~повторение вокруг корней, образуемых членами, стоящими в~любой чётной степени.
+
+\subsubsection{Системы и~совокупности неравенств}
+\textbf{Системы неравенств} в~общем виде выглядят следующим образом:
+\begin{equation}\label{eq:inequal-system}
+	\begin{cases}
+	f(x)>0\\
+	g(x)>0\\
+	\ldots\\
+	z(x)>0,
+	\end{cases}
+\end{equation}
+при~этом знаки неравенств могут быть любыми: ${\textstyle >,<,\geq,\leq}$ равно как~и~число неравенств. Для~того, чтобы решить \emph{систему неравенств}, необходимо найти все~значения~${\textstyle x}$, удовлетворяющие каждому из~них. Иначе говоря, решением системы неравенств является \emph{множество}, представляющее собой \emph{пересечение множеств}, получаемых при~решении каждого неравенства в~отдельности. Если хотя~бы одно неравенство в~системе не~имеет решения, тогда его~не~имеет вся~система. Если одно из~неравенств выполняется при~любом значении ${\textstyle x}$, решение оставшейся части неравенств также 
+является решением всей системы.
+
+\textbf{Совокупности неравенств} в~общем виде выглядят следующим образом:
+\begin{equation}\label{eq:inequal-complex}
+\begin{sqcases}
+f(x)>0\\
+g(x)>0\\
+\ldots\\
+z(x)>0,
+\end{sqcases}
+\end{equation}
+при~этом аналогично с~\emph{системами неравенств} знаки неравенств, образующих совокупность, могут быть любыми: ${\textstyle >,<,\geq,\leq}$ равно как~и~число неравенств. Для~того, чтобы решить \emph{совокупность неравенств}, необходимо найти все~значения~${\textstyle x}$, удовлетворяющие хотя~бы одному из~них. Иначе говоря, решением системы неравенств является \emph{множество}, представляющее собой \emph{объединение множеств}, получаемых при~решении каждого неравенства в~отдельности.
+
+\subsubsection{Неравенства с~модулями}
+\textbf{Первым} видом неравенства с~модулем является неравенство вида:
+\begin{equation}\label{eq:inequalities-with-modules-1}
+|f(x)|<c:\ c>0.
+\end{equation}
+Тогда:
+\begin{equation}\label{eq:inequalities-with-modules-2}
+|f(x)|<c\Leftrightarrow
+\begin{cases}
+f(x)>-c\\
+f(x)<c\\
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+-c<f(x)<c.
+\end{cases}
+\end{equation}
+\begin{Thexmpl}\label{ex:inequalities-with-modules-1}
+	$\begin{aligned}
+	|3x+2|<4 \Leftrightarrow -4<3x+2<4 = -6<3x<2 = -2<x<\dfrac{2}{3}
+	\end{aligned}$
+\end{Thexmpl}
+\textbf{Вторым} видом неравенства с~модулем является неравенство вида:
+\begin{equation}\label{eq:inequalities-with-modules-3}
+|f(x)|>c:\ c>0.
+\end{equation}
+Тогда:
+\begin{equation}\label{eq:inequalities-with-modules-4}
+|f(x)|<c\Leftrightarrow
+\begin{sqcases}
+f(x)>c\\
+f(x)<-c\\
+\end{sqcases}
+\end{equation}
+\begin{Thexmpl}\label{ex:inequalities-with-modules-2}
+	$\begin{aligned}
+	|2x+5|>10 \Leftrightarrow
+	\begin{sqcases}
+	2x+5>10\\
+	2x+5<-10\\
+	\end{sqcases}
+	\Rightarrow
+	\begin{sqcases}
+	2x>5\\
+	2x<-15\\
+	\end{sqcases}
+	\Rightarrow
+	\begin{sqcases}
+	x>2.5\\
+	x<-7.5\\
+	\end{sqcases}
+	\Rightarrow\\ \Rightarrow x \in (-\infty;-7.5)\cup(2.5;\infty)
+	\end{aligned}$
+\end{Thexmpl}
+
+\textbf{Третьим} видом неравенства с~модулем является неравенство вида:
+\begin{equation}\label{eq:inequalities-with-modules-5}
+|f(x)|<g(x).
+\end{equation}
+Поскольку ${\textstyle g(x)}$ больше \emph{модуля} некоторого выражения, очевидно, что~${\textstyle g(x)>0}$. Тогда
+\begin{equation}\label{eq:inequalities-with-modules-6}
+\begin{split}
+|f(x)|<g(x)\Leftrightarrow
+\begin{cases}
+g(x>0)\\
+-g(x)<f(x)<g(x)
+\end{cases} 
+\Leftrightarrow
+\begin{cases}
+g(x>0)\\
+f^2(x)<g^2(x)
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+g(x>0)\\
+f^2(x)-g^2(x)<0
+\end{cases}
+\Leftrightarrow\\
+\Leftrightarrow
+\begin{cases}
+g(x>0)\\
+(f(x)+g(x))(f(x)-g(x))<0
+\end{cases}
+\end{split}
+\end{equation}
+
+\textbf{Четвёртым} видом неравенства с~модулем является неравенство вида:
+\begin{equation}\label{eq:inequalities-with-modules-7}
+|f(x)|>g(x).
+\end{equation}
+В~этом случае:
+\begin{equation}\label{eq:inequalities-with-modules-8}
+|f(x)|>g(x) \Leftrightarrow
+\begin{sqcases}
+	\begin{cases}
+	g(x)<0\\
+	x\in D(f)
+	\end{cases}
+	\\
+	\begin{cases}
+	g(x)\geq 0\\
+	f^2(x)>g^2(x)
+	\end{cases}
+\end{sqcases}
+\vee
+\begin{sqcases}
+\begin{cases}
+g(x)<0\\
+x\in D(f)
+\end{cases}
+\\
+\begin{cases}
+g(x)\geq 0\\
+\begin{sqcases}
+f(x)>g(x)\\
+f(x)<-g(x)
+\end{sqcases}
+\end{cases}
+\end{sqcases}
+\end{equation}
+
+\subsubsection{Иррациональные неравенства}
+\textbf{Первый} тип иррациональных неравенств
+	\begin{equation}\label{eq:irrational-inequal-1}
+	\sqrt{f(x)}<g(x)
+	\end{equation}
+Тогда
+\begin{equation}\label{eq:irrational-inequal-2}
+\sqrt{f(x)}<g(x) \Leftrightarrow
+\begin{cases}
+g(x)>0\\
+f(x)\geq 0\\
+f^2(x)<g^2(x).
+\end{cases}
+\end{equation}
+
+\begin{Thexmpl}\label{ex:irrational-inequal-1}
+	
+	$\begin{aligned}
+	\sqrt{x^2-x-12}<x
+	\Leftrightarrow
+	\begin{cases}
+	x>0\\
+	x^2-x-12\geq 0\\
+	x^2-x-12<x^2
+	\end{cases}
+	\Leftrightarrow
+	\begin{cases}
+	x>0\\
+	(x+3)(x-4)\geq 0\\
+	x>-12
+	\end{cases}
+	\Leftrightarrow\\
+	\Leftrightarrow
+	x\geq 4
+	\end{aligned}$
+\end{Thexmpl}
+
+\textbf{Второй} тип иррациональных неравенств
+\begin{equation}\label{eq:irrational-inequal-3}
+\sqrt{f(x)}>g(x)
+\end{equation}
+Тогда
+\begin{equation}\label{eq:irrational-inequal-4}
+\sqrt{f(x)}>g(x) \Leftrightarrow
+\begin{sqcases}
+\begin{cases}
+g(x)<0\\
+f(x)\geq 0
+\end{cases}
+\\
+\begin{cases}
+g(x)\geq 0\\
+f(x)>g^2(x).
+\end{cases}
+\end{sqcases}
+\end{equation}
+\begin{Thexmpl}\label{ex:irrational-inequal-2}
+	$\begin{aligned}
+	\begin{sqcases}
+	\begin{cases}
+	x<0\\
+	x^2-x-12\geq 0
+	\end{cases}
+	\\
+	\begin{cases}
+	x\geq 0\\
+	x^2-x-12>x^2
+	\end{cases}
+	\end{sqcases}
+	\Leftrightarrow
+	\begin{sqcases}
+	\begin{cases}
+	x<0\\
+	(x+3)(x-4)\geq 0
+	\end{cases}
+	\\
+	\begin{cases}
+	x\geq 0\\
+	x<-12
+	\end{cases}
+	\end{sqcases}
+	\Leftrightarrow x\in (-\infty;-3].
+	\end{aligned}$
+\end{Thexmpl}
+
+\subsubsection{Неравенства с~двумя переменными}
+\begin{description}
+	\item[Неравенства с~двумя переменными] "--- это~неравенства вида
+	\begin{equation}\label{eq:inequal-two-unknown-1}
+	p(x,y)
+	\begin{sqcases}
+	>\\
+	\geq\\
+	\leq\\
+	<
+	\end{sqcases}
+	0
+	\end{equation}
+\end{description}
+Как~правило, для~решения таких неравенств используется графический метод. Рассмотрим несколько примеров.
+\begin{Thexmpl}
+	${\textstyle x^{2}+y^{2}\leq 2}$
+	
+	В~\ref{two-unknown-practice} было показано, что~выражения такого вида задают окружность. Решением данного неравенства является множество точек, представляющих собой часть плоскости внутри окружности, включая саму окружность. В~случае строгости неравенства сама окружности не~входила~бы в~эту~часть плоскости. В~случае противоположного знака решением~бы было множество точек за~пределами окружности, включая либо не~включая её~саму в~зависимости от~строгости неравенства.
+\end{Thexmpl}
+
 \subsection{Основы геометрии}
 \subsubsection{Основные геометрические объекты}\label{main-figures}
 Базовые геометрические объекты не~имеют строгих определений и~определяются через свои свойства, изложенные в~аксиомах. Следующие ниже описания не~являются строгими и~служат для~понимания основных свойств таких объектов.
@@ -1451,7 +1751,7 @@ y&=k_{2}x+m_2\\
 \begin{description}
 	\item[Пересечение множеств ${\textstyle A,\ B}$] "--- такое множество, которое содержит все~элементы, входящие и~в~${\textstyle A}$, и~в~${\textstyle B}$, т.\,е.
 	\begin{equation}\label{eq:sets-intercept}
-	A\cap B = \{x|x \in A \wedge x \in B\}
+	A\cap B = \{x\arrowvert x \in A \wedge x \in B\}
 	\end{equation}
 \end{description}
 Например, ${\textstyle \mathbb{N} \cap \mathbb{Z} = \mathbb{N}}$.
