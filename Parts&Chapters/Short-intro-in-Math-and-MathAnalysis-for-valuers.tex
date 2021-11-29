@@ -32,7 +32,8 @@
 	\item[$A'$] "--- Дополнение к~множеству $A$.
 	\item[$\bigcup \limits_{k=1}^{n}A_k$] "--- объединение всех множеств $A_1, A_2,\ldots, n$.
 	\item[$\bigcap \limits_{k=1}^{n}A_k$] "--- пересечение всех множеств $A_1, A_2,\ldots, n$.
-	\item[$\AE{},\ \varnothing$] "--- пустое множество.
+	\item[$\varnothing$] "--- пустое множество.
+	\item[\AE{}] "--- пустое множество.
 	\item[$M_A$] "--- множество всех подмножеств множества $A$.
 	\item[{$\left[ a,b \right]$}] "--- \textbf{отрезок} между числами $a$ и~$b$ т.\,е.~множество вещественных чисел, лежащих между числами a~и~b, включая сами числа a~и~b. На~математическом языке это~можно записать как~$[a, b] = {x \in \mathbb{R}: a \leq x \leq b }$. При~$a=b$ отрезок состоит из~одной точки и~называется \emph{вырожденным отрезком}.
 	\item[$(a, b)$] "--- \textbf{интервал} между числами $a$ и~$b$ т.\,е.~множество вещественных чисел, лежащих строго между $a$~и~$b$, не~включая их~самих. На~математическом языке это~можно записать как~$(a, b) = {x \in \mathbb{R}: a < x < b }$.
@@ -1855,8 +1856,8 @@ k(\vec{a}+\vec{b})&=k\vec{a}+k\vec{b}\\
 \end{aligned}
 \end{equation}
 
-\subsection{Функции}
-\subsubsection{Понятие функции}
+\section{Функции}
+\subsection{Понятие функции}
 \textbf{Функция} является одним из~самых важных понятий в~математике.
 \begin{description}
 	\item[Функция] "--- инструкция (набор инструкций) в~соответствии с~которой каждому элементу первого множества соответствует один и~только один элемент второго множества.
@@ -1889,7 +1890,112 @@ E(y)
 
 Функция является \emph{возрастающей} на~отрезке \textit{[a, b]}, если при~$x_1 < x_2 f(x_1) < f(x_2)$. Функция является \emph{убывающей} на~отрезке \textit{[a, b]}, если при~$x_1 < x_2 f(x_1) > f(x_2)$. Возрастающая либо убывающая функция называется \emph{монотонной функцией}.
 
-\subsubsection{Линейная функция и~её~график, взаимное расположение графиков линейных функций}
+\subsection{Определение числовой функции}
+Рассмотрим некоторое числовое множество ${\textstyle X}$. Пусть для~элементов этого множества задано некоторое правило ${\textstyle f}$, согласно которому каждому элементу данного множества ставится в~соответствие некоторое число ${\textstyle X}$. Т.\,е.
+\begin{equation}\label{eq:function-def-1}
+X\ \text{"--- числовое множество},\ f\ \text{"--- правило},\ x \in X \rightarrow y.
+\end{equation}
+Тогда можно сказать, что~на~множестве ${\textstyle X}$ задана числовая функция ${\textstyle y=f(x)}$, где~${\textstyle x}$ "--- независимая переменная~(аргумент), ${\textstyle f}$ "--- правило, ${\textstyle y}$ "--- значение функции.
+
+\subsection{Способы задания функции}
+\textbf{Аналитический способ} состоит в задании функции одной или~несколькими формулами (например ${\textstyle y=f(x)}$) и~был рассмотрен ранее.
+\textbf{Рекурсивный способ} состоит в~задании функции через саму себя, при~этом значения функции определяются через другие её~же значения. Такой способ задания функции используется в~задании множеств и~рядов.
+\textbf{Графический способ} заключается в~проведении линии~(графика), у~которой абсциссы изображают значения аргумента, а~ординаты "--- соответствующие значения функции.
+\textbf{Словесный способ} состоит в~задании функции естественным языком, т.\,е.~словами. При~этом необходимо задать входные и~выходные значения, а~также соответствие между ними.
+\textbf{Табличный способ} заключается в~задании таблицы отдельных значений аргумента и~соответствующих им~значений функции. Такой способ задания функции применяется только в~том~случае, когда \emph{область определения функции} является дискретным конечным множеством.
+
+\subsection{Свойства функций}
+\subsubsection{Ограниченные и~неограниченные функции}
+Обозначим ${\textstyle X}$ некоторое множество чисел, входящих в~область определения  ${\textstyle D(f)}$ функции ${\textstyle y=f(x)}$.
+\begin{description}
+	\item[Функцию ${\textstyle y=f(x)}$ называют ограниченной сверху на~множестве ${\textstyle X}$] если существует такое число ${\textstyle \alpha}$, что~для~любого~${\textstyle x}$   из~множества~${\textstyle X}$ выполняется неравенство
+	\begin{equation}\label{eq:function-1}
+	f(x)\leq \alpha.
+	\end{equation}
+\end{description}
+\begin{description}
+	\item[Функцию ${\textstyle y=f(x)}$ называют ограниченной снизу на~множестве ${\textstyle X}$] если существует такое число ${\textstyle \beta}$, что~для~любого~${\textstyle x}$   из~множества~${\textstyle X}$ выполняется неравенство
+	\begin{equation}\label{eq:function-2}
+	f(x)\geq \beta.
+	\end{equation}
+\end{description}
+\begin{description}
+	\item[Функцию ${\textstyle y=f(x)}$ называют ограниченной на~множестве ${\textstyle X}$] если существуют такие числа ${\textstyle \alpha,\ \beta}$, что~для~любого~${\textstyle x}$  из~множества~${\textstyle X}$ выполняется неравенство
+	\begin{equation}\label{eq:function-3}
+	\beta \leq f(x)\leq \alpha.
+	\end{equation}
+\end{description}
+\begin{description}
+	\item[Функцию ${\textstyle y=f(x)}$ называют неограниченной сверху на~множестве ${\textstyle X}$] если для~любого числа ${\textstyle \alpha}$ существует такой~${\textstyle x}$  из~множества~${\textstyle X}$, для~которого выполняется неравенство
+	\begin{equation}\label{eq:function-4}
+	f(x) > \alpha.
+	\end{equation}
+\end{description}
+\begin{description}
+	\item[Функцию ${\textstyle y=f(x)}$ называют неограниченной сверху на~множестве ${\textstyle X}$] если для~любого числа ${\textstyle \beta}$ существует такой~${\textstyle x}$  из~множества~${\textstyle X}$, для~которого выполняется неравенство
+	\begin{equation}\label{eq:function-5}
+	f(x) < \beta.
+	\end{equation}
+\end{description}
+\begin{description}
+	\item[Функцию ${\textstyle y=f(x)}$ называют неограниченной на~множестве ${\textstyle X}$] если эта~функция или~не~ограничена сверху, или~не~ограничена снизу, или~не ограничена и~сверху, и~снизу.
+\end{description}
+\begin{description}
+	\item[Наименьшее значение функции ${\textstyle y=f(x)}$] представляется собой такое значение ${\textstyle \beta}$, для~которого выполняется неравенство ${\textstyle f(x_0)=\beta \wedge f(x)\geq \beta}$, т.\,е.
+	\begin{equation}\label{eq:function-10}
+	\beta = y_{min}:
+	\begin{cases}
+	f(x_0)=\beta\\
+	f(x)\geq \beta.
+	\end{cases}
+	\end{equation}
+\end{description}
+\begin{description}
+	\item[Наибольшее значение функции ${\textstyle y=f(x)}$] представляется собой такое значение ${\textstyle \alpha}$, для~которого выполняется неравенство ${\textstyle f(x_0)=\alpha \wedge f(x)\leq \alpha}$, т.\,е.
+	\begin{equation}\label{eq:function-11}
+	\alpha = y_{max}:
+	\begin{cases}
+	f(x_0)=\alpha\\
+	f(x)\leq \alpha.
+	\end{cases}
+	\end{equation}
+\end{description}
+
+\subsubsection{Монотонные и~строго монотонные функции}
+\begin{description}
+	\item[Функцию ${\textstyle y=f(x)}$ называют возрастающей на~множестве~${\textstyle y=f(x)}$] если для~любых чисел ${\textstyle x_1 \in X,\ x_2 \in X}$,удовлетворяющих неравенству ${\textstyle x_1 < x_2}$, выполняется неравенство ${\textstyle f(x_1) \leq f(x_2)}$, т.\,е.~меньшему значению аргумента соответствует такое~же либо меньшее значение функции.
+	\begin{equation}\label{eq:function-6}
+	y=f(x)\nearrow :x_1 < x_2 \Rightarrow f(x_1) \leq f(x_2)
+	\end{equation}
+\end{description}
+Возрастающие функции также называют \textbf{неубывающими функциями}.
+\begin{description}
+	\item[Функцию ${\textstyle y=f(x)}$ называют убывающей на~множестве~${\textstyle y=f(x)}$] если для~любых чисел ${\textstyle x_1 \in X,\ x_2 \in X}$,удовлетворяющих неравенству ${\textstyle x_1 < x_2}$, выполняется неравенство ${\textstyle f(x_1) \geq f(x_2)}$, т.\,е.~меньшему значению аргумента соответствует такое~же либо большее значение функции.
+	\begin{equation}\label{eq:function-7}
+	y=f(x)\searrow :x_1 < x_2 \Rightarrow f(x_1) \geq f(x_2)
+	\end{equation}
+\end{description}
+Убывающие функции также называют \textbf{невозрастающими функциями}.
+\begin{description}
+	\item[Функцию ${\textstyle y=f(x)}$ называют строго возрастающей на~множестве~${\textstyle y=f(x)}$] если для~любых чисел ${\textstyle x_1 \in X,\ x_2 \in X}$,удовлетворяющих неравенству ${\textstyle x_1 < x_2}$, выполняется неравенство ${\textstyle f(x_1) < f(x_2)}$, т.\,е.~меньшему значению аргумента соответствует меньшее значение функции.
+	\begin{equation}\label{eq:function-8}
+	y=f(x)\uparrow :x_1 < x_2 \Rightarrow f(x_1) < f(x_2)
+	\end{equation}
+\end{description}
+\begin{description}
+	\item[Функцию ${\textstyle y=f(x)}$ называют строго убывающей на~множестве~${\textstyle y=f(x)}$] если для~любых чисел ${\textstyle x_1 \in X,\ x_2 \in X}$,удовлетворяющих неравенству ${\textstyle x_1 < x_2}$, выполняется неравенство ${\textstyle f(x_1) > f(x_2)}$, т.\,е.~меньшему значению аргумента соответствует большее значение функции.
+	\begin{equation}\label{eq:function-9}
+	y=f(x)\downarrow :x_1 < x_2 \Rightarrow f(x_1) > f(x_2)
+	\end{equation}
+\end{description}
+\begin{description}
+	\item[Монотонная функция]"--- возрастающая либо убывающая функция.
+\end{description}
+\begin{description}
+	\item[Стого монотонная функция]"--- строго возрастающая либо строго убывающая функция.
+\end{description}
+
+\subsection{Линейная функция и~её~график, взаимное расположение графиков линейных функций}
 
 Общая формула линейной функции следует из~\ref{eq:two-unknown} и~представляет собой выражение
 \begin{equation}\label{eq:linear-func-1}
