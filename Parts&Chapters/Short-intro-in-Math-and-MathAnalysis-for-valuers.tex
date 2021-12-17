@@ -1758,6 +1758,23 @@ S=\frac{ab}{2}h,
 \caption{Вписанная и~описанная окружности треугольника}\label{fig:triangle-circles}
 \end{figure}
 
+\subsection{Уравнение произвольной окружности}
+Уравнение произвольной окружности с~центром в~точке~${\textstyle C(x_0,y_0)}$ радиусом~${\textstyle R}$ имеет вид:
+\begin{equation}\label{eq:circle-equation-2}
+R^2=(x-x_0)+(y-y_0),
+\end{equation}
+где~${\textstyle x,y}$ "--- координаты любой точки на~окружности.
+\subsection{Уравнение прямой}
+На~рисунке~\ref{fig:line-equation} рассмотрим две точки~${\textstyle A(x_{1},y_{1}),B(x_{2},y_{2})}$, лежащие на~одной координатной плоскости. Соединим их~отрезком~${\textstyle f}$ и~проведём к~нему серединный перпендикуляр~${\textstyle l}$.
+\begin{figure}[ht]
+	\centering % Центрируем картинку
+	\includegraphics[width=0.8\textwidth]{line-equation.pdf}
+	\caption{Уравнение прямой}\label{fig:line-equation}
+\end{figure}
+Возьмём произвольную точку~${\textstyle D(x,y)}$ на~перпендикуляре. Известно, что~любая точка на~серединном перпендикуляре равноудалена от~его~концов. Следовательно~${\textstyle \arrowvert i \arrowvert=\arrowvert h \arrowvert \Rightarrow \arrowvert i^2 \arrowvert=\arrowvert h^2 \arrowvert}$. Тогда~${\textstyle (x-x_{1})^2+(y-y_1)^2=(x-x_{2})^2+(y-y_2)^2}$. Используя формулу квадрата разности, сократив уравнение и~заменив некоторые его~члены на~${\textstyle a,b,c}$,получим итоговый вид уравнения прямой.
+\begin{equation}\label{eq:line-equation}
+ax+by+c=0
+\end{equation}
 \subsection{Векторы}
 \subsubsection{Понятие вектора}
 \begin{description}
@@ -1856,7 +1873,7 @@ k(\vec{a}+\vec{b})&=k\vec{a}+k\vec{b}\\
 \end{aligned}
 \end{equation}
 
-\subsubsection{Разложение вектора по~двум неколлинеарным векторам}
+\subsubsection{Разложение вектора по~двум неколлинеарным векторам}\label{vector-decomposition}
 \begin{lemma}
 Если существуют два коллинеарных вектора, один из~них~может быть представлен в~виде произведения второго на~число.
 \begin{equation}\label{eq:vectors-1}
@@ -1878,7 +1895,7 @@ k(\vec{a}+\vec{b})&=k\vec{a}+k\vec{b}\\
 \begin{theorem}
 	Любой вектор на~плоскости можно разложить по~двум данным неколлинеарным векторам, причём коэффициенты разложения определяются единственным образом.
 	\begin{equation}\label{eq:vectors-4}
-	\forall \vec{c} \ \vec{c}=x\vec{a}+y\vec{b}: \vec{a} \not \Arrowvert \vec{b}
+	\forall \vec{c}=x\vec{a}+y\vec{b}: \vec{a} \not \Arrowvert \vec{b}
 	\end{equation}
 	Возможны два случая
 	\begin{equation}\label{eq:vectors-5}
@@ -1888,6 +1905,62 @@ k(\vec{a}+\vec{b})&=k\vec{a}+k\vec{b}\\
 	\end{aligned}
 	\end{equation}
 \end{theorem}
+\subsubsection{Координаты вектора}
+Рассмотрим рисунок~\ref{fig:vec-coord-1}. Из~начала координат отложим два единичных вектора (т.\,е.~вектора, имеющих длину равную ${\textstyle 1}$). Вектор~${\textstyle i}$ лежит на~оси абсцисс, вектор~${\textstyle j}$ "--- на~оси ординат. Данные векторы называют \textbf{базисными векторами} либо \textbf{координатными векторами}. Поскольку данные векторы неколлинеарны, любой вектор может выражен через них. Из~начала координат отложим также некоторый вектор ${\textstyle \vec{u}}$, который может быть выражен следующим образом: ${\textstyle \vec{u}=x\vec{i}+y\vec{j}}$, где~${\textstyle x,\ y}$ "--- координаты вектора~${\textstyle \vec{u}}$. Данную запись можно сократить до~${\textstyle \vec{u}\{x,\ y\}}$. Вектор~${\textstyle \vec{u}}$, изображённый на~рисунке~\ref{fig:vec-coord-1}, имеет координаты~${\textstyle \vec{u}\{-2,\ 0.6\}}$. Ранее в~\ref{vector-decomposition} было сказано, что~коэффициенты разложения любого вектора по~двум другим векторам определяются единственным образом. 
+\begin{figure}[ht]
+	\centering % Центрируем картинку
+	\includegraphics[width=0.8\textwidth]{vector-coordinates.pdf}
+	\caption{Координаты векторов, базисные векторы}\label{fig:vec-coord-1}
+\end{figure}
+Возьмём два~вектора, имеющие определённые координаты. ${\textstyle \vec{p}\{x_1,\ y_1\},\ \vec{q}\{x_2 \ y_2\}}$. Тогда
+\begin{equation}\label{eq:two-vec-equality}
+\vec{p}=\vec{q}\Leftrightarrow
+\begin{cases}
+x_1=x_2\\
+y_1=y+2.
+\end{cases}
+\end{equation}
+\begin{proposition}
+	Два~вектора равны между собой, если равны их~соответствующие координаты.
+\end{proposition}
+\begin{proposition}
+	Нулевой вектор имеет координаты~${\textstyle \vec{0}\{0,0\}}$. 
+\end{proposition}
+Введение понятия координат векторов позволяет осуществлять операции с~ними, не~прибегая к~графическим методам. Например, для~сложения либо вычитания векторов достаточно сложить либо вычесть их~соответствующие координаты. Для~умножения вектора на~число достаточно умножить на~него каждую из~координат
+\begin{equation}\label{eq:two-vectors-sum-or-subtraction}
+\begin{aligned}
+\vec{p}\pm\vec{q}\{x_{1}\pm x_{2},y_{1}\pm y_{2}\}\\
+k\vec{p}\{kx,ky\}
+\end{aligned}
+\end{equation}
+Вектор, проведённый из~начала координат в~некоторую точку, называется \textbf{радиус-вектором}. 
+
+На~практике чаще всего приходится иметь дело с~векторами, начало которых не~совпадает с~началом координат. Обратимся вновь к~рисунку~\ref{fig:vec-coord-1}. Рассмотрим точки~${\textstyle G(x_1,y_2),H)x_2,y_2}$. Необходимо найти координаты вектора~${\textstyle \vec{GH}}$. Для~этого из~точки~${\textstyle O}$, являющейся началом координат, отложим два~вектора~${\textstyle \vec{OG}(\vec{w}),\vec{OH}\vec{a}}$. В~результате, по~правилу вычитания векторов, получаем следующее выражение~${\textstyle \vec{v}=\vec{a}-\vec{w} \Rightarrow \vec{v}\{x_{2}-x_{1},y_{2}-y_{1}\}}$. В~рассматриваемом примере~${\textstyle \vec{v}\{1,-0.5\}}$.
+\begin{proposition}
+	Для~нахождения координат вектора, не~являющегося \emph{радиус-вектором}, необходимо из~координат его~конца вычесть координаты его~начала. 
+\end{proposition}
+\paragraph{Нахождение середины отрезка}
+Отложим точку~${\textstyle I}$ посередине отрезка~${\textstyle [GH]}$. Проведём вектор ${\textstyle \vec{OI}(\vec{b})}$.
+
+Тогда~${\textstyle \vec{b}=\frac{1}{2}(\vec{a}+\vec{w}) \Rightarrow \vec{b} \{\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\} \Rightarrow I(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2})}$.  
+\begin{proposition}
+	Для~нахождения середины отрезка необходимо сложить координаты его~крайних точек и~разделить их~сумму на~два.
+\end{proposition}
+\paragraph{Нахождение длины радиус-вектора}
+\begin{proposition}
+	Длина радиус-вектора равна квадратному корню суммы его~координат.
+	\begin{equation}\label{eq:radius-vector-lenght}
+	\arrowvert \vec{q} \arrowvert=\sqrt{x^{2}+y^{2}}
+	\end{equation}
+\end{proposition}
+\paragraph{Нахождение расстояния между двумя точками}
+\begin{proposition}
+	Расстояние между двумя точками на~плоскости равно квадратному корню суммы квадратов разностей его~координат.
+	\begin{equation}\label{eq:two-points-distance}
+	\arrowvert AB \arrowvert = \sqrt{(x_{2}-x_{1})^{2}+(y_{2}-y_{1})^{2}}
+	\end{equation}
+\end{proposition}
+Вышеприведённая формула широко используется в~геодезических работах.
 \section{Функции}
 \subsection{Понятие функции}
 \textbf{Функция} является одним из~самых важных понятий в~математике.
