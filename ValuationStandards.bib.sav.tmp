@@ -1,0 +1,238 @@
+@comment{x-kbibtex-encoding=utf-8}
+
+@Misc{RICS:RVGS-2020,
+  author       = {Royal Institution Surveyors of~Chartered (RICS)},
+  date         = {2019-11-28},
+  title        = {RICS Valuation –– Global Standards},
+  language     = {English},
+  location     = {UK, London},
+  organization = {RICS},
+  url          = {https://www.rics.org/eu/upholding-professional-standards/sector-standards/valuation/red-book/red-book-global/},
+  urldate      = {2020-06-10},
+  keywords     = {RICS, Valuation Standards},
+  month        = nov,
+  owner        = {RICS},
+  year         = {2019},
+}
+
+@misc{RICS:RVNS-2017,
+	author = {Royal Institution Surveyors of~Chartered (RICS)},
+	date = {2019-01-14},
+	keywords = {RICS, Valuation Standards},
+	language = {English},
+	location = {UK, London},
+	month = nov,
+	organization = {RICS},
+	title = {RICS Valuation — Global Standards 2017: UK national supplement},
+	url = {https://www.rics.org/globalassets/rics-website/media/upholding-professional-standards/sector-standards/valuation/red-book-uk-supplement-rics.pdf},
+	urldate = {2020-06-10},
+	year = {2018}
+}
+
+@misc{IVS-2020,
+	author = {International Valuation Standards Council},
+	keywords = {IVS, Valuation Standards},
+	month = aug,
+	owner = {IVSC},
+	title = {International Valuation Standards},
+	url = {https://www.rics.org/globalassets/rics-website/media/upholding-professional-standards/sector-standards/valuation/international-valuation-standards-rics2.pdf},
+	year = {2019}
+}
+
+@misc{IES-2016,
+	author = {International Ethics Standards Coalition (IESC)},
+	keywords = {Ethics Standards},
+	month = dec,
+	owner = {International Ethics Standards Coalition},
+	title = {International Ethics Standards},
+	url = {https://www.rics.org/globalassets/rics-website/media/upholding-professional-standards/standards-of-conduct/international-ethics-standards-ies-rics.pdf},
+	year = {2016}
+}
+
+@misc{IPMS,
+	author = {The~International Property Measurement Standards Coalition},
+	keywords = {Property Measurement},
+	owner = {International Ethics Standards Coalition (IESC)},
+	title = {International Property Measurement Standards},
+	url = {https://ipmsc.org/standards/},
+	year = {2013 – 2018}
+}
+
+@misc{RICS:Conduct-Firms,
+	author = {Royal Institution Surveyors of~Chartered (RICS)},
+	keywords = {RICS, Rules of Conduct},
+	month = mar,
+	title = {Rules of~Conduct for~Firms},
+	url = {https://www.rics.org/globalassets/rics-website/media/upholding-professional-standards/regulation/rules-of-conduct-for-firms_2020.pdf},
+	year = {2020}
+}
+
+@misc{RICS:Conduct-Members,
+	author = {Royal Institution Surveyors of~Chartered (RICS)},
+	keywords = {RICS, Rules of Conduct},
+	month = mar,
+	title = {Rules of~Conduct for~Members},
+	url = {https://www.rics.org/globalassets/rics-website/media/upholding-professional-standards/regulation/rules-of-conduct-for-members_2020.pdf},
+	year = {2020}
+}
+
+@misc{RICS:National-Standards,
+	author = {Royal Institution Surveyors of~Chartered (RICS)},
+	keywords = {RICS National Standards},
+	title = {RICS national or~jurisdictional valuation standards},
+	url = {https://www.isurv.com/info/1342/rics_national_or_jurisdictional_valuation_standards}
+}
+
+@misc{RICS:Application-in-RF,
+	author = {Royal Institution Surveyors of~Chartered (RICS)},
+	keywords = {RICS National Standards},
+	owner = {RICS},
+	title = {Application of~RICS Valuation Professional Standards in~Russian Federation},
+	url = {https://www.isurv.com/site/scripts/download_info.php?downloadID=2009}
+}
+
+@misc{RICS:RVGS-2014,
+	author = {Royal Institution Surveyors of~Chartered (RICS)},
+	keywords = {RICS, Valuation Standards},
+	month = dec,
+	owner = {RICS},
+	title = {Red Book: RICS Valuation — Professional Standards global 2014},
+	url = {https://www.isurv.com/downloads/download/1830/red_book_rics_valuation_-_professional_standards_global_2014_archived},
+	year = {2013}
+}
+
+@misc{FAO:Tenure,
+	author = {Food Organization and~Agriculture of~the~United Nations},
+	keywords = {FAO, UN},
+	owner = {FAO UN},
+	title = {Responsible Governance of~Tenure of~land, fisheries, and~forests in~the~context of~national food security},
+	url = {http://www.fao.org/3/a-i2801e.pdf},
+	year = {2012}
+}
+
+@misc{IFRS-13,
+	author = {The IFRS Foundation},
+	date = {2016-01-31},
+	keywords = {IFRS},
+	location = {UK, London},
+	organization = {The IFRS Foundation},
+	timestamp = {2020-06-10},
+	title = {IFRS 13 Fair Value Measurement},
+	url = {http://eifrs.ifrs.org/eifrs/bnstandards/en/IFRS13.pdf},
+	urldate = {2020-06-10}
+}
+
+@misc{IFRS-all,
+	author = {International Accounting Standards Board},
+	keywords = {IFRS},
+	language = {English},
+	location = {UK, London},
+	organization = {The IFRS Foundation},
+	timestamp = {2020-06-14},
+	title = {International Financial Reporting Standard},
+	url = {https://www.ifrs.org/issued-standards/list-of-standards/},
+	urldate = {2020-06-14}
+}
+
+@misc{RICS:Bye-Laws,
+	author = {Royal Institution Surveyors of~Chartered (RICS)},
+	date = {2019-03-13},
+	keywords = {RICS, By-laws},
+	language = {English},
+	location = {UK, London},
+	organization = {RICS},
+	title = {Bye-Laws of~The~Royal Institution of~Chartered Surveyors},
+	titleaddon = {updated at~Feb 2020},
+	url = {https://www.rics.org/globalassets/rics-website/media/governance/bye-laws/},
+	urldate = {2020-06-18}
+}
+
+@misc{RICS:Expert-Witnesses,
+	author = {Royal Institution Surveyors of~Chartered (RICS)},
+	date = {2014-04-02},
+	keywords = {RICS, Expert witnesses},
+	language = {English},
+	location = {UK, London},
+	organization = {RICS},
+	owner = {RICS},
+	subtitle = {4th edition},
+	timestamp = {2020-06-19},
+	title = {Surveyors acting as~expert witnesses},
+	url = {https://www.rics.org/globalassets/rics-website/media/upholding-professional-standards/sector-standards/dispute-resolution/surveyors-acting-as-expert-witnesses-4th-edition-rics.pdf},
+	urldate = {2020-06-19},
+	version = {4}
+}
+
+@www{IESC-site,
+	author = {IESC},
+	date = {2020-06-20},
+	keywords = {IES},
+	language = {English},
+	title = {IES Coalition site},
+	url = {https://ies-coalition.org/},
+	urldate = {2020-06-20}
+}
+
+@www{IPMSC:site,
+	author = {The International Property Measurement Standards Coalition (IPMSC)},
+	date = {2020-06-21},
+	keywords = {IPMSC, IPMS},
+	language = {English},
+	organization = {The International Property Measurement Standards Coalition (IPMSC)},
+	owner = {IPMSC},
+	timestamp = {2020-06-21},
+	title = {The International Property Measurement Standards Coalition (IPMSC) official site},
+	url = {https://ipmsc.org/},
+	urldate = {2020-06-21}
+}
+
+@Misc{RICS:Cont_Env_Sust,
+  author       = {Royal Institution Surveyors of~Chartered (RICS)},
+  date         = {2010},
+  title        = {Contamination, the~environment and~sustainability},
+  language     = {English},
+  location     = {UK, London},
+  organization = {RICS},
+  subtitle     = {3nd edition, 2010},
+  url          = {https://www.rics.org/globalassets/rics-website/media/upholding-professional-standards/sector-standards/real-estate/rics-property-measurement/rics-property-measurement-2nd-edition-rics.pdf},
+  urldate      = {2021-07-20},
+  version      = {3nd},
+  keywords     = {RICS, sustainability, environmental, contamination},
+  timestamp    = {2021-07-20},
+}
+
+@misc{RICS:Real&Brokerage,
+	author = {Royal Institute of~Chartered Surveyors},
+	date = {2016-08-17},
+	language = {English},
+	location = {UK, London},
+	organization = {RICS},
+	timestamp = {2020-06-23},
+	title = {Real estate agency and~brokerage},
+	titleaddon = {3rd Edition},
+	url = {https://www.rics.org/globalassets/rics-website/media/upholding-professional-standards/sector-standards/real-estate/real-estate-and-agency-brokerage-3rd-edition-rics.pdf},
+	urldate = {2020-06-23},
+	version = {3}
+}
+
+@www{IVSC:site,
+	author = {International Valuation Standards Council (IVSC)},
+	keywords = {RICS Regulation, RICS},
+	language = {English},
+	organization = {RICS},
+	owner = {RICS},
+	timestamp = {2020-06-30},
+	title = {IVSC official site},
+	url = {https://www.ivsc.org/},
+	urldate = {2020-06-30}
+}
+
+@www{RICS:Registration,
+	author = {Royal Institution Surveyors of~Chartered (RICS)},
+	keywords = {RICS},
+	language = {English},
+	organization = {RICS},
+	owner = {RICS},
+	timestamp = {2020-06-30},
+	title = {RICS Registration},
+	url = {https://www.rics.org/eu/upholding-pro
