@@ -1502,11 +1502,43 @@ $\frac{h}{b_h}=\frac{a_h}{h} \Rightarrow h^2=a_{h}b_{h} \Rightarrow h=\sqrt{a_h 
 Под~решением треугольника понимается нахождение всех его~сторон и~всех его~углов. Существует три основных класса задач на~решение треугольников.
 \begin{itemize}
 	\item решение треугольника, если известны две стороны и~угол между ними, т.\,е.~${\textstyle a,b,\angle C}$;
-	\item 
+	\item решение треугольника, если известна одна сторона и~два~прилежащих к~ней~угла, т.\,е.~${\textstyle a,\angle C,\angle B}$;
+	\item решение треугольника, если известны три его~стороны, т.\,е.~${\textstyle a,b,c}$;
 \end{itemize}
 Решение первого класса задач осуществляется следующим образом. На~первом этапе с~помощью  теоремы косинусов находят сторону~${\textstyle c}$.
-\begin{equation}\label{eq:cosinus-theorem-2}
+\begin{equation}\label{eq:triangle-solving-1}
 c=\sqrt{a^{2}+b^{2}-2ab\cos \angle C}
+\end{equation}
+Далее также по~теореме косинусов осуществляется нахождение косинуса угла~${\textstyle \angle A}$, а~также его~самого.
+\begin{equation}\label{eq:triangle-solving-2}
+\cos \angle A = \frac{b^2+c^2-a^2}{2bc} \Rightarrow \angle A
+\end{equation}
+После этого остаётся найти лишь~${\textstyle \angle B}$.
+\begin{equation}\label{eq:triangle-solving-3}
+\angle B = 180 \textdegree - \angle A - \angle C
+\end{equation}
+Таким образом, значения всех сторон и~всех углов треугольника определены.
+
+Решение второго класса задач осуществляется следующим образом. На~первом этапе определяется угол~${\textstyle \angle A}$.
+\begin{equation}\label{eq:triangle-solving-4}
+\angle A = 180 \textdegree - \angle B - \angle C
+\end{equation}
+Поскольку все~углы определены, также определены и~их~синусы. Далее, используя теорему синусов, находим две оставшиеся стороны.
+\begin{equation}\label{eq:triangle-solving-5}
+\begin{aligned}
+b = a \times \frac{\sin \angle B}{\sin \angle A}\\
+c = a \times \frac{\sin \angle C}{\sin \angle A}\\
+\end{aligned}
+\end{equation}
+Таким образом, значения всех сторон и~всех углов треугольника определены.
+
+Решение третьего класса задач осуществляется в~одно действие для~каждого из~углов и~основывается на~теореме косинусов.
+\begin{equation}\label{eq:triangle-solving-6}
+\begin{aligned}
+\cos \angle A = \frac{b^2+c^2-a^2}{2bc} \Rightarrow \angle A\\
+\cos \angle B = \frac{a^2+c^2-b^2}{2ac} \Rightarrow \angle B\\
+\cos \angle C = \frac{b^2+a^2-c^2}{2ab} \Rightarrow \angle C \vee 180 \textdegree - \angle A - \angle B \\
+\end{aligned}
 \end{equation}
 
 \subsection{Многоугольники}
