@@ -1507,7 +1507,7 @@ $\frac{h}{b_h}=\frac{a_h}{h} \Rightarrow h^2=a_{h}b_{h} \Rightarrow h=\sqrt{a_h 
 \end{itemize}
 Решение первого класса задач осуществляется следующим образом. На~первом этапе с~помощью  теоремы косинусов находят сторону~${\textstyle c}$.
 \begin{equation}\label{eq:triangle-solving-1}
-c=\sqrt{a^{2}+b^{2}-2ab\cos \angle C}
+c=\sqrt{a^{2}+b^{2}-2ab \times \cos \angle C}
 \end{equation}
 Далее также по~теореме косинусов осуществляется нахождение косинуса угла~${\textstyle \angle A}$, а~также его~самого.
 \begin{equation}\label{eq:triangle-solving-2}
@@ -1535,9 +1535,9 @@ c = a \times \frac{\sin \angle C}{\sin \angle A}\\
 Решение третьего класса задач осуществляется в~одно действие для~каждого из~углов и~основывается на~теореме косинусов.
 \begin{equation}\label{eq:triangle-solving-6}
 \begin{aligned}
-\cos \angle A = \frac{b^2+c^2-a^2}{2bc} \Rightarrow \angle A\\
-\cos \angle B = \frac{a^2+c^2-b^2}{2ac} \Rightarrow \angle B\\
-\cos \angle C = \frac{b^2+a^2-c^2}{2ab} \Rightarrow \angle C \vee 180 \textdegree - \angle A - \angle B \\
+\cos \angle A &= \frac{b^2+c^2-a^2}{2bc} \Rightarrow \angle A\\
+\cos \angle B &= \frac{a^2+c^2-b^2}{2ac} \Rightarrow \angle B\\
+\cos \angle C &= \frac{b^2+a^2-c^2}{2ab} \Rightarrow \angle C \vee \angle C = 180 \textdegree - \angle A - \angle B \\
 \end{aligned}
 \end{equation}
 
@@ -2160,6 +2160,74 @@ k\vec{p}\{kx,ky\}
 	\end{equation}
 \end{proposition}
 Вышеприведённая формула широко используется в~геодезических работах.
+
+\subsubsection{Угол между векторами}
+На~рисунке~\ref{fig:vec-angle} изображены векторы~${\textstyle \vec{u}}$ и~${\textstyle \vec{v}}$. Для нахождения угла между ними необходимо взять некоторую точку~${\textstyle O}$ и~отложить из~неё~векторы~${\textstyle \vec{u'},\vec{v'}}$ равные векторам~${\textstyle \vec{u},\vec{v}}$ соответственно. Угол между векторами~${\textstyle \vec{u'},\vec{v'}}$ и~будет искомым углом между векторами~${\textstyle \vec{u},\vec{v}}$. Как~правило используется следующее обозначение: ${\textstyle \angle \vec{u} \vec{v}}$.
+\begin{figure}[ht]
+	\centering % Центрируем картинку
+	\includegraphics[width=0.8\textwidth]{vectors-angle.pdf}
+	\caption{Угол между векторами}\label{fig:vec-angle}
+\end{figure}
+Значение угла между векторами не~зависит от~координат точки~${\textstyle O}$. Два~вектора называют перпендикулярными, если угол между ними равен~${\textstyle 90\textdegree}$, т.\,е:
+\begin{equation}\label{eq:perpendicular-vectors}
+\vec{a} \perp \vec{b} \Leftrightarrow \angle \vec{a} \vec{b} = 90 \textdegree.
+\end{equation}
+\begin{proposition}
+	Угол между двумя противоположно направленными векторами равен~${\textstyle 180\textdegree}$.
+\end{proposition}
+\begin{proposition}
+	Угол между двумя сонаправленными векторами равен~${\textstyle 0\textdegree}$.
+\end{proposition}
+\begin{proposition}
+	Угол между двумя векторами, один из~которых является \emph{нулевым вектором} равен~${\textstyle 0\textdegree}$.
+\end{proposition}
+
+\subsubsection{Скалярное произведение векторов}
+\begin{description}
+	\item[Скалярное произведение (внутреннее произведение)]  "--- результат операции над~двумя векторами, являющийся скаляром, т.\,е.~числом, не~зависящим от~выбора системы координат.
+\end{description}
+Для~скалярного произведения векторов~${\textstyle \vec{a} \vec{b}}$ обычно используется одно из~следующих обозначений:
+\begin{equation*}\label{eq:scalar-product-of-vectors-0}
+\begin{aligned}
+(a,b)\\
+a \cdot b\\
+\vec{a} \cdot \vec{b}\\
+\langle a,b \rangle
+\end{aligned}
+\end{equation*}
+В~простейшем случае, а~именно в~случае конечномерного вещественного евклидового пространства, иногда используют геометрическое определение скалярного произведения ненулевых векторов~${\textstyle \vec{a},\vec{b}}$ как~произведения длин этих векторов на~косинус угла между ними.
+\begin{equation}\label{eq:scalar-product-of-vectors-1}
+\vec{a} \times \vec{b} = |\vec{a}||\vec{b}|\times \cos \angle \alpha
+\end{equation}
+Равносильное определение:
+\begin{description}
+	\item[скалярное произведение]  "--- произведение длины проекции первого вектора на~второй и~длины второго вектора. Если хотя~бы один из~векторов нулевой, то~произведение считается равным нулю. 
+\end{description}
+Некоторые примеры:
+\begin{equation}\label{eq:scalar-product-of-vectors-2}
+\begin{aligned}
+\vec{a} \perp \vec{b} \Leftrightarrow \vec{a} \times \vec{b} = 0\\
+\vec{a} \uparrow \uparrow \vec{b} \Leftrightarrow \vec{a} \times \vec{b} = |\vec{a}|\times|\vec{b}|\\
+\vec{a} \uparrow \downarrow \vec{b} \Leftrightarrow \vec{a} \times \vec{b} = -|\vec{a}|\times|\vec{b}|\\
+\vec{a}\times \vec{a} = |\vec{a}|\times|\vec{a}| \times \cos 0\textdegree = |\vec{a}|^2
+\end{aligned}
+\end{equation}  
+\subsubsection{Скалярное произведение векторов в~координатах}
+Рассмотрим два вектора с~заданными координатами: ${\textstyle \vec{a}\{x_{1},y_1{}\},\vec{b}\{x_{2},y_{2}\}}$. Тогда
+\begin{equation}\label{eq:scalar-product-of-vectors-3}
+\vec{a}\times \vec{b} = x_{1}x_{2}+y{1}y{2}.
+\end{equation}
+Таким образом,
+\begin{description}
+	\item[скалярное произведение в~координатах]  "--- есть сумма произведений соответствующих координат. 
+\end{description}
+Из~этого проистекает ряд следствий.
+\begin{equation}\label{eq:scalar-product-of-vectors-4}
+\vec{a} \perp \vec{b} \Leftrightarrow x_{1}x_{2}+y{1}y{2} = 0
+\end{equation}
+\begin{equation}\label{eq:scalar-product-of-vectors-5}
+\cos \alpha = \frac{\vec{a} \times \vec{b}}{|\vec{a}|\times |\vec{b}|} = \frac{x_{1}x_{2}+y_{1}y_{2}}{\sqrt{x_{1}^{2}+y_{1}^2}\times \sqrt{x_{2}^{2}+y_{2}^2}}
+\end{equation}
 \section{Функции}
 \subsection{Понятие функции}
 \textbf{Функция} является одним из~самых важных понятий в~математике.
