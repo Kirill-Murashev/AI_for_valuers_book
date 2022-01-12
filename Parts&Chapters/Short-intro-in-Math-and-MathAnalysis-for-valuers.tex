@@ -1682,17 +1682,45 @@ S=ab,
 где \textit{a, b} "--- длина не~равных между собой сторон.
 
 Площадь параллелограмма:
-\begin{equation}\label{eq:parallelogram-square}
+\begin{equation}\label{eq:parallelogram-square-1}
 S=ah,
 \end{equation}
 где \textit{a} "--- длина стороны, \textit{h} "--- длина высоты, опущенной на~эту сторону. На~рисунке~\ref{fig:parallelogram-1} такой стороной является, например \textit{d}, а~высотой "--- отрезок \textit{h}. Также возможно использование, например \textit{c} и~\textit{t}.
 
 Площадь трапеции:
-\begin{equation}\label{eq:parallelogram-square}
+\begin{equation}\label{eq:parallelogram-square-2}
 S=\frac{ab}{2}h,
 \end{equation}
 где, \textit{a, b} "--- основания трапеции, \textit{h} "--- её~высота.
 
+\subsubsection{Правильный многоугольник}
+\paragraph{Определение и~свойства}
+\begin{description}
+	\item[Правильный многоугольник] "--- многоугольник, все~стороны и~углы которого равны.
+\end{description}
+Примерами правильных многоугольников в~частности являются: равносторонний треугольник и~квадрат. Правильным может быть любой многоугольник, имеющий ${\textstyle n,\ n \in \mathbb{N}}$ сторон. Угол правильного многоугольника равен:
+\begin{equation}\label{eq:n-angles-inrehular-polygon}
+\alpha = \frac{(n-2)180\textdegree}{n}: n \in \mathbb{N}
+\end{equation}
+\paragraph{Окружность, описанная около правильного многоугольника}
+\begin{description}
+	\item[Окружность, описанная вокруг многоугольника] "--- окружность, проходящая через все~его~вершины.
+\end{description}
+
+\begin{theorem}
+	Около любого правильного многоугольника можно описать окружность.
+\end{theorem}
+Рассмотрим рисунок~\ref{fig:regular-octagon-and-circle} и~докажем данную теорему. Рассмотрим n-угольник <<poly1>>, имеющий n-вершин. Возьмём биссектрисы углов~${\textstyle \alpha, \beta}$. Точку пересечения этих биссектрис обозначим как~${\textstyle O}$. Поскольку в~правильном многоугольнике равны все~углы и~все~стороны, ${\textstyle \angle OCD = \angle ODC}$. Следовательно~${\textstyle \triangle COD}$ является равнобедренным, следовательно~${\textstyle |OC| = |OD|}$. Далее соединим точку~${\textstyle O}$ с~вершиной~${\textstyle B}$. Рассмотрим треугольники~${\textstyle \triangle COD, \triangle COB}$. Они~равны между собой по~первому признаку равенства треугольников, поскольку сторона~${\textstyle OC}$ является общей, а~стороны~${\textstyle DC,CB}$ равны по~признаку правильного многоугольника, при~этом~${\textstyle \angle DOC = \angle COB }$, поскольку они~образованы биссектрисой~${\textstyle \angle \beta}$. В~силу того, что~${\textstyle \triangle COD = \triangle COB}$ равны и~их~соответствующие стороны. Аналогичным образом доказывается равенство треугольников, образуемых последующим соединением точки пересечения биссектрис со~~всеми вершинами многоугольника <<poly1>>. Следовательно точка~${\textstyle O}$ равноудалена от~всех его~вершин, а~значит вокруг многоугольника можно описать окружность.
+\begin{figure}[ht]
+	\centering % Центрируем картинку
+	\includegraphics[width=0.8\textwidth]{regular-octagon-and-circle.pdf}
+	\caption{Правильный многоугольник и~описанная около него окружность}\label{fig:regular-octagon-and-circle}
+\end{figure}
+
+\paragraph{Окружность, вписанная в~правильный многоугольник}
+\begin{description}
+	\item[Окружность, вписанная в~правильный многоугольник] "--- окружность, касающаяся всех его~сторон.
+\end{description}
 
 \subsection{Осевая симметрия}
 \begin{description}
@@ -2215,7 +2243,7 @@ a \cdot b\\
 \subsubsection{Скалярное произведение векторов в~координатах}
 Рассмотрим два вектора с~заданными координатами: ${\textstyle \vec{a}\{x_{1},y_1{}\},\vec{b}\{x_{2},y_{2}\}}$. Тогда
 \begin{equation}\label{eq:scalar-product-of-vectors-3}
-\vec{a}\times \vec{b} = x_{1}x_{2}+y{1}y{2}.
+\vec{a}\times \vec{b} = x_{1}x_{2}+y_{1}y_{2}.
 \end{equation}
 Таким образом,
 \begin{description}
@@ -2223,11 +2251,21 @@ a \cdot b\\
 \end{description}
 Из~этого проистекает ряд следствий.
 \begin{equation}\label{eq:scalar-product-of-vectors-4}
-\vec{a} \perp \vec{b} \Leftrightarrow x_{1}x_{2}+y{1}y{2} = 0
+\vec{a} \perp \vec{b} \Leftrightarrow x_{1}x_{2}+y_{1}y{2} = 0
 \end{equation}
 \begin{equation}\label{eq:scalar-product-of-vectors-5}
 \cos \alpha = \frac{\vec{a} \times \vec{b}}{|\vec{a}|\times |\vec{b}|} = \frac{x_{1}x_{2}+y_{1}y_{2}}{\sqrt{x_{1}^{2}+y_{1}^2}\times \sqrt{x_{2}^{2}+y_{2}^2}}
 \end{equation}
+
+\subsubsection{Свойства скалярного произведения векторов}
+Свойствами скалярного произведения являются:
+\begin{enumerate}
+	\item скалярный квадрат любого вектора строго не~отрицателен: ${\textstyle \vec{a}^2 \geq 0: \vec{a} \neq 0,\ \vec{a}^2 = 0: \vec{a} = 0}$
+	\item коммутативность: ${\textstyle \vec{a} \times \vec{b} = \vec{b} \times \vec{a}}$
+	\item дистрибутивность относительно сложения: ${\textstyle (\vec{a}+\vec{b})\times \vec{c} = \vec{a} \times \vec{c} + \vec{b} \times \vec{c}}$
+	\item линейность относительно константы: ${\textstyle (k\vec{a})\vec{b}=k(\vec{a}\vec{b})}$.  	
+\end{enumerate}
+
 \section{Функции}
 \subsection{Понятие функции}
 \textbf{Функция} является одним из~самых важных понятий в~математике.
