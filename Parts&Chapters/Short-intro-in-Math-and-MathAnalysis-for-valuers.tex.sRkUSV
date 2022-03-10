@@ -2528,22 +2528,6 @@ S_{l}=\frac{\pi l^2 \angle \alpha}{360} = \pi l r.
 \frac{1}{3}Sh=\frac{1}{3}\pi r^2 h
 \end{equation}
 
-\begin{description}
-	\item[Сфера] "--- множество точек в~пространстве, равно удалённых от~заданной точки на~заданное расстояние. Заданная точка называется \emph{центром сферы}. Заданное расстояние "--- \emph{радиусом}.
-\end{description}
-Если две точки сферы, соединить отрезком, проходящим через её~центр, то~такой отрезок является \emph{диаметром сферы}.
-
-\begin{description}
-	\item[Шар] "--- геометрическое тело, ограниченной сферой.
-\end{description}
-Объём шара определяется по~формуле
-\begin{equation}\label{eq:solid-sphere-volume}
-V=\frac{4}{3}\pi r^3.
-\end{equation}
-Площадь поверхности сферы определяется по~формуле
-\begin{equation}\label{eq:sphere-surface-square}
-S=4\pi r^2
-\end{equation}
 
 \section{Функции}
 \subsection{Понятие функции}
