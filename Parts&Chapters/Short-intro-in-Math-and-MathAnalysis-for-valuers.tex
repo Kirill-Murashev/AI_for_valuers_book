@@ -108,6 +108,11 @@
 		\end{itemize} 
 	\item[Отрицание~(инверсия, логическое <<НЕ>>)] "--- унарная операция над~суждениями, результатом которой является суждение, <<противоположное>> исходному. Обозначается знаком~${\textstyle \neq}$ перед суждением.
 	\item[Дистрибутивность~(распределительный закон "---)] свойство согласованности двух бинарных операций, определённых на~одном и~том~же множестве. Одна из~операций предполагается ассоциативной, другая "--- коммутативной. 
+	\item[Поле (аглебра)] "--- множество, для~элементов которого определены операции сложения, взятия противоположного значения, умножения и~деления (кроме деления на~ноль), причём свойства этих операций близки к~свойствам обычных числовых операций. Простейшим полем является поле рациональных чисел (дробей).
+	\item[Транзитивноссть] "--- свойство бинарного отношения. Бинарное отношение ${\textstyle R}$ на~множестве ${\textstyle X}$ называется транзитивным, если для~любых трёх элементов множества ${\textstyle a,b,c}$ выполнение отношений ${\textstyle aRb}$ и~${\textstyle bRc}$ влечёт выполнение отношения ${\textstyle aRc}$. Таким образом, отношение ${\textstyle R}$ транзитивно, если
+	\begin{equation}\label{eq:transitivity}
+	\forall a,b,c \in X, aRb \wedge bRc \Rightarrow aRc.
+	\end{equation}
 \end{description}
 \subsection{Виды чисел}
 \begin{description}
@@ -139,9 +144,111 @@
 			\end{cases}
 		\end{equation}
 \end{description}
-	
+Рассмотрим понятие делимости натуральных чисел. Пусть существуют два~натуральных числа \textit{a, b}. Говорят, что~\textit{a} делится на~\textit{b}, если~найдётся такое натуральное число~\textit{q}, произведение которого на~\textit{b} даёт \textit{a}. Иными словами
+\begin{equation}\label{eq:natural-numbers-divisibility}
+a,b,q \in \mathbb{N}, a=b\times q \Rightarrow a \vdots b.
+\end{equation}
+Рассмотрим некоторые свойства делимости натуральных чисел.
+\begin{enumerate}
+	\item ${\textstyle a \vdots b, b \vdots c \Rightarrow a \vdots c, a,b,c \in \mathbb{N}}$;
+	\item ${\textstyle a \vdots c, b \vdots c \Rightarrow (a+b) \vdots c, a,b,c \in \mathbb{N}}$.
+\end{enumerate}
+Рассмотрим также некоторые признаки делимости.
+\begin{enumerate}
+	\item ${\textstyle a \vdots 2 \Leftrightarrow last\_number \vdots 2}$;
+	\item ${\textstyle a \vdots 5 \Leftrightarrow last\_number \vdots 5}$;
+	\item ${\textstyle a \vdots 4 \Leftrightarrow two\_last\_numbers \vdots 4}$;
+	\item ${\textstyle a \vdots 3 \Leftrightarrow \sum{numbers} \vdots 3}$;
+	\item ${\textstyle a \vdots 9 \Leftrightarrow \sum{numbers} \vdots 9}$.
+\end{enumerate}
+\begin{description}
+	\item[Простое число] "--- натуральное число называется простым, если оно~имеет ровно два делителя: единицу и~само себя.
+\end{description}
 	\item[Целыми числами] являются все~\emph{натуральные числа}, все~числа противоположные им~по~знаку, а~также число ноль. Множество целых чисел обозначается символом~$\mathbb{Z}$.
-	\item[Рациональными числами] являются дроби вида $\frac{m}{n}$, где~ $m \in \mathbb{Z}$ и~$n \in \mathbb{N}$. Множество \emph{рациональных чисел} обозначается символом $\mathbb{Q}$.
+		
+	Во~множестве целых чисел определены три основные арифметические операции: сложение, обратное к~сложению вычитание и~умножение. Имеется также важная операция, специфическая для~натуральных и~целых чисел: деление с~остатком. Наконец, для~целых чисел определён порядок, позволяющий сравнивать числа друг с~другом. Основные свойства сложения целых чисел:
+		\begin{description}
+			\item[коммутативность~(переместительность):] ${\textstyle a+b=b+a: a,b \in \mathbb{Z}}$;
+			\item[ассоциативность~(сочетательность):] ${\textstyle a+(b+c)=(a+b)+c: a,b \in \mathbb{Z}}$;
+			\item[свойство нуля:] ${\textstyle a+0=a: a \in \mathbb{Z}}$;
+			\item[свойство противоположного элемента] ${\textstyle a+(-1)=0: a \in \mathbb{Z}}$;
+		\end{description} 
+	Основные свойства умножения и~возведения в~степени целых чисел:
+		\begin{description}
+			\item[коммутативность~(переместительность):] ${\textstyle a \times b = b \times a: a,b \in \mathbb{Z}}$;
+			\item[ассоциативность~(сочетательность):] ${\textstyle a \times (b \times c)=(a \times b) \times c: a,b,c \in \mathbb{Z}}$;
+			\item[свойство единицы:] ${\textstyle a \times 1 = a: a \in \mathbb{Z}}$;
+			\item[свойство нуля:] ${\textstyle a \times 0 = 0: a \in \mathbb{Z}}$;
+			\item[дистрибутивность умножения относительно сложения:] ${\textstyle a \times (b+c)=a \times b + b \times c: a,b,c \in \mathbb{Z}}$.
+		\end{description}
+	\item[Рациональными числами] являются дроби вида $\frac{m}{n}$, где~ $m \in \mathbb{Z}$ и~$n \in \mathbb{N}$. Множество \emph{рациональных чисел} обозначается символом $\mathbb{Q}$. Рациональные числа замкнуты относительно всех четырёх арифметических действий: сложения, вычитания, умножения и~деления (кроме деления на~ноль); в~общей алгебре такая алгебраическая структура называется \emph{полем}. 
+	Множество рациональных чисел может быть записано в~следующем виде:
+	\begin{equation}\label{eq:rational-numbers-1}
+	\mathbb{Q} = \{\frac{m}{n}|m \in \mathbb{Z}, n \in \mathbb{N}\}.
+	\end{equation}
+	Рациональные числа имеют шестнадцать основных свойств.
+	\begin{description}
+		\item[Упорядоченность "---] ${\textstyle \forall a,b \in \mathbb{Q}}$ существует правило позволяющее однозначно идентифицировать между ними одно и~только одно из~трёх отношений: <<${\textstyle <}$>>, <<${\textstyle >}$>> либо <<${\textstyle =}$>>. Это~правило называется \emph{правилом упорядочения}.
+		\item[Операция сложения "---] "--- ${\textstyle \forall a,b \in \mathbb{Q}}$ существует бинарная операция сложения, которая ставит им~в~соответствие некоторое рациональное число~${\textstyle c}$.  При~этом само число~${\textstyle c}$ называется суммой чисел ${\textstyle a}$ и~${\textstyle b}$ и~обозначается ${\textstyle \left(a+b\right)}$, а~процесс отыскания такого числа называется сложением. Правило сложения имеет следующий вид:
+		\begin{equation}\label{eq:rational-numbers-sum}
+		a=\frac{m_{a}}{n_{a}}, 	b=\frac{m_{b}}{n_{b}}:a+b \equiv \frac{m_{a}}{n_{a}} + \frac{m_{b}}{n_{b}} = \frac{m_{a} \times n_{b} + m_{b} \times n_{a}}{n_{a}\times n_{b}}. 
+		\end{equation}
+		\item[Операция умножения "---] ${\textstyle \forall a,b \in \mathbb{Q}}$ существует бинарная операция умножения, которая ставит им~в~соответствие некоторое рациональное число ${\textstyle c}$. При~этом само число ${\textstyle c}$ называется произведением чисел ${\textstyle a}$ и~${\textstyle b}$ и~обозначается~${\textstyle \left(a\times b\right)}$, а~процесс отыскания такого числа также называется \emph{умножением}.
+		Правило умножения имеет следующий вид:
+		\begin{equation}\label{eq:rational-numbers-multiplication}
+		a=\frac{m_{a}}{n_{a}}, b=\frac{m_{b}}{n_{b}}: a \times b \equiv \frac{m_{a}}{n_{a}} \times \frac{m_{b}}{n_{b}} = \frac{m_{a} \times m_{b}}{n_{a} \times n_{b}}.
+		\end{equation}
+		\item[Транзитивность отношения порядка "---] ${\textstyle \forall a,b,c \in \mathbb{Q}: a<b, b<c \Rightarrow a<c, a=b, b=c, \Rightarrow a=c}$.
+		\item[Коммутативность сложения "---] от~перемены мест рациональных слагаемых сумма не~меняется.
+		\begin{equation}\label{eq:rational-numbers-addition-commutativity}
+		\forall a,b \in \mathbb{Q}: a+b=b+a
+		\end{equation}
+		\item[Ассоциативность сложения "---] Порядок сложения рациональных чисел не~влияет на~результат.
+		\begin{equation}\label{eq:rational-numbers-addition-associativity}
+		\forall \forall a,b,c \in \mathbb{Q}: a+(b+c)=(a+b)+c
+		\end{equation}
+		\item[Наличие нуля "---] существует рациональное число 0, которое сохраняет любое другое рациональное число при~суммировании.
+		\begin{equation}\label{eq:rational-numbers-zero}
+		\exists 0 \in \mathbb{Q}: \forall a \in \mathbb{Q} a+0=a
+		\end{equation}
+		\item[Наличие противоположных чисел "---] Любое рациональное число имеет противоположное рациональное число, при~суммировании с~которым даёт~0.
+		\begin{equation}\label{eq:eq:rational-numbers-opposite}
+		\forall a \in \mathbb{Q} \exists (-a) \in \mathbb{Q}: a+(-a)=0
+		\end{equation}
+		\item[Коммутативность умножения "---] от~перемены мест рациональных множителей произведение не~меняется.
+		\begin{equation}\label{eq:rational-numbers-production-commutativity}
+		\forall a,b \in \mathbb{Q}: a \times b = b \times a
+		\end{equation}
+		\item[Ассоциативность умножения "---] порядок перемножения рациональных чисел не~влияет на~результат.
+		\begin{equation}\label{eq:rational-numbers-production-associativity}
+		\forall a,b,c \in \mathbb{Q}: (a \times b) \times c = a \times (b \times c)
+		\end{equation}
+		\item[Наличие единицы "---] существует рациональное число~1, которое сохраняет любое другое рациональное число при~умножении.
+		\begin{equation}\label{eq:rational-number-one}
+		\exists 1 \in \mathbb{Q}: \forall a \in \mathbb{Q} a \times 1 = a
+		\end{equation}
+		\item[Наличие обратных чисел "---] любое ненулевое рациональное число имеет обратное рациональное число, умножение на~которое даёт~1.
+		\begin{equation}\label{eq:rational-opposite-numbers}
+		\forall a \in \mathbb{Q}, a \neq 0: \exists a^{-1} \in \mathbb{Q}: a \times a^{-1} = 1
+		\end{equation}
+		\item[Дистрибутивность умножения относительно сложения "---] операция умножения согласована с~операцией сложения посредством распределительного закона.
+		\begin{equation}\label{eq:rational-numbers-distributivity-of-mult-erel-to-sum}
+		\forall a,b,c \in \mathbb{Q}: (a+b) \times c = a \times c + b \times c
+		\end{equation}
+		\item[Связь отношения порядка с~ "---операцией сложения "---] к~левой и~правой частям рационального неравенства можно прибавлять одно и~то~же рациональное число.
+		\begin{equation}\label{eq:rational-numbers-relation-of-order-sum}
+		\forall a,b,c \in \mathbb{Q} a<b \Leftrightarrow  a + c < b +c
+		\end{equation}
+		\item[Связь отношения порядка с операцией умножения "---] левую и~правую части рационального неравенства можно умножать на~одно и~то~же положительное рациональное число.
+		\begin{equation}\label{eq:rational-numbers-relation-of-order-mult}
+		\forall a,b,c \in \mathbb{Q}, c>0: a<b \Leftrightarrow  a \times c < b \times c
+		\end{equation}
+		\item[Аксиома Архимеда "---] Каково~бы ни~было рациональное число~${\textstyle a}$, можно взять столько единиц, что~их~сумма превзойдёт~${\textstyle a}$.
+		\begin{equation}\label{eq:rational-numbers-archimed-axiom}
+		\forall a \in \mathbb{Q} \exists n \in \mathbb{N}:\sum_{k=1}^{n}1 > a \Leftrightarrow \forall a \in \mathbb{Q} \exists n \in \mathbb{N}: n >a
+		\end{equation}
+	\end{description}
+	
 	\item[Иррациональными числами] называют бесконечные непериодические дроби, например $\sqrt{2}$, число $\pi \approx 3.15159$, число~$e \approx 2.718281828459$ и~т.\,д. Множество иррациональных чисел обозначается символом $\mathbb{I}$.
 	\item[Вещественными~(действительными) числами] называют множество чисел включающее в~себя множества \emph{рациональных} и~\emph{иррациональных чисел}. Множество вещественных чисел обозначается символом~$\mathbb{R}$.
 	\item[Комплексными числами) числами] называют расширение множества вещественных чисел. Такие числа могут быть записаны в~виде $z=x+iy$, где~$i$ "--- мнимая единица, для~которой выполняется равенство $i^2=-1$. Множество \emph{комплексных чисел} обозначается символом~$\mathbb{C}$.
