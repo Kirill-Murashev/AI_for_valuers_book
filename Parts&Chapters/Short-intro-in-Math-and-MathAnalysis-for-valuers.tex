@@ -3068,12 +3068,16 @@ f(x)=f(x \pm T).
 \begin{proposition}
 	Строго монотонная функция является обратимой.
 \end{proposition}
-Поскольку у~обратимой функции каждому её~значению соответствует единственное значение аргумента, её~график можно рассматривать как~график некоторого выражения относительное \textit{y}.
+Поскольку у~обратимой функции каждому её~значению соответствует единственное значение аргумента, её~график можно рассматривать как~график некоторого выражения относительное \textit{y}, т.\,е.
+\begin{equation}\label{eq:reversible-function}
+x=f^{-1}(y).
+\end{equation}
+Данная функция является \emph{обратной} к~функции \textit{f(x)}.
 
 \begin{figure}[ht]
 	\centering % Центрируем картинку
 	\includegraphics[width=\textwidth]{In-Reversible-functions.pdf}
-	\caption{Обратимая и~необратимая функция}\label{fig:In-Reversible-functions}
+	\caption{Обратимая и~необратимая функция, взаимно обратные функции}\label{fig:In-Reversible-functions}
 \end{figure}
 
 \begin{description}
@@ -3111,8 +3115,16 @@ g(f(x))=x\ \forall\ x \in X.
 Чтобы найти обратную функцию, нужно решить уравнение~${\displaystyle y=f(x)}$ относительно~$ {\displaystyle x}$. Если оно~имеет более чем~один корень, то~функции, обратной к~${\displaystyle f}$ не~существует. Таким образом, функция~${\displaystyle f(x)}$ обратима на~интервале~${\displaystyle (a;b)}$ тогда и~только тогда, когда на~этом интервале она~взаимно-однозначна.
 
 Для~непрерывной функции~${\displaystyle F(y)}$ выразить~${\displaystyle y}$ из~уравнения~${\displaystyle x-F(y)=0}$ возможно в~том и~только том~случае, когда функция~${\displaystyle F(y)}$ строго монотонна. Тем~не~менее, непрерывную функцию всегда можно обратить на~промежутках её~строгой монотонности. Например, ${\displaystyle {\sqrt {x}}}$ является обратной функцией к~${\displaystyle x^{2}}$ на~${\displaystyle [0,+\infty )}$, хотя на~промежутке~${\displaystyle (-\infty ,0]}$ обратная функция другая: ${\displaystyle -{\sqrt {x}}}$.
-
-
+\begin{Thexmpl}
+	Рассмотрим некоторую функцию ${\displaystyle p:y=2x-20}$ (изображена на~рисунке~\ref{fig:In-Reversible-functions} красным цветом). Далее выразим \textit{x} через \textit{y}. ${\displaystyle 2x=y+20 \Rightarrow x=\frac{x+20}{2}}$. Далее заменим \textit{x} на~\textit{y}, а~\textit{0} на~\textit{x}, получив таким образом функцию~${\displaystyle q:y=\frac{x+20}{2}}$~(изображена на~рисунке~\ref{fig:In-Reversible-functions} зелёным цветом), являющуюся обратной к~функции~\textit{p}.
+\end{Thexmpl}
+\begin{Thexmpl}
+	Рассмотрим некоторую функцию ${\displaystyle r:y=x^{2}, x \in [0;\infty]}$ (изображена на~рисунке~\ref{fig:In-Reversible-functions} фиолетовым цветом). Отметим, что~квадратичная функция сама по~себе не~является обратимой в~целом, однако является обратимой на~участке своей строгой монотонности. Далее выразим \textit{x} через \textit{y}. ${\displaystyle x=\sqrt{y}}$. Далее заменим \textit{x} на~\textit{y}, а~\textit{0} на~\textit{x}, получив таким образом функцию~${\displaystyle s:y=\sqrt{x}}$~(изображена на~рисунке~\ref{fig:In-Reversible-functions} коричневым цветом), являющуюся обратной к~функции~\textit{r}.
+\end{Thexmpl}
+Следует обратить внимание, что~графики взаимно обратных функция симметричны относительно прямой \textit{y=x}~(изображена на~рисунке~\ref{fig:In-Reversible-functions} чёрным цветом).
+\begin{proposition}
+	Графики взаимно обратных функций симметричны относительно прямой, задаваемой уравнением \textit{y=x}.
+\end{proposition}
 
 
 \subsection{Частные примеры функций}
