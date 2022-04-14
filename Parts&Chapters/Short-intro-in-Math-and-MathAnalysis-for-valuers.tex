@@ -2,7 +2,7 @@
 \input{standard_preamble.tex}
 
 \title{Введение в~математику и~математический анализ~для~оценщиков}
-\subtitle{Введення в~математику та~математичний аналіз для~оцінювачів}
+\subtitle{\foreignlanguage{English}{Introduction to~Mathematics and~Mathematical Analysis for~appraisers}}
 \author{К.\,А.\,Мурашев}
 
 \begin{document}
@@ -2812,6 +2812,25 @@ V=\frac{4}{3}\pi r^3.
 \begin{equation}\label{eq:sphere-surface-square}
 S=4\pi r^2
 \end{equation}
+%
+\subsection{Числовая окружность}
+Числовая окружность представляет собой математическую модель вещественных чисел. Рассмотрим единичную окружность, изображённую на~рисунке~\ref{fig:numeric-circle}. Поскольку ${\textstyle R = 1}$, то~${\textstyle L = 2 \pi}$. Отрезок ${\textstyle (0,0; 1,0})$ является начальным радиусом этой окружности. Два~взаимно перпендикулярных диаметра этой окружности ${\textstyle (-1,0; 1,0), (0,1; 0,-1)}$ делят окружность на~четыре равные части. Тогда при~движении против часовой стрелки из~точки, являющейся концом начального радиуса, дуга~${\textstyle (1,0; 0,1)}$ образует \emph{первую четверть}, дуга~${\textstyle (0,1; -1,0)}$ "--- \emph{вторую четверть}, дуга~${\textstyle (-1,0; 0,-1)}$ "--- \emph{третью четверть}, дуга~${\textstyle (0,-1; 1,0)}$ "--- четвёртую четверть. В~этом случае любому вещественному числу можно поставить в~соответствие некоторую точку на~этой окружности. Пусть существует некоторое число~${\textstyle t \in \mathbb{R}}$, которому соответствует точка \textit{M(t)} на~основании следующего правила:
+\begin{equation}\label{eq:numeric-circle}
+	\begin{aligned}
+	t& \in \mathbb{R} \mapsto M(t):\\
+	t& > 0 \Rightarrow \curvearrowleft \text{на~расстояние t, тогда конечная точка будет являться M(t)};\\
+	t& < 0 \Rightarrow \curvearrowright \text{на~расстояние |t|, тогда конечная точка будет являться M(t)};\\
+	t& = 0 \Rightarrow M(t)=(1,0).
+	\end{aligned}
+\end{equation}
+Поскольку длина данной окружности равна ${\textstyle 2 \pi}$, несложно найти следующие точки: ${\textstyle 0, \frac{\pi}{2}, \pi, \frac{3 \pi}{2}, 2 \pi}$. В~случае добавления к~любой точки числовой окружности ${\textstyle 2 \pi k, k \in \mathbb{Z}}$ её~координаты не~изменятся.
+%
+\begin{figure}[ht]
+	\centering % Центрируем картинку
+	\includegraphics[width=0.8\textwidth]{numeric-circle.pdf}
+	\caption{Числовая окружность}\label{fig:numeric-circle}
+\end{figure}
+%
 
 \section{Функции}
 \subsection{Понятие функции}
