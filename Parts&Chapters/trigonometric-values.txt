@@ -1,0 +1,44 @@
+%
+\begin{table}[ht]
+	\caption{Trigonometric values}  \label{tab:trigonometric-values}
+	\centering
+	\footnotesize
+	\begin{tabularx}
+		{\textwidth}{>{$}l<{$}>{$}l<{$}|>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}}
+		\hline
+		\text{Rad}&\text{Deg}&\sin&\cos&\tan&\cot&\sec&\csc\\
+		\hline
+		0&0&0&1&0&\text{undef}&1&\text{undef}\\
+		\hline
+		\dfrac{\pi}{12}&15\textdegree&\dfrac{\sqrt{6}-\sqrt{2}}{4}&\dfrac{\sqrt{6}+\sqrt{2}}{4}&2-\sqrt{3}&2+\sqrt{3}&\sqrt{6}-\sqrt{2}&\sqrt{6}+\sqrt{2}\\
+		\hline
+		\dfrac{\pi}{10}&18\textdegree&\dfrac{\sqrt{5}-1}{4}&\dfrac{\sqrt{10+2\sqrt{5}}}{4}&\dfrac{\sqrt{25-10\sqrt{5}}}{5}&\sqrt{5+2\sqrt{5}}&\dfrac{\sqrt{50-10\sqrt{5}}}{5}&1+\sqrt{5}\\
+		\hline
+		\dfrac{\pi}{8}&22.5\textdegree&\dfrac{\sqrt{2-\sqrt{2}}}{2}&\dfrac{\sqrt{2+\sqrt{2}}}{2}&\sqrt{2}-1&\sqrt{2}+1&\sqrt{4-2\sqrt{2}}&\sqrt{4+2\sqrt{2}}\\
+		\hline
+		\dfrac{\pi}{6}&30\textdegree&\dfrac{1}{2}&\dfrac{\sqrt{3}}{2}&\dfrac{\sqrt{3}}{3}&\sqrt{3}&\dfrac{2\sqrt{3}}{3}&2\\
+		\hline
+		\dfrac{\pi}{5}&36\textdegree&\dfrac{\sqrt{10-2\sqrt{5}}}{4}&\dfrac{1+\sqrt{5}}{4}&\sqrt{5-2\sqrt{5}}&\dfrac{\sqrt{25+10\sqrt{5}}}{5}&\sqrt{5}-1&\dfrac{\sqrt{50+10\sqrt{5}}}{5}\\
+		\hline
+		\dfrac{\pi}{4}&45\textdegree&\dfrac{\sqrt{2}}{2}&\dfrac{\sqrt{2}}{2}&1&1&\sqrt{2}&\sqrt{2}\\
+		\hline
+		\dfrac{3\pi}{10}&54\textdegree&\dfrac{1+\sqrt{5}}{4}&\dfrac{\sqrt{10-2\sqrt{5}}}{4}&\dfrac{\sqrt{25+10\sqrt{5}}}{5}&\sqrt{5-2\sqrt{5}}&\dfrac{\sqrt{50+10\sqrt{5}}}{5}&\sqrt{5}-1\\
+		\hline
+		\dfrac{\pi}{3}&60\textdegree&\dfrac{\sqrt{3}}{2}&\dfrac{1}{2}&\sqrt{3}&\dfrac{\sqrt{3}}{3}&2&\dfrac{2\sqrt{3}}{3}\\
+		\hline
+		\dfrac{3\pi}{8}&67.5\textdegree&\dfrac{\sqrt{2+\sqrt{2}}}{2}&\dfrac{\sqrt{2-\sqrt{2}}}{2}&\sqrt{2}+1&\sqrt{2}-1&\sqrt{4+2\sqrt{2}}&\sqrt{4-2\sqrt{2}}\\
+		\hline
+		\dfrac{2\pi}{5}&72\textdegree&\dfrac{\sqrt{10+2\sqrt{5}}}{4}&\dfrac{\sqrt{5}-1}{4}&\sqrt{5+2\sqrt{5}}&\dfrac{\sqrt{25-10\sqrt{5}}}{5}&1+\sqrt{5}&\dfrac{\sqrt{50-10\sqrt{5}}}{5}\\
+		\hline
+		\dfrac{5\pi}{12}&75\textdegree&\dfrac{\sqrt{6+\sqrt{2}}}{4}&\dfrac{\sqrt{6-\sqrt{2}}}{4}&2+\sqrt{3}&2-\sqrt{3}&\sqrt{6}+\sqrt{2}&\sqrt{6}-\sqrt{2}\\
+		\hline
+		\dfrac{\pi}{2}&90\textdegree&1&0&\text{undef}&0&\text{undef}&1\\
+		\hline
+		\pi&180\textdegree&0&-1&0&\text{undef}&-1&\text{undef}\\
+		\hline
+		2\pi&360\textdegree&0&1&0&\text{undef}&1&\text{undef}\\
+		\hline
+	\end{tabularx}
+	\normalsize
+\end{table}
+%
