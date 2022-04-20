@@ -12,7 +12,11 @@
 \begin{abstract}
 	Какую~бы работу не~выполнял оценщик, во~всех случаях он~имеет дело с~информацией и~данными. Часто эти~данные представляют собой числа либо могут быть формализованы иным образом. В~любом случае требуется алгоритмическая обработка входных данных и~преобразование их~в~информацию, а~в~некоторых случаях "--- в~знания. Целью данного фрагмента является формирование общих представлений об~основных понятиях и~методах математического анализа, необходимых современному оценщику. Материал построен таким образом, при~котором существует возможность ссылаться на~него при~решении практически всех математических задач, возникающих у~оценщиков, начиная со~школьной программы 5-класса, заканчивая математическим анализом, в~объёме преподаваемом на~нематематических специальностях вузов. Специфические вопросы, касающиеся частотного подхода в~математической статистике, байесовского подхода, а~также математических методов, применяемых в~машинном обучении, а~также иных специфических методов, выходящих за~рамки программы нематематических специальностей, рассмотрены в~отдельных материалах.  Автор постарался прибегать к~минимальному числу формул и~сложных определений, хотя это~и~не~вполне получилось. Поскольку конечной целью всей работы является цифровизация оценочной деятельности, в~тексте приводятся короткие листинги на~языках R и~Python, позволяющие реализовать то, о~чём говорится в~тексте.
 	
-	Данный материал писался в~трагический период. Сложно поверить в~то, что~в~2022 году "--- в~эпоху искусственного интеллекта, полёта <<Вояджеров>> за~пределами нашей звёздной системы, нанотехнологий и~мгновенного доступа ко~всем знаниям человечества c~устройства, помещающегося в~карман,"--- на~мирные города падают бомбы, дети сидят в~подвалах, а~множество людей, включая автора данного материала, покинуло свои дома и~страны.  Можно сказать, что~это~война между прошлым и~будущим. И~есть твёрдая уверенность в~том, что~только научное знание может решить проблемы человечества и~обеспечить такое будущее, в~котором не~будет места злобному и~тупому прошлому. Поэтому даже в~самое сложное время необходимо полагаться на~знания и~распространять их. Разум обязательно победит силу, будущее "--- прошлое, а~демократия "--- диктатуру. 
+	Данный материал писался в~трагический период войны России против Украины. Сложно поверить в~то, что~в~2022 году "--- в~эпоху искусственного интеллекта, полёта <<Вояджеров>> за~пределами нашей звёздной системы, нанотехнологий и~мгновенного доступа ко~всем знаниям человечества c~устройства, помещающегося в~карман,"--- на~мирные города падают бомбы, дети прячутся от~смерти в~подвалах своих домов, а~множество людей, включая автора данного материала, покинуло свои дома и~страны.  Можно сказать, что~это~война между Прошлым и~Будущим. И~есть твёрдая уверенность в~том, что~только научное знание может решить проблемы человечества и~обеспечить такое будущее, в~котором не~будет места злобному и~тупому прошлому. Поэтому даже в~самое сложное время необходимо полагаться на~знания и~распространять их. Разум обязательно победит силу, будущее "--- прошлое, а~демократия "--- диктатуру. 
+	
+	\foreignlanguage{English}{Whatever work an~appraiser does, in~all~cases he~or~she~is~dealing with information and~data. Often these data are~numbers or~can~be formalized in~some other way. In~either case, it~requires algorithmic processing of~the~input data and~converting it~to~information, and~in~some cases to~knowledge. The~purpose of~this excerpt is~to~form a~general understanding of~the~basic concepts and~methods of~mathematical analysis required by~the~modern appraiser. The~material is~structured so~that it~can~be referred to~when solving almost any~mathematical problem that arises with an~appraiser, from grade 4~school programs to~mathematical analysis in~non-mathematical courses at~universities. Specific topics related to~Frequency approach in~mathematical statistics, the~Bayesian approach, mathematical methods used in~Machine learning, as~well as~other specific methods beyond the~scope of~non-mathematical programs, are~covered in~the~separate material.  The~author tried to~use as~few formulas and~complex definitions as~possible, although this did~not quite work out. Since the~ultimate goal of~the whole work is~digitalization of~valuation activities, short listings in~R and~Python are~provided in~the~text, which allow to~implement what the~text talks about.}
+	
+	\foreignlanguage{English}{This material was~written during the~tragic period of~Russia's war against Ukraine. It~is~hard to~believe that in~the~year 2022 in~the~age of~Artificial Intelligence, Voyagers beyond our~star system, nanotechnology, and~instant access to~all~human knowledge from a~device in~your pocket bombs are~falling on peaceful cities, children are~hiding from death in~the~basement of~their homes, and~countless people, including this author, have abandoned their homes and~countries.  You~could say it's a~war between the~Past and~the~Future. There is~a~firm belief that only scientific knowledge can solve humanity's problems and~provide a~future in~which there is~no~place for~an~evil and~dull past. Therefore, even in~the~most difficult of~times, it~is~necessary to~rely on~and~spread knowledge. Intelligence will surely defeat force, the~Future will defeat the~Past, and~democracy will defeat dictatorship.}
 \end{abstract}
 
 \tableofcontents
@@ -2248,114 +2252,6 @@ l||Ox:y=y_0\\
 l||Oy:x=x_0\\
 \end{cases}
 \end{equation}
-\subsection{Тригонометрические функции}\label{trigonometric-functions}
-Ранее в~\ref{trigonometric-functions-for-acute-angle} были рассмотрены тригонометрические функции острого угла в~прямоугольном треугольнике. В~данном подразделе будут рассмотрены общие вопросы тригонометрических функций для~любого угла. Рассмотрим полуокружность с~центром~${\textstyle O}$ в~начале координат и~единичным радиусом~${\textstyle R=1}$ (рисунок~\ref{fig:trigonometric-functions-semi-circle}). Отметим точки касания осей окружностью как~${\textstyle A(1,0),\ B(0,1), C(-1,0)}$. Отрезок~${\textstyle [OA]}$ назовём начальным радиусом и~далее будет обозначать как~${\textstyle i}$, а~затем повернём его~на~некоторый угол~${\textstyle \alpha}$, получив точку~${\textstyle E}$, имеющую некоторые координаты~${\textstyle x,y}$, и~отрезок~${\textstyle [OE]}$, далее обозначаемый как~${\textstyle f}$. Следует отметить, что~поворот осуществляется строго против часовой стрелки. Из~точки~${\textstyle E}$ опустим перпендикуляр~${\textstyle h}$ на~ось абсцисс в~точку~${\textstyle D}$. Таким образом получим прямоугольный треугольник~~${\textstyle ODE}$.
-\begin{figure}[ht]
-	\centering % Центрируем картинку
-	\includegraphics[width=0.8\textwidth]{trigonometric-functions-semi-circle.pdf}
-	\caption{Единичная полуокружность}\label{fig:trigonometric-functions-semi-circle}
-\end{figure}
-Из~\ref{trigonometric-functions-for-acute-angle} следует, что~синусом угла является отношение противолежащего катета к~гипотенузе. Т.\,е.~отношение:
-\begin{equation}\label{eq:sinus-formula-1}
-\sin \alpha = \frac{h}{f},
-\end{equation} 
-при~этом данное отношение равно координате точки~${\textstyle E}$ по~оси ординат, поскольку~${\textstyle f}$ имеет единичную длину. Таким образом
-\begin{equation}\label{eq:sinus-formula-2}
-\sin \alpha = \frac{y}{1}=y.
-\end{equation}
-Данный подход снимает ограничение на~условие существования именно острого угла. При~любом значении угла синусом будет координате точки на~единичной полуокружности по~оси ординат. Далее аналогичным образом, опираясь на~определения тригонометрических функций, данные в~\ref{trigonometric-functions-for-acute-angle}, выведем формулы иных тригонометрических функций.
-\begin{equation}\label{eq:cosinus-formula-1}
-\cos \alpha = \frac{i}{f}=\frac{x}{1}=1
-\end{equation}
-\begin{equation}\label{eq:tangens-formula-1}
-\tg \alpha = \frac{h}{[OD]}=\frac{y}{x}
-\end{equation}
-\begin{equation}\label{eq:cotangens-formula-1}
-\ctg \alpha = \frac{[OD]}{h}=\frac{x}{y}
-\end{equation}
-\begin{equation}\label{eq:secans-formula-1}
-\sec \alpha = \frac{f}{x}=\frac{1}{x}
-\end{equation}
-\begin{equation}\label{eq:cosecans-formula-1}
-\cosec \alpha = \frac{f}{y}=\frac{1}{y}
-\end{equation}
-
-Любую тригонометрическую функцию можно выразить через любую другую тригонометрическую функцию с~тем~же аргументом (с~точностью до~знака из-за неоднозначности раскрытия квадратного корня). Нижеприведённые формулы верны для~$\textstyle 0 < x < \dfrac{\pi}{2}$. В~таблице~\ref{tab:trig-func-rel} приводятся соотношения тригонометрических функций.
-
-\begin{table}[ht]
-	\caption{Соотношения тригонометрических функций}  \label{tab:trig-func-rel}
-	\centering% центрируем таблицу
-	\small
-	\begin{tabularx}{\textwidth}{>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}} 
-		\hline
-		&\sin    &\cos                &\tg    &\ctg &\sec  &\cosec   \\
-		\hline
-		\sin x=&\sin x  &\sqrt{1-\cos^{2} x}&\dfrac{\tg x}{\sqrt{1+\tg^{2} x}}&\dfrac{1}{\sqrt{\ctg^{2} x +1}}&\dfrac{\sec^{2} x-1}{\sec x}&\dfrac{1}{\cosec x}\\
-		\hline
-		\cos x=&\sqrt{1-\sin^{2} x}&\cos x&\dfrac{1}{\sqrt{1+\tg^{2}x}}&\dfrac{\ctg x}{\sqrt{\ctg^2 x +1}}&\dfrac{1}{\sec x}&\dfrac{\sqrt{\cosec^2 x - 1}}{\cosec x}\\
-		\hline
-		\tg x=&\dfrac{\sin x}{\sqrt{1-\sin^2 x}}&\dfrac{\sqrt{1-\cos^2 x}}{\cos x}&\tg x&\dfrac{1}{\ctg x}&\sqrt{\sec^2 x -1}&\dfrac{1}{\sqrt{\cosec^2 x -1}}\\
-		\hline
-		\ctg x=&\dfrac{\sqrt{1-\sin^2 x}}{\sin x}&\dfrac{\cos x}{\sqrt{1-\cos^2 x}}&\dfrac{1}{\tg x}&\ctg x&\dfrac{1}{\sqrt{\sec^2 x -1}}&\sqrt{\cosec^2 x -1}\\
-		\hline
-		\sec x=&\dfrac{1}{\sqrt{1-\sin^2 x}}&\dfrac{1}{\cos x}&\sqrt{1+\tg^2 x}&\dfrac{\sqrt{\ctg^2 x +1}}{\ctg x}&\sec x &\dfrac{\cosec x}{\sqrt{\cosec^2 x-1}}\\
-		\hline	
-		\cosec x=&\dfrac{1}{\sin x}&\dfrac{1}{\sqrt{1-\cos^2 x}}&\dfrac{\sqrt{1+\tg^2 x}}{\tg x}&\sqrt{\ctg^2 x+1}&\dfrac{\sec x}{\sqrt{\sec^2 x -1}}&\cosec x\\
-		\hline
-	\end{tabularx}
-	\normalsize
-\end{table}
-
-\subsubsection{Тригонометрические тождества и~формулы приведения}
-\begin{equation}\label{eq:trigon-identity-1}
-\sin^2 \alpha + \cos^2 \alpha =1:\ \forall \alpha
-\end{equation}
-Данное выражение называется основным тригонометрическим тождеством.
-Некоторые другие тождества приведены ниже.
-\begin{equation}\label{eq:trigon-identity-2}
-\tg^2 \alpha +1 = \frac{1}{\cos^2 \alpha} = \sec^2 \alpha:\ \alpha \neq \frac{\pi}{2} + \pi n:\ n \in \mathbb{Z}
-\end{equation}
-
-\begin{equation}\label{eq:trigon-identity-3}
-\ctg^2 \alpha + 1 = \frac{1}{\sin^2 \alpha} = \cosec^2 \alpha:\ \alpha \neq \pi n,\ n \in \mathbb{Z}
-\end{equation}
-
-\begin{equation}\label{eq:trigon-identity-4}
-\tg \alpha \ctg \alpha = 1:\ \alpha \neq \frac{\pi n}{2},\ n \in \mathbb{Z}
-\end{equation}
-
-Также существует ряд формул приведения.
-\begin{equation}\label{eq:trigon-identity-5}
-\sin (90\textdegree-\alpha)=\cos \alpha: \alpha \in [0,\frac{\pi}{2}]
-\end{equation}
-\begin{equation}\label{eq:trigon-identity-6}
-\cos (90\textdegree-\alpha)=\sin \alpha: \alpha \in [0,\frac{\pi}{2}]
-\end{equation}
-\begin{equation}\label{eq:trigon-identity-7}
-\sin (180\textdegree-\alpha)=\sin \alpha: \alpha \in [0,\pi]
-\end{equation}
-\begin{equation}\label{eq:trigon-identity-8}
-\cos (180\textdegree-\alpha)=-\cos \alpha: \alpha \in [0,\pi]
-\end{equation}
-
-\subsubsection{Свойства и~значения тригонометрических функций}
-Синус и~косинус вещественного аргумента представляют собой периодические, непрерывные и~бесконечно дифференцируемые вещественнозначные функции. Остальные четыре функции на вещественной оси также вещественнозначны, периодичны и~бесконечно дифференцируемы, за~исключением счётного числа разрывов второго рода: у~тангенса и~секанса в~точках  $\textstyle \pm \pi n+ \dfrac{\pi}{2}$, а~у~котангенса и~косеканса "--- в~точках $\textstyle \pm \pi n$. Последнее обстоятельство связано с~тем, что~вычисление значений этих четырёх функций приводит к~операции деления на~ноль, что~означает, что~в~этих точках их~значение не~определено, а~в~окрестности этих точек "--- стремится к~бесконечности. На~рисунке~\ref{fig:sin-cos-etc} показаны значения шести основных тригонометрических функций в~зависимости от~значения угла в~градусах. Косинус и~секанс являются чётными функциями, прочие "--- нечётными, таким образом
-\begin{equation}\label{eq:trigon-functions-parity}
-\begin{aligned}
-\sin(-x)&=-\sin(x)\\
-\cos(-x)&=\cos(x)\\
-\tan(-x)&=-\tan(x)\\
-\cot(-x)&=-\cot(x)\\
-\sec(-x)&=\sec(x)\\
-\csc(-x)&=\-\csc(x)
-\end{aligned}
-\end{equation}
-
-\begin{figure}[ht]
-	\centering % Центрируем картинку
-	\includegraphics[width=0.8\textwidth]{sin-cos-etc.pdf}
-	\caption{Значения шести основных тригонометрических функций в~зависимости от~значения угла в~градусах}\label{fig:sin-cos-etc}
-\end{figure}
 %
 \subsubsection{Формулы вычисления координат точки}
 Рассмотрим точку~${\textstyle F}$ на~рисунке~\ref{fig:trigonometric-functions-semi-circle}. Согласно условию, данная точка лежит на~одной прямой с~точками~${\textstyle O,E}$. Необходимо найти её~координаты. При~этом, как~было показано ранее, точка~${\textstyle E}$ имеет координаты~${\textstyle E(\cos \alpha, \sin \alpha)}$. Рассмотрим векторы~${\textstyle \vec{OE}, \vec{OF}}$. Тогда
@@ -2822,8 +2718,118 @@ V=\frac{4}{3}\pi r^3.
 S=4\pi r^2
 \end{equation}
 %
+\section{Основы тригонометрии}
+%
+\subsection{Тригонометрические функции}\label{trigonometric-functions}
+Ранее в~\ref{trigonometric-functions-for-acute-angle} были рассмотрены тригонометрические функции острого угла в~прямоугольном треугольнике. В~данном подразделе будут рассмотрены общие вопросы тригонометрических функций для~любого угла. Рассмотрим полуокружность с~центром~${\textstyle O}$ в~начале координат и~единичным радиусом~${\textstyle R=1}$ (рисунок~\ref{fig:trigonometric-functions-semi-circle}). Отметим точки касания осей окружностью как~${\textstyle A(1,0),\ B(0,1), C(-1,0)}$. Отрезок~${\textstyle [OA]}$ назовём начальным радиусом и~далее будет обозначать как~${\textstyle i}$, а~затем повернём его~на~некоторый угол~${\textstyle \alpha}$, получив точку~${\textstyle E}$, имеющую некоторые координаты~${\textstyle x,y}$, и~отрезок~${\textstyle [OE]}$, далее обозначаемый как~${\textstyle f}$. Следует отметить, что~поворот осуществляется строго против часовой стрелки. Из~точки~${\textstyle E}$ опустим перпендикуляр~${\textstyle h}$ на~ось абсцисс в~точку~${\textstyle D}$. Таким образом получим прямоугольный треугольник~~${\textstyle ODE}$.
+\begin{figure}[ht]
+	\centering % Центрируем картинку
+	\includegraphics[width=0.8\textwidth]{trigonometric-functions-semi-circle.pdf}
+	\caption{Единичная полуокружность}\label{fig:trigonometric-functions-semi-circle}
+\end{figure}
+Из~\ref{trigonometric-functions-for-acute-angle} следует, что~синусом угла является отношение противолежащего катета к~гипотенузе. Т.\,е.~отношение:
+\begin{equation}\label{eq:sinus-formula-1}
+\sin \alpha = \frac{h}{f},
+\end{equation} 
+при~этом данное отношение равно координате точки~${\textstyle E}$ по~оси ординат, поскольку~${\textstyle f}$ имеет единичную длину. Таким образом
+\begin{equation}\label{eq:sinus-formula-2}
+\sin \alpha = \frac{y}{1}=y.
+\end{equation}
+Данный подход снимает ограничение на~условие существования именно острого угла. При~любом значении угла синусом будет координате точки на~единичной полуокружности по~оси ординат. Далее аналогичным образом, опираясь на~определения тригонометрических функций, данные в~\ref{trigonometric-functions-for-acute-angle}, выведем формулы иных тригонометрических функций.
+\begin{equation}\label{eq:cosinus-formula-1}
+\cos \alpha = \frac{i}{f}=\frac{x}{1}=1
+\end{equation}
+\begin{equation}\label{eq:tangens-formula-1}
+\tg \alpha = \frac{h}{[OD]}=\frac{y}{x}
+\end{equation}
+\begin{equation}\label{eq:cotangens-formula-1}
+\ctg \alpha = \frac{[OD]}{h}=\frac{x}{y}
+\end{equation}
+\begin{equation}\label{eq:secans-formula-1}
+\sec \alpha = \frac{f}{x}=\frac{1}{x}
+\end{equation}
+\begin{equation}\label{eq:cosecans-formula-1}
+\cosec \alpha = \frac{f}{y}=\frac{1}{y}
+\end{equation}
+
+Любую тригонометрическую функцию можно выразить через любую другую тригонометрическую функцию с~тем~же аргументом (с~точностью до~знака из-за неоднозначности раскрытия квадратного корня). Нижеприведённые формулы верны для~$\textstyle 0 < x < \dfrac{\pi}{2}$. В~таблице~\ref{tab:trig-func-rel} приводятся соотношения тригонометрических функций.
+
+\begin{table}[ht]
+	\caption{Соотношения тригонометрических функций}  \label{tab:trig-func-rel}
+	\centering% центрируем таблицу
+	\small
+	\begin{tabularx}{\textwidth}{>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}} 
+		\hline
+		&\sin    &\cos                &\tg    &\ctg &\sec  &\cosec   \\
+		\hline
+		\sin x=&\sin x  &\sqrt{1-\cos^{2} x}&\dfrac{\tg x}{\sqrt{1+\tg^{2} x}}&\dfrac{1}{\sqrt{\ctg^{2} x +1}}&\dfrac{\sec^{2} x-1}{\sec x}&\dfrac{1}{\cosec x}\\
+		\hline
+		\cos x=&\sqrt{1-\sin^{2} x}&\cos x&\dfrac{1}{\sqrt{1+\tg^{2}x}}&\dfrac{\ctg x}{\sqrt{\ctg^2 x +1}}&\dfrac{1}{\sec x}&\dfrac{\sqrt{\cosec^2 x - 1}}{\cosec x}\\
+		\hline
+		\tg x=&\dfrac{\sin x}{\sqrt{1-\sin^2 x}}&\dfrac{\sqrt{1-\cos^2 x}}{\cos x}&\tg x&\dfrac{1}{\ctg x}&\sqrt{\sec^2 x -1}&\dfrac{1}{\sqrt{\cosec^2 x -1}}\\
+		\hline
+		\ctg x=&\dfrac{\sqrt{1-\sin^2 x}}{\sin x}&\dfrac{\cos x}{\sqrt{1-\cos^2 x}}&\dfrac{1}{\tg x}&\ctg x&\dfrac{1}{\sqrt{\sec^2 x -1}}&\sqrt{\cosec^2 x -1}\\
+		\hline
+		\sec x=&\dfrac{1}{\sqrt{1-\sin^2 x}}&\dfrac{1}{\cos x}&\sqrt{1+\tg^2 x}&\dfrac{\sqrt{\ctg^2 x +1}}{\ctg x}&\sec x &\dfrac{\cosec x}{\sqrt{\cosec^2 x-1}}\\
+		\hline	
+		\cosec x=&\dfrac{1}{\sin x}&\dfrac{1}{\sqrt{1-\cos^2 x}}&\dfrac{\sqrt{1+\tg^2 x}}{\tg x}&\sqrt{\ctg^2 x+1}&\dfrac{\sec x}{\sqrt{\sec^2 x -1}}&\cosec x\\
+		\hline
+	\end{tabularx}
+	\normalsize
+\end{table}
+
+\subsection{Тригонометрические тождества и~формулы приведения}
+\begin{equation}\label{eq:trigon-identity-1}
+\sin^2 \alpha + \cos^2 \alpha =1:\ \forall \alpha
+\end{equation}
+Данное выражение называется основным тригонометрическим тождеством.
+Некоторые другие тождества приведены ниже.
+\begin{equation}\label{eq:trigon-identity-2}
+\tg^2 \alpha +1 = \frac{1}{\cos^2 \alpha} = \sec^2 \alpha:\ \alpha \neq \frac{\pi}{2} + \pi n:\ n \in \mathbb{Z}
+\end{equation}
+
+\begin{equation}\label{eq:trigon-identity-3}
+\ctg^2 \alpha + 1 = \frac{1}{\sin^2 \alpha} = \cosec^2 \alpha:\ \alpha \neq \pi n,\ n \in \mathbb{Z}
+\end{equation}
+
+\begin{equation}\label{eq:trigon-identity-4}
+\tg \alpha \ctg \alpha = 1:\ \alpha \neq \frac{\pi n}{2},\ n \in \mathbb{Z}
+\end{equation}
+
+Также существует ряд формул приведения.
+\begin{equation}\label{eq:trigon-identity-5}
+\sin (90\textdegree-\alpha)=\cos \alpha: \alpha \in [0,\frac{\pi}{2}]
+\end{equation}
+\begin{equation}\label{eq:trigon-identity-6}
+\cos (90\textdegree-\alpha)=\sin \alpha: \alpha \in [0,\frac{\pi}{2}]
+\end{equation}
+\begin{equation}\label{eq:trigon-identity-7}
+\sin (180\textdegree-\alpha)=\sin \alpha: \alpha \in [0,\pi]
+\end{equation}
+\begin{equation}\label{eq:trigon-identity-8}
+\cos (180\textdegree-\alpha)=-\cos \alpha: \alpha \in [0,\pi]
+\end{equation}
+
+\subsection{Свойства и~значения тригонометрических функций}
+Синус и~косинус вещественного аргумента представляют собой периодические, непрерывные и~бесконечно дифференцируемые вещественнозначные функции. Остальные четыре функции на вещественной оси также вещественнозначны, периодичны и~бесконечно дифференцируемы, за~исключением счётного числа разрывов второго рода: у~тангенса и~секанса в~точках  $\textstyle \pm \pi n+ \dfrac{\pi}{2}$, а~у~котангенса и~косеканса "--- в~точках $\textstyle \pm \pi n$. Последнее обстоятельство связано с~тем, что~вычисление значений этих четырёх функций приводит к~операции деления на~ноль, что~означает, что~в~этих точках их~значение не~определено, а~в~окрестности этих точек "--- стремится к~бесконечности. На~рисунке~\ref{fig:sin-cos-etc} показаны значения шести основных тригонометрических функций в~зависимости от~значения угла в~градусах. Косинус и~секанс являются чётными функциями, прочие "--- нечётными, таким образом
+\begin{equation}\label{eq:trigon-functions-parity}
+\begin{aligned}
+\sin(-x)&=-\sin(x)\\
+\cos(-x)&=\cos(x)\\
+\tan(-x)&=-\tan(x)\\
+\cot(-x)&=-\cot(x)\\
+\sec(-x)&=\sec(x)\\
+\csc(-x)&=\-\csc(x)
+\end{aligned}
+\end{equation}
+
+\begin{figure}[ht]
+	\centering % Центрируем картинку
+	\includegraphics[width=0.8\textwidth]{sin-cos-etc.pdf}
+	\caption{Значения шести основных тригонометрических функций в~зависимости от~значения угла в~градусах}\label{fig:sin-cos-etc}
+\end{figure}
+%
 \subsection{Числовая окружность}
-\subsubsection{Основные понятия}
 Числовая окружность представляет собой математическую модель вещественных чисел. Рассмотрим единичную окружность, изображённую на~рисунке~\ref{fig:numeric-circle}. Поскольку ${\textstyle R = 1}$, то~${\textstyle L = 2 \pi}$. Отрезок ${\textstyle (0,0; 1,0})$ является начальным радиусом этой окружности. Два~взаимно перпендикулярных диаметра этой окружности ${\textstyle (-1,0; 1,0), (0,1; 0,-1)}$ делят окружность на~четыре равные части. Тогда при~движении против часовой стрелки из~точки, являющейся концом начального радиуса, дуга~${\textstyle (1,0; 0,1)}$ образует \emph{первую четверть}, дуга~${\textstyle (0,1; -1,0)}$ "--- \emph{вторую четверть}, дуга~${\textstyle (-1,0; 0,-1)}$ "--- \emph{третью четверть}, дуга~${\textstyle (0,-1; 1,0)}$ "--- четвёртую четверть. В~этом случае любому вещественному числу можно поставить в~соответствие некоторую точку на~этой окружности. Пусть существует некоторое число~${\textstyle t \in \mathbb{R}}$, которому соответствует точка \textit{M(t)} на~основании следующего правила:
 \begin{equation}\label{eq:numeric-circle}
 	\begin{aligned}
@@ -2855,9 +2861,9 @@ x=y
 x=y = \frac{\sqrt{2}}{2}
 \end{equation}
 Аналогичным образом можно найти координаты любой точки, лежащей на~единичной окружности. 
-\subsubsection{Тригонометрические функции}
+\subsection{Основные тригонометрические функции}
 Как~уже было сказано ранее, любому вещественному числе соответствует точка на~единичной окружности, определяемая двумя координатами. Из~этого следует, что~значение тригонометрических функций может быть вычислено через координаты такой точки.
-\begin{equation}\label{eq:numerci-circle-trigonometric-functions}
+\begin{equation}\label{eq:numeric-circle-trigonometric-functions}
 	\begin{aligned}
 	t \mapsto M(t) = M(x,y) \Rightarrow\\
 	\sin t &= y\\
@@ -2922,7 +2928,7 @@ x=y = \frac{\sqrt{2}}{2}
 		\hline
 	\end{tabularx}
 	\normalsize
-\end{table}
+\end{table}	
 %
 Связь между числовым и~градусным аргументом тригонометрической функции описывается следующим образом:
 \begin{equation}\label{eq:numeric-and-angle-argument-link}
@@ -2932,10 +2938,121 @@ x=y = \frac{\sqrt{2}}{2}
 	t = \frac{\alpha \times \pi}{180}
 	\end{aligned}
 \end{equation}
+На~рисунке~\ref{fig:numeric-circle-trig-func} показаны значения основных тригонометрических функций на~числовой окружности.
+%
+\begin{figure}[ht]
+	\centering % Центрируем картинку
+	\includegraphics[width=0.8\textwidth]{numeric-circle-trig-func.pdf}
+	\caption{Тригонометрические функции на~числовой окружности}\label{fig:numeric-circle-trig-func}
+\end{figure}
+%
 В~случае с~градусной мерой единицей является градус, представляющий собой~${\textstyle \dfrac{1}{360}}$ часть окружности. В~случае с~числовой мерой такой единицей является \textbf{радиан}.
 \begin{description}
 	\item[Радиан "---] угол, соответствующий дуге, длина которой равна её~радиусу. Радиан является безразмерной величиной. Вся~окружность соответствует ${\textstyle 2 \pi \mathrm{rad}}$.
 \end{description}
+Далее в~таблице~\ref{tab:trigonometric-functios-main-properties} в~краткой форме приводятся основные свойства шести главных тригонометрических функций.
+%
+\begin{table}[ht]
+	\caption{Основные свойства главных тригонометрических функций для~стандартных углов}  \label{tab:trigonometric-functios-main-properties}
+	\centering
+	\normalsize
+	\begin{tabularx}
+	{\textwidth}{>{$}l<{$}|>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}}
+	\hline
+	&\text{D(y)}&\text{Чётность}&\text{E(y)}&\text{Непрерывность}&\text{Период}\\
+		\hline
+	&\text{D(y)}&\text{Parity}&\text{E(y)}&\text{Continuity}&\text{Period}\\
+		\hline	
+	\sin&\mathbb{R}&\text{нечётная}&-1\leq y \leq 1&+&2 \pi\\
+		\hline
+	\cos&\mathbb{R}&\text{чётная}&-1\leq y \leq 1&+&2 \pi\\
+		\hline
+	\tan&\mathbb{R} \backslash \frac{\pi}{2}+\pi k, k \in \mathbb{Z}&\text{нечётная}&\mathbb{R}&\text{разрыв}\ \frac{\pi}{2}+\pi k, k \in \mathbb{Z}&\pi\\
+		\hline
+	\cot&\mathbb{R} \backslash \pi k, k \in \mathbb{Z}&\text{нечётная}&\mathbb{R}&\text{разрыв}\ \pi k, k \in \mathbb{Z}&\pi\\
+		\hline
+	\sec&\mathbb{R} \backslash \frac{\pi}{2}+\pi k, k \in \mathbb{Z}&\text{чётная}&\mathbb{R}&\text{разрыв}\ \frac{\pi}{2}+\pi k, k \in \mathbb{Z}&2 \pi\\
+		\hline
+	\csc&\mathbb{R} \backslash \pi k, k \in \mathbb{Z}&\text{нечётная}&\mathbb{R}&\text{разрыв}\ \pi k, k \in \mathbb{Z}&2 \pi\\
+		\hline
+	\end{tabularx}
+	\normalsize
+\end{table}
+%
+Ранее на~рисунке~\ref{fig:sin-cos-etc} были показаны графики тригонометрических функций в~зависимости от~значения градусной меры. На~рисунке~\ref{fig:sin-cos-etc-pi} показаны аналогичные графики для~числовой меры аргумента.
+%
+\begin{figure}[ht]
+	\centering % 
+	\includegraphics[width=0.8\textwidth]{sin-cos-etc-pi.pdf}
+	\caption{Графики основных тригонометрических функций}\label{fig:sin-cos-etc-pi}
+\end{figure}
+%
+Следует отметить, что~все~основные тригонометрические функции имеют функции, являющиеся обратными к~ним, а~также свои гиперболические аналоги.
+
+Все~тригонометрические функции непрерывно и~неограниченно дифференцируемы на~всей области определения. В~таблице~\ref{tab:trigonometric-functios-derivatives-antiderivatives} приводятся производные и~первообразные.
+%
+\begin{table}[ht]
+	\caption{Производные и~первообразные тригонометрических функций}  \label{tab:trigonometric-functios-derivatives-antiderivatives}
+	\centering
+	\normalsize
+	\begin{tabularx}
+		{\textwidth}{>{$}l<{$}>{$}l<{$}>{$}l<{$}}
+		\hline
+		f(x)&f'(x)&\int f(x)dx\\
+			\hline
+		\sin x&\cos x&-\cos x + C\\
+			\hline
+		\cos x&-\sin x&\sin x + C\\
+			\hline
+		\tan x&\dfrac{1}{\cos ^{2} x} = 1 + \tan^{2} x = \sec^{2} x&-\ln |\cos x| + C\\
+			\hline
+		\csc x&- \csc x \cdot \cot x = - \dfrac{\cos x}{\sin^{2} x}&-\ln |\csc x + \cot x| + C\\
+			\hline
+		\sec x&\sec x \cdot \tan x = \dfrac{\sin x}{\cos^{2}x}&\ln |\sec x + \tan x| + C\\
+			\hline
+		\cot x&-\csc^{2} x = -1 - \cot^{2} x = -\dfrac{1}{\sin^{2} x}&\ln |\sin x| + C\\
+			\hline
+	\end{tabularx}
+	\normalsize
+\end{table}
+%
+Интегралы тригонометрических функций на области определения выражаются через элементарные функции следующим образом:
+\begin{equation}\label{eq:trigonometric-functions-integrals}
+	\begin{aligned}
+	\int \sin x dx &= -\cos x + C,\\
+	\int \cos x dx &=  \sin x + C,\\
+	\int \tan x dx &= -\ln|\cos x| + C,\\
+	\int \csc x dx &=  \ln|\tan \frac{x}{2}| + C,\\
+	\int \sec x dx &=  \ln|\tan (\frac{\pi}{4} + \frac{x}{2})| + C,\\ 
+	\int \cot x dx &=  \ln|\sin x| + C.\\	
+	\end{aligned}
+\end{equation}
+%
+
+%
+
+
+\subsubsection{Обратные тригонометрические функции}
+\begin{description}
+	\item[Обратные тригонометрические функции "---] математические функции, являющиеся обратными к тригонометрическим функциям. К обратным тригонометрическим функциям обычно относят шесть функций, 
+\end{description}
+%
+\begin{table}[ht]
+	\caption{Перечень обратных тригонометрических функций и~их~обозначения.}  \label{tab:inverse-trigonometric-functios}
+	\centering
+	\normalsize
+	\begin{tabularx}
+		{\textwidth}{>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}}
+		\hline
+		\text{Название}&\text{Name}&\text{Обозначение}&\text{Notation}&\text{Альтернативное обозначение}\\
+		\hline
+	\end{tabularx}
+	\normalsize
+\end{table}
+%
+%
+\subsubsection{Гиперболические тригонометрические функции}
+%
 \section{Функции}
 \subsection{Понятие функции}
 \textbf{Функция} является одним из~самых важных понятий в~математике.
