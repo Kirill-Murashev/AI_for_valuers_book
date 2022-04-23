@@ -68,7 +68,7 @@
 	\item[$\sim, \backsim$] "--- знаки пропорциональности.
 	\item[$\smile$] "--- дуга.
 
-В~данном материале в~качестве десятичного знака используется точка, данное решение обусловлено использованием запятой в~качестве разделителя переменных в~файлах формата csv, являющихся стандартом хранения данных в~области машинного обучения.
+В~данном материале в~качестве десятичного знака используется точка, данное решение обусловлено использованием запятой в~качестве разделителя переменных в~файлах формата csv, являющихся стандартом хранения данных в~области машинного обучения. Также в~данном материале используются обозначения (например, тригонометрических функций), принятые в~англоязычной среде.
 
 Часть теорем приводится без~их~доказательств в~силу практической направленности материала.	
 	
@@ -1735,11 +1735,11 @@ $\frac{h}{b_h}=\frac{a_h}{h} \Rightarrow h^2=a_{h}b_{h} \Rightarrow h=\sqrt{a_h 
 \begin{description}
 	\item[Тангенсом] острого угла прямоугольного треугольника называется отношение противолежащего катета к~прилежащему.
 \end{description}
-Так, тангенсом угла ${\textstyle \alpha}$ на~\ref{fig:rect-triangle-1}, будет являться отношение ${\textstyle \tg \alpha = \dfrac{a}{b} \approx 1.155}$.
+Так, тангенсом угла ${\textstyle \alpha}$ на~\ref{fig:rect-triangle-1}, будет являться отношение ${\textstyle \tan \alpha = \dfrac{a}{b} \approx 1.155}$.
 \begin{description}
 	\item[Котангенсом] острого угла прямоугольного треугольника называется отношение прилежащего катета к~противолежащему.
 \end{description}
-Так, тангенсом угла ${\textstyle \alpha}$ на~\ref{fig:rect-triangle-1}, будет являться отношение ${\textstyle \ctg \alpha = \dfrac{b}{a} \approx 0.866}$.
+Так, тангенсом угла ${\textstyle \alpha}$ на~\ref{fig:rect-triangle-1}, будет являться отношение ${\textstyle \cot \alpha = \dfrac{b}{a} \approx 0.866}$.
 \begin{description}
 	\item[Секансом] острого угла прямоугольного треугольника называется отношение гипотенузы к прилежащему катету.
 \end{description}
@@ -1747,7 +1747,7 @@ $\frac{h}{b_h}=\frac{a_h}{h} \Rightarrow h^2=a_{h}b_{h} \Rightarrow h=\sqrt{a_h 
 \begin{description}
 	\item[Косекансом] острого угла прямоугольного треугольника называется отношение гипотенузы к противолежащему катету.
 \end{description}
-Так, секансом угла ${\textstyle \alpha}$ на~\ref{fig:rect-triangle-1}, будет являться отношение ${\textstyle \cosec \alpha = \dfrac{c}{a} \approx 1.323}$.
+Так, секансом угла ${\textstyle \alpha}$ на~\ref{fig:rect-triangle-1}, будет являться отношение ${\textstyle \csc \alpha = \dfrac{c}{a} \approx 1.323}$.
 
 Помимо шести основных вышеуказанных функций существует ряд относительно редко используемых в~настоящее время, например \emph{синус-верзус}, \emph{косинус-верзус}, \emph{гаверсинус}, \emph{гаверкосинус}, \emph{эксеканс}, \emph{экскосеканс}. Рассмотрение данных функций в~контексте математической подготовки оценщика является избыточным.
 
@@ -2740,16 +2740,16 @@ S=4\pi r^2
 \cos \alpha = \frac{i}{f}=\frac{x}{1}=1
 \end{equation}
 \begin{equation}\label{eq:tangens-formula-1}
-\tg \alpha = \frac{h}{[OD]}=\frac{y}{x}
+\tan \alpha = \frac{h}{[OD]}=\frac{y}{x}
 \end{equation}
 \begin{equation}\label{eq:cotangens-formula-1}
-\ctg \alpha = \frac{[OD]}{h}=\frac{x}{y}
+\cot \alpha = \frac{[OD]}{h}=\frac{x}{y}
 \end{equation}
 \begin{equation}\label{eq:secans-formula-1}
 \sec \alpha = \frac{f}{x}=\frac{1}{x}
 \end{equation}
 \begin{equation}\label{eq:cosecans-formula-1}
-\cosec \alpha = \frac{f}{y}=\frac{1}{y}
+\csc \alpha = \frac{f}{y}=\frac{1}{y}
 \end{equation}
 
 Любую тригонометрическую функцию можно выразить через любую другую тригонометрическую функцию с~тем~же аргументом (с~точностью до~знака из-за неоднозначности раскрытия квадратного корня). Нижеприведённые формулы верны для~$\textstyle 0 < x < \dfrac{\pi}{2}$. В~таблице~\ref{tab:trig-func-rel} приводятся соотношения тригонометрических функций.
@@ -2760,19 +2760,19 @@ S=4\pi r^2
 	\small
 	\begin{tabularx}{\textwidth}{>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}} 
 		\hline
-		&\sin    &\cos                &\tg    &\ctg &\sec  &\cosec   \\
+		&\sin    &\cos                &\tan    &\cot &\sec  &\csc \\
 		\hline
-		\sin x=&\sin x  &\sqrt{1-\cos^{2} x}&\dfrac{\tg x}{\sqrt{1+\tg^{2} x}}&\dfrac{1}{\sqrt{\ctg^{2} x +1}}&\dfrac{\sec^{2} x-1}{\sec x}&\dfrac{1}{\cosec x}\\
+		\sin x=&\sin x  &\sqrt{1-\cos^{2} x}&\dfrac{\tan x}{\sqrt{1+\tan^{2} x}}&\dfrac{1}{\sqrt{\cot^{2} x +1}}&\dfrac{\sec^{2} x-1}{\sec x}&\dfrac{1}{\csc x}\\
 		\hline
-		\cos x=&\sqrt{1-\sin^{2} x}&\cos x&\dfrac{1}{\sqrt{1+\tg^{2}x}}&\dfrac{\ctg x}{\sqrt{\ctg^2 x +1}}&\dfrac{1}{\sec x}&\dfrac{\sqrt{\cosec^2 x - 1}}{\cosec x}\\
+		\cos x=&\sqrt{1-\sin^{2} x}&\cos x&\dfrac{1}{\sqrt{1+\tan^{2}x}}&\dfrac{\cot x}{\sqrt{\cot^2 x +1}}&\dfrac{1}{\sec x}&\dfrac{\sqrt{\cosec^2 x - 1}}{\csc x}\\
 		\hline
-		\tg x=&\dfrac{\sin x}{\sqrt{1-\sin^2 x}}&\dfrac{\sqrt{1-\cos^2 x}}{\cos x}&\tg x&\dfrac{1}{\ctg x}&\sqrt{\sec^2 x -1}&\dfrac{1}{\sqrt{\cosec^2 x -1}}\\
+		\tan x=&\dfrac{\sin x}{\sqrt{1-\sin^2 x}}&\dfrac{\sqrt{1-\cos^2 x}}{\cos x}&\tan x&\dfrac{1}{\cot x}&\sqrt{\sec^2 x -1}&\dfrac{1}{\sqrt{\cosec^2 x -1}}\\
 		\hline
-		\ctg x=&\dfrac{\sqrt{1-\sin^2 x}}{\sin x}&\dfrac{\cos x}{\sqrt{1-\cos^2 x}}&\dfrac{1}{\tg x}&\ctg x&\dfrac{1}{\sqrt{\sec^2 x -1}}&\sqrt{\cosec^2 x -1}\\
+		\cot x=&\dfrac{\sqrt{1-\sin^2 x}}{\sin x}&\dfrac{\cos x}{\sqrt{1-\cos^2 x}}&\dfrac{1}{\tan x}&\cot x&\dfrac{1}{\sqrt{\sec^2 x -1}}&\sqrt{\cosec^2 x -1}\\
 		\hline
-		\sec x=&\dfrac{1}{\sqrt{1-\sin^2 x}}&\dfrac{1}{\cos x}&\sqrt{1+\tg^2 x}&\dfrac{\sqrt{\ctg^2 x +1}}{\ctg x}&\sec x &\dfrac{\cosec x}{\sqrt{\cosec^2 x-1}}\\
+		\sec x=&\dfrac{1}{\sqrt{1-\sin^2 x}}&\dfrac{1}{\cos x}&\sqrt{1+\tan^2 x}&\dfrac{\sqrt{\cot^2 x +1}}{\cot x}&\sec x &\dfrac{\csc x}{\sqrt{\cosec^2 x-1}}\\
 		\hline	
-		\cosec x=&\dfrac{1}{\sin x}&\dfrac{1}{\sqrt{1-\cos^2 x}}&\dfrac{\sqrt{1+\tg^2 x}}{\tg x}&\sqrt{\ctg^2 x+1}&\dfrac{\sec x}{\sqrt{\sec^2 x -1}}&\cosec x\\
+		\csc x=&\dfrac{1}{\sin x}&\dfrac{1}{\sqrt{1-\cos^2 x}}&\dfrac{\sqrt{1+\tan^2 x}}{\tan x}&\sqrt{\cot^2 x+1}&\dfrac{\sec x}{\sqrt{\sec^2 x -1}}&\csc x\\
 		\hline
 	\end{tabularx}
 	\normalsize
@@ -2785,15 +2785,15 @@ S=4\pi r^2
 Данное выражение называется основным тригонометрическим тождеством.
 Некоторые другие тождества приведены ниже.
 \begin{equation}\label{eq:trigon-identity-2}
-\tg^2 \alpha +1 = \frac{1}{\cos^2 \alpha} = \sec^2 \alpha:\ \alpha \neq \frac{\pi}{2} + \pi n:\ n \in \mathbb{Z}
+\tan^2 \alpha +1 = \frac{1}{\cos^2 \alpha} = \sec^2 \alpha:\ \alpha \neq \frac{\pi}{2} + \pi n:\ n \in \mathbb{Z}
 \end{equation}
 
 \begin{equation}\label{eq:trigon-identity-3}
-\ctg^2 \alpha + 1 = \frac{1}{\sin^2 \alpha} = \cosec^2 \alpha:\ \alpha \neq \pi n,\ n \in \mathbb{Z}
+\cot^2 \alpha + 1 = \frac{1}{\sin^2 \alpha} = \cosec^2 \alpha:\ \alpha \neq \pi n,\ n \in \mathbb{Z}
 \end{equation}
 
 \begin{equation}\label{eq:trigon-identity-4}
-\tg \alpha \ctg \alpha = 1:\ \alpha \neq \frac{\pi n}{2},\ n \in \mathbb{Z}
+\tan \alpha \cot \alpha = 1:\ \alpha \neq \frac{\pi n}{2},\ n \in \mathbb{Z}
 \end{equation}
 
 Также существует ряд формул приведения.
@@ -2894,7 +2894,7 @@ x=y = \frac{\sqrt{2}}{2}
 	\begin{tabularx}
 		{\textwidth}{>{$}l<{$}>{$}l<{$}|>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}}
 		\hline
-		\text{Rad}&\text{Deg}&\sin&\cos&\tan&\cot&\sec&\csc\\
+		\text{Rad}&\text{Deg}&\sin&\cos&\tan&\cot&\sec&\csc \\
 		\hline
 		0&0&0&1&0&\text{undef}&1&\text{undef}\\
 		\hline
@@ -2981,7 +2981,7 @@ x=y = \frac{\sqrt{2}}{2}
 		\hline
 	\sec&\mathbb{R} \backslash \frac{\pi}{2}+\pi k, k \in \mathbb{Z}&\text{чётная}&\mathbb{R}&\text{разрыв}\ \frac{\pi}{2}+\pi k, k \in \mathbb{Z}&2 \pi\\
 		\hline
-	\csc&\mathbb{R} \backslash \pi k, k \in \mathbb{Z}&\text{нечётная}&\mathbb{R}&\text{разрыв}\ \pi k, k \in \mathbb{Z}&2 \pi\\
+	\csc &\mathbb{R} \backslash \pi k, k \in \mathbb{Z}&\text{нечётная}&\mathbb{R}&\text{разрыв}\ \pi k, k \in \mathbb{Z}&2 \pi\\
 		\hline
 	\end{tabularx}
 	\normalsize
@@ -3053,21 +3053,40 @@ x=y = \frac{\sqrt{2}}{2}
 \begin{description}
 	\item[Обратные тригонометрические функции "---] математические функции, являющиеся обратными к~тригонометрическим функциям. К обратным тригонометрическим функциям обычно относят шесть функций, перечисленных в~таблице~\ref{tab:inverse-trigonometric-functios}.
 \end{description}
+Название обратной тригонометрической функции образуется от~названия соответствующей ей~тригонометрической функции путём добавлений к~ней~ приставки <<арк>> (от~лат. arcus "--- дуга). Это~связано с~тем, что~геометрически значение обратной тригонометрической функции можно связать с~длиной дуги единичной окружности (или~углом, стягивающим эту~дугу), соответствующей тому или~иному отрезку. Так, обычный синус позволяет по~дуге окружности найти стягивающую её~хорду, а~обратная функция арксинус решает противоположную задачу.
+
+Тригонометрические функции периодичны, вследствие чего функции, обратные к~ним, многозначны. Т.\,е.~значение аркфункции представляет собой множество дуг (углов), для~которых соответствующая прямая тригонометрическая функция равна заданному числу. Например, значению ${\textstyle \arcsin = \frac{1}{2}}$ соответствует множество значений числового (углового) аргумента: ${\textstyle \frac{\pi}{6},\frac{5\pi}{6},\frac{13\pi}{6},\frac{17\pi}{6}\ (30\textdegree, 150\textdegree, 390\textdegree, 510\textdegree)}$, синус которых равен~${\textstyle \arcsin = \frac{1}{2}}$. Из множества значений каждой аркфункции выделяют её~главные значения, которые обычно и~имеют в~виду, говоря об~арксинусе, арккосинусе и~т.\,д. На~рисунке~\ref{fig:trigonometric-arcfunctions} изображены графики главных значений шести аркфункций.
 %
 \begin{table}[ht]
 	\caption{Перечень обратных тригонометрических функций и~их~обозначения.}  \label{tab:inverse-trigonometric-functios}
 	\centering
 	\normalsize
 	\begin{tabularx}
-		{\textwidth}{>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}}
-		\hline
-		\text{Название}&\text{Name}&\text{Обозначение}&\text{Notation}&\text{Альтернативное обозначение}\\
-		
-		\hline
+		{\textwidth}{>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}}
+			\hline
+		\text{Название}&\text{Name}&\text{Обозначение}&\text{Альтернативное обозначение}\\
+			\hline
+		\text{арксинус}&\text{arcsine}&\arcsin&\sin^{-1}\\		
+			\hline
+		\text{арккосинус}&\text{arccosine}&\arccos&\cos^{-1}\\
+			\hline
+		\text{арктангенс}&\text{arctangent}&\arctan&\tan^{-1}\\
+			\hline
+		\text{арккотангенс}&\text{arccotangent}&\arccot&\cot^{-1}\\
+			\hline
+		\text{арксеканс}&\text{arcsecant}&\arcsec&\sec^{-1}\\
+			\hline
+		\text{арккосеканс}&\text{arccosecant}&\arccsc&\csc^{-1}\\
+			\hline
 	\end{tabularx}
 	\normalsize
 \end{table}
 %
+\begin{figure}[ht]
+	\centering % 
+	\includegraphics[width=0.8\textwidth]{arcsin-arccos-etc.pdf}
+	\caption{Графики главных значений аркфункций $[-2\pi,2\pi]$}\label{fig:trigonometric-arcfunctions}
+\end{figure}
 %
 \subsubsection{Гиперболические тригонометрические функции}
 %
@@ -3304,7 +3323,7 @@ f(x)=f(x \pm T).
 \end{description}
 Если число~${\textstyle T}$ является периодом некоторой функции, то~и~число ${\textstyle kT}$, где~${\textstyle k}$ "--- любое целое число, отличное от~нуля, также является периодом этой функции.
 
-Функции ${\textstyle y=\sin x,\ y=\cos x}$ являются периодическими функциями с~периодом~${\textstyle 2\pi]}$, функции~${\textstyle y=\tg x,\ y=\ctg x}$   являются периодическими функциями с~периодом~${\textstyle \pi]}$. Показательные, логарифмические и~степенные функции являются \emph{непериодическими функциями}.
+Функции ${\textstyle y=\sin x,\ y=\cos x}$ являются периодическими функциями с~периодом~${\textstyle 2\pi]}$, функции~${\textstyle y=\tan x,\ y=\cot x}$   являются периодическими функциями с~периодом~${\textstyle \pi]}$. Показательные, логарифмические и~степенные функции являются \emph{непериодическими функциями}.
 
 \subsubsection{График функции. Свойства графиков чётных, нечётных и~периодических функций}
 \begin{description}
