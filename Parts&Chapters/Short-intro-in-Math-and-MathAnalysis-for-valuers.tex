@@ -1,6 +1,8 @@
 \documentclass[]{scrartcl}
 \input{standard_preamble.tex}
 
+
+
 \title{Введение в~математику и~математический анализ~для~оценщиков}
 \subtitle{\foreignlanguage{English}{Introduction to~Mathematics and~Mathematical Analysis for~appraisers}}
 \author{К.\,А.\,Мурашев}
@@ -3053,9 +3055,9 @@ x=y = \frac{\sqrt{2}}{2}
 \begin{description}
 	\item[Обратные тригонометрические функции "---] математические функции, являющиеся обратными к~тригонометрическим функциям. К обратным тригонометрическим функциям обычно относят шесть функций, перечисленных в~таблице~\ref{tab:inverse-trigonometric-functios}.
 \end{description}
-Название обратной тригонометрической функции образуется от~названия соответствующей ей~тригонометрической функции путём добавлений к~ней~ приставки <<арк>> (от~лат. arcus "--- дуга). Это~связано с~тем, что~геометрически значение обратной тригонометрической функции можно связать с~длиной дуги единичной окружности (или~углом, стягивающим эту~дугу), соответствующей тому или~иному отрезку. Так, обычный синус позволяет по~дуге окружности найти стягивающую её~хорду, а~обратная функция арксинус решает противоположную задачу.
+Название обратной тригонометрической функции образуется от~названия соответствующей ей~тригонометрической функции путём добавлений к~ней~ приставки <<арк>> (от~лат. arcus "--- дуга). Это~связано с~тем, что~геометрически значение обратной тригонометрической функции можно связать с~длиной дуги единичной окружности (или~углом, стягивающим эту~дугу), соответствующей тому или~иному отрезку. Так, обычный синус позволяет по~дуге окружности найти стягивающую её~хорду, а~обратная функция арксинус решает противоположную задачу. Иными словами, угол в~${\textstyle \theta rad}$ соответствует дуге длиной в~${\textstyle r\theta rad}$, где~\textit{r} "--- радиус окружности.
 
-Тригонометрические функции периодичны, вследствие чего функции, обратные к~ним, многозначны. Т.\,е.~значение аркфункции представляет собой множество дуг (углов), для~которых соответствующая прямая тригонометрическая функция равна заданному числу. Например, значению ${\textstyle \arcsin = \frac{1}{2}}$ соответствует множество значений числового (углового) аргумента: ${\textstyle \frac{\pi}{6},\frac{5\pi}{6},\frac{13\pi}{6},\frac{17\pi}{6}\ (30\textdegree, 150\textdegree, 390\textdegree, 510\textdegree)}$, синус которых равен~${\textstyle \arcsin = \frac{1}{2}}$. Из множества значений каждой аркфункции выделяют её~главные значения, которые обычно и~имеют в~виду, говоря об~арксинусе, арккосинусе и~т.\,д. На~рисунке~\ref{fig:trigonometric-arcfunctions} изображены графики главных значений шести аркфункций.
+Тригонометрические функции периодичны, вследствие чего функции, обратные к~ним, многозначны. Т.\,е.~значение аркфункции представляет собой множество дуг (углов), для~которых соответствующая прямая тригонометрическая функция равна заданному числу. Например, значению ${\textstyle \arcsin = \frac{1}{2}}$ соответствует множество значений числового (углового) аргумента: ${\textstyle \frac{\pi}{6},\frac{5\pi}{6},\frac{13\pi}{6},\frac{17\pi}{6}\ (30\textdegree, 150\textdegree, 390\textdegree, 510\textdegree)}$, синус которых равен~${\textstyle \arcsin = \frac{1}{2}}$. Из множества значений каждой аркфункции выделяют её~главные значения, которые обычно и~имеют в~виду, говоря об~арксинусе, арккосинусе и~т.\,д. На~рисунке~\ref{fig:trigonometric-arcfunctions} изображены графики главных значений шести аркфункций. В~общем случае при~условии~${\textstyle -1 \leq \alpha \leq 1}$ все~решения уравнения~${\textstyle \sin x = \alpha}$ можно представить в~виде ~${\textstyle x=(-1)^{n}\arcsin \alpha +\pi k, k \in \mathbb{Z}}$.
 %
 \begin{table}[ht]
 	\caption{Перечень обратных тригонометрических функций и~их~обозначения.}  \label{tab:inverse-trigonometric-functios}
@@ -3066,17 +3068,17 @@ x=y = \frac{\sqrt{2}}{2}
 			\hline
 		\text{Название}&\text{Name}&\text{Обозначение}&\text{Альтернативное обозначение}\\
 			\hline
-		\text{арксинус}&\text{arcsine}&\arcsin&\sin^{-1}\\		
+		\text{арксинус}&\text{arcsine}&\arcsin&\sin^{-1}(x)\\		
 			\hline
-		\text{арккосинус}&\text{arccosine}&\arccos&\cos^{-1}\\
+		\text{арккосинус}&\text{arccosine}&\arccos&\cos^{-1}(x)\\
 			\hline
-		\text{арктангенс}&\text{arctangent}&\arctan&\tan^{-1}\\
+		\text{арктангенс}&\text{arctangent}&\arctan&\tan^{-1}(x)\\
 			\hline
-		\text{арккотангенс}&\text{arccotangent}&\arccot&\cot^{-1}\\
+		\text{арккотангенс}&\text{arccotangent}&\arccot&\cot^{-1}(x)\\
 			\hline
-		\text{арксеканс}&\text{arcsecant}&\arcsec&\sec^{-1}\\
+		\text{арксеканс}&\text{arcsecant}&\arcsec&\sec^{-1}(x)\\
 			\hline
-		\text{арккосеканс}&\text{arccosecant}&\arccsc&\csc^{-1}\\
+		\text{арккосеканс}&\text{arccosecant}&\arccsc&\csc^{-1}(x)\\
 			\hline
 	\end{tabularx}
 	\normalsize
@@ -3087,6 +3089,83 @@ x=y = \frac{\sqrt{2}}{2}
 	\includegraphics[width=0.8\textwidth]{arcsin-arccos-etc.pdf}
 	\caption{Графики главных значений аркфункций $[-2\pi,2\pi]$}\label{fig:trigonometric-arcfunctions}
 \end{figure}
+Существует ряд основных соотношений аркфункций.
+\begin{equation}\label{eq:arcfunctions-relationships}
+	\begin{aligned}
+	\arcsin x = \frac{\pi}{2} - \arccos x\\
+	\arctan x = \frac{\pi}{2} - \arccot x\\
+	\arcsec x = \frac{\pi}{2} - \arccsc x
+	\end{aligned}
+\end{equation}
+%
+\begin{description}
+	\item[Арксинус угла~\textit{x} "---] такое значение угла~\textit{y}, выраженное в~радианах, для~которого ${\displaystyle \sin y=x,\quad -{\frac {\pi }{2}}\leqslant y\leqslant {\frac {\pi }{2}},\quad |x|\leqslant 1}$.
+\end{description}
+Рассмотрим функцию~${\displaystyle y = \sin x}$. На~всей своей области определения она~является кусочно-монотонной, а, значит, обратное соответствие~${\displaystyle y=\arcsin x}$ не~является функцией. В~связи с~этим следует рассматривать отрезок, на~котором она~строго возрастает и~принимает все~значения области значений~${\displaystyle \left[-{\frac {\pi }{2}};{\frac {\pi }{2}}\right]}$]. Поскольку для~функции~${\displaystyle y=\sin x}$ на~интервале~${\displaystyle \left[-{\frac {\pi }{2}};{\frac {\pi }{2}}\right]}$ каждое значение функции достигается при~единственном значении аргумента, то~на~этом отрезке существует обратная функция~${\displaystyle y=\arcsin x,}$, график которой симметричен графику функции~${\displaystyle y=\sin x}$ на~отрезке~${\displaystyle \left[-{\frac {\pi }{2}};{\frac {\pi }{2}}\right]}$ относительно прямой~${\displaystyle y = x}$ ((графики взаимно обратных функций симметричны относительно биссектрисы первого и~третьего координатных углов координатной плоскости~${\displaystyle Oxy}$).
+
+Функция~${\displaystyle y=\arcsin x}$ непрерывна и~ограничена на~всей своей области определения. Она~является строго возрастающей. Данная функция имеет следующие свойства:
+\begin{equation}\label{eq:arcsin-properties}
+	\begin{aligned}
+	\sin (\arcsin x) &= x \quad | -1 \leq x \leq 1;\\
+	\arcsin (\sin y) &= y \quad | -\frac{\pi}{2} \leq y \leq \frac{\pi}{2};\\
+	D(\arcsin x) &= [-1,1];\\
+	E(\arcsin x) &= [-\frac{\pi}{2},\frac{\pi}{2}];\\
+	\arcsin (-x) &= - \arcsin x \Rightarrow (\text{нечётная функция});\\
+	\arcsin x &> 0 \quad| 0 < x \leq 1;\\
+	\arcsin x &= 0 \quad| x = 0;\\
+	\arcsin x &< 0 \quad| -1 \leq q < 0;\\
+	\arcsin x &=
+		\begin{cases}
+		 \arccos \sqrt{1 - x^{2}} \quad | 0 \leq x \leq 1\\
+		-\arccos \sqrt{1 - x^{2}} \quad | -1 \leq x < 0\\
+		\end{cases}
+		;\\
+	\arcsin x &= \arctan \frac{x}{\sqrt{1 - x^2}};\\
+	\arcsin x &=
+		\begin{cases}
+		 \arccot \frac{\sqrt{1-x^{2}}}{x} \quad| 0 < x \leq 1\\
+		-\arccot \frac{\sqrt{1-x^{2}}}{x} - \pi \quad| -1 \leq x < 0
+		\end{cases}
+		;\\
+	\arcsin x &= \arccsc \frac{1}{x}.
+	\end{aligned}
+\end{equation}
+%
+\begin{description}
+	\item[Арккосинус угла~\textit{x} "---] такое значение угла~\textit{y}, выраженное в~радианах, для~которого~${\displaystyle \cos y=x \quad| 0\leqslant y\leqslant \pi ,\quad |x|\leqslant 1}$. 
+\end{description}
+Рассмотрим функцию~${\displaystyle y = \cos x}$. На~всей своей области определения она~является кусочно-монотонной, а, значит, обратное соответствие~${\displaystyle y=\arccos x}$ функцией не~является. В~связи с~этим следует рассматривать отрезок, на~котором она~строго убывает и~принимает все~свои значения~${\displaystyle [0;\pi ]}$. На~этом отрезке~${\displaystyle y=\cos x}$ строго монотонно убывает и~принимает все~свои значения только один раз, а~значит, на~отрезке~${\displaystyle [0;\pi ]}$ существует обратная функция~${\displaystyle y=\arccos x}$, график которой симметричен графику~${\displaystyle y=\cos x}$ на~отрезке~${\displaystyle [0;\pi ]}$ относительно прямой~${\displaystyle y=x}$.
+
+Функция~${\displaystyle y=\arccos x}$ непрерывна и~ограничена на~всей своей области определения. Она~является строго убывающей и~неотрицательной. Функция центрально-симметрична относительно точки~${\displaystyle \left(0;{\frac {\pi }{2}}\right)}$, а~также имеет следующие свойства:
+\begin{equation}\label{eq:arccos-properties}
+	\begin{aligned}
+	\cos (\arccos x) &= x \quad | -1 \leq x \leq 1;\\
+	\arccos (\cos y) &= y \quad | 0 \leq y \leq \pi;\\
+	D (\arccos x)    &= [-1,1];\\
+	E (\arccos x)    &= [0, \pi];\\
+	\arccos (-x)     &= \pi - \arccos x\ \Rightarrow \text{функция индифферентна};\\
+	\arccos x &> 0 \quad| -1 \leq x < 1;\\
+	\arccos x &= 0 \quad| x = 1;\\
+	\arccos x &= \frac{\pi}{2} - \arcsin x;\\
+	\arccos x &=
+		\begin{cases}
+		\arcsin \sqrt{1 - x^{2}} \quad | 0 \leq x \leq 1\\
+		\pi - \arcsin \sqrt{1 - x^{2}} \quad | -1 \leq x < 0\\
+		\end{cases}
+		;\\
+	\arccos x &= \arccot \frac{x}{1 - x^{2}};\\
+	\arccos x &=
+		\begin{cases}
+		\arctan \frac{\sqrt{1 - x^{2}}}{x} \quad | 0 < x \leq 1\\
+		\pi + \arctan \frac{\sqrt{1 - x^{2}}}{x} \quad | -1 \leq x < 0
+		\end{cases}
+		;\\
+	\arccos &= 2 \arcsin \sqrt{\frac{1 - x}{2}};\\
+	\arccos &= 2 \arccos \sqrt{\frac{1 + x}{2}};\\
+	\arccos &= 2 \arccot \sqrt{\frac{1 - x}{1 + x}};\\
+	\arccos & = \arcsec \frac{1}{x}.	
+	\end{aligned}
+\end{equation}
 %
 \subsubsection{Гиперболические тригонометрические функции}
 %
