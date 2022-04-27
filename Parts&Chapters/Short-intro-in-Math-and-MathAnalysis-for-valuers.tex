@@ -1,8 +1,6 @@
 \documentclass[]{scrartcl}
 \input{standard_preamble.tex}
 
-
-
 \title{Введение в~математику и~математический анализ~для~оценщиков}
 \subtitle{\foreignlanguage{English}{Introduction to~Mathematics and~Mathematical Analysis for~appraisers}}
 \author{К.\,А.\,Мурашев}
@@ -10,6 +8,11 @@
 \begin{document}
 
 \maketitle
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.2\textwidth]{ingria_coat-of-arms.pdf}
+\end{figure}
 
 \begin{abstract}
 	Какую~бы работу не~выполнял оценщик, во~всех случаях он~имеет дело с~информацией и~данными. Часто эти~данные представляют собой числа либо могут быть формализованы иным образом. В~любом случае требуется алгоритмическая обработка входных данных и~преобразование их~в~информацию, а~в~некоторых случаях "--- в~знания. Целью данного фрагмента является формирование общих представлений об~основных понятиях и~методах математического анализа, необходимых современному оценщику. Материал построен таким образом, при~котором существует возможность ссылаться на~него при~решении практически всех математических задач, возникающих у~оценщиков, начиная со~школьной программы 5-класса, заканчивая математическим анализом, в~объёме преподаваемом на~нематематических специальностях вузов. Специфические вопросы, касающиеся частотного подхода в~математической статистике, байесовского подхода, а~также математических методов, применяемых в~машинном обучении, а~также иных специфических методов, выходящих за~рамки программы нематематических специальностей, рассмотрены в~отдельных материалах.  Автор постарался прибегать к~минимальному числу формул и~сложных определений, хотя это~и~не~вполне получилось. Поскольку конечной целью всей работы является цифровизация оценочной деятельности, в~тексте приводятся короткие листинги на~языках R и~Python, позволяющие реализовать то, о~чём говорится в~тексте.
@@ -3099,9 +3102,9 @@ x=y = \frac{\sqrt{2}}{2}
 \end{equation}
 %
 \begin{description}
-	\item[Арксинус угла~\textit{x} "---] такое значение угла~\textit{y}, выраженное в~радианах, для~которого ${\displaystyle \sin y=x,\quad -{\frac {\pi }{2}}\leqslant y\leqslant {\frac {\pi }{2}},\quad |x|\leqslant 1}$.
+	\item[Арксинус числа~\textit{x} "---] такое значение угла~\textit{y} в~радианной мере, для~которого ${\displaystyle \sin y=x,\quad -{\frac {\pi }{2}}\leqslant y\leqslant {\frac {\pi }{2}},\quad |x|\leqslant 1}$.
 \end{description}
-Рассмотрим функцию~${\displaystyle y = \sin x}$. На~всей своей области определения она~является кусочно-монотонной, а, значит, обратное соответствие~${\displaystyle y=\arcsin x}$ не~является функцией. В~связи с~этим следует рассматривать отрезок, на~котором она~строго возрастает и~принимает все~значения области значений~${\displaystyle \left[-{\frac {\pi }{2}};{\frac {\pi }{2}}\right]}$]. Поскольку для~функции~${\displaystyle y=\sin x}$ на~интервале~${\displaystyle \left[-{\frac {\pi }{2}};{\frac {\pi }{2}}\right]}$ каждое значение функции достигается при~единственном значении аргумента, то~на~этом отрезке существует обратная функция~${\displaystyle y=\arcsin x,}$, график которой симметричен графику функции~${\displaystyle y=\sin x}$ на~отрезке~${\displaystyle \left[-{\frac {\pi }{2}};{\frac {\pi }{2}}\right]}$ относительно прямой~${\displaystyle y = x}$ ((графики взаимно обратных функций симметричны относительно биссектрисы первого и~третьего координатных углов координатной плоскости~${\displaystyle Oxy}$).
+Рассмотрим функцию~${\displaystyle y = \sin x}$. На~всей своей области определения она~является кусочно-монотонной, следовательно обратное соответствие~${\displaystyle y=\arcsin x}$ по~причине нарушения требования однозначности не~является функцией. В~связи с~этим следует рассматривать отрезок, на~котором она~строго возрастает и~принимает все~значения области значений один раз "--- ${\displaystyle \left[-{\frac {\pi }{2}};{\frac {\pi }{2}}\right]}$]. Поскольку для~функции~${\displaystyle y=\sin x}$ на~интервале~${\displaystyle \left[-{\frac {\pi }{2}};{\frac {\pi }{2}}\right]}$ каждое значение функции достигается при~единственном значении аргумента, то~на~этом отрезке существует обратная функция~${\displaystyle y=\arcsin x,}$, график которой симметричен графику функции~${\displaystyle y=\sin x}$ на~отрезке~${\displaystyle \left[-{\frac {\pi }{2}};{\frac {\pi }{2}}\right]}$ относительно прямой~${\displaystyle y = x}$ ((графики взаимно обратных функций симметричны относительно биссектрисы первого и~третьего координатных углов координатной плоскости~${\displaystyle Oxy}$).
 
 Функция~${\displaystyle y=\arcsin x}$ непрерывна и~ограничена на~всей своей области определения. Она~является строго возрастающей. Данная функция имеет следующие свойства:
 \begin{equation}\label{eq:arcsin-properties}
@@ -3132,9 +3135,9 @@ x=y = \frac{\sqrt{2}}{2}
 \end{equation}
 %
 \begin{description}
-	\item[Арккосинус угла~\textit{x} "---] такое значение угла~\textit{y}, выраженное в~радианах, для~которого~${\displaystyle \cos y=x \quad| 0\leqslant y\leqslant \pi ,\quad |x|\leqslant 1}$. 
+	\item[Арккосинус числа~\textit{x} "---] такое значение угла~\textit{y} в~радианной мере, для~которого~${\displaystyle \cos y=x \quad| 0\leqslant y\leqslant \pi ,\quad |x|\leqslant 1}$. 
 \end{description}
-Рассмотрим функцию~${\displaystyle y = \cos x}$. На~всей своей области определения она~является кусочно-монотонной, а, значит, обратное соответствие~${\displaystyle y=\arccos x}$ функцией не~является. В~связи с~этим следует рассматривать отрезок, на~котором она~строго убывает и~принимает все~свои значения~${\displaystyle [0;\pi ]}$. На~этом отрезке~${\displaystyle y=\cos x}$ строго монотонно убывает и~принимает все~свои значения только один раз, а~значит, на~отрезке~${\displaystyle [0;\pi ]}$ существует обратная функция~${\displaystyle y=\arccos x}$, график которой симметричен графику~${\displaystyle y=\cos x}$ на~отрезке~${\displaystyle [0;\pi ]}$ относительно прямой~${\displaystyle y=x}$.
+Рассмотрим функцию~${\displaystyle y = \cos x}$. На~всей своей области определения она~является кусочно-монотонной, следовательно обратное соответствие~${\displaystyle y=\arccos x}$ по~причине нарушения требования однозначности не~является функцией. В~связи с~этим следует рассматривать отрезок, на~котором она~строго убывает и~принимает все~значения области значений один раз "--- ${\displaystyle [0;\pi ]}$. На~этом отрезке~${\displaystyle y=\cos x}$ строго монотонно убывает и~принимает все~свои значения только один раз, а~значит, на~отрезке~${\displaystyle [0;\pi ]}$ существует обратная функция~${\displaystyle y=\arccos x}$, график которой симметричен графику~${\displaystyle y=\cos x}$ на~отрезке~${\displaystyle [0;\pi ]}$ относительно прямой~${\displaystyle y=x}$.
 
 Функция~${\displaystyle y=\arccos x}$ непрерывна и~ограничена на~всей своей области определения. Она~является строго убывающей и~неотрицательной. Функция центрально-симметрична относительно точки~${\displaystyle \left(0;{\frac {\pi }{2}}\right)}$, а~также имеет следующие свойства:
 \begin{equation}\label{eq:arccos-properties}
@@ -3164,6 +3167,96 @@ x=y = \frac{\sqrt{2}}{2}
 	\arccos &= 2 \arccos \sqrt{\frac{1 + x}{2}};\\
 	\arccos &= 2 \arccot \sqrt{\frac{1 - x}{1 + x}};\\
 	\arccos & = \arcsec \frac{1}{x}.	
+	\end{aligned}
+\end{equation}
+%
+\begin{description}
+	\item[Арктангенс числа~\textit{x} "---] такое значение угла~\textit{y} в~радианной мере, для~которого~${\displaystyle \tan y = x \quad| -{\frac {\pi }{2}} < y < {\frac {\pi }{2}}}$.
+\end{description}
+Рассмотрим функцию~${\displaystyle y = \tan x}$. На~всей своей области определения она~является кусочно-монотонной, следовательно обратное соответствие~${\displaystyle y = \arctan x}$ по~причине нарушения требования однозначности не~является функцией. В~связи с~этим следует рассматривать отрезок, на~котором она~строго возрастает и~принимает все~значения области значений один раз "--- ${\displaystyle \left(-{\frac {\pi }{2}};{\frac {\pi }{2}}\right)}$. На~этом отрезке~${\displaystyle y = \tan x}$ строго монотонно возрастает и~принимает все~свои значения только один раз, следовательно, на~интервале~${\displaystyle \left(-{\frac {\pi }{2}};{\frac {\pi }{2}}\right)}$ существует обратная функция~${\displaystyle y = arctan x}$, график которой симметричен графику~${\displaystyle y = \tan x}$ на~отрезке~${\displaystyle \left(-{\frac {\pi }{2}};{\frac {\pi }{2}}\right)}$ относительно прямой ${\displaystyle y=x}$.
+
+Функция~${\displaystyle y= \arctan x}$ определена на~всей числовой прямой, всюду непрерывна и~ограничена, является строго возрастающей и~имеет следующие свойства:
+\begin{equation}\label{eq:arctan-properties}
+	\begin{aligned}
+	\tan (\arctan x) &= x \quad| x \in \mathbb{R};\\
+	\arctan (\tan y) &= y \quad| - \frac{\pi}{2} < y < \frac{\pi}{2};\\
+	D (\arctan x)    &= (-\infty;\infty);\\
+	E (\arctan x)    &= (-\frac{\pi}{2});\\
+	\arctan(-x)      &= -\arctan x\ \text{функция нечётная};\\
+	\arctan x        &= \arcsin \frac{x}{\sqrt{1 + x^{2}}};\\
+	\arctan x        &= \arccos \frac{1}{\sqrt{1 + x^{2}}} \quad x>0;\\
+	\arctan x        &= \arccot \frac{1}{x}.\\
+	\end{aligned}
+\end{equation}
+%
+\begin{description}
+	\item[Аркконтангенс числа \textit{x} "---] такое значение угла~\textit{y} в~радианной мере, для~которого~${\displaystyle \cot y = x\quad| 0 < y < \pi}$. 
+\end{description}
+Рассмотрим функцию~${\displaystyle y = \cot x}$. На~всей своей области определения она~является кусочно-монотонной, следовательно обратное соответствие~${\displaystyle y = \arccot x}$ по~причине нарушения требования однозначности не~является функцией. В~связи с~этим следует рассматривать отрезок, на~котором она~строго возрастает и~принимает все~значения области значений один раз "--- ${\displaystyle (0;\pi )}$. На~этом отрезке~${\displaystyle y = \cot x}$ строго убывает и~принимает все~свои значения только один раз, следовательно, на~интервале~${\displaystyle (0;\pi )}$ существует обратная функция~${\displaystyle y = \arccot}$, график которой симметричен графику~${\displaystyle y = \cot x}$ на~отрезке~${\displaystyle (0;\pi )}$ относительно прямой~${\displaystyle y=x}$. График арккотангенса получается из~графика арктангенса, если последний отразить относительно оси ординат (т.\,е. заменить знак аргумента: ${\displaystyle x\rightarrow -x}$ и~сместить вверх на~${\textstyle \frac{\pi}{2}}$; это~вытекает из~нижеприведённой формулы ${\displaystyle \arccot = \arctan (-x) + \frac{\pi}{2}}$. График функции центрально-симметричен относительно точки~${\displaystyle \left(0;{\frac {\pi }{2}}\right)}$.
+
+Функция~${\displaystyle y = \arccot x}$ определена на~всей числовой прямой, всюду непрерывна и~ограничена, является строго убывающей и~всюду положительной, а~также имеет следующие свойства:
+\begin{equation}\label{eq:arccot-properties}
+	\begin{aligned}
+	\cot (\arccot x) &= x \quad | x \in \mathbb{R};\\
+	\arccot (\cot y) &= y \quad | y \in 0 < y < \pi;\\
+	D(\arccot x)     &= (- \infty;\infty);\\
+	E(\arccot x)     &= (0;\pi);\\
+	\arccot (-x)     &= \pi - \arccot x\ \Rightarrow \text{функция индифферентна};\\
+	\arccot x        &> 0 \quad |\forall x;\\
+	\arccot x        &=
+		\begin{cases}
+		      \arcsin \frac{1}{\sqrt{1 + x^{2}}} \quad | x \geq 0\\
+		\pi - \arcsin \frac{1}{\sqrt{1 + x^{2}}} \quad | x < 0
+		\end{cases}
+		;\\
+	\arccot x = \frac{\pi}{2} - \arccot x;
+	\arccot x = \arctan \frac{1}{x}.
+	\end{aligned}
+\end{equation}
+%
+\begin{description}
+	\item [Арксеканс числа~\textit{x} "---] такое значение угла~\textit{y} в~радианной мере, для~которого~${\displaystyle \sec y=x, \quad |x|\geqslant 1, \quad 0\leqslant y\leqslant \pi}$. 
+\end{description}
+Функция~${\displaystyle y = \arcsec x}$ непрерывна и~ограничена на~всей своей области определения, является строго возрастающей и~всюду неотрицательной, а~также имеет следующие свойства:
+\begin{equation}\label{eq:secant-properties}
+	\begin{aligned}
+	\sec (\arcsec x) &= x \quad | |x| \geq 1;\\
+	\arcsec (\sec y) &= y \quad | 0 \leq y \leq \pi;\\
+	D(\arcsec x)     &= (-\infty;-1)\cup(1;\infty);\\
+	E(\arcsec x)     &= [0;\frac{\pi}{2})\cup(\frac{\pi}{2};\pi];\\
+	\arcsec(-x)      &= \pi - \arcsec x \Rightarrow \text{функция индифферентна};\\
+	\arcsec x        &\geq 0 \quad | \forall x;\\
+	\arcsec x        &=
+		\begin{cases}
+	          \arcsin \frac{\sqrt{x^{2}-1}}{x} \quad | x \geq 1 \\
+		\pi + \arcsin \frac{\sqrt{x^{2}-1}}{x} \quad | x \leq -1\\
+		\end{cases}
+		;\\
+	\arcsec x        &= \frac{\pi}{2} - \arccsc x;\\
+	\arcsec x        &= \arccos \frac{1}{x}	
+	\end{aligned}	
+\end{equation}
+График функции центрально-симметричен относительно точки $\left(0; \frac{\pi}{2}\right)$.
+%
+\begin{description}
+	\item[Арккосеканс числа~\textit{x} "---] такое значение угла~y в~радианной мере, для~которого~${\displaystyle \csc y = x,\quad |x|\geqslant 1,\quad -\frac{\pi}{2}\leqslant y\leqslant \frac{\pi}{2}}$.  
+\end{description}
+Функция~${\displaystyle y = \arccsc x}$ непрерывна и ограничена на всей своей области определения, является строго убывающей, и~имеет следующие свойства:
+\begin{equation}\label{eq:arcsecant-properties}
+	\begin{aligned}
+	\csc (\arccsc x) &= x \quad | |x| \geq 1;\\
+	\arccsc (\csc y) &= y \quad | - \frac{\pi}{2} \leq y \leq \frac{\pi}{2};\\
+	D(\arccsc x)     &= (- \infty;-1] \cup [1;\infty);\\
+	E(\arccsc x)     &= [-\frac{\pi}{2};0] \cup (0;\frac{\pi}{2}];\\
+	\arccsc (-x)     &= - \arccsc x \Rightarrow \text{нечётная функция};\\
+	\arccsc x        &= \arctan \frac{\sgn x}{\sqrt{x^{2} - 1}} =
+		\begin{cases}
+		\arctan \frac{1}{\sqrt{x^{2} - 1}} \quad | x > 1\\
+		-\arctan \frac{1}{\sqrt{x^{2} - 1}} \quad | x < 1\\
+		\end{cases}
+		;\\
+	\arccsc x        &= \frac{\pi}{2} - \arcsec x;\\
+	\arccsc x        &= \arcsin \frac{1}{x}.
 	\end{aligned}
 \end{equation}
 %
