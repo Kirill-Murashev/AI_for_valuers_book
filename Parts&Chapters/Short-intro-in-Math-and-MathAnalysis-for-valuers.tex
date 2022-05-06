@@ -17,11 +17,11 @@
 \begin{abstract}
 	Какую~бы работу не~выполнял оценщик, во~всех случаях он~имеет дело с~информацией и~данными. Часто эти~данные представляют собой числа либо могут быть формализованы иным образом. В~любом случае требуется алгоритмическая обработка входных данных и~преобразование их~в~информацию, а~в~некоторых случаях "--- в~знания. Целью данного фрагмента является формирование общих представлений об~основных понятиях и~методах математического анализа, необходимых современному оценщику. Материал построен таким образом, при~котором существует возможность ссылаться на~него при~решении практически всех математических задач, возникающих у~оценщиков, начиная со~школьной программы 5-класса, заканчивая математическим анализом, в~объёме преподаваемом на~нематематических специальностях вузов. Специфические вопросы, касающиеся частотного подхода в~математической статистике, байесовского подхода, а~также математических методов, применяемых в~машинном обучении, а~также иных специфических методов, выходящих за~рамки программы нематематических специальностей, рассмотрены в~отдельных материалах.  Автор постарался прибегать к~минимальному числу формул и~сложных определений, хотя это~и~не~вполне получилось. Поскольку конечной целью всей работы является цифровизация оценочной деятельности, в~тексте приводятся короткие листинги на~языках R и~Python, позволяющие реализовать то, о~чём говорится в~тексте.
 	
-	Данный материал писался в~трагический период войны России против Украины. Сложно поверить в~то, что~в~2022 году "--- в~эпоху искусственного интеллекта, полёта <<Вояджеров>> за~пределами нашей звёздной системы, нанотехнологий и~мгновенного доступа ко~всем знаниям человечества c~устройства, помещающегося в~карман,"--- на~мирные города падают бомбы, дети прячутся от~смерти в~подвалах своих домов, а~множество людей, включая автора данного материала, покинуло свои дома и~страны.  Можно сказать, что~это~война между Прошлым и~Будущим. И~есть твёрдая уверенность в~том, что~только научное знание может решить проблемы человечества и~обеспечить такое будущее, в~котором не~будет места злобному и~тупому прошлому. Поэтому даже в~самое сложное время необходимо полагаться на~знания и~распространять их. Разум обязательно победит силу, будущее "--- прошлое, а~демократия "--- диктатуру. 
+	Данный материал писался в~трагический период войны инфицированной фашизмом России против Украины и~всего цивилизованного мира. Сложно поверить в~то, что~в~2022 году "--- в~эпоху искусственного интеллекта, полёта <<Вояджеров>> за~пределами нашей звёздной системы, нанотехнологий и~мгновенного доступа ко~всем знаниям человечества c~устройства, помещающегося в~карман,"--- на~мирные города падают бомбы, дети прячутся от~смерти в~подвалах своих домов, а~множество людей, включая автора данного материала, покинуло свои дома и~страны.  Можно сказать, что~это~война между Прошлым и~Будущим. И~есть твёрдая уверенность в~том, что~только научное знание может решить проблемы человечества и~обеспечить такое будущее, в~котором не~будет места злобному и~тупому прошлому. Поэтому даже в~самое сложное время необходимо полагаться на~знания и~распространять их. Разум обязательно победит силу, будущее "--- прошлое, а~демократия "--- диктатуру. 
 	
 	\foreignlanguage{English}{Whatever work an~appraiser does, in~all~cases he~or~she~is~dealing with information and~data. Often these data are~numbers or~can~be formalized in~some other way. In~either case, it~requires algorithmic processing of~the~input data and~converting it~to~information, and~in~some cases to~knowledge. The~purpose of~this excerpt is~to~form a~general understanding of~the~basic concepts and~methods of~mathematical analysis required by~the~modern appraiser. The~material is~structured so~that it~can~be referred to~when solving almost any~mathematical problem that arises with an~appraiser, from grade 4~school programs to~mathematical analysis in~non-mathematical courses at~universities. Specific topics related to~Frequency approach in~mathematical statistics, the~Bayesian approach, mathematical methods used in~Machine learning, as~well as~other specific methods beyond the~scope of~non-mathematical programs, are~covered in~the~separate material.  The~author tried to~use as~few formulas and~complex definitions as~possible, although this did~not quite work out. Since the~ultimate goal of~the whole work is~digitalization of~valuation activities, short listings in~R and~Python are~provided in~the~text, which allow to~implement what the~text talks about.}
 	
-	\foreignlanguage{English}{This material was~written during the~tragic period of~Russia's war against Ukraine. It~is~hard to~believe that in~the~year 2022 in~the~age of~Artificial Intelligence, Voyagers beyond our~star system, nanotechnology, and~instant access to~all~human knowledge from a~device in~your pocket bombs are~falling on peaceful cities, children are~hiding from death in~the~basement of~their homes, and~countless people, including this author, have abandoned their homes and~countries.  You~could say it's a~war between the~Past and~the~Future. There is~a~firm belief that only scientific knowledge can solve humanity's problems and~provide a~future in~which there is~no~place for~an~evil and~dull past. Therefore, even in~the~most difficult of~times, it~is~necessary to~rely on~and~spread knowledge. Intelligence will surely defeat force, the~Future will defeat the~Past, and~democracy will defeat dictatorship.}
+	\foreignlanguage{English}{This material was written during the~tragic period of~fascist Russia's war against Ukraine and~the~entire civilized world. It~is~hard to~believe that in~the~year 2022 in~the~age of~Artificial Intelligence, Voyagers beyond our~star system, nanotechnology, and~instant access to~all~human knowledge from a~device in~your pocket bombs are~falling on peaceful cities, children are~hiding from death in~the~basement of~their homes, and~countless people, including this author, have abandoned their homes and~countries.  You~could say it's a~war between the~Past and~the~Future. There is~a~firm belief that only scientific knowledge can solve humanity's problems and~provide a~future in~which there is~no~place for~an~evil and~dull past. Therefore, even in~the~most difficult of~times, it~is~necessary to~rely on~and~spread knowledge. Intelligence will surely defeat force, the~Future will defeat the~Past, and~democracy will defeat dictatorship.}
 \end{abstract}
 
 \tableofcontents
@@ -3002,7 +3002,7 @@ x=y = \frac{\sqrt{2}}{2}
 %
 Следует отметить, что~все~основные тригонометрические функции имеют функции, являющиеся обратными к~ним, а~также свои гиперболические аналоги.
 
-Все~тригонометрические функции непрерывно и~неограниченно дифференцируемы на~всей области определения. В~таблице~\ref{tab:trigonometric-functios-derivatives-antiderivatives} приводятся производные и~первообразные. На~рисунке~\ref{fig:trigonometric-functions-derivatives} изображены графики производных основных тригонометрических функций, на~рисунке~\ref{fig:trigonometric-functions-antiderivatives} "--- первообразных.
+Все~тригонометрические функции непрерывно и~неограниченно дифференцируемы на~всей области определения. В~таблице~\ref{tab:trigonometric-functios-derivatives-antiderivatives} приводятся производные и~первообразные. На~рисунке~\ref{fig:trigonometric-functions-derivatives} изображены графики производных тригонометрических функций, на~рисунке~\ref{fig:trigon-func-anti-derivatives} "--- первообразных, на~рисунке~\ref{fig:trigonometric-functions-integral} "--- некоторых примеров определённых интегралов.
 %
 \begin{table}[ht]
 	\caption{Производные и~первообразные тригонометрических функций}  \label{tab:trigonometric-functios-derivatives-antiderivatives}
@@ -3037,11 +3037,16 @@ x=y = \frac{\sqrt{2}}{2}
 %
 \begin{figure}[ht]
 	\centering % 
-	\includegraphics[width=0.8\textwidth]{trigon-func-antiderivatives.pdf}
-	\caption{Графики первообразных основных тригонометрических функций $[-2\pi,2\pi]$}\label{fig:trigonometric-functions-antiderivatives}
+	\includegraphics[width=0.8\textwidth]{trigon-func-anti-derivatives.pdf}
+	\caption{Графики первообразных основных тригонометрических функций}\label{fig:trigon-func-anti-derivatives}
 \end{figure}
 %
-
+\begin{figure}[ht]
+	\centering % 
+	\includegraphics[width=0.8\textwidth]{trigon-func-integral.pdf}
+	\caption{Графики определённых интегралов основных тригонометрических функций $[-\pi,\pi]$}\label{fig:trigonometric-functions-integral}
+\end{figure}
+%
 Интегралы тригонометрических функций на области определения выражаются через элементарные функции следующим образом:
 \begin{equation}\label{eq:trigonometric-functions-integrals}
 	\begin{aligned}
@@ -3170,6 +3175,12 @@ x=y = \frac{\sqrt{2}}{2}
 	\end{aligned}
 \end{equation}
 %
+\begin{figure}[ht]
+	\centering % 
+	\includegraphics[width=0.8\textwidth]{arcfunctions-derivatives.pdf}
+	\caption{Графики производных обратных тригонометрических функций~(аркфункций)}\label{fig:arcfunctions-derivatives}
+\end{figure}
+%
 \begin{description}
 	\item[Арктангенс числа~\textit{x} "---] такое значение угла~\textit{y} в~радианной мере, для~которого~${\displaystyle \tan y = x \quad| -{\frac {\pi }{2}} < y < {\frac {\pi }{2}}}$.
 \end{description}
@@ -3209,10 +3220,16 @@ x=y = \frac{\sqrt{2}}{2}
 		\pi - \arcsin \frac{1}{\sqrt{1 + x^{2}}} \quad | x < 0
 		\end{cases}
 		;\\
-	\arccot x = \frac{\pi}{2} - \arccot x;
-	\arccot x = \arctan \frac{1}{x}.
+	\arccot x        &= \frac{\pi}{2} - \arccot x;\\
+	\arccot x        &= \arctan \frac{1}{x}.
 	\end{aligned}
 \end{equation}
+%
+\begin{figure}[ht]
+	\centering % 
+	\includegraphics[width=0.8\textwidth]{arcfunctions-antiderivatives.pdf}
+	\caption{Графики первообразных обратных тригонометрических функций~(аркфункций)}\label{fig:arcfunctions-antiderivatives}
+\end{figure}
 %
 \begin{description}
 	\item [Арксеканс числа~\textit{x} "---] такое значение угла~\textit{y} в~радианной мере, для~которого~${\displaystyle \sec y=x, \quad |x|\geqslant 1, \quad 0\leqslant y\leqslant \pi}$. 
@@ -3223,7 +3240,7 @@ x=y = \frac{\sqrt{2}}{2}
 	\sec (\arcsec x) &= x \quad | |x| \geq 1;\\
 	\arcsec (\sec y) &= y \quad | 0 \leq y \leq \pi;\\
 	D(\arcsec x)     &= (-\infty;-1)\cup(1;\infty);\\
-	E(\arcsec x)     &= [0;\frac{\pi}{2})\cup(\frac{\pi}{2};\pi];\\
+	E(\arcsec x)     &= [0;\frac{\pi}{2})\cup(\frac{\pi}{2};\pi]\quad \vee \quad [0;\frac{\pi}{2}) \cup [\pi;\frac{3\pi}{2});\\
 	\arcsec(-x)      &= \pi - \arcsec x \Rightarrow \text{функция индифферентна};\\
 	\arcsec x        &\geq 0 \quad | \forall x;\\
 	\arcsec x        &=
@@ -3239,7 +3256,7 @@ x=y = \frac{\sqrt{2}}{2}
 График функции центрально-симметричен относительно точки $\left(0; \frac{\pi}{2}\right)$.
 %
 \begin{description}
-	\item[Арккосеканс числа~\textit{x} "---] такое значение угла~y в~радианной мере, для~которого~${\displaystyle \csc y = x,\quad |x|\geqslant 1,\quad -\frac{\pi}{2}\leqslant y\leqslant \frac{\pi}{2}}$.  
+	\item[Арккосеканс числа~\textit{x} "---] такое значение угла~y в~радианной мере, для~которого~${\displaystyle \csc y = x\quad | |x|\geqslant 1,\quad -\frac{\pi}{2}\leqslant y\leqslant \frac{\pi}{2}}$.  
 \end{description}
 Функция~${\displaystyle y = \arccsc x}$ непрерывна и ограничена на всей своей области определения, является строго убывающей, и~имеет следующие свойства:
 \begin{equation}\label{eq:arcsecant-properties}
@@ -3247,7 +3264,7 @@ x=y = \frac{\sqrt{2}}{2}
 	\csc (\arccsc x) &= x \quad | |x| \geq 1;\\
 	\arccsc (\csc y) &= y \quad | - \frac{\pi}{2} \leq y \leq \frac{\pi}{2};\\
 	D(\arccsc x)     &= (- \infty;-1] \cup [1;\infty);\\
-	E(\arccsc x)     &= [-\frac{\pi}{2};0] \cup (0;\frac{\pi}{2}];\\
+	E(\arccsc x)     &= [-\frac{\pi}{2};0] \cup (0;\frac{\pi}{2}]\quad \vee \quad (-\pi;-\frac{\pi}{2}] \cup (0;\frac{\pi}{2}];\\
 	\arccsc (-x)     &= - \arccsc x \Rightarrow \text{нечётная функция};\\
 	\arccsc x        &= \arctan \frac{\sgn x}{\sqrt{x^{2} - 1}} =
 		\begin{cases}
@@ -3260,7 +3277,68 @@ x=y = \frac{\sqrt{2}}{2}
 	\end{aligned}
 \end{equation}
 %
+В~таблице~\ref{tab:arcfunctios-main-information} приводятся обобщающие сведения об~аркфункциях.
+%
+\begin{table}[ht]
+	\caption{Основные сведения об~аркфункциях}  \label{tab:arcfunctios-main-information}
+	\centering
+	\normalsize
+	\begin{tabularx}
+		{\textwidth}{>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}}
+		\hline
+		\text{Наименование}&\text{Форма записи}&\text{Определение}&D&E\\
+		\hline
+		\arcsin&y = \arcsin (x)&x = \sin y&-1 \leq x \leq 1&-\frac{\pi}{2} \leq y \leq \frac{\pi}{2}\\
+		\hline
+		\arccos&y = \arccos (x)&x = \cos y&-1 \leq x \leq 1&0 \leq y \leq \pi\\
+		\hline
+		\arctan&y = \arctan (x)&x = \tan y&\mathbb{R}&-\frac{\pi}{2} < y < \frac{\pi}{2}\\
+		\hline
+		\arccot&y = \arccot (x)&x = \cot y&\mathbb{R}&0 < y < \pi\\
+		\hline
+		\arcsec&y = \arcsec (x)&x = \sec y&\mathbb{R} \backslash (-1,1)&[0,\pi] \backslash \{\frac{\pi}{2}\}\\			
+		\hline
+		\arccsc&y = \arccsc (x)&x = \csc y&\mathbb{R} \backslash (-1,1)&[-\frac{\pi}{2},\frac{\pi}{2} \backslash \{0\}\\
+		\hline
+	\end{tabularx}
+	\normalsize
+\end{table}
+%
+Все обратные тригонометрические функции бесконечно дифференцируемы в~каждой точке своей области определения. В~таблице~\ref{tab:arcfunctios-derivatives-antiderivatives-integrals} приводятся значения первых производных, первообразных и~определённых интегралов обратных тригонометрических функций. На~рисунках~\ref{fig:arcfunctions-derivatives}-- изображены графики производных, первообразных и~определённых интегралов обратных тригонометрических функций соответственно.
+
+\begin{table}[ht]
+	\caption{Производные, первообразные и~определённые интегралы обратных тригонометрических функций}  \label{tab:arcfunctios-derivatives-antiderivatives-integrals}
+	\centering
+	\tiny
+	\begin{tabularx}
+		{\textwidth}{>{$}l<{$}>{$}l<{$}>{$}l<{$}>{$}l<{$}}
+		\hline
+		f(x)&\frac{\partial}{\partial x} &\int f(x)dx \quad | x \in \mathbb{R} \vee  \mathbb{C}&\int_{i}^{k}f(x)dx\\
+		\hline
+		\arcsin x&\frac{1}{\sqrt{1-x^{2}}}\quad|x\neq -1,1&x\ \arcsin x + \sqrt{1-x^{2}} + C&\int_{0}^{x}\frac{1}{\sqrt{1 - x^{2}}} dx \quad| |x|\leq 1\\
+		\hline
+		\arccos x&-\frac{1}{\sqrt{1-x^{2}}}\quad|x\neq -1,1&x\ \arccos x - \sqrt{1-x^{2}}&\int_{x}^{1}\frac{1}{\sqrt{1 - x^{2}}} dx \quad| |x|\leq 1\\
+		\hline
+		\arctan x&\frac{1}{1+x^{2}}\quad|x\neq -i,i&x\ \arctan x - \frac{1}{2} \ln (1+x^{2}) + C&\int_{0}^{x}\frac{1}{x^{2}+1} dx\\
+		\hline
+		\arccot x&-\frac{1}{1+x^{2}}\quad|x\neq -i,i&x\ \arccot x + \frac{1}{2} \ln (1+x^{2}) + C&\int_{x}^{\infty}\frac{1}{x^{2}+1} dx\\
+		\hline	
+		\arcsec x&\frac{1}{|x|\sqrt{x^{2}-1}}=\frac{1}{x^{2}\sqrt{1-\frac{1}{x^{2}}}}\quad|x\neq -1,0,1&x\ \arcsec x - \ln \left(x \left(1 + \sqrt{\frac{x^{2}-1}{x^{2}}} \right) \right) + C&\int_{1}^{x} \frac{1}{x\sqrt{x^{2}-1}} dx = \pi + \int_{-x}^{-1} \frac{1}{x\sqrt{x^{2}-1}} dx \quad| x \geq 1\\
+     	\hline
+     	\arccsc x&-\frac{1}{|x|\sqrt{x^{2}-1}}=-\dfrac{1}{x^{2}\sqrt{1-\frac{1}{x^{2}}}}\quad|x\neq -1,0,1&x \arccsc x + \ln \left(x \left(1 + \sqrt{\frac{x^{2}-1}{x^{2}}} \right) \right) + C&\int_{x}^{\infty} \frac{1}{x\sqrt{x^{2}-1}} dx = \int_{-\infty}^{-x} \frac{1}{x\sqrt{x^{2}-1}} dx \quad| x \geq 1\\
+     	\hline				
+	\end{tabularx}
+	\normalsize
+\end{table}
+%
 \subsubsection{Гиперболические тригонометрические функции}
+\begin{description}
+	\item[Единичная гипербола "---] набор точек на~плоскости, удовлетворяющих выражению
+		\begin{equation}\label{unit-hyperbola}
+			x^{2} - y^{2} = 1.
+		\end{equation}
+\end{description}
+В~то~время как~\emph{единичная окружность} расположена вокруг начала координат, единичная гипербола дополняется сопряжённой гиперболой, удовлетворяющей выражению~${\textstyle y^{2} - x^{2} = 1}$. Данная пара гипербол имеет общие асимптоты ${\textstyle y=x, y=-x}$.
 %
 \section{Функции}
 \subsection{Понятие функции}
