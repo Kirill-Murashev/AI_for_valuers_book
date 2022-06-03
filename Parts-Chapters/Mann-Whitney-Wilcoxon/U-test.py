@@ -46,7 +46,7 @@ plt.title(title)
 # save to .pdf
 plt.savefig('spba-price-histogram-py.pdf')
 
-# create separate data frames for city and suburbs
+# create separate dataframes for city and suburbs
 dfs = df1[df1["county"].str.startswith('s')]
 dfl = df1[df1["county"].str.startswith('l')]
 
@@ -117,7 +117,7 @@ plt.savefig('spb-lo-boxplot-py.pdf')
 stat, p = shapiro(dfs['price_m'])
 print('Statistics=%.3f, p=%.3f' % (stat, p))
 # interpret
-if p < alpha:
+if p <= alpha:
     print('Sample does not look Gaussian (reject H0)')
 else:
     print('Sample looks Gaussian (fail to reject H0)')
@@ -126,7 +126,7 @@ else:
 stat, p = shapiro(dfl['price_m'])
 print('Statistics=%.3f, p=%.3f' % (stat, p))
 # interpret
-if p < alpha:
+if p <= alpha:
     print('Sample does not look Gaussian (reject H0)')
 else:
     print('Sample looks Gaussian (fail to reject H0)')
@@ -137,7 +137,7 @@ else:
 stat, p = normaltest(dfs['price_m'])
 print('Statistics=%.3f, p=%.3f' % (stat, p))
 # interpret
-if p < alpha:
+if p <= alpha:
     print('Sample does not look Gaussian (reject H0)')
 else:
     print('Sample looks Gaussian (fail to reject H0)')
@@ -146,7 +146,7 @@ else:
 stat, p = normaltest(dfl['price_m'])
 print('Statistics=%.3f, p=%.3f' % (stat, p))
 # interpret
-if p < alpha:
+if p <= alpha:
     print('Sample does not look Gaussian (reject H0)')
 else:
     print('Sample looks Gaussian (fail to reject H0)')
