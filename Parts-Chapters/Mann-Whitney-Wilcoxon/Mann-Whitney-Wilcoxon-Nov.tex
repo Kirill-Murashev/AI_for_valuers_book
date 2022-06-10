@@ -9,9 +9,20 @@
 \begin{document}
 	
 \maketitle
-
-
-	
+%
+\lstset{language=Python,
+	basicstyle=\ttfamily,
+	keywordstyle=\color{Blue}\ttfamily,
+	stringstyle=\color{Red}\ttfamily,
+	commentstyle=\color{Emerald}\ttfamily,
+	morecomment=[l][\color{Magenta}]{\#},
+	breaklines=true,
+	breakindent=0pt,
+	breakatwhitespace,
+	columns=fullflexible,
+	showstringspaces=false
+}
+%	
 \begin{abstract}
 	В~своей практике оценщики часто сталкиваются с~необходимостью учёта различий количественных характеристик объектов. В~частности, одной из~стандартных задач является установление признаков, влияющих на~стоимость~(т.\,н.~ценообразующих факторов) и~их~отделение от~признаков, влияние которых на~стоимость отсутствует либо не~может быть установлено.
 	
@@ -393,7 +404,39 @@ P_{FPR}(c),P_{TPR}(c),
 \end{equation}
 таким образом, построение кривой означает изменение значения порога $c$.
 
-Рассмотрим примерю. Возьмём  $f(x|C_{0}) = \mathcal{N}(0,1)$ и~$f(x|C_{1}) = \mathcal{N}(2,1)$ в~качестве функций плотности вероятностей $C_{0}$ и~$C_{1}$ соответственно. 
+Рассмотрим примерю. Возьмём  $f(x|C_{0}) = \mathcal{N}(0,1)$ и~$f(x|C_{1}) = \mathcal{N}(2,1)$ в~качестве функций плотности вероятностей $C_{0}$ и~$C_{1}$ соответственно. Далее поэтапно построим ROC-кривую средствами языка Python. Рассмотрим диаграмму~\ref{fig:plot-TPR-FPR-prob-density}, построенную с~помощью кода, приведённого в~скрипте~\ref{lst:plot-TPR-FPR-prob-density}. Область, закрашенная синим цветом, показывает вероятность~FPR, т.\,е.~ложно-положительного обнаружения значимости, тогда как~область, закрашенная зелёным цветом "--- плотность вероятности TPR, т.\,е.~корректного обнаружения значимости. ROC-кривая показывает значения именно этих показателей. Вертикальная прерывистая линия "--- порог чувствительности~$c$.
+
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-1.pdf}
+	\caption{Диаграмма плотностей распределения вероятностей TPR и~FPR}
+	\label{fig:plot-TPR-FPR-prob-density}
+\end{figure}
+%
+\begin{lstlisting}[float, caption = Построение диаграммы плотностей распределения вероятностей TPR и~FPR, firstnumber=1, label= lst:plot-TPR-FPR-prob-density]
+# Import Libraries
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Plot
+f0 = stats.norm(0, 1)
+f1 = stats.norm(2, 1)
+fig, ax = plt.subplots()
+xi = np.linspace(-2, 5, 100)
+ax.plot(xi, f0.pdf(xi), label=r'$f(x|C_0)$')
+ax.plot(xi, f1.pdf(xi), label=r'$f(x|C_1)$')
+ax.legend(fontsize=16, loc=(1, 0))
+ax.set_xlabel(r'$x$', fontsize=18)
+ax.vlines(0, 0, ax.axis()[-1] * 1.1, linestyles='--', lw=3.)
+ax.fill_between(xi, f1.pdf(xi), where=xi > 0, alpha=.3, color='g')
+ax.fill_between(xi, f0.pdf(xi), where=xi > 0, alpha=.3, color='b')
+
+# Save to .pdf
+plt.savefig('Plot-ROC-step-1.pdf', bbox_inches='tight')
+\end{lstlisting}
+% 
 
 \clearpage
 
