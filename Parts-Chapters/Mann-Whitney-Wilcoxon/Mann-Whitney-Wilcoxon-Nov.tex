@@ -4,6 +4,8 @@
 %opening
 \title{Практическое применение критерия Манна--~Уитни--~Уилкоксона в~оценочной деятельности}
 
+\subtitle{Отбор признаков в~качестве ценообразующх факторов на~основе строгих математических правил}
+
 \author{\href{https://www.facebook.com/murashev.kirill/}{K.\,A.~{Мурашев}}}
 
 \begin{document}
@@ -404,14 +406,13 @@ P_{FPR}(c),P_{TPR}(c),
 \end{equation}
 таким образом, построение кривой означает изменение значения порога $c$.
 
-Рассмотрим примерю. Возьмём  $f(x|C_{0}) = \mathcal{N}(0,1)$ и~$f(x|C_{1}) = \mathcal{N}(2,1)$ в~качестве функций плотности вероятностей $C_{0}$ и~$C_{1}$ соответственно. Далее поэтапно построим ROC-кривую средствами языка Python. Рассмотрим диаграмму~\ref{fig:plot-TPR-FPR-prob-density}, построенную с~помощью кода, приведённого в~скрипте~\ref{lst:plot-TPR-FPR-prob-density}. Область, закрашенная синим цветом, показывает вероятность~FPR, т.\,е.~ложно-положительного обнаружения значимости, тогда как~область, закрашенная зелёным цветом "--- плотность вероятности TPR, т.\,е.~корректного обнаружения значимости. ROC-кривая показывает значения именно этих показателей. Вертикальная прерывистая линия "--- порог чувствительности~$c$.
-
+Рассмотрим пример. Возьмём  $f(x|C_{0}) = \mathcal{N}(0,1)$ и~$f(x|C_{1}) = \mathcal{N}(2,1)$ в~качестве функций плотности вероятностей $C_{0}$ и~$C_{1}$ соответственно. Далее поэтапно построим ROC-кривую средствами языка Python. Далее рассмотрим диаграмму~\ref{fig:plot-TPR-FPR-prob-density-1}, построенную с~помощью кода, приведённого в~скрипте~\ref{lst:plot-TPR-FPR-prob-density}. Область, закрашенная синим цветом, показывает вероятность~FPR, т.\,е.~ложно-положительного обнаружения значимости, тогда как~область, закрашенная зелёным цветом "--- плотность вероятности TPR, т.\,е.~корректного обнаружения значимости. ROC-кривая показывает значения именно этих показателей. Вертикальная прерывистая линия "--- порог чувствительности~$c$. В~данной ситуации он~находится на~отметке~0 по~оси абсцисс. В~случае его~смещения на~отметку~1 площадь под~кривой FPR~(синий цвет) существенно уменьшится, т.\,е.~снизится вероятность ложно-положительного обнаружения признака, однако, вместе с~этим уменьшится и~площадь TPR~(зелёный цвет), что~означает увеличение ложно-отрицательных результатов. Данная ситуация рассмотрена на~диаграмме~\ref{fig:plot-TPR-FPR-prob-density-2}.  
 %
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-1.pdf}
-	\caption{Диаграмма плотностей распределения вероятностей TPR и~FPR}
-	\label{fig:plot-TPR-FPR-prob-density}
+	\caption{Диаграмма плотностей распределения вероятностей TPR и~FPR при~пороговом значении~0}
+	\label{fig:plot-TPR-FPR-prob-density-1}
 \end{figure}
 %
 \begin{lstlisting}[float, caption = Построение диаграммы плотностей распределения вероятностей TPR и~FPR, firstnumber=1, label= lst:plot-TPR-FPR-prob-density]
@@ -436,8 +437,62 @@ ax.fill_between(xi, f0.pdf(xi), where=xi > 0, alpha=.3, color='b')
 # Save to .pdf
 plt.savefig('Plot-ROC-step-1.pdf', bbox_inches='tight')
 \end{lstlisting}
-% 
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-2.pdf}
+	\caption{Диаграмма плотностей распределения вероятностей TPR и~FPR при~пороговом значении~1}
+	\label{fig:plot-TPR-FPR-prob-density-2}
+\end{figure}
 
+Как~видно из~приведённых диаграмм, повышение порога приводит к~потере части как~истинно-положительных, так~и~ложно-положительных результатов, уменьшение "--- к~увеличению числа фиксации наличия признака в~принципе. В~предельных случаях, слишком низкое пороговое значение приведёт к~тому, что~все результаты будут интерпретированы как~положительные, слишком высокое "--- к~нулевому количеству наблюдений, у~которых был обнаружен признак. Задача ROC-анализа заключается в~выборе рационального порогового значения.
+
+Добавим к~уже имеющимся диаграмма ROC-кривые, соответствующие пороговым значениям~0 и~1. А~также создадим интерактивную диаграмму с~помощью кода, представленного в~скрипте~\ref{lst:plot-TPR-FPR-prob-density+ROC-interactive}. Формат PDF не~позволяет добавлять подобные интерактивные элементы, поэтому рассмотрим случаи с~фиксированными значениями~0 и~1. 
+%
+\begin{lstlisting}[float, caption = Построение интерактивной диаграммы плотности распределения TPR и~FPR и~соответствующей ей~ROC кривой для~заданного порогового значения, firstnumber=1, label= lst:plot-TPR-FPR-prob-density+ROC-interactive]
+# Import Libraries
+%matplotlib inline
+from ipywidgets import interact
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Plot
+f0 = stats.norm(0, 1)
+f1 = stats.norm(2, 1)
+fig, ax = plt.subplots()
+xi = np.linspace(-2, 5, 100)
+ax.plot(xi, f0.pdf(xi), label=r'$f(x|C_0)$')
+ax.plot(xi, f1.pdf(xi), label=r'$f(x|C_1)$')
+ax.legend(fontsize=16, loc=(1, 0))
+ax.set_xlabel(r'$x$', fontsize=18)
+ax.vlines(0, 0, ax.axis()[-1] * 1.1, linestyles='--', lw=3.)
+ax.fill_between(xi, f1.pdf(xi), where=xi > 0, alpha=.3, color='g')
+ax.fill_between(xi, f0.pdf(xi), where=xi > 0, alpha=.3, color='b')
+
+# Plot ROC-curve and make all interactive
+def plot_roc_interact(c=0):
+xi = np.linspace(-3,5,100)
+fig,axs = plt.subplots(1,2)
+fig.set_size_inches((10,3))
+ax = axs[0]
+ax.plot(xi,f0.pdf(xi),label=r'$f(x|C_0)$')
+ax.plot(xi,f1.pdf(xi),label=r'$f(x|C_1)$')
+ax.set_xlabel(r'$x$',fontsize=18)
+ax.vlines(c,0,ax.axis()[-1]*1.1,linestyles='--',lw=3.)
+ax.fill_between(xi,f1.pdf(xi),where=xi>c,alpha=.3,color='g')
+ax.fill_between(xi,f0.pdf(xi),where=xi>c,alpha=.3,color='b')
+ax.axis(xmin=-3,xmax=5)
+crange = np.linspace(-3,5,50)
+ax=axs[1]
+ax.plot(1-f0.cdf(crange),1-f1.cdf(crange))
+ax.plot(1-f0.cdf(c),1-f1.cdf(c),'o',ms=15.)
+ax.set_xlabel('False-alarm probability')
+ax.set_ylabel('Detection probability')
+
+interact(plot_roc_interact,c=(-3,5,.05))
+%
+\end{lstlisting}
 \clearpage
 
 \chapter{Практическая реализация}\label{U-test-practice}
