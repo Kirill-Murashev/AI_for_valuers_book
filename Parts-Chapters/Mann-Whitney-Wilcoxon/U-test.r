@@ -1,4 +1,4 @@
-# Mann-Whitney-U-test, also known as Mann-Whitney-Wilcoxon test
+# Mann-Whitney-U-test, also known as Wilcoxon-Mann-Whitney test
 # Not to be confused with Wilcoxon signed-rank test for dependent samples
 
 # activate libraries
@@ -111,7 +111,4 @@ lillie.test(almatyFlats$price.m[ which(almatyFlats$furniture > 0)])
 
 # perform Mann-Whitney U-test
 wilcox.test(almatyFlats$price.m[ which(almatyFlats$furniture == 0)],
-            almatyFlats$price.m[ which(almatyFlats$furniture > 0)]) 
-            
-
-   
+            almatyFlats$price.m[ which(almatyFlats$furniture > 0)])

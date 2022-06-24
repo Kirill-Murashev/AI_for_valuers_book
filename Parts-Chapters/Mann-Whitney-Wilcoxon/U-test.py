@@ -6,8 +6,9 @@ import numpy as np
 import pandas as pd
 import math
 import matplotlib.pyplot as plt
-from scipy.stats import norm
+import scipy as sp
 import scipy.stats as stats
+from scipy.stats import norm
 from scipy.stats import normaltest
 from scipy.stats import shapiro
 from scipy.stats import anderson
@@ -188,3 +189,5 @@ else:
 
 # U = stats.mannwhitneyu(x=dfs['price_m'], y=dfl['price_m'],
 #                       alternative='two-sided')
+
+from sklearn.linear_model import LogisticRegression
