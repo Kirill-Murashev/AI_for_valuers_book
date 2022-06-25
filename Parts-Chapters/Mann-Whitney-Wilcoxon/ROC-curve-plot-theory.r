@@ -63,3 +63,12 @@ plot(roc(test_set$bad_parts, glm_response_scores, direction="<"),
      col="orange", lwd=3, main="The turtle finds its way", xlim = c(1, 0))
 glm_simple_roc <- appraiser_roc(test_set$bad_parts=="TRUE", glm_link_scores)
 with(glm_simple_roc, points(1 - FPR, TPR, col=1 + labels))
+
+# plot ROC for 99% negative cases
+N <- 2000
+P <- 0.01
+rare_success <- sample(c(TRUE, FALSE), N, replace=TRUE, prob=c(P, 1-P))
+guess_not <- rep(0, N)
+plot(roc(rare_success, guess_not), print.auc=TRUE)
+appr_roc <- appraiserRoc(rare_success, guess_not)
+with(appr_roc, lines(1 - FPR, TPR, col="blue", lty=2))
