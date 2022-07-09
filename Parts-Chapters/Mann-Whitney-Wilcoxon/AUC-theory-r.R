@@ -21,23 +21,57 @@ roc_df <- data.frame(
 xtable(roc_df)
 
 # create function for plotting rectangles
-rectangle <- function(x, y, width, height, density=12, angle=-45, ...) 
-  polygon(c(x,x,x+width,x+width), c(y,y+height,y+height,y), 
+rectangle <- function(x, y, width, height, density=12, angle=45, ...) 
+  polygon(c(x,x+width,x+width,x), c(y,y,y+height,y+height), 
           density=density, angle=angle, ...)
 
+# add dFPR and dTPR columns
 roc_df <- transform(roc_df, 
                     dFPR = c(diff(FPR), 0),
                     dTPR = c(diff(TPR), 0))
 
-plot(0:10/10, 0:10/10, type='n', xlab="FPR", ylab="TPR")
+# plot empty graph from 0 to 1 for each axis
+plot(0:10/10, 0:10/10, type='n', xlab="FPR", ylab="TPR",
+     main = 'ROC-curve and rectangles under it')
 abline(h=0:10/10, col="lightblue")
 abline(v=0:10/10, col="lightblue")
 
-with(roc_df, {
-  mapply(rectangle, x=FPR, y=0,   
-         width=dFPR, height=dTPR, col="green", lwd=2)
-  mapply(rectangle, x=FPR, y=TPR, 
-         width=dFPR, height=dTPR, col="blue", lwd=2)
+# create function for AUC calculation
+appraiser_auc <- function(TPR, FPR){
+  # inputs already sorted, best scores first 
+  dFPR <- c(diff(FPR), 0)
+  dTPR <- c(diff(TPR), 0)
+  sum(TPR * dFPR) + sum(dTPR * dFPR)/2
+}
+
+# apply function to data
+with(roc_df, appraiser_auc(TPR, FPR))
+
+# create  function for rank comparison
+rank_comparison_auc <- function(labels, scores, plot_image=TRUE, ...){
+  score_order <- order(scores, decreasing=TRUE)
+  labels <- as.logical(labels[score_order])
+  scores <- scores[score_order]
+  pos_scores <- scores[labels]
+  neg_scores <- scores[!labels]
+  n_pos <- sum(labels)
+  n_neg <- sum(!labels)
+  M <- outer(sum(labels):1, 1:sum(!labels), 
+             function(i, j) (1 + sign(pos_scores[i] - neg_scores[j]))/2)
   
-  lines(FPR, TPR, type='b', lwd=3, col="red")
-})
+  AUC <- mean (M)
+  if (plot_image){
+    image(t(M[nrow(M):1,]), ...)
+    library(pROC)
+    with( roc(labels, scores),
+          lines((1 + 1/n_neg)*((1 - specificities) - 0.5/n_neg), 
+                (1 + 1/n_pos)*sensitivities - 0.5/n_pos, 
+                col="blue", lwd=2, type='b'))
+    text(0.5, 0.5, sprintf("AUC = %0.4f", AUC))
+  }
+  
+  return(AUC)
+}
+
+# apply function to data
+rank_comparison_auc(labels=as.logical(category), scores=prediction)
