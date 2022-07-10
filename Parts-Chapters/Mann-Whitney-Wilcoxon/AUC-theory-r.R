@@ -75,3 +75,14 @@ rank_comparison_auc <- function(labels, scores, plot_image=TRUE, ...){
 
 # apply function to data
 rank_comparison_auc(labels=as.logical(category), scores=prediction)
+
+# create function for calculation AUC as probability
+auc_probability <- function(labels, scores, N=1e7){
+  pos <- sample(scores[labels], N, replace=TRUE)
+  neg <- sample(scores[!labels], N, replace=TRUE)
+  # sum( (1 + sign(pos - neg))/2)/N # does the same thing
+  (sum(pos > neg) + sum(pos == neg)/2) / N # give partial credit for ties
+}
+
+# apply function to data
+auc_probability(as.logical(category), prediction)
