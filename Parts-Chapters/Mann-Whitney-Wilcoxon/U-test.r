@@ -112,3 +112,23 @@ lillie.test(almatyFlats$price.m[ which(almatyFlats$furniture > 0)])
 # perform Mann-Whitney U-test
 wilcox.test(almatyFlats$price.m[ which(almatyFlats$furniture == 0)],
             almatyFlats$price.m[ which(almatyFlats$furniture > 0)])
+
+# Calculate AUC
+
+# create vector for labels
+almatyFlats$labels <- rep(0, length(almatyFlats$price.m))
+
+# set values by condition
+almatyFlats$labels[almatyFlats$furniture > 0] <- 1
+
+# create function to calculate AUC
+auc_wmw <- function(labels, scores){
+  labels <- as.logical(labels)
+  pos <- scores[labels]
+  neg <- scores[!labels]
+  U <- as.numeric(wilcox.test(pos, neg)$statistic)
+  U/(length(pos) * length(neg))
+}
+
+# apply auc_wmw to data
+auc_wmw(almatyFlats$labels, almatyFlats$price.m)
