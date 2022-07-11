@@ -132,3 +132,5 @@ auc_wmw <- function(labels, scores){
 
 # apply auc_wmw to data
 auc_wmw(almatyFlats$labels, almatyFlats$price.m)
+
+
