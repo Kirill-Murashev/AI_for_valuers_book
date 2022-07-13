@@ -6,8 +6,6 @@ import numpy as np
 import pandas as pd
 import math
 import matplotlib.pyplot as plt
-import scipy as sp
-import scipy.stats as stats
 from scipy.stats import norm
 from scipy.stats import normaltest
 from scipy.stats import shapiro
@@ -18,7 +16,7 @@ from scipy.stats import mannwhitneyu
 alpha = 0.05
 
 # import dataset
-df = pd.read_csv("spba-flats-210928.csv")
+df = pd.read_csv('spba-flats-210928.csv')
 print(df)
 type(df["price_m"])
 
@@ -187,7 +185,10 @@ if p < 0.05:
 else:
     print('Probably the same distribution')
 
+# calculate AUC&RBC
+n1n2 = len(dfs.index) * len(dfl.index)
+auc = stat/n1n2
+rbc = auc-(1-auc)
+
 # U = stats.mannwhitneyu(x=dfs['price_m'], y=dfl['price_m'],
 #                       alternative='two-sided')
-
-from sklearn.linear_model import LogisticRegression
