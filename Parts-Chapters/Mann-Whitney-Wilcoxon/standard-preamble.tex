@@ -1,0 +1,69 @@
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+
+\usepackage{hyperref}       % hyperref
+\hypersetup{				% settings
+	unicode=true,           % non-latin letters
+	pdftitle={Practical application of the Wilcoxon-Mann-Whitney test in valuation
+},   % heading
+	pdfauthor={K. A. Murashev},      % Author
+	pdfsubject={Wilcoxon-Mann-Whitney test},      % Scope
+	pdfcreator={K. A. Murashev}, % Creator
+	pdfproducer={K. A. Murashev}, % Producer
+	pdfkeywords={Wilcoxon-Mann-Whitney test, U-test} % Keywords
+	colorlinks=true,       	% false: links in frames; true: coloured links
+	linkcolor=red,          % internal links
+	citecolor=green,        % bibliography links
+	filecolor=magenta,      % file links
+	urlcolor=blue           % URL links
+}
+
+\usepackage{url}
+
+% work with images
+\usepackage{graphicx}
+\graphicspath{{Images/}}
+
+% work with tables
+\usepackage{array, tabularx, tabulary, booktabs, xtab} % additional forms of tables
+\usepackage{longtable}  % long tables
+\usepackage{multirow} % merge rows
+
+% work with bibliography
+\usepackage[backend=biber,bibencoding=utf8,sorting=ynt,maxcitenames=5,sortupper=true,date=iso]{biblatex}
+
+% set the depth of table of contents
+\setcounter{tocdepth}{8}
+
+% work with scripts
+\usepackage {listings}
+\lstloadlanguages{[Latex]Tex, bash, R, Python, SQL}
+\lstset{extendedchars=true , % additional symbols
+frame=tb, % top & bottom frames
+commentstyle=\itshape , % font for comments
+stringstyle =\ttfamily % font for 'strings'
+keywordstyle=\color{blue} % color for keywords
+}
+
+% connecting the automated bibliography package
+\usepackage[backend=biber,bibencoding=utf8,sorting=ynt,maxcitenames=5,sortupper=true,date=iso]{biblatex} 
+
+% add sources for bibliography
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/Basic_principles.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/LaTeX.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/Mathstat.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/Murashev.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/Python.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/R.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/RussianLaws.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/Sci&Tech.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/Valuation.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/ValuationStandards.bib}
+\addbibresource{/home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/ZHZL.bib}
+
+\usepackage{bbm} % indicator function
+
+\newcommand{\github}{
+	{%
+		\includegraphics[width=3ex,height=3ex,keepaspectratio]{github-seeklogo.pdf}
+}
+}
