@@ -117,7 +117,186 @@ According to~the~basic concept of~the~U-test, if~the~null hypothesis is~true, th
 	\item the~null hypothesis assumes that the~distributions of~the~two samples are equal;
 	\item the~alternative hypothesis assumes that the~distributions of~the~two samples are unequal.
 \end{itemize}
+With a~stricter set of~assumptions than those given above, for~example the~assumption that the~distribution of~the~two samples is~continuous if~the~null hypothesis is~valid and that the~distribution of~the~two samples has a~shift  in~the~distribution if~the~alternative one is~valid i.\,e.~$f_{1}(x)=f_{2}(x+\sigma)$,  we~can say that the~U-test is~a~test for~the~hypothesis of~equality of~medians. In~this case, the~U-test can~be interpreted as~a~test of~whether Hodges--Lehman's estimate of~the~difference in~central tendency measures differs from zero. In~this situation, the~Hodges--Lehman estimate is~the median of~all possible values of~differences between the~observations in~the~first and second samples. However, if~both the~variance and the~shape of~the~distribution of~the~two samples differ, the~U-test cannot correctly test the~medians. Examples can~be shown where the~medians are~numerically equal and the~test rejects the~null hypothesis because of~the~small p-value. Thus, a~more correct interpretation of~the~U-test is~to~use~it to~test the~\href{http://www.machinelearning.ru/wiki/index.php?title=Гипотеза_сдвига}{shift hypothesis}~\cite{MLRU:shift-hypothesis}.
+\begin{description}
+	\item[Shift hypothesis ---] is~a~statistical hypothesis often considered as~an~alternative to~the~hypothesis of~complete homogeneity of~samples. Let~us have two samples of~data. Let~us also give two random variables~\textit{X} and~\textit{Y}, which are~distributed as~elements of~these samples and have distribution functions~\textit{F(x)} and~\textit{G(y)}, respectively. In~these terms, the~shift hypothesis can~be written as~follows
+	\begin{equation}\label{eq:shift-hypothesis}
+	H:F(x)=G(x+\sigma)\ : \forall x,\ \sigma \neq 0.
+	\end{equation}
+\end{description}
+In~this case, the~U-criterion is~valid regardless of~the~characteristics of~the~samples.
 
+Simply put, the~essence of~the~U-test is~that it~allows~us to~answer the~question of~whether there~is a~significant difference in~the~value of~the~quantitative attribute of~the~two samples. With regard to~valuation, we~can say that the~use of~this test helps to~answer the~question of~whether it~is~necessary to~take into account one or~another attribute as~a~price-generating factor. It~follows from the~above that by~default we~are talking about a~two-sided test. In~practice, this means that the~test does~not give a~direct answer to~the~question, for~example: "Is~there a~significant excess of~the~unit value of~premises with a~separate entrance to~the~premises that do~not have it. At~the~same time, there~are also one-sided realizations that allow~us to~answer the~question about the~sign of~the~difference in~the~value of~the~attribute in~the~two samples.
+
+In~addition to~the~above requirements for~the~samples themselves, the~conditions for~applying the~U-test are:
+\begin{itemize}
+	\item the~distribution of~quantitative attribute values of~samples is~different from normal (otherwise it~is advisable to~use parametric Student's t-test or~z-test for~independent samples).
+	\item at~least three observations in~each sample, it~is~allowed to~have two observations in~one of~the~samples, provided that there~are at~least five in~the~other sample.
+\end{itemize}
+To~summarize the~above, there~are three variants of~the~null hypothesis, depending on~the~level of~rigor outlined in~the~table below~\ref{tab:nul-hypothesis-variants}.
+\begin{table}[ht]
+	\caption{Variants of~the~null hypothesis when using the~U-test in~valuation.}\label{tab:nul-hypothesis-variants}
+	\centering
+	\begin{tabularx}{\textwidth}{p{0.25\linewidth} p{0.7\linewidth}} 
+		\hline
+		Type of~hypothesis&Formulation\\
+		\hline
+		Scientific&The~two samples are~completely homogeneous, i.\,e.~they belong to~the~same distribution, there~is no~shift and the~estimate made for~the~first sample is~unbiased for~the~second one.\\
+		\hline
+		Practical&The~medians of~the~two samples are~equal to~each other.\\
+		\hline
+		Set forth in~terms of~valuation&The~difference in~the~attribute between the~two samples of~object-analogues is~not~significant, its accounting is~not required and this attribute is~not a~pricing factor.\\
+		\hline
+	\end{tabularx}
+\end{table}
+%
+\section{Test implementation}
+\subsection{Test statistic}
+Suppose that~the elements $x_{1},\ldots,x_{n}$ represent a~simple independent sample from~$X \in \mathbb{R}$, and~the elements $y_{1},\ldots, y_{n}$ represent a~simple independent sample from $Y \in \mathbb{R}$ and the~samples are~independent of~each other. Then the~relevant U-statistic is~defined as~follows:
+\begin{equation}\label{eq:U-statistic-base-formula}
+\begin{aligned}
+U&=\sum_{i=1}^{m} \sum_{j=1}^{n} S (x_{i},y_{j}),\\
+&\text{при}\\
+S(x,y)&=
+\begin{cases}
+1,\quad \text{если}\ x>y,\\
+\frac{1}{2},\quad \text{если}\ x=y,\\
+0,\quad \text{если}\ x<y.
+\end{cases}
+\end{aligned}
+\end{equation}
+%
+\subsection{Calculation methods}
+The~test involves calculating a~statistic usually called the~U-statistic whose distribution is~known if~the~null hypothesis is~true. When working with very small samples, the~distribution is~specified tabularly; when the~sample size is~more than twenty observations, it~is~approximated quite well by~the~normal distribution. There are~two methods of~calculating U-statistics: manual calculation using the~formula \ref{eq:U-statistic-base-formula} or~using a~special algorithm. The~first method, due~to its~labor-intensive nature, is~only suitable for~very small samples. The~second method can~be formalized as~a~step-by-step set of~instructions and will~be described below.
+\begin{enumerate}
+	\item You must construct a~common variation series for~the~two samples and then assign a~rank to~each observation, starting with one for~the~smallest of~them. If~there are~ties, i.\,e. groups of~repeating values (such a~group can~be, e.\,g., only two equal values), each observation from such a~group is~assigned a~value equal to~the~median of~the~group ranks before adjustment (for example, in~the~case of~a~variation series (\textit{3, 5, 5, 5, 5, 8}) the~ranks before adjustment are~(\textit{1, 2, 3, 4, 5, 6}) after --- (\textit{1, 3.5, 3.5, 3.5, 3.5, 6}).
+	\item It~is necessary to~calculate the~sums of~the~ranks of~the~observations of~each sample, denoted as~${R_{1},\ R_{2}}$ respectively. In~this case, the~total sum of~ranks can~be calculated by~the~formula
+	\begin{equation}\label{eq:common-R}
+	R = \frac{N(N+1)}{2},
+	\end{equation}
+	where~\textit{N} ---the~total number of~observations in~both samples.
+	%
+	\item Next, we~calculate the~U-value for~the~first sample:
+	\begin{equation}\label{eq:U1}
+	U_{1}=R_{1}-\frac{n_{1}(n_{1}+1)}{2},
+	\end{equation}
+	where $R_{1}$ ---the~sum of~ranks of~the~first sample, $n_{1}$ --- the~number of~observations in~the~first sample.
+	%
+	\item The~U-value for~the~second sample is~calculated in~the~same way:
+	\begin{equation}\label{eq:U2}
+	U_{2}=R_{2}-\frac{n_{2}(n_{2}+1)}{2},
+	\end{equation}
+	where $R_{2}$ ---the~sum of~ranks of~the~second sample, $n_{2}$ --- the~number of~observations in~the~second sample.
+	
+	From the~above formulas it~follows that
+	\begin{equation}\label{eq:U1-U2-relation}
+	U_{1}+U_{2} = R_{1}-\frac{n_{1}(n_{1}+1)}{2} + R_{2}-\frac{n_{2}(n_{2}+1)}{2}.
+	\end{equation}
+	It~is~also known that
+	\begin{equation}\label{eq:R-N-relation}
+	\begin{cases}
+	R_{1}+R_{2}=\dfrac{N(N+1)}{2}\\
+	N=n_{1}+n_{2}.
+	\end{cases}
+	\end{equation}
+	Then
+	\begin{equation}\label{eq:check-U-value}
+	U_{1}+U_{2}=n_{1}n{2}.
+	\end{equation}
+	Using this formula as~a~control ratio can~be useful for~checking the~correctness of~calculations in~a~spreadsheet processor.
+	%
+	\item From the~two values of~$U_{1},\ U_{2}$ in~all cases we~choose the~smaller which will~be the~U-statistic and~used in~further calculations. Let~us denote it~as~\emph{U}.
+\end{enumerate}
+%
+\subsection{Interpretation of~the~result}
+For~a~correct interpretation of~the~test result it~is necessary to~specify:
+\begin{itemize}
+	\item size of each sample;
+	\item values of~the~measure of~central tendency for~each sample (given the~nonparametric nature of~the~test, the~median appears to~be the~appropriate measure of~central tendency);
+	\item the~value of~the~U-statistic itself;
+	\item the~\href{https://en.wikipedia.org/wiki/Effect_size#Common_language_effect_size}{CLES} index~\cite{Wiki:CLES} the~value of~which is~equivalent to~the~AUC and~$\rho$-statistic;
+	\item \href{https://en.wikipedia.org/wiki/Effect_size#Rank-biserial_correlation}{rank-biserial correlation coefficient~(RBC)}~\cite{Wiki:rank-biserial-correlation};
+	\item the~accepted level of~significance (usually 0.05);
+	\item the~calculated p-value.
+\end{itemize}
+The~concept of~U-statistic was discussed earlier and most of~the~other indicators are widely known and do~not require any particular consideration. 
+\subsubsection{CLES = $\rho$-statistic = AUC}
+First of~all, it~must~be said that all of~these indicators are~equivalent to~each other. Thus
+\begin{equation}\label{eq:AUC=CLES}
+CLES = f = AUC_{1} = \rho.
+\end{equation}
+\paragraph{Common language effect size~(CLES)}
+\begin{description}
+	\item[Common language effect size~(CLES) ---] is the~probability that the~value of~a~randomly chosen observation from the first sample is greater than the~value of~a~randomly chosen observation from the second sample. This indicator is~calculated by~the~formula
+	\begin{equation}\label{eq:CLES}
+	CLES = \frac{U_{1}}{n_{1}n_{2}}.
+	\end{equation}
+	The designation \emph{f~(favorable)} is~often used instead of~\emph{CLES}. This sample value is~an~unbiased estimate of~the~value for~the~entire population of~objects belonging to~the~set.	
+\end{description}
+It~should~be noted that the~value and meaning of~this indicator is~equivalent to~the~value and meaning of~the ~\href{https://en.wikipedia.org/wiki/Receiver_operating_characteristic}{AUC}\cite{Wiki:ROC}. Thus, we~can say that this indicator characterizes the~quality of~ the~U-test as~a~binary classifier.
+\begin{equation}\label{eq:AUC}
+CLES = f = AUC_{1} = \frac{U_{1}}{n_{1}n_{2}}.
+\end{equation}
+The~relationship between the~U-statistic and~AUC is~discussed in~\ref{U-AUC}.
+%
+\paragraph{$\rho$-statistic}
+A~statistic called~$\rho$ that is~linearly related to~U and widely used in~studies of~categorization (discrimination learning involving concepts), and elsewhere, is~calculated by~dividing~U by~its maximum value for~the~given sample sizes, which is~simply $n1 \times n2$. Thus, $\rho$ is~a~non-parametric measure of~the overlap between two~distributions; it~can take values between 0 and~1, and it~is~an~estimate of~$P(Y > X) + 0.5 P(Y = X)$, where \textit{X} and~\textit{Y} are~randomly chosen observations from the~two distributions. Both extreme values represent complete separation of~the~distributions, while a~$ρ = 0.5$ represents complete overlap. This statistic is~useful in~particular when despite a~large p-value the~medians of~the~two samples are~essentially equal to~each other. 
+%
+\subsubsection{Rank-biserial correlation~(RBC)}
+The method of~representing the~measure of~impact for~the~U-test is~to~use a~measure of~rank correlation known as~rank-biserial correlation~(hereafter RBC). As~in~the~case of~other measures of~correlation, the~value of~the~RBC coefficient has a~range of~values [-1;1], with a~zero value indicating the~absence of~any relationship. The~RBC coefficient is~usually denoted as~\textit{r}. A~simple formula based on~the~CLES~(AUC, t, $\rho$) value is~used to~calculate it. Let~us state the~hypothesis that in~a~pair of~random observations, one of~which is~taken from the~first sample and the~other from the~second, the~value of~the~first is~greater.Let's write it~down in~mathematical language:
+\begin{equation}\label{eq:RBC-hypothesis}
+H: x_{i} > y_{j}, \quad x \ \in X,\ y \in Y.
+\end{equation}
+Then the~value of~the~RBC coefficient is~the~difference between the~proportion of~random pairs of~observations that are~favorable~(f) to~the~hypothesis and the~complementary proportion of~random pairs that are unfavorable to~the~hypothesis. Thus, this formula is~a~formula for~the~difference between the~CLES scores for~each of~the~groups.
+\begin{equation}\label{eq:RBC-formula-1}
+r = f - u = CLES_{1} - CLES_{2} = f - (1 - f)
+\end{equation}
+There are also a~number of~alternative formulas that give identical results:
+\begin{equation}\label{eq:RBC-formula-2}
+r = 2f -1 = \frac{2U_{1}}{n_{1}n_{2}}-1 = 1 - \frac{2U_{2}}{n_{1}n_{2}}.
+\end{equation}
+%
+\subsection{Calculation of~the~p-value and the~final test of~the~null hypothesis}
+If~the~number of~observations in~both samples is~large enough, the~U-statistic has~an~approximately normal distribution. Then its~\href{https://en.wikipedia.org/wiki/Standard_score}{standardized value}~(z-score)~\cite{Wiki:z-score} can~be calculated by~the formula
+\begin{equation}\label{eq:z-score}
+z = \frac{U-m_{U}}{\sigma_{U}},
+\end{equation}
+where~$m_{U}$ is~mean for~\textit{U} and $\sigma_{U}$ is~its~standard deviation. A~visualization of~the~concept of~\emph{standardized value for~a~normal distribution} is~shown in~Figure~\ref{fig:z-score}.
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{The_Normal_Distribution.pdf}
+	\caption{A~visualization of~the~concept of~standardized value for~a~normal distribution \cite{Wiki:z-score}}\label{fig:z-score}
+\end{figure}
+%
+The mean for~the~U is~calculated by~the~formula
+\begin{equation}\label{eq:U-mean}
+m_{U} = \frac{n_{1}n_{2}}{2}.
+\end{equation}
+The~formula for~the standard deviation in~the case of~no~ties is~as~follows:
+\begin{equation}\label{eq:standard-deviation-no-ties}
+\sigma_{U} =  \sqrt{\frac{n_{1}n_{2}(n_{1}+n_{2}+1)}{12}}.
+\end{equation}
+In~case of~the~presence of~tied ranks, a~different formula is~used:
+\begin{equation}\label{eq:standard-deviation-ties}
+\sigma_{U_{ties}} = \sqrt{\frac{n_{1}n_{2}(n_{1}+n_{2}+1)}{12} - \frac{n_{1}n_{2}\sum_{k=1}^{K}({t_{k}}^{3} - t_{k})}{12n(n-1)}} = \sqrt{\frac{n_{1}n_{2}}{12} \left((n+1)-\frac{\sum_{k=1}^{K}({t_{k}}^{3} - t_{k})}{n(n-1)}\right)},
+\end{equation}
+where~$t_{k}$ is~the~number of~observations with rank~\textit{k} and \textit{K} is~the~total number of~tied ranks. Then, by~obtaining a~standardized value~(z-score) and~using an~approximation of~the~standard normal distribution, the~p-value for~a~given level of~significance (usually~0.05) is~calculated. The~interpretation of~the~result is~as~follows:
+\begin{equation}\label{eq:p-interpretation}
+\begin{aligned}
+p &\leq 0.05 \Rightarrow \text{the~null hypothesis is~rejected}\\
+p &> 0.05 \Rightarrow \text{the~null hypothesis can~not~be rejected}.
+\end{aligned}
+\end{equation}
+However, there is~also an~alternative interpretation:
+\begin{equation}\label{eq:p-interpretation-2}
+\begin{aligned}
+p &< 0.05 \Rightarrow \text{the~null hypothesis is~rejected}\\
+p &\geq 0.05 \Rightarrow \text{the~null hypothesis can~not~be rejected}.
+\end{aligned}
+\end{equation}
+To~date, there is~no~unambiguous position on~how the~situation when $p = \alpha$ should~be interpreted. This paper uses the~version described in~\ref{eq:p-interpretation}.
+%
 \clearpage
 
 \nocite{Essential-Statistical-Inference}
