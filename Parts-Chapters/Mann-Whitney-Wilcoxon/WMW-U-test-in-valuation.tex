@@ -297,7 +297,32 @@ p &\geq 0.05 \Rightarrow \text{the~null hypothesis can~not~be rejected}.
 \end{equation}
 To~date, there is~no~unambiguous position on~how the~situation when $p = \alpha$ should~be interpreted. This paper uses the~version described in~\ref{eq:p-interpretation}.
 %
-\clearpage
+\section{Relationship to~other statistical tests}
+\subsection{Comparison of~Wilcoxon-Mann-Whitney U-test with Student's t-test}
+You often hear that the~U-test is~the~nonparametric counterpart of~the~Student's t-test, designed for~data whose distribution differs from the~normal one. From a~purely practical point of~view, we~can indeed say that in~the~case of~a~normal distribution it~is~advisable to~determine whether there is~a~significant difference between the~two samples by~means of~the~t-test, and in~the~case of~a~distribution that differs from the~normal by~means of~the~U-test. Thus, it~can~be said that these tests are~used for~the~same ultimate purpose.
+
+However, the~mathematical meaning of~the~U-test and~the~t-test are~significantly different. As~stated earlier, the~U-test is~designed to~test the~null hypothesis, which is~that for~randomly chosen from two samples of~observations $x \in X$ and~$y \in Y$ the~probability that~\textit{x} is~greater than~\textit{y} is~equal to~the~probability that~\textit{y} is~greater than~\textit{x}, the~alternative hypothesis carries the~claim that these probabilities are~not equal. At~the~same time, the~t-test is~designed to~test the~null hypothesis that the~means of~the~two samples are~equal, while the~alternative hypothesis is~that the~means of~the~two samples are~not~equal. In~this regard, when comparing these tests, we~should keep in~mind that, in~general, the~U-test and~the~t-test check different null hypotheses, although they have partly similar practical meaning. The~result of~the~U-test is~most often very close to~the~result of~the~two-sample t-test for~ranked data. Table~\ref{tab:U-test-t-test-comparison} then provides a~general comparison of~the~U-test with the~t-test.
+%
+\begin{table}[ht]
+	\caption{Properties of~the~U-test relative to~the~t-test.}  \label{tab:U-test-t-test-comparison}
+	\centering
+	\begin{tabularx}{\textwidth}{p{0.15\linewidth} p{0.8\linewidth}} 
+		\hline
+		Property&Description\\
+		\hline
+		Applicability to~ordinal data&When working with ordinal~(rank) data, rather than quantitative data, the~U-test is~preferable to~the~t-test, remembering that the~distance between neighboring values of~the~variation series cannot~be considered constant.\\
+		\hline
+		Robustness&Since the~U-test handles the~sum of~ranks rather than trait values, it~is less likely than the~t-test to~erroneously indicate significance due~to outliers. However, in~general, the~U-test is~more prone to~type~I error in~the~case when the~data simultaneously have the~property of~heteroscedasticity and~have a~distribution other than normal.\\
+		\hline
+		Efficiency&In~the~case of~a~normal distribution, the~asymptotic efficiency of~the~U-test is~$\frac{3}{4}\pi \approx 0.95$ of~the~t-test~\cite{U-test-efficiency}. If~the~distribution differs significantly from the~normal one and~the~number of~observations is~large enough, the~efficiency of~the~U-test is~significantly higher than the~efficiency of~the~t-test~\cite{Practical-Nonparametric-Statistics}. However, this efficiency comparison should~be interpreted with caution, because the~U-test and the~t-test examine different hypotheses and~estimate different values. In~the~case, for~example, of~the~need to~compare means, the~use of~the~U-test is~not justified in~principle.\\
+		\hline
+	\end{tabularx}
+\end{table}
+%
+\subsection{Alternative tests in~the~case of~inequality of~distributions}
+If~it~is necessary to~test the~stochastic ordering of~two samples (i.e.~the~alternative hypothesis: $H1:\ P(Y>X)+0.5P(Y=X)\neq0.5$) without assuming equality of~their distributions (i.e.~when the null hypothesis is~$H0:\ P(Y>X)+0.5P(Y=X)=0.5$ but not $F(X)=G(Y)$), more appropriate tests should~be used. These include the~Brunner-Munzel test~\cite{Bruner-Munzel-test-1}, which is~a~heteroskedasticity-resistant analog of~the~U-test, and the~Fligner-Policello test~\cite{Fligner-Policello-test}, which is~a~test for~equality of~medians. In~particular, in~the~case of~a~more general null hypothesis $H0:\ P(Y>X)+0.5P(Y=X)=0.5$, the~U-test can often lead to~a~type~I error even in~the case of~large samples (especially in~the~case of~disparity of~variance and significantly different sample sizes), so~that in~such cases the use of~alternative tests is~preferable~\cite{U-test-vs-Bruner-Munzel-test}. Thus, in~the absence of~the assumption of~equality of~distributions in~case the null hypothesis is~valid, the use of~alternative tests will~be preferable.
+%
+\clearpage 
 
 \nocite{Essential-Statistical-Inference}
 \nocite{AUC-optimization}
