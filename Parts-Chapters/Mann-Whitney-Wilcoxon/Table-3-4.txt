@@ -1,0 +1,84 @@
+        TPR~(SEN)&\begin{equation}\label{TPR}
+		TPR=\frac{TP}{P}=1-FNR=\frac{TP}{TP+FN}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{\textbf{true positive rate}}, \href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{\textbf{Sensitivity}}~\cite{Wiki:sensitivity-and-specificity}, \href{https://en.wikipedia.org/wiki/Precision_and_recall}{recall}~\cite{Wiki:precision-and-recall}, probability of~detection, \href{https://en.wikipedia.org/wiki/Hit_rate}{hit rate}~\cite{Wiki:hit-rate}, power\\
+		\hline
+		FPR&\begin{equation}\label{eq:FPR}
+		FPR = \frac{FP}{N} = 1 - TNR = \frac{FP}{FP+TN}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/False_positive_rate}{\textbf{false positive rate}}, probability of~false alarm, \href{https://en.wikipedia.org/wiki/False_positive_rate}{fall-out}~\cite{Wiki:FPR}\\
+		\hline
+		FNR&\begin{equation}\label{eq:FNR}
+		FNR = \frac{FN}{P} = 1 - TPR = \frac{FN}{FN+TP}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Type_I_and_type_II_errors\#False_positive_and_false_negative_rates}{\textbf{false negative rate}}~\cite{Wiki:TypeI-TypeII-errors}, miss rate\\
+		\hline
+		TNR~(SPC)&\begin{equation}\label{eq:TNR}
+		TNR = \frac{TN}{N} = 1 - FPR = \frac{TN}{TN+FP}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{\textbf{true negative rate}}, \href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{\textbf{specificity}}, \href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{selectivity}~\cite{Wiki:sensitivity-and-specificity}\\
+		\hline
+		PPV&\begin{equation}\label{eq:PPV}
+		PPV = \frac{TP}{TP+FP} = 1 - FDR
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Positive_and_negative_predictive_values}{\textbf{positive predictive value}}~\cite{Wiki:PPV}, \href{https://en.wikipedia.org/wiki/Information_retrieval\#Precision}{precision}~\cite{Wiki:precision}\\
+		\hline
+		NPV&\begin{equation}\label{eq:NPV}
+		NPV = \frac{TN}{TN+FN} = 1 -FOR
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Positive_and_negative_predictive_values}{\textbf{negative predictive value}}~\cite{Wiki:PPV}\\
+		\hline
+		FDR&\begin{equation}\label{eq:FDR}
+		FDR = \frac{FP}{FP + TP} = 1 - PPV
+		\end{equation}&\href{https://en.wikipedia.org/wiki/False_discovery_rate}{\textbf{false discovery rate}}~\cite{Wiki:FDR}\\
+		\hline
+		FOR&\begin{equation}\label{eq:FOR}
+		FOR = \frac{FN}{FN+TN}=1-NPV
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Positive_and_negative_predictive_values}{\textbf{false omission rate}}~\cite{Wiki:PPV}\\
+		\hline
+		LR+&\begin{equation}\label{eq:LR+}
+		LR+=\frac{TPR}{FPR}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Likelihood_ratios_in_diagnostic_testing\#positive_likelihood_ratio}{\textbf{\textbf{positive likelihood ratio}}}~\cite{Wiki:likehoods-ratios}\\
+		\hline
+		LR-&\begin{equation}\label{eq:LR-}
+		LR-=\frac{FNR}{TNR}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Likelihood_ratios_in_diagnostic_testing\#negative_likelihood_ratio}{\textbf{negative likelihood ratio}}~\cite{Wiki:likehoods-ratios}\\
+		\hline
+		PT&\begin{equation}\label{eq:PT}
+		PT=\frac{\sqrt{TPR(-TNR+1)}+TNR-1}{TPR+TNR-1}=\frac{\sqrt{FPR}}{\sqrt{TPR}+\sqrt{FPR}}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{\textbf{prevalence threshold}}~\cite{\cite{Wiki:sensitivity-and-specificity}}\\
+		\hline
+		TS~(CSI)&\begin{equation}\label{eq:TS|CSI}
+		TS = \frac{TP}{TP+TN+FP}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Jaccard_index\#Jaccard_index_in_binary_classification_confusion_matrices}{Jaccard index} \textbf{threat score}, \textbf{critical success index}~\cite{Wiki:jaccard-index}\\
+		\hline
+		PRV&\begin{equation}\label{eq:PRV}
+		PRV = \frac{P}{P+N}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Prevalence}{\textbf{prevalence}}~\cite{Wiki:prevalence}\\
+		\hline
+		ACC&\begin{equation}\label{eq:ACC}
+		ACC = \frac{TP+TN}{P+N} = \frac{TP+TN}{TP+TN+FP+FN}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Accuracy_and_precision}{\textbf{accuracy}}~\cite{Wiki:accuracy-precision}\\
+		\hline
+		BA&\begin{equation}\label{eq:BA}
+		BA = \frac{TPR+TNR}{2}
+		\end{equation}&\textbf{balanced accuracy}\\
+		\hline
+		F1 score&\begin{equation}\label{eq:F1-score}
+		F_{1} = 2 \times \frac{PPV \times TPR}{PPV +TPR} = \frac{2TP}{2TP + FP + FN}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/F-score}{F1 score} is~the harmonic mean of~\href{https://en.wikipedia.org/wiki/Information_retrieval\#Precision}{precision} and \href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{sensitivity}~\cite{Wiki:F-score}\\
+		\hline
+		MCC~($\phi$ or~$r_{\phi}$)&\begin{equation}\label{eq:MCC}
+		MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Phi_coefficient}{\textbf{Matthews correlation coefficient}},\href{https://en.wikipedia.org/wiki/Phi_coefficient}{\textbf{phi coefficient}}~\cite{Wiki:phi-coefficient}\\
+		\hline
+		FM&\begin{equation}\label{eq:FM}
+		FM = \sqrt{\dfrac{TP}{TP+FP} \times \dfrac{TP}{TP+FN}} = \sqrt{PPV \times TPR}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Fowlkes–Mallows_index}{Fowlkes–Mallows index}~\cite{Wiki:Fowlkes–Mallows-index}\\
+		\hline
+		BM&\begin{equation}\label{eq:BM}
+			BM = TPR + TNR -1
+		\end{equation}&\textbf{bookmaker informedness}, \href{https://en.wikipedia.org/wiki/Youden's_J_statistic}{informedness}~\cite{Wiki:j-statistic}\\
+		\hline
+		MK~($\delta P$)&\begin{equation}\label{eq:MK}
+		MK = PPV + NPV - 1
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Markedness}{\textbf{markedness}}, deltaP~\cite{Wiki:markedness}\\
+		\hline
+		DOR&\begin{equation}\label{eq:DOR}
+		\frac{LR+}{LR-}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Diagnostic_odds_ratio}{\textbf{diagnostic odds ration}}~\cite{Wiki:DOR}\\
+		\hline

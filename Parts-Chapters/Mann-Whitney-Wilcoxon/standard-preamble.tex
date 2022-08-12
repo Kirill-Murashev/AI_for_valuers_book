@@ -19,8 +19,8 @@
 
 \usepackage{url}
 
-\usepackage{babel}
-
+\usepackage[russian, english]{babel}
+%\usepackage{csquotes}
 % work with images
 \usepackage{graphicx}
 \graphicspath{{Images/}}
@@ -44,15 +44,18 @@
 % set the depth of headings numbering
 \setcounter{secnumdepth}{8}
 
+\usepackage{float}
+
+\usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
 
 % work with scripts
-\usepackage {listings}
+\usepackage{listings}
 \lstloadlanguages{[Latex]Tex, bash, R, Python, SQL}
-\lstset{extendedchars=true , % additional symbols
+\lstset{extendedchars=true, % additional symbols
 frame=tb, % top & bottom frames
-commentstyle=\itshape , % font for comments
-stringstyle =\ttfamily % font for 'strings'
-keywordstyle=\color{blue} % color for keywords
+%commentstyle=\itshape , % font for comments
+%stringstyle =\ttfamily % font for 'strings'
+%keywordstyle=\color{blue} % color for keywords
 }
 
 % connecting the automated bibliography package

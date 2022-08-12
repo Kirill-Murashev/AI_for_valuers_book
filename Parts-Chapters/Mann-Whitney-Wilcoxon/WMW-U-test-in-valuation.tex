@@ -1,4 +1,4 @@
-\documentclass[russian,english]{scrreprt}
+\documentclass[]{scrreprt}
 
 \input{standard-preamble.tex}
 
@@ -321,8 +321,346 @@ However, the~mathematical meaning of~the~U-test and~the~t-test are~significantly
 %
 \subsection{Alternative tests in~the~case of~inequality of~distributions}
 If~it~is necessary to~test the~stochastic ordering of~two samples (i.e.~the~alternative hypothesis: $H1:\ P(Y>X)+0.5P(Y=X)\neq0.5$) without assuming equality of~their distributions (i.e.~when the null hypothesis is~$H0:\ P(Y>X)+0.5P(Y=X)=0.5$ but not $F(X)=G(Y)$), more appropriate tests should~be used. These include the~Brunner-Munzel test~\cite{Bruner-Munzel-test-1}, which is~a~heteroskedasticity-resistant analog of~the~U-test, and the~Fligner-Policello test~\cite{Fligner-Policello-test}, which is~a~test for~equality of~medians. In~particular, in~the~case of~a~more general null hypothesis $H0:\ P(Y>X)+0.5P(Y=X)=0.5$, the~U-test can often lead to~a~type~I error even in~the case of~large samples (especially in~the~case of~disparity of~variance and significantly different sample sizes), so~that in~such cases the use of~alternative tests is~preferable~\cite{U-test-vs-Bruner-Munzel-test}. Thus, in~the absence of~the assumption of~equality of~distributions in~case the null hypothesis is~valid, the use of~alternative tests will~be preferable.
+
+In~the case of~testing the hypothesis of~a~shift with significantly different distributions, the U-test may give an~erroneous interpretation of~significance~\cite{U-test-unequal-variance}, so~in~such circumstances it~is preferable to~use a~variant of~the \href{https://en.wikipedia.org/wiki/Welch's_t-test}{t-test}~\cite{Welch-t-test} designed for cases of~unequal variance~\cite{U-test-unequal-variance}. In~some cases, it~may~be justified to~convert quantitative data into ranks and then perform the t-test in~some variant depending on~the assumption of~equality of~variance. When converting quantitative data to~ordinal data, the original variances will not~be preserved; they must~be recalculated for the ranks themselves. In~the case of~equal variance, a~suitable nonparametric substitute for the \href{https://en.wikipedia.org/wiki/F-test}{F-test}~\cite{F-test} can~be the \href{https://en.wikipedia.org/wiki/Brown-Forsythe_test}{Brown-Forsythe test}~\cite{Brown-Forsythe-test}.
 %
-\clearpage 
+\subsection{The relationship between the U-test and the classification tasks}\label{U-test&classification}
+The U-test is~a particular case of~the \href{https://en.wikipedia.org/wiki/Ordered_logit}{ordered logit model}~\cite{Ordered-logit}.
+%
+\section{The relationship between the U-test and the concepts of~Receiver operating characteristics~(ROC) and Area Under Curve~(AUC)}\label{U-AUC}
+Based on~what was said in~\ref{U-test&classification}, we~can conclude that the U-test is~not only a~test for testing the shift hypothesis (or~another one similar in~meaning), but also represents a~kind of~classifier. Looking ahead, the meaning of~the U-test as~a~classifier is~as~follows:
+\begin{itemize}
+	\item there is~a~"positive" outcome of~comparing two random observations, which is~that the observation from~\textit{X} is~greater than the observation from~\textit{Y};
+	\item the proportion of~the sum of~the ranks of~the "positive" elements is~calculated.
+	\item as~in~general with ROC, if~the value of~the share of~"positive" elements exceeds~0.5, this means that the classifier generally performs its function; if~it~is equal to~0.5, its efficiency is~equal to~guessing with a~coin flip; if~it~is less than~0.5, using such classifier yields the opposite result.	 
+\end{itemize}
+At~first glance, the relationship between the U-test and ROC does~not seem obvious. This section will attempt to~understand why these concepts are related and what~is the essence of~the U-test as~a~classifier.
+
+ROC analysis itself is~outside the scope of~this paper. Therefore, let~us consider only its main points.
+\begin{description}
+	\item[ROC curve ---] is~a~graphical plot that allows us to~evaluate the quality of~binary classification. It~displays the ratio between the proportion of~objects from the total number of~feature carriers correctly classified as~carrying the feature (True Positive Rate~(TPR), called the \emph{sensitivity of the classification algorithm}) and the proportion of~objects from the total number of~objects not carrying the feature, incorrectly classified as~carrying the feature (False Positive Rate~(FPR), the \textbf{1-FPR} value is~called the \emph{specificity of~the classification algorithm}), when varying the threshold of~the deciding rule.	It~is also known as~\textbf{error curve}. Analysis of~classifications using ROC curves is~called \textbf{ROC analysis}.
+\end{description}
+Quantitative interpretation of~the ROC curve gives the Area under curve~(AUC).
+\begin{description}
+	\item[Area under curve~(AUC) ---] is~the area bounded by~the ROC curve and the axis of~the proportion of~false positive classifications (abscissa axis).
+\end{description}
+The higher the AUC, the better the quality of~the classifier, while a~value of~0.5 demonstrates the unsuitability of~the chosen classification method (corresponding to~a~random coin guessing). A value of less than 0.5 indicates that the classifier works exactly the other way around: if you call positive results negative and vice versa, the classifier will perform better~\cite{Wiki:ROC}.
+
+Let's introduce some terms.
+\begin{description}
+	\item[Condition positive~(P) --- ] the number of real positive cases in~the data.
+	\item[Condition negative~(N)---] the number of real negative cases in the data.
+	\item[True positive~(TP) ---] a~test result that correctly indicates the presence of~a~condition or~characteristic.
+	\item[True negative~(TN) ---] a~test result that correctly indicates the absence of~a~condition or~characteristic.
+	\item[False positive~(FP) ---] a~test result which wrongly indicates that a~particular condition or~attribute is~present.
+	\item[False negative~(FN) ---] a~test result which wrongly indicates that a~particular condition or~attribute is~absent.
+\end{description}
+Based on~the above, we~can create a~contingency table of~the results of~applying the binary classifier. The rows contain data on~the actual presence or~absence of~the feature, the columns on~the predicted with the classifier.
+%
+\begin{table}[ht]
+	\caption{Binary classifier contingency table.}  \label{tab:ROC-contingency-table}
+	\centering
+	\begin{tabularx}{\textwidth}{p{0.2\linewidth} p{0.375\linewidth} p{0.375\linewidth}} 
+		\hline
+	Total $P+N$&Predicted Positive~(PP)&Predicted negative~(PN)\\
+		\hline
+		Positive~(P)&TP&FN, type~II error~\cite{Wiki:type-1-2-errors}\\
+		\hline
+		Negative~(N)&FP, type~I error~\cite{Wiki:type-1-2-errors}&TN\\
+		\hline
+	\end{tabularx}
+\end{table}
+%
+As~can~be seen from Table~\ref{tab:ROC-contingency-table}, the binary classifier can lead to~errors of~two types. Let's introduce some more definitions and define the formulas for calculating the probabilities of~its outcomes~(see tables~\ref{tab:ROC-rates-1}--\ref{tab:ROC-rates-3}).
+%
+\begin{table}[ht]
+	\caption{Additional definitions and formulas for calculating the probabilities of binary classifier outcomes (part~1 of~3).}\label{tab:ROC-rates-1}
+	\tiny
+	\begin{tabularx}{\textwidth}{p{0.15\linewidth} p{0.4\linewidth} p{0.4\linewidth}} 
+		\hline
+		Notation&Formula&Deciphering the notation and alternative terms.\\
+		\hline
+		TPR~(SEN)&\begin{equation}\label{TPR}
+		TPR=\frac{TP}{P}=1-FNR=\frac{TP}{TP+FN}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{\textbf{true positive rate}}, \href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{\textbf{sensitivity}}~\cite{Wiki:sensitivity-and-specificity}, \href{https://en.wikipedia.org/wiki/Precision_and_recall}{recall}~\cite{Wiki:precision-and-recall}, probability of~detection, \href{https://en.wikipedia.org/wiki/Hit_rate}{hit rate}~\cite{Wiki:hit-rate}, power\\
+		\hline
+		FPR&\begin{equation}\label{eq:FPR}
+		FPR = \frac{FP}{N} = 1 - TNR = \frac{FP}{FP+TN}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/False_positive_rate}{\textbf{false positive rate}}, probability of~false alarm, \href{https://en.wikipedia.org/wiki/False_positive_rate}{fall-out}~\cite{Wiki:FPR}\\
+		\hline
+		FNR&\begin{equation}\label{eq:FNR}
+		FNR = \frac{FN}{P} = 1 - TPR = \frac{FN}{FN+TP}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Type_I_and_type_II_errors\#False_positive_and_false_negative_rates}{\textbf{false negative rate}}~\cite{Wiki:TypeI-TypeII-errors}, miss rate\\
+		\hline
+		TNR~(SPC)&\begin{equation}\label{eq:TNR}
+		TNR = \frac{TN}{N} = 1 - FPR = \frac{TN}{TN+FP}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{\textbf{true negative rate}}, \href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{\textbf{specificity}}, \href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{selectivity}~\cite{Wiki:sensitivity-and-specificity}\\
+		\hline
+		PPV&\begin{equation}\label{eq:PPV}
+		PPV = \frac{TP}{TP+FP} = 1 - FDR
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Positive_and_negative_predictive_values}{\textbf{positive predictive value}}~\cite{Wiki:PPV}, \href{https://en.wikipedia.org/wiki/Information_retrieval\#Precision}{precision}~\cite{Wiki:precision}\\
+		\hline
+		NPV&\begin{equation}\label{eq:NPV}
+		NPV = \frac{TN}{TN+FN} = 1 -FOR
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Positive_and_negative_predictive_values}{\textbf{negative predictive value}}~\cite{Wiki:PPV}\\
+		\hline
+		FDR&\begin{equation}\label{eq:FDR}
+		FDR = \frac{FP}{FP + TP} = 1 - PPV
+		\end{equation}&\href{https://en.wikipedia.org/wiki/False_discovery_rate}{\textbf{false discovery rate}}~\cite{Wiki:FDR}\\
+		\hline
+	\end{tabularx}
+	\normalsize
+\end{table}
+%
+\begin{table}[ht]
+	\caption{Additional definitions and formulas for calculating the probabilities of binary classifier outcomes (part~2 of~3).}\label{tab:ROC-rates-2}
+	\tiny
+	\begin{tabularx}{\textwidth}{p{0.15\linewidth} p{0.4\linewidth} p{0.4\linewidth}} 
+		\hline
+		Notation&Formula&Deciphering the notation and alternative terms.\\
+		\hline
+		FOR&\begin{equation}\label{eq:FOR}
+		FOR = \frac{FN}{FN+TN}=1-NPV
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Positive_and_negative_predictive_values}{\textbf{false omission rate}}~\cite{Wiki:PPV}\\
+		\hline
+		LR+&\begin{equation}\label{eq:LR+}
+		LR+=\frac{TPR}{FPR}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Likelihood_ratios_in_diagnostic_testing\#positive_likelihood_ratio}{\textbf{\textbf{positive likelihood ratio}}}~\cite{Wiki:likehoods-ratios}\\
+		\hline
+		LR-&\begin{equation}\label{eq:LR-}
+		LR-=\frac{FNR}{TNR}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Likelihood_ratios_in_diagnostic_testing\#negative_likelihood_ratio}{\textbf{negative likelihood ratio}}~\cite{Wiki:likehoods-ratios}\\
+		\hline
+		PT&\begin{equation}\label{eq:PT}
+		PT=\frac{\sqrt{TPR(-TNR+1)}+TNR-1}{TPR+TNR-1}=\frac{\sqrt{FPR}}{\sqrt{TPR}+\sqrt{FPR}}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{\textbf{prevalence threshold}}~\cite{Wiki:sensitivity-and-specificity}\\
+		TS~(CSI)&\begin{equation}\label{eq:TS|CSI}
+		TS = \frac{TP}{TP+TN+FP}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Jaccard_index\#Jaccard_index_in_binary_classification_confusion_matrices}{Jaccard index} \textbf{threat score}, \textbf{critical success index}~\cite{Wiki:jaccard-index}\\
+		\hline
+		PRV&\begin{equation}\label{eq:PRV}
+		PRV = \frac{P}{P+N}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Prevalence}{\textbf{prevalence}}~\cite{Wiki:prevalence}\\
+		\hline
+		ACC&\begin{equation}\label{eq:ACC}
+		ACC = \frac{TP+TN}{P+N} = \frac{TP+TN}{TP+TN+FP+FN}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Accuracy_and_precision}{\textbf{accuracy}}~\cite{Wiki:accuracy-precision}\\
+		\hline
+	\end{tabularx}
+	\normalsize
+\end{table}
+%
+\begin{table}[ht]
+	\caption{Additional definitions and formulas for calculating the probabilities of binary classifier outcomes (part~3 of~3).}\label{tab:ROC-rates-3}
+	\tiny
+	\begin{tabularx}{\textwidth}{p{0.15\linewidth} p{0.4\linewidth} p{0.4\linewidth}} 
+		\hline
+		Notation&Formula&Deciphering the notation and alternative terms.\\
+		\hline
+		BA&\begin{equation}\label{eq:BA}
+		BA = \frac{TPR+TNR}{2}
+		\end{equation}&\textbf{balanced accuracy}\\
+		\hline
+		F1 score&\begin{equation}\label{eq:F1-score}
+		F_{1} = 2 \times \frac{PPV \times TPR}{PPV +TPR} = \frac{2TP}{2TP + FP + FN}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/F-score}{F1 score} is~the harmonic mean of~\href{https://en.wikipedia.org/wiki/Information_retrieval\#Precision}{precision} and \href{https://en.wikipedia.org/wiki/Sensitivity_(test)}{sensitivity}~\cite{Wiki:F-score}\\
+		\hline
+		MCC~($\phi$ or~$r_{\phi}$)&\begin{equation}\label{eq:MCC}
+		MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Phi_coefficient}{\textbf{Matthews correlation coefficient}},\href{https://en.wikipedia.org/wiki/Phi_coefficient}{\textbf{phi coefficient}}~\cite{Wiki:phi-coefficient}\\
+		\hline
+		FM&\begin{equation}\label{eq:FM}
+		FM = \sqrt{\dfrac{TP}{TP+FP} \times \dfrac{TP}{TP+FN}} = \sqrt{PPV \times TPR}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Fowlkes–Mallows_index}{Fowlkes–Mallows index}~\cite{Wiki:Fowlkes–Mallows-index}\\
+		\hline
+		BM&\begin{equation}\label{eq:BM}
+		BM = TPR + TNR -1
+		\end{equation}&\textbf{bookmaker informedness}, \href{https://en.wikipedia.org/wiki/Youden's_J_statistic}{informedness}~\cite{Wiki:j-statistic}\\
+		\hline
+		MK~($\delta P$)&\begin{equation}\label{eq:MK}
+		MK = PPV + NPV - 1
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Markedness}{\textbf{markedness}}, deltaP~\cite{Wiki:markedness}\\
+		\hline
+		DOR&\begin{equation}\label{eq:DOR}
+		\frac{LR+}{LR-}
+		\end{equation}&\href{https://en.wikipedia.org/wiki/Diagnostic_odds_ratio}{\textbf{diagnostic odds ration}}~\cite{Wiki:DOR}\\
+		\hline
+	\end{tabularx}
+	\normalsize
+\end{table}
+%
+The TPR probability can~be written as
+\begin{equation}\label{eq:TPR-probability}
+P_{TPR} = \mathbb{P}(1,\ x\in C_{1}),
+\end{equation}
+which means that if~object~\textit{x} belongs to~class~$C_{1}$, this indicator estimates the probability that the binary classifier assigns object~\textit{x} to~this class. The probability of~FPR is~written as
+\begin{equation}\label{eq:FPR-probability}
+P_{FPR} = \mathbb{P}(1,\ x\in C_{0}),
+\end{equation}
+which means the probability that an~object belonging to class~$C_0$ will~be mistakenly assigned to~class~$C_1$.
+
+Typically, the working principle of~a~binary classifier is~based on~comparing the measurement of~\textit{x} with some fixed threshold~\textit{c}. It~follows that the previous two expressions can~be rewritten and combined into a~system.
+\begin{equation}\label{eq:TRP+FPR-probability}
+\begin{cases}
+P_{TPR} = \mathbb{P}(x>c,\ x \in C_{1})\\
+P_{FPR} = \mathbb{P}(x>c,\ x \in C_{0})
+\end{cases}
+\end{equation}
+It~follows that the ROC curve is~a~diagram
+\begin{equation}\label{eq:ROC-contour}
+P_{FPR}(c),\ P_{TPR}(c),
+\end{equation}
+thus, drawing the curve means changing the value of~threshold~\textit{c}.
+
+Let's consider the example~\cite{AUC-Derivation}. Let's take~$f(x\in C_{0}) = \mathcal{N}(0,1)$ and~$f(x\in C_{1}) = \mathcal{N}(2,1)$ as~probability density functions~$C_{0}$ and~$C_{1}$, respectively. Next we~build the ROC curve step by~step using the Python language. At~the first step, consider diagram~\ref{fig:plot-TPR-FPR-prob-density-1}, built using the code given in~script~\ref{lst:plot-TPR-FPR-prob-density}. The area shaded blue shows the probability of~FPR, i.\,e., false-positive significance detection, while the area shaded green shows the probability density of TPR, i.\,e., correct significance detection. The ROC curve shows the values of~these very indicators. The vertical dashed line is~the sensitivity threshold~\textit{c}. In~this situation it~is at~0 on~the abscissa axis. If~it~is moved to~1, the area under the FPR curve (blue) will significantly decrease, i.\,e. the probability of~false-positive detection will decrease, but the TPR area (green) will decrease as~well, which means an~increase in~the probability of~false-negative results. This situation is~illustrated in~Diagram~\ref{fig:plot-TPR-FPR-prob-density-2}.
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-1.pdf}
+	\caption{Diagram of~TPR and FPR probability distribution densities at~threshold~0.}
+	\label{fig:plot-TPR-FPR-prob-density-1}
+\end{figure}
+%
+\begin{lstlisting}[float, caption = Plotting TPR and FPR probability density functions, firstnumber=1, label= lst:plot-TPR-FPR-prob-density]
+# Import Libraries
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Plot
+f0 = stats.norm(0, 1)
+f1 = stats.norm(2, 1)
+fig, ax = plt.subplots()
+xi = np.linspace(-2, 5, 100)
+ax.plot(xi, f0.pdf(xi), label=r'$f(x|C_0)$')
+ax.plot(xi, f1.pdf(xi), label=r'$f(x|C_1)$')
+ax.legend(fontsize=16, loc=(1, 0))
+ax.set_xlabel(r'$x$', fontsize=18)
+ax.vlines(0, 0, ax.axis()[-1] * 1.1, linestyles='--', lw=3.)
+ax.fill_between(xi, f1.pdf(xi), where=xi > 0, alpha=.3, color='g')
+ax.fill_between(xi, f0.pdf(xi), where=xi > 0, alpha=.3, color='b')
+
+# Save to .pdf
+plt.savefig('Plot-ROC-step-1.pdf', bbox_inches='tight')
+\end{lstlisting}
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-2.pdf}
+	\caption{Diagram of~TPR and FPR probability distribution densities at~threshold~1.}
+	\label{fig:plot-TPR-FPR-prob-density-2}
+\end{figure}
+
+As~you can see from the diagrams above, increasing the threshold leads to~the loss of~a~part of~both true-positive and false-positive results, while decreasing~it leads to~an~increase in~the number of~fixations of~the feature presence (both true and false). In~extreme cases, too low a~threshold value will lead to~the fact that all results will~be interpreted as~positive, too high --- to~a~zero number of~observations in~which the feature was detected. The task of~ROC analysis is~to~choose a~rational threshold value.
+
+Let's add the ROC curves corresponding to~thresholds~0 and~1 to~the already existing diagrams. And also create an~interactive diagram using the code from script~\ref{lst:plot-TPR-FPR-prob-density+ROC-interactive}. The PDF format does~not allow you to~add such interactive elements, so~let's consider cases with fixed values of~0 and~1, shown in~Diagrams~\ref{fig:plot-TPR-FPR-prob-density-3} and \ref{fig:plot-TPR-FPR-prob-density-4}, respectively. The left side of~each of~them shows the already familiar probability density function graphs for the TPR and FPR distributions. The right part shows the ROC curve and the point corresponding to~the set threshold value. It~is easy to~guess that the x-coordinate of~the point matches the area under the FPR curve, and the y-coordinate matches the area under the TPR curve. Increasing the threshold value entails shifting the point to~the left, decreasing~it to~the right.
+
+The better the binary classifier itself, the closer to~the upper left corner will~be the ROC curve corresponding to~it, because in~this case a~high TPR value will~be combined with a~low FPR value. The binary classifier, which works as~well (actually badly) as~the coin flip guessing algorithm (in~case the coin is~"fair"), gives a~ROC curve, which is~a~straight line between~(0,0) and~(1,1). In~this case, the left part of~the diagram will show a~complete overlap of~TPR and FPR probability density function curves. Such a~case is~shown in~Diagram~\ref{fig:plot-TPR-FPR-prob-density-3}. For self-practice, you can use Script~\ref{lst:plot-TPR-FPR-prob-density+ROC-interactive} by~running~it in~the Jupyter Lab environment, which allows you to~use the interactive features of~the browser.
+%
+\begin{lstlisting}[float, caption = Build an~interactive graph of~TPR and FPR distribution density and its corresponding ROC curve for a~given threshold value, firstnumber=1, label= lst:plot-TPR-FPR-prob-density+ROC-interactive]
+# Import Libraries
+%matplotlib inline
+from ipywidgets import interact
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Plot
+f0 = stats.norm(0, 1)
+f1 = stats.norm(2, 1)
+fig, ax = plt.subplots()
+xi = np.linspace(-2, 5, 100)
+ax.plot(xi, f0.pdf(xi), label=r'$f(x|C_0)$')
+ax.plot(xi, f1.pdf(xi), label=r'$f(x|C_1)$')
+ax.legend(fontsize=16, loc=(1, 0))
+ax.set_xlabel(r'$x$', fontsize=18)
+ax.vlines(0, 0, ax.axis()[-1] * 1.1, linestyles='--', lw=3.)
+ax.fill_between(xi, f1.pdf(xi), where=xi > 0, alpha=.3, color='g')
+ax.fill_between(xi, f0.pdf(xi), where=xi > 0, alpha=.3, color='b')
+
+# Plot ROC-curve and make all interactive
+def plot_roc_interact(c=0):
+xi = np.linspace(-3,5,100)
+fig,axs = plt.subplots(1,2)
+fig.set_size_inches((10,3))
+ax = axs[0]
+ax.plot(xi,f0.pdf(xi),label=r'$f(x|C_0)$')
+ax.plot(xi,f1.pdf(xi),label=r'$f(x|C_1)$')
+ax.set_xlabel(r'$x$',fontsize=18)
+ax.vlines(c,0,ax.axis()[-1]*1.1,linestyles='--',lw=3.)
+ax.fill_between(xi,f1.pdf(xi),where=xi>c,alpha=.3,color='g')
+ax.fill_between(xi,f0.pdf(xi),where=xi>c,alpha=.3,color='b')
+ax.axis(xmin=-3,xmax=5)
+crange = np.linspace(-3,5,50)
+ax=axs[1]
+ax.plot(1-f0.cdf(crange),1-f1.cdf(crange))
+ax.plot(1-f0.cdf(c),1-f1.cdf(c),'o',ms=15.)
+ax.set_xlabel('False-alarm probability')
+ax.set_ylabel('Detection probability')
+
+interact(plot_roc_interact,c=(-3,5,.05))
+\end{lstlisting}
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-30.pdf}
+	\caption{Diagram of~TPR and FPR probability distribution densities at~threshold~0.}
+	\label{fig:plot-TPR-FPR-prob-density-3}
+\end{figure}
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-4.pdf}
+	\caption{Diagram of TPR and FPR probability distribution densities at threshold 1.}
+	\label{fig:plot-TPR-FPR-prob-density-4}
+\end{figure}
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-5.pdf}
+	\caption{Diagram of~probability densities of~TPR and FPR probability distributions at~equal mean.}
+	\label{fig:plot-TPR-FPR-prob-density-5}
+\end{figure}
+%
+\subsection{The concept of~AUC and its calculation}
+As~the name implies, the AUC is~the area under the ROC curve bounded by~the point corresponding to~a~given threshold value. In~the normalized space in~which the ROC curve is~usually plotted, the AUC value is~equivalent to~the probability that the classifier assigns a~higher weight to~a~randomly chosen positive entity than to~a~randomly chosen negative entity. The AUC does not depend on~a~specific threshold value, because the ROC curve is~constructed by~fitting~it. This means that the AUC is~calculated by~integrating over the thresholds. The AUC is~given by~the expression:
+\begin{equation}\label{eq:AUC-computation-0}
+AUC = \int P_{TPR}(P_{FPR}) d P_{FPR}.
+\end{equation}
+The step-by-step calculation of~the AUC is~as~follows.
+\begin{equation}\label{eq:AUC-computation-1}
+P_{TPR}(c) = 1 - F_{1}(c),
+\end{equation}
+where~$F_{1}$ is~the cumulative density function for~$C_{1}$. Similarly calculate
+\begin{equation}\label{eq:AUC-computation-2}
+P_{FPR}(c) = 1 - F_{0}(c),
+\end{equation}
+where~$F_{0}$ is~the cumulative density function for~$C_{0}$.
+
+
+Let~us take some particular value of~$c^{*}$ to~which a~certain~$P_{FPR}(c^{*})$ corresponds. In~other words, it~corresponds to~the probability that a~random element~$x_{0}$ belonging to~class~$C_{0}$ is~greater than the threshold value~$c^{*}$, i.e.
+\begin{equation}\label{eq:AUC-computation-3}
+P_{FPR}(c^{*}) = \mathbb{P}(x_{0}>c^{*}|x_{0} \in C_{0}).
+\end{equation}
+Then, reasoning similarly with respect to~TPR, we~get
+\begin{equation}\label{eq:AUC-computation-4}
+P_{TPR}(c^{*}) = \mathbb{P}(x_{1}>c^{*}|x_{1} \in C_{1}).
+\end{equation}
+Next, based on~the fact that the AUC is~realized through an~integral, we~select its value so~that the distribution of~$c^{*}$ matches the distribution of~$F_{0}$. In~this case,~$P_{TPR}$ is~an~independent random variable with a~corresponding expectation in~the form of
+\begin{equation}\label{eq:AUC-computation-integral}
+\mathbb{E}(P_{TPR}) = \int P_{TPR} d P_{FPR} = AUC.
+\end{equation}
+It~is~now possible to~formulate a~definition for the AUC.
+\begin{description}
+	\item[AUC ---] is~the expected probability that element~$x_{1} \in C_{1}$ will~be assigned to~$C_{1}$ with higher probability than element~$x_{0} \in C_{0}$. Thus,
+	\begin{equation}\label{eq:AUC-definition}
+	1-F_{1}(t)>1-F_{0}(t) \forall t.
+	\end{equation}
+	The wording "for any t" means that~$1-F_{1}(t)$ is~\emph{stochastically} greater than~$1-F_{0}(t)$. The latter circumstance is~key in~terms of~the relationship of~the AUC to~the U-test, which will~be shown later.
+\end{description}
+%
+\subsection{}\label{U-test&AUC-relation}
+%
 
 \nocite{Essential-Statistical-Inference}
 \nocite{AUC-optimization}
