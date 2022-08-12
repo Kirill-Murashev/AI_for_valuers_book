@@ -659,7 +659,37 @@ It~is~now possible to~formulate a~definition for the AUC.
 	The wording "for any t" means that~$1-F_{1}(t)$ is~\emph{stochastically} greater than~$1-F_{0}(t)$. The latter circumstance is~key in~terms of~the relationship of~the AUC to~the U-test, which will~be shown later.
 \end{description}
 %
-\subsection{}\label{U-test&AUC-relation}
+\subsection{Relation between U-test and AUC}\label{U-test&AUC-relation}
+A~fairly detailed description of~the U-test was given earlier. This subsection contains only brief information about~it, which is~directly relevant to~the question of~its relationship to~the AUC.
+
+The U-test is~a~non-parametric test that allows you to~test whether two samples belong to~the same distribution. His basic idea is~that if~there is~no~difference between two classes, then combining them into one larger class (set) and then calculating any statistic for the new larger class will give an~unbiased estimate for any of~the initial classes. In~other words, if~there is~no~difference in~the distribution of~the two samples, combining them and assuming that the actually observed data from the two samples represent only one of~the equal-valued variants of~the moving observations means that there is~no~difference in~any statistical estimate for any of~the moving variants relative to~the other, and relative to~the combined set.
+
+Let's suppose that we~need to~compare two samples using the median, the mean, or~some other measure of~central tendency. In~terms of~cumulative distribution functions for the two populations, in~the case of~$H0$ we~have the following:
+\begin{equation}\label{eq:U-AUC-H0}
+H_0: F_{X}(t) = F_{Y}(t), \quad \forall t,
+\end{equation}
+which indicates that all observations belong to~the same distribution. Then an~alternative hypothesis is~that
+\begin{equation}\label{eq:U-AUC-H1}
+H_1: F_{X}(t) < F_{Y}(t), \quad \forall t,
+\end{equation}
+which is~possible, in~particular, in~the case of~the existence of~a~shift of~one distribution relative to~the other. In~this case, the samples ${X_{i}}_{i=1}^{n},\ {X_{j}}_{j=1}^{m}$ represent independent groups of~observations. In~this case, the size of~the samples may vary.
+
+The test technique consists of~combining two samples into one set and assigning ranks to~each item within~it. The U-statistic is~the sum of~the ranks for the set~\textit{X}. If~the value of~the statistic is~small enough, it~means that the distribution of~set~\textit{X} is~stochastically shifted to~the left relative to~the distribution of~set~\textit{Y}, i.\,e.~$F_{X}{t} < F_{Y}{t}$.
+
+Since with a~sufficiently large number of~observations (20 or~more) the distribution of~U-statistics is~well approximated by~the normal distribution, the p-value is~suitable for assessing significance. Let's calculate it~using the Python language according to~the script~\ref{lst:AUC-p-value}.
+%
+\begin{lstlisting}[float, caption = Calculation of~the p-value for the test data, firstnumber=1, label= lst:AUC-p-value]
+print('p-value:',stats.wilcoxon(f1.rvs(30), f0.rvs(30))[1])
+\end{lstlisting}
+The p-value is~1.9729484515803686e-05, which is~less than the significance level~(0.05), so~we~can reject the null hypothesis~\ref{eq:U-AUC-H0}. Since the data were randomly generated, if~the experiment is~repeated, the particular p-value will differ from that obtained when writing this paper. However, it~will always be below the threshold because of~the parameters set in~the algorithm.
+
+The U-statistic can be~written as~follows:
+\begin{equation}\label{eq:U-statistics}
+U = \frac{1}{mn}\sum_{i=1}^{m}\sum_{j=1}^{n}\mathbbm{1}{(Y_{j}>X_{i})},
+\end{equation}
+where~$\mathbbm{1}{(Y_{j}>X_{i})}$ is~the indicator (characteristic) function showing that the statistic (for the discrete case) estimates the probability that~\textit{Y} is~stochastically greater than~\textit{X}. Thus, this correspondence means that its value is~equal to~the AUC. The relationship between the AUC and the U-test is~in a~similar sense: checking the stochastic excess value of~observations belonging to~one sample relative to~observations belonging to~another sample.
+%
+\subsection{}\label{ROC-AUC-theory}
 %
 
 \nocite{Essential-Statistical-Inference}
