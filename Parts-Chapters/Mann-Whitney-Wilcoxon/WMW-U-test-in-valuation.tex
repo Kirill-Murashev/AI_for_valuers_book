@@ -1,4 +1,5 @@
 \documentclass[]{scrreprt}
+\KOMAoptions{fontsize=14pt}
 
 \input{standard-preamble.tex}
 
@@ -542,6 +543,7 @@ ax.fill_between(xi, f0.pdf(xi), where=xi > 0, alpha=.3, color='b')
 
 # Save to .pdf
 plt.savefig('Plot-ROC-step-1.pdf', bbox_inches='tight')
+
 \end{lstlisting}
 %
 \begin{figure}[ht]
@@ -599,6 +601,7 @@ ax.set_xlabel('False-alarm probability')
 ax.set_ylabel('Detection probability')
 
 interact(plot_roc_interact,c=(-3,5,.05))
+
 \end{lstlisting}
 %
 \begin{figure}[ht]
@@ -680,6 +683,7 @@ Since with a~sufficiently large number of~observations (20 or~more) the distribu
 %
 \begin{lstlisting}[float, caption = Calculation of~the p-value for the test data, firstnumber=1, label= lst:AUC-p-value]
 print('p-value:',stats.wilcoxon(f1.rvs(30), f0.rvs(30))[1])
+
 \end{lstlisting}
 The p-value is~1.9729484515803686e-05, which is~less than the significance level~(0.05), so~we~can reject the null hypothesis~\ref{eq:U-AUC-H0}. Since the data were randomly generated, if~the experiment is~repeated, the particular p-value will differ from that obtained when writing this paper. However, it~will always be below the threshold because of~the parameters set in~the algorithm.
 
@@ -689,9 +693,200 @@ U = \frac{1}{mn}\sum_{i=1}^{m}\sum_{j=1}^{n}\mathbbm{1}{(Y_{j}>X_{i})},
 \end{equation}
 where~$\mathbbm{1}{(Y_{j}>X_{i})}$ is~the indicator (characteristic) function showing that the statistic (for the discrete case) estimates the probability that~\textit{Y} is~stochastically greater than~\textit{X}. Thus, this correspondence means that its value is~equal to~the AUC. The relationship between the AUC and the U-test is~in a~similar sense: checking the stochastic excess value of~observations belonging to~one sample relative to~observations belonging to~another sample.
 %
-\subsection{}\label{ROC-AUC-theory}
+\subsection{Practice of~ROC analysis and AUC calculation.}\label{ROC-AUC-theory}
+This subsection is~not required reading if~the goal is~only the practical implementation of~the U-test itself. However, it~gives an~insight into machine learning methods that are not related to~the so-called \emph{frequentist statistics} to~which the U-test itself belongs, and shows the relationship between these areas of~data analysis. In~addition, it~will provide sufficient knowledge to~perform a~ROC analysis as~such, which may~be useful in~other situations that an~appraiser may encounter in~his or~her practice.
+%
+\subsubsection{Plotting the ROC curve}\label{plot-ROC-theory}
+%
+\lstset{language=R,
+	basicstyle=\ttfamily,
+	keywordstyle=\color{Blue}\ttfamily,
+	stringstyle=\color{Red}\ttfamily,
+	commentstyle=\color{Emerald}\ttfamily,
+	morecomment=[l][\color{Magenta}]{\#},
+	breaklines=true,
+	breakindent=0pt,
+	breakatwhitespace,
+	columns=fullflexible,
+	showstringspaces=false
+}
+%
+ROC analysis and in~particular the construction of~ROC curves are widely used to~find a~compromise between the \emph{sensitivity} and \emph{specificity} of~a~binary classifier. Most of~the classifiers used in~machine learning produce a~result in~the form of~a~quantification that a~given object has a~"positive" feature value. Some threshold value is~needed to~convert such a~quantitative assessment into a~concrete "yes" or~"no" prediction. In~his case, observations with a~score above this threshold will~be classified as~"positive", below as~"negative". Different thresholds provide different levels of~sensitivity and specificity. Setting a~relatively high threshold value provides a~conservative approach to~the issue of~classifying a~particular case as "positive", which reduces the likelihood of~false positives. At~the same time, this increases the risk of~missing the observed positive values, i.\,e., it~reduces the level of~true positive classification results. A~relatively low threshold value provides a~more liberal approach to~classifying observations as~"positive".  This reduces specificity (increases the number of~false negatives) and increases sensitivity (increases the number of~true positives). The ROC curve shows the ratio of~true positives to~false positives, giving an~overview of~the entire spectrum of~such trade-offs. There are many R~language libraries that plot ROC curves and calculate metrics for ROC analysis. In~this case, to~better understand the essence of~ROC analysis, some actions will~be performed by~writing our own functions. The following will show an~algorithm for constructing a~ROC curve based on~a~set of~real outcomes and their corresponding estimates. The calculation involves two steps:
+\begin{itemize}
+	\item sort the observed outcomes in~descending order by~their predicted scores;
+	\item calculation of~total true positive (TPR) and true negative (TNR) scores for ordered observed outcomes.
+\end{itemize}
+Let's create an appropriate function (script~\ref{lst:create-ROC-function-R}).
+%
+\begin{lstlisting}[float, caption = Creating a~function to~calculate TPR and FPR, firstnumber=1, label= lst:create-ROC-function-R]
+# create own function for ROC
+appraiserRoc <- function(labels, scores){
+labels <- labels[order(scores, decreasing=TRUE)]
+data.frame(TPR=cumsum(labels)/sum(labels),
+FPR=cumsum(!labels)/sum(!labels), labels)
+}
+ 
+\end{lstlisting}
+%
+This function has two inputs:
+\begin{itemize}
+	\item \emph{labels} --- Boolean vector containing actual classification data;
+	\item \emph{scores} --- a~vector of~real numbers containing data about the scores predicted by~some classifier.
+\end{itemize}
+%
+Since only two classification outcomes are possible, the labels vector can only contain \emph{TRUE} or~\emph{FALSE} values (or~\emph{1} and~\emph{0} depending on~the analyst's preference). A~sequence of~such binary values can~be interpreted as~a~set of~instructions for a~\href{https://en.wikipedia.org/wiki/Turtle_graphics}{turtle graphics}~\cite{Wiki:turtle-graphics}. There~is one important feature: in~this case the turtle has a~compass and receives instructions for absolute directions of~movement: "to~the north" or~"to~the east" instead of~relative "to~the right" and "to~the left". The turtle starts its movement from the starting point with coordinates~(0,0) and makes its way on~the plane according to~the sequence of~instructions. When a~\emph{TRUE} command is~received, it~takes one step north, i.\,e., in~the positive direction of~the y-axis, and when a~\emph{FALSE} command is~received, it~takes one step east, i.\,e., in~the positive direction of~the x-axis. The length of~the steps is~chosen in~such a~way that if~all \emph{TRUE~(1)} commands are received consecutively, the turtle will~be at~a~point with coordinates~(0,1), all \emph{FALSE~(0)} commands at~a~point with coordinates~(1,0). Thus, the length of~the step "to~the north" may~be different from the length of~the step "to~the east". The path in~the plane is~determined by~the order of~the \emph{TRUE~(1)} and \emph{FALSE~(0)} commands and always ends at~(1,1).
+
+Advancing the turtle through the bits of~the instruction string is~an~adjustment of~the classification threshold to~less and less stringent. Once the turtle has passed the bit, it~means that it~has decided to~classify that bit as~"positive". If~this bit was actually "positive", it~is a~true positive, if~it~was actually "negative" it~is a~false positive. The y-axis shows the TPR, calculated as~the ratio of~the number of~positive results detected to~this time to~the total number of~actual positive results. The x-axis shows the (FPR), calculated as~the ratio of~the number of~currently detected positive results to~the total number of~actual negative results. The vectorized implementation of~this logic uses cumulative sums (the \textbf{cumsum} function) instead of~going through the values one by~one, although that is~what the computer does at~a~lower level.
+
+The ROC curve calculated in~this way is~actually a~step function. With a~very large number of~positive and negative cases, these steps are very small, and the curve looks smooth. In~this case, with a~really large number of~observations, the construction of~each point is~difficult. As~a~consequence, in~practice, most ROC curve functions used for practical purposes contain additional steps and often use some form of~approximation.
+
+As~an~example, consider a~situation in~which an~appraiser evaluates parts manufactured by~an~enterprise. Some of~the parts are known to~be of~good quality and some are defective. The valuation of~quality parts is~carried out on~the basis of~cost market approaches in~the usual manner. And defective parts are valued at~a~scrap value. In~this case, it~is necessary to~assign each part to~one or~another category. There is~some feature~\emph{x}, which can~be measured by~the appraiser. And there is~also some feature~\emph{y}, which cannot~be measured by~the appraiser. The value of~the feature~\emph{y} allows you to~classify parts as~quality or~defective. It~is also known that there is~some finitary relation function between features \emph{x} and~\emph{y}. Thus, knowing the value of~\emph{x}, we~can infer the value of~y with some probability.
+In~this case, it~is advisable to~take a~certain sample of~parts. Then, together with the specialists of~the customer company, measure the values of~features \emph{0} and~\emph{y} for each element of~this sample.
+
+We~will use simulated data to~consider the example. There is~some input feature~\emph{x} that is~linearly related to~the implicit result~\emph{y}. This relationship implies the presence of~some randomness. The y-value shows whether the part exceeds the tolerance requirements. If~so, it~should~be classified as~defective. The algorithm used in~this paper involves the following steps:
+\begin{itemize}
+	\item create the~\textbf{sim\_parts\_data} function that generates data according to~certain rules and sets the $"y>100"$ threshold value to~classify parts as~defective.
+	\item create the~dataframe \textbf{parts\_data} with this function;
+	\item create the~\textbf{test\_set\_idx} rule, whereby 80\,\% of~the data is~randomly assigned to~the training sample, and 20\,\% to the test sample;
+	\item applying the rule \textbf{test\_set\_idx} to~data \textbf{parts\_data};
+	\item create training (\textbf{<<training\_set>>}) and testing (\textbf{<<test\_set>>}) sub-samples;
+	\item plot the diagram showing the distribution of~observations from the training sample.
+\end{itemize}
+To~implement the above algorithm, the code from script~\ref{lst:create-sample-data-plot-graph-R} was used.
+%
+\begin{lstlisting}[float, caption = Creation and primary visualization of~data on~quality and defective parts, firstnumber=1, label= lst:create-sample-data-plot-graph-R]
+# Sample of ROC-analysis
+
+# enable libraries
+library(ggplot2)
+library(dplyr)
+library(pROC)
+
+#set seed
+set.seed(19190709)
+
+# create own function for ROC
+appraiserRoc <- function(labels, scores){
+labels <- labels[order(scores, decreasing=TRUE)]
+data.frame(TPR=cumsum(labels)/sum(labels),
+FPR=cumsum(!labels)/sum(!labels), labels)
+}
+
+# create function 
+sim_parts_data <- function(N, noise=100){
+x <- runif(N, min=0, max=100)
+y <- 122 - x/2 + rnorm(N, sd=noise)
+bad_parts <- factor(y > 100)
+data.frame(x, y, bad_parts)
+}
+
+# create dataset
+parts_data <- sim_parts_data(2000, 10)
+
+# create rule for test subset
+test_set_idx <- sample(1:nrow(parts_data), size=floor(nrow(parts_data)/4))
+
+# create training and test subsets
+test_set <- parts_data[test_set_idx,]
+training_set <- parts_data[-test_set_idx,]
+
+# plot graph
+test_set %>% 
+ggplot(aes(x=x, y=y, col=bad_parts)) + 
+scale_color_manual(values=c("green", "red")) + 
+geom_point() + 
+ggtitle("Bad parts related to x")
+
+\end{lstlisting}
 %
 
+The result was diagram~\ref{fig:bad-parts-r}. As~you can see, if~the value of~the parameter~\emph{x} is~less than~15, all dots are red, which means that the parts are defective. Above 96 ерун are green, which means that the parts are of good quality. If~the value is~higher than 96, they are green, which means that the parts are of good quality. Between these values is~an area of~uncertainty, the right side of~which is~dominated by~green dots, and the left side by~red dots.
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{bad-parts-r.pdf}
+	\caption{Diagram of~the distribution of~parts with respect to~the parameter~\emph{x}.}
+	\label{fig:bad-parts-r}
+\end{figure}
+
+The training sub-sample will~be used to~create a~logistic regression model based on~the values of~the attribute~\emph{x}, which allows you to~assign a~particular part to~quality or~defective. This model will~be used to~assign scores to~the observations in~the training sample. In~the future, these scores will~be used to~construct the ROC curve together with the true labels. Recall that the ROC curve is~plotted for observations with known values of~parameters \emph{x} and~\emph{y}. This ROC curve is~then applied to~the entire set of~objects for which x~values are known but y~values are unknown. The scores themselves as~well as~the~\emph{x} and \emph{y}~values are not displayed on~the graph and are only used for sorting labels. Two different classifiers sorting labels in~the same order will give identical ROC curves regardless of~the absolute values of~the scores. This can~be seen by~constructing an~ROC curve based on~"response" or~"link" predictions from a~logistic regression model. The "response" scores were mapped to~a~(0, 1) scale using a~\href{https://en.wikipedia.org/wiki/Sigmoid_function}{Sigmoid function}\cite{Wiki:sigmoid-function}, the "link" scores were left untransformed. In~this case, the points showing specific observations are ordered in~the same way. To test this hypothesis, we~use the code~\ref{lst:link-response-comparison}. As~you can see in~Figure~\ref{fig:link-response-comparison-r}, the order of~the dots is~the same for "link" and "response".
+%
+\begin{lstlisting}[float, caption = Comparing "link" and "response" predictions, firstnumber=1, label= lst:link-response-comparison]
+fit_glm <- glm(bad_parts ~ x, training_set, family=binomial(link="logit"))
+
+glm_link_scores <- predict(fit_glm, test_set, type="link")
+
+glm_response_scores <- predict(fit_glm, test_set, type="response")
+
+score_data <- data.frame(link=glm_link_scores, 
+response=glm_response_scores,
+bad_parts=test_set$bad_parts,
+stringsAsFactors=FALSE)
+
+score_data %>% 
+ggplot(aes(x=link, y=response, col=bad_parts)) + 
+scale_color_manual(values=c("green", "red")) + 
+geom_point() + 
+geom_rug() + 
+ggtitle("Both link and response scores put cases in the same order")
+
+\end{lstlisting}
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{link-response-comparison-r.pdf}
+	\caption{Comparison of~the order of~points for "link" and "response".}
+	\label{fig:link-response-comparison-r}
+\end{figure}
+%
+
+Let's go directly to~the construction of~the ROC curve. We use both the ready function from the "pROC" package and the previously created \textbf{"appraiserRoc"} function (see script~\ref{lst:plot-ROC-1-r}). The result of~the first is~represented as~an~orange curve, the second as~circles of~red for defective parts and black for quality parts (see Diagram~\ref{fig:test-ROC-r}). It~is not difficult to~guess that the red dot corresponded to~the "North" command and the black dot to~the "East" command. Since the library function and the own function perform the same actions, the two curves are identical.
+
+Note that the "Specificity" scale is~plotted on~the abscissa axis, not the FPR, so~the values on~the axis are inverted. Since, according to~Table~\ref{tab:ROC-rates-1}, $"Specificity = 1 - FPR"$ we can talk about the mutual unambiguity of~these indicators. Consequently, when plotting the ROC curve any of~them can~be used. This version of~the scale display was self-selected by~the \textbf{roc} function from the "pRoc" library. If~the user does not set his settings, the function chooses to~display the scale so~that the AUC value is~always greater than 0.5. This calculation is~based on~which group (quality parts, defective parts) has a~higher median score. Since the \textbf{appraiserRoc} function is~of~course not that smart, a~simple subtraction was performed during its use, making it~possible to~build a~joint diagram.
+
+This approach has one limitation: based on~the prognostic nature of~the ordering of~outcomes, it~does not allow correct processing of~information if~the sequence consists of~identical estimates. "Turtle" assumes that the order of~the labels matters, but there is~no~meaningful order in~the situation of~the same scores. These areas should~be displayed with a~diagonal line, but not the traditional steps.
+%
+\begin{lstlisting}[float, caption = Plotting the ROC curve using library and own functions, firstnumber=1, label= lst:plot-ROC-1-r]
+# plot ROC
+plot(roc(test_set$bad_parts, glm_response_scores, direction="<"),
+col="orange", lwd=3, main="The turtle finds its way", xlim = c(1, 0))
+glm_simple_roc <- appraiser_roc(test_set$bad_parts=="TRUE", glm_link_scores)
+with(glm_simple_roc, points(1 - FPR, TPR, col=1 + labels))
+\end{lstlisting}
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{test-ROC-r.pdf}
+	\caption{Identical ROC curves plotted with library and own functions.}
+	\label{fig:test-ROC-r}
+\end{figure}
+%
+
+Consider an~example where a~diagonal is~the only adequate way to~plot a~ROC curve. To~do~this, create an~extremely unbalanced data set in~which only~1\,\% of~the observations are "positive". In~this case, the result of~the prediction will always be~negative. Since all scores will~be the same, there is~no~need for any ordering. The \textbf{roc} function from the "pRoc" package correctly recognizes such situations and draws a~diagonal line~(1,0; 0,1). In~doing so, the turtle assumes that the order of~scores has some significance, and moves between these points along a~random trajectory, alternating between "north" and "east" directions. The code calling the construction of~such a~ROC curve is~given in~script~\ref{lst:plot-ROC-rare-success-r}. In~Diagram~\ref{fig:ROC-rare-success-r}, the black diagonal line was plotted by~the library function, while the blue dashed line was plotted by~our own previously written \textbf{appraiserRoc} function.  As~you can see, the library function correctly determined the case of~identical estimates, while applying our own function resulted in~random turtle wanderings.
+%
+\begin{lstlisting}[float, caption = Plotting the ROC curve in~case of~absence of~order of~scores, firstnumber=1, label= lst:plot-ROC-rare-success-r]
+# plot ROC for 99% negative cases
+N <- 2000
+P <- 0.01
+rare_success <- sample(c(TRUE, FALSE), N, replace=TRUE, prob=c(P, 1-P))
+guess_not <- rep(0, N)
+plot(roc(rare_success, guess_not), print.auc=TRUE)
+appr_roc <- appraiserRoc(rare_success, guess_not)
+with(appr_roc, lines(1 - FPR, TPR, col="blue", lty=2))
+\end{lstlisting}
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{ROC-rare-success-r.pdf}
+	\caption{ROC curve arising when there is~no~value of~the order of~scores.}
+	\label{fig:ROC-rare-success-r}
+\end{figure}
+%
+
+The greater the value of~N, the closer to~the diagonal the turtle will wander. Greater unbalance requires more points in~order for the path to~run roughly close to~the diagonal. In~less extreme cases, the emergence of~diagonal sections is~possible, in~particular, in~the case of~rounding of~estimates, leading to~equality of~some of~them.
+
+To further familiarize yourself with the topic of constructing ROC curves, we can recommend studying this \href{https://web.tresorit.com/l/APSpC#AfkTKO5_-ijMhPuXE-qEzg}{theoretical material}~\cite{ROC-analysis}, as~well as~practice on~the \href{https://kennis-research.shinyapps.io/ROC-Curves/}{online simulator}~\cite{ROC-curve-practice}.
+%
 \nocite{Essential-Statistical-Inference}
 \nocite{AUC-optimization}
 \nocite{Mann-Whitney-1947}
