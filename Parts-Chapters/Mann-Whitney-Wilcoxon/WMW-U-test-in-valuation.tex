@@ -1,5 +1,5 @@
 \documentclass[]{scrreprt}
-\KOMAoptions{fontsize=14pt}
+% \KOMAoptions{fontsize=14pt}
 
 \input{standard-preamble.tex}
 
@@ -328,7 +328,7 @@ In~the case of~testing the hypothesis of~a~shift with significantly different di
 \subsection{The relationship between the U-test and the classification tasks}\label{U-test&classification}
 The U-test is~a particular case of~the \href{https://en.wikipedia.org/wiki/Ordered_logit}{ordered logit model}~\cite{Ordered-logit}.
 %
-\section{The relationship between the U-test and the concepts of~Receiver operating characteristics~(ROC) and Area Under Curve~(AUC)}\label{U-AUC}
+\section{The relationship between the U-test and the concepts of~Receiver operating characteristics~(ROC) and Area under the curve~(AUC)}\label{U-AUC}
 Based on~what was said in~\ref{U-test&classification}, we~can conclude that the U-test is~not only a~test for testing the shift hypothesis (or~another one similar in~meaning), but also represents a~kind of~classifier. Looking ahead, the meaning of~the U-test as~a~classifier is~as~follows:
 \begin{itemize}
 	\item there is~a~"positive" outcome of~comparing two random observations, which is~that the observation from~\textit{X} is~greater than the observation from~\textit{Y};
@@ -341,9 +341,9 @@ ROC analysis itself is~outside the scope of~this paper. Therefore, let~us consid
 \begin{description}
 	\item[ROC curve ---] is~a~graphical plot that allows us to~evaluate the quality of~binary classification. It~displays the ratio between the proportion of~objects from the total number of~feature carriers correctly classified as~carrying the feature (True Positive Rate~(TPR), called the \emph{sensitivity of the classification algorithm}) and the proportion of~objects from the total number of~objects not carrying the feature, incorrectly classified as~carrying the feature (False Positive Rate~(FPR), the \textbf{1-FPR} value is~called the \emph{specificity of~the classification algorithm}), when varying the threshold of~the deciding rule.	It~is also known as~\textbf{error curve}. Analysis of~classifications using ROC curves is~called \textbf{ROC analysis}.
 \end{description}
-Quantitative interpretation of~the ROC curve gives the Area under curve~(AUC).
+Quantitative interpretation of~the ROC curve gives the Area under the curve~(AUC).
 \begin{description}
-	\item[Area under curve~(AUC) ---] is~the area bounded by~the ROC curve and the axis of~the proportion of~false positive classifications (abscissa axis).
+	\item[Area under the curve~(AUC) ---] is~the area bounded by~the ROC curve and the axis of~the proportion of~false positive classifications (abscissa axis).
 \end{description}
 The higher the AUC, the better the quality of~the classifier, while a~value of~0.5 demonstrates the unsuitability of~the chosen classification method (corresponding to~a~random coin guessing). A value of less than 0.5 indicates that the classifier works exactly the other way around: if you call positive results negative and vice versa, the classifier will perform better~\cite{Wiki:ROC}.
 
@@ -886,6 +886,230 @@ with(appr_roc, lines(1 - FPR, TPR, col="blue", lty=2))
 The greater the value of~N, the closer to~the diagonal the turtle will wander. Greater unbalance requires more points in~order for the path to~run roughly close to~the diagonal. In~less extreme cases, the emergence of~diagonal sections is~possible, in~particular, in~the case of~rounding of~estimates, leading to~equality of~some of~them.
 
 To further familiarize yourself with the topic of constructing ROC curves, we can recommend studying this \href{https://web.tresorit.com/l/APSpC#AfkTKO5_-ijMhPuXE-qEzg}{theoretical material}~\cite{ROC-analysis}, as~well as~practice on~the \href{https://kennis-research.shinyapps.io/ROC-Curves/}{online simulator}~\cite{ROC-curve-practice}.
+%
+\subsubsection{The concept of~AUC and its calculation}\label{calculate-AUC-theory}
+The ROC curve is~a~popular means of~visualizing the trade-off between sensitivity and specificity of~a~binary classifier. Earlier in~\ref{plot-ROC-theory}, the issue of~constructing the ROC curve was considered in~terms of~the turtle steps, which takes a~vector with instructions as~steps "north", i.\,e., in~the positive direction on~the y-axis, and "east", i.\,e., in~the positive direction on~the x-axis. In~this case, the sequence of~scores, on~the basis of~which the vector of~bitwise instructions is~formed, is~ordered in~such a~way that the cases that are most likely to~be positive come first. In~doing so, the turtle assumes that all cases are positive. Next, for the training sample (in~which true values are known for certain), we~determine whether the case was true-~(TP) or~false-positive~(FP). The step size on~the y-axis is~inversely proportional to~the number of~positive observations, on~the x-axis to~the number of~negative observations. Thus, the curve path always ends at~(1,1). The result is~a~plot of~the frequency of~true positives (\textit{TPR} or~\textit{sensitivity}) against the frequency of~false positives (\textit{FPR} or~$1-specificity$), which is~actually the ROC curve. At~the same time, the graph itself does~not provide any quantitative estimates of~the quality of~the binary classifier.
+
+Calculating the area under the ROC curve is~one way to~summarize the quantitative assessment of~classifier quality. This metric is~so~common that in~the context of~data analysis, the terms \emph{Area under the curve} or~\emph{AUC} refer specifically to~the area under the ROC curve, unless explicitly stated otherwise.
+
+At~first glance, the simplest and most intuitive metric for classifier performance is~its accuracy. Unfortunately, in~some cases, such a~metric simply will not work. For example, in~the case of~a~disease that occurs in~one person per million, a~completely useless test that always shows a~negative result would~be 99.9999\% accurate. In~contrast to~the accuracy index, ROC curves are insensitive to~unbalanced classes. The aforementioned useless test will have an~$AUC=0.5$, which is~equivalent to~no~test at~all (see diagram~\ref{fig:ROC-rare-success-r}).
+
+In~this subsubsection, we~will first consider the geometric approach to~the concept of~AUC and develop a~function that calculates its value. Next, we~turn to~another --- probabilistic --- interpretation of~the concept of~AUC.
+
+\paragraph{Geometric approach to~the concept of~AUC}
+First, let's create a~test dataset using the code shown in~\ref{lst:AUC-theory-create-dataset-r}.
+%
+\begin{lstlisting}[float, caption = Create a~test data set, firstnumber=1, label= lst:AUC-theory-create-dataset-r]
+# Geometric interpretation of AUC
+
+# activate libraries
+library(pROC)
+
+# create dataset
+category <- c(1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0)
+prediction <- rev(seq_along(category))
+prediction[9:10] <- mean(prediction[9:10])
+\end{lstlisting}
+%
+The \textbf{prediction} vector contains pseudo-estimates, which in~practice are assigned by~the classifier. In~this study problem, they are a~decreasing sequence, which generally corresponds to~the "category" labels. The scores for observations with ordinal numbers 9 and 10, one representing the positive case and the other the negative case, are replaced by~their mean values to~create a~ties effect.
+
+To~construct the ROC curve, TPR and FPR must~be calculated. It~was shown in~\ref{plot-ROC-theory} how this can~be done semi-automatically by~calculating cumulative sums for positive and negative labels. This section will use the library "pRoc", which performs all calculations automatically at~a~low level. Let's calculate the TPR, FPR, and AUC values with the code~\ref{lst:AUC-as-geom-calculate-AUC-r}. A~dataframe will also~be created, containing the data for each observation, and shown in~Table~\ref{tab:roc_df-r}. The \textbf{roc} function can return the values of~many indicators, but at~this point we only need TPR and FPR. Recall that TPR means sensitivity and FPR is~equivalent to~the expression $1 - specificity$. By~default, the \textbf{roc} function returns values in~ascending order. As~a~consequence, they have been inverted so~that the starting point has coordinates~(0,0). The AUC value returned by~the function was~0.825. In~the following, we will compare it with the one that will~be obtained in the course of~its independent semi-automatic calculation.
+%
+\begin{lstlisting}[float, caption = Calculation of~the AUC using the pRoc library, firstnumber=1, label= lst:AUC-as-geom-calculate-AUC-r]
+# create ROC object&dataframe and calculate AUC
+roc_obj <- roc(category, prediction)
+auc(roc_obj)
+roc_df <- data.frame(
+TPR=rev(roc_obj$sensitivities), 
+FPR=rev(1 - roc_obj$specificities), 
+labels=roc_obj$response, 
+scores=roc_obj$predictor)
+\end{lstlisting}
+%
+\begin{table}[ht]
+	\caption{TPR, FPR, labels, scores for the training dataset.}\label{tab:roc_df-r}
+	\centering
+	\begin{tabular}{lllll}
+		\hline
+		& TPR & FPR & labels & scores \\ 
+		\hline
+		1 & 0.00 & 0.00 & 1.00 & 20.00 \\ 
+		2 & 0.10 & 0.00 & 1.00 & 19.00 \\ 
+		3 & 0.20 & 0.00 & 1.00 & 18.00 \\ 
+		4 & 0.30 & 0.00 & 1.00 & 17.00 \\ 
+		5 & 0.40 & 0.00 & 0.00 & 16.00 \\ 
+		6 & 0.40 & 0.10 & 1.00 & 15.00 \\ 
+		7 & 0.50 & 0.10 & 1.00 & 14.00 \\ 
+		8 & 0.60 & 0.10 & 0.00 & 13.00 \\ 
+		9 & 0.60 & 0.20 & 1.00 & 11.50 \\ 
+		10 & 0.70 & 0.30 & 0.00 & 11.50 \\ 
+		11 & 0.80 & 0.30 & 1.00 & 10.00 \\ 
+		12 & 0.80 & 0.40 & 0.00 & 9.00 \\ 
+		13 & 0.90 & 0.40 & 1.00 & 8.00 \\ 
+		14 & 0.90 & 0.50 & 0.00 & 7.00 \\ 
+		15 & 0.90 & 0.60 & 0.00 & 6.00 \\ 
+		16 & 1.00 & 0.60 & 1.00 & 5.00 \\ 
+		17 & 1.00 & 0.70 & 0.00 & 4.00 \\ 
+		18 & 1.00 & 0.80 & 0.00 & 3.00 \\ 
+		19 & 1.00 & 0.90 & 0.00 & 2.00 \\ 
+		20 & 1.00 & 1.00 & 0.00 & 1.00 \\ 
+		\hline
+	\end{tabular}
+\end{table}
+%
+\subparagraph{Plotting the graph}
+If~the ROC curve were a~perfect step function, the area under it could~be found by adding a~set of~vertical bars equal to~the spaces between the points on~the abscissa axis (FPR) and to~the height of~the step on~the ordinate axis (TPR). Real ROC curves may include sections corresponding to~repeated values. In~this case, there are segments other than steps. Such repeats require proper consideration. In~Figure~\ref{fig:ROC-bars-R}, the area of~ordinary steps is~shown in~green, the cases of~repeats~(ties) are indicated by~blue rectangles divided in~half by~sloping ROC curve segments. Thus, half of~the area of~these steps is~included in~the total area under the curve.
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{ROC-bars-R.pdf}
+	\caption{ROC curve and the area under it, taking into account the presence of~ties.}
+	\label{fig:ROC-bars-R}
+\end{figure}
+
+The following steps were taken to~plot diagram~\ref{fig:ROC-bars-R}.
+\begin{enumerate}
+	\item Define a~\textbf{rectangle} function that takes as~arguments:
+	\begin{itemize}
+		\item the initial \emph{x} and~\emph{y} coordinates;
+		\item width and height of~step;
+		\item angle of~rotation after each step;
+		\item hatching density.
+	\end{itemize}
+	The algorithm in~script~\ref{lst:create-rectangle-function-r} builds the rectangle as~follows:
+	\begin{itemize}
+		\item the function accepts the initial \emph{x} and~\emph{y} coordinates from the appraiser.
+		\item then it gets the value of~the step length "to the east" (to~the right on the x-axis), calculates the new value of~the x-coordinate, keeping the value of~the y-coordinate.
+		\item after performing the step is~a~turn of~45\textdegree counterclockwise.
+		\item then it~gets the value of~the step length "to the North" (up~on~the y-axis), calculates a~new value of~the y-coordinate, keeping the value of~the x-coordinate.
+		\item this~is followed by~a~new turn to~the left by~45\textdegree and new steps in~opposite directions.
+		\item thus, performing one step each to~the “east”, “north”, “west” and “south”, as~well as~three turns of~45\textdegree counterclockwise function returns to~the starting point, completing the construction of~the rectangle.
+	\end{itemize}
+	\item To~calculate the step length "to~the East" and "to~the West" it~is necessary to~calculate the difference between neighboring values of~FPR, "to~the North" and "to~the South" between neighboring values of~TPR. To~do~this, we add the two columns \emph{dFPR} and \emph{dTPR}, respectively, using the code shown in~\ref{lst:add-dFPR&dTPR-columns-r}. Since the number of~pairs for which the difference is~calculated is~less than the number of~observations by~one, zero should~be added at~the end (since the dataframe data are sorted in~descending order).
+	\item Next, the coordinate grid is~laid out from zero to~one on~each axis using the code~\ref{lst:plot-empty-graph-from-0-to-1-r}.
+	\item For the case of~repeating values~(ties), there is~a~special kind of~step "to~the North-East" in~the form of~a~diagonal line.
+	\item The final step is~to~build the ROC curve itself and the rectangles that form the area under~it, according to~script~~\ref{lst:plot-ROC-curve-and-rectangles-under-it-r}. The \textbf{mapply} function allows you to~apply the \textbf{rectangle} function sequentially to~each row of~the data frame.
+\end{enumerate}
+%
+\begin{lstlisting}[float, caption = Create the \textbf{rectangle} function, firstnumber=1, label= lst:create-rectangle-function-r]
+# create function for plotting rectangles
+rectangle <- function(x, y, width, height, density=12, angle=45, ...) 
+polygon(c(x,x+width,x+width,x), c(y,y,y+height,y+height), 
+density=density, angle=angle, ...)
+\end{lstlisting}
+%
+\begin{lstlisting}[float, caption = Adding \textit{dFPR} and \textit{dTPR} columns, firstnumber=1, label= lst:add-dFPR&dTPR-columns-r]
+# add dFPR and dTPR columns
+roc_df <- transform(roc_df, 
+dFPR = c(diff(FPR), 0),
+dTPR = c(diff(TPR), 0))
+\end{lstlisting}
+%
+\begin{lstlisting}[float, caption = Drawing an~empty graph and marking axes from~0 to~1, firstnumber=1, label= lst:plot-empty-graph-from-0-to-1-r]
+# plot empty graph from 0 to 1 for each axis
+plot(0:10/10, 0:10/10, type='n', xlab="FPR", ylab="TPR",
+main = 'ROC-curve and rectangles under it')
+abline(h=0:10/10, col="lightblue")
+abline(v=0:10/10, col="lightblue")
+\end{lstlisting}
+%
+\begin{lstlisting}[float, caption = Construction of~ROC curve and rectangles under~it, firstnumber=1, label= lst:plot-ROC-curve-and-rectangles-under-it-r]
+# plot ROC-curve and rectangles under it
+with(roc_df, {
+mapply(rectangle, x=FPR, y=0,   
+width=dFPR, height=TPR, col="green", lwd=2)
+mapply(rectangle, x=FPR, y=TPR, 
+width=dFPR, height=dTPR, col="blue", lwd=2)
+lines(FPR, TPR, type='b', lwd=3, col="red")
+})
+\end{lstlisting}
+
+\subparagraph{The summation of~areas by~means of~an~own function}
+The area under the curve~(AUC) (highlighted in~red) is~the sum of~the areas of~all the green rectangles and half the area of~the blue one. To~calculate the area of~each rectangle it~is not necessary to~know the absolute coordinates of~its vertices, its width and height are enough. Since one of~the sides of~each rectangle lies on~the x-axis, the height of~any of~them is~determined by~the value of~TPR, the width by~dFPR. Then the total area of~all green rectangles is~equal to~the \href{https://en.wikipedia.org/wiki/Dot_product}{dot~(scalar) product}~\cite{Wiki:dot-product} of~TPR and dFPR. This vector approach calculates the area for each data point, even if~its width or~height is~zero. However, in~this case their further inclusion in~the calculation is of no~importance. The area of~the blue rectangles (if~any) is~determined by~the values of~dFPR and dTPR and also represents their scalar product as~vectors. For areas of~the graph containing northward or~eastward steps, one of~these values (dTPR, dFPR) will~be zero. As~a~consequence, blue rectangles are possible only if~TPR and FPR are changed simultaneously. In~this case, only half of~such rectangle is~under the curve.
+
+Recall that the previously calculated AUC was~0.825. Now let's calculate it in~semi-automatic mode according to~the algorithm described in the previous paragraph. To~do this, first create the function \textbf{appraiser\_auc}, and then apply it to~the test data (see script~\ref{lst:create&apply-appraiser-auc-function-r}). The returned value will~be~0.825, which indicates that the logic and algorithm are correct.
+%
+\begin{lstlisting}[float, caption = Creating a function to calculate AUC in semi-automatic mode and applying it to test data, firstnumber=1, label= lst:create&apply-appraiser-auc-function-r]
+# create function for AUC calculation
+appraiser_auc <- function(TPR, FPR){
+# inputs already sorted, best scores first 
+dFPR <- c(diff(FPR), 0)
+dTPR <- c(diff(TPR), 0)
+sum(TPR * dFPR) + sum(dTPR * dFPR)/2
+}
+
+# apply function to data
+with(roc_df, appraiser_auc(TPR, FPR))
+\end{lstlisting}
+
+\paragraph{The rank comparison approach}
+It~is also possible to~use a~fundamentally different approach to~calculate the AUC. To~implement~it, it~is necessary to~create a~matrix containing all possible combinations of~positive and negative cases. Each row represents a~positive case. They are ordered so that the top row contains the case with the lowest score, and the bottom row contains the case with the highest score. Similarly, the columns contain the negative cases, sorted so that the left column contains the highest scores. Then each cell represents a~comparison of~a~particular positive case with a~particular negative case. If~the score or rank of~a~positive case is higher than that of~a~negative case, that cell takes TRUE. In the case of a~good enough classifier, most positive cases will have higher scores (ranks) than negative cases. All exceptions will~be concentrated in the upper left corner, where positive cases with low scores and negative cases with high scores are located. The~\ref{lst:rank_comparison_auc-r} script contains code to~implement this algorithm and its visualization, shown in~Figure~\ref{fig:rank-comparison-matrix-vizualization-r}.
+%
+\begin{lstlisting}[float, caption = Create the function to~build a~comparison matrix and apply it to~the test data, firstnumber=1, label= lst:rank_comparison_auc-r]
+# create  function for rank comparison
+rank_comparison_auc <- function(labels, scores, plot_image=TRUE, ...){
+score_order <- order(scores, decreasing=TRUE)
+labels <- as.logical(labels[score_order])
+scores <- scores[score_order]
+pos_scores <- scores[labels]
+neg_scores <- scores[!labels]
+n_pos <- sum(labels)
+n_neg <- sum(!labels)
+M <- outer(sum(labels):1, 1:sum(!labels), 
+function(i, j) (1 + sign(pos_scores[i] - neg_scores[j]))/2)
+
+AUC <- mean (M)
+if (plot_image){
+image(t(M[nrow(M):1,]), ...)
+library(pROC)
+with( roc(labels, scores),
+lines((1 + 1/n_neg)*((1 - specificities) - 0.5/n_neg), 
+(1 + 1/n_pos)*sensitivities - 0.5/n_pos, 
+col="blue", lwd=2, type='b'))
+text(0.5, 0.5, sprintf("AUC = %0.4f", AUC))
+}
+
+return(AUC)
+}
+
+# apply function to data
+rank_comparison_auc(labels=as.logical(category), scores=prediction)
+\end{lstlisting}
+%
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{rank-comparison-matrix-vizualization-r.pdf}
+	\caption{Visualization of~the matrix of~comparisons of~scores (ranks).}
+	\label{fig:rank-comparison-matrix-vizualization-r}
+\end{figure}
+%
+
+The plotting of~the ROC curve in~this case is~done almost in the usual way. The only difference is that it~is slightly shifted and stretched to~make the coordinates coincide with the corners of~the matrix cells. This way of~constructing the ROC curve makes the following fact obvious: the ROC curve represents the boundary of the area where positive cases have higher scores (ranks) than negative cases. Thus, the AUC can~be calculated by replacing the values in the matrix so that
+\begin{itemize}
+	\item cells in which the scores (ranks) of positive cases exceed the scores (ranks) of negative cases take the value~1;
+	\item cells in which the scores (ranks) are equal take the value~0.5;
+	\item cells in which the scores (ranks) of negative cases exceed the scores (ranks) of positive cases take the value~0.
+\end{itemize}
+Since applying the \textbf{sign} function results in one of three possible values: -1, 0, 1, we use the following trick to place the values in the desired range: we add one to them and divide by two. The final calculation of the AUC is done by calculating the mean value.
+
+\paragraph{Probabilistic approach to calculating AUC}
+The probabilistic interpretation is that if you randomly choose a~positive case and a~negative case, the probability that the score (rank) value of the positive case will~be greater than that of the negative case is determined by AUC and equal to it. This follows, in particular, from Diagram~\ref{fig:rank-comparison-matrix-vizualization-r}, in which the total area of the graph is normalized to one. The total area of the graph is normalized to one, the cells of the matrix contain information about all possible combinations of positive and negative cases. The area under the curve consists of cells in which the scores (ranks) of positive cases exceed those of negative cases. To approximate the AUC in the probabilistic approach, let's create and apply a~function according to the script~\ref{lst:create&apply-auc-as-probability-r}. The returned AUC value was 0.8248116, which approximately corresponds to its exact value calculated earlier.
+%
+\begin{lstlisting}[float, caption = Creating and applying a~function to calculate AUC as a~probability, firstnumber=1, label= lst:create&apply-auc-as-probability-r]
+# create function for calculation AUC as probability
+auc_probability <- function(labels, scores, N=1e7){
+pos <- sample(scores[labels], N, replace=TRUE)
+neg <- sample(scores[!labels], N, replace=TRUE)
+# sum( (1 + sign(pos - neg))/2)/N # does the same thing
+(sum(pos > neg) + sum(pos == neg)/2) / N # give partial credit for ties
+}
+
+# apply function to data
+auc_probability(as.logical(category), prediction)
+\end{lstlisting}
+%
+
+
 %
 \nocite{Essential-Statistical-Inference}
 \nocite{AUC-optimization}
