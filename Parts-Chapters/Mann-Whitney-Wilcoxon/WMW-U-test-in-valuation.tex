@@ -58,7 +58,7 @@ This material, as~well as~the~appendices to~it, are available at~\href{https://g
 	\item confidence interval: $Pr = 0.95$;
 	\item initial position of the pseudo-random number generator: $seed=19190709$.
 \end{itemize}
-A~dot is~used as~a~decimal point. Most of~the~mathematical notations are~written as~they are~used in~English-speaking circles. For~example, a~tangent is~written as~$\tan$, not~$\tg$. The~results of~statistical tests are~considered significant when
+A~dot is~used as~a~decimal point. Most of~the~mathematical notations are~written as~they are~used in~English-speaking circles. For~example, a~tangent is~written as~$\tan$, not~$tg$. The~results of~statistical tests are~considered significant when
 \begin{equation}\label{eq:significance}
 p \leq \alpha.
 \end{equation}
@@ -135,7 +135,7 @@ In~addition to~the~above requirements for~the~samples themselves, the~conditions
 	\item at~least three observations in~each sample, it~is~allowed to~have two observations in~one of~the~samples, provided that there~are at~least five in~the~other sample.
 \end{itemize}
 To~summarize the~above, there~are three variants of~the~null hypothesis, depending on~the~level of~rigor outlined in~the~table below~\ref{tab:nul-hypothesis-variants}.
-\begin{table}[ht]
+\begin{table}[htp]
 	\caption{Variants of~the~null hypothesis when using the~U-test in~valuation.}\label{tab:nul-hypothesis-variants}
 	\centering
 	\begin{tabularx}{\textwidth}{p{0.25\linewidth} p{0.7\linewidth}} 
@@ -264,7 +264,7 @@ z = \frac{U-m_{U}}{\sigma_{U}},
 \end{equation}
 where~$m_{U}$ is~mean for~\textit{U} and $\sigma_{U}$ is~its~standard deviation. A~visualization of~the~concept of~\emph{standardized value for~a~normal distribution} is~shown in~Figure~\ref{fig:z-score}.
 %
-\begin{figure}[ht]
+\begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{The_Normal_Distribution.pdf}
 	\caption{A~visualization of~the~concept of~standardized value for~a~normal distribution \cite{Wiki:z-score}}\label{fig:z-score}
@@ -304,7 +304,7 @@ You often hear that the~U-test is~the~nonparametric counterpart of~the~Student's
 
 However, the~mathematical meaning of~the~U-test and~the~t-test are~significantly different. As~stated earlier, the~U-test is~designed to~test the~null hypothesis, which is~that for~randomly chosen from two samples of~observations $x \in X$ and~$y \in Y$ the~probability that~\textit{x} is~greater than~\textit{y} is~equal to~the~probability that~\textit{y} is~greater than~\textit{x}, the~alternative hypothesis carries the~claim that these probabilities are~not equal. At~the~same time, the~t-test is~designed to~test the~null hypothesis that the~means of~the~two samples are~equal, while the~alternative hypothesis is~that the~means of~the~two samples are~not~equal. In~this regard, when comparing these tests, we~should keep in~mind that, in~general, the~U-test and~the~t-test check different null hypotheses, although they have partly similar practical meaning. The~result of~the~U-test is~most often very close to~the~result of~the~two-sample t-test for~ranked data. Table~\ref{tab:U-test-t-test-comparison} then provides a~general comparison of~the~U-test with the~t-test.
 %
-\begin{table}[ht]
+\begin{table}[htp]
 	\caption{Properties of~the~U-test relative to~the~t-test.}  \label{tab:U-test-t-test-comparison}
 	\centering
 	\begin{tabularx}{\textwidth}{p{0.15\linewidth} p{0.8\linewidth}} 
@@ -358,7 +358,7 @@ Let's introduce some terms.
 \end{description}
 Based on~the above, we~can create a~contingency table of~the results of~applying the binary classifier. The rows contain data on~the actual presence or~absence of~the feature, the columns on~the predicted with the classifier.
 %
-\begin{table}[ht]
+\begin{table}[htp]
 	\caption{Binary classifier contingency table.}  \label{tab:ROC-contingency-table}
 	\centering
 	\begin{tabularx}{\textwidth}{p{0.2\linewidth} p{0.375\linewidth} p{0.375\linewidth}} 
@@ -374,7 +374,7 @@ Based on~the above, we~can create a~contingency table of~the results of~applying
 %
 As~can~be seen from Table~\ref{tab:ROC-contingency-table}, the binary classifier can lead to~errors of~two types. Let's introduce some more definitions and define the formulas for calculating the probabilities of~its outcomes~(see tables~\ref{tab:ROC-rates-1}--\ref{tab:ROC-rates-3}).
 %
-\begin{table}[ht]
+\begin{table}[htp]
 	\caption{Additional definitions and formulas for calculating the probabilities of binary classifier outcomes (part~1 of~3).}\label{tab:ROC-rates-1}
 	\tiny
 	\begin{tabularx}{\textwidth}{p{0.15\linewidth} p{0.4\linewidth} p{0.4\linewidth}} 
@@ -413,7 +413,7 @@ As~can~be seen from Table~\ref{tab:ROC-contingency-table}, the binary classifier
 	\normalsize
 \end{table}
 %
-\begin{table}[ht]
+\begin{table}[htp]
 	\caption{Additional definitions and formulas for calculating the probabilities of binary classifier outcomes (part~2 of~3).}\label{tab:ROC-rates-2}
 	\tiny
 	\begin{tabularx}{\textwidth}{p{0.15\linewidth} p{0.4\linewidth} p{0.4\linewidth}} 
@@ -451,7 +451,7 @@ As~can~be seen from Table~\ref{tab:ROC-contingency-table}, the binary classifier
 	\normalsize
 \end{table}
 %
-\begin{table}[ht]
+\begin{table}[htp]
 	\caption{Additional definitions and formulas for calculating the probabilities of binary classifier outcomes (part~3 of~3).}\label{tab:ROC-rates-3}
 	\tiny
 	\begin{tabularx}{\textwidth}{p{0.15\linewidth} p{0.4\linewidth} p{0.4\linewidth}} 
@@ -515,7 +515,7 @@ thus, drawing the curve means changing the value of~threshold~\textit{c}.
 
 Let's consider the example~\cite{AUC-Derivation}. Let's take~$f(x\in C_{0}) = \mathcal{N}(0,1)$ and~$f(x\in C_{1}) = \mathcal{N}(2,1)$ as~probability density functions~$C_{0}$ and~$C_{1}$, respectively. Next we~build the ROC curve step by~step using the Python language. At~the first step, consider diagram~\ref{fig:plot-TPR-FPR-prob-density-1}, built using the code given in~script~\ref{lst:plot-TPR-FPR-prob-density}. The area shaded blue shows the probability of~FPR, i.\,e., false-positive significance detection, while the area shaded green shows the probability density of TPR, i.\,e., correct significance detection. The ROC curve shows the values of~these very indicators. The vertical dashed line is~the sensitivity threshold~\textit{c}. In~this situation it~is at~0 on~the abscissa axis. If~it~is moved to~1, the area under the FPR curve (blue) will significantly decrease, i.\,e. the probability of~false-positive detection will decrease, but the TPR area (green) will decrease as~well, which means an~increase in~the probability of~false-negative results. This situation is~illustrated in~Diagram~\ref{fig:plot-TPR-FPR-prob-density-2}.
 %
-\begin{figure}[ht]
+\begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-1.pdf}
 	\caption{Diagram of~TPR and FPR probability distribution densities at~threshold~0.}
@@ -546,7 +546,7 @@ plt.savefig('Plot-ROC-step-1.pdf', bbox_inches='tight')
 
 \end{lstlisting}
 %
-\begin{figure}[ht]
+\begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-2.pdf}
 	\caption{Diagram of~TPR and FPR probability distribution densities at~threshold~1.}
@@ -604,21 +604,21 @@ interact(plot_roc_interact,c=(-3,5,.05))
 
 \end{lstlisting}
 %
-\begin{figure}[ht]
+\begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-30.pdf}
 	\caption{Diagram of~TPR and FPR probability distribution densities at~threshold~0.}
 	\label{fig:plot-TPR-FPR-prob-density-3}
 \end{figure}
 %
-\begin{figure}[ht]
+\begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-4.pdf}
 	\caption{Diagram of TPR and FPR probability distribution densities at threshold 1.}
 	\label{fig:plot-TPR-FPR-prob-density-4}
 \end{figure}
 %
-\begin{figure}[ht]
+\begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-5.pdf}
 	\caption{Diagram of~probability densities of~TPR and FPR probability distributions at~equal mean.}
@@ -802,7 +802,7 @@ ggtitle("Bad parts related to x")
 
 The result was diagram~\ref{fig:bad-parts-r}. As~you can see, if~the value of~the parameter~\emph{x} is~less than~15, all dots are red, which means that the parts are defective. Above 96 ерун are green, which means that the parts are of good quality. If~the value is~higher than 96, they are green, which means that the parts are of good quality. Between these values is~an area of~uncertainty, the right side of~which is~dominated by~green dots, and the left side by~red dots.
 %
-\begin{figure}[ht]
+\begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{bad-parts-r.pdf}
 	\caption{Diagram of~the distribution of~parts with respect to~the parameter~\emph{x}.}
@@ -832,7 +832,7 @@ ggtitle("Both link and response scores put cases in the same order")
 
 \end{lstlisting}
 %
-\begin{figure}[ht]
+\begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{link-response-comparison-r.pdf}
 	\caption{Comparison of~the order of~points for "link" and "response".}
@@ -854,7 +854,7 @@ glm_simple_roc <- appraiser_roc(test_set$bad_parts=="TRUE", glm_link_scores)
 with(glm_simple_roc, points(1 - FPR, TPR, col=1 + labels))
 \end{lstlisting}
 %
-\begin{figure}[ht]
+\begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{test-ROC-r.pdf}
 	\caption{Identical ROC curves plotted with library and own functions.}
@@ -875,7 +875,7 @@ appr_roc <- appraiserRoc(rare_success, guess_not)
 with(appr_roc, lines(1 - FPR, TPR, col="blue", lty=2))
 \end{lstlisting}
 %
-\begin{figure}[ht]
+\begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{ROC-rare-success-r.pdf}
 	\caption{ROC curve arising when there is~no~value of~the order of~scores.}
@@ -926,7 +926,7 @@ labels=roc_obj$response,
 scores=roc_obj$predictor)
 \end{lstlisting}
 %
-\begin{table}[ht]
+\begin{table}[htp]
 	\caption{TPR, FPR, labels, scores for the training dataset.}\label{tab:roc_df-r}
 	\centering
 	\begin{tabular}{lllll}
@@ -960,7 +960,7 @@ scores=roc_obj$predictor)
 \subparagraph{Plotting the graph}
 If~the ROC curve were a~perfect step function, the area under it could~be found by adding a~set of~vertical bars equal to~the spaces between the points on~the abscissa axis (FPR) and to~the height of~the step on~the ordinate axis (TPR). Real ROC curves may include sections corresponding to~repeated values. In~this case, there are segments other than steps. Such repeats require proper consideration. In~Figure~\ref{fig:ROC-bars-R}, the area of~ordinary steps is~shown in~green, the cases of~repeats~(ties) are indicated by~blue rectangles divided in~half by~sloping ROC curve segments. Thus, half of~the area of~these steps is~included in~the total area under the curve.
 %
-\begin{figure}[ht]
+\begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{ROC-bars-R.pdf}
 	\caption{ROC curve and the area under it, taking into account the presence of~ties.}
@@ -1076,7 +1076,7 @@ return(AUC)
 rank_comparison_auc(labels=as.logical(category), scores=prediction)
 \end{lstlisting}
 %
-\begin{figure}[ht]
+\begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{rank-comparison-matrix-vizualization-r.pdf}
 	\caption{Visualization of~the matrix of~comparisons of~scores (ranks).}
@@ -1109,8 +1109,102 @@ auc_probability(as.logical(category), prediction)
 \end{lstlisting}
 %
 
+\subsubsection{Calculation of AUC for large data sets}
+In the previous sections, we worked with a~very small dataset that allowed us to almost manually go through the data. In this subsubsection, we will work with a~previously created dataset containing information about quality and defective parts that require different valuation methods. Recall that in this dataset, the score vector is contained in the \textit{glm\_responce\_scores} variable, and the label vector is contained in the \textit{bad\_parts} variable.
 
+The previously created dataset does not contain repeating values. Therefore, the tie effect will~be added artificially to explore the issue more deeply. For this purpose, rounding of scores was performed. Then we plot the ROC curve for the original data and then for the rounded data. The code to perform the above actions is given in script~\ref{lst:bad-parts-ROC-oroginal&rounded-r}. To create a~tie effect, a~new vector of scores was created, containing their values rounded to one decimal place. The result of plotting the two ROC curves is shown in Diagram~\ref{fig:bad-parts-ROC-original&rounded-r}. The black line corresponds to the ROC curve plotted from the original data. These data contain unique scores for each observation. The red line corresponds to the ROC curve plotted with rounded scores. As an input vector we used the data of variable 5, taking a value from 0 to 1. Consequently, scores rounded to one decimal place have only eleven possible values from~0.0 to~1.0. The AUC value for both cases is plotted directly on the chart. As can~be seen, the values are approximately equal due to a~sufficiently large number of observations.
 %
+\begin{lstlisting}[float, caption = Plotting the ROC curve on the original (black line) and rounded (red line) defective parts data, firstnumber=1, label= lst:bad-parts-ROC-oroginal&rounded-r]
+# create function for calculation AUC as probability
+auc_probability <- function(labels, scores, N=1e7){
+pos <- sample(scores[labels], N, replace=TRUE)
+neg <- sample(scores[!labels], N, replace=TRUE)
+# sum( (1 + sign(pos - neg))/2)/N # does the same thing
+(sum(pos > neg) + sum(pos == neg)/2) / N # give partial credit for ties
+}
+
+# apply function to data
+auc_probability(as.logical(category), prediction)
+\end{lstlisting}
+%
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{bad-parts-AUC-ties.pdf}
+	\caption{ROC curve for original (black line) and rounded (red line) data about defective parts.}
+	\label{fig:bad-parts-ROC-original&rounded-r}
+\end{figure}
+%
+
+Next, let's try to apply the standard, as well as three of our own functions to calculate the AUC. Next, we construct two ROC curves based on the rank comparison matrices for the original and rounded scores. The code for applying the four functions to calculate AUC, as well as constructing ROC curves based on comparison matrices, is given in script~\ref{lst:bad-parts-aplly-four-functions-r}.
+%
+\begin{lstlisting}[float, caption = Using four functions to calculate AUC and plot ROC curves based on comparison matrices for original and rounded scores, firstnumber=1, label= lst:bad-parts-aplly-four-functions-r]
+# apply all functions to data
+results <- data.frame(
+`Full Resolution` = c(
+auc = as.numeric(auc(roc_full_resolution)),
+appraiser_auc = appraiser_auc(rev(roc_full_resolution$sensitivities),
+rev(1 - roc_full_resolution$specificities)),
+rank_comparison_auc = rank_comparison_auc(test_set$bad_parts,
+glm_response_scores, 
+main="Full-resolution scores (no ties)"),
+auc_probability = auc_probability(as.logical(test_set$bad_parts),
+glm_response_scores)
+),
+`Rounded Scores` = c( 
+auc = as.numeric(auc(roc_rounded)),
+appraiser_auc = appraiser_auc(rev(roc_rounded$sensitivities),
+rev(1 - roc_rounded$specificities)),
+rank_comparison_auc = rank_comparison_auc(test_set$bad_parts, rounded_scores,
+main="Rounded scores (ties in all segments)"),
+auc_probability = auc_probability(as.logical(test_set$bad_parts),
+rounded_scores)
+)
+)
+\end{lstlisting}
+%
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{full-res-scores-no-ties-r.pdf}
+	\caption{ROC curve for the original defective parts data based on the comparison matrix.}
+	\label{fig:bad-parts-ROC-original-r}
+\end{figure}
+%
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{rounded-scores-all-ties-r.pdf}
+	\caption{ROC curve for the rounded defective parts data based on the comparison matrix.}
+	\label{fig:bad-parts-ROC-rounded-r}
+\end{figure}
+%
+
+Diagram~\ref{fig:bad-parts-ROC-original-r} contains the ROC-curve based on the original data. Diagram~\ref{fig:bad-parts-ROC-rounded-r} contains the ROC curve based on rounded scores. As you can see, each section is a~diagonal segment running to the "North-East". It was shown earlier that this direction corresponds to repeated values.
+
+The final results of the AUC calculations by the four methods are shown in Table~\ref{tab:calc-AUC-4-methods-r}. As can be seen, all three of our own functions calculate the AUC quite well.  They give close results with respect to the result of the function from the package \textbf{pROC}. Naturally, these self-made functions serve more for training purposes. In practice, you should use the standard tools, such as \textbf{pROC} or \textbf{ROCR}.
+%
+
+\begin{table}[ht]
+	\caption{Results of AUC calculation by four methods.}\label{tab:calc-AUC-4-methods-r}
+	\centering
+	\begin{tabular}{lll}
+		\hline
+		& Full.Resolution & Rounded.Scores \\ 
+		\hline
+		auc & 0.9302279874213836841079 & 0.9301379061844864404307 \\ 
+		appraiser\_auc & 0.9302279874213836841079 & 0.9301379061844863294084 \\ 
+		rank\_comparison\_auc & 0.9302279874213835730856 & 0.9301379061844864404307 \\ 
+		auc\_probability & 0.9307199999999999917577 & 0.9291749999999999731770 \\ 
+		\hline
+	\end{tabular}
+\end{table}
+%
+\subsubsection{Summary of AUC findings}
+The analysis of the concept of AUC was carried out in the previous sections. The algorithms for calculating its value, including those based on the probabilistic approach, were also presented. In general, it can~be said that an in-depth study of issues related to ROC and AUC is not strictly necessary for the successful application of the U-test in the practical work of the appraiser. While the geometric approach to calculating the AUC is still quite intuitive and simple, interpreting the AUC as a~probability seems somewhat abstruse and requires a~certain level of general mathematical background.
+
+However, in the context of valuation activities, the concept of AUC as a~probability is indeed quite useful. Appraisers often deal with relatively small samples. In this case, they need to understand the extent to which they can~be confident that the value of the object that has some of the features exceeds the value of the object that does not have it (or vice versa). Thus, the use of the AUC refers us to the Bayesian approach to probability, which includes the concept of \emph{level of certainty}. This draws a bridge between traditional frequentist statistics, within the framework of which the U-test was once developed, and modern machine learning, based for the most part on a Bayesian approach to probability. In the author's opinion, this circumstance alone is sufficient reason to delve into the topics of ROC and AUC when examining the practical issues of using the U-test by appraisers.
+
+In addition, the objectives of appraisers are not limited only to determining the value itself. The use of classifiers can often have independent utility at an earlier stage of the valuation process, for example, at the stage of determining the properties of the objects being valued. The general behavior of the classifier over the entire range of possible threshold values is quite often of less interest than its behavior in a~certain relatively narrow range. For example, when solving the above discussed problem of separating defective parts from quality parts, the performance of the classifier in the boundary zone of threshold values is crucial. In this case, the specific setting of such a threshold value may depend on the purpose of the valuation. For example, from the point of view of the lending bank or the Central Bank, which monitors the adequacy of collateral, the sensitivity of the classifier is in a~sense more important than its specificity, because the assignment of defective parts to quality parts carries more risk than the reverse situation. At the same time, from the point of view of, for example, the tax inspection, classifying serviceable assets as faulty with their subsequent write-off from the balance sheet of the enterprise, leading to a decrease in the taxable base, is a~more serious problem than the erroneous attribution of faulty to serviceable, i.\,e. a~situation arises where specificity is more important than sensitivity. Thus, there may~be situations where the cost of Type~I and Type~II errors is not the same. Such situations present a~definite problem because the AUC concept assumes the same cost of these errors. However, this topic is quite specific and goes beyond the scope of this material, the topic of which is the U-test. Briefly, we can say that there are metrics other than AUC to account for the different cost of Type I and Type II errors. For further study of the topic of AUC on your own, we can recommend \href{http://nicolas.kruchten.com/content/2016/01/ml-meets-economics/}{this material}~\cite{ML-meets-economics}.
+%
+
 \nocite{Essential-Statistical-Inference}
 \nocite{AUC-optimization}
 \nocite{Mann-Whitney-1947}
