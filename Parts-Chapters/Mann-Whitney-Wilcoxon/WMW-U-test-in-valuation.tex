@@ -1232,7 +1232,52 @@ Consider the training task. Cells I3:J30 contain data of values of some quantita
 	\end{tabularx}
 \end{table}
 %
+Cells C2:C19 contain some descriptive statistics. It can be useful to show the properties of samples graphically for ease of primary analysis. Figure~5 shows a Boxplot diagram that allows us to draw some conclusions based on one glance. As can be seen, the values of the means and medians of the two samples are different. The minimum values also vary. At the same time, the maximum values are the same. It should also be noted that although the mean and median of the first sample are higher than those of the second, the minimum value of the first is lower than that of the second. In such circumstances, it is even more difficult to conclude whether the difference in the attribute is significant, or whether the difference in the unit value indicator is incidental in nature.
+%
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{BoxPlot.pdf}
+	\caption{Boxplot for both samples.}
+	\label{fig:BoxPlot}
+\end{figure}
+%
+The next preparatory step is to check the normality of the distribution of values of the quantitative attribute (in this case, the notional unit cost). There are a number of rigorous tests that allow such testing by numerical methods. Appropriate ways of performing such tests will be shown in sections~\ref{U-test-Python} and~\ref{U-test-R}. We only use the graphical method in this section. Histograms of probability density distributions for the first and second samples are shown in Figures~\ref{fig:s1-hist} and~\ref{fig:s2-hist}, respectively. They are combined with the curves of the probability density function for the normal distribution.
+%
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{s1-hist.pdf}
+	\caption{Histogram of the first sample, combined with the curve of the probability density function for the normal distribution.}
+	\label{fig:s1-hist}
+\end{figure}
+%
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{s2-hist.pdf}
+	\caption{Histogram of the second sample, combined with the curve of the probability density function for the normal distribution.}
+	\label{fig:s2-hist}
+\end{figure}
+%
 
+The shape of the distribution of both samples differs significantly from the shape of the curve of the probability density function of the normal distribution, which can be clearly seen in the diagrams~\ref{U-test-Python}, \ref{U-test-R}.When working with real data, quantitative tests for normality of distributions must be performed in all cases. Let us focus on the interpretation of the diagrams in this section. The shape of both histograms allows us to conclude that the distributions of both samples differ from normal. This allows us to conclude that parametric methods of statistical estimation are not applicable. It is necessary to use methods of non parametric statistics, which include the U-test, in such a situation.
+
+There is no need to construct a common variation series for two samples when working with a spreadsheet. You can go straight to the calculation of the observation ranks through the standard LibreOffice Calc tools. Considering the possible presence of ties (repeating values) you should use the \texttt{RANK.AVG} function. The three arguments for it to work correctly must be specified consistently:
+\begin{itemize}
+	\item the observation for which the rank is calculated;
+	\item the range of all values of the common variation series;
+	\item sorting type: 0 --- descending, 1 --- ascending, in our case it is necessary to specify~1.
+\end{itemize}
+Columns~\textit{M} and~\textit{O} contain the ranks of the corresponding observations. Columns~\textit{L} and~\textit{N} contain duplicate values.
+
+After that, in cells C20:C21 we calculate the sums of ranks for each of the samples. After that, calculate the total sum of the ranks of both samples in cell C22. Let's calculate the same indicator according to formula~\ref{eq:common-R} for verification.
+
+Next, in cells C25, C26 we calculate the values of U1 and U2 according to formulas~\ref{eq:U1}, \ref{eq:U2}, respectively. Then in cell D27 we check the correctness of the control ratio~\ref{eq:check-U-value}. In C28 we select a smaller value, which will be used later as the U-statistic. In our case, the sample from set~J has a smaller U-statistic value.
+
+Let's calculate the CLES indicator. To do this we use formula~\ref{eq:CLES}. The result is found in~C29. In this example, the value of the indicator is~0.61. This should be interpreted as follows: \emph{the probability that the value of the unit value of a randomly chosen observation from set I is greater than that of a randomly chosen observation from set J is 0.61~(61\%)}. Next, we calculate the value of the rank-biserial correlation coefficient by formulas~\ref{eq:RBC-formula-1}, \ref{eq:RBC-formula-2}. Put it in cell~C36. In this case, the value was 0.21. So the strength of the correlation between the presence of the attribute \textit{"X"} and the unit value of the object is~0.21.
+
+After that, we proceed to calculate the standardized value (z-score) by formula~\ref{eq:z-score}. To do this in cell C37, calculate the mean using formula~\ref{eq:U-mean}. Then we move on to the question of calculating the standard deviation. It should be noted that there are two formulas for this. The first~(\ref{eq:standard-deviation-no-ties}) applies if there are no ties (cell C38). The second~(\ref{eq:standard-deviation-ties}) applies when they are present (cell C39). In the case at hand, ties were present. They were processed in columns~P and~Q, as well as in cells~E35:E49.
+1173
+
+%
 \nocite{Essential-Statistical-Inference}
 \nocite{AUC-optimization}
 \nocite{Mann-Whitney-1947}
