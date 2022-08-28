@@ -1280,7 +1280,387 @@ In this section, we looked at the step-by-step calculation of the criterion stat
 %
 \clearpage
 %
+\section{Python implementation.}\label{U-test-Python}
+%
+\lstset{language=Python,
+	basicstyle=\ttfamily,
+	keywordstyle=\color{Blue}\ttfamily,
+	stringstyle=\color{Red}\ttfamily,
+	commentstyle=\color{Emerald}\ttfamily,
+	morecomment=[l][\color{Magenta}]{\#},
+	breaklines=true,
+	breakindent=0pt,
+	breakatwhitespace,
+	columns=fullflexible,
+	showstringspaces=false
+}
+%
+Python language has already become the de facto standard in machine learning and especially in a number of areas such as deep learning. In addition, it is versatile and perfectly suited for the development of various expert systems.  Its popularity means, among other things, that there are a huge number of tutorials on all aspects of development in the field of data analysis, designed for users of any level of training. Most of the calculations required by the appraiser can be done by calling standard functions from the data analysis plug-in libraries. These include, but are not limited to: \textbf{TensorFlow}, \textbf{NumPy}, \textbf{SciPy}, \textbf{Pandas}, \textbf{Matplotlib}, \textbf{Keras}, \textbf{SciKit-Learn}, \textbf{PyTorch}, \textbf{Scrapy}, \textbf{BeautifulSoup}. There is no need to write a large amount of code in this case. You don't need to have a deep knowledge of programming either. According to the author of this paper, the future of valuation lies precisely in the implementation of expert systems based on learning models from open market datasets. The use of Python significantly reduces the time of the U-test as will be shown below. It also allows you to create visualizations of market data without resorting to third-party tools. In addition, the use of professional functions virtually eliminates the possibility of errors in calculations. The Python language version 3.9.12 was used when writing the code. The Python language version 3.9.12 was used when writing the code. The author used the Spyder IDE (version 5.1.5) and the Jupyter Lab development environment (version 3.3.2). Python scripts containing the used code are available in the~\href{https://github.com/Kirill-Murashev/AI_for_valuers_Python_source/tree/main/Mann-Whitney-u-test}{repository}~\cite{Murashev:U-test.py}, ~\cite{Murashev:U-test.ipynb}.
 
+Let us consider a real data set containing information on the unit cost of apartments in the St.~Petersburg agglomeration. The data were scraped on September 28, 2021 from \href{https://www.cian.ru/}{cian.ru} and are available at~\href{https://github.com/Kirill-Murashev/datasets/blob/main/Saint-Petersburg/flats/spba_flats_210928.csv}{the link}~\cite{ds:spba-flats-210928}. The dataset under consideration contains 34821 observations. As you know, the St.~Petersburg agglomeration includes territories that are part of the Federal City, as well as those that are formally part of the Leningrad Region (Leningrad Oblast). The division into city and region is of a purely legal nature. From a socio-economic point of view, the nearest territories of the Leningrad Region are inextricably linked to St.~Petersburg and are part of one agglomeration. By the way, it is the largest in the world at this latitude. When forming the queries used in the scraping process, the southern boundary of the agglomeration was established approximately along the axis of the A-120 highway, while the northern boundary was established along the 41A-189 highway. At the same time, it included some settlements outside these boundaries, such as the cities of Kirovsk and Schlisselburg.
+
+Let us formulate the problem. It is necessary to determine whether or not there is a statistically significant difference in the prices of objects located within the boundaries of St.~Petersburg and objects formally located in the Leningrad region. Similarly to the previous case, let us formulate the null and alternative hypotheses, which this time make practical sense (see Table~\ref{tab:nul-alt-hypothesis-SPba}).
+\begin{table}[htp]
+	\caption{The null and alternative hypotheses in the analysis of data from the St.~Petersburg urban agglomeration}\label{tab:nul-alt-hypothesis-SPba}
+	\centering
+	\begin{tabularx}{\textwidth}{p{0.15\linewidth} p{0.4\linewidth} p{0.4\linewidth}} 
+		\hline
+		Type of hypothesis&The null hypothesis (H0)&The alternative hypothesis (H1)\\
+		\hline
+		Scientific&The distribution of unit cost indicators for apartments located within the borders of St.~Petersburg and apartments located in the adjacent areas of the Leningrad Region is the same. There is no shift between the two. The statistical estimates made for the set of analogues located in one part of the agglomeration are unbiased for objects located in the other part.&The distribution of unit cost indicators for apartments located within the borders of St.~Petersburg differs from the distribution of unit cost indicators for apartments located in the adjacent territories of the Leningrad Region. There is a shift. The estimate made for objects located in one part of the agglomeration will be biased for objects located in another part of it.\\
+		\hline
+		Practical&The median of the unit value of apartments located within the borders of St.~Petersburg is equal to the median of the unit value of apartments located in the adjacent territories of the Leningrad Region.&The median of the unit value of apartments located within the borders of St.~Petersburg is not equal to the median of the unit value of apartments located in the adjacent territories of the Leningrad Region.\\
+		\hline
+		Set forth in terms of valuation&The location of the apartment within the borders of St.~Petersburg or in the adjoining areas of the Leningrad Region is not a significant difference and does not require any special accounting.&The location of the apartment within the borders of St.~Petersburg or in the surrounding areas of the Leningrad Region is a significant difference and requires separate accounting.\\ \hline
+	\end{tabularx}
+\end{table}
+
+The Python language was not originally designed specifically for data analysis. Therefore, many of the functions required for calculations will be missing in its basic version. Fortunately, there are a number of libraries that contain many necessary functions. Their number is not as large as, for example, in the R language. Their functionality is also somewhat less than that of the R. However, they are exhaustive for the overwhelming number of tasks facing appraisers. We need the following libraries: \textbf{numpy}, \textbf{pandas},\textbf{ math}, \textbf{matplotlib.pyplot}, \textbf{scipy.stats} to solve the problems discussed in this paper. Use the code provided in script~\ref{lst:import-libraries-Python} to enable them.
+\begin{lstlisting}[float, caption = Enabling the required libraries, firstnumber=1, label= lst:import-libraries-Python]
+# import libraries
+import numpy as np
+import pandas as pd
+import math
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+from scipy.stats import norm
+from scipy.stats import normaltest
+from scipy.stats import shapiro
+from scipy.stats import anderson
+from scipy.stats import mannwhitneyu
+\end{lstlisting}
+%
+
+Let us set the significance level $\alpha$, which is adopted for all further work. The choice of its value is the appraiser's prerogative. However, the most common value in papers on econometrics and operations research is~0.05. Code~\ref{lst:set-alpha} was used to set the significance level value.
+%
+\begin{lstlisting}[float, caption = Set the applicable level of significance, firstnumber=1, label= lst:set-alpha]
+# set significance level
+alpha = 0.05
+\end{lstlisting}
+% 
+
+Now everything is ready to get to work. Let's create a dataframe based on the text file containing the data set under analysis (see script~\ref{lst:import-data-create-dataframe}).
+%
+\begin{lstlisting}[float, caption = , firstnumber=1, label= lst:import-data-create-dataframe]
+# import dataset
+df = pd.read_csv('spba-flats-210928.csv')
+print(df)
+type(df['price_m'])
+\end{lstlisting}
+%
+The dataframe repeats the contents of the original file exactly and contains 34821 observations and 4 variables. The following variables are present.
+\begin{itemize}
+	\item Number.
+	\item Link to ad.
+	\item Price per 1\,sq.~m.
+	\item A six-letter location code:
+	\begin{itemize}
+		\item the first of which indicates the region (s --- St.~Petersburg, l --- Leningrad Region);
+		\item the second and third indicates the administrative district;
+		\item the last three indicate the municipality or territory.		
+	\end{itemize}
+\end{itemize}
+Python added its own variable containing the observation numbers. That makes five variables. Note that numbering in Python begins with zero, not one, as in most programming languages. Variables containing observation numbers and links to ads from the source file will not be used further. So we will create a new dataframe containing only the necessary variables. Let's also release the virtual memory by unloading the first dataframe from it to optimize the computer's resources. See script~\ref{lst:create-new-dataframe-release-RAM}. Such micro-optimization does not play a role in the case at hand. However, in order to learn how to create good code, it is better to write one extra line.
+%
+\begin{lstlisting}[float, caption = Creating a dataframe containing only necessary variables and freeing memory from objects not used later, firstnumber=1, label= lst:create-new-dataframe-release-RAM]
+# get only prices and counties, release RAM
+df1 = df[['price_m', 'county']]
+del [[df]]
+\end{lstlisting}
+%
+
+The appraiser now has at his disposal a working dataframe in a convenient form. It contains data on the apartment market of the entire St.~Petersburg agglomeration. Let's plot a histogram combined with the density curve for the normal distribution to form the first view about the distribution. The Heinhold-Gaede formula ~\cite{Ingenieur-Statistik} was used to determine the rational number of intervals (histogram columns) --- \textit{k}.
+\begin{equation}\label{eq:k-hist-Heinhold-Gaede}
+k = \sqrt{n},
+\end{equation}
+where~\textit{n} --- is the number of observations. ~\ref{lst:price-hist-spba}. Script~\ref{lst:price-hist-spba} was used to plot the histogram.
+%
+\begin{lstlisting}[float, caption = Plotting the histogram for the agglomeration of St.~Petersburg., firstnumber=1, label= lst:price-hist-spba]
+# calculate the number of observations on data frame
+spbaLenR = round(math.sqrt(len(df1.index)))
+
+# fit a normal distribution to the data: mean and standard deviation
+mu, std = norm.fit(df1["price_m"])
+
+# plot the histogram
+plt.hist(df1["price_m"], bins=spbaLenR, density=True)
+
+# plot the PDF
+xmin, xmax = plt.xlim()
+x = np.linspace(xmin, xmax, 100)
+p = norm.pdf(x, mu, std)
+
+plt.plot(x, p, 'k', linewidth=2)
+title = "Fit Values: {:.2f} and {:.2f}".format(mu, std)
+plt.title(title)
+
+# save to .pdf
+plt.savefig('spba-price-histogram-py.pdf')
+\end{lstlisting}
+%
+
+Consider the resulting histogram~\ref{fig:spba-prices-hist}. The x-axis contains the values of prices per square meter, the y-axis the values of the probabilities of intervals. Both axes are presented in standard form. The expectation and standard deviation values for the theoretical normal distribution are also shown. As you can see, the distribution has a heavy right tail. This allows us to draw a preliminary conclusion that it is different from normal. Formalized normality tests will be performed in the future. We can limit ourselves to the primary subjective interpretation of the histogram for now.
+%
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{spba-price-histogram-py.pdf}
+	\caption{Histogram of the density distribution of apartments' prices per 1~sq.\,m. in agglomeration of  St.~Petersburg combined with the curve of the probability density function for the normal distribution.}
+	\label{fig:spba-prices-hist}
+\end{figure}
+%
+The subject of the research is the difference between the objects located in the two parts of the agglomeration. The initial dataset contains information about observations from both parts. Therefore, it will be necessary to create two separate dataframes.A small digression should be made here. Practical experience tells us that data analysis itself and model development take less than 20\,\% of the time, while more than 80\,\% is spent on data collection and preprocessing. Correct data markup is one of the important elements of these processes. In the case of the data set under consideration, their analysis in terms of individual territories up to the level of municipalities was initially provided by specifying a territory index for each observation. The first letter of the index contains an indication of which part of the agglomeration the observation is located in, as mentioned above. Two lines of code (see script~\ref{lst:create-two-separate-df-for-S-Pb-LO}) containing simple regular expressions are enough to create two separate dataframes in this case.
+%
+\begin{lstlisting}[float, caption = Creating separate dataframes for St.~Petersburg and the Leningrad Region., firstnumber=1, label= lst:create-two-separate-df-for-S-Pb-LO]
+# create separate dataframes for city and suburbs
+dfs = df1[df1['county'].str.startswith('s')] # Saint-Petersburg
+dfl = df1[df1['county'].str.startswith('l')] # Leningradskaja oblastq
+\end{lstlisting}
+%
+The \emph{dfs} dataframe contains data for observations from St.~Petersburg (28643 observations). The \emph{dfl} dataframe contains data for observations from the Leningrad Region (6178 observations). Let's plot the histograms for both parts of the agglomeration. See scripts ~\ref{lst:price-hist-spb} and \ref{lst:price-hist-lo}.
+%
+\begin{lstlisting}[float, caption = Histogram plotting for St.~Petersburg., firstnumber=1, label= lst:price-hist-spb]
+# Saint-Petersburg
+# calculate the number of observations on data frame
+spbLenR = round(math.sqrt(len(dfs.index)))
+
+# fit a normal distribution to the data: mean and standard deviation
+muS, stdS = norm.fit(dfs["price_m"])
+
+# plot the histogram
+plt.hist(dfs["price_m"], bins=spbLenR, density=True)
+
+# plot the PDF
+xmin, xmax = plt.xlim()
+x = np.linspace(xmin, xmax, 100)
+ps = norm.pdf(x, muS, stdS)
+
+plt.plot(x, ps, 'k', linewidth=2)
+title = "S-Pb. Fit Values: {:.2f} and {:.2f}".format(muS, stdS)
+plt.title(title)
+
+# save to .pdf
+plt.savefig('spb-price-histogram-py.pdf')
+\end{lstlisting}
+%
+\begin{lstlisting}[float, caption = Histogram plotting for the Leningrad Region, firstnumber=1, label= lst:price-hist-lo]
+# LO
+# calculate the number of observations on data frame
+loLenR = round(math.sqrt(len(dfl.index)))
+
+# fit a normal distribution to the data: mean and standard deviation
+muL, stdL = norm.fit(dfl["price_m"])
+
+# plot the histogram
+plt.hist(dfl["price_m"], bins=loLenR, density=True)
+
+# plot the PDF
+xmin, xmax = plt.xlim()
+x = np.linspace(xmin, xmax, 100)
+pl = norm.pdf(x, muL, stdL)
+
+plt.plot(x, pl, 'k', linewidth=2)
+title = "LO. Fit Values: {:.2f} and {:.2f}".format(muL, stdL)
+plt.title(title)
+
+# save to .pdf
+plt.savefig('lo-price-histogram-py.pdf')
+\end{lstlisting} 
+%
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{spb-price-histogram-py.pdf}
+	\caption{Histogram of the density distribution of apartments' prices per 1~sq.\,m. in St.~Petersburg combined with the curve of the probability density function for the normal distribution.}
+	\label{fig:spb-prices-hist}
+\end{figure}
+%
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{lo-price-histogram-py.pdf}
+	\caption{Histogram of the density distribution of apartments' prices per 1~sq.\,m. in the Leningrad Region located within the borders of the St.~Petersburg agglomeration combined with the curve of the probability density function for the normal distribution.}
+	\label{fig:lo-prices-hist}
+\end{figure}
+%
+
+The histogram is sometimes confused with the bar graph. Recall that a properly plotted histogram is a representation of the probabilistic properties of the data. The sum of the areas of all its rectangles must be equal to one. Therefore, the probability values of the ranges (histogram columns), rather than the number of observations in each range, must be plotted on the y-axis. As can be seen in histogram~\ref{fig:spb-prices-hist}, the distribution of unit prices in St.~Petersburg as well as in the case with the distribution of prices for the entire agglomeration has a heavy right tail. In contrast, the distribution of prices for the agglomeration objects located outside the boundaries of St.~Petersburg, shown in histogram~\ref{fig:lo-prices-hist}, looks relatively symmetrical.
+
+Let's also plot the boxplot for both dataframes using script~\ref{lst:boxplot-spba}. As can be seen in Diagram~\ref{fig:spb-lo-boxplot-py}, the value of median unit prices of properties located in St.~Petersburg is higher than the value of the third quartile of prices of properties located in the adjacent areas of the Leningrad Region.
+%
+\begin{lstlisting}[float, caption = Plotting the boxplot for both subsamples, firstnumber=1, label= lst:boxplot-spba]
+# add labels to data
+dfs["region"] = "SPb"
+dfl["region"] = "LO"
+
+# plot boxplot
+prices = [dfs, dfl]
+allPrices = pd.concat(prices)
+plt.figure()
+allPrices.boxplot(by="region")
+
+# save to .pdf
+plt.savefig('spb-lo-boxplot-py.pdf')
+\end{lstlisting} 
+%
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.95\textwidth]{spb-lo-boxplot-py.pdf}
+	\caption{The boxplot diagram for the unit prices of apartment offers in the St. Petersburg agglomeration in the context of regional affiliation.}
+	\label{fig:spb-lo-boxplot-py}
+\end{figure}
+
+This circumstance allows us to make a subjective judgment that the null hypothesis should be rejected. However, graphical methods of analysis are only suitable for quick primary interpretation, as well as for presentation purposes. Performing the U-test itself will be necessary to form an objective evidentiary judgment.
+
+The normality tests for both dataframes (\textit{dfs}, \textit{dfl}) should be performed to test the applicability of the U-test. There are many criteria for testing the hypothesis that the sample distribution is normal. Three tests were performed in this case:
+\begin{itemize}
+	\item Shapiro--~Francia test~\cite{Shapiro-Wilk-test};
+	\item D'Agostino's K-squared test~\cite{Agostino-test};
+	\item Anderson-Darling test~\cite{Anderson-Darling-test}.
+\end{itemize}
+The Shapiro--~Francia test evaluates a sample of data and calculates how likely it is that it was drawn from a general population that has a normal distribution. This test is considered one of the most powerful normality tests~\cite{Kobzarq-prikl-mathstat}. At the same time, there are some premises indicating that it works well for samples of average size not exceeding five thousand observations (the minimum number is five).
+
+The D'Agostino's K-squared test is based on the analysis of \href{https://en.wikipedia.org/wiki/Skewness}{skewness}~\cite{Wiki:skewness} and ~\href{https://en.wikipedia.org/wiki/Kurtosis}{kurtosis}~\cite{Wiki:kurtosis} indices representing the realizations of the third and fourth \href{https://en.wikipedia.org/wiki/Central_moment}{central moments}~\cite{Wiki:central-moment}, respectively. This test is also considered one of the most powerful and has no limit on the maximum number of observations.
+
+The Anderson-Darling test is a modified version of the \href{https://en.wikipedia.org/wiki/Kolmogorov_Smirnov_test}{Kolmogorov-Smirnov test of goodness-of-fit}~\cite{Wiki:Kolmogorow-Smirnow-test}. It is used to test the hypothesis that the empirical distribution conforms to one of the known theoretical distributions. Its result is not the p-value, but the criterion statistics, unlike the previous two tests.  This requires a more complex interpretation of the result. However, it is already automated in Python.
+
+Let us formulate the null hypotheses:
+\begin{itemize}
+	\item H0(SPb): the distribution of the values of unit prices of apartment offers in St.~Petersburg does not differ from the normal distribution;
+	\item H0(LO): the distribution of the values of apartment supply prices in the territories of the Leningrad Region that are part of the St.~Petersburg agglomeration does not differ from the normal distribution.
+\end{itemize} 
+Thus, a total of 6 tests will be performed. Their results will be summarized in Table~\ref{tab:normality-tests-values}. All three tests allowed \emph{H0(SPb)} to be rejected for St.~Petersburg data. Two of the three tests also allowed \emph{H0(LO)} to be rejected. We can conclude that the distribution of the subsample containing data about St. Petersburg is unambiguously different from normal, based on the results of the tests. We can also conclude that the distribution of the subsample containing data about the Leningrad region differs from normal with high probability, based on the results of the tests. The use of parametric tests is therefore inappropriate. As a consequence, the U-test discussed above should be used.
+%
+\begin{lstlisting}[float, caption = Performing the Shapiro-Wilk test for St.~Petersburg data, firstnumber=1, label= lst:shapiro-wilk-test-spb]
+stat, p = shapiro(dfs['price_m'])
+print('Statistics=%.3f, p=%.3f' % (stat, p))
+# interpret
+if p <= alpha:
+print('Sample does not look Gaussian (reject H0)')
+else:
+print('Sample looks Gaussian (fail to reject H0)')
+\end{lstlisting}
+%
+\begin{lstlisting}[float, caption = Performing the Shapiro-Wilk test for Leningrad Region data, firstnumber=1, label= lst:shapiro-wilk-test-lo]
+stat, p = shapiro(dfl['price_m'])
+print('Statistics=%.3f, p=%.3f' % (stat, p))
+# interpret
+if p <= alpha:
+print('Sample does not look Gaussian (reject H0)')
+else:
+print('Sample looks Gaussian (fail to reject H0)')
+\end{lstlisting}  
+%
+\begin{lstlisting}[float, caption = Performing the D'Agostino's K-squared test for St.~Petersburg data, firstnumber=1, label= lst:K^2-D'Agostino-test-spb]
+stat, p = normaltest(dfs['price_m'])
+print('Statistics=%.3f, p=%.3f' % (stat, p))
+# interpret
+if p <= alpha:
+print('Sample does not look Gaussian (reject H0)')
+else:
+print('Sample looks Gaussian (fail to reject H0)')
+\end{lstlisting}
+%
+\begin{lstlisting}[float, caption = Performing the D'Agostino's K-squared test for Leningrad Region data, firstnumber=1, label= lst:K^2-D'Agostino-test-lo]
+stat, p = normaltest(dfl['price_m'])
+print('Statistics=%.3f, p=%.3f' % (stat, p))
+# interpret
+if p <= alpha:
+print('Sample does not look Gaussian (reject H0)')
+else:
+print('Sample looks Gaussian (fail to reject H0)')
+\end{lstlisting}  
+%
+\begin{lstlisting}[float, caption = Performing the Anderson-Darling test for St.~Petersburg data, firstnumber=1, label= lst:Anderon-Darling-test-spb]
+result = anderson(dfs['price_m'])
+print('Statistic: %.3f' % result.statistic)
+p = 0
+for i in range(len(result.critical_values)):
+sl, cv = result.significance_level[i], result.critical_values[i]
+if result.statistic < result.critical_values[i]:
+print('%.3f: %.3f, data looks normal (fail to reject H0)' % (sl, cv))
+else:
+print('%.3f: %.3f, data does not look normal (reject H0)' % (sl, cv))
+\end{lstlisting}
+%
+\begin{lstlisting}[float, caption = Performing the Anderson-Darling test for Leningrad Region data, firstnumber=1, label= lst:Anderon-Darling-test-lo]
+result = anderson(dfl['price_m'])
+print('Statistic: %.3f' % result.statistic)
+p = 0
+for i in range(len(result.critical_values)):
+sl, cv = result.significance_level[i], result.critical_values[i]
+if result.statistic < result.critical_values[i]:
+print('%.3f: %.3f, data looks normal (fail to reject H0)' % (sl, cv))
+else:
+print('%.3f: %.3f, data does not look normal (reject H0)' % (sl, cv))
+\end{lstlisting}  
+%
+\begin{table}[htp]
+	\caption{The results of the tests of checking the data on the St. Petersburg agglomeration for normality at $\alpha=0.05$.}\label{tab:normality-tests-values}
+	\centering
+	\begin{tabular}{lll}
+		\hline
+		The test&St.~Petersburg&Leningrad Region\\
+		\hline
+		Shapiro-Wilk:&\ref{lst:shapiro-wilk-test-spb}&\ref{lst:shapiro-wilk-test-lo}\\
+		criterion statistic~(W)&0.689&0.991\\
+		p-value&0.000&0.000\\
+		H0&rejected&rejected\\
+		\hline
+		$K^{2}$ D'Agostino's K-squared test:&\ref{lst:K^2-D'Agostino-test-spb}&\ref{lst:K^2-D'Agostino-test-lo}\\
+		criterion statistic~($K^{2}$)&28166.251&4.067\\
+	    p-value&0.000&0.131\\
+		HO&rejected&can't be rejected\\
+		\hline
+		Anderson-Darling:&\ref{lst:Anderon-Darling-test-spb}&\ref{lst:Anderon-Darling-test-lo}\\
+		criterion statistic~($A^{2}$)&1688.671&15.795\\
+		H0:&rejected&rejected\\
+		\hline
+		Bottom line.:&&\\
+		H0&rejected&rejected\\
+		\hline
+	\end{tabular}
+\end{table}
+%
+Now all that remains is the U-test itself. We use script~\ref{lst:u-test-spba} for this. Its results are presented in Table~\ref{tab:u-test-py-result}. The p-value is less than the specified level of significance. Therefore, we can make the practical conclusion that the difference in the unit value of objects located in the urban and suburban parts of the agglomeration is significant and requires appropriate accounting. Other interpretations of the result can be obtained from the \textit{The alternative hypothesis~(H1)} column of Table\ref{tab:nul-alt-hypothesis-SPba}.
+%
+\begin{lstlisting}[float, caption = Wilcoxon--~Mann--~Whitney test for the data of unit prices of apartment offers in the agglomeration of St.~Petersburg, firstnumber=1, label= lst:u-test-spba]
+stat, p = mannwhitneyu(dfs['price_m'], dfl['price_m'])
+print('stat=%.3f, p=%.3f' % (stat, p))
+if p <= 0.05:
+print('Probably different distributions')
+else:
+print('Probably the same distribution')
+\end{lstlisting}  
+%
+\begin{table}[htp]
+	\caption{The results of the U-test for the St.~Petersburg agglomeration data at $\alpha=0.05$.}\label{tab:u-test-py-result}
+	\centering
+	\begin{tabular}{ll}
+		\hline
+		The indicator&Value\\
+		\hline
+		Criterion statistic&142555441.000\\
+		\hline
+		p-value&0.000\\
+		\hline
+		The null hypothesis (see Table~\ref{tab:nul-alt-hypothesis-SPba})&rejected\\
+		\hline
+		AUC&0.806\\
+		\hline
+		RBC&0.611\\
+		\hline
+	\end{tabular}
+\end{table}
+%
+\subsection{ROC analysis, AUC calculation}
+The theoretical issues of the relationship between the U-test and the concept of AUC were discussed earlier in~\ref{U-AUC}. A detailed discussion of the practical issues of calculating AUC for real data is given in ~\ref{AUC-almaty}. This subsection will show the code for calculating the AUC and RBC in Python. The code is given in script~\ref{lst:AUC&RBC-spba}. The values obtained along with the other results are shown in Table~\ref{tab:u-test-py-result}.
+%
+\begin{lstlisting}[float, caption = Calculation of AUC and RBC for St.~Petersburg agglomeration data, firstnumber=1, label= lst:AUC&RBC-spba]
+# calculate AUC&RBC
+n1n2 = len(dfs.index) * len(dfl.index)
+auc = stat/n1n2
+rbc = auc-(1-auc)
+\end{lstlisting}  
+%
+\clearpage
 %
 \nocite{Essential-Statistical-Inference}
 \nocite{AUC-optimization}
