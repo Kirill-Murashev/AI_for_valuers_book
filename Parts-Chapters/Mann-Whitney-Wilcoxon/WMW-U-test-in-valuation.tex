@@ -4,9 +4,9 @@
 \input{standard-preamble.tex}
 
 % Title Page
-\title{Practical application of~the~Wilcoxon-Mann-Whitney test in~valuation.}
+\title{Practical application of~the~Wilcoxon-Mann-Whitney test in~valuation}
 \subtitle{Selection of~features as~pricing factors based on~the~principle of~unbiased estimates}
-\author{\href{https://www.facebook.com/groups/1977067932456703}{K.~A.~Murashev}}
+\author{\href{https://www.facebook.com/groups/1977067932456703}{Cyrill\,A.~Murashev}}
 
 \begin{document}
 \maketitle
@@ -53,145 +53,145 @@
 \lstlistoflistings
 %	
 \chapter{Technical details}
-This material, as~well as~the~appendices to~it, are available at~\href{https://github.com/Kirill-Murashev/AI_for_valuers_book/tree/main/Parts-Chapters/Mann-Whitney-Wilcoxon}{permanent link}~\cite{Murashev:u-test}. The~source code for~this work was~created~using the~language~\href{https://www.ctan.org/}{\TeX}~\cite{TeX:site} with~a~set of~macro extensions~\href{https://www latex-project.org/}{\LaTeXe}~\cite{LaTeX:site}, distribution~\href{https://www.tug.org/texlive/}{TeXLive}~\cite{TeXLive:site} and~Editor~\href{https://www.texstudio.org/}{TeXstudio}~\cite{TeXstudio:site}. The~spreadsheet calculation was~done with \href{https://www.libreoffice.org/discover/calc/}{LibreOffice Calc}~\cite{LO:Calc} (Version: 7.3.4. 2 / LibreOffice Community Build ID: 30(Build:2); CPU threads: 4; OS: Linux 5.11; UI render: default; VCL: kf5 (cairo+xcb) Locale: en-US (en\_US.UTF-8); UI: en-US Ubuntu package version: 1:7.3.4~rc2-0ubuntu0.20.04.1~lo1; Calc: threaded). The~calculation in~\href{https://www.r-project.org/}{R}~\cite{R_language} (version 4.2.1 (2022-06-23) -- "Funny-Looking Kid") was~done~using an~IDE~\href{https://www.rstudio.com/}{RStudio} (RStudio 2022. 02.3+492 "Prairie Trillium" Release (1db809b8, 2022-05-20) for Ubuntu Bionic; Mozilla/5.0 (X11; Linux x86\_64); AppleWebKit/537.36 (KHTML, like Gecko); QtWebEngine/5.12.8; Chrome/69.0.3497.128; Safari/537.36)~\cite{RStudio:official_site}. The~calculation in~\href{https://www.python.org/}{Python}~(Version~3.9.12)~\cite{Python:site} was~performed using the~development environment~\href{https://jupyter.org}{Jupyter Lab} (Version 3.4.2)~\cite{Jupyter:site} and~IDE \href{https://www.spyder-ide.org/}{Spyder} (Spyder version: 5.1.5 None* Python version: 3.9.12 64-bit * Qt version: 5.9.7 * PyQt5 version: 5.9.2
-* Operating System: Linux 5.11.0-37-generic)~\cite{Spyder:site}. The~graphics used in~the~subsection \ref{U-test-spreadsheet} were prepared using \href{Geogebra:official-site}{Geogebra}~(Version 6.0.666.0-202109211234)~\cite{Geogebra:official-site}. The~following values were used in~this material as~well as~in~most of~the~works in~the~series:
+This material, as well as the appendices to it, are available at~\href{https://github.com/Kirill-Murashev/AI_for_valuers_book/tree/main/Parts-Chapters/Mann-Whitney-Wilcoxon}{permanent link}~\cite{Murashev:u-test}. The source code for this paper was created using the language \href{https://www.ctan.org/}{\TeX}~\cite{TeX:site} with a set of macro extensions \href{https://www latex-project.org/}{\LaTeXe}~\cite{LaTeX:site}, distribution \href{https://www.tug.org/texlive/}{TeXLive} \cite{TeXLive:site} and editor \href{https://www.texstudio.org/}{TeXstudio}~\cite{TeXstudio:site}. The spreadsheet calculation was done with \href{https://www.libreoffice.org/discover/calc/}{LibreOffice Calc}~\cite{LO:Calc} (Version: 7.3.4. 2 / LibreOffice Community Build ID: 30(Build:2); CPU threads: 4; OS: Linux 5.11; UI render: default; VCL: kf5 (cairo+xcb) Locale: en-US (en\_US.UTF-8); UI: en-US Ubuntu package version: 1:7.3.4~rc2-0ubuntu0.20.04.1~lo1; Calc: threaded). The~calculation in~\href{https://www.r-project.org/}{R}~\cite{R_language} (version 4.2.1 (2022-06-23) -- "Funny-Looking Kid") was~done~using an~IDE~\href{https://www.rstudio.com/}{RStudio} (RStudio 2022. 02.3+492 "Prairie Trillium" Release (1db809b8, 2022-05-20) for Ubuntu Bionic; Mozilla/5.0 (X11; Linux x86\_64); AppleWebKit/537.36 (KHTML, like Gecko); QtWebEngine/5.12.8; Chrome/69.0.3497.128; Safari/537.36)~\cite{RStudio:official_site}. The~calculation in~\href{https://www.python.org/}{Python}~(Version~3.9.12)~\cite{Python:site} was~performed using the~development environment~\href{https://jupyter.org}{Jupyter Lab} (Version 3.4.2)~\cite{Jupyter:site} and~IDE \href{https://www.spyder-ide.org/}{Spyder} (Spyder version: 5.1.5 None* Python version: 3.9.12 64-bit * Qt version: 5.9.7 * PyQt5 version: 5.9.2
+* Operating System: Linux 5.11.0-37-generic)~\cite{Spyder:site}. The graphics used in the subsection \ref{U-test-spreadsheet} were prepared using \href{Geogebra:official-site}{Geogebra} (Version 6.0.666.0-202109211234)~\cite{Geogebra:official-site}. The following values were used in this material as well as in~most of the papers in the series:
 \begin{itemize}
 	\item significance level: $\alpha = 0.05$;
 	\item confidence interval: $Pr = 0.95$;
 	\item initial position of the pseudo-random number generator: $seed=19190709$.
 \end{itemize}
-A~dot is~used as~a~decimal point. Most of~the~mathematical notations are~written as~they are~used in~English-speaking circles. For~example, a~tangent is~written as~$\tan$, not~$tg$. The~results of~statistical tests are~considered significant when
+A dot is used as a decimal point. Most of the mathematical notations are written as they are used in English-speaking circles. For example, a tangent is written as~$\tan$, not tg. The results of statistical tests are considered significant when
 \begin{equation}\label{eq:significance}
 p \leq \alpha.
 \end{equation}
-This decision is~based, in~part, on~the~results of~the~discussion that took place on~\href{researchgate.net}{researchgate.net}~~\cite{RG:p-equals-alpha}.
+This decision is based, among other things, on the results of the discussion that took place on \href{researchgate.net}{researchgate.net}~\cite{RG:p-equals-alpha}.
 %
 \chapter{Subject of~research}
-When working with market data, the~appraiser is~often faced with the~task of~testing the~hypothesis of~whether a~quantitative, ordinal or~nominal attribute has~a~significant effect on~the~price. Real estate market analysts, developers, realtors, employees of~collateral departments of~banks, leasing and~insurance companies, tax inspectors and~other specialists have a~similar task. At~the~same time, it~is~often impossible to~collect large amounts of~data that would allow a~wide range of~machine learning methods to~be~applied. In~some cases appraisers consciously narrow the~area of~data collection to~the~narrow market segment, resulting in~only very small samples of~less than thirty observations at~their disposal. In~this case, the~price data most often has~a~distribution that differs from the~normal one. In~this case, a~rational solution is~to~use U-test. Let~us formulate the~problem:
+The appraiser is often faced with the task of testing the hypothesis of whether a binary, quantitative, ordinal or nominal attribute has a significant effect on the price when working with market data. Real estate market analysts, developers, realtors, employees of collateral departments of banks, leasing and insurance companies, tax inspectors and other specialists have a similar task. It is often impossible to collect large amounts of data that would allow a wide range of machine learning methods to be applied at the same time. Appraisers consciously narrow the area of data collection to the narrow market segment in some cases. This results in very small samples of less than 30 observations. In this case, the~price data most often has~a~distribution that differs from the~normal one. It is also necessary to take into account the fact that the distribution of unit prices almost always differs from the normal one. A rational solution is to use the U-test in this case. Let us formulate the problem:
 \begin{itemize}
-	\item suppose that we~have two samples of~unit prices for~commercial premises, some of~which have some attribute (e.\,g., having a~separate entrance) and~some of~which do~not;
-	\item it~is~necessary to~determine whether the~presence of~this feature has a~significant impact on~the~unit value of~this type of~real estate or~not.
+	\item suppose that we have two samples of unit prices for commercial premises, some of which have some attribute (e.\,g., having a separate entrance) and some of which do not;
+	\item it is necessary to determine whether the presence of this feature has a significant impact on the unit value of this type of real estate or not.
 \end{itemize}
-At~first glance, according to~established practice, an~appraiser can simply subjectively recognize some attributes as~significant and~others as~not, and~then accept the~adjustment values for~differences in~these attributes from the~reference books. However, as~mentioned above, this approach is~hardly considered best practice because it~lacks any~market analysis. Also, in~that case, it~is~unlikely that such work is~of~any~serious value at~all.
+At first glance, an appraiser can simply subjectively recognize some attributes as significant and others as not according to established practice. Then accept the adjustment values for differences in these attributes from the reference books. However, this approach is hardly considered best practice because it lacks any market analysis as mentioned above. Also it is unlikely that such work is of any serious value at all in that case.
 
-Instead, it~is~possible to~use random samples of~market data and~apply mathematical analysis to~them, allowing scientific and evidence-based conclusions to~be~drawn about the~significance of~a~particular attribute's impact on~value. The~data used in~this paper to~perform the~U-test using Python and~R are~real market data, some of~which were collected by~the author through web scraping and some provided by~colleagues for~the~analysis. The~attached spreadsheet is~set~up so~that test raw data can~be generated in~a~pseudo-random fashion.
+It is possible to use random samples of market data and apply mathematical analysis to them instead. This approach will make it possible to make scientifically valid and evidentiary conclusions about the significance of the influence of a particular attribute on the value. The data used in this paper to perform the U-test using Python and~R are real market data. Some of which were collected by the author through web scraping and some provided by colleagues for the analysis. The attached spreadsheet is set up so that test raw data can be generated in a pseudo-random fashion.
 
-The~subject of~this paper is~the~nonparametric Wilcoxon-Mann-Whitney test, specifically designed for~samples that have a~distribution other than normal. This circumstance is~important because the~price data that appraisers deal with most often have this distribution, which excludes the~possibility of~applying the~parametric t-criterion and~z-criterion. In~addition, the~test under consideration is~of~great interest because it~has a~connection to~machine learning methods through AUC, the~calculation of~which through the~formula provided in~the~test framework gives a~value equal to~that calculated by~ROC analysis. Thus, the~study of~the~U-test paves the~way for~a~further dive into the~world of~machine learning, which is~entering many areas of~human activity and~will significantly change the~field of~value estimation in~the~foreseeable future.
+The subject of this paper is the nonparametric Wilcoxon--~Mann--~Whitney test specifically designed for samples that have a distribution other than normal. This circumstance is important because the price data that appraisers deal with most often have this distribution, which excludes the possibility of applying the parametric t-criterion or z-criterion. In addition, the test under consideration is of great interest because it has a relationship to machine learning methods through the concept of AUC. The calculation of which through the formula provided in the test framework gives a value equal to that calculated by ROC analysis. Thus, the study of the U-test paves the way for a further dive into the world of~machine learning which is entering many areas of human activity and will significantly change the field of value estimation in the foreseeable future.
 
-The~material contains a~description of~the~test and~instructions for~performing it, sufficient in~the~author's opinion for~its~demonstrable use in~the~estimation process.
+The material contains a description of the test and instructions for performing it sufficient in the author's opinion for its demonstrable use in the valuation process.
 %
 \chapter{Basic information about the~test}
 \section{Assumptions and~formalization of~hypotheses}
-First of~all, it~should~be said that, in~spite of~the~stated common name, it~is~more correct to~speak of~two tests:
+First of all, it should~be said that, in spite of the stated common name, it is more correct to speak of two tests:
 \begin{itemize}
-	\item \href{http://www.machinelearning.ru/wiki/index.php?title=Критерий_Уилкоксона_двухвыборочный}{Wilcoxon rank-sum test} developed by~Frank Wilcoxon in~1945~\cite{MLRU:Wilcoxon-test};
-	\item \href{http://www.machinelearning.ru/wiki/index.php?title=Критерий_Уилкоксона-Манна"--~Уитни}{Mann--Whitney~U-test} which is~a~further development of~the~aforementioned criterion developed by~Henry Mann and~Donald Whitney in~1947~\cite{MLRU:Mann-Whitney}.
+	\item \href{http://www.machinelearning.ru/wiki/index.php?title=Критерий_Уилкоксона_двухвыборочный}{Wilcoxon rank-sum test} developed by~Frank Wilcoxon in 1945 \cite{MLRU:Wilcoxon-test};
+	\item \href{http://www.machinelearning.ru/wiki/index.php?title=Критерий_Уилкоксона-Манна"--~Уитни}{Mann--~Whitney~U-test} which is a further development of the aforementioned criterion developed by Henry Mann and Donald Whitney in 1947~\cite{MLRU:Mann-Whitney}.
 \end{itemize}
-Looking ahead we~can say that the~statistics of~these criteria are~linearly related and~their p-values are~almost the~same which from a~practical point of~view allows us to~talk about variations of~one test rather than two separate tests. This paper uses the~common name throughout the~text, as~well as~a~shortened version of~"U-test" which historically refers to~the~Mann-Whitney test. Some authors\cite{Kobzarq-prikl-mathstat} recommend using the~Wilcoxon rank-sum test when there are~no~assumptions about variance, and the~Mann-Whitney U-test when variance of~the~two samples are~equal. However, the~experimental data indicate that the~Wilcoxon rank-sum test and~Mann-Whitney U-test values are~essentially the~same when the~variance of~the~samples is~significantly different. Adhering to~the~KISS principle~\cite{KISS-principle} underlying the~entire series of~publications, the~author concludes that a~unified approach is~possible. Also remember that the~Wilcoxon signed-rank test is~a~separate test designed to~analyze differences between two matched samples, whereas the~Mann-Whitney U-test discussed in~this paper is~designed to~work with two independent samples.
+Looking ahead we can say that the statistics of these criteria are linearly related and their p-values are almost the same. Which allows us to talk about variations of one test rather than two separate tests from a practical point of view. This paper uses the common name throughout the text as well as a shortened version of "U-test" which historically refers to the Mann--~Whitney test. Some authors\cite{Kobzarq-prikl-mathstat} recommend using the Wilcoxon rank-sum test when there are no assumptions about variance and the Mann--~Whitney U-test when variance of the two samples are equal. However, the experimental data indicate that the Wilcoxon rank-sum test and~Mann--~Whitney U-test values are essentially the same when the variance of the samples is significantly different~\cite{MLRU:Mann-Whitney}. The author concludes that a unified approach is possible adhering to the KISS principle~\cite{KISS-principle} underlying the entire series of publications. Also remember that the Wilcoxon signed-rank test is a separate test designed to analyze differences between two matched samples. Whereas the U-test discussed in this paper is designed to work with two independent samples.
 
-Suppose that there are~two samples:
+Suppose that there are two samples:
 \begin{equation*}
 x^{m} = (x_{1},x_{2},\ldots,x_{m}), x_{i} \in \mathbb{R};\quad y^{n} = (y_{1},y_{2},\ldots,y_{n}), y_{i} \in \mathbb{R} \quad: m \leq n.
 \end{equation*}
 %
 \begin{itemize}
-	\item Both samples are~simple and~random (i.e., \href{https://en.wikipedia.org/wiki/Simple_random_sample}{SRS}~\cite{Wiki:SRS}), the~combined sample is~independent.
-	\item The~samples are~taken from unknown continuous distributions \textit{F(x)} and~\textit{G(y)}, respectively.
+	\item Both samples are simple and random (i.e., \href{https://en.wikipedia.org/wiki/Simple_random_sample}{SRS}~\cite{Wiki:SRS}), the combined sample is independent.
+	\item The samples are taken from unknown continuous distributions \textit{F(x)} and~\textit{G(y)}, respectively.
 \end{itemize}
 %
 \begin{description}
-	\item[Simple random sample~(SRS) ---] is~a~subset of~individuals (\emph{a~sample}) chosen from a~larger set (\emph{a~population}) in~which a~subset of~individuals are~chosen randomly, all with the~same probability. It~is~a~process of~selecting a~sample in~a~random way. In~\textbf{SRS}, each subset of~\textit{k}~individuals has~the~same probability of~being chosen for~the~sample as~any~other subset of~\textit{k}~individuals.A~simple random sample is~an~unbiased sampling technique. Equivalent definition: a~sample ${\textstyle x^{m} = (x_{1},x_{2},\ldots,x_{m})}$ is~simple if~the~values~${\textstyle (x_{1},x_{2},\ldots,x_{m})}$ are~realizations of~\textit{m} independent equally distributed random variables. In~other words, the~selection of~observations is~not~only random but also does not~imply any~special selection rules (e.g., choosing every 10th observation).
+	\item[Simple random sample~(SRS) ---] is a subset of individuals (\emph{a sample}) chosen from a larger set (\emph{a population}) in which a subset of individuals are chosen randomly, all with the same probability. It is a process of selecting a sample in a random way. In \textbf{SRS}, each subset of \textit{k} individuals has the same probability of being chosen for the sample as any other subset of \textit{k} individuals. A simple random sample is an unbiased sampling technique. Equivalent definition: a sample ${\textstyle x^{m} = (x_{1},x_{2},\ldots,x_{m})}$ is simple if the values ${\textstyle (x_{1},x_{2},\ldots,x_{m})}$ are realizations of \textit{m} independent equally distributed random variables. In other words, the selection of observations is not only random but also does not imply any special selection rules (e.g., choosing every 10th observation).
 \end{description}
 %
 \begin{description}
-	\item[The~U-test ---] is~a~nonparametric criterion to~test the~null hypothesis that for~randomly chosen from~two samples of~observations~$x \in X$ and~$y \in Y$ the probability that~\textit{x} is~greater than \textit{y} is~equal to~the~probability that~\textit{y} is~greater than~\textit{x}. In~mathematical language, the~null hypothesis is~written as~follows
+	\item[The U-test ---] is a nonparametric criterion to test the~null hypothesis that for $x \in X$ and~$y \in Y$ randomly chosen from two samples of observations the probability that \textit{x} is greater than \textit{y} is equal to the probability that \textit{y} is greater than \textit{x}. In mathematical language, the~null hypothesis is written as follows
 	\begin{equation}\label{eq:U-test-null-hypothesis}
 	H_{0}:P\{x<y=\frac{1}{2}\}.
 	\end{equation}
-	For~the~test's own consistency, an~alternative hypothesis is~required, which is~that the~probability that the~value of~a~characteristic of~observation from~\textit{X} is~greater than that of~observation from~\textit{Y} differs upward or~downward from the~probability that the~value of~a~characteristic of~observation from~\textit{Y} is~greater than that of~observation from~\textit{X}. In~mathematical language, the~alternative hypothesis is~written as~follows
+	For the test's own consistency, an alternative hypothesis is required. Which is that the probability that the value of a characteristic of observation from~\textit{X} is greater than that of observation from~\textit{Y} differs upward or downward from the probability that the value of a characteristic of observation from~\textit{Y} is greater than that of observation from~\textit{X}. In~mathematical language, the alternative hypothesis is written as follows
 	\begin{equation}\label{eq:U-test-alt-hypothesis}
 	H_{1}:P\{x<y\} \neq P\{y<x\} \vee P\{x<y\} + 0.5 \cdot P\{x=y\} \neq 0.5.
 	\end{equation}
 \end{description}
-According to~the~basic concept of~the~U-test, if~the~null hypothesis is~true, the~distribution of~the~two samples is~continuous; if~the~alternative hypothesis is~true, the~distribution of~one sample is~stochastically greater than the~distribution of~the~other. In~this case, it~is~possible to~formulate a~number of~null and~alternative hypotheses for~which this test will give a~correct result. His~most extensive generalization lies in~the~following assumptions:
+If the null hypothesis is true, the distribution of the two samples is continuous; if the alternative hypothesis is true, the distribution of one sample is stochastically greater than the distribution of the other according to the basic concept of the U-test. It is possible to formulate a number of null and alternative hypotheses for which this test will give a correct result in this case. Its most extensive generalization lies in the following assumptions:
 \begin{itemize}
-	\item the~observations in~both samples are~independent;
-	\item the~data type is~at~least ranked, i.\,e., with respect to~any two observations you can tell which one is~greater;
-	\item the~null hypothesis assumes that the~distributions of~the~two samples are equal;
-	\item the~alternative hypothesis assumes that the~distributions of~the~two samples are unequal.
+	\item the observations in both samples are independent;
+	\item the data type is at least ranked, i.\,e., you can tell which one is greater with respect to any two observations;
+	\item the null hypothesis assumes that the distributions of the two samples are equal;
+	\item the alternative hypothesis assumes that the distributions of the two samples are unequal.
 \end{itemize}
-With a~stricter set of~assumptions than those given above, for~example the~assumption that the~distribution of~the~two samples is~continuous if~the~null hypothesis is~valid and that the~distribution of~the~two samples has a~shift  in~the~distribution if~the~alternative one is~valid i.\,e.~$f_{1}(x)=f_{2}(x+\sigma)$,  we~can say that the~U-test is~a~test for~the~hypothesis of~equality of~medians. In~this case, the~U-test can~be interpreted as~a~test of~whether Hodges--Lehman's estimate of~the~difference in~central tendency measures differs from zero. In~this situation, the~Hodges--Lehman estimate is~the median of~all possible values of~differences between the~observations in~the~first and second samples. However, if~both the~variance and the~shape of~the~distribution of~the~two samples differ, the~U-test cannot correctly test the~medians. Examples can~be shown where the~medians are~numerically equal and the~test rejects the~null hypothesis because of~the~small p-value. Thus, a~more correct interpretation of~the~U-test is~to~use~it to~test the~\href{http://www.machinelearning.ru/wiki/index.php?title=Гипотеза_сдвига}{shift hypothesis}~\cite{MLRU:shift-hypothesis}.
+It is possible to use a stricter set of assumptions than those given above. For example, the assumption that the distribution of the two samples is continuous if the null hypothesis is valid and that the where is a shift between distributions of the two samples if the alternative one is valid i.\,e.~$f_{1}(x)=f_{2}(x+\sigma)$. We can say that the U-test is a test for the hypothesis of equality of medians in this case. Then, the U-test can~be interpreted as a test of whether Hodges--~Lehman's estimate of the difference in central tendency measures differs from zero. In this situation, the Hodges--~Lehman's estimate is the median of all possible values of differences between the observations in the first and second samples. However, the U-test cannot correctly test the medians if both the variance and the shape of the distribution of the two samples differ. Examples where the medians are numerically equal and the test rejects the null hypothesis because of the small p-value can~be shown. Thus, a more correct interpretation of the U-test is to use it to test the~\href{http://www.machinelearning.ru/wiki/index.php?title=Гипотеза_сдвига}{the shift hypothesis}~\cite{MLRU:shift-hypothesis}.
 \begin{description}
-	\item[Shift hypothesis ---] is~a~statistical hypothesis often considered as~an~alternative to~the~hypothesis of~complete homogeneity of~samples. Let~us have two samples of~data. Let~us also give two random variables~\textit{X} and~\textit{Y}, which are~distributed as~elements of~these samples and have distribution functions~\textit{F(x)} and~\textit{G(y)}, respectively. In~these terms, the~shift hypothesis can~be written as~follows
+	\item[The shift hypothesis ---] is a statistical hypothesis often considered as an alternative to the hypothesis of complete homogeneity of samples. Let us have two samples of data. Let us also give two random variables~\textit{X} and~\textit{Y}, which are distributed as elements of these samples and have distribution functions \textit{F(x)} and~\textit{G(y)}, respectively. In these terms, the shift hypothesis can~be written as follows
 	\begin{equation}\label{eq:shift-hypothesis}
 	H:F(x)=G(x+\sigma)\ : \forall x,\ \sigma \neq 0.
 	\end{equation}
 \end{description}
-In~this case, the~U-criterion is~valid regardless of~the~characteristics of~the~samples.
+In this case, the U-criterion is valid regardless of the characteristics of the samples.
 
-Simply put, the~essence of~the~U-test is~that it~allows~us to~answer the~question of~whether there~is a~significant difference in~the~value of~the~quantitative attribute of~the~two samples. With regard to~valuation, we~can say that the~use of~this test helps to~answer the~question of~whether it~is~necessary to~take into account one or~another attribute as~a~price-generating factor. It~follows from the~above that by~default we~are talking about a~two-sided test. In~practice, this means that the~test does~not give a~direct answer to~the~question, for~example: "Is~there a~significant excess of~the~unit value of~premises with a~separate entrance to~the~premises that do~not have it. At~the~same time, there~are also one-sided realizations that allow~us to~answer the~question about the~sign of~the~difference in~the~value of~the~attribute in~the~two samples.
+Simply put, the essence of the U-test is that it allows us to answer the question of whether there is a significant difference in the value of the quantitative attribute of the two samples. We can say that the use of this test helps to answer the question of whether it is necessary to take into account one or another attribute as a price-generating factor with regard to valuation. It follows from the above that we are talking about a two-sided test by default. This means that the test does not give a direct answer to the question, for example: "Is there a significant excess of the unit value of premises with a separate entrance to the premises that do not have it" in practice. At the same time there are also one-sided realizations that allow us to answer the question about the sign of the difference in the value of the attribute in the two samples.
 
-In~addition to~the~above requirements for~the~samples themselves, the~conditions for~applying the~U-test are:
+In addition to the above requirements for the samples themselves there are some conditions for applying the U-test:
 \begin{itemize}
-	\item the~distribution of~quantitative attribute values of~samples is~different from normal (otherwise it~is advisable to~use parametric Student's t-test or~z-test for~independent samples).
-	\item at~least three observations in~each sample, it~is~allowed to~have two observations in~one of~the~samples, provided that there~are at~least five in~the~other sample.
+	\item the distribution of quantitative attribute values of samples is different from normal (it is advisable to use parametric Student's t-test or z-test for independent samples otherwise).
+	\item there must be at least three observations in each sample; it is allowed to have two observations in one of the samples provided that there are at least five in the~other sample.
 \end{itemize}
-To~summarize the~above, there~are three variants of~the~null hypothesis, depending on~the~level of~rigor outlined in~the~table below~\ref{tab:nul-hypothesis-variants}.
+To summarize the above, there are three variants of the null hypothesis depending on the level of rigor outlined in the table~\ref{tab:nul-hypothesis-variants}.
 \begin{table}[htp]
-	\caption{Variants of~the~null hypothesis when using the~U-test in~valuation.}\label{tab:nul-hypothesis-variants}
+	\caption{Variants of the null hypothesis when using the U-test in valuation.}\label{tab:nul-hypothesis-variants}
 	\centering
 	\begin{tabularx}{\textwidth}{p{0.25\linewidth} p{0.7\linewidth}} 
 		\hline
-		Type of~hypothesis&Formulation\\
+		Type of hypothesis&Formulation\\
 		\hline
-		Scientific&The~two samples are~completely homogeneous, i.\,e.~they belong to~the~same distribution, there~is no~shift and the~estimate made for~the~first sample is~unbiased for~the~second one.\\
+		Scientific&The two samples are completely homogeneous, i.\,e. they belong to the same distribution, there is no~shift and the estimate made for the first sample is unbiased for the second one.\\
 		\hline
-		Practical&The~medians of~the~two samples are~equal to~each other.\\
+		Practical&The medians of the two samples are equal to each other.\\
 		\hline
-		Set forth in~terms of~valuation&The~difference in~the~attribute between the~two samples of~object-analogues is~not~significant, its accounting is~not required and this attribute is~not a~pricing factor.\\
+		Set forth in terms of valuation&The difference in the attribute between the two samples of object-analogues is not significant, its accounting is not required and this attribute is not a pricing factor.\\
 		\hline
 	\end{tabularx}
 \end{table}
 %
 \section{Test implementation}
 \subsection{Test statistic}
-Suppose that~the elements $x_{1},\ldots,x_{n}$ represent a~simple independent sample from~$X \in \mathbb{R}$, and~the elements $y_{1},\ldots, y_{n}$ represent a~simple independent sample from $Y \in \mathbb{R}$ and the~samples are~independent of~each other. Then the~relevant U-statistic is~defined as~follows:
+Suppose that the elements $x_{1},\ldots,x_{n}$ represent a simple independent sample from~$X \in \mathbb{R}$ and the elements $y_{1},\ldots, y_{n}$ represent a simple independent sample from $Y \in \mathbb{R}$. The samples are independent of each other. Then the relevant U-statistic is defined as follows:
 \begin{equation}\label{eq:U-statistic-base-formula}
 \begin{aligned}
 U&=\sum_{i=1}^{m} \sum_{j=1}^{n} S (x_{i},y_{j}),\\
-&\text{при}\\
+&\text{with}\\
 S(x,y)&=
 \begin{cases}
-1,\quad \text{если}\ x>y,\\
-\frac{1}{2},\quad \text{если}\ x=y,\\
-0,\quad \text{если}\ x<y.
+1,\quad \text{if}\ x>y,\\
+\frac{1}{2},\quad \text{if}\ x=y,\\
+0,\quad \text{if}\ x<y.
 \end{cases}
 \end{aligned}
 \end{equation}
 %
 \subsection{Calculation methods}
-The~test involves calculating a~statistic usually called the~U-statistic whose distribution is~known if~the~null hypothesis is~true. When working with very small samples, the~distribution is~specified tabularly; when the~sample size is~more than twenty observations, it~is~approximated quite well by~the~normal distribution. There are~two methods of~calculating U-statistics: manual calculation using the~formula \ref{eq:U-statistic-base-formula} or~using a~special algorithm. The~first method, due~to its~labor-intensive nature, is~only suitable for~very small samples. The~second method can~be formalized as~a~step-by-step set of~instructions and will~be described below.
+The test involves calculating a statistic usually called the U-statistic whose distribution is known if the null hypothesis is true. The distribution is specified tabularly when working with very small samples and it is approximated quite well by the normal distribution when the sample size is more than twenty observations. There are two methods of calculating U-statistics: manual calculation using the~formula \ref{eq:U-statistic-base-formula} or using a special algorithm. The first method is only suitable for very small samples due to its labor-intensive nature. The second method can~be formalized as a step-by-step set of instructions and will~be described below.
 \begin{enumerate}
-	\item You must construct a~common variation series for~the~two samples and then assign a~rank to~each observation, starting with one for~the~smallest of~them. If~there are~ties, i.\,e. groups of~repeating values (such a~group can~be, e.\,g., only two equal values), each observation from such a~group is~assigned a~value equal to~the~median of~the~group ranks before adjustment (for example, in~the~case of~a~variation series (\textit{3, 5, 5, 5, 5, 8}) the~ranks before adjustment are~(\textit{1, 2, 3, 4, 5, 6}) after --- (\textit{1, 3.5, 3.5, 3.5, 3.5, 6}).
-	\item It~is necessary to~calculate the~sums of~the~ranks of~the~observations of~each sample, denoted as~${R_{1},\ R_{2}}$ respectively. In~this case, the~total sum of~ranks can~be calculated by~the~formula
+	\item You should construct a common variation series for the two samples and then assign a rank to each observation starting with one for the smallest of them. If case of presence of ties, i.\,e. groups of repeating values (such a group can~be, e.\,g., only of two equal values) each observation from such a group is assigned a value equal to the median of the group ranks before adjustment. For example, in the case of a variation series (\textit{3, 5, 5, 5, 5, 8}) the ranks before adjustment are (\textit{1, 2, 3, 4, 5, 6}) after --- (\textit{1, 3.5, 3.5, 3.5, 3.5, 6}).
+	\item It is necessary to calculate the sums of the ranks of the observations of each sample, denoted as~${R_{1},\ R_{2}}$ respectively. In this case, the total sum of ranks can be calculated by the formula
 	\begin{equation}\label{eq:common-R}
 	R = \frac{N(N+1)}{2},
 	\end{equation}
-	where~\textit{N} ---the~total number of~observations in~both samples.
+	where~\textit{N} --- is the~total number of observations in both samples.
 	%
-	\item Next, we~calculate the~U-value for~the~first sample:
+	\item Next, we calculate the U-value for the first sample
 	\begin{equation}\label{eq:U1}
 	U_{1}=R_{1}-\frac{n_{1}(n_{1}+1)}{2},
 	\end{equation}
-	where $R_{1}$ ---the~sum of~ranks of~the~first sample, $n_{1}$ --- the~number of~observations in~the~first sample.
+	where $R_{1}$ --- is the sum of ranks of the first sample, $n_{1}$ --- is the number of observations in the first sample.
 	%
-	\item The~U-value for~the~second sample is~calculated in~the~same way:
+	\item The U-value for the second sample is calculated in the same way
 	\begin{equation}\label{eq:U2}
 	U_{2}=R_{2}-\frac{n_{2}(n_{2}+1)}{2},
 	\end{equation}
-	where $R_{2}$ ---the~sum of~ranks of~the~second sample, $n_{2}$ --- the~number of~observations in~the~second sample.
+	where $R_{2}$ --- is the~sum of ranks of the second sample, $n_{2}$ --- is the~number of observations in the second sample.
 	
-	From the~above formulas it~follows that
+	From the~above formulas it follows that
 	\begin{equation}\label{eq:U1-U2-relation}
 	U_{1}+U_{2} = R_{1}-\frac{n_{1}(n_{1}+1)}{2} + R_{2}-\frac{n_{2}(n_{2}+1)}{2}.
 	\end{equation}
@@ -206,81 +206,81 @@ The~test involves calculating a~statistic usually called the~U-statistic whose d
 	\begin{equation}\label{eq:check-U-value}
 	U_{1}+U_{2}=n_{1}n{2}.
 	\end{equation}
-	Using this formula as~a~control ratio can~be useful for~checking the~correctness of~calculations in~a~spreadsheet processor.
+	Using this formula as a control ratio can~be useful for checking the correctness of calculations in a spreadsheet.
 	%
-	\item From the~two values of~$U_{1},\ U_{2}$ in~all cases we~choose the~smaller which will~be the~U-statistic and~used in~further calculations. Let~us denote it~as~\emph{U}.
+	\item From the two values of~$U_{1},\ U_{2}$ we choose the smaller in all cases which will~be the U-statistic and used in further calculations. Let us denote it as~\emph{U}.
 \end{enumerate}
 %
-\subsection{Interpretation of~the~result}
-For~a~correct interpretation of~the~test result it~is necessary to~specify:
+\subsection{Interpretation of the result}
+It is necessary to specify for a correct interpretation of the test result:
 \begin{itemize}
 	\item size of each sample;
-	\item values of~the~measure of~central tendency for~each sample (given the~nonparametric nature of~the~test, the~median appears to~be the~appropriate measure of~central tendency);
-	\item the~value of~the~U-statistic itself;
-	\item the~\href{https://en.wikipedia.org/wiki/Effect_size#Common_language_effect_size}{CLES} index~\cite{Wiki:CLES} the~value of~which is~equivalent to~the~AUC and~$\rho$-statistic;
-	\item \href{https://en.wikipedia.org/wiki/Effect_size#Rank-biserial_correlation}{rank-biserial correlation coefficient~(RBC)}~\cite{Wiki:rank-biserial-correlation};
-	\item the~accepted level of~significance (usually 0.05);
-	\item the~calculated p-value.
+	\item values of the measure of central tendency for each sample, the median appears to be the appropriate measure of central tendency given the nonparametric nature of the test;
+	\item the value of the U-statistic itself;
+	\item the~\href{https://en.wikipedia.org/wiki/Effect_size#Common_language_effect_size}{CLES} index~\cite{Wiki:CLES} the value of which is equivalent to the AUC and~$\rho$-statistic;
+	\item the \href{https://en.wikipedia.org/wiki/Effect_size#Rank-biserial_correlation}{rank-biserial correlation coefficient~(RBC)}~\cite{Wiki:rank-biserial-correlation};
+	\item the accepted level of significance (usually 0.05);
+	\item the calculated p-value.
 \end{itemize}
-The~concept of~U-statistic was discussed earlier and most of~the~other indicators are widely known and do~not require any particular consideration. 
+The concept of U-statistic was discussed earlier. The concept of median is widely known and does not require any particular consideration. Let us focus on a number of specific statistics arising in the process of performing the U-test. 
 \subsubsection{CLES = $\rho$-statistic = AUC}
-First of~all, it~must~be said that all of~these indicators are~equivalent to~each other. Thus
+First of~all, it must~be said that all of these indicators are equivalent to each other. Thus,
 \begin{equation}\label{eq:AUC=CLES}
 CLES = f = AUC_{1} = \rho.
 \end{equation}
 \paragraph{Common language effect size~(CLES)}
 \begin{description}
-	\item[Common language effect size~(CLES) ---] is the~probability that the~value of~a~randomly chosen observation from the first sample is greater than the~value of~a~randomly chosen observation from the second sample. This indicator is~calculated by~the~formula
+	\item[Common language effect size~(CLES) ---] is the probability that the value of a randomly chosen observation from the first sample is greater than the value of a randomly chosen observation from the second sample. This indicator is calculated by the formula
 	\begin{equation}\label{eq:CLES}
 	CLES = \frac{U_{1}}{n_{1}n_{2}}.
 	\end{equation}
-	The designation \emph{f~(favorable)} is~often used instead of~\emph{CLES}. This sample value is~an~unbiased estimate of~the~value for~the~entire population of~objects belonging to~the~set.	
+	The designation \emph{f~(favorable)} is often used instead of~\emph{CLES}. This sample value is an unbiased estimate of the value for the entire population of objects belonging to the set.	
 \end{description}
-It~should~be noted that the~value and meaning of~this indicator is~equivalent to~the~value and meaning of~the ~\href{https://en.wikipedia.org/wiki/Receiver_operating_characteristic}{AUC}\cite{Wiki:ROC}. Thus, we~can say that this indicator characterizes the~quality of~ the~U-test as~a~binary classifier.
+It should~be noted that the value and meaning of this indicator is equivalent to the value and meaning of~the ~\href{https://en.wikipedia.org/wiki/Receiver_operating_characteristic}{AUC}\cite{Wiki:ROC}. Thus, we can say that this indicator characterizes the quality of the U-test as a binary classifier.
 \begin{equation}\label{eq:AUC}
 CLES = f = AUC_{1} = \frac{U_{1}}{n_{1}n_{2}}.
 \end{equation}
-The~relationship between the~U-statistic and~AUC is~discussed in~\ref{U-AUC}.
+The relationship between the U-statistic and AUC is discussed in~\ref{U-AUC}.
 %
 \paragraph{$\rho$-statistic}
-A~statistic called~$\rho$ that is~linearly related to~U and widely used in~studies of~categorization (discrimination learning involving concepts), and elsewhere, is~calculated by~dividing~U by~its maximum value for~the~given sample sizes, which is~simply $n1 \times n2$. Thus, $\rho$ is~a~non-parametric measure of~the overlap between two~distributions; it~can take values between 0 and~1, and it~is~an~estimate of~$P(Y > X) + 0.5 P(Y = X)$, where \textit{X} and~\textit{Y} are~randomly chosen observations from the~two distributions. Both extreme values represent complete separation of~the~distributions, while a~$ρ = 0.5$ represents complete overlap. This statistic is~useful in~particular when despite a~large p-value the~medians of~the~two samples are~essentially equal to~each other. 
+A statistic called~$\rho$ that is linearly related to U-statistic and widely used in studies of categorization (discrimination learning involving concepts), and elsewhere, is calculated by dividing the value of U-statistic by its maximum value for the given sample sizes, which is simply $n1 \times n2$. Thus, $\rho$ is a non-parametric measure of the overlap between two distributions. It can take values between 0 and~1, and it is an estimate of~$P(Y > X) + 0.5 P(Y = X)$, where \textit{X} and~\textit{Y} are randomly chosen observations from the two distributions. Both extreme values represent complete separation of the distributions, while a $ρ = 0.5$ represents complete overlap. This statistic is useful in particular when despite a large p-value the medians of the two samples are essentially equal to each other. 
 %
 \subsubsection{Rank-biserial correlation~(RBC)}
-The method of~representing the~measure of~impact for~the~U-test is~to~use a~measure of~rank correlation known as~rank-biserial correlation~(hereafter RBC). As~in~the~case of~other measures of~correlation, the~value of~the~RBC coefficient has a~range of~values [-1;1], with a~zero value indicating the~absence of~any relationship. The~RBC coefficient is~usually denoted as~\textit{r}. A~simple formula based on~the~CLES~(AUC, t, $\rho$) value is~used to~calculate it. Let~us state the~hypothesis that in~a~pair of~random observations, one of~which is~taken from the~first sample and the~other from the~second, the~value of~the~first is~greater.Let's write it~down in~mathematical language:
+The method of representing the measure of impact for the~U-test is to use a measure of rank correlation known as rank-biserial correlation (hereafter RBC). The value of the RBC coefficient has a range of values [-1;1] with a zero value indicating the absence of any relationship as in the case of other measures of correlation. The RBC coefficient is usually denoted as~\textit{r}. A simple formula based on the CLES (AUC, t, $\rho$) value is used to calculate it. Let us state the hypothesis that in a pair of random observations one of which is taken from the first sample and the other from the second the~value of the first is greater. Let's write it down in mathematical language
 \begin{equation}\label{eq:RBC-hypothesis}
 H: x_{i} > y_{j}, \quad x \ \in X,\ y \in Y.
 \end{equation}
-Then the~value of~the~RBC coefficient is~the~difference between the~proportion of~random pairs of~observations that are~favorable~(f) to~the~hypothesis and the~complementary proportion of~random pairs that are unfavorable to~the~hypothesis. Thus, this formula is~a~formula for~the~difference between the~CLES scores for~each of~the~groups.
+Then the value of the RBC coefficient is the difference between the proportion of random pairs of observations that are favorable~(f) to the hypothesis and the complementary proportion of random pairs that are unfavorable to the hypothesis. Thus, this formula is a formula for the difference between the CLES scores for each of the~groups.
 \begin{equation}\label{eq:RBC-formula-1}
 r = f - u = CLES_{1} - CLES_{2} = f - (1 - f)
 \end{equation}
-There are also a~number of~alternative formulas that give identical results:
+There are also a number of alternative formulas that give identical results.
 \begin{equation}\label{eq:RBC-formula-2}
 r = 2f -1 = \frac{2U_{1}}{n_{1}n_{2}}-1 = 1 - \frac{2U_{2}}{n_{1}n_{2}}.
 \end{equation}
 %
-\subsection{Calculation of~the~p-value and the~final test of~the~null hypothesis}
-If~the~number of~observations in~both samples is~large enough, the~U-statistic has~an~approximately normal distribution. Then its~\href{https://en.wikipedia.org/wiki/Standard_score}{standardized value}~(z-score)~\cite{Wiki:z-score} can~be calculated by~the formula
+\subsection{Calculation of the p-value and the final test of the null hypothesis}
+The U-statistic has an approximately normal distribution if the number of observations in both samples is large enough. Then its~\href{https://en.wikipedia.org/wiki/Standard_score}{standardized value}~(z-score)~\cite{Wiki:z-score} can~be calculated by the formula
 \begin{equation}\label{eq:z-score}
 z = \frac{U-m_{U}}{\sigma_{U}},
 \end{equation}
-where~$m_{U}$ is~mean for~\textit{U} and $\sigma_{U}$ is~its~standard deviation. A~visualization of~the~concept of~\emph{standardized value for~a~normal distribution} is~shown in~Figure~\ref{fig:z-score}.
+where~$m_{U}$ --- is mean for~\textit{U} and $\sigma_{U}$ is its standard deviation. A visualization of the concept of \emph{standardized value for~a~normal distribution} is shown in Figure~\ref{fig:z-score}.
 %
 \begin{figure}[htp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{The_Normal_Distribution.pdf}
-	\caption{A~visualization of~the~concept of~standardized value for~a~normal distribution \cite{Wiki:z-score}}\label{fig:z-score}
+	\includegraphics[width=0.95\textwidth]{The_Normal_Distribution.pdf}
+	\caption{A visualization of the concept of standardized value for a normal distribution \cite{Wiki:z-score}}\label{fig:z-score}
 \end{figure}
 %
-The mean for~the~U is~calculated by~the~formula
+The mean for the U is calculated by the formula
 \begin{equation}\label{eq:U-mean}
 m_{U} = \frac{n_{1}n_{2}}{2}.
 \end{equation}
-The~formula for~the standard deviation in~the case of~no~ties is~as~follows:
+The formula for the standard deviation in the case of no ties is as follows
 \begin{equation}\label{eq:standard-deviation-no-ties}
 \sigma_{U} =  \sqrt{\frac{n_{1}n_{2}(n_{1}+n_{2}+1)}{12}}.
 \end{equation}
-In~case of~the~presence of~tied ranks, a~different formula is~used:
+In case of the presence of tied ranks, a different formula is~used
 \begin{equation}\label{eq:standard-deviation-ties}
 \sigma_{U_{ties}} = \sqrt{\frac{n_{1}n_{2}(n_{1}+n_{2}+1)}{12} - \frac{n_{1}n_{2}\sum_{k=1}^{K}({t_{k}}^{3} - t_{k})}{12n(n-1)}} = \sqrt{\frac{n_{1}n_{2}}{12} \left((n+1)-\frac{\sum_{k=1}^{K}({t_{k}}^{3} - t_{k})}{n(n-1)}\right)},
 \end{equation}
