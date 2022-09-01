@@ -280,31 +280,31 @@ The formula for the standard deviation in the case of no ties is as follows
 \begin{equation}\label{eq:standard-deviation-no-ties}
 \sigma_{U} =  \sqrt{\frac{n_{1}n_{2}(n_{1}+n_{2}+1)}{12}}.
 \end{equation}
-In case of the presence of tied ranks, a different formula is~used
+A different formula is~used in case of the presence tied ranks
 \begin{equation}\label{eq:standard-deviation-ties}
 \sigma_{U_{ties}} = \sqrt{\frac{n_{1}n_{2}(n_{1}+n_{2}+1)}{12} - \frac{n_{1}n_{2}\sum_{k=1}^{K}({t_{k}}^{3} - t_{k})}{12n(n-1)}} = \sqrt{\frac{n_{1}n_{2}}{12} \left((n+1)-\frac{\sum_{k=1}^{K}({t_{k}}^{3} - t_{k})}{n(n-1)}\right)},
 \end{equation}
-where~$t_{k}$ is~the~number of~observations with rank~\textit{k} and \textit{K} is~the~total number of~tied ranks. Then, by~obtaining a~standardized value~(z-score) and~using an~approximation of~the~standard normal distribution, the~p-value for~a~given level of~significance (usually~0.05) is~calculated. The~interpretation of~the~result is~as~follows:
+where~$t_{k}$ --- is the number of observations with rank~\textit{k} and \textit{K} --- is the total number of tied ranks. Then, the p-value is calculated for a given level of significance (usually~0.05) by obtaining a standardized value (z-score) and using an approximation of the standard normal distribution. The interpretation of the result is as follows
 \begin{equation}\label{eq:p-interpretation}
 \begin{aligned}
 p &\leq 0.05 \Rightarrow \text{the~null hypothesis is~rejected}\\
 p &> 0.05 \Rightarrow \text{the~null hypothesis can~not~be rejected}.
 \end{aligned}
 \end{equation}
-However, there is~also an~alternative interpretation:
+However, there is also an alternative interpretation
 \begin{equation}\label{eq:p-interpretation-2}
 \begin{aligned}
 p &< 0.05 \Rightarrow \text{the~null hypothesis is~rejected}\\
 p &\geq 0.05 \Rightarrow \text{the~null hypothesis can~not~be rejected}.
 \end{aligned}
 \end{equation}
-To~date, there is~no~unambiguous position on~how the~situation when $p = \alpha$ should~be interpreted. This paper uses the~version described in~\ref{eq:p-interpretation}.
+To date, there is no unambiguous position on how the situation when $p = \alpha$ should~be interpreted. This paper uses the~version described in~\ref{eq:p-interpretation}.
 %
 \section{Relationship to~other statistical tests}
 \subsection{Comparison of~Wilcoxon-Mann-Whitney U-test with Student's t-test}
-You often hear that the~U-test is~the~nonparametric counterpart of~the~Student's t-test, designed for~data whose distribution differs from the~normal one. From a~purely practical point of~view, we~can indeed say that in~the~case of~a~normal distribution it~is~advisable to~determine whether there is~a~significant difference between the~two samples by~means of~the~t-test, and in~the~case of~a~distribution that differs from the~normal by~means of~the~U-test. Thus, it~can~be said that these tests are~used for~the~same ultimate purpose.
+You often hear that the U-test is the nonparametric counterpart of the Student's t-test. It designed for data whose distribution differs from the normal one. We can indeed say that in the case of a normal distribution it is advisable to determine whether there is a significant difference between the two samples by~means of the t-test. And in the case of a distribution that differs from the normal by means of the U-test. Thus, it can be said that these tests are used for the same ultimate purpose from a purely practical point of view.
 
-However, the~mathematical meaning of~the~U-test and~the~t-test are~significantly different. As~stated earlier, the~U-test is~designed to~test the~null hypothesis, which is~that for~randomly chosen from two samples of~observations $x \in X$ and~$y \in Y$ the~probability that~\textit{x} is~greater than~\textit{y} is~equal to~the~probability that~\textit{y} is~greater than~\textit{x}, the~alternative hypothesis carries the~claim that these probabilities are~not equal. At~the~same time, the~t-test is~designed to~test the~null hypothesis that the~means of~the~two samples are~equal, while the~alternative hypothesis is~that the~means of~the~two samples are~not~equal. In~this regard, when comparing these tests, we~should keep in~mind that, in~general, the~U-test and~the~t-test check different null hypotheses, although they have partly similar practical meaning. The~result of~the~U-test is~most often very close to~the~result of~the~two-sample t-test for~ranked data. Table~\ref{tab:U-test-t-test-comparison} then provides a~general comparison of~the~U-test with the~t-test.
+The mathematical meaning of the U-test and the t-test is significantly different, however. The U-test is designed to test the null hypothesis, which is that for randomly chosen from two samples of observations $x \in X$ and $y \in Y$ the probability that~\textit{x} is greater than~\textit{y} is equal to the probability that \textit{y} is greater than \textit{x}. And the alternative hypothesis carries the claim that these probabilities are not equal as stated earlier. The t-test is designed to test the null hypothesis that the means of the two samples are equal while the alternative hypothesis is that the means of the two samples are not equal at the same time. In this regard we should keep in mind that when comparing in general these tests that the U-test and the t-test check different null hypotheses. Although they have partly similar practical meaning. The result of the U-test is most often very close to the result of the two-sample t-test for ranked data. Table~\ref{tab:U-test-t-test-comparison} provides a general comparison of the~U-test with the~t-test.
 %
 \begin{table}[htp]
 	\caption{Properties of~the~U-test relative to~the~t-test.}  \label{tab:U-test-t-test-comparison}
@@ -313,52 +313,57 @@ However, the~mathematical meaning of~the~U-test and~the~t-test are~significantly
 		\hline
 		Property&Description\\
 		\hline
-		Applicability to~ordinal data&When working with ordinal~(rank) data, rather than quantitative data, the~U-test is~preferable to~the~t-test, remembering that the~distance between neighboring values of~the~variation series cannot~be considered constant.\\
+		Applicability to ordinal data&The U-test is preferable to the t-test when working with ordinal (rank) data rather than quantitative data. Remember that the distance between neighboring values of the variation series cannot~be considered constant.\\
 		\hline
-		Robustness&Since the~U-test handles the~sum of~ranks rather than trait values, it~is less likely than the~t-test to~erroneously indicate significance due~to outliers. However, in~general, the~U-test is~more prone to~type~I error in~the~case when the~data simultaneously have the~property of~heteroscedasticity and~have a~distribution other than normal.\\
+		Robustness&The U-test is less likely than the t-test to erroneously indicate significance due to outliers, since the first handles the sum of ranks rather than trait values. At the same time, the U-test is more prone to type I error, generally in the case when the data simultaneously have the property of heteroscedasticity and have a distribution other than normal.\\
 		\hline
-		Efficiency&In~the~case of~a~normal distribution, the~asymptotic efficiency of~the~U-test is~$\frac{3}{4}\pi \approx 0.95$ of~the~t-test~\cite{U-test-efficiency}. If~the~distribution differs significantly from the~normal one and~the~number of~observations is~large enough, the~efficiency of~the~U-test is~significantly higher than the~efficiency of~the~t-test~\cite{Practical-Nonparametric-Statistics}. However, this efficiency comparison should~be interpreted with caution, because the~U-test and the~t-test examine different hypotheses and~estimate different values. In~the~case, for~example, of~the~need to~compare means, the~use of~the~U-test is~not justified in~principle.\\
+		Efficiency&The asymptotic efficiency of the U-test is~$\frac{3}{4}\pi \approx 0.95$ of the t-test~\cite{U-test-efficiency} in the case of a normal distribution. The efficiency of the U-test is significantly higher than the efficiency of the t-test if the distribution differs significantly from the normal one and the number of observations is large enough~\cite{Practical-Nonparametric-Statistics}. However, this efficiency comparison should be interpreted with caution because the U-test and the t-test examine different hypotheses and estimate different values. The use of the U-test is not justified in principle in the case for example of the need to compare means.\\
 		\hline
 	\end{tabularx}
 \end{table}
 %
-\subsection{Alternative tests in~the~case of~inequality of~distributions}
-If~it~is necessary to~test the~stochastic ordering of~two samples (i.e.~the~alternative hypothesis: $H1:\ P(Y>X)+0.5P(Y=X)\neq0.5$) without assuming equality of~their distributions (i.e.~when the null hypothesis is~$H0:\ P(Y>X)+0.5P(Y=X)=0.5$ but not $F(X)=G(Y)$), more appropriate tests should~be used. These include the~Brunner-Munzel test~\cite{Bruner-Munzel-test-1}, which is~a~heteroskedasticity-resistant analog of~the~U-test, and the~Fligner-Policello test~\cite{Fligner-Policello-test}, which is~a~test for~equality of~medians. In~particular, in~the~case of~a~more general null hypothesis $H0:\ P(Y>X)+0.5P(Y=X)=0.5$, the~U-test can often lead to~a~type~I error even in~the case of~large samples (especially in~the~case of~disparity of~variance and significantly different sample sizes), so~that in~such cases the use of~alternative tests is~preferable~\cite{U-test-vs-Bruner-Munzel-test}. Thus, in~the absence of~the assumption of~equality of~distributions in~case the null hypothesis is~valid, the use of~alternative tests will~be preferable.
+\subsection{Alternative tests in the case of inequality of distributions}
+More appropriate tests other than U-test should~be used in the case of need to test the stochastic ordering of two samples (i.e.~the alternative hypothesis: $H1:\ P(Y>X)+0.5P(Y=X)\neq0.5$) without assuming equality of their distributions (i.e.~when the null hypothesis is~$H0:\ P(Y>X)+0.5P(Y=X)=0.5$ but not $F(X)=G(Y)$).  These include the Brunner-Munzel test~\cite{Bruner-Munzel-test-1}, which is a heteroskedasticity-resistant analog of the U-test. And the Fligner-Policello test~\cite{Fligner-Policello-test}, which is a test for equality of medians. In particular, the U-test can often lead to a type I error in the case of a more general null hypothesis $H0:\ P(Y>X)+0.5P(Y=X)=0.5$, even with samples of large size. It is highly likely to arise in the case of disparity of variance and significantly different sample sizes. So that the use of alternative tests~\cite{U-test-vs-Bruner-Munzel-test} is preferable, in such cases. Thus, the use of alternative tests will be preferable in the case of absence of the assumption of equality of distributions if the null hypothesis is valid.
 
-In~the case of~testing the hypothesis of~a~shift with significantly different distributions, the U-test may give an~erroneous interpretation of~significance~\cite{U-test-unequal-variance}, so~in~such circumstances it~is preferable to~use a~variant of~the \href{https://en.wikipedia.org/wiki/Welch's_t-test}{t-test}~\cite{Welch-t-test} designed for cases of~unequal variance~\cite{U-test-unequal-variance}. In~some cases, it~may~be justified to~convert quantitative data into ranks and then perform the t-test in~some variant depending on~the assumption of~equality of~variance. When converting quantitative data to~ordinal data, the original variances will not~be preserved; they must~be recalculated for the ranks themselves. In~the case of~equal variance, a~suitable nonparametric substitute for the \href{https://en.wikipedia.org/wiki/F-test}{F-test}~\cite{F-test} can~be the \href{https://en.wikipedia.org/wiki/Brown-Forsythe_test}{Brown-Forsythe test}~\cite{Brown-Forsythe-test}.
+The U-test may give an erroneous interpretation of significance in the case of testing the shift hypothesis with significantly different distributions~\cite{U-test-unequal-variance}. So it is preferable to use a variant of the \href{https://en.wikipedia.org/wiki/Welch's_t-test}{t-test}~\cite{Welch-t-test} designed for cases of unequal variance in such circumstances~\cite{U-test-unequal-variance}. It may be justified to convert quantitative data into ranks and then perform the t-test in its some variant, depending on the assumption of equality of variance in some cases. The original variances will not be preserved when converting quantitative data to ordinal data. So, they must be recalculated for the ranks themselves. \href{https://en.wikipedia.org/wiki/Brown-Forsythe_test}{The Brown-Forsythe test}~\cite{Brown-Forsythe-test} can be a suitable nonparametric substitute for \href{https://en.wikipedia.org/wiki/F-test}{the F-test}~\cite{F-test} with case of equal variance.
 %
 \subsection{The relationship between the U-test and the classification tasks}\label{U-test&classification}
-The U-test is~a particular case of~the \href{https://en.wikipedia.org/wiki/Ordered_logit}{ordered logit model}~\cite{Ordered-logit}.
+The U-test is a particular case of the \href{https://en.wikipedia.org/wiki/Ordered_logit}{ordered logit model}~\cite{Ordered-logit}.
 %
-\section{The relationship between the U-test and the concepts of~Receiver operating characteristics~(ROC) and Area under the curve~(AUC)}\label{U-AUC}
-Based on~what was said in~\ref{U-test&classification}, we~can conclude that the U-test is~not only a~test for testing the shift hypothesis (or~another one similar in~meaning), but also represents a~kind of~classifier. Looking ahead, the meaning of~the U-test as~a~classifier is~as~follows:
+\section{The relationship between the U-test and the concepts of Receiver operating characteristics~(ROC) and Area under the curve~(AUC)}\label{U-AUC}
+We can conclude that the U-test is not only a test for testing the shift hypothesis (or another one similar in meaning) based on what was said in~\ref{U-test&classification}. It also represents a kind of binary classifier. Looking ahead, the meaning of the U-test as a binary classifier is as follows:
 \begin{itemize}
-	\item there is~a~"positive" outcome of~comparing two random observations, which is~that the observation from~\textit{X} is~greater than the observation from~\textit{Y};
-	\item the proportion of~the sum of~the ranks of~the "positive" elements is~calculated.
-	\item as~in~general with ROC, if~the value of~the share of~"positive" elements exceeds~0.5, this means that the classifier generally performs its function; if~it~is equal to~0.5, its efficiency is~equal to~guessing with a~coin flip; if~it~is less than~0.5, using such classifier yields the opposite result.	 
+	\item There is a "positive" outcome of comparing two random observations, which is that the observation from~\textit{X} is greater than the observation from~\textit{Y};
+	\item The proportion of the sum of ranks for "positive" elements is calculated.;
+	\item
+	\begin{itemize}
+		\item if the value of the share of "positive" elements exceeds~0.5, this means that the classifier generally performs its function as in general with ROC;
+		\item if it is equal to~0.5, its efficiency is equal to guessing with a coin flip;
+		\item if it is less than~0.5, using such classifier yields the opposite result.
+	\end{itemize} 	 
 \end{itemize}
-At~first glance, the relationship between the U-test and ROC does~not seem obvious. This section will attempt to~understand why these concepts are related and what~is the essence of~the U-test as~a~classifier.
+The relationship between the U-test and ROC does not seem obvious at first glance. This section will attempt to understand why these concepts are related and what is the essence of the U-test as a binary classifier.
 
-ROC analysis itself is~outside the scope of~this paper. Therefore, let~us consider only its main points.
+ROC analysis itself is outside the scope of this paper. Therefore, let us consider only its main points.
 \begin{description}
-	\item[ROC curve ---] is~a~graphical plot that allows us to~evaluate the quality of~binary classification. It~displays the ratio between the proportion of~objects from the total number of~feature carriers correctly classified as~carrying the feature (True Positive Rate~(TPR), called the \emph{sensitivity of the classification algorithm}) and the proportion of~objects from the total number of~objects not carrying the feature, incorrectly classified as~carrying the feature (False Positive Rate~(FPR), the \textbf{1-FPR} value is~called the \emph{specificity of~the classification algorithm}), when varying the threshold of~the deciding rule.	It~is also known as~\textbf{error curve}. Analysis of~classifications using ROC curves is~called \textbf{ROC analysis}.
+	\item[ROC curve ---] is a graphical plot that allows us to evaluate the quality of binary classifier. It displays the ratio between the proportion of objects from the total number of feature carriers correctly classified as carrying the feature (True Positive Rate (TPR) called the \emph{sensitivity} of the classification algorithm) and the proportion of objects from the total number of objects not carrying the feature incorrectly classified as carrying the feature (False Positive Rate (FPR), the \emph{1-FPR} value is called the \emph{specificity} of the classification algorithm), when varying the threshold of the deciding rule. It is also known as \textbf{error curve}. Analysis of classifications using ROC curves is called \textbf{ROC analysis}.
 \end{description}
-Quantitative interpretation of~the ROC curve gives the Area under the curve~(AUC).
+Quantitative interpretation of the ROC curve gives the Area under the curve (AUC).
 \begin{description}
-	\item[Area under the curve~(AUC) ---] is~the area bounded by~the ROC curve and the axis of~the proportion of~false positive classifications (abscissa axis).
+	\item[Area under the curve~(AUC) ---] is the area bounded by the ROC curve and the axis of the proportion of false positive classifications (abscissa axis).
 \end{description}
-The higher the AUC, the better the quality of~the classifier, while a~value of~0.5 demonstrates the unsuitability of~the chosen classification method (corresponding to~a~random coin guessing). A value of less than 0.5 indicates that the classifier works exactly the other way around: if you call positive results negative and vice versa, the classifier will perform better~\cite{Wiki:ROC}.
+The higher the AUC, the better the quality of the classifier. A value of 0.5 demonstrates the unsuitability of the chosen classification method, it corresponds to a random coin guessing. A value of less than~0.5 indicates that the classifier works exactly the other way around: if you call positive results negative and vice versa, the classifier will perform better~\cite{Wiki:ROC}.
 
 Let's introduce some terms.
 \begin{description}
-	\item[Condition positive~(P) --- ] the number of real positive cases in~the data.
-	\item[Condition negative~(N)---] the number of real negative cases in the data.
-	\item[True positive~(TP) ---] a~test result that correctly indicates the presence of~a~condition or~characteristic.
-	\item[True negative~(TN) ---] a~test result that correctly indicates the absence of~a~condition or~characteristic.
-	\item[False positive~(FP) ---] a~test result which wrongly indicates that a~particular condition or~attribute is~present.
-	\item[False negative~(FN) ---] a~test result which wrongly indicates that a~particular condition or~attribute is~absent.
+	\item[Condition positive~(P) --- ] is the number of real positive cases in the data.
+	\item[Condition negative~(N)---] is the number of real negative cases in the data.
+	\item[True positive~(TP) ---] is a test result that correctly indicates the presence of some condition or characteristic.
+	\item[True negative~(TN) ---] is a test result that correctly indicates the absence of some condition or characteristic.
+	\item[False positive~(FP) ---] is a test result which wrongly indicates that some condition or attribute is present.
+	\item[False negative~(FN) ---] is a test result which wrongly indicates that some particular condition or attribute is absent.
 \end{description}
-Based on~the above, we~can create a~contingency table of~the results of~applying the binary classifier. The rows contain data on~the actual presence or~absence of~the feature, the columns on~the predicted with the classifier.
+We can create a contingency table of the binary classifier applying results based on the above. The rows contain data on the actual presence or absence of the feature, the columns on the predicted with the classifier.
 %
 \begin{table}[htp]
 	\caption{Binary classifier contingency table.}  \label{tab:ROC-contingency-table}
@@ -374,7 +379,7 @@ Based on~the above, we~can create a~contingency table of~the results of~applying
 	\end{tabularx}
 \end{table}
 %
-As~can~be seen from Table~\ref{tab:ROC-contingency-table}, the binary classifier can lead to~errors of~two types. Let's introduce some more definitions and define the formulas for calculating the probabilities of~its outcomes~(see tables~\ref{tab:ROC-rates-1}--\ref{tab:ROC-rates-3}).
+The binary classifier can lead to errors of~two types as can be seen from the Table~\ref{tab:ROC-contingency-table}. Let's introduce some more definitions and define the formulas for calculating the probabilities of classifier's running outcomes~(see tables~\ref{tab:ROC-rates-1}--\ref{tab:ROC-rates-3}).
 %
 \begin{table}[htp]
 	\caption{Additional definitions and formulas for calculating the probabilities of binary classifier outcomes (part~1 of~3).}\label{tab:ROC-rates-1}
@@ -492,7 +497,7 @@ As~can~be seen from Table~\ref{tab:ROC-contingency-table}, the binary classifier
 	\normalsize
 \end{table}
 %
-The TPR probability can~be written as
+The TPR probability can be written as
 \begin{equation}\label{eq:TPR-probability}
 P_{TPR} = \mathbb{P}(1,\ x\in C_{1}),
 \end{equation}
