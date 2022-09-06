@@ -501,26 +501,26 @@ The TPR probability can be written as
 \begin{equation}\label{eq:TPR-probability}
 P_{TPR} = \mathbb{P}(1,\ x\in C_{1}),
 \end{equation}
-which means that if~object~\textit{x} belongs to~class~$C_{1}$, this indicator estimates the probability that the binary classifier assigns object~\textit{x} to~this class. The probability of~FPR is~written as
+which means that if object~\textit{x} belongs to class~$C_{1}$, this indicator estimates the probability that the binary classifier assigns object~\textit{x} to this class. The probability of FPR is written as
 \begin{equation}\label{eq:FPR-probability}
 P_{FPR} = \mathbb{P}(1,\ x\in C_{0}),
 \end{equation}
-which means the probability that an~object belonging to class~$C_0$ will~be mistakenly assigned to~class~$C_1$.
+which means the probability that an object belonging to class $C_0$ will~be mistakenly assigned to~class~$C_1$.
 
-Typically, the working principle of~a~binary classifier is~based on~comparing the measurement of~\textit{x} with some fixed threshold~\textit{c}. It~follows that the previous two expressions can~be rewritten and combined into a~system.
+Typically, the working principle of a binary classifier is based on comparing the measured value of~\textit{x} with some fixed threshold~\textit{c}. It follows that the previous two expressions can~be rewritten and combined into a system.
 \begin{equation}\label{eq:TRP+FPR-probability}
 \begin{cases}
 P_{TPR} = \mathbb{P}(x>c,\ x \in C_{1})\\
 P_{FPR} = \mathbb{P}(x>c,\ x \in C_{0})
 \end{cases}
 \end{equation}
-It~follows that the ROC curve is~a~diagram
+It follows that the ROC curve is a diagram
 \begin{equation}\label{eq:ROC-contour}
-P_{FPR}(c),\ P_{TPR}(c),
+P_{FPR}(c),\ P_{TPR}(c).
 \end{equation}
-thus, drawing the curve means changing the value of~threshold~\textit{c}.
+Thus, drawing the curve means changing the value of~threshold~\textit{c}.
 
-Let's consider the example~\cite{AUC-Derivation}. Let's take~$f(x\in C_{0}) = \mathcal{N}(0,1)$ and~$f(x\in C_{1}) = \mathcal{N}(2,1)$ as~probability density functions~$C_{0}$ and~$C_{1}$, respectively. Next we~build the ROC curve step by~step using the Python language. At~the first step, consider diagram~\ref{fig:plot-TPR-FPR-prob-density-1}, built using the code given in~script~\ref{lst:plot-TPR-FPR-prob-density}. The area shaded blue shows the probability of~FPR, i.\,e., false-positive significance detection, while the area shaded green shows the probability density of TPR, i.\,e., correct significance detection. The ROC curve shows the values of~these very indicators. The vertical dashed line is~the sensitivity threshold~\textit{c}. In~this situation it~is at~0 on~the abscissa axis. If~it~is moved to~1, the area under the FPR curve (blue) will significantly decrease, i.\,e. the probability of~false-positive detection will decrease, but the TPR area (green) will decrease as~well, which means an~increase in~the probability of~false-negative results. This situation is~illustrated in~Diagram~\ref{fig:plot-TPR-FPR-prob-density-2}.
+Let's consider the example~\cite{AUC-Derivation}. Let's take~$f(x\in C_{0}) = \mathcal{N}(0,1)$ and~$f(x\in C_{1}) = \mathcal{N}(2,1)$ as probability density functions~$C_{0}$ and~$C_{1}$, respectively. Next, we will create the ROC curve step-by-step using the Python language. At the first step, consider diagram~\ref{fig:plot-TPR-FPR-prob-density-1}, built using the code given in~script~\ref{lst:plot-TPR-FPR-prob-density}. The area shaded blue shows the probability of~FPR, i.\,e., false-positive significance detection. The area shaded green shows the probability density of TPR, i.\,e., correct significance detection. The ROC curve shows the values of these very indicators. The vertical dashed line is the sensitivity threshold~\textit{c}. In this situation, it is at~0 on the abscissa axis. If it is moved to 1, the area under the FPR curve (blue) will significantly decrease, i.\,e., the probability of false positive detection will decrease. But the TPR area (green) will decrease as well, which means an increase in the probability of false negative results. This situation is illustrated in Diagram~\ref{fig:plot-TPR-FPR-prob-density-2}.
 %
 \begin{figure}[htp]
 	\centering
@@ -560,13 +560,13 @@ plt.savefig('Plot-ROC-step-1.pdf', bbox_inches='tight')
 	\label{fig:plot-TPR-FPR-prob-density-2}
 \end{figure}
 
-As~you can see from the diagrams above, increasing the threshold leads to~the loss of~a~part of~both true-positive and false-positive results, while decreasing~it leads to~an~increase in~the number of~fixations of~the feature presence (both true and false). In~extreme cases, too low a~threshold value will lead to~the fact that all results will~be interpreted as~positive, too high --- to~a~zero number of~observations in~which the feature was detected. The task of~ROC analysis is~to~choose a~rational threshold value.
+As you can see from the diagrams~\ref{fig:plot-TPR-FPR-prob-density-1} and~\ref{fig:plot-TPR-FPR-prob-density-2} increasing the threshold leads to the loss of a part of both true-positive and false-positive results. While decreasing its value leads to an increase in the number of fixations of the feature presence (both true and false). In extreme cases, too low a threshold value will lead to the fact that all results will be interpreted as positive, while too high to a zero number of observations in which the feature was detected. It is the task of ROC analysis to choose a rational threshold value.
 
-Let's add the ROC curves corresponding to~thresholds~0 and~1 to~the already existing diagrams. And also create an~interactive diagram using the code from script~\ref{lst:plot-TPR-FPR-prob-density+ROC-interactive}. The PDF format does~not allow you to~add such interactive elements, so~let's consider cases with fixed values of~0 and~1, shown in~Diagrams~\ref{fig:plot-TPR-FPR-prob-density-3} and \ref{fig:plot-TPR-FPR-prob-density-4}, respectively. The left side of~each of~them shows the already familiar probability density function graphs for the TPR and FPR distributions. The right part shows the ROC curve and the point corresponding to~the set threshold value. It~is easy to~guess that the x-coordinate of~the point matches the area under the FPR curve, and the y-coordinate matches the area under the TPR curve. Increasing the threshold value entails shifting the point to~the left, decreasing~it to~the right.
+Let's add to the already existing diagrams the ROC curves corresponding to thresholds 0 and 1. And also create an interactive diagram using the code from script~\ref{lst:plot-TPR-FPR-prob-density+ROC-interactive}. The PDF format does not allow you to add such interactive elements, so let's consider cases with fixed values of~0 and~1 shown in Diagrams~\ref{fig:plot-TPR-FPR-prob-density-3} and~\ref{fig:plot-TPR-FPR-prob-density-4} respectively. The left side of each of them shows the already familiar probability density function graphs for the TPR and FPR distributions. The right part shows the ROC curve and the point corresponding to the set threshold value. It is easy to guess that the x-coordinate of the point matches the area under the FPR curve and the y-coordinate matches the area under the TPR curve. Increasing the threshold value entails shifting the point to the left, decreasing it to the right.
 
-The better the binary classifier itself, the closer to~the upper left corner will~be the ROC curve corresponding to~it, because in~this case a~high TPR value will~be combined with a~low FPR value. The binary classifier, which works as~well (actually badly) as~the coin flip guessing algorithm (in~case the coin is~"fair"), gives a~ROC curve, which is~a~straight line between~(0,0) and~(1,1). In~this case, the left part of~the diagram will show a~complete overlap of~TPR and FPR probability density function curves. Such a~case is~shown in~Diagram~\ref{fig:plot-TPR-FPR-prob-density-3}. For self-practice, you can use Script~\ref{lst:plot-TPR-FPR-prob-density+ROC-interactive} by~running~it in~the Jupyter Lab environment, which allows you to~use the interactive features of~the browser.
+The better the binary classifier itself, the closer to the upper left corner the ROC curve corresponding to it will be. A high TPR value will be combined with a low FPR value in this case. The binary classifier which works as well (actually badly) as the guessing algorithm based on coin flip  (in case of "fair" coin) gives a ROC curve which is a straight line between (0,0) and (1,1). The left part of the diagram will show a complete overlap of TPR and FPR probability density function curves in this case. Such a situation is shown in Diagram~\ref{fig:plot-TPR-FPR-prob-density-3}. You can use Script~\ref{lst:plot-TPR-FPR-prob-density+ROC-interactive} 5 by running it in the Jupyter Lab environment for self-practice. It allows you to use the interactive features of the browser.
 %
-\begin{lstlisting}[float=htp, caption = Build an~interactive graph of~TPR and FPR distribution density and its corresponding ROC curve for a~given threshold value, firstnumber=1, label= lst:plot-TPR-FPR-prob-density+ROC-interactive]
+\begin{lstlisting}[float=htp, caption = Build an~interactive graph of~TPR and FPR distribution density and its corresponding ROC curve for a given threshold value, firstnumber=1, label= lst:plot-TPR-FPR-prob-density+ROC-interactive]
 # Import Libraries
 %matplotlib inline
 from ipywidgets import interact
@@ -614,94 +614,94 @@ interact(plot_roc_interact,c=(-3,5,.05))
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-30.pdf}
-	\caption{Diagram of~TPR and FPR probability distribution densities at~threshold~0.}
+	\caption{Diagram of TPR and FPR probability distribution densities at threshold~0.}
 	\label{fig:plot-TPR-FPR-prob-density-3}
 \end{figure}
 %
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-4.pdf}
-	\caption{Diagram of TPR and FPR probability distribution densities at threshold 1.}
+	\caption{Diagram of TPR and FPR probability distribution densities at threshold~1.}
 	\label{fig:plot-TPR-FPR-prob-density-4}
 \end{figure}
 %
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-5.pdf}
-	\caption{Diagram of~probability densities of~TPR and FPR probability distributions at~equal mean.}
+	\caption{Diagram of probability densities of TPR and FPR probability distributions at equal mean.}
 	\label{fig:plot-TPR-FPR-prob-density-5}
 \end{figure}
 %
-\subsection{The concept of~AUC and its calculation}
-As~the name implies, the AUC is~the area under the ROC curve bounded by~the point corresponding to~a~given threshold value. In~the normalized space in~which the ROC curve is~usually plotted, the AUC value is~equivalent to~the probability that the classifier assigns a~higher weight to~a~randomly chosen positive entity than to~a~randomly chosen negative entity. The AUC does not depend on~a~specific threshold value, because the ROC curve is~constructed by~fitting~it. This means that the AUC is~calculated by~integrating over the thresholds. The AUC is~given by~the expression:
+\subsection{The concept of AUC and its calculation}
+The AUC is the area under the ROC curve bounded by the point corresponding to a given threshold value, as the name implies. The AUC value is equivalent to the probability that the classifier assigns a higher weight to a randomly chosen positive entity than to a randomly chosen negative entity. This statement is true for the normalized space in which the ROC curve is usually plotted. The AUC does not depend on a specific threshold value because the ROC curve is constructed by fitting it. This means that the AUC is calculated by integrating over the thresholds. The AUC is given by the expression
 \begin{equation}\label{eq:AUC-computation-0}
 AUC = \int P_{TPR}(P_{FPR}) d P_{FPR}.
 \end{equation}
-The step-by-step calculation of~the AUC is~as~follows.
+The step-by-step calculation of the AUC is as follows.
 \begin{equation}\label{eq:AUC-computation-1}
 P_{TPR}(c) = 1 - F_{1}(c),
 \end{equation}
-where~$F_{1}$ is~the cumulative density function for~$C_{1}$. Similarly calculate
+where~$F_{1}$ is the cumulative density function for~$C_{1}$. Similarly calculate
 \begin{equation}\label{eq:AUC-computation-2}
 P_{FPR}(c) = 1 - F_{0}(c),
 \end{equation}
-where~$F_{0}$ is~the cumulative density function for~$C_{0}$.
+where~$F_{0}$ is the cumulative density function for~$C_{0}$.
 
 
-Let~us take some particular value of~$c^{*}$ to~which a~certain~$P_{FPR}(c^{*})$ corresponds. In~other words, it~corresponds to~the probability that a~random element~$x_{0}$ belonging to~class~$C_{0}$ is~greater than the threshold value~$c^{*}$, i.e.
+Let us take some particular value of~$c^{*}$ to which a certain~$P_{FPR}(c^{*})$ corresponds. It corresponds exactly to the probability that a random element~$x_{0}$ belonging to class~$C_{0}$ is greater than the threshold value~$c^{*}$ in other words, i.e.
 \begin{equation}\label{eq:AUC-computation-3}
 P_{FPR}(c^{*}) = \mathbb{P}(x_{0}>c^{*}|x_{0} \in C_{0}).
 \end{equation}
-Then, reasoning similarly with respect to~TPR, we~get
+Then, we get
 \begin{equation}\label{eq:AUC-computation-4}
-P_{TPR}(c^{*}) = \mathbb{P}(x_{1}>c^{*}|x_{1} \in C_{1}).
+P_{TPR}(c^{*}) = \mathbb{P}(x_{1}>c^{*}|x_{1} \in C_{1})
 \end{equation}
-Next, based on~the fact that the AUC is~realized through an~integral, we~select its value so~that the distribution of~$c^{*}$ matches the distribution of~$F_{0}$. In~this case,~$P_{TPR}$ is~an~independent random variable with a~corresponding expectation in~the form of
+reasoning similarly with respect to TPR. Next, we select its value so that the distribution of~$c^{*}$ matches the distribution of~$F_{0}$ based on the fact that the AUC is realized through an integral. $P_{TPR}$ is an independent random variable with a corresponding expectation in the form of
 \begin{equation}\label{eq:AUC-computation-integral}
 \mathbb{E}(P_{TPR}) = \int P_{TPR} d P_{FPR} = AUC.
 \end{equation}
-It~is~now possible to~formulate a~definition for the AUC.
+in this case. It is now possible to formulate a definition for the AUC.
 \begin{description}
-	\item[AUC ---] is~the expected probability that element~$x_{1} \in C_{1}$ will~be assigned to~$C_{1}$ with higher probability than element~$x_{0} \in C_{0}$. Thus,
+	\item[AUC ---] is the expected probability that element~$x_{1} \in C_{1}$ will be assigned to~$C_{1}$ with higher probability than element~$x_{0} \in C_{0}$. Thus,
 	\begin{equation}\label{eq:AUC-definition}
 	1-F_{1}(t)>1-F_{0}(t) \forall t.
 	\end{equation}
-	The wording "for any t" means that~$1-F_{1}(t)$ is~\emph{stochastically} greater than~$1-F_{0}(t)$. The latter circumstance is~key in~terms of~the relationship of~the AUC to~the U-test, which will~be shown later.
+	The wording "for any t" means that~$1-F_{1}(t)$ is \emph{stochastically} greater than~$1-F_{0}(t)$. The latter circumstance is key in terms of the relationship of the AUC to the U-test, which will be shown later.
 \end{description}
 %
-\subsection{Relation between U-test and AUC}\label{U-test&AUC-relation}
-A~fairly detailed description of~the U-test was given earlier. This subsection contains only brief information about~it, which is~directly relevant to~the question of~its relationship to~the AUC.
+\subsection{Relation between the U-test and AUC}\label{U-test&AUC-relation}
+A fairly detailed description of the U-test was given earlier. This subsection contains only brief information about it which is directly relevant to the question of its relationship to AUC.
 
-The U-test is~a~non-parametric test that allows you to~test whether two samples belong to~the same distribution. His basic idea is~that if~there is~no~difference between two classes, then combining them into one larger class (set) and then calculating any statistic for the new larger class will give an~unbiased estimate for any of~the initial classes. In~other words, if~there is~no~difference in~the distribution of~the two samples, combining them and assuming that the actually observed data from the two samples represent only one of~the equal-valued variants of~the moving observations means that there is~no~difference in~any statistical estimate for any of~the moving variants relative to~the other, and relative to~the combined set.
+The U-test is a non-parametric test that allows you to test whether two samples belong to the same distribution. His basic idea is that if there is no difference between two classes, then combining them into one larger class (set) and then calculating any statistic for the new larger class will give an unbiased estimate for any of the initial classes. In other words. If there is no difference in the distribution of the two samples, we can combine them and assume that the actually observed data from the two samples represent only one of the equal valued variants of the moving of observations. It means that there is no difference in any statistical estimate for any of the moving variants relative to the other and relative to the combined set.
 
-Let's suppose that we~need to~compare two samples using the median, the mean, or~some other measure of~central tendency. In~terms of~cumulative distribution functions for the two populations, in~the case of~$H0$ we~have the following:
+Let's suppose that we need to compare two samples using the median, mean or some other measure of central tendency. In terms of cumulative distribution functions for the two populations in the case of~$H0$, we have the following
 \begin{equation}\label{eq:U-AUC-H0}
 H_0: F_{X}(t) = F_{Y}(t), \quad \forall t,
 \end{equation}
-which indicates that all observations belong to~the same distribution. Then an~alternative hypothesis is~that
+which indicates that all observations belong to~the same distribution. Then an alternative hypothesis is that
 \begin{equation}\label{eq:U-AUC-H1}
 H_1: F_{X}(t) < F_{Y}(t), \quad \forall t,
 \end{equation}
-which is~possible, in~particular, in~the case of~the existence of~a~shift of~one distribution relative to~the other. In~this case, the samples ${X_{i}}_{i=1}^{n},\ {X_{j}}_{j=1}^{m}$ represent independent groups of~observations. In~this case, the size of~the samples may vary.
+which is possible in particular in the case of the existence of a shift of one distribution relative to the other. The samples ${X_{i}}_{i=1}^{n},\ {X_{j}}_{j=1}^{m}$ represent independent groups of observations in this case. The size of the samples may vary.
 
-The test technique consists of~combining two samples into one set and assigning ranks to~each item within~it. The U-statistic is~the sum of~the ranks for the set~\textit{X}. If~the value of~the statistic is~small enough, it~means that the distribution of~set~\textit{X} is~stochastically shifted to~the left relative to~the distribution of~set~\textit{Y}, i.\,e.~$F_{X}{t} < F_{Y}{t}$.
+The test technique consists of combining two samples into one set and assigning ranks to each item within it. The U-statistic is the sum of ranks for set~\textit{X}. If the value of statistic is small enough, it means that the distribution of set~\textit{X} is stochastically shifted to the left relative to the distribution of set \textit{Y} i.\,e.,~$F_{X}{t} < F_{Y}{t}$.
 
-Since with a~sufficiently large number of~observations (20 or~more) the distribution of~U-statistics is~well approximated by~the normal distribution, the p-value is~suitable for assessing significance. Let's calculate it~using the Python language according to~the script~\ref{lst:AUC-p-value}.
+The p-value is suitable for assessing significance, since with a sufficiently large number of observations (20 or more) the distribution of U-statistics is well approximated by the normal distribution. Let's calculate it using the Python language according to the script~\ref{lst:AUC-p-value}.
 %
 \begin{lstlisting}[float=htp, caption = Calculation of~the p-value for the test data, firstnumber=1, label= lst:AUC-p-value]
 print('p-value:',stats.wilcoxon(f1.rvs(30), f0.rvs(30))[1])
 
 \end{lstlisting}
-The p-value is~1.9729484515803686e-05, which is~less than the significance level~(0.05), so~we~can reject the null hypothesis~\ref{eq:U-AUC-H0}. Since the data were randomly generated, if~the experiment is~repeated, the particular p-value will differ from that obtained when writing this paper. However, it~will always be below the threshold because of~the parameters set in~the algorithm.
+The p-value is~1.9729484515803686e-05, which is less than the significance level~(0.05). So we can reject the null hypothesis~\ref{eq:U-AUC-H0}. If the experiment is repeated, the particular p-value will differ from that obtained when writing this paper, since the data were randomly generated. It will always be below the threshold because of the parameters set in the algorithm, however.
 
-The U-statistic can be~written as~follows:
+The U-statistic can~be written as follows:
 \begin{equation}\label{eq:U-statistics}
 U = \frac{1}{mn}\sum_{i=1}^{m}\sum_{j=1}^{n}\mathbbm{1}{(Y_{j}>X_{i})},
 \end{equation}
-where~$\mathbbm{1}{(Y_{j}>X_{i})}$ is~the indicator (characteristic) function showing that the statistic (for the discrete case) estimates the probability that~\textit{Y} is~stochastically greater than~\textit{X}. Thus, this correspondence means that its value is~equal to~the AUC. The relationship between the AUC and the U-test is~in a~similar sense: checking the stochastic excess value of~observations belonging to~one sample relative to~observations belonging to~another sample.
+where~$\mathbbm{1}{(Y_{j}>X_{i})}$ is the indicator (characteristic) function showing that the statistic  estimates probability that~\textit{Y} is stochastically greater than~\textit{X} for the discrete case. Thus, this correspondence means that its value is equal to the AUC. The relationship between the AUC and the U-test is in a similar sense: checking the stochastic excess values of observations belonging to one sample relative to observations belonging to another sample.
 %
-\subsection{Practice of~ROC analysis and AUC calculation.}\label{ROC-AUC-theory}
-This subsection is~not required reading if~the goal is~only the practical implementation of~the U-test itself. However, it~gives an~insight into machine learning methods that are not related to~the so-called \emph{frequentist statistics} to~which the U-test itself belongs, and shows the relationship between these areas of~data analysis. In~addition, it~will provide sufficient knowledge to~perform a~ROC analysis as~such, which may~be useful in~other situations that an~appraiser may encounter in~his or~her practice.
+\subsection{Practice of ROC analysis and AUC calculation.}\label{ROC-AUC-theory}
+If the goal is only the practical implementation of the U-test itself, this subsection is not required reading. It gives an insight into machine learning methods that are not related to the so-called \emph{frequentist statistics} to which the U-test itself belongs and shows the relationship between these areas of data analysis, however. This may be useful in other situations that an appraiser may encounter in his or her practice.
 %
 \subsubsection{Plotting the ROC curve}\label{plot-ROC-theory}
 %
@@ -718,10 +718,10 @@ This subsection is~not required reading if~the goal is~only the practical implem
 	showstringspaces=false
 }
 %
-ROC analysis and in~particular the construction of~ROC curves are widely used to~find a~compromise between the \emph{sensitivity} and \emph{specificity} of~a~binary classifier. Most of~the classifiers used in~machine learning produce a~result in~the form of~a~quantification that a~given object has a~"positive" feature value. Some threshold value is~needed to~convert such a~quantitative assessment into a~concrete "yes" or~"no" prediction. In~his case, observations with a~score above this threshold will~be classified as~"positive", below as~"negative". Different thresholds provide different levels of~sensitivity and specificity. Setting a~relatively high threshold value provides a~conservative approach to~the issue of~classifying a~particular case as "positive", which reduces the likelihood of~false positives. At~the same time, this increases the risk of~missing the observed positive values, i.\,e., it~reduces the level of~true positive classification results. A~relatively low threshold value provides a~more liberal approach to~classifying observations as~"positive".  This reduces specificity (increases the number of~false negatives) and increases sensitivity (increases the number of~true positives). The ROC curve shows the ratio of~true positives to~false positives, giving an~overview of~the entire spectrum of~such trade-offs. There are many R~language libraries that plot ROC curves and calculate metrics for ROC analysis. In~this case, to~better understand the essence of~ROC analysis, some actions will~be performed by~writing our own functions. The following will show an~algorithm for constructing a~ROC curve based on~a~set of~real outcomes and their corresponding estimates. The calculation involves two steps:
+ROC analysis and in particular the construction of ROC curves are widely used to find a compromise between the \emph{sensitivity} and \emph{specificity} of a binary classifier. Most of the classifiers used in machine learning produce a result in the form of a quantification that a given object has a "positive" feature value. To convert such a quantitative assessment into a concrete "yes" or "no" prediction, some threshold value is needed. Observations with a score above this threshold will be classified as positive, below as negative. Different thresholds provide different levels of sensitivity and specificity. Setting a relatively high threshold value provides a conservative approach to the issue of classifying a particular case as positive, which reduces the likelihood of false positives. At the same time, it increases the risk of missing the observed positive values, i.e., it reduces the level of true positive classification results. A relatively low threshold value provides a more liberal approach to classifying observations as "positive". This reduces specificity i.e., increases the number of false negatives and increases sensitivity i.e., increases the number of true positives. The ROC curve shows the ratio of true positives to false positives for different thresholds, giving an overview of the entire spectrum of such trade-offs. There are many libraries for R language that plot ROC curves and calculate metrics for ROC analysis. In this paper, some actions will be performed by writing our own functions to better understand the essence of ROC analysis. The following will show an algorithm for constructing a ROC curve based on a set of real outcomes and their corresponding estimates. The calculation involves two steps:
 \begin{itemize}
-	\item sort the observed outcomes in~descending order by~their predicted scores;
-	\item calculation of~total true positive (TPR) and true negative (TNR) scores for ordered observed outcomes.
+	\item sort the observed outcomes in descending order by their predicted scores;
+	\item calculation of total true positive (TPR) and true negative (TNR) scores for ordered observed outcomes.
 \end{itemize}
 Let's create an appropriate function (script~\ref{lst:create-ROC-function-R}).
 %
@@ -738,28 +738,32 @@ FPR=cumsum(!labels)/sum(!labels), labels)
 This function has two inputs:
 \begin{itemize}
 	\item \emph{labels} --- Boolean vector containing actual classification data;
-	\item \emph{scores} --- a~vector of~real numbers containing data about the scores predicted by~some classifier.
+	\item \emph{scores} --- a vector of real numbers containing data about the scores predicted by some classifier.
 \end{itemize}
 %
-Since only two classification outcomes are possible, the labels vector can only contain \emph{TRUE} or~\emph{FALSE} values (or~\emph{1} and~\emph{0} depending on~the analyst's preference). A~sequence of~such binary values can~be interpreted as~a~set of~instructions for a~\href{https://en.wikipedia.org/wiki/Turtle_graphics}{turtle graphics}~\cite{Wiki:turtle-graphics}. There~is one important feature: in~this case the turtle has a~compass and receives instructions for absolute directions of~movement: "to~the north" or~"to~the east" instead of~relative "to~the right" and "to~the left". The turtle starts its movement from the starting point with coordinates~(0,0) and makes its way on~the plane according to~the sequence of~instructions. When a~\emph{TRUE} command is~received, it~takes one step north, i.\,e., in~the positive direction of~the y-axis, and when a~\emph{FALSE} command is~received, it~takes one step east, i.\,e., in~the positive direction of~the x-axis. The length of~the steps is~chosen in~such a~way that if~all \emph{TRUE~(1)} commands are received consecutively, the turtle will~be at~a~point with coordinates~(0,1), all \emph{FALSE~(0)} commands at~a~point with coordinates~(1,0). Thus, the length of~the step "to~the north" may~be different from the length of~the step "to~the east". The path in~the plane is~determined by~the order of~the \emph{TRUE~(1)} and \emph{FALSE~(0)} commands and always ends at~(1,1).
-
-Advancing the turtle through the bits of~the instruction string is~an~adjustment of~the classification threshold to~less and less stringent. Once the turtle has passed the bit, it~means that it~has decided to~classify that bit as~"positive". If~this bit was actually "positive", it~is a~true positive, if~it~was actually "negative" it~is a~false positive. The y-axis shows the TPR, calculated as~the ratio of~the number of~positive results detected to~this time to~the total number of~actual positive results. The x-axis shows the (FPR), calculated as~the ratio of~the number of~currently detected positive results to~the total number of~actual negative results. The vectorized implementation of~this logic uses cumulative sums (the \textbf{cumsum} function) instead of~going through the values one by~one, although that is~what the computer does at~a~lower level.
-
-The ROC curve calculated in~this way is~actually a~step function. With a~very large number of~positive and negative cases, these steps are very small, and the curve looks smooth. In~this case, with a~really large number of~observations, the construction of~each point is~difficult. As~a~consequence, in~practice, most ROC curve functions used for practical purposes contain additional steps and often use some form of~approximation.
-
-As~an~example, consider a~situation in~which an~appraiser evaluates parts manufactured by~an~enterprise. Some of~the parts are known to~be of~good quality and some are defective. The valuation of~quality parts is~carried out on~the basis of~cost market approaches in~the usual manner. And defective parts are valued at~a~scrap value. In~this case, it~is necessary to~assign each part to~one or~another category. There is~some feature~\emph{x}, which can~be measured by~the appraiser. And there is~also some feature~\emph{y}, which cannot~be measured by~the appraiser. The value of~the feature~\emph{y} allows you to~classify parts as~quality or~defective. It~is also known that there is~some finitary relation function between features \emph{x} and~\emph{y}. Thus, knowing the value of~\emph{x}, we~can infer the value of~y with some probability.
-In~this case, it~is advisable to~take a~certain sample of~parts. Then, together with the specialists of~the customer company, measure the values of~features \emph{0} and~\emph{y} for each element of~this sample.
-
-We~will use simulated data to~consider the example. There is~some input feature~\emph{x} that is~linearly related to~the implicit result~\emph{y}. This relationship implies the presence of~some randomness. The y-value shows whether the part exceeds the tolerance requirements. If~so, it~should~be classified as~defective. The algorithm used in~this paper involves the following steps:
+The \emph{labels} vector can only contain \textbf{TRUE} or \textbf{FALSE} values or~\textbf{1} and~\textbf{0} depending on the analyst's preference, since only two classification outcomes are possible. A sequence of such binary values can be interpreted as a set of instructions for the \href{https://en.wikipedia.org/wiki/Turtle_graphics}{turtle graphics}~\cite{Wiki:turtle-graphics}. There is one important feature. In this case the turtle has a compass and receives instructions for absolute directions of~movement:
 \begin{itemize}
-	\item create the~\textbf{sim\_parts\_data} function that generates data according to~certain rules and sets the $"y>100"$ threshold value to~classify parts as~defective.
-	\item create the~dataframe \textbf{parts\_data} with this function;
-	\item create the~\textbf{test\_set\_idx} rule, whereby 80\,\% of~the data is~randomly assigned to~the training sample, and 20\,\% to the test sample;
-	\item applying the rule \textbf{test\_set\_idx} to~data \textbf{parts\_data};
-	\item create training (\textbf{<<training\_set>>}) and testing (\textbf{<<test\_set>>}) sub-samples;
-	\item plot the diagram showing the distribution of~observations from the training sample.
+	\item "to the North" or
+	\item "to the East"
 \end{itemize}
-To~implement the above algorithm, the code from script~\ref{lst:create-sample-data-plot-graph-R} was used.
+instead of relative "to the right" and "to~the left". The turtle starts its movement from the starting point with coordinates~(0,0) and makes its way at the plane according to the sequence of instructions. When the TRUE command is received, it takes one step north, i.e., in the positive direction on the y-axis. When the FALSE command is received, it~takes one step east, i.\,e., in the positive direction on the x-axis. The length of the steps is chosen in such a way that if all TRUE~(1) commands are received consecutively, the turtle will be at a point with coordinates (0,1) all FALSE~(0) commands at a point with coordinates (1,0). Thus, the length of the step "to the North" may be different from the length of the step "to the East". The path in the plane is determined by the order of the TRUE~(1) and FALSE~(0) commands and always ends at (1,1).
+
+Advancing the turtle through the bits of the instruction string is an adjustment of the classification threshold to less and less stringent. Once the turtle has passed the bit, it means that it has decided to classify that bit as ``positive''. If this bit was actually ``positive'' it is a \emph{true positive}, if it was actually ``negative'' it is a \emph{false positive}. The y-axis shows the TPR calculated as the ratio of the number of positive results detected to this time to the total number of actual positive results. The x-axis shows the FPR calculated as the ratio of the number of currently detected positive results to the total number of actual negative results. The vectorized implementation of this logic uses cumulative sums (the \texttt{cumsum} function) instead of going through the values one by one, although that is what the computer does at a lower level.
+
+The ROC curve calculated in this way is actually a step function. These steps are very small, and the curve looks smooth with a very large number of positive and negative cases. The plotting of each point is difficult with a really large number of observations. As a consequence, most ROC curve functions used for practical purposes contain additional steps and often use some form of approximation in practice.
+
+Consider a situation in which an appraiser evaluates parts manufactured by an enterprise as an example. Some parts are known to be of good quality and some are defective. The valuation of quality parts is carried out on the basis of cost and market approaches in the usual manner. Defective parts are valued at a scrap value. It is necessary to assign each part to one or another category in this case. There is some feature~\textit{x} which can be measured by an appraiser. And there is also some feature y which cannot be measured by an appraiser. The value of the feature y allows you to classify each part as quality or defective. It is also known that there is some finitary relation function between features~\textit{x} and~\textit{y}. Thus, we can predict the value of~\textit{y} with some probability, knowing the value of~\textit{x}. It is advisable to take a sample of parts in this case. And then measure the values of features~\textit{x} and~\textit{y} for each element of this sample together with the specialists of the customer company.
+
+We will use simulated data to consider the example. There is some input feature x that is linearly related to the implicit result of y. This relationship implies the presence of some randomness. The y-value shows whether the part exceeds the tolerance requirements. It should be classified as defective in this case. The algorithm used in this paper involves the following steps:
+\begin{itemize}
+	\item create the~\texttt{sim\_parts\_data} function that generates data according to certain rules and sets the ``$y>100$'' threshold value to classify parts as defective;
+	\item create the dataframe \textbf{parts\_data} with this function;
+	\item create the \texttt{test\_set\_idx} rule whereby 80\,\% of the data is randomly assigned to the training sample and 20\,\% to the test sample;
+	\item apply the rule \texttt{test\_set\_idx} to data \textbf{parts\_data};
+	\item create training (\textbf{training\_set}) and testing (\textbf{test\_set}) sub-samples;
+	\item plot the diagram showing the distribution of observations from the training sample.
+\end{itemize}
+The code from script~\ref{lst:create-sample-data-plot-graph-R} was used to implement the above algorithm.
 %
 \begin{lstlisting}[float=htp, caption = Creation and primary visualization of~data on~quality and defective parts, firstnumber=1, label= lst:create-sample-data-plot-graph-R]
 # Sample of ROC-analysis
@@ -807,16 +811,16 @@ ggtitle("Bad parts related to x")
 \end{lstlisting}
 %
 
-The result was diagram~\ref{fig:bad-parts-r}. As~you can see, if~the value of~the parameter~\emph{x} is~less than~15, all dots are red, which means that the parts are defective. Above 96 ерун are green, which means that the parts are of good quality. If~the value is~higher than 96, they are green, which means that the parts are of good quality. Between these values is~an area of~uncertainty, the right side of~which is~dominated by~green dots, and the left side by~red dots.
+The result was diagram~\ref{fig:bad-parts-r}. As you can see, if the value of the parameter is less than 15 all dots are red which means that the parts are defective. If the value is higher than 96 they are green which means that the parts are of good quality. An area of uncertainty lies between these values. Its right side is dominated by green dots and the left side by red dots. 
 %
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{bad-parts-r.pdf}
-	\caption{Diagram of~the distribution of~parts with respect to~the parameter~\emph{x}.}
+	\caption{Diagram of the parts' distribution with respect to the parameter~\textit{x}.}
 	\label{fig:bad-parts-r}
 \end{figure}
 
-The training sub-sample will~be used to~create a~logistic regression model based on~the values of~the attribute~\emph{x}, which allows you to~assign a~particular part to~quality or~defective. This model will~be used to~assign scores to~the observations in~the training sample. In~the future, these scores will~be used to~construct the ROC curve together with the true labels. Recall that the ROC curve is~plotted for observations with known values of~parameters \emph{x} and~\emph{y}. This ROC curve is~then applied to~the entire set of~objects for which x~values are known but y~values are unknown. The scores themselves as~well as~the~\emph{x} and \emph{y}~values are not displayed on~the graph and are only used for sorting labels. Two different classifiers sorting labels in~the same order will give identical ROC curves regardless of~the absolute values of~the scores. This can~be seen by~constructing an~ROC curve based on~"response" or~"link" predictions from a~logistic regression model. The "response" scores were mapped to~a~(0, 1) scale using a~\href{https://en.wikipedia.org/wiki/Sigmoid_function}{Sigmoid function}\cite{Wiki:sigmoid-function}, the "link" scores were left untransformed. In~this case, the points showing specific observations are ordered in~the same way. To test this hypothesis, we~use the code~\ref{lst:link-response-comparison}. As~you can see in~Figure~\ref{fig:link-response-comparison-r}, the order of~the dots is~the same for "link" and "response".
+To create a logistic regression model based on the values of the attribute~\textit{x} the training sub-sample will be used. This model allows you to assign a particular part to quality or defective. It will be used to assign scores to the observations in the training sample. These scores will be used to plot the ROC curve together with the true labels in the future. Recall that the ROC curve is plotted for observations with known values of parameters~\textit{x} and~\textit{y}. This ROC curve is then applied to the entire set of objects for which x-values are known but y-values are unknown. The scores themselves as well as x- and y-values are not displayed on the graph and are only used for sorting labels. Two different classifiers sorting labels in the same order will give identical ROC curves regardless of the absolute values of the scores. This can be seen by constructing a ROC curve based on ``response'' or ``link'' predictions from a logistic regression model. The ``response'' scores were mapped to a (0, 1) scale using the \href{https://en.wikipedia.org/wiki/Sigmoid_function}{Sigmoid function}\cite{Wiki:sigmoid-function} and the ``link'' scores will be left untransformed. The points showing specific observations will be ordered in the same way in this case. We use the code \ref{lst:link-response-comparison} to test this hypothesis. The order of the dots is the same for ``link'' and ``response'' as you can see in Figure~\ref{fig:link-response-comparison-r}.
 %
 \begin{lstlisting}[float=htp, caption = Comparing "link" and "response" predictions, firstnumber=1, label= lst:link-response-comparison]
 fit_glm <- glm(bad_parts ~ x, training_set, family=binomial(link="logit"))
@@ -847,11 +851,11 @@ ggtitle("Both link and response scores put cases in the same order")
 \end{figure}
 %
 
-Let's go directly to~the construction of~the ROC curve. We use both the ready function from the "pROC" package and the previously created \textbf{"appraiserRoc"} function (see script~\ref{lst:plot-ROC-1-r}). The result of~the first is~represented as~an~orange curve, the second as~circles of~red for defective parts and black for quality parts (see Diagram~\ref{fig:test-ROC-r}). It~is not difficult to~guess that the red dot corresponded to~the "North" command and the black dot to~the "East" command. Since the library function and the own function perform the same actions, the two curves are identical.
+Let's go directly to the ROC curve plotting. We use both the ready function from the \textbf{``pROC''} package and the previously created \texttt{appraiserRoc} function (see script~\ref{lst:plot-ROC-1-r}). The result of running of the first is represented as an orange curve, the second as circles of red for defective parts and black for quality parts. See Diagram~\ref{fig:test-ROC-r}). It is easy to guess that the red dots correspond ``to the North'' command and the black dots ``to the East'' command. The two curves are identical, since the library's function and the own function perform the same actions.
 
-Note that the "Specificity" scale is~plotted on~the abscissa axis, not the FPR, so~the values on~the axis are inverted. Since, according to~Table~\ref{tab:ROC-rates-1}, $"Specificity = 1 - FPR"$ we can talk about the mutual unambiguity of~these indicators. Consequently, when plotting the ROC curve any of~them can~be used. This version of~the scale display was self-selected by~the \textbf{roc} function from the "pRoc" library. If~the user does not set his settings, the function chooses to~display the scale so~that the AUC value is~always greater than 0.5. This calculation is~based on~which group (quality parts, defective parts) has a~higher median score. Since the \textbf{appraiserRoc} function is~of~course not that smart, a~simple subtraction was performed during its use, making it~possible to~build a~joint diagram.
+Note that the ``Specificity'' scale not the FPR is plotted on the abscissa axis, so the values on the axis are inverted. We can talk about the mutual unambiguity of these indicators since $Specificity = 1 - FPR$ according to~Table~\ref{tab:ROC-rates-1}. Any of them can be used consequently when plotting the ROC curve. This version of the scale display was self-selected by the \texttt{roc} function from the \textbf{"pRoc"} library. The function chooses to display the scale so that the AUC value is always greater than 0.5 if a user does not set his settings. This calculation is based on which group (quality parts, defective parts) has a higher median score. A simple subtraction was performed during using the \texttt{appraiserRoc} function use making it possible to build a joint diagram since it is not so smart of course.
 
-This approach has one limitation: based on~the prognostic nature of~the ordering of~outcomes, it~does not allow correct processing of~information if~the sequence consists of~identical estimates. "Turtle" assumes that the order of~the labels matters, but there is~no~meaningful order in~the situation of~the same scores. These areas should~be displayed with a~diagonal line, but not the traditional steps.
+This approach has one limitation.  It does not allow correct processing of information if the sequence consists of identical estimates, based on the prognostic nature of the outcomes ordering. ``Turtle'' assumes that the order of the labels matters, but there is no meaningful order in the situation of same scores. That areas should~be displayed with a diagonal line, but not the traditional steps.
 %
 \begin{lstlisting}[float=htp, caption = Plotting the ROC curve using library and own functions, firstnumber=1, label= lst:plot-ROC-1-r]
 # plot ROC
@@ -869,7 +873,7 @@ with(glm_simple_roc, points(1 - FPR, TPR, col=1 + labels))
 \end{figure}
 %
 
-Consider an~example where a~diagonal is~the only adequate way to~plot a~ROC curve. To~do~this, create an~extremely unbalanced data set in~which only~1\,\% of~the observations are "positive". In~this case, the result of~the prediction will always be~negative. Since all scores will~be the same, there is~no~need for any ordering. The \textbf{roc} function from the "pRoc" package correctly recognizes such situations and draws a~diagonal line~(1,0; 0,1). In~doing so, the turtle assumes that the order of~scores has some significance, and moves between these points along a~random trajectory, alternating between "north" and "east" directions. The code calling the construction of~such a~ROC curve is~given in~script~\ref{lst:plot-ROC-rare-success-r}. In~Diagram~\ref{fig:ROC-rare-success-r}, the black diagonal line was plotted by~the library function, while the blue dashed line was plotted by~our own previously written \textbf{appraiserRoc} function.  As~you can see, the library function correctly determined the case of~identical estimates, while applying our own function resulted in~random turtle wanderings.
+Consider an example where a diagonal is the only adequate way to plot a ROC curve. Let's create an extremely unbalanced data set in which only~1\,\% of the observations are "positive" to do this. The result of the prediction will always be negative in this case. There is no need for any ordering since all scores will be the same. The \texttt{roc} function from the \textbf{pRoc} package correctly recognizes such situations and draws a diagonal line~(1,0; 0,1). But the turtle assumes that the order of scores has some significance and moves between these points along a random trajectory alternating between ``north'' and ``east'' directions. The code calling the construction of such a ROC curve is given in script~\ref{lst:plot-ROC-rare-success-r}. In Diagram~\ref{fig:ROC-rare-success-r} the black diagonal line was plotted by the library's function while the blue dashed line was plotted by our own \textbf{appraiserRoc} function previously written. The library's function correctly determined the case of identical estimates as you can see. Running our own function resulted in random turtle wanderings.
 %
 \begin{lstlisting}[float=htp, caption = Plotting the ROC curve in~case of~absence of~order of~scores, firstnumber=1, label= lst:plot-ROC-rare-success-r]
 # plot ROC for 99% negative cases
@@ -890,21 +894,21 @@ with(appr_roc, lines(1 - FPR, TPR, col="blue", lty=2))
 \end{figure}
 %
 
-The greater the value of~N, the closer to~the diagonal the turtle will wander. Greater unbalance requires more points in~order for the path to~run roughly close to~the diagonal. In~less extreme cases, the emergence of~diagonal sections is~possible, in~particular, in~the case of~rounding of~estimates, leading to~equality of~some of~them.
+The greater the value of~N, the closer to the diagonal the turtle will wander. Greater unbalance requires more points in order for the path to run roughly close to the diagonal. The emergence of diagonal sections is possible in less extreme cases. In the case of scores rounding leading to equality of some of them in particular.
 
-To further familiarize yourself with the topic of constructing ROC curves, we can recommend studying this \href{https://web.tresorit.com/l/APSpC#AfkTKO5_-ijMhPuXE-qEzg}{theoretical material}~\cite{ROC-analysis}, as~well as~practice on~the \href{https://kennis-research.shinyapps.io/ROC-Curves/}{online simulator}~\cite{ROC-curve-practice}.
+Studying this \href{https://web.tresorit.com/l/APSpC#AfkTKO5_-ijMhPuXE-qEzg}{theoretical material}~\cite{ROC-analysis} as well as practice on the \href{https://kennis-research.shinyapps.io/ROC-Curves/}{online simulator}~\cite{ROC-curve-practice} can be recommended to further familiarize yourself with the topic of constructing ROC curves.
 %
 \subsubsection{The concept of~AUC and its calculation}\label{calculate-AUC-theory}
-The ROC curve is~a~popular means of~visualizing the trade-off between sensitivity and specificity of~a~binary classifier. Earlier in~\ref{plot-ROC-theory}, the issue of~constructing the ROC curve was considered in~terms of~the turtle steps, which takes a~vector with instructions as~steps "north", i.\,e., in~the positive direction on~the y-axis, and "east", i.\,e., in~the positive direction on~the x-axis. In~this case, the sequence of~scores, on~the basis of~which the vector of~bitwise instructions is~formed, is~ordered in~such a~way that the cases that are most likely to~be positive come first. In~doing so, the turtle assumes that all cases are positive. Next, for the training sample (in~which true values are known for certain), we~determine whether the case was true-~(TP) or~false-positive~(FP). The step size on~the y-axis is~inversely proportional to~the number of~positive observations, on~the x-axis to~the number of~negative observations. Thus, the curve path always ends at~(1,1). The result is~a~plot of~the frequency of~true positives (\textit{TPR} or~\textit{sensitivity}) against the frequency of~false positives (\textit{FPR} or~$1-specificity$), which is~actually the ROC curve. At~the same time, the graph itself does~not provide any quantitative estimates of~the quality of~the binary classifier.
+The ROC curve is a popular mean for visualizing the trade-off between sensitivity and specificity of a binary classifier. The issue of constructing the ROC curve was considered in terms of the turtle steps earlier in~\ref{plot-ROC-theory}. Turtle takes a vector with instructions as steps ``to the North'' i.e., in the positive direction on the y-axis, and ``to the East'' i.e., in the positive direction on the x-axis. The vector of bitwise instructions is formed on the basis of the sequence of scores. They are ordered in such a way that the cases that are most likely to be positive come first. The turtle assumes that all cases are positive in doing so. Next, we determine whether the case was true- (TP) or false-positive~(FP) for the training sample in which true values are known for certain. The step size on the y-axis is inversely proportional to the number of true-positive observations, and on the x-axis to the number of true-negative observations. Thus, the curve path always ends at~(1,1). The result is a plot of the frequency of true positives (\textit{TPR} or~\textit{sensitivity}) against the frequency of false positives (\textit{FPR} or~$1-specificity$), which is actually the ROC curve. The graph itself does not provide any quantitative estimates of the binary classifier's quality at the same time. 
 
-Calculating the area under the ROC curve is~one way to~summarize the quantitative assessment of~classifier quality. This metric is~so~common that in~the context of~data analysis, the terms \emph{Area under the curve} or~\emph{AUC} refer specifically to~the area under the ROC curve, unless explicitly stated otherwise.
+Calculating the area under the ROC curve is one way to summarize the quantitative assessment of classifier's quality. This metric is so common that the terms the Area under the curve or AUC refer specifically to the area under the ROC curve in the context of data analysis, unless explicitly stated otherwise.
 
-At~first glance, the simplest and most intuitive metric for classifier performance is~its accuracy. Unfortunately, in~some cases, such a~metric simply will not work. For example, in~the case of~a~disease that occurs in~one person per million, a~completely useless test that always shows a~negative result would~be 99.9999\% accurate. In~contrast to~the accuracy index, ROC curves are insensitive to~unbalanced classes. The aforementioned useless test will have an~$AUC=0.5$, which is~equivalent to~no~test at~all (see diagram~\ref{fig:ROC-rare-success-r}).
+The simplest and most intuitive metric for classifier performance at first glance is its accuracy. Unfortunately, such a metric simply will not work in some cases. For example, a completely useless test that always shows a negative result would be 99.9999\,\% accurate in the case of a disease that occurs in one person per million. ROC curves are insensitive to unbalanced classes, in contrast to the accuracy index. The aforementioned useless test will have $AUC=0.5$ which is equivalent to no test at all (see diagram~\ref{fig:ROC-rare-success-r}).
 
-In~this subsubsection, we~will first consider the geometric approach to~the concept of~AUC and develop a~function that calculates its value. Next, we~turn to~another --- probabilistic --- interpretation of~the concept of~AUC.
+Next, we will first consider the geometric approach to the concept of AUC and develop a function that calculates its value. After we turn to another --- probabilistic --- interpretation of the concept of AUC.
 
 \paragraph{Geometric approach to~the concept of~AUC}
-First, let's create a~test dataset using the code shown in~\ref{lst:AUC-theory-create-dataset-r}.
+First, let's create a test dataset using the code shown in~\ref{lst:AUC-theory-create-dataset-r}.
 %
 \begin{lstlisting}[float=htp, caption = Create a~test data set, firstnumber=1, label= lst:AUC-theory-create-dataset-r]
 # Geometric interpretation of AUC
@@ -918,9 +922,9 @@ prediction <- rev(seq_along(category))
 prediction[9:10] <- mean(prediction[9:10])
 \end{lstlisting}
 %
-The \textbf{prediction} vector contains pseudo-estimates, which in~practice are assigned by~the classifier. In~this study problem, they are a~decreasing sequence, which generally corresponds to~the "category" labels. The scores for observations with ordinal numbers 9 and 10, one representing the positive case and the other the negative case, are replaced by~their mean values to~create a~ties effect.
+The \textbf{prediction} vector contains pseudo-scores which are assigned by the classifier in practice. They are a decreasing sequence, which generally corresponds to the ``category'' labels in our learning case. The scores are replaced by their mean values to create a ties effect for observations with ordinal numbers 9 and 10 one representing the positive case and the other the negative case.
 
-To~construct the ROC curve, TPR and FPR must~be calculated. It~was shown in~\ref{plot-ROC-theory} how this can~be done semi-automatically by~calculating cumulative sums for positive and negative labels. This section will use the library "pRoc", which performs all calculations automatically at~a~low level. Let's calculate the TPR, FPR, and AUC values with the code~\ref{lst:AUC-as-geom-calculate-AUC-r}. A~dataframe will also~be created, containing the data for each observation, and shown in~Table~\ref{tab:roc_df-r}. The \textbf{roc} function can return the values of~many indicators, but at~this point we only need TPR and FPR. Recall that TPR means sensitivity and FPR is~equivalent to~the expression $1 - specificity$. By~default, the \textbf{roc} function returns values in~ascending order. As~a~consequence, they have been inverted so~that the starting point has coordinates~(0,0). The AUC value returned by~the function was~0.825. In~the following, we will compare it with the one that will~be obtained in the course of~its independent semi-automatic calculation.
+TPR and FPR must be calculated to construct the ROC curve. It was shown in~\ref{plot-ROC-theory} how this can be done semi-automatically by calculating cumulative sums for positive and negative labels. This paragraph will use the library \textbf{pRoc} which performs all calculations at a low level automatically. Let's calculate the TPR, FPR, and AUC values with the code~\ref{lst:AUC-as-geom-calculate-AUC-r}. A dataframe containing the data for each observation will also be created and shown in Table~\ref{tab:roc_df-r}. The \texttt{roc} function can return the values of many indicators, but we only need TPR and FPR at this point. Recall that TPR means sensitivity and FPR is equivalent to the expression $1 - specificity$. The \texttt{roc} function returns values in ascending order by default. Hereupon they have been inverted so that the starting point has coordinates (0,0). The AUC value returned by the function was~0.825. We will compare it with the one that will be obtained in the course of its independent semi-automatic calculation in the following.
 %
 \begin{lstlisting}[float=htp, caption = Calculation of~the AUC using the pRoc library, firstnumber=1, label= lst:AUC-as-geom-calculate-AUC-r]
 # create ROC object&dataframe and calculate AUC
@@ -965,7 +969,7 @@ scores=roc_obj$predictor)
 \end{table}
 %
 \subparagraph{Plotting the graph}
-If~the ROC curve were a~perfect step function, the area under it could~be found by adding a~set of~vertical bars equal to~the spaces between the points on~the abscissa axis (FPR) and to~the height of~the step on~the ordinate axis (TPR). Real ROC curves may include sections corresponding to~repeated values. In~this case, there are segments other than steps. Such repeats require proper consideration. In~Figure~\ref{fig:ROC-bars-R}, the area of~ordinary steps is~shown in~green, the cases of~repeats~(ties) are indicated by~blue rectangles divided in~half by~sloping ROC curve segments. Thus, half of~the area of~these steps is~included in~the total area under the curve.
+If the ROC curve were a perfect step function, the area under it could be found by adding a set of vertical bars. Which were equal to the spaces between the points on the abscissa axis (FPR) and to the height of the step on the ordinate axis (TPR). Real ROC curves may include sections corresponding to repeated values. There are segments other than steps in this case. Such repeats require proper consideration. Let's consider the Figure~\ref{fig:ROC-bars-R}. The area of ordinary steps is shown in green, the cases of repeats (ties) are indicated by blue rectangles divided in half by sloping ROC curve segments. Thus, half of the area of these steps is included in the total area under the curve.
 %
 \begin{figure}[htp]
 	\centering
@@ -974,28 +978,28 @@ If~the ROC curve were a~perfect step function, the area under it could~be found 
 	\label{fig:ROC-bars-R}
 \end{figure}
 
-The following steps were taken to~plot diagram~\ref{fig:ROC-bars-R}.
+The following steps were taken to plot diagram~\ref{fig:ROC-bars-R}.
 \begin{enumerate}
-	\item Define a~\textbf{rectangle} function that takes as~arguments:
+	\item Define the~\texttt{rectangle} function that takes next arguments:
 	\begin{itemize}
 		\item the initial \emph{x} and~\emph{y} coordinates;
-		\item width and height of~step;
-		\item angle of~rotation after each step;
+		\item width and height of step;
+		\item angle of rotation after each step;
 		\item hatching density.
 	\end{itemize}
-	The algorithm in~script~\ref{lst:create-rectangle-function-r} builds the rectangle as~follows:
+	The algorithm shown in script~\ref{lst:create-rectangle-function-r} plots the rectangle as follows:
 	\begin{itemize}
-		\item the function accepts the initial \emph{x} and~\emph{y} coordinates from the appraiser.
-		\item then it gets the value of~the step length "to the east" (to~the right on the x-axis), calculates the new value of~the x-coordinate, keeping the value of~the y-coordinate.
-		\item after performing the step is~a~turn of~45\textdegree counterclockwise.
-		\item then it~gets the value of~the step length "to the North" (up~on~the y-axis), calculates a~new value of~the y-coordinate, keeping the value of~the x-coordinate.
-		\item this~is followed by~a~new turn to~the left by~45\textdegree and new steps in~opposite directions.
-		\item thus, performing one step each to~the “east”, “north”, “west” and “south”, as~well as~three turns of~45\textdegree counterclockwise function returns to~the starting point, completing the construction of~the rectangle.
+		\item the function accepts the initial \emph{x} and~\emph{y} coordinates from the appraiser;
+		\item then it gets the value of the step length ``to the East'' (to the right on the x-axis) and calculates the new value of the x-coordinate, keeping the value of the y-coordinate.
+		\item after performing the step is a turn of 45\textdegree \ counterclockwise;
+		\item then it gets the value of the step length ``to the North'' (up on the y-axis) and calculates a new value of~the y-coordinate, keeping the value of the x-coordinate;
+		\item this is followed by a new turn to the left by 45\textdegree \ and new steps in opposite directions;
+		\item thus, performing one step each to the ``east'', ``north'', ``west'' and ``south'' as well as three turns of 45 angles counterclockwise function returns to the starting point, completing the construction of the rectangle.
 	\end{itemize}
-	\item To~calculate the step length "to~the East" and "to~the West" it~is necessary to~calculate the difference between neighboring values of~FPR, "to~the North" and "to~the South" between neighboring values of~TPR. To~do~this, we add the two columns \emph{dFPR} and \emph{dTPR}, respectively, using the code shown in~\ref{lst:add-dFPR&dTPR-columns-r}. Since the number of~pairs for which the difference is~calculated is~less than the number of~observations by~one, zero should~be added at~the end (since the dataframe data are sorted in~descending order).
-	\item Next, the coordinate grid is~laid out from zero to~one on~each axis using the code~\ref{lst:plot-empty-graph-from-0-to-1-r}.
-	\item For the case of~repeating values~(ties), there is~a~special kind of~step "to~the North-East" in~the form of~a~diagonal line.
-	\item The final step is~to~build the ROC curve itself and the rectangles that form the area under~it, according to~script~~\ref{lst:plot-ROC-curve-and-rectangles-under-it-r}. The \textbf{mapply} function allows you to~apply the \textbf{rectangle} function sequentially to~each row of~the data frame.
+	\item It is necessary to calculate the difference between neighboring values of FPR to calculate the step length ``to the East'' and ``to the West''. And for ``to the North'' and ``to the South'' between neighboring values of TPR. We add the two columns \emph{dFPR} and \emph{dTPR} respectively to do this using the code shown in~\ref{lst:add-dFPR&dTPR-columns-r}. The dataframe data are sorted in descending order. Zero should be added at the end, since the number of pairs for which the difference is calculated is less than the number of observations by one.
+	\item Next, the coordinate grid is laid out from zero to one on each axis using the code~\ref{lst:plot-empty-graph-from-0-to-1-r}.
+	\item There is a special kind of step ``to the North-East'' in the form of a diagonal line for the case of repeating values (ties).
+	\item The final step is to plot the ROC curve itself and the rectangles that form the area under it according to script~\ref{lst:plot-ROC-curve-and-rectangles-under-it-r}. The \texttt{mapply} function allows you to apply the \texttt{rectangle} function sequentially to each row of the data frame.
 \end{enumerate}
 %
 \begin{lstlisting}[float=htp, caption = Create the \textbf{rectangle} function, firstnumber=1, label= lst:create-rectangle-function-r]
@@ -1031,10 +1035,10 @@ lines(FPR, TPR, type='b', lwd=3, col="red")
 })
 \end{lstlisting}
 
-\subparagraph{The summation of~areas by~means of~an~own function}
-The area under the curve~(AUC) (highlighted in~red) is~the sum of~the areas of~all the green rectangles and half the area of~the blue one. To~calculate the area of~each rectangle it~is not necessary to~know the absolute coordinates of~its vertices, its width and height are enough. Since one of~the sides of~each rectangle lies on~the x-axis, the height of~any of~them is~determined by~the value of~TPR, the width by~dFPR. Then the total area of~all green rectangles is~equal to~the \href{https://en.wikipedia.org/wiki/Dot_product}{dot~(scalar) product}~\cite{Wiki:dot-product} of~TPR and dFPR. This vector approach calculates the area for each data point, even if~its width or~height is~zero. However, in~this case their further inclusion in~the calculation is of no~importance. The area of~the blue rectangles (if~any) is~determined by~the values of~dFPR and dTPR and also represents their scalar product as~vectors. For areas of~the graph containing northward or~eastward steps, one of~these values (dTPR, dFPR) will~be zero. As~a~consequence, blue rectangles are possible only if~TPR and FPR are changed simultaneously. In~this case, only half of~such rectangle is~under the curve.
+\subparagraph{The summation of areas by means of an own function}
+The Area under the curve (AUC) (highlighted in~red) is the sum of the areas of all the green rectangles and half the area of the blue one. It is not necessary to know the absolute coordinates of vertices to calculate the area of each rectangle, its width and height are enough. The height of any rectangle is determined by the value of TPR and the width by dFPR since one of the sides of each one lies on the x-axis. Then the total area of all green rectangles is equal to the sum of \href{https://en.wikipedia.org/wiki/Dot_product}{dot~(scalar) products}~\cite{Wiki:dot-product} of TPR and dFPR. This vector approach calculates the area for each data point even if its width or height is zero. Their further accounting in the calculation is of no importance in this case, however. The area of the blue rectangles (if any) is determined by the values of dFPR and dTPR and also represents their dot product as vectors. One of these values (dTPR, dFPR) will be zero for areas of the graph containing northward or eastward steps. Blue rectangles as a result are possible only if TPR and FPR are changed simultaneously. Only half of such rectangle is under the curve.
 
-Recall that the previously calculated AUC was~0.825. Now let's calculate it in~semi-automatic mode according to~the algorithm described in the previous paragraph. To~do this, first create the function \textbf{appraiser\_auc}, and then apply it to~the test data (see script~\ref{lst:create&apply-appraiser-auc-function-r}). The returned value will~be~0.825, which indicates that the logic and algorithm are correct.
+Recall that the previously calculated AUC was~0.825. Now let's calculate it in semi-automatic mode according to the algorithm described above. Create the function \texttt{appraiser\_auc} and then apply it to the test data to do this. See script~\ref{lst:create&apply-appraiser-auc-function-r}). The returned value is~0.825 which indicates that our logic and algorithm are correct.
 %
 \begin{lstlisting}[float=htp, caption = Creating a function to calculate AUC in semi-automatic mode and applying it to test data, firstnumber=1, label= lst:create&apply-appraiser-auc-function-r]
 # create function for AUC calculation
@@ -1050,7 +1054,7 @@ with(roc_df, appraiser_auc(TPR, FPR))
 \end{lstlisting}
 
 \paragraph{The rank comparison approach}
-It~is also possible to~use a~fundamentally different approach to~calculate the AUC. To~implement~it, it~is necessary to~create a~matrix containing all possible combinations of~positive and negative cases. Each row represents a~positive case. They are ordered so that the top row contains the case with the lowest score, and the bottom row contains the case with the highest score. Similarly, the columns contain the negative cases, sorted so that the left column contains the highest scores. Then each cell represents a~comparison of~a~particular positive case with a~particular negative case. If~the score or rank of~a~positive case is higher than that of~a~negative case, that cell takes TRUE. In the case of a~good enough classifier, most positive cases will have higher scores (ranks) than negative cases. All exceptions will~be concentrated in the upper left corner, where positive cases with low scores and negative cases with high scores are located. The~\ref{lst:rank_comparison_auc-r} script contains code to~implement this algorithm and its visualization, shown in~Figure~\ref{fig:rank-comparison-matrix-vizualization-r}.
+It is also possible to use a fundamentally different approach to calculate the AUC. It is necessary to create a matrix containing all possible combinations of positive and negative cases to implement it. Each row represents a positive case. They are ordered so that the top row contains a case with the lowest score and the bottom row contains a case with the highest score. Similarly, the columns contain the negative cases, sorted so that the left column contains a case with the highest score and the right column contains a case with the lowest score. Then each cell represents a comparison of a particular positive case with a particular negative case. A cell takes TRUE if the score or rank of a positive case is higher than that of a negative case. Most positive cases will have higher scores (ranks) than negative cases, if a classifier is good enough. All exceptions will be concentrated in the upper left corner, where positive cases with low scores and negative cases with high scores are located. The script~\ref{lst:rank_comparison_auc-r} contains code to implement this algorithm and its visualization, shown in Figure~\ref{fig:rank-comparison-matrix-vizualization-r}.
 %
 \begin{lstlisting}[float=htp, caption = Create the function to~build a~comparison matrix and apply it to~the test data, firstnumber=1, label= lst:rank_comparison_auc-r]
 # create  function for rank comparison
@@ -1091,13 +1095,13 @@ rank_comparison_auc(labels=as.logical(category), scores=prediction)
 \end{figure}
 %
 
-The plotting of~the ROC curve in~this case is~done almost in the usual way. The only difference is that it~is slightly shifted and stretched to~make the coordinates coincide with the corners of~the matrix cells. This way of~constructing the ROC curve makes the following fact obvious: the ROC curve represents the boundary of the area where positive cases have higher scores (ranks) than negative cases. Thus, the AUC can~be calculated by replacing the values in the matrix so that
+Plotting of the ROC curve is done almost in the usual way in this case. The only difference is that the graph is slightly shifted and stretched to make the coordinates coincide with the corners of the matrix cells. This way of~constructing the ROC curve makes the following fact obvious. the ROC curve represents the boundary of the area where positive cases have higher scores (ranks) than negative cases. Thus, AUC can be calculated by replacing the values in the matrix so that
 \begin{itemize}
 	\item cells in which the scores (ranks) of positive cases exceed the scores (ranks) of negative cases take the value~1;
 	\item cells in which the scores (ranks) are equal take the value~0.5;
 	\item cells in which the scores (ranks) of negative cases exceed the scores (ranks) of positive cases take the value~0.
 \end{itemize}
-Since applying the \textbf{sign} function results in one of three possible values: -1, 0, 1, we use the following trick to place the values in the desired range: we add one to them and divide by two. The final calculation of the AUC is done by calculating the mean value.
+We use the following trick to place the values in the desired range: we add one to them and divide by two, since applying the \texttt{sign} function results in one of three possible values: -1, 0, 1. The final calculation of the AUC is done by calculating the mean value.
 
 \paragraph{Probabilistic approach to calculating AUC}
 The probabilistic interpretation is that if you randomly choose a~positive case and a~negative case, the probability that the score (rank) value of the positive case will~be greater than that of the negative case is determined by AUC and equal to it. This follows, in particular, from Diagram~\ref{fig:rank-comparison-matrix-vizualization-r}, in which the total area of the graph is normalized to one. The total area of the graph is normalized to one, the cells of the matrix contain information about all possible combinations of positive and negative cases. The area under the curve consists of cells in which the scores (ranks) of positive cases exceed those of negative cases. To approximate the AUC in the probabilistic approach, let's create and apply a~function according to the script~\ref{lst:create&apply-auc-as-probability-r}. The returned AUC value was 0.8248116, which approximately corresponds to its exact value calculated earlier.
