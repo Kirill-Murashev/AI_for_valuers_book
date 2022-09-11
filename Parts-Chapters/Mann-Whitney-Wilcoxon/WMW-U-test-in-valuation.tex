@@ -136,7 +136,7 @@ In addition to the above requirements for the samples themselves there are some 
 	\item the distribution of quantitative attribute values of samples is different from normal (it is advisable to use parametric Student's t-test or z-test for independent samples otherwise).
 	\item there must be at least three observations in each sample; it is allowed to have two observations in one of the samples provided that there are at least five in the~other sample.
 \end{itemize}
-To summarize the above, there are three variants of the null hypothesis depending on the level of rigor outlined in the table~\ref{tab:nul-hypothesis-variants}.
+To summarize the above, there are three variants of the null hypothesis depending on the level of rigor outlined in the Table~\ref{tab:nul-hypothesis-variants}.
 \begin{table}[htp]
 	\caption{Variants of the null hypothesis when using the U-test in valuation.}\label{tab:nul-hypothesis-variants}
 	\centering
@@ -304,7 +304,7 @@ To date, there is no unambiguous position on how the situation when $p = \alpha$
 \subsection{Comparison of~Wilcoxon-Mann-Whitney U-test with Student's t-test}
 You often hear that the U-test is the nonparametric counterpart of the Student's t-test. It designed for data whose distribution differs from the normal one. We can indeed say that in the case of a normal distribution it is advisable to determine whether there is a significant difference between the two samples by~means of the t-test. And in the case of a distribution that differs from the normal by means of the U-test. Thus, it can be said that these tests are used for the same ultimate purpose from a purely practical point of view.
 
-The mathematical meaning of the U-test and the t-test is significantly different, however. The U-test is designed to test the null hypothesis, which is that for randomly chosen from two samples of observations $x \in X$ and $y \in Y$ the probability that~\textit{x} is greater than~\textit{y} is equal to the probability that \textit{y} is greater than \textit{x}. And the alternative hypothesis carries the claim that these probabilities are not equal as stated earlier. The t-test is designed to test the null hypothesis that the means of the two samples are equal while the alternative hypothesis is that the means of the two samples are not equal at the same time. In this regard we should keep in mind that when comparing in general these tests that the U-test and the t-test check different null hypotheses. Although they have partly similar practical meaning. The result of the U-test is most often very close to the result of the two-sample t-test for ranked data. Table~\ref{tab:U-test-t-test-comparison} provides a general comparison of the~U-test with the~t-test.
+The mathematical meaning of the U-test and the t-test is significantly different, however. The U-test is designed to test the null hypothesis, which is that for randomly chosen from two samples of observations $x \in X$ and $y \in Y$ the probability that~\textit{x} is greater than~\textit{y} is equal to the probability that \textit{y} is greater than \textit{x}. And the alternative hypothesis carries the claim that these probabilities are not equal as stated earlier. The t-test is designed to test the null hypothesis that the means of the two samples are equal while the alternative hypothesis is that the means of the two samples are not equal at the same time. In this regard we should keep in mind that when comparing in general these tests that the U-test and the t-test check different null hypotheses. Although they have partly similar practical meaning. The result of the U-test is most often very close to the result of the two-sample t-test for ranked data. The Table~\ref{tab:U-test-t-test-comparison} provides a general comparison of the~U-test with the~t-test.
 %
 \begin{table}[htp]
 	\caption{Properties of~the~U-test relative to~the~t-test.}  \label{tab:U-test-t-test-comparison}
@@ -379,7 +379,7 @@ We can create a contingency table of the binary classifier applying results base
 	\end{tabularx}
 \end{table}
 %
-The binary classifier can lead to errors of~two types as can be seen from the Table~\ref{tab:ROC-contingency-table}. Let's introduce some more definitions and define the formulas for calculating the probabilities of classifier's running outcomes~(see tables~\ref{tab:ROC-rates-1}--\ref{tab:ROC-rates-3}).
+The binary classifier can lead to errors of~two types as can be seen from the Table~\ref{tab:ROC-contingency-table}. Let's introduce some more definitions and define the formulas for calculating the probabilities of classifier's running outcomes~(see the Tables~\ref{tab:ROC-rates-1}--\ref{tab:ROC-rates-3}).
 %
 \begin{table}[htp]
 	\caption{Additional definitions and formulas for calculating the probabilities of binary classifier outcomes (part~1 of~3).}\label{tab:ROC-rates-1}
@@ -520,12 +520,12 @@ P_{FPR}(c),\ P_{TPR}(c).
 \end{equation}
 Thus, drawing the curve means changing the value of~threshold~\textit{c}.
 
-Let's consider the example~\cite{AUC-Derivation}. Let's take~$f(x\in C_{0}) = \mathcal{N}(0,1)$ and~$f(x\in C_{1}) = \mathcal{N}(2,1)$ as probability density functions~$C_{0}$ and~$C_{1}$, respectively. Next, we will create the ROC curve step-by-step using the Python language. At the first step, consider diagram~\ref{fig:plot-TPR-FPR-prob-density-1}, built using the code given in~script~\ref{lst:plot-TPR-FPR-prob-density}. The area shaded blue shows the probability of~FPR, i.\,e., false-positive significance detection. The area shaded green shows the probability density of TPR, i.\,e., correct significance detection. The ROC curve shows the values of these very indicators. The vertical dashed line is the sensitivity threshold~\textit{c}. In this situation, it is at~0 on the abscissa axis. If it is moved to 1, the area under the FPR curve (blue) will significantly decrease, i.\,e., the probability of false positive detection will decrease. But the TPR area (green) will decrease as well, which means an increase in the probability of false negative results. This situation is illustrated in Diagram~\ref{fig:plot-TPR-FPR-prob-density-2}.
+Let's consider the example~\cite{AUC-Derivation}. Let's take~$f(x\in C_{0}) = \mathcal{N}(0,1)$ and~$f(x\in C_{1}) = \mathcal{N}(2,1)$ as probability density functions~$C_{0}$ and~$C_{1}$, respectively. Next, we will create the ROC curve step-by-step using the Python language. At the first step, consider the Diagram~\ref{fig:plot-TPR-FPR-prob-density-1}, built using the code given in~the Script~\ref{lst:plot-TPR-FPR-prob-density}. The area shaded blue shows the probability of~FPR, i.\,e., false-positive significance detection. The area shaded green shows the probability density of TPR, i.\,e., correct significance detection. The ROC curve shows the values of these very indicators. The vertical dashed line is the sensitivity threshold~\textit{c}. In this situation, it is at~0 on the abscissa axis. If it is moved to 1, the area under the FPR curve (blue) will significantly decrease, i.\,e., the probability of false positive detection will decrease. But the TPR area (green) will decrease as well, which means an increase in the probability of false negative results. This situation is illustrated in the Diagram~\ref{fig:plot-TPR-FPR-prob-density-2}.
 %
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-1.pdf}
-	\caption{Diagram of~TPR and FPR probability distribution densities at~threshold~0.}
+	\caption{The diagram of~TPR and FPR probability distribution densities at~threshold~0.}
 	\label{fig:plot-TPR-FPR-prob-density-1}
 \end{figure}
 %
@@ -556,15 +556,15 @@ plt.savefig('Plot-ROC-step-1.pdf', bbox_inches='tight')
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-2.pdf}
-	\caption{Diagram of~TPR and FPR probability distribution densities at~threshold~1.}
+	\caption{The diagram of~TPR and FPR probability distribution densities at~threshold~1.}
 	\label{fig:plot-TPR-FPR-prob-density-2}
 \end{figure}
 
-As you can see from the diagrams~\ref{fig:plot-TPR-FPR-prob-density-1} and~\ref{fig:plot-TPR-FPR-prob-density-2} increasing the threshold leads to the loss of a part of both true-positive and false-positive results. While decreasing its value leads to an increase in the number of fixations of the feature presence (both true and false). In extreme cases, too low a threshold value will lead to the fact that all results will be interpreted as positive, while too high to a zero number of observations in which the feature was detected. It is the task of ROC analysis to choose a rational threshold value.
+As you can see from the Diagrams~\ref{fig:plot-TPR-FPR-prob-density-1} and~\ref{fig:plot-TPR-FPR-prob-density-2} increasing the threshold leads to the loss of a part of both true-positive and false-positive results. While decreasing its value leads to an increase in the number of fixations of the feature presence (both true and false). In extreme cases, too low a threshold value will lead to the fact that all results will be interpreted as positive, while too high to a zero number of observations in which the feature was detected. It is the task of ROC analysis to choose a rational threshold value.
 
-Let's add to the already existing diagrams the ROC curves corresponding to thresholds 0 and 1. And also create an interactive diagram using the code from script~\ref{lst:plot-TPR-FPR-prob-density+ROC-interactive}. The PDF format does not allow you to add such interactive elements, so let's consider cases with fixed values of~0 and~1 shown in Diagrams~\ref{fig:plot-TPR-FPR-prob-density-3} and~\ref{fig:plot-TPR-FPR-prob-density-4} respectively. The left side of each of them shows the already familiar probability density function graphs for the TPR and FPR distributions. The right part shows the ROC curve and the point corresponding to the set threshold value. It is easy to guess that the x-coordinate of the point matches the area under the FPR curve and the y-coordinate matches the area under the TPR curve. Increasing the threshold value entails shifting the point to the left, decreasing it to the right.
+Let's add to the already existing diagrams the ROC curves corresponding to thresholds 0 and 1. And also create an interactive diagram using the code from the Script~\ref{lst:plot-TPR-FPR-prob-density+ROC-interactive}. The PDF format does not allow you to add such interactive elements, so let's consider cases with fixed values of~0 and~1 shown in the Diagrams~\ref{fig:plot-TPR-FPR-prob-density-3} and~\ref{fig:plot-TPR-FPR-prob-density-4} respectively. The left side of each of them shows the already familiar probability density function graphs for the TPR and FPR distributions. The right part shows the ROC curve and the point corresponding to the set threshold value. It is easy to guess that the x-coordinate of the point matches the area under the FPR curve and the y-coordinate matches the area under the TPR curve. Increasing the threshold value entails shifting the point to the left, decreasing it to the right.
 
-The better the binary classifier itself, the closer to the upper left corner the ROC curve corresponding to it will be. A high TPR value will be combined with a low FPR value in this case. The binary classifier which works as well (actually badly) as the guessing algorithm based on coin flip  (in case of "fair" coin) gives a ROC curve which is a straight line between (0,0) and (1,1). The left part of the diagram will show a complete overlap of TPR and FPR probability density function curves in this case. Such a situation is shown in Diagram~\ref{fig:plot-TPR-FPR-prob-density-3}. You can use Script~\ref{lst:plot-TPR-FPR-prob-density+ROC-interactive} 5 by running it in the Jupyter Lab environment for self-practice. It allows you to use the interactive features of the browser.
+The better the binary classifier itself, the closer to the upper left corner the ROC curve corresponding to it will be. A high TPR value will be combined with a low FPR value in this case. The binary classifier which works as well (actually badly) as the guessing algorithm based on coin flip  (in case of "fair" coin) gives a ROC curve which is a straight line between (0,0) and (1,1). The left part of the diagram will show a complete overlap of TPR and FPR probability density function curves in this case. Such a situation is shown in the Diagram~\ref{fig:plot-TPR-FPR-prob-density-3}. You can use the Script~\ref{lst:plot-TPR-FPR-prob-density+ROC-interactive} 5 by running it in the Jupyter Lab environment for self-practice. It allows you to use the interactive features of the browser.
 %
 \begin{lstlisting}[float=htp, caption = Build an~interactive graph of~TPR and FPR distribution density and its corresponding ROC curve for a given threshold value, firstnumber=1, label= lst:plot-TPR-FPR-prob-density+ROC-interactive]
 # Import Libraries
@@ -614,21 +614,21 @@ interact(plot_roc_interact,c=(-3,5,.05))
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-30.pdf}
-	\caption{Diagram of TPR and FPR probability distribution densities at threshold~0.}
+	\caption{The diagram of TPR and FPR probability distribution densities at threshold~0.}
 	\label{fig:plot-TPR-FPR-prob-density-3}
 \end{figure}
 %
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-4.pdf}
-	\caption{Diagram of TPR and FPR probability distribution densities at threshold~1.}
+	\caption{The diagram of TPR and FPR probability distribution densities at threshold~1.}
 	\label{fig:plot-TPR-FPR-prob-density-4}
 \end{figure}
 %
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{Plot-ROC-step-5.pdf}
-	\caption{Diagram of probability densities of TPR and FPR probability distributions at equal mean.}
+	\caption{The diagram of probability densities of TPR and FPR probability distributions at equal mean.}
 	\label{fig:plot-TPR-FPR-prob-density-5}
 \end{figure}
 %
@@ -686,7 +686,7 @@ which is possible in particular in the case of the existence of a shift of one d
 
 The test technique consists of combining two samples into one set and assigning ranks to each item within it. The U-statistic is the sum of ranks for set~\textit{X}. If the value of statistic is small enough, it means that the distribution of set~\textit{X} is stochastically shifted to the left relative to the distribution of set \textit{Y} i.\,e.,~$F_{X}{t} < F_{Y}{t}$.
 
-The p-value is suitable for assessing significance, since with a sufficiently large number of observations (20 or more) the distribution of U-statistics is well approximated by the normal distribution. Let's calculate it using the Python language according to the script~\ref{lst:AUC-p-value}.
+The p-value is suitable for assessing significance, since with a sufficiently large number of observations (20 or more) the distribution of U-statistics is well approximated by the normal distribution. Let's calculate it using the Python language according to the Script~\ref{lst:AUC-p-value}.
 %
 \begin{lstlisting}[float=htp, caption = Calculation of~the p-value for the test data, firstnumber=1, label= lst:AUC-p-value]
 print('p-value:',stats.wilcoxon(f1.rvs(30), f0.rvs(30))[1])
@@ -723,7 +723,7 @@ ROC analysis and in particular the construction of ROC curves are widely used to
 	\item sort the observed outcomes in descending order by their predicted scores;
 	\item calculation of total true positive (TPR) and true negative (TNR) scores for ordered observed outcomes.
 \end{itemize}
-Let's create an appropriate function (script~\ref{lst:create-ROC-function-R}).
+Let's create an appropriate function (The Script~\ref{lst:create-ROC-function-R}).
 %
 \begin{lstlisting}[float=htp, caption = Creating a~function to~calculate TPR and FPR, firstnumber=1, label= lst:create-ROC-function-R]
 # create own function for ROC
@@ -761,9 +761,9 @@ We will use simulated data to consider the example. There is some input feature 
 	\item create the \texttt{test\_set\_idx} rule whereby 80\,\% of the data is randomly assigned to the training sample and 20\,\% to the test sample;
 	\item apply the rule \texttt{test\_set\_idx} to data \textbf{parts\_data};
 	\item create training (\textbf{training\_set}) and testing (\textbf{test\_set}) sub-samples;
-	\item plot the diagram showing the distribution of observations from the training sample.
+	\item plot a diagram showing the distribution of observations from the training sample.
 \end{itemize}
-The code from script~\ref{lst:create-sample-data-plot-graph-R} was used to implement the above algorithm.
+The code from the Script~\ref{lst:create-sample-data-plot-graph-R} was used to implement the above algorithm.
 %
 \begin{lstlisting}[float=htp, caption = Creation and primary visualization of~data on~quality and defective parts, firstnumber=1, label= lst:create-sample-data-plot-graph-R]
 # Sample of ROC-analysis
@@ -811,12 +811,12 @@ ggtitle("Bad parts related to x")
 \end{lstlisting}
 %
 
-The result was diagram~\ref{fig:bad-parts-r}. As you can see, if the value of the parameter is less than 15 all dots are red which means that the parts are defective. If the value is higher than 96 they are green which means that the parts are of good quality. An area of uncertainty lies between these values. Its right side is dominated by green dots and the left side by red dots. 
+The result was the Diagram~\ref{fig:bad-parts-r}. As you can see, if the value of the parameter is less than 15 all dots are red which means that the parts are defective. If the value is higher than 96 they are green which means that the parts are of good quality. An area of uncertainty lies between these values. Its right side is dominated by green dots and the left side by red dots. 
 %
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{bad-parts-r.pdf}
-	\caption{Diagram of the parts' distribution with respect to the parameter~\textit{x}.}
+	\caption{The diagram of the parts' distribution with respect to the parameter~\textit{x}.}
 	\label{fig:bad-parts-r}
 \end{figure}
 
@@ -851,9 +851,9 @@ ggtitle("Both link and response scores put cases in the same order")
 \end{figure}
 %
 
-Let's go directly to the ROC curve plotting. We use both the ready function from the \textbf{``pROC''} package and the previously created \texttt{appraiserRoc} function (see script~\ref{lst:plot-ROC-1-r}). The result of running of the first is represented as an orange curve, the second as circles of red for defective parts and black for quality parts. See Diagram~\ref{fig:test-ROC-r}). It is easy to guess that the red dots correspond ``to the North'' command and the black dots ``to the East'' command. The two curves are identical, since the library's function and the own function perform the same actions.
+Let's go directly to the ROC curve plotting. We use both the ready function from the \textbf{``pROC''} package and the previously created \texttt{appraiserRoc} function (see the Script~\ref{lst:plot-ROC-1-r}). The result of running of the first is represented as an orange curve, the second as circles of red for defective parts and black for quality parts. See the Diagram~\ref{fig:test-ROC-r}). It is easy to guess that the red dots correspond ``to the North'' command and the black dots ``to the East'' command. The two curves are identical, since the library's function and the own function perform the same actions.
 
-Note that the ``Specificity'' scale not the FPR is plotted on the abscissa axis, so the values on the axis are inverted. We can talk about the mutual unambiguity of these indicators since $Specificity = 1 - FPR$ according to~Table~\ref{tab:ROC-rates-1}. Any of them can be used consequently when plotting the ROC curve. This version of the scale display was self-selected by the \texttt{roc} function from the \textbf{"pRoc"} library. The function chooses to display the scale so that the AUC value is always greater than 0.5 if a user does not set his settings. This calculation is based on which group (quality parts, defective parts) has a higher median score. A simple subtraction was performed during using the \texttt{appraiserRoc} function use making it possible to build a joint diagram since it is not so smart of course.
+Note that the ``Specificity'' scale not the FPR is plotted on the abscissa axis, so the values on the axis are inverted. We can talk about the mutual unambiguity of these indicators since $Specificity = 1 - FPR$ according to the Table~\ref{tab:ROC-rates-1}. Any of them can be used consequently when plotting the ROC curve. This version of the scale display was self-selected by the \texttt{roc} function from the \textbf{"pRoc"} library. The function chooses to display the scale so that the AUC value is always greater than 0.5 if a user does not set his settings. This calculation is based on which group (quality parts, defective parts) has a higher median score. A simple subtraction was performed during using the \texttt{appraiserRoc} function use making it possible to build a joint diagram since it is not so smart of course.
 
 This approach has one limitation.  It does not allow correct processing of information if the sequence consists of identical estimates, based on the prognostic nature of the outcomes ordering. ``Turtle'' assumes that the order of the labels matters, but there is no meaningful order in the situation of same scores. That areas should~be displayed with a diagonal line, but not the traditional steps.
 %
@@ -873,7 +873,7 @@ with(glm_simple_roc, points(1 - FPR, TPR, col=1 + labels))
 \end{figure}
 %
 
-Consider an example where a diagonal is the only adequate way to plot a ROC curve. Let's create an extremely unbalanced data set in which only~1\,\% of the observations are "positive" to do this. The result of the prediction will always be negative in this case. There is no need for any ordering since all scores will be the same. The \texttt{roc} function from the \textbf{pRoc} package correctly recognizes such situations and draws a diagonal line~(1,0; 0,1). But the turtle assumes that the order of scores has some significance and moves between these points along a random trajectory alternating between ``north'' and ``east'' directions. The code calling the construction of such a ROC curve is given in script~\ref{lst:plot-ROC-rare-success-r}. In Diagram~\ref{fig:ROC-rare-success-r} the black diagonal line was plotted by the library's function while the blue dashed line was plotted by our own \textbf{appraiserRoc} function previously written. The library's function correctly determined the case of identical estimates as you can see. Running our own function resulted in random turtle wanderings.
+Consider an example where a diagonal is the only adequate way to plot a ROC curve. Let's create an extremely unbalanced data set in which only~1\,\% of the observations are "positive" to do this. The result of the prediction will always be negative in this case. There is no need for any ordering since all scores will be the same. The \texttt{roc} function from the \textbf{pRoc} package correctly recognizes such situations and draws a diagonal line~(1,0; 0,1). But the turtle assumes that the order of scores has some significance and moves between these points along a random trajectory alternating between ``north'' and ``east'' directions. The code calling the construction of such a ROC curve is given in the Script~\ref{lst:plot-ROC-rare-success-r}. In the Diagram~\ref{fig:ROC-rare-success-r} the black diagonal line was plotted by the library's function while the blue dashed line was plotted by our own \textbf{appraiserRoc} function previously written. The library's function correctly determined the case of identical estimates as you can see. Running our own function resulted in random turtle wanderings.
 %
 \begin{lstlisting}[float=htp, caption = Plotting the ROC curve in~case of~absence of~order of~scores, firstnumber=1, label= lst:plot-ROC-rare-success-r]
 # plot ROC for 99% negative cases
@@ -903,7 +903,7 @@ The ROC curve is a popular mean for visualizing the trade-off between sensitivit
 
 Calculating the area under the ROC curve is one way to summarize the quantitative assessment of classifier's quality. This metric is so common that the terms the Area under the curve or AUC refer specifically to the area under the ROC curve in the context of data analysis, unless explicitly stated otherwise.
 
-The simplest and most intuitive metric for classifier performance at first glance is its accuracy. Unfortunately, such a metric simply will not work in some cases. For example, a completely useless test that always shows a negative result would be 99.9999\,\% accurate in the case of a disease that occurs in one person per million. ROC curves are insensitive to unbalanced classes, in contrast to the accuracy index. The aforementioned useless test will have $AUC=0.5$ which is equivalent to no test at all (see diagram~\ref{fig:ROC-rare-success-r}).
+The simplest and most intuitive metric for classifier performance at first glance is its accuracy. Unfortunately, such a metric simply will not work in some cases. For example, a completely useless test that always shows a negative result would be 99.9999\,\% accurate in the case of a disease that occurs in one person per million. ROC curves are insensitive to unbalanced classes, in contrast to the accuracy index. The aforementioned useless test will have $AUC=0.5$ which is equivalent to no test at all (see the Diagram~\ref{fig:ROC-rare-success-r}).
 
 Next, we will first consider the geometric approach to the concept of AUC and develop a function that calculates its value. After we turn to another --- probabilistic --- interpretation of the concept of AUC.
 
@@ -924,7 +924,7 @@ prediction[9:10] <- mean(prediction[9:10])
 %
 The \textbf{prediction} vector contains pseudo-scores which are assigned by the classifier in practice. They are a decreasing sequence, which generally corresponds to the ``category'' labels in our learning case. The scores are replaced by their mean values to create a ties effect for observations with ordinal numbers 9 and 10 one representing the positive case and the other the negative case.
 
-TPR and FPR must be calculated to construct the ROC curve. It was shown in~\ref{plot-ROC-theory} how this can be done semi-automatically by calculating cumulative sums for positive and negative labels. This paragraph will use the library \textbf{pRoc} which performs all calculations at a low level automatically. Let's calculate the TPR, FPR, and AUC values with the code~\ref{lst:AUC-as-geom-calculate-AUC-r}. A dataframe containing the data for each observation will also be created and shown in Table~\ref{tab:roc_df-r}. The \texttt{roc} function can return the values of many indicators, but we only need TPR and FPR at this point. Recall that TPR means sensitivity and FPR is equivalent to the expression $1 - specificity$. The \texttt{roc} function returns values in ascending order by default. Hereupon they have been inverted so that the starting point has coordinates (0,0). The AUC value returned by the function was~0.825. We will compare it with the one that will be obtained in the course of its independent semi-automatic calculation in the following.
+TPR and FPR must be calculated to construct the ROC curve. It was shown in~\ref{plot-ROC-theory} how this can be done semi-automatically by calculating cumulative sums for positive and negative labels. This paragraph will use the library \textbf{pRoc} which performs all calculations at a low level automatically. Let's calculate the TPR, FPR, and AUC values with the code~\ref{lst:AUC-as-geom-calculate-AUC-r}. A dataframe containing the data for each observation will also be created and shown in the Table~\ref{tab:roc_df-r}. The \texttt{roc} function can return the values of many indicators, but we only need TPR and FPR at this point. Recall that TPR means sensitivity and FPR is equivalent to the expression $1 - specificity$. The \texttt{roc} function returns values in ascending order by default. Hereupon they have been inverted so that the starting point has coordinates (0,0). The AUC value returned by the function was~0.825. We will compare it with the one that will be obtained in the course of its independent semi-automatic calculation in the following.
 %
 \begin{lstlisting}[float=htp, caption = Calculation of~the AUC using the pRoc library, firstnumber=1, label= lst:AUC-as-geom-calculate-AUC-r]
 # create ROC object&dataframe and calculate AUC
@@ -978,7 +978,7 @@ If the ROC curve were a perfect step function, the area under it could be found 
 	\label{fig:ROC-bars-R}
 \end{figure}
 
-The following steps were taken to plot diagram~\ref{fig:ROC-bars-R}.
+The following steps were taken to plot the Diagram~\ref{fig:ROC-bars-R}.
 \begin{enumerate}
 	\item Define the~\texttt{rectangle} function that takes next arguments:
 	\begin{itemize}
@@ -987,7 +987,7 @@ The following steps were taken to plot diagram~\ref{fig:ROC-bars-R}.
 		\item angle of rotation after each step;
 		\item hatching density.
 	\end{itemize}
-	The algorithm shown in script~\ref{lst:create-rectangle-function-r} plots the rectangle as follows:
+	The algorithm shown in the Script~\ref{lst:create-rectangle-function-r} plots the rectangle as follows:
 	\begin{itemize}
 		\item the function accepts the initial \emph{x} and~\emph{y} coordinates from the appraiser;
 		\item then it gets the value of the step length ``to the East'' (to the right on the x-axis) and calculates the new value of the x-coordinate, keeping the value of the y-coordinate.
@@ -999,7 +999,7 @@ The following steps were taken to plot diagram~\ref{fig:ROC-bars-R}.
 	\item It is necessary to calculate the difference between neighboring values of FPR to calculate the step length ``to the East'' and ``to the West''. And for ``to the North'' and ``to the South'' between neighboring values of TPR. We add the two columns \emph{dFPR} and \emph{dTPR} respectively to do this using the code shown in~\ref{lst:add-dFPR&dTPR-columns-r}. The dataframe data are sorted in descending order. Zero should be added at the end, since the number of pairs for which the difference is calculated is less than the number of observations by one.
 	\item Next, the coordinate grid is laid out from zero to one on each axis using the code~\ref{lst:plot-empty-graph-from-0-to-1-r}.
 	\item There is a special kind of step ``to the North-East'' in the form of a diagonal line for the case of repeating values (ties).
-	\item The final step is to plot the ROC curve itself and the rectangles that form the area under it according to script~\ref{lst:plot-ROC-curve-and-rectangles-under-it-r}. The \texttt{mapply} function allows you to apply the \texttt{rectangle} function sequentially to each row of the data frame.
+	\item The final step is to plot the ROC curve itself and the rectangles that form the area under it according to the Script~\ref{lst:plot-ROC-curve-and-rectangles-under-it-r}. The \texttt{mapply} function allows you to apply the \texttt{rectangle} function sequentially to each row of the data frame.
 \end{enumerate}
 %
 \begin{lstlisting}[float=htp, caption = Create the \textbf{rectangle} function, firstnumber=1, label= lst:create-rectangle-function-r]
@@ -1038,7 +1038,7 @@ lines(FPR, TPR, type='b', lwd=3, col="red")
 \subparagraph{The summation of areas by means of an own function}
 The Area under the curve (AUC) (highlighted in~red) is the sum of the areas of all the green rectangles and half the area of the blue one. It is not necessary to know the absolute coordinates of vertices to calculate the area of each rectangle, its width and height are enough. The height of any rectangle is determined by the value of TPR and the width by dFPR since one of the sides of each one lies on the x-axis. Then the total area of all green rectangles is equal to the sum of \href{https://en.wikipedia.org/wiki/Dot_product}{dot~(scalar) products}~\cite{Wiki:dot-product} of TPR and dFPR. This vector approach calculates the area for each data point even if its width or height is zero. Their further accounting in the calculation is of no importance in this case, however. The area of the blue rectangles (if any) is determined by the values of dFPR and dTPR and also represents their dot product as vectors. One of these values (dTPR, dFPR) will be zero for areas of the graph containing northward or eastward steps. Blue rectangles as a result are possible only if TPR and FPR are changed simultaneously. Only half of such rectangle is under the curve.
 
-Recall that the previously calculated AUC was~0.825. Now let's calculate it in semi-automatic mode according to the algorithm described above. Create the function \texttt{appraiser\_auc} and then apply it to the test data to do this. See script~\ref{lst:create&apply-appraiser-auc-function-r}). The returned value is~0.825 which indicates that our logic and algorithm are correct.
+Recall that the previously calculated AUC was~0.825. Now let's calculate it in semi-automatic mode according to the algorithm described above. Create the function \texttt{appraiser\_auc} and then apply it to the test data to do this. See the Script~\ref{lst:create&apply-appraiser-auc-function-r}). The returned value is~0.825 which indicates that our logic and algorithm are correct.
 %
 \begin{lstlisting}[float=htp, caption = Creating a function to calculate AUC in semi-automatic mode and applying it to test data, firstnumber=1, label= lst:create&apply-appraiser-auc-function-r]
 # create function for AUC calculation
@@ -1054,7 +1054,7 @@ with(roc_df, appraiser_auc(TPR, FPR))
 \end{lstlisting}
 
 \paragraph{The rank comparison approach}
-It is also possible to use a fundamentally different approach to calculate the AUC. It is necessary to create a matrix containing all possible combinations of positive and negative cases to implement it. Each row represents a positive case. They are ordered so that the top row contains a case with the lowest score and the bottom row contains a case with the highest score. Similarly, the columns contain the negative cases, sorted so that the left column contains a case with the highest score and the right column contains a case with the lowest score. Then each cell represents a comparison of a particular positive case with a particular negative case. A cell takes TRUE if the score or rank of a positive case is higher than that of a negative case. Most positive cases will have higher scores (ranks) than negative cases, if a classifier is good enough. All exceptions will be concentrated in the upper left corner, where positive cases with low scores and negative cases with high scores are located. The script~\ref{lst:rank_comparison_auc-r} contains code to implement this algorithm and its visualization, shown in Figure~\ref{fig:rank-comparison-matrix-vizualization-r}.
+It is also possible to use a fundamentally different approach to calculate the AUC. It is necessary to create a matrix containing all possible combinations of positive and negative cases to implement it. Each row represents a positive case. They are ordered so that the top row contains a case with the lowest score and the bottom row contains a case with the highest score. Similarly, the columns contain the negative cases, sorted so that the left column contains a case with the highest score and the right column contains a case with the lowest score. Then each cell represents a comparison of a particular positive case with a particular negative case. A cell takes TRUE if the score or rank of a positive case is higher than that of a negative case. Most positive cases will have higher scores (ranks) than negative cases, if a classifier is good enough. All exceptions will be concentrated in the upper left corner, where positive cases with low scores and negative cases with high scores are located. The Script~\ref{lst:rank_comparison_auc-r} contains code to implement this algorithm and its visualization, shown in Figure~\ref{fig:rank-comparison-matrix-vizualization-r}.
 %
 \begin{lstlisting}[float=htp, caption = Create the function to~build a~comparison matrix and apply it to~the test data, firstnumber=1, label= lst:rank_comparison_auc-r]
 # create  function for rank comparison
@@ -1104,7 +1104,7 @@ Plotting of the ROC curve is done almost in the usual way in this case. The only
 We use the following trick to place the values in the desired range: we add one to them and divide by two, since applying the \texttt{sign} function results in one of three possible values: -1, 0, 1. The final calculation of the AUC is done by calculating the mean value.
 
 \paragraph{Probabilistic approach to calculating AUC}
-The probabilistic interpretation is that following.  If you randomly choose a positive case and a negative case, the probability that the score (rank) value of the positive case will be greater than that of the negative case is determined by AUC and equal to it. This follows in particular from Diagram~\ref{fig:rank-comparison-matrix-vizualization-r} in which the total area of the graph is normalized to one. And the cells of the matrix contain information about all possible combinations of positive and negative cases. The area under the curve consists of cells in which the scores (ranks) of positive cases exceed those of negative cases. Let's create and apply a function according to the Script~\ref{lst:create&apply-auc-as-probability-r} to approximate the AUC in the probabilistic approach. The returned AUC value was 0.8248116 which approximately corresponds to its exact value calculated earlier.
+The probabilistic interpretation is that following.  If you randomly choose a positive case and a negative case, the probability that the score (rank) value of the positive case will be greater than that of the negative case is determined by AUC and equal to it. This follows in particular from the Diagram~\ref{fig:rank-comparison-matrix-vizualization-r} in which the total area of the graph is normalized to one. And the cells of the matrix contain information about all possible combinations of positive and negative cases. The area under the curve consists of cells in which the scores (ranks) of positive cases exceed those of negative cases. Let's create and apply a function according to the Script~\ref{lst:create&apply-auc-as-probability-r} to approximate the AUC in the probabilistic approach. The returned AUC value was 0.8248116 which approximately corresponds to its exact value calculated earlier.
 %
 \begin{lstlisting}[float=htp, caption = Creating and applying a~function to calculate AUC as a~probability, firstnumber=1, label= lst:create&apply-auc-as-probability-r]
 # create function for calculation AUC as probability
@@ -1123,7 +1123,7 @@ auc_probability(as.logical(category), prediction)
 \subsubsection{Calculation of AUC for large data sets}
 We worked with a very small dataset earlier that allowed us to almost manually go through the data. We will work now with a previously created dataset containing information about quality and defective parts that require different valuation methods. Recall that in this dataset, the score vector is contained in the \textit{glm\_responce\_scores} variable and the label vector is contained in the \textit{bad\_parts} variable.
 
-The previously created dataset does not contain repeating values. Therefore, the ties effect will be added artificially to explore the issue more deeply. Rounding of scores was performed for this purpose. After that, we plot the ROC curve for the original data and then for the rounded data. The code to perform the above actions is given in Script~\ref{lst:bad-parts-ROC-oroginal&rounded-r}. A new vector of scores was created containing their values rounded to one decimal place to create a ties effect. The result of plotting the two ROC curves is shown in Diagram~\ref{fig:bad-parts-ROC-original&rounded-r}. The black line corresponds to the ROC curve plotted from the original data. These data contain unique scores for each observation. The red line corresponds to the ROC curve plotted on rounded scores. We used the data of variable \textit{glm\_response\_scores} taking a value from 0 to 1 as an input vector. Scores rounded to one decimal place consequently have only eleven possible values from 0.0 to 1.0. The AUC value for both cases is plotted directly on the chart. The values are approximately equal due to a sufficiently large number of observations as can be seen.
+The previously created dataset does not contain repeating values. Therefore, the ties effect will be added artificially to explore the issue more deeply. Rounding of scores was performed for this purpose. After that, we plot the ROC curve for the original data and then for the rounded data. The code to perform the above actions is given in the Script~\ref{lst:bad-parts-ROC-oroginal&rounded-r}. A new vector of scores was created containing their values rounded to one decimal place to create a ties effect. The result of plotting the two ROC curves is shown in the Diagram~\ref{fig:bad-parts-ROC-original&rounded-r}. The black line corresponds to the ROC curve plotted from the original data. These data contain unique scores for each observation. The red line corresponds to the ROC curve plotted on rounded scores. We used the data of variable \textit{glm\_response\_scores} taking a value from 0 to 1 as an input vector. Scores rounded to one decimal place consequently have only eleven possible values from 0.0 to 1.0. The AUC value for both cases is plotted directly on the chart. The values are approximately equal due to a sufficiently large number of observations as can be seen.
 %
 \begin{lstlisting}[float=htp, caption = Plotting the ROC curve on the original (black line) and rounded (red line) defective parts data, firstnumber=1, label= lst:bad-parts-ROC-oroginal&rounded-r]
 # create function for calculation AUC as probability
@@ -1147,7 +1147,7 @@ auc_probability(as.logical(category), prediction)
 \end{figure}
 %
 
-Next, let's try to apply the standard function as well as three of our own ones to calculate the AUC. After that, we construct two ROC curves based on the rank comparison matrices for the original and rounded scores. The code for applying the four functions to calculate AUC as well as constructing ROC curves based on comparison matrices is given in Script~\ref{lst:bad-parts-aplly-four-functions-r}.
+Next, let's try to apply the standard function as well as three of our own ones to calculate the AUC. After that, we construct two ROC curves based on the rank comparison matrices for the original and rounded scores. The code for applying the four functions to calculate AUC as well as constructing ROC curves based on comparison matrices is given in the Script~\ref{lst:bad-parts-aplly-four-functions-r}.
 %
 \begin{lstlisting}[float=htp, caption = Using four functions to calculate AUC and plot ROC curves based on comparison matrices for original and rounded scores, firstnumber=1, label= lst:bad-parts-aplly-four-functions-r]
 # apply all functions to data
@@ -1189,9 +1189,9 @@ rounded_scores)
 \end{figure}
 %
 
-Diagram~\ref{fig:bad-parts-ROC-original-r} contains the ROC-curve based on the original data. Diagram~\ref{fig:bad-parts-ROC-rounded-r} contains the ROC curve based on rounded scores. Each section is a diagonal segment running to the ``North-East'' as you can see. It was shown earlier that this direction corresponds to repeated values.
+The Diagram~\ref{fig:bad-parts-ROC-original-r} contains the ROC-curve based on the original data. The Diagram~\ref{fig:bad-parts-ROC-rounded-r} contains the ROC curve based on rounded scores. Each section is a diagonal segment running to the ``North-East'' as you can see. It was shown earlier that this direction corresponds to repeated values.
 
-The final results of the AUC calculations by the four methods are shown in Table~\ref{tab:calc-AUC-4-methods-r}. All three of our own functions calculate the AUC quite well as can be seen. They give close results with respect to the result of the function from the package \textbf{pROC}. These self-made functions serve more for training purposes, naturally. You should use the standard tools such as \textbf{pROC} or \textbf{ROCR} in practice.
+The final results of the AUC calculations by the four methods are shown in the Table~\ref{tab:calc-AUC-4-methods-r}. All three of our own functions calculate the AUC quite well as can be seen. They give close results with respect to the result of the function from the package \textbf{pROC}. These self-made functions serve more for training purposes, naturally. You should use the standard tools such as \textbf{pROC} or \textbf{ROCR} in practice.
 %
 
 \begin{table}[htp]
@@ -1231,7 +1231,7 @@ Calc: threaded) was used for this purpose. A significant part of its functionali
 
 The data considered in this section are fictitious and were generated by the LibreOffice Calc pseudorandom number generation algorithm. Use the key combination \emph{ctrl+shift+F9} to re-generate if necessary.
 
-Consider the training task. Cells I3:J30 contain data of values of some quantitative feature for observations of two samples taken from sets~\textit{I} and~\textit{J} respectively. The difference between the elements of these sets is the presence of some attribute in the elements of the set \textit{I} and its absence in the elements of the set \textit{J}. The task is to test the hypothesis that the difference in a given attribute should be recognized as significant and the attribute itself is a pricing factor. Let us create the null hypothesis by formulating it in three variants corresponding to the three levels of rigor described earlier in Table~\ref{tab:nul-hypothesis-variants}. It should be noted that the U-test refers to a branch of statistics based on the so-called \emph{frequentist approach to probability}. See in particular~\cite{Murashev:freq-baye-prob} for an overseen of the differences between the \emph{frequentist} and \emph{Bayesian} approaches to probability as applied to value estimation. As you know, the \emph{frequentist} approach is based on the premise that randomness is a consequence of objective uncertainty which can only be reduced by a series of experiments. There is a clear division into random and non-random parameters in the frequentist approach. A typical task is to estimate certain parameters of the general population, which is a set of random variables. A deterministic sampling parameters such as mean, mode, variance, etc. are used for this purpose. The latter represent specific values in which there is no longer any randomness. Thus, we initially accept the fundamental assumption of the random nature of the variables under study. Then we apply some methods of mathematical statistics which allow us to obtain specific values of parameter estimates. This allows us to reduce the level of uncertainty, which always remains nevertheless. It follows that the null hypothesis is most often pessimistic. It carries the assertion that the phenomenon or process under study is based on chance so that we are unable to draw reliable conclusions. The alternative hypothesis says in contrast that the level of uncertainty can be reduced due to the success of the experiment. Let us formulate the null and alternative hypotheses in three variants according to different levels of rigor considering all of the above and record them in Table~\ref{tab:nul-alt-hypothesis-variants}.
+Consider the training task. Cells I3:J30 contain data of values of some quantitative feature for observations of two samples taken from sets~\textit{I} and~\textit{J} respectively. The difference between the elements of these sets is the presence of some attribute in the elements of the set \textit{I} and its absence in the elements of the set \textit{J}. The task is to test the hypothesis that the difference in a given attribute should be recognized as significant and the attribute itself is a pricing factor. Let us create the null hypothesis by formulating it in three variants corresponding to the three levels of rigor described earlier in the Table~\ref{tab:nul-hypothesis-variants}. It should be noted that the U-test refers to a branch of statistics based on the so-called \emph{frequentist approach to probability}. See in particular~\cite{Murashev:freq-baye-prob} for an overseen of the differences between the \emph{frequentist} and \emph{Bayesian} approaches to probability as applied to value estimation. As you know, the \emph{frequentist} approach is based on the premise that randomness is a consequence of objective uncertainty which can only be reduced by a series of experiments. There is a clear division into random and non-random parameters in the frequentist approach. A typical task is to estimate certain parameters of the general population, which is a set of random variables. A deterministic sampling parameters such as mean, mode, variance, etc. are used for this purpose. The latter represent specific values in which there is no longer any randomness. Thus, we initially accept the fundamental assumption of the random nature of the variables under study. Then we apply some methods of mathematical statistics which allow us to obtain specific values of parameter estimates. This allows us to reduce the level of uncertainty, which always remains nevertheless. It follows that the null hypothesis is most often pessimistic. It carries the assertion that the phenomenon or process under study is based on chance so that we are unable to draw reliable conclusions. The alternative hypothesis says in contrast that the level of uncertainty can be reduced due to the success of the experiment. Let us formulate the null and alternative hypotheses in three variants according to different levels of rigor considering all of the above and record them in the Table~\ref{tab:nul-alt-hypothesis-variants}.
 %
 \begin{table}[htp]
 	\caption{The null hypothesis and the alternative hypothesis in the analysis of training data.}  \label{tab:nul-alt-hypothesis-variants}
@@ -1290,7 +1290,7 @@ Next, we calculate the values of U1 and U2 according to formulas~\ref{eq:U1}, \r
 
 Let's calculate the CLES indicator. We use formula~\ref{eq:CLES} to do this. The result is found in~C29. The indicator's value is~0.61 in this example. This should be interpreted as follows: \emph{the probability that the value of the unit value of a randomly chosen observation from set~\textit{I} is greater than that of a randomly chosen observation from set~\textit{J} is~0.61~(61\%)}. Next, we calculate the value of the rank-biserial correlation coefficient by formulas~\ref{eq:RBC-formula-1}, \ref{eq:RBC-formula-2}. Let's put it in cell~C36. The value was 0.21 in this case. So, the strength of correlation between the presence of the attribute \textit{"X"} and the unit value of the object is~0.21.
 
-After that, we proceed to calculate the standardized value (z-score) by formula~\ref{eq:z-score}. Calculate the mean using formula~\ref{eq:U-mean} in cell C38 to do this. Then we move on to the question of calculating the standard deviation. It should be noted that there are two formulas for this. The first~(\ref{eq:standard-deviation-no-ties}) applies if there are no ties (cell C39). The second~(\ref{eq:standard-deviation-ties}) applies when they are present (cell C40). Ties were present in the case at hand. They were processed in columns~P and~Q as well as in cells~E35:E49. Both formulas were applied in this paper. The result was two values with a difference of less than one percent. Consideration of the ties factor is necessary from the point of view of maximum scientific correctness of the result. Some appraisers may find it difficult to correctly account for this factor in their daily practice, however. They also may not have enough time for additional calculations. Practical experience tells us that any significant difference in the standard deviation values obtained using these two formulas occurs in cases of numerous ties or the presence of large groups. The simpler formula that automatically calculates the~${\sigma}$ value gives the enough correct result in other situations. Its accuracy is quite sufficient for valuation. The decision to use more scientific and rigorous or simple and fast methods is up to the appraiser in any case. The ties factor has been taken into account in the example under consideration.Knowing the mean and standard deviation allows us to calculate the z-score in cell C45. The continuity of the distribution is one of the prerequisites of the U-test. The empirical data are discrete, however. Therefore, the implementation of the adjustment by subtracting~0.5 is necessary. Then we calculate the p-value in cell C46 by approximating the normal distribution. It was 0.173 in this example. We conclude that it is impossible to reject the null hypothesis according to the rule~\ref{eq:p-interpretation}. We can come to the following conclusion using the wording closest to the valuation activity (see Table~\ref{tab:nul-alt-hypothesis-variants}): \emph{the presence or absence of attribute~"X" does not have any noticeable effect on the value, attribute~"X" is not a pricing factor}.
+After that, we proceed to calculate the standardized value (z-score) by formula~\ref{eq:z-score}. Calculate the mean using formula~\ref{eq:U-mean} in cell C38 to do this. Then we move on to the question of calculating the standard deviation. It should be noted that there are two formulas for this. The first~(\ref{eq:standard-deviation-no-ties}) applies if there are no ties (cell C39). The second~(\ref{eq:standard-deviation-ties}) applies when they are present (cell C40). Ties were present in the case at hand. They were processed in columns~P and~Q as well as in cells~E35:E49. Both formulas were applied in this paper. The result was two values with a difference of less than one percent. Consideration of the ties factor is necessary from the point of view of maximum scientific correctness of the result. Some appraisers may find it difficult to correctly account for this factor in their daily practice, however. They also may not have enough time for additional calculations. Practical experience tells us that any significant difference in the standard deviation values obtained using these two formulas occurs in cases of numerous ties or the presence of large groups. The simpler formula that automatically calculates the~${\sigma}$ value gives the enough correct result in other situations. Its accuracy is quite sufficient for valuation. The decision to use more scientific and rigorous or simple and fast methods is up to the appraiser in any case. The ties factor has been taken into account in the example under consideration.Knowing the mean and standard deviation allows us to calculate the z-score in cell C45. The continuity of the distribution is one of the prerequisites of the U-test. The empirical data are discrete, however. Therefore, the implementation of the adjustment by subtracting~0.5 is necessary. Then we calculate the p-value in cell C46 by approximating the normal distribution. It was 0.173 in this example. We conclude that it is impossible to reject the null hypothesis according to the rule~\ref{eq:p-interpretation}. We can come to the following conclusion using the wording closest to the valuation activity (see the Table~\ref{tab:nul-alt-hypothesis-variants}): \emph{the presence or absence of attribute~"X" does not have any noticeable effect on the value, attribute~"X" is not a pricing factor}.
 
 We looked at the step-by-step calculation of the U-test statistic, as well as carried out the interpretation of the result in this section. Performing the U-test in a spreadsheet is quite convenient, as shown above. But it is difficult to consider it as a best practice, however. Preference to professional programming development tools in machine learning and statistical inference should be given. Python and R programming languages are such tools in the first place.
 %
@@ -1311,11 +1311,11 @@ We looked at the step-by-step calculation of the U-test statistic, as well as ca
 	showstringspaces=false
 }
 %
-Python language has already become a de facto standard in machine learning and especially in a number of areas such as deep learning or computer vision. It is versatile and perfectly suited for the development of various expert systems, in addition. Its popularity means, among other things, that there are a huge number of tutorials on all aspects of development on Python in the field of data analysis designed for users of any level of training. Most of the calculations required by the appraiser can be done by calling standard functions from the data analysis plug-in libraries. These include, but are not limited to: \textbf{TensorFlow}, \textbf{NumPy}, \textbf{SciPy}, \textbf{Pandas}, \textbf{Matplotlib}, \textbf{Keras}, \textbf{SciKit-Learn}, \textbf{PyTorch}, \textbf{Scrapy}, \textbf{BeautifulSoup}. There is no need to write a large amount of code in this case. You don't need to have a deep knowledge of programming either. According to the author of this paper, the future of valuation lies precisely in the implementation of expert systems based on learning models from open market datasets. The use of Python significantly reduces the time of the U-test as will be shown below. It also allows you to create visualizations of market data without resorting to third-party tools. In addition, the use of professional functions virtually eliminates the possibility of errors in calculations. The Python language version 3.9.12 was used when writing the code. The Python language version 3.9.12 was used when writing the code. The author used the Spyder IDE (version 5.1.5) and the Jupyter Lab development environment (version 3.3.2). Python scripts containing the used code are available in the~\href{https://github.com/Kirill-Murashev/AI_for_valuers_Python_source/tree/main/Mann-Whitney-u-test}{repository}~\cite{Murashev:U-test.py}, \cite{Murashev:U-test.ipynb}.
+Python language has already become a de facto standard in machine learning and especially in a number of areas such as deep learning or computer vision. It is versatile and perfectly suited for the development of various expert systems, in addition. Its popularity means, among other things, that there are a huge number of tutorials on all aspects of development on Python in the field of data analysis designed for users of any level of training. Most of the calculations required by the appraiser can be done by calling standard functions from the plug-in libraries designed for data analysis. These include but are not limited to: \textbf{TensorFlow}, \textbf{NumPy}, \textbf{SciPy}, \textbf{Pandas}, \textbf{Matplotlib}, \textbf{Keras}, \textbf{SciKit-Learn}, \textbf{PyTorch}, \textbf{Scrapy}, \textbf{BeautifulSoup}. There is no need to write a large amount of code in case of using libraries. You don't need to have a deep knowledge of programming, either. The future of valuation lies precisely in the implementation of expert systems based on learning models based on open market datasets, according to the author of this paper. The use of Python significantly reduces the time of the U-test running, as will be shown below. It also allows you to create visualizations of market data without resorting to third-party tools. The use of professional functions virtually eliminates the possibility of errors in calculations, in addition. The Python language version 3.9.12 was used when writing the code. The author used IDEs Spyder (version 5.1.5) and Jupyter Lab (version 3.3.2). Python scripts containing the used code are available in the~\href{https://github.com/Kirill-Murashev/AI_for_valuers_Python_source/tree/main/Mann-Whitney-u-test}{repository}~\cite{Murashev:U-test.py}, \cite{Murashev:U-test.ipynb}.
 
-Let us consider a real data set containing information on the unit cost of apartments in the St.~Petersburg agglomeration. The data were scraped on September 28, 2021 from \href{https://www.cian.ru/}{cian.ru} and are available at~\href{https://github.com/Kirill-Murashev/datasets/blob/main/Saint-Petersburg/flats/spba_flats_210928.csv}{the link}~\cite{ds:spba-flats-210928}. The dataset under consideration contains 34821 observations. As you know, the St.~Petersburg agglomeration includes territories that are part of the Federal City, as well as those that are formally part of the Leningrad Region (Leningrad Oblast). The division into city and region is of a purely legal nature. From a socio-economic point of view, the nearest territories of the Leningrad Region are inextricably linked to St.~Petersburg and are part of one agglomeration. By the way, it is the largest in the world at this latitude. When forming the queries used in the scraping process, the southern boundary of the agglomeration was established approximately along the axis of the A-120 highway, while the northern boundary was established along the 41A-189 highway. At the same time, it included some settlements outside these boundaries, such as the cities of Kirovsk and Schlisselburg.
+Let us consider a real data set containing information on the unit cost of apartments in the St.~Petersburg agglomeration. The data were scraped on September 28, 2021, from \href{https://www.cian.ru/}{cian.ru} and are available at~\href{https://github.com/Kirill-Murashev/datasets/blob/main/Saint-Petersburg/flats/spba_flats_210928.csv}{the link}~\cite{ds:spba-flats-210928}. The dataset under consideration contains 34821 observations. The St. Petersburg agglomeration includes territories that are part of the Federal City, as well as those that are formally part of the Leningrad Region (Leningrad Oblast). St.~Petersburg and the Leningrad region form a single Euroregion Ingria, which is a socio-cultural autonomy within the so-called Russian Federation. The division into city and region is of a purely legal nature. The nearest territories of the Leningrad Region are inextricably linked to St. Petersburg and are part of one agglomeration from a socio-economic point of view. It is the largest in the world at this latitude, by the way. The southern boundary of the agglomeration was established approximately along the axis of the A-120 highway, while the northern boundary was established along the 41A-189 highway when forming the queries used in the scraping process. It included some settlements outside these boundaries, such as the cities of Kirovsk and Shlisselburg (P\"{a}hkin\"{a}linna) at the same time.
 
-Let us formulate the problem. It is necessary to determine whether or not there is a statistically significant difference in the prices of objects located within the boundaries of St.~Petersburg and objects formally located in the Leningrad region. Similarly to the previous case, let us formulate the null and alternative hypotheses, which this time make practical sense (see Table~\ref{tab:nul-alt-hypothesis-SPba}).
+Let us formulate the problem. It is necessary to determine whether there is a statistically significant difference in the unit prices of objects located within the boundaries of St.~Petersburg and objects formally located in the Leningrad region. Let us formulate the null and alternative hypotheses similarly to the previous case. This makes practical sense now. See the Table~\ref{tab:nul-alt-hypothesis-SPba}).
 \begin{table}[htp]
 	\caption{The null and alternative hypotheses in the analysis of data from the St.~Petersburg urban agglomeration}\label{tab:nul-alt-hypothesis-SPba}
 	\centering
@@ -1323,7 +1323,7 @@ Let us formulate the problem. It is necessary to determine whether or not there 
 		\hline
 		Type of hypothesis&The null hypothesis (H0)&The alternative hypothesis (H1)\\
 		\hline
-		Scientific&The distribution of unit cost indicators for apartments located within the borders of St.~Petersburg and apartments located in the adjacent areas of the Leningrad Region is the same. There is no shift between the two. The statistical estimates made for the set of analogues located in one part of the agglomeration are unbiased for objects located in the other part.&The distribution of unit cost indicators for apartments located within the borders of St.~Petersburg differs from the distribution of unit cost indicators for apartments located in the adjacent territories of the Leningrad Region. There is a shift. The estimate made for objects located in one part of the agglomeration will be biased for objects located in another part of it.\\
+		Scientific&The distribution of unit value indicators for apartments located within the borders of St.~Petersburg and apartments located in the adjacent areas of the Leningrad Region is the same. There is no shift between the two. The statistical estimates made for the set of analogues located in one part of the agglomeration are unbiased for objects located in the other part.&The distribution of unit value indicators for apartments located within the borders of St. Petersburg differs from the distribution of unit price indicators for apartments located in the adjacent territories of the Leningrad Region. There is a shift. The estimate made for objects located in one part of the agglomeration will be biased for objects located in another part of it.\\
 		\hline
 		Practical&The median of the unit value of apartments located within the borders of St.~Petersburg is equal to the median of the unit value of apartments located in the adjacent territories of the Leningrad Region.&The median of the unit value of apartments located within the borders of St.~Petersburg is not equal to the median of the unit value of apartments located in the adjacent territories of the Leningrad Region.\\
 		\hline
@@ -1331,7 +1331,7 @@ Let us formulate the problem. It is necessary to determine whether or not there 
 	\end{tabularx}
 \end{table}
 
-The Python language was not originally designed specifically for data analysis. Therefore, many of the functions required for calculations will be missing in its basic version. Fortunately, there are a number of libraries that contain many necessary functions. Their number is not as large as, for example, in the R language. Their functionality is also somewhat less than that of the R. However, they are exhaustive for the overwhelming number of tasks facing appraisers. We need the following libraries: \textbf{numpy}, \textbf{pandas},\textbf{ math}, \textbf{matplotlib.pyplot}, \textbf{scipy.stats} to solve the problems discussed in this paper. Use the code provided in script~\ref{lst:import-libraries-Python} to enable them.
+The Python language was not originally designed specifically for data analysis. Many of the functions required for calculations will be missing in its basic version, therefore. There are a number of libraries that contain many necessary functions, fortunately. Their number is not as large as in the R language, for example. Their functionality is also somewhat less than that of the R. They are exhaustive for the overwhelming number of tasks facing appraisers, however. We need the following libraries to solve the problems discussed in this paper: \textbf{numpy}, \textbf{pandas},\textbf{ math}, \textbf{matplotlib.pyplot}, \textbf{scipy.stats}. Use the code provided in the Script~\ref{lst:import-libraries-Python} to enable them.
 \begin{lstlisting}[float=htp, caption = Enabling the required libraries, firstnumber=1, label= lst:import-libraries-Python]
 # import libraries
 import numpy as np
@@ -1347,7 +1347,7 @@ from scipy.stats import mannwhitneyu
 \end{lstlisting}
 %
 
-Let us set the significance level $\alpha$, which is adopted for all further work. The choice of its value is the appraiser's prerogative. However, the most common value in papers on econometrics and operations research is~0.05. Code~\ref{lst:set-alpha} was used to set the significance level value.
+Let us set the significance level $\alpha$, which is adopted for all further work. The choice of its value is the appraiser's prerogative. The most common value in papers on econometrics and operations research is~0.05, however. Code~\ref{lst:set-alpha} was used to set the significance level value.
 %
 \begin{lstlisting}[float=htp, caption = Set the applicable level of significance, firstnumber=1, label= lst:set-alpha]
 # set significance level
@@ -1355,7 +1355,7 @@ alpha = 0.05
 \end{lstlisting}
 % 
 
-Now everything is ready to get to work. Let's create a dataframe based on the text file containing the data set under analysis (see script~\ref{lst:import-data-create-dataframe}).
+Now everything is ready to get to work. Let's create a dataframe based on the text file containing the data set under analysis (see the Script~\ref{lst:import-data-create-dataframe}).
 %
 \begin{lstlisting}[float=htp, caption = , firstnumber=1, label= lst:import-data-create-dataframe]
 # import dataset
@@ -1364,7 +1364,7 @@ print(df)
 type(df['price_m'])
 \end{lstlisting}
 %
-The dataframe repeats the contents of the original file exactly and contains 34821 observations and 4 variables. The following variables are present.
+The dataframe repeats the contents of the original file exactly and contains 34821~observations and 4~variables. The following variables are present.
 \begin{itemize}
 	\item Number.
 	\item Link to ad.
@@ -1376,7 +1376,7 @@ The dataframe repeats the contents of the original file exactly and contains 348
 		\item the last three indicate the municipality or territory.		
 	\end{itemize}
 \end{itemize}
-Python added its own variable containing the observation numbers. That makes five variables. Note that numbering in Python begins with zero, not one, as in most programming languages. Variables containing observation numbers and links to ads from the source file will not be used further. So we will create a new dataframe containing only the necessary variables. Let's also release the virtual memory by unloading the first dataframe from it to optimize the computer's resources. See script~\ref{lst:create-new-dataframe-release-RAM}. Such micro-optimization does not play a role in the case at hand. However, in order to learn how to create good code, it is better to write one extra line.
+Python added its own variable containing the observation numbers. That makes five variables. Note that numbering in Python begins with zero, not one. Variables containing observation numbers and links to ads from the source file will not be used further. So we will create a new dataframe containing only the necessary variables. Let's also release the virtual memory by unloading the first dataframe from it to optimize the computer's resources. See the Script~\ref{lst:create-new-dataframe-release-RAM}. Such micro-optimization does not play a role in the case at hand. In order to learn how to create good code, it is better to write one extra line, however.
 %
 \begin{lstlisting}[float=htp, caption = Creating a dataframe containing only necessary variables and freeing memory from objects not used later, firstnumber=1, label= lst:create-new-dataframe-release-RAM]
 # get only prices and counties, release RAM
@@ -1385,11 +1385,11 @@ del [[df]]
 \end{lstlisting}
 %
 
-The appraiser now has at his disposal a working dataframe in a convenient form. It contains data on the apartment market of the entire St.~Petersburg agglomeration. Let's plot a histogram combined with the density curve for the normal distribution to form the first view about the distribution. The Heinhold-Gaede formula ~\cite{Ingenieur-Statistik} was used to determine the rational number of intervals (histogram columns) --- \textit{k}.
+The appraiser now has a working dataframe in a convenient form at his disposal. It contains data on the apartment market of the entire St.~Petersburg agglomeration. Let's plot a histogram combined with the density curve for the normal distribution to form the first view about the distribution. The Heinhold-Gaede formula ~\cite{Ingenieur-Statistik} was used to determine the rational number of intervals (histogram columns) --- \textit{k}.
 \begin{equation}\label{eq:k-hist-Heinhold-Gaede}
 k = \sqrt{n},
 \end{equation}
-where~\textit{n} --- is the number of observations. ~\ref{lst:price-hist-spba}. Script~\ref{lst:price-hist-spba} was used to plot the histogram.
+where~\textit{n} --- is the number of observations. The Script~\ref{lst:price-hist-spba} was used to plot the histogram.
 %
 \begin{lstlisting}[float=htp, caption = Plotting the histogram for the agglomeration of St.~Petersburg., firstnumber=1, label= lst:price-hist-spba]
 # calculate the number of observations on data frame
@@ -1415,7 +1415,7 @@ plt.savefig('spba-price-histogram-py.pdf')
 \end{lstlisting}
 %
 
-Consider the resulting histogram~\ref{fig:spba-prices-hist}. The x-axis contains the values of prices per square meter, the y-axis the values of the probabilities of intervals. Both axes are presented in standard form. The expectation and standard deviation values for the theoretical normal distribution are also shown. As you can see, the distribution has a heavy right tail. This allows us to draw a preliminary conclusion that it is different from normal. Formalized normality tests will be performed in the future. We can limit ourselves to the primary subjective interpretation of the histogram for now.
+Consider the resulting histogram~\ref{fig:spba-prices-hist}. The x-axis contains the values of prices per square meter, the y-axis the values of the probabilities of intervals. Both axes are presented in standard form. The expectation and standard deviation values for the theoretical normal distribution are also shown. The distribution has a heavy right tail as you can see. An acute peak is also observed. This speaks of a too high value of the coefficient of kurtosis. Both of these factors allow us to draw a preliminary conclusion that it is different from normal. Formalized normality tests will be performed in the future. We can limit ourselves to the primary subjective interpretation of the histogram for now.
 %
 \begin{figure}[htp]
 	\centering
@@ -1424,7 +1424,7 @@ Consider the resulting histogram~\ref{fig:spba-prices-hist}. The x-axis contains
 	\label{fig:spba-prices-hist}
 \end{figure}
 %
-The subject of the research is the difference between the objects located in the two parts of the agglomeration. The initial dataset contains information about observations from both parts. Therefore, it will be necessary to create two separate dataframes.A small digression should be made here. Practical experience tells us that data analysis itself and model development take less than 20\,\% of the time, while more than 80\,\% is spent on data collection and preprocessing. Correct data markup is one of the important elements of these processes. In the case of the data set under consideration, their analysis in terms of individual territories up to the level of municipalities was initially provided by specifying a territory index for each observation. The first letter of the index contains an indication of which part of the agglomeration the observation is located in, as mentioned above. Two lines of code (see script~\ref{lst:create-two-separate-df-for-S-Pb-LO}) containing simple regular expressions are enough to create two separate dataframes in this case.
+The subject of the research is the difference between the objects located in the two parts of the agglomeration. The initial dataset contains information about observations from both parts. It will be necessary to create two separate dataframes, therefore. A small digression should be made here. Practical experience tells us that data analysis itself and models development take less than 20\,\% of the time, while more than 80\,\% is spent on data collection and preprocessing. Correct data markup is one of the important elements of these processes. Analysis of the data set under consideration in terms of individual territories up to the level of municipalities was initially provided by specifying a territory index for each observation. The first letter of the index contains an indication of which part of the agglomeration the observation is located in, as mentioned above. Two lines of code containing simple regular expressions are enough to create two separate dataframes in this case (see the Script~\ref{lst:create-two-separate-df-for-S-Pb-LO}).
 %
 \begin{lstlisting}[float=htp, caption = Creating separate dataframes for St.~Petersburg and the Leningrad Region., firstnumber=1, label= lst:create-two-separate-df-for-S-Pb-LO]
 # create separate dataframes for city and suburbs
@@ -1432,7 +1432,7 @@ dfs = df1[df1['county'].str.startswith('s')] # Saint-Petersburg
 dfl = df1[df1['county'].str.startswith('l')] # Leningradskaja oblastq
 \end{lstlisting}
 %
-The \emph{dfs} dataframe contains data for observations from St.~Petersburg (28643 observations). The \emph{dfl} dataframe contains data for observations from the Leningrad Region (6178 observations). Let's plot the histograms for both parts of the agglomeration. See scripts ~\ref{lst:price-hist-spb} and \ref{lst:price-hist-lo}.
+The \textbf{dfs} dataframe contains data for observations from St.~Petersburg (28643 observations). The \textbf{dfl} dataframe contains data for observations from the Leningrad Region (6178 observations). Let's plot the histograms for both parts of the agglomeration. See the Scripts ~\ref{lst:price-hist-spb} and \ref{lst:price-hist-lo}, respectively.
 %
 \begin{lstlisting}[float=htp, caption = Histogram plotting for St.~Petersburg., firstnumber=1, label= lst:price-hist-spb]
 # Saint-Petersburg
@@ -1485,21 +1485,21 @@ plt.savefig('lo-price-histogram-py.pdf')
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{spb-price-histogram-py.pdf}
-	\caption{Histogram of the density distribution of apartments' prices per 1~sq.\,m. in St.~Petersburg combined with the curve of the probability density function for the normal distribution.}
+	\caption{Histogram of the density distribution of apartments' prices per 1~sq.\,m in St.~Petersburg, combined with the curve of the probability density function for the normal distribution.}
 	\label{fig:spb-prices-hist}
 \end{figure}
 %
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{lo-price-histogram-py.pdf}
-	\caption{Histogram of the density distribution of apartments' prices per 1~sq.\,m. in the Leningrad Region located within the borders of the St.~Petersburg agglomeration combined with the curve of the probability density function for the normal distribution.}
+	\caption{Histogram of the density distribution of apartments' prices per 1~sq.\,m in the Leningrad Region located within the borders of the St.~Petersburg agglomeration, combined with the curve of the probability density function for the normal distribution.}
 	\label{fig:lo-prices-hist}
 \end{figure}
 %
 
-The histogram is sometimes confused with the bar graph. Recall that a properly plotted histogram is a representation of the probabilistic properties of the data. The sum of the areas of all its rectangles must be equal to one. Therefore, the probability values of the ranges (histogram columns), rather than the number of observations in each range, must be plotted on the y-axis. As can be seen in histogram~\ref{fig:spb-prices-hist}, the distribution of unit prices in St.~Petersburg as well as in the case with the distribution of prices for the entire agglomeration has a heavy right tail. In contrast, the distribution of prices for the agglomeration objects located outside the boundaries of St.~Petersburg, shown in histogram~\ref{fig:lo-prices-hist}, looks relatively symmetrical.
+The histogram is sometimes confused with the bar graph. Recall that a properly plotted histogram is a representation of the probabilistic properties of the data. The sum of the areas of all its rectangles must be equal to one. The probability values of the ranges (histogram columns) rather than the number of observations in each range must be plotted on the y-axis, therefore. The distribution of unit prices in St.~Petersburg as well as in the case with the distribution of prices for the entire agglomeration has a heavy right tail, as can be seen in Histogram~\ref{fig:spb-prices-hist}. The distribution of prices for the agglomeration objects located outside the boundaries of St. Petersburg shown in histogram~\ref{fig:lo-prices-hist} looks relatively symmetrical, in contrast.
 
-Let's also plot the boxplot for both dataframes using script~\ref{lst:boxplot-spba}. As can be seen in Diagram~\ref{fig:spb-lo-boxplot-py}, the value of median unit prices of properties located in St.~Petersburg is higher than the value of the third quartile of prices of properties located in the adjacent areas of the Leningrad Region.
+Let's also plot the boxplot for both dataframes using the Script~\ref{lst:boxplot-spba}. The value of median unit prices of properties located in St.~Petersburg is higher than the value of the third quartile of prices of properties located in the adjacent areas of the Leningrad Region, as can be seen in the Diagram~\ref{fig:spb-lo-boxplot-py}.
 %
 \begin{lstlisting}[float=htp, caption = Plotting the boxplot for both subsamples, firstnumber=1, label= lst:boxplot-spba]
 # add labels to data
@@ -1519,11 +1519,11 @@ plt.savefig('spb-lo-boxplot-py.pdf')
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{spb-lo-boxplot-py.pdf}
-	\caption{The boxplot diagram for the unit prices of apartment offers in the St. Petersburg agglomeration in the context of regional affiliation.}
+	\caption{The boxplot diagram for the unit prices of apartment offers in the St.~Petersburg agglomeration in the context of regional affiliation.}
 	\label{fig:spb-lo-boxplot-py}
 \end{figure}
 
-This circumstance allows us to make a subjective judgment that the null hypothesis should be rejected. However, graphical methods of analysis are only suitable for quick primary interpretation, as well as for presentation purposes. Performing the U-test itself will be necessary to form an objective evidentiary judgment.
+This circumstance allows us to make a subjective judgment that the null hypothesis should be rejected. Graphical methods of analysis are only suitable for quick primary interpretation as well as for presentation purposes, however. Performing the U-test itself will be necessary to form an objective evidentiary judgment.
 
 The normality tests for both dataframes (\textit{dfs}, \textit{dfl}) should be performed to test the applicability of the U-test. There are many criteria for testing the hypothesis that the sample distribution is normal. Three tests were performed in this case:
 \begin{itemize}
@@ -1531,18 +1531,18 @@ The normality tests for both dataframes (\textit{dfs}, \textit{dfl}) should be p
 	\item D'Agostino's K-squared test~\cite{Agostino-test};
 	\item Anderson-Darling test~\cite{Anderson-Darling-test}.
 \end{itemize}
-The Shapiro--~Francia test evaluates a sample of data and calculates how likely it is that it was drawn from a general population that has a normal distribution. This test is considered one of the most powerful normality tests~\cite{Kobzarq-prikl-mathstat}. At the same time, there are some premises indicating that it works well for samples of average size not exceeding five thousand observations (the minimum number is five).
+The Shapiro--~Francia test evaluates a sample of data and calculates how likely it is that it was drawn from a general population that has a normal distribution. This test is considered one of the most powerful normality tests~\cite{Kobzarq-prikl-mathstat}. There are some premises indicating that it works well for samples of average size not exceeding five thousand observations (the minimum number is five) at the same time.
 
 The D'Agostino's K-squared test is based on the analysis of \href{https://en.wikipedia.org/wiki/Skewness}{skewness}~\cite{Wiki:skewness} and ~\href{https://en.wikipedia.org/wiki/Kurtosis}{kurtosis}~\cite{Wiki:kurtosis} indices representing the realizations of the third and fourth \href{https://en.wikipedia.org/wiki/Central_moment}{central moments}~\cite{Wiki:central-moment}, respectively. This test is also considered one of the most powerful and has no limit on the maximum number of observations.
 
-The Anderson-Darling test is a modified version of the \href{https://en.wikipedia.org/wiki/Kolmogorov_Smirnov_test}{Kolmogorov-Smirnov test of goodness-of-fit}~\cite{Wiki:Kolmogorow-Smirnow-test}. It is used to test the hypothesis that the empirical distribution conforms to one of the known theoretical distributions. Its result is not the p-value, but the criterion statistics, unlike the previous two tests.  This requires a more complex interpretation of the result. However, it is already automated in Python.
+The Anderson-Darling test is a modified version of the \href{https://en.wikipedia.org/wiki/Kolmogorov_Smirnov_test}{Kolmogorov--~Smirnov test of goodness-of-fit}~\cite{Wiki:Kolmogorow-Smirnow-test}. It is used to test the hypothesis that the empirical distribution conforms to one of the known theoretical distributions. Its result is not the p-value, but the criterion statistics, unlike the previous two tests. This requires a more complex interpretation of the result. It is already automated in Python, however.
 
 Let us formulate the null hypotheses:
 \begin{itemize}
 	\item H0(SPb): the distribution of the values of unit prices of apartment offers in St.~Petersburg does not differ from the normal distribution;
-	\item H0(LO): the distribution of the values of apartment supply prices in the territories of the Leningrad Region that are part of the St.~Petersburg agglomeration does not differ from the normal distribution.
+	\item H0(LO): the distribution of the values of unit prices of apartment offers in the territories of the Leningrad Region that are part of the St.~Petersburg agglomeration does not differ from the normal distribution.
 \end{itemize} 
-Thus, a total of 6 tests will be performed. Their results will be summarized in Table~\ref{tab:normality-tests-values}. All three tests allowed \emph{H0(SPb)} to be rejected for St.~Petersburg data. Two of the three tests also allowed \emph{H0(LO)} to be rejected. We can conclude that the distribution of the subsample containing data about St. Petersburg is unambiguously different from normal, based on the results of the tests. We can also conclude that the distribution of the subsample containing data about the Leningrad region differs from normal with high probability, based on the results of the tests. The use of parametric tests is therefore inappropriate. As a consequence, the U-test discussed above should be used.
+Thus, a total of 6 tests will be performed. Their results will be summarized in the Table~\ref{tab:normality-tests-values}. All three tests allowed \emph{H0(SPb)} to be rejected for St.~Petersburg data. Two of the three tests also allowed \emph{H0(LO)} to be rejected. We can conclude that the distribution of the subsample containing data about St.~Petersburg is unambiguously different from normal, based on the results of the tests. We can also conclude that the distribution of the subsample containing data about the Leningrad region differs from normal with high probability based on the results of the tests. The use of parametric tests is therefore inappropriate. The U-test discussed above should be used as a consequence.
 %
 \begin{lstlisting}[float=htp, caption = Performing the Shapiro-Wilk test for St.~Petersburg data, firstnumber=1, label= lst:shapiro-wilk-test-spb]
 stat, p = shapiro(dfs['price_m'])
@@ -1635,7 +1635,8 @@ print('%.3f: %.3f, data does not look normal (reject H0)' % (sl, cv))
 	\end{tabular}
 \end{table}
 %
-Now all that remains is the U-test itself. We use script~\ref{lst:u-test-spba} for this. Its results are presented in Table~\ref{tab:u-test-py-result}. The p-value is less than the specified level of significance. Therefore, we can make the practical conclusion that the difference in the unit value of objects located in the urban and suburban parts of the agglomeration is significant and requires appropriate accounting. Other interpretations of the result can be obtained from the \textit{The alternative hypothesis~(H1)} column of Table\ref{tab:nul-alt-hypothesis-SPba}.
+
+The U-test itself is all that remains now. We use the Script~\ref{lst:u-test-spba} for this. Its results are presented in the Table~\ref{tab:u-test-py-result}. The p-value is less than the specified level of significance. We can make the practical conclusion that the difference in the unit value of objects located in the urban and suburban parts of the agglomeration is significant and requires appropriate accounting therefore. Other interpretations of the result can be obtained from the \textit{The alternative hypothesis~(H1)} column of the Table\ref{tab:nul-alt-hypothesis-SPba}.
 %
 \begin{lstlisting}[float=htp, caption = Wilcoxon--~Mann--~Whitney test for the data of unit prices of apartment offers in the agglomeration of St.~Petersburg, firstnumber=1, label= lst:u-test-spba]
 stat, p = mannwhitneyu(dfs['price_m'], dfl['price_m'])
@@ -1657,7 +1658,7 @@ print('Probably the same distribution')
 		\hline
 		p-value&0.000\\
 		\hline
-		The null hypothesis (see Table~\ref{tab:nul-alt-hypothesis-SPba})&rejected\\
+		The null hypothesis (see the Table~\ref{tab:nul-alt-hypothesis-SPba})&rejected\\
 		\hline
 		AUC&0.806\\
 		\hline
@@ -1667,7 +1668,7 @@ print('Probably the same distribution')
 \end{table}
 %
 \subsection{ROC analysis, AUC calculation}
-The theoretical issues of the relationship between the U-test and the concept of AUC were discussed earlier in~\ref{U-AUC}. A detailed discussion of the practical issues of calculating AUC for real data is given in ~\ref{AUC-almaty}. This subsection will show the code for calculating the AUC and RBC in Python. The code is given in script~\ref{lst:AUC&RBC-spba}. The values obtained along with the other results are shown in Table~\ref{tab:u-test-py-result}.
+The theoretical issues of the relationship between the U-test and the concept of AUC were discussed earlier in~\ref{U-AUC}. A detailed discussion of the practical issues of calculating AUC for real data is given in ~\ref{AUC-almaty}. This subsection will show the code for calculating the AUC and RBC in Python. The code is given in the Script~\ref{lst:AUC&RBC-spba}. The values obtained are shown in the Table~\ref{tab:u-test-py-result} along with the other results.
 %
 \begin{lstlisting}[float=htp, caption = Calculation of AUC and RBC for St.~Petersburg agglomeration data, firstnumber=1, label= lst:AUC&RBC-spba]
 # calculate AUC&RBC
@@ -1691,32 +1692,32 @@ rbc = auc-(1-auc)
 	showstringspaces=false
 }
 %
-The R programming language is not as widespread as Python. Although it is quite popular in developed countries. Its area of application is quite niche in Northern Eurasia. It is most often used in scientific activities, especially in biology and chemistry. Knowing this language is more of a bonus than a basic skill for a machine learning specialist. Nevertheless, it should be noted the advantages of R, which include:
+The R programming language is not as widespread as Python. It is quite popular in developed countries, although. Its area of application is quite niche in Northern Eurasia. It is most often used in scientific activities, especially in biology and chemistry. Knowing this language is more of a bonus than a basic skill for a machine learning specialist. Nevertheless, it should be noted the advantages of R which include:
 \begin{itemize}
-	\item a large set of libraries and functions, far superior to the Python toolkit;
+	\item a large set of libraries and functions far superior to the Python toolkit;
 	\item very good visualization tools;
 	\item handy web development tools such as \textbf{Shiny};
-	\item The language is not compiled, but interpreted, which is sometimes more convenient in the case of specific small tasks.
+	\item the language is not compiled but interpreted, which is sometimes more convenient in the case of specific small tasks.
 \end{itemize}
-The second circumstance is perhaps the main argument in favor of including the R language in the Artificial Intelligence series of publications for appraisers. Python, as a general-purpose language, was originally designed to create compiled executable applications. R is designed for step-by-step data analysis and presentation of all intermediate results.
+The second circumstance is perhaps the main argument in favor of including the R language in the Artificial Intelligence series of publications for appraisers. Python was originally designed to create compiled executable applications as a general-purpose language. R is designed for step-by-step data analysis and presentation of all intermediate results.
 
-The choice of the main programming language used by the appraiser depends on the specific task. The use of Python is preferable in the case of developing large complex solutions. It makes sense to pay attention to R in situations where the goal is to solve a specific problem, especially those requiring a serious visualization of the result. In any case, both of these languages have a sufficient set of tools to address the full range of data analysis tasks that arise in the value estimation process.
+The choice of the main programming language used by the appraiser depends on the specific task. The use of Python is preferable in the case of developing large complex solutions. It makes sense to pay attention to R in situations where the goal is to solve a specific problem, especially those requiring a serious visualization of the result. Both of these languages have a sufficient set of tools to address the full range of data analysis tasks that arise in the value estimation process in any case.
 
-When writing the R code, its version 4.2.1 (2022-06-23) "Funny-Looking Kid" was used, as well as the IDE RStudio (2022.02.3+492 "Prairie Trillium" Release, 2022-05-20 for Ubuntu Bionic).
+The R version 4.2.1 (2022-06-23) ``Funny-Looking Kid'' was used as well as the IDE RStudio (2022.02.3+492 "Prairie Trillium" Release, 2022-05-20 for Ubuntu Bionic) when writing the code.
 
-Consider another practical problem about the housing market in Almaty. The dataset was provided by Professor G.\,Shoulenbaeva of Narkhoz University. The data file is available \href{https://github.com/Kirill-Murashev/AI_for_valuers_book/blob/main/Parts-Chapters/Mann-Whitney-Wilcoxon/almaty-apts-2019-1.csv}{here}\cite{ds:almaty-apts-2019-1}. The dataset under consideration contains 2355 observations and 12 variables. One of the variables contains information about whether the apartment is offered for sale with or without furniture and appliances. There are three possible values of the variable:
+Consider another practical problem about the housing market in Almaty. The dataset was provided by G.\,Shoulenbaeva, the Professor of Narkhoz University. The data file is available \href{https://github.com/Kirill-Murashev/AI_for_valuers_book/blob/main/Parts-Chapters/Mann-Whitney-Wilcoxon/almaty-apts-2019-1.csv}{here}\cite{ds:almaty-apts-2019-1}. The dataset under consideration contains 2355 observations and 12 variables. One of the variables contains information about whether the apartment is offered for sale with or without furniture and appliances. There are three possible values of the variable:
 \begin{itemize}
 	\item the apartment is sold without furniture and appliances;
-	\item the apartment is sold with partial furniture and appliances.;
+	\item the apartment is sold with partial furniture and appliances;
 	\item the apartment is sold with full furniture and appliances. 
 \end{itemize}
 %
-Let's formulate the problem: it is necessary to establish whether or not the equipping of the apartment with movables has any effect on its value. First, the theory of valuation states that in estimating the value of the property the value of only the inseparable improvements of the object should be taken into account. Whereas the value of elements that are movables should be excluded from the value of the object itself. However, in practice, it is often impossible to accurately determine whether an element belongs to the separable or inseparable improvements. It is even more difficult to determine whether analogues have separable improvements. Mathematical analysis of market data will answer the question of whether the problem exists in general. It is possible that the influence of the factor of the presence of improvements having the characteristics of separable, is too insignificant.  Therefore, in any case, it cannot be correctly taken into account in the valuation.  Secondly, the solution of this problem will provide new knowledge about the specific real estate market. For further analysis, we will assume that there are only two options:
+Let's formulate the problem: it is necessary to establish whether the equipping of the apartment with movables has any effect on its value. First, the theory of valuation states that in estimating the value of the property the value of only the inseparable improvements of the object should be taken into account. Whereas the value of elements that are movables should be excluded from the value of the object itself. It is often impossible to accurately determine whether an element belongs to the separable or inseparable improvements in practice, however. It is even more difficult to determine whether analogues have separable improvements. Mathematical analysis of market data will answer the question of whether the problem exists in general. It is possible that the influence of the factor of the improvements' presence having the characteristics of separable is too insignificant. So it cannot be correctly taken into account in the valuation in any case therefore. Secondly, the solution of this problem will provide new knowledge about the specific real estate market. We will assume that there are only two options for further analysis:
 \begin{itemize}
 	\item sale without potentially separable improvements and chattels;
 	\item sale along with potentially separable improvements and chattels.
 \end{itemize}
-The decision to combine the two categories into one was motivated by three reasons. First, the U-test has certain mathematical limitations and is designed to compare only two samples. There is a non-parametric \href{https://en.wikipedia.org/wiki/Kruskal–Wallis_one-way_analysis_of_variance}{ Kruskal--~Wallis test also known as a one-way ANOVA of ranks} to analyze more than two samples~\cite{Wiki:Kruskal-Wallis}. Second, it is important to understand whether the fact that there are any separable improvements as such has an impact on the value in terms of the theoretical problem outlined above. Third, the division of objects into partially and fully equipped may have been somewhat subjective. Variants of the null and alternative hypotheses are shown in Table~\ref{tab:nul-alt-hypothesis-almaty}.
+The decision to combine the two categories into one was motivated by three reasons. First, the U-test has certain mathematical limitations and is designed to compare only two samples. There is a non-parametric \href{https://en.wikipedia.org/wiki/Kruskal–Wallis_one-way_analysis_of_variance}{Kruskal--~Wallis test also known as a one-way ANOVA of ranks} to analyze more than two samples~\cite{Wiki:Kruskal-Wallis}. Second, it is important to understand whether the fact that there are any separable improvements as such has an impact on the value in terms of the theoretical problem outlined above. Third, the division of objects into partially and fully equipped may have been somewhat subjective. Variants of the null and alternative hypotheses are shown in the Table~\ref{tab:nul-alt-hypothesis-almaty}.
 \begin{table}[htp]
 	\caption{The null and alternative hypotheses in the analysis of data from the city of Almaty.} \label{tab:nul-alt-hypothesis-almaty}
 	\centering
@@ -1724,7 +1725,7 @@ The decision to combine the two categories into one was motivated by three reaso
 		\hline
 		Type of hypothesis&The null hypothesis~(H0)&The alternative hypothesis~(H1)\\
 		\hline
-		Scientific&The distributions of the unit values of apartments offered for sale together with separable improvements and chattels and apartments sold without them are the same. There is no shift between the two. The statistical estimates made for a set of objects sold with separable improvements and chattels are unbiased for objects sold without them (the opposite is also true).&The distributions of the unit values of apartments offered for sale together with separable improvements and chattels and apartments offered for sale without them are not equal. There is a shift between the two. The statistical estimate made for a set of properties offered for sale with separable improvements and chattels will be biased for properties offered for sale without them (the opposite is also true).\\
+		Scientific&The distributions of the unit values of apartments offered for sale together with separable improvements and chattels and apartments sold without them are the same. There is no shift between the two. The statistical estimates made for a set of objects sold with separable improvements and chattels are unbiased for objects sold without them (the opposite is also true).&The distributions of the unit values of apartments offered for sale together with separable improvements and chattels and apartments offered for sale without them are not equal. There is a shift between the two. The statistical estimates made for a set of properties offered for sale with separable improvements and chattels will be biased for properties offered for sale without them (the opposite is also true).\\
 		\hline
 		Practical&The median of the unit value of the apartments offered for sale together with the separable improvements and chattels is equal to the median of the unit value of the apartments offered for sale without them.&The median of the unit value of the apartments offered for sale together with the separable improvements and chattels is not equal to the median of the unit value of the apartments offered for sale without them.\\
 		\hline
@@ -1733,7 +1734,8 @@ The decision to combine the two categories into one was motivated by three reaso
 	\end{tabularx}
 \end{table}
 %
-Before you start, you should enable the necessary libraries, set some constants and the path to the working directory, for example as shown in script~\ref{lst:import-libraries-set-constants-set-catalog-R}.
+
+You should enable the necessary libraries, set some constants and the path to the working directory before you start. See the Script~\ref{lst:import-libraries-set-constants-set-catalog-R} for example.
 %
 \begin{lstlisting}[float=htp, caption = Enables libraries and specifies the values of constants and the path to the working directory, firstnumber=1, label= lst:import-libraries-set-constants-set-catalog-R]
 # activate libraries
@@ -1753,7 +1755,7 @@ setwd('~/.../Wilcoxon-Mann-Whitney/')
 \end{lstlisting}  
 %
 
-Next, you need to create a dataframe based on an existing text file with data. It is desirable to leave only the necessary variables \textit{price.m} and \textit{furniture} in order to optimize the use of computing resources. Then convert the dataframe into a more convenient and modern \textbf{tibble} format. See script~\ref{lst:create-dataframe-transform-and-convert-R}. After that, it is necessary to calculate the total number of observations, as well as each type depending on the presence of separable improvements and chattels, see script~\ref{lst:calculate-numbers-of-observations-R}). The results of the count are presented in Table~\ref{tab:numbers-of-observations-almaty-R}.
+Next, you need to create a dataframe based on an existing text file with data. It is desirable to leave only the necessary variables \textit{price.m} and \textit{furniture} in order to optimize the use of computing resources. Then convert the dataframe into a more convenient and modern \textbf{tibble} format. See the Script~\ref{lst:create-dataframe-transform-and-convert-R}. It is necessary to calculate the total number of observations, as well as of each type, depending on the presence of separable improvements and chattels, after that; see the Script~\ref{lst:calculate-numbers-of-observations-R}). The results of the count are presented in the Table~\ref{tab:numbers-of-observations-almaty-R}.
 %
 \begin{lstlisting}[float=htp, caption = Creating a dataframe and setting it up, firstnumber=1, label= lst:create-dataframe-transform-and-convert-R]
 # create data set from file, create subset with needed variables,
@@ -1772,11 +1774,11 @@ n.non.equip <- NROW(almatyFlats$furniture[ which(almatyFlats$furniture == 0)])
 n.equip <- NROW(almatyFlats$furniture[ which(almatyFlats$furniture > 0)]))
 \end{lstlisting}
 %
-For the purposes of primary visualization of the data, we plot histograms for observations of all types. This time the number of columns will be determined by the formula developed in 1991 by P.\,W.~Nowiczkij~\cite{Nowiczkij:oczenka-pogresh}.
+We plot histograms for observations of all types for the purposes of data primary visualization. The number of columns will be determined by the formula developed in 1991 by P.\,W.~Nowiczkij~\cite{Nowiczkij:oczenka-pogresh}, this time.
 \begin{equation}\label{eq:k-hist_Nowiczkij}
 k = \frac{1}{3}\sqrt[5]{\varepsilon^4 n^2} \equiv \frac{1}{3} \sqrt[5]{\frac{n^2}{\xi^8}}, 
 \end{equation}
-where $\varepsilon$ --- is the kurtosis coefficient, $\xi$ --- is the counter kurtosis coefficient. First, let's create an appropriate function for convenience  (script~\ref{lst:k-number-Nowiczkij-R}). Then we calculate a rational number of intervals for the entire data set and separately for apartments offered for sale without and with separable improvements and chattels (see script~\ref{lst:k-number-R}). The results of the calculation are shown in Table~\ref{tab:numbers-of-observations-almaty-R}.
+where $\varepsilon$ --- is the kurtosis coefficient, $\xi$ --- is the counter kurtosis coefficient. First, let's create an appropriate function for convenience  (the Script~\ref{lst:k-number-Nowiczkij-R}). Then we apply this function and calculate a rational number of intervals for the entire data set and separately for apartments offered for sale without and with separable improvements and chattels (see the Script~\ref{lst:k-number-R}). The results of the calculation are shown in the Table~\ref{tab:numbers-of-observations-almaty-R}.
 %
 \begin{lstlisting}[float=htp, caption = Create a function to calculate~k using Nowiczkij's formula, firstnumber=1, label= lst:k-number-Nowiczkij-R]
 # create function for second Nowiczkij formula
@@ -1798,7 +1800,7 @@ k.equip <-kHistNowiczkij2(almatyFlats$price.m[ which(almatyFlats$furniture > 0)]
 \begin{table}[htp]
 	\caption{Information about the number of observations of different types in the market of Almaty.}\label{tab:numbers-of-observations-almaty-R}
 	\centering
-	\begin{tabular}{lll}
+	\begin{tabularx}{\textwidth}{p{0.55\linewidth} p{0.2\linewidth} p{0.2\linewidth}}
 		\hline
 		Type of observation.&Number of&Rational number of intervals~(k).\\
 		\hline
@@ -1808,10 +1810,11 @@ k.equip <-kHistNowiczkij2(almatyFlats$price.m[ which(almatyFlats$furniture > 0)]
 		\hline
 		Observations with separable improvements and chattels&1750&31\\
 		\hline
-	\end{tabular}
+	\end{tabularx}
 \end{table}
 %
-Let's plot histogram for all observations (Diagram~\ref{fig:almaty-hist-all-r}), those that are equipped (Diagram~\ref{fig:almaty-hist-equiped-r}) and those that are sold without any separable improvements (Diagram~\ref{fig:almaty-hist-nequiped-r}). The diagrams show that the distributions have heavy right tails. This indirectly indicates that the distribution in all three cases differs from the normal one. Quantitative tests of normality will be performed later to form an informed judgment. The code for histograms is given in script~\ref{lst:plot-hist-R}. The basic descriptive statistics for each of the three types of observations are given in Table~\ref{tab:summaries-almaty-R}. They were calculated using script~~\ref{lst:summaries-R}. The boxplot diagram was built using script~\ref{lst:boxplot-R}. It is shown in Diagram~\ref{fig:almaty-boxplot-r}. As you can see, the median price of properties offered for sale with separable improvements and chattels is higher than the median price of properties offered for sale without them.
+
+Let's plot a histogram for all observations (the Diagram~\ref{fig:almaty-hist-all-r}), those that are equipped (the Diagram~\ref{fig:almaty-hist-equiped-r}) and those that are sold without any separable improvements (the Diagram~\ref{fig:almaty-hist-nequiped-r}). The diagrams show that the distributions have heavy right tails. This indirectly indicates that the distribution differs from the normal one in all three cases. Quantitative tests of normality will be performed later to form an informed judgment. The code for the histograms is given in the Script~\ref{lst:plot-hist-R}. The basic descriptive statistics for each of the three types of observations are given in the Table~\ref{tab:summaries-almaty-R}. They were calculated using the Script~\ref{lst:summaries-R}. The boxplot diagram was plotted using the Script~\ref{lst:boxplot-R}. It is shown in the Diagram~\ref{fig:almaty-boxplot-r}. The median price of properties offered for sale with separable improvements and chattels is higher than the median price of properties offered for sale without them, as you can see.
 %
 \begin{lstlisting}[float=htp, caption = Plotting histograms for observations of different types, firstnumber=1, label= lst:plot-hist-R]
 # plot the histogram, combined with the density curve of the theoretical
@@ -1852,7 +1855,7 @@ summary(almatyFlats$price.m[ which(almatyFlats$furniture > 0)])
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{almaty-hist-all.pdf}
-	\caption{Histogram of bid prices for all objects. Combined with the density function curve of the empirical distribution, as well as the density function curve of the theoretical normal distribution.}
+	\caption{Histogram of bid prices for all objects. Combined with the density function curve of the empirical distribution as well as the density function curve of the theoretical normal distribution.}
 	\label{fig:almaty-hist-all-r}
 \end{figure}
 %
@@ -1860,22 +1863,21 @@ summary(almatyFlats$price.m[ which(almatyFlats$furniture > 0)])
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{almaty-hist-equiped.pdf}
-	\caption{Histogram of bid prices for properties offered for sale together with separable improvements and chattels. Combined with the density function curve of the empirical distribution, as well as the density function curve of the theoretical normal distribution.}
+	\caption{Histogram of bid prices for properties offered for sale together with separable improvements and chattels. Combined with the density function curve of the empirical distribution as well as the density function curve of the theoretical normal distribution.}
 	\label{fig:almaty-hist-equiped-r}
 \end{figure}
-%
 %
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{almaty-hist-nequiped.pdf}
-	\caption{Histogram of bid prices for properties offered for sale without separable improvements and chattels. Combined with the density function curve of the empirical distribution, as well as the density function curve of the theoretical normal distribution.}
+	\caption{Histogram of bid prices for properties offered for sale without separable improvements and chattels. Combined with the density function curve of the empirical distribution as well as the density function curve of the theoretical normal distribution.}
 	\label{fig:almaty-hist-nequiped-r}
 \end{figure}
 %
 \begin{table}[htp]
-	\caption{Basic descriptive statistics of observations of different types in the market of Almaty. The unit of measure is the Kazakhstani tenge.}\label{tab:summaries-almaty-R}
+	\caption{Basic descriptive statistics for observations of different types in the market of Almaty. The unit of measure is the Kazakhstani tenge.}\label{tab:summaries-almaty-R}
 	\centering
-	\begin{tabular}{lllllllll}
+	\begin{tabularx}{\textwidth}{p{0.35\linewidth} p{0.07\linewidth} p{0.07\linewidth} p{0.1\linewidth} p{0.07\linewidth} p{0.07\linewidth} p{0.07\linewidth}}
 		\hline
 		Type of observation.&Min&1Q&Median&Mean&3Q&Max\\
 		\hline
@@ -1885,13 +1887,13 @@ summary(almatyFlats$price.m[ which(almatyFlats$furniture > 0)])
 		\hline
 		Observations with separable improvements and chattels&117000&305446&350331&368113&406183&928571\\
 		\hline
-	\end{tabular}
+	\end{tabularx}
 \end{table}
 %
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.95\textwidth]{almaty-boxplot.pdf}
-	\caption{Boxplot for the market of Almaty.}
+	\caption{The boxplot for the market of Almaty.}
 	\label{fig:almaty-boxplot-r}
 \end{figure}
 %
@@ -1915,7 +1917,7 @@ The next stage of the analysis is to check the normality of the distribution of 
 	\item the adjusted Jarque--~Bera test~\cite{Jarque-Bera-test};
 	\item the Lilliefors' test~\cite{Liliefors-normality-test}.
 \end{itemize}
-The code for running tests for objects without and with separable improvements is given in scripts~\ref{lst:normality-tests-nequiped-R} and~\ref{lst:normality-tests-equiped-R}, respectively. The test results for the subsamples are summarized in Table~\ref{tab:normality-tests-values-R}. The results of all tests allow us to draw an unambiguous conclusion: the distributions of both subsamples differ from the normal one. This points to the need to use nonparametric criteria.
+The code for running tests for objects without and with separable improvements is given in the Scripts~\ref{lst:normality-tests-nequiped-R} and~\ref{lst:normality-tests-equiped-R}, respectively. The test results for the subsamples are summarized in the Table~\ref{tab:normality-tests-values-R}. The results of all tests allow us to draw an unambiguous conclusion: the distributions of both subsamples differ from the normal one. This points to the need to use non-parametric criteria.
 %
 \begin{lstlisting}[float=htp, caption = Performing normality tests for observations without separable improvements and chattels, firstnumber=1, label= lst:normality-tests-nequiped-R]
 # normality tests for non equipped observations
@@ -1951,7 +1953,7 @@ lillie.test(almatyFlats$price.m[ which(almatyFlats$furniture > 0)])
 	\centering
 	\begin{tabular}{lll}
 		\hline
-		Test name&Without inseparable improvements&Without inseparable improvements\\
+		Test name&Without inseparable improvements&With inseparable improvements\\
 		\hline
 		Shapiro--~Wilk&\ref{lst:normality-tests-nequiped-R}&\ref{lst:normality-tests-equiped-R}\\
 		criterion statistic~(W)&0.9&0.9\\
@@ -1984,7 +1986,7 @@ lillie.test(almatyFlats$price.m[ which(almatyFlats$furniture > 0)])
 	\end{tabular}
 \end{table}
 %
-To perform a U-test, just run the code contained in script~\ref{lst:U-test-R}. The results of the test are shown in Table~\ref{tab:u-test-r-result}. Based on this result, we can conclude that the factor of the presence of inseparable improvements and chattels must be taken into account.
+Just run the code contained in the Script~\ref{lst:U-test-R} to perform the U-test. The results of the test are shown in the Table~\ref{tab:u-test-r-result}. We can conclude that the factor of the presence of inseparable improvements and chattels must be taken into account based on this result.
 %
 \begin{lstlisting}[float=htp, caption = Running a U-test for data from the city of Almaty., firstnumber=1, label= lst:U-test-R]
 # perform Mann-Whitney U-test
@@ -2003,7 +2005,7 @@ almatyFlats$price.m[ which(almatyFlats$furniture > 0)])
 		\hline
 		p-value&1e-09\\
 		\hline
-		The null hypothesis (see Table~\ref{tab:nul-alt-hypothesis-almaty})&rejected\\
+		The null hypothesis (see the Table~\ref{tab:nul-alt-hypothesis-almaty})&rejected\\
 		\hline
 		AUC&0.583\\
 		\hline
@@ -2014,7 +2016,7 @@ almatyFlats$price.m[ which(almatyFlats$furniture > 0)])
 %
 \subsection{AUC issues}
 \subsubsection{AUC calculation}\label{AUC-almaty}
-The theoretical issues of the relationship between the U-test and the concept of AUC were discussed earlier in Chapter~\ref{U-AUC}. Note only that the AUC, which is a quantitative estimate of the area under the ROC curve, is a widely used characteristic of the quality of a binary classifier. Surprisingly, the AUC is directly related to the U-statistic. This subsection will calculate the AUC and show the relationship between it and the U-test. Let's add \textit{labels} vector to the existing dataframe. It contains binary labels indicating the presence or absence of inseparable improvements and chattels in a particular observation. See script~\ref{lst:create-labels-vector-R}. Thus, the \textit{price.m} variable is a vector of scores, and the \textit{labels} variable is a vector of labels.
+The theoretical issues of the relationship between the U-test and the concept of AUC were discussed earlier in Chapter~\ref{U-AUC}. Note only that the AUC which is a quantitative estimate of the area under the ROC curve is a widely used characteristic of the quality of a binary classifier. The AUC is directly related to the U-statistic, surprisingly. This subsection will calculate the AUC and show the relationship between it and the U-test. Let's add \textit{labels} vector to the existing dataframe. It contains binary labels indicating the presence or absence of inseparable improvements and chattels in a particular observation. See the Script~\ref{lst:create-labels-vector-R}. Thus, the \textit{price.m} variable is a vector of scores and the \textit{labels} variable is a vector of labels.
 %
 \begin{lstlisting}[float=htp, caption = Adding a variable with binary labels. firstnumber=1, label= lst:create-labels-vector-R]
 # create vector for labels
@@ -2025,7 +2027,7 @@ almatyFlats$labels[almatyFlats$furniture > 0] <- 1
 \end{lstlisting}
 %
 
-Let's create our own function to calculate AUC based on Formula~\ref{eq:AUC}, where $U_{1}$ is the test statistic. And then apply it to the data. Let's write script~\ref{lst:create&apply-owm-WMW-AUC-function-R} to do this. The returned AUC value was \textbf{0.583}. It can be interpreted as follows: \emph{the probability that the unit value of a random observation (object-analogues) offered for sale together with separable improvements and movable property is higher than that of a random observation offered for sale without separable improvements and movable property is equal to 0.583}.
+Let's create our own function to calculate AUC based on the Formula~\ref{eq:AUC} where $U_{1}$ is the test statistic. And then apply it to the data. Let's write the Script~\ref{lst:create&apply-owm-WMW-AUC-function-R} to do this. The returned AUC value was \textbf{0.583}. It can be interpreted as follows: \emph{the probability that the unit value of a random observation (object-analogues) offered for sale together with separable improvements and movable property is higher than that of a random observation offered for sale without separable improvements and movable property is equal to 0.583}.
 %
 \begin{lstlisting}[float=htp, caption = Create your own function to calculate the AUC and apply it to the data of the Almaty market., firstnumber=1, label= lst:create&apply-owm-WMW-AUC-function-R]
 # create function to calculate AUC
@@ -2042,7 +2044,7 @@ auc_wmw(almatyFlats$labels, almatyFlats$price.m)
 \end{lstlisting}
 %
 
-Let's also create our own function to calculate the U-statistic according to Formula~\ref{eq:U1} for better understanding of further actions. The values of "positive cases" (observations with inseparable improvements and chattels) will be taken as~$R_{1}$ and~$n_{1}$. Naturally, calculating U-statistic for "negative" cases ($R_{2},\ n_{2}$) is also possible. The U1 and U2 statistics are complementary with respect to each other, because their sum is always equal to~$n_{1} \times n_{2}$. Using the U2 statistic causes the ROC curve to flip. Hense $AUC_{2}=1-AUC_{1}$. The U-test has previously been shown to be related to the Bayesian approach to probability. Therefore, there is no need to determine what is a positive and negative case using any special methods. A priori knowledge that properties offered for sale together with separable improvements and chattels are worth more than properties offered for sale without them is sufficient. The code to create such a function is given in Script~\ref{lst:create&apply-owm-U-stat-function-R}. The returned value of AUC was 0.583. Within our function \texttt{auc\_wmw} we use our own function \texttt{rank}. It works as follows: the observation with the lowest value is assigned a rank of 1 (if there are no ties). Then the ranks are assigned as the value of scores increases. In the case of bundles, such observations are assigned a median value of the entire group.
+Let's also create our own function to calculate the U-statistic according to the Formula~\ref{eq:U1} for better understanding of further actions. The values of ``positive cases'' (observations with inseparable improvements and chattels) will be taken as~$R_{1}$ and~$n_{1}$. Calculating U-statistic for ``negative'' cases ($R_{2},\ n_{2}$) is also possible, naturally. The U1 and U2 statistics are complementary with respect to each other because their sum is always equal to~$n_{1} \times n_{2}$. Using the U2 statistic causes the ROC curve to flip. Hence $AUC_{2}=1-AUC_{1}$. The U-test has previously been shown to be related to the Bayesian approach to probability. There is no need to determine what is a positive and negative case using any special methods, therefore. A priori knowledge that properties offered for sale together with separable improvements and chattels are worth more than properties offered for sale without them is sufficient. The code to create such a function is given in the Script~\ref{lst:create&apply-owm-U-stat-function-R}. The returned value of AUC was 0.583. Within our function \texttt{auc\_wmw} we use our own function \texttt{rank}. It works as follows: the observation with the lowest value is assigned a rank of 1 (if there are no ties). Then the ranks are assigned as the value of scores increases. In the case of ties, such observations are assigned a median value of the entire group.
 %
 \begin{lstlisting}[float=htp, caption = Creation of own function to calculate U-statistic and its application to Almaty market data, firstnumber=1, label= lst:create&apply-owm-U-stat-function-R]
 create function to calculate AUC in different way
@@ -2060,10 +2062,10 @@ auc_wmw2(almatyFlats$labels, almatyFlats$price.m)
 \end{lstlisting}
 %
 
-In what follows, the rationale for the equivalence of the concept of AUC and the value resulting from the application of the formula~\ref{eq:U1} will be given.
+The rationale for the equivalence of the concept of AUC and the value resulting from the application of the formula~\ref{eq:U1} will be given in what follows.
 %
 \subsubsection{Graphical interpretation ot the U-statistic}
-Let's plot a diagram, on which horizontal bars will be laid out the ranks of observations. Positive observations are colored green, negative observations are colored red. Code~\ref{lst:vizualize-pos&neg-cases-almaty-R} was used to do this. The result was Diagram~~\ref{fig:pos&neg-ranks-vizualize-r.pdf}.
+Let's plot a diagram, on which horizontal bars will be laid out the ranks of observations. Positive observations are colored green, negative observations are colored red. The code~\ref{lst:vizualize-pos&neg-cases-almaty-R} was used to do this. The result was the Diagram~\ref{fig:pos&neg-ranks-vizualize-r.pdf}.
 %
 \begin{lstlisting}[float=htp, caption = Visualization of the ranks of positive and negative observations for the Almaty market, firstnumber=1, label= lst:vizualize-pos&neg-cases-almaty-R]
 # create function to prepare data for plotting
@@ -2104,13 +2106,13 @@ u_illustration_part1(labels=almatyFlats$labels, scores=almatyFlats$price.m)
 \end{figure}
 %
 
-Now consider only the positive cases shown by the green bars. Let's stack them sequentially on top of each other, shifting to the right as negative cases meet. See script~~\ref{lst:vizualize-pos-cases-almaty-R}. In this way we get a sequence of graduated steps. Consider Diagram 5~\ref{fig:pos-ranks-vizualize-r.pdf}. The total area of green bands is equivalent to the value of~$R_{1}$, calculated according to the logic of formula~\ref{eq:common-R}. The red box on the right represents the part we will subtract. Note that the total area of the green bars inside the shaded red square is equal to
+Now consider only the positive cases shown by the green bars. Let's stack them sequentially on top of each other, shifting to the right as negative cases meet. See the Script~\ref{lst:vizualize-pos-cases-almaty-R}. We get a sequence of graduated steps in this way. Consider the Diagram~\ref{fig:pos-ranks-vizualize-r}. The total area of green bands is equivalent to the value of~$R_{1}$ calculated according to the logic of the  Formula~\ref{eq:common-R}. The red box on the right represents the part we will subtract. Note that the total area of the green bars inside the shaded red square is equal to
 \begin{equation}\label{eq:R-1}
 S_{green-bars-right-side}=\frac{n_{1}(n_{1}+1)}{2},
 \end{equation}
-which is the sum of integers from~1 to~$n_{1}$. The rectangle highlighted by the black dotted line on the left side represents the part that we will keep. The green area inside it (the sum of the green bars) represents the value of the $U_{1}$ statistic. In this case, $n_{1}$ is the number of steps on the y-axis, obviously equal to the number of green bars. Less obvious is that $n_{2}$ is the number of steps "to the East" inside the black rectangle. It matches to the number of missed negative observations. This graph is a graphical representation of the formula for calculating of~$U_{1}$. The area of the entire black rectangle grid is~$n_{1} \times n_{2}$. Then $U_{1}$ represents the absolute value of the area under the curve. The~$U_{1}$ should be divided by~$n_{1} \times n_{2}$ to normalize the value. This operation is exactly the same as the academic formula~\ref{eq:AUC} used to calculate the AUC for the U-test. The practice of normalizing values follows from the rules of ROC analysis, which further indicates that the U-test is related to machine learning techniques.
+which is the sum of integers from~1 to~$n_{1}$. The rectangle highlighted by the black dotted line on the left side represents the part that we will keep. The green area inside it (the sum of the green bars) represents the value of the $U_{1}$ statistic. In this case, $n_{1}$ is the number of steps on the y-axis, obviously equal to the number of green bars. Less obvious is that $n_{2}$ is the number of steps ``to the East'' inside the black rectangle. It matches to the number of missed negative observations. This graph is a graphical representation of the formula for calculating of~$U_{1}$. The area of the entire black rectangle grid is~$n_{1} \times n_{2}$. Then $U_{1}$ represents the absolute value of the area under the curve. The~$U_{1}$ should be divided by~$n_{1} \times n_{2}$ to normalize the value. This operation is exactly the same as the academic Formula~\ref{eq:AUC} used to calculate the AUC for the U-test. The practice of normalizing values follows from the rules of ROC analysis, which further indicates that the U-test is related to machine learning techniques.
 
-The blue line represents the ROC curve built with the regular \texttt{roc} function from the \textbf{pROC} library. It is scaled by $n_{2}$ on the x-axis~(FPR) and by $n_{1}$ on the y-axis~(TPR). In the case of bars representing unique ranks, it coincides with their left edge. In the case of ties, it divides the bar vertically as a diagonal pointing "to the Northeast".
+The blue line represents the ROC curve built with the regular \texttt{roc} function from the \textbf{pROC} library. It is scaled by $n_{2}$ on the x-axis (FPR) and by $n_{1}$ on the y-axis (TPR). It coincides with their left edge in the case of bars representing unique ranks. In the case of ties, it divides the bar vertically as a diagonal pointing ``to the Northeast''.
 %
 \begin{lstlisting}[float=htp, caption = Visualization of the ranks of positive and negative observations for the Almaty market, firstnumber=1, label= lst:vizualize-pos-cases-almaty-R]
 # create function to stack positive cases
@@ -2159,22 +2161,22 @@ u_illustration_part2(labels=almatyFlats$labels, scores=almatyFlats$price.m)
 	\centering
 	\includegraphics[width=0.95\textwidth]{pos-ranks-vizualize-r.pdf}
 	\caption{Visualization of the ranks of positive and negative observations for the Almaty market.}
-	\label{fig:pos-ranks-vizualize-r.pdf}
+	\label{fig:pos-ranks-vizualize-r}
 \end{figure}
 %
 \clearpage
 %
 \chapter{Conclusion}
-The theoretical and practical aspects of applying the Wilcoxon-Mann-Whitney criterion in the daily practice of an appraiser were discussed in this paper. Independent analysis of market data is the best and probably the only truly evidentiary tool an appraiser has. It is the only way to create value for the customer as well as new knowledge about the markets. Data analysis by means of programming languages is simple enough in spite of some initial input threshold. Some of the steps taken are redundant and were made to demonstrate a small part of the capabilities of the Python and R languages, and to show the importance of data visualization. The minimum set of actions required to perform a U-test includes the following steps:
+The theoretical and practical aspects of applying the Wilcoxon-Mann-Whitney criterion in the daily practice of an appraiser were discussed in this paper. Independent analysis of market data is the best and probably the only truly evidentiary tool an appraiser has. It is the only way to create value for the customer as well as new knowledge about the markets. Data analysis by means of programming languages is simple enough, in spite of some initial input threshold. Some taken steps are redundant and were made to demonstrate a small part of the capabilities of the Python and R languages and to show the importance of data visualization. The minimum set of actions required to perform the U-test includes the following steps:
 \begin{itemize}
 	\item load data into the development environment and create a dataframe;
 	\item divide the sample into two subsamples based on the value of the binary attribute;
 	\item run tests for normality of distributions (performing the Shapiro--~Francia or D'Agostino's K-squared test is sufficient in most cases);
 	\item run the U-test itself.
 \end{itemize}
-It takes only a few minutes to run the test, given the availability of ready-made scripts.
+It takes only a few minutes to run the test given the availability of ready-made scripts.
 
-In conclusion, I would like to give the following recommendation: the modern appraiser needs to learn Python first of all. His tools are likely to cover all data analysis needs. Knowing R can help in solving particularly complex and non-trivial problems if you strive for perfection and have the desire to be a level higher. \href{https://habr.com/ru/post/670250/}{Alternative opinions}, however, also exist~\cite{Habr:Python-or-R}. The era of mass application of machine learning and mathematical statistics to valuation activities is just beginning. Right now, it's hard to predict what tools will be the standard of the appraiser in 5 or 10 years.
+The following recommendation can be made in conclusion. The modern appraiser needs to learn Python foremost. Its tools are likely to cover all data analysis needs. The knowledge of R can help in solving particularly complex and non-trivial problems if you strive for perfection and have the desire to be a level higher. \href{https://habr.com/ru/post/670250/}{Alternative opinions} also exist~\cite{Habr:Python-or-R}, however. The era of mass application of machine learning and mathematical statistics to valuation activities is just beginning. It's hard to predict right now what tools will be the standard of the appraiser in 5 or 10 years.
 %
 \clearpage
 %
