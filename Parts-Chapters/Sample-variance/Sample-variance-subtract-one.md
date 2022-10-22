@@ -1,0 +1,100 @@
+Why we need to subtract one when calculate sampling variance
+================
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/3/30/Inkerin_lippu.svg"
+style="width:25.0%" />
+</center>
+
+## Subject
+
+It is well known that when calculating the sampling variance, you must
+subtract one from the number of observations in the denominator of the
+formula. More often than not, it is enough just to know that it is
+necessary to do this additional action. In fact, most functions in R and
+Python (as well as in other languages) do this automatically.
+Spreadsheets also have a built-in means of calculating sampling
+variance. However, given the need to provide evidence of the valuation
+process, it is incumbent on the appraiser to understand what he or she
+is doing. This article has two purposes: the first is to explain the
+essence of this operation, the second is a rigorous mathematical proof
+of its necessity.
+
+## General description of the issue and rationale for adjusting the number of observations
+
+To give you a mathematically rigorous answer, it’s because that makes
+the sample variance an ‘unbiased estimator’. Sample standard deviation
+with n-1 is biased which is easily proven with [Jensen’s
+inequality](https://en.wikipedia.org/wiki/Jensen's_inequality). But who
+can understand what it means. However, there is a fairly simple
+explanation. The point is that the appraiser works with the sample in
+order to make statistical inferences about the general population, not
+about the sample itself. When estimating a parameter, we come up with
+some kind of plausible estimator which is a function of all the data we
+have. Such an estimate for the variance would be
+
+$\hat\Theta = \frac{1}{n-1} \sum_{i=1}^{n}(X_{i}-X_{n}').$
+
+You should note that the data points are subtracted by its sample mean,
+not the population mean. It means that you’ve lost 1 degree of freedom
+by calculating the sample mean in advance of estimating the sample
+variance. This may not be entirely clear to those appraisers who do not
+have a mathematical background. I can tell you some brief explanation:
+if you know the sample mean, you don’t have to know *all* the data
+points. You only need $n-1$ data points and the sample mean will fill up
+the last one and this takes away a degree of freedom. At first glance,
+it’s difficult to wrap the head around why it has to do with calculating
+the sample variance. So, the concept of the degrees of freedom doesn’t
+provide comprehensive clarification in the question. However, to form an
+initial understanding, it is enough to know that the need to subtract
+one is due to the fact that the appraiser is working with a sample, but
+is estimating the general population. This requires him to remove one
+degree of freedom and fill it with the sample mean. Keep in mind that
+this does not rectify the biasedness of sample standard deviation.
+However, there is no unique form of standard deviation that is unbiased
+throughout all distributions, which is why we stick with sample standard
+deviation. It’s better than dividing by n after all.
+
+This is an R Markdown format used for publishing markdown documents to
+GitHub. When you click the **Knit** button all R code chunks are run and
+a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Mathematical justification
+
+Now we turn to the mathematical proof of the need to subtract the one.
+We will also justify why it is the very one and not any other number.
+First, we need to define ‘biasedness’ and it is represented as follows:
+
+$E(\hat\Theta)-\Theta,$
+
+where $\Theta$ is the parameter we want to estimate and $\hat\Theta$ is
+the estimator we devised to estimate the parameter. Therefore, in the
+case of estimating the population variance $\sigma^{2}$, the natural
+estimator will be the sample variance (with no correction, thus biased):
+
+$\frac{1}{n} \sum_{i=1}^{n}(X_{i}-\tilde{X_{n}})^{2}$
+
+## The E
+
+You can include R code in the document as follows:
+
+``` r
+summary(cars)
+```
+
+    ##      speed           dist       
+    ##  Min.   : 4.0   Min.   :  2.00  
+    ##  1st Qu.:12.0   1st Qu.: 26.00  
+    ##  Median :15.0   Median : 36.00  
+    ##  Mean   :15.4   Mean   : 42.98  
+    ##  3rd Qu.:19.0   3rd Qu.: 56.00  
+    ##  Max.   :25.0   Max.   :120.00
+
+## Including Plots
+
+You can also embed plots, for example:
+
+![](Sample-variance-subtract-one_files/figure-gfm/pressure-1.png)<!-- -->
+
+Note that the `echo = FALSE` parameter was added to the code chunk to
+prevent printing of the R code that generated the plot.
