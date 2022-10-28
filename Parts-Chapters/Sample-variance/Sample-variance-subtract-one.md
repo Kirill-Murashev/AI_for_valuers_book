@@ -1,7 +1,7 @@
 Why we need to subtract one when calculate sampling variance
 ================
 Cyrill A. Murashev,
-2022-10-28
+2022-10-29
 
 ## Subject
 
@@ -102,9 +102,9 @@ $\textstyle{n \overline{X}_{n}}$.
 $\displaystyle{= \frac{1}{n} \biggl[ n (\sigma^{2} +\mu^{2}) - 2E(n \overline{X^{2}_{n}}) +\sigma^{2} +n \mu^{2} \biggr] = \frac{1}{n} \biggl[ (n+1)\sigma^{2} +2n\mu^{2} - 2n \biggl( \frac{\sigma^{2}}{n} +\mu^{2} \biggr) \biggr] = \frac{n-1}{n}\sigma^{2}}$
 
 Now when we divide the sum of squares
-$\sum_{i=1}^{n} (X_{i} - \overline{X_{n}})^{2}$ by $n$ (sample variance
-with no correction) and take the expectation, then we get
-$\textstyle{\frac{n-1}{n}\sigma^{2}}$.
+$\textstyle{\sum_{i=1}^{n} (X_{i} - \overline{X_{n}})^{2}}$ by
+$\textstyle{n}$ (sample variance with no correction) and take the
+expectation, then we get $\textstyle{\frac{n-1}{n}\sigma^{2}}$.
 
 $\displaystyle{E\biggl[\frac{1}{n} \sum_{i-1}^{n} (X_{i} - \overline{X_{n}})^{2}\biggr] = \frac{n-1}{n}\sigma^{2}}$
 
