@@ -31,9 +31,69 @@ transformation is discussed in a later paper.
 
 ## General description
 
-# The concept of Power transform
+### The concept of Power transform
 
-You can include R code in the document as follows:
+In [statistics](https://en.wikipedia.org/wiki/Statistics), a power
+transform is a family of functions applied to create a [monotonic
+transformation](https://en.wikipedia.org/wiki/Monotonic_function) of
+data using [power
+functions](https://en.wikipedia.org/wiki/Power_function). It is a [data
+transformation](https://en.wikipedia.org/wiki/Data_transformation_(statistics))
+technique used to [stabilize
+variance](https://en.wikipedia.org/wiki/Variance-stabilizing_transformation),
+make the data more [normal
+distribution](https://en.wikipedia.org/wiki/Normal_distribution)-like,
+improve the validity of measures of association (such as the [Pearson
+correlation](https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient)
+between variables), and for other data stabilization procedures.
+
+### Definition
+
+The power transformation is defined as a continuously varying function,
+with respect to the power parameter $\textstyle{\lambda}$, in a
+piece-wise function form that makes it continuous at the point of
+singularity $\textstyle{(λ = 0)}$. For data vectors
+$\textstyle{(y_{1}, \ldots, y_{n})}$ in which each
+$\textstyle{y_{i} > 0}$, the power transform is $$
+\displaystyle{\begin{equation}
+y_{i}^{(\lambda)} = 
+\begin{cases}
+\frac{y_{i}^{\lambda}-1}{\lambda(GM(y))^{\lambda-1}}, &if\ \lambda \neq 0 \\
+GM(y) \ln y_{i}, &if\ \lambda = 0 \\
+\end{cases}
+\end{equation}}
+$$
+
+where
+
+$$
+\displaystyle{\begin{equation}
+GM(y)= \biggl(\prod_{i=1}^{n}y_{i} \biggr)^\frac{1}{n} = \sqrt[n]{y_{1},y_{2}\cdots,y_{n}}
+\end{equation}}
+$$
+
+is the [geometric mean](https://en.wikipedia.org/wiki/Geometric_mean) of
+the observations $\textstyle{y_{1},\ldots,y_{n}}$. The case for
+$\textstyle{\lambda = 0}$ is the limit as $\textstyle{\lambda}$
+approaches $\textstyle{0}$. To see this, note that
+
+$$
+\displaystyle{\begin{equation}
+y_{i}^{\lambda} = exp(\lambda \ln(y_{i})) = 1 + \lambda \ln(y_{i}) + O((\lambda \ln(y_{i}))^{2}).
+\end{equation}}
+$$
+
+Then
+
+$$
+\displaystyle{\begin{equation}
+\frac{y_{i}^{\lambda}-1}{\lambda} = \ln(y_{i}+O(\lambda)),
+\end{equation}}
+$$
+
+and everything but $\textstyle{\ln(y_{i})}$ becomes negligible for
+$\textstyle{\lambda}$ sufficiently small. You can include R code in the
+document as follows:
 
 ``` r
 summary(cars)
@@ -55,3 +115,18 @@ You can also embed plots, for example:
 
 Note that the `echo = FALSE` parameter was added to the code chunk to
 prevent printing of the R code that generated the plot.
+
+## \## Bibliography
+
+nocite: \| Wikipedia (n.d.) —
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-Wiki:Power-transform" class="csl-entry">
+
+Wikipedia. n.d. “Power Transform.” Accessed October 30, 2022.
+<https://en.wikipedia.org/wiki/Power_transform>.
+
+</div>
+
+</div>
