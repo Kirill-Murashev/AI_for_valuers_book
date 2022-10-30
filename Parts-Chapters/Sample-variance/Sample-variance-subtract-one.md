@@ -1,7 +1,7 @@
 Why we need to subtract one when calculate sampling variance
 ================
 Cyrill A. Murashev,
-2022-10-29
+2022-10-30
 
 ## Subject
 
@@ -181,3 +181,19 @@ not go over this subject as it is not related directly to the question.
 
 So, you can see empirically that the unbiased variance yields a better
 estimate of the population variance.
+
+## \## Bibliography
+
+nocite: \| Lim (n.d.) —
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-Quora:samp-var-sub-one" class="csl-entry">
+
+Lim, Daeyoung. n.d. “On the Sample Standard Deviation, Why Do We
+Subtract n by 1?” Accessed October 30, 2022.
+<https://www.quora.com/On-the-sample-standard-deviation-why-do-we-subtract-N-by-1>.
+
+</div>
+
+</div>

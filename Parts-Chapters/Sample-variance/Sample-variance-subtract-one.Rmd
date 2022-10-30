@@ -3,6 +3,7 @@ title: "Why we need to subtract one when calculate sampling variance"
 author: "Cyrill A. Murashev,"
 date: "`r Sys.Date()`"
 output: github_document
+bibliography: /home/kaarlahti/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/Mathstat.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -98,3 +99,9 @@ mean(unbiased_variances)
 The mean of the unbiased variances is closer to the population variance 64 than the that of the biased variances. This wouldn't matter if the sample size were large. This is another thing you need to check when you want to figure out if an estimator is good. Check this out: [Consistent estimator](https://en.wikipedia.org/wiki/Consistent_estimator)). I will not go over this subject as it is not related directly to the question.
 
 So, you can see empirically that the unbiased variance yields a better estimate of the population variance.
+
+## Bibliography
+---
+nocite: |
+  @Quora:samp-var-sub-one
+---
