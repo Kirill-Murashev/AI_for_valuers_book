@@ -1,9 +1,9 @@
 Application of the Box-Cox transformation in valuation
 ================
 Cyrill A. Murashev,
-2022-10-30
+2022-11-06
 
-## Abstract
+# Abstract
 
 The ability to work with numerical data is an essential skill for an
 appraiser. Price or cost per object or unit (e.g. square meter or foot,
@@ -29,9 +29,9 @@ possibility of applying a two-parameter transformation model. I used the
 R language to write this paper. The use of Python to perform the Box-Cox
 transformation is discussed in a later paper.
 
-## General description
+# General description
 
-### The concept of Power transform
+## The concept of Power transform
 
 In [statistics](https://en.wikipedia.org/wiki/Statistics), a power
 transform is a family of functions applied to create a [monotonic
@@ -47,7 +47,7 @@ improve the validity of measures of association (such as the [Pearson
 correlation](https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient)
 between variables), and for other data stabilization procedures.
 
-### Definition
+## Definition
 
 The power transformation is defined as a continuously varying function,
 with respect to the power parameter $\textstyle{\lambda}$, in a
@@ -55,13 +55,13 @@ piece-wise function form that makes it continuous at the point of
 singularity $\textstyle{(λ = 0)}$. For data vectors
 $\textstyle{(y_{1}, \ldots, y_{n})}$ in which each
 $\textstyle{y_{i} > 0}$, the power transform is $$
-\displaystyle{\begin{equation}
+\displaystyle{
 y_{i}^{(\lambda)} = 
 \begin{cases}
 \frac{y_{i}^{\lambda}-1}{\lambda(GM(y))^{\lambda-1}}, &if\ \lambda \neq 0 \\
-GM(y) \ln y_{i}, &if\ \lambda = 0 \\
+GM(y) \ln{y_{i}}, &if\ \lambda = 0 \\
 \end{cases}
-\end{equation}}
+}
 $$
 
 where
@@ -79,7 +79,7 @@ approaches $\textstyle{0}$. To see this, note that
 
 $$
 \displaystyle{\begin{equation}
-y_{i}^{\lambda} = exp(\lambda \ln(y_{i})) = 1 + \lambda \ln(y_{i}) + O((\lambda \ln(y_{i}))^{2}).
+y_{i}^{\lambda} = exp{(\lambda \ln{(y_{i})})} = 1 + \lambda \ln{(y_{i})} + O((\lambda \ln{(y_{i}}))^{2}).
 \end{equation}}
 $$
 
@@ -87,38 +87,455 @@ Then
 
 $$
 \displaystyle{\begin{equation}
-\frac{y_{i}^{\lambda}-1}{\lambda} = \ln(y_{i}+O(\lambda)),
+\frac{y_{i}^{\lambda}-1}{\lambda} = \ln{(y_{i}+O(\lambda))},
 \end{equation}}
 $$
 
 and everything but $\textstyle{\ln(y_{i})}$ becomes negligible for
-$\textstyle{\lambda}$ sufficiently small. You can include R code in the
-document as follows:
+$\textstyle{\lambda}$ sufficiently small. The inclusion of the
+$\textstyle{(\lambda-1)th}$ power of the geometric mean in the
+denominator simplifies the [scientific interpretation of any
+equation](https://en.wikipedia.org/wiki/Dimensional_analysis) involving
+$\textstyle{y_{i}^{(\lambda)}}$, because the units of measurement do not
+change as $\textstyle{\lambda}$ changes.
+[Box](https://en.wikipedia.org/wiki/George_E._P._Box) and [Cox]() (1964)
+introduced the geometric mean into this transformation by first
+including the
+[Jacobian](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant)
+of rescaled power transformation
+
+$$
+\displaystyle{\begin{equation}
+\frac{y^{\lambda}-1}{\lambda}
+\end{equation}}
+$$
+
+with the likehood. This Jacobian is as follows:
+
+$$
+\displaystyle{\begin{equation}
+J(\lambda;y_{1}\ldots,y_{n})=\prod_{i=1}^{n}\biggl|\frac{\partial y_{i}^{(\lambda)}}{\partial y}\biggr| = \prod_{i=n}^{n}y_{i}^{\lambda-1} = GM(y)^{n(\lambda-1)}
+\end{equation}}
+$$
+
+This allows the normal [log likelihood at its
+maximum](https://en.wikipedia.org/wiki/Maximum_likelihood#Continuous_distribution,_continuous_parameter_space)
+to be written as follows:
+
+$$
+\displaystyle{\begin{equation}
+\begin{aligned}
+\log (\mathcal{L}(\hat{\mu},\hat{\sigma})) &= - \frac{n}{2}\biggl(\log{(2\pi \hat{\sigma}^{2})}+1\biggr) + n (\lambda - 1)\log{(GM(y))}\\
+&= - \frac{n}{2} \biggl(\log{(\frac{2\pi \hat{\sigma}^{2}}{GM(y)^{2(\lambda - 1)}})+1}\biggr).
+\end{aligned}
+\end{equation}}
+$$
+
+From here, absorbing $\textstyle{GM(y^{2(\lambda-1)})}$ into the
+expression for $\textstyle{\hat{\sigma}^{2}}$ { produces an expression
+that establishes that minimizing the sum of squares of residuals from
+$\textstyle{y_{i}^{(\lambda)}}$ is equivalent to maximizing the sum of
+the normal [log
+likelihood](https://en.wikipedia.org/wiki/Likelihood_function) of
+deviations from $\textstyle{\frac{(y^{\lambda}-1)}{\lambda}}$ and the
+log of the Jacobian of the transformation. The value at
+$\textstyle{Y = 1\ \forall\ \lambda}$ is $\textstyle{0}$, and the
+[derivative](https://en.wikipedia.org/wiki/Derivative) with respect to
+$\textstyle{Y}$ there is $\textstyle{1\ \forall\ \lambda}$. Sometimes
+$\textstyle{Y}$ is a version of some other variable scaled to give
+$\textstyle{Y = 1}$ at some sort of average value. The transformation is
+a [power](https://en.wikipedia.org/wiki/Power_(mathematics))
+transformation, but done in such a way as to make it
+[continuous](https://en.wikipedia.org/wiki/Continuous_function) with the
+parameter $\textstyle{\lambda}$ at $\textstyle{\lambda = 0}$. It has
+proved popular in [regression
+analysis](https://en.wikipedia.org/wiki/Regression_analysis), including
+[econometrics](https://en.wikipedia.org/wiki/Econometrics).
+
+Box and Cox also proposed a more general form of the transformation that
+incorporates a shift parameter. $$
+\tau(y_{i},\lambda,\alpha)=
+\begin{cases}
+\frac{(y_{i}+\alpha)^{\lambda}-1}{\lambda\bigl(GM(y+\alpha) \bigr)^{\lambda-1}},\ &if\ \lambda \neq 0\\
+GM(y+\alpha)\ln{(y_{i}+\alpha)},\ &if\ \lambda = 0,
+\end{cases}
+$$
+
+which holds $\textstyle{if\ y_{i}+\alpha > 0\ \forall\ i}$. If
+$\textstyle{\tau(Y,\lambda,\alpha)}$ follows a [truncated normal
+distribution](https://en.wikipedia.org/wiki/Truncated_normal_distribution),
+then $\textstyle{Y}$ is said to follow a [Box–Cox
+distribution](https://en.wikipedia.org/wiki/Box%E2%80%93Cox_distribution).
+
+Bickel and Doksum eliminated the need to use a [truncated
+distribution](https://en.wikipedia.org/wiki/Truncated_distribution) by
+extending the range of the transformation to all $\textstyle{y}$, as
+follows:
+
+You can include R code in the document as follows: $$
+\tau(y_{i},\lambda,\alpha)=
+\begin{cases}
+\frac{sgn(y_{i}+\alpha)|y_{i}+\alpha|-1}{\lambda\bigl(GM(y+\alpha) \bigr)^{\lambda - 1}},\ &\ if\ \lambda \neq 0\\
+GM(y+\alpha)sgn(y+\alpha)\ln{(y_{i}+\alpha)},\ &if\ \lambda = 0,
+\end{cases}
+$$ where $\textstyle{sgn(.)}$ is the [sign
+function](https://en.wikipedia.org/wiki/Sign_function). This change in
+definition has little practical import as long as $\textstyle{\alpha}$
+is less than $\textstyle{\min(y_{i})}$, which it usually is. Bickel and
+Doksum also proved that the parameter estimates are
+[consistent](https://en.wikipedia.org/wiki/Consistent_estimator) and
+[asymptotically](https://en.wikipedia.org/wiki/Local_asymptotic_normality)
+normal under appropriate regularity conditions, though the standard
+[Cramér–Rao lower
+bound](https://en.wikipedia.org/wiki/Cram%C3%A9r%E2%80%93Rao_bound) can
+substantially underestimate the variance when parameter values are small
+relative to the noise variance. However, this problem of underestimating
+the variance may not be a substantive problem in many applications.
+
+## Box–Cox transformation
+
+The one-parameter Box–Cox transformations are defined as $$
+y_{i}^{\lambda}=
+\begin{cases}
+\frac{y_{i}^{\lambda}-1}{\lambda}\ &if\ \lambda \neq 0,\\
+\ln{y_{i}}\ &if\ \lambda = 0.
+\end{cases}
+$$ And the two-parameter Box–Cox transformations as $$
+y_{i}^{\lambda}=
+\begin{cases}
+\frac{(y_{i}+\lambda_{2})^{\lambda_{1}}-1}{\lambda_{1}},\ &if\ \lambda_{1} \neq 0\\
+\ln{(y_{i+\lambda_{2}})},\ &if\ \lambda_{1} = 0,
+\end{cases}
+$$ as described in the [original
+artcile](https://www.ime.usp.br/~abe/lista/pdfQWaCMboK68.pdf). Moreover,
+the first transformations hold for $\textstyle{y_{i}>0}$, and the second
+for $\textstyle{y_{i}> -\lambda_{2}}$. The parameter
+$\textstyle{\lambda}$ is estimated using the [profile
+likelihood](https://en.wikipedia.org/wiki/Profile_likelihood) function
+and using goodness-of-fit tests.
+
+### Confidence interval
+
+Confidence interval for the Box–Cox transformation can be
+[asymptotically
+constructed](https://en.wikipedia.org/wiki/Confidence_interval#Methods_of_derivation)
+using [Wilks’s
+theorem](https://en.wikipedia.org/wiki/Likelihood-ratio_test#Distribution:_Wilks.27s_theorem)
+on the [profile
+likelihood](https://en.wikipedia.org/wiki/Profile_likelihood) function
+to find all the possible values of $\textstyle{\lambda}$ that fulfill
+the following restriction: $$\begin{equation}
+\ln{\bigl(L(\lambda)\bigr)} \geq \ln{\bigl(L(\hat{\lambda})\bigr)} - \frac{1}{2}\chi^{2}\ _{1,1-\alpha}.
+\end{equation}
+$$
+
+# Practical implementation
+
+## Description
+
+As mentioned above, the Box–Cox transformation is a power transformation
+that eliminates nonlinearity between variables, differing variances, and
+variable asymmetry. Box and Cox (1964) suggested a family of
+transformations designed to reduce nonnormality of the **errors** in a
+linear model. In turns out that in doing this, it often reduces
+non-linearity as well. You will notice, however, that the log-likelihood
+function governing the selection of the lambda power transform is
+dependent on the residual sum of squares of an underlying model, so no
+transformation can be applied without a model.
+
+The following expression gives the Box-Cox functions transformations for
+various values of lambda: $$
+y_{i}^{\lambda}=
+\begin{cases}
+\frac{y_{i}^{\lambda}-1}{\lambda}\ &if\ \lambda \neq 0,\\
+\ln{y_{i}}\ &if\ \lambda = 0.
+\end{cases}
+$$ being y the changed variable and lambda $\textstyle{\lambda}$ the
+transformation parameter However, the following table describes the most
+typical transformations:
+
+| $\textstyle{\lambda}$ | Transformation                   |
+|:----------------------|:---------------------------------|
+| -2                    | $\textstyle{\frac{1}{y^{2}}}$    |
+| -1                    | $\textstyle{\frac{1}{y}}$        |
+| -0.5                  | $\textstyle{\frac{1}{\sqrt{y}}}$ |
+| 0                     | $\textstyle{\log{y}}$            |
+| 0.5                   | $\textstyle{\sqrt{y}}$           |
+| 1                     | $\textstyle{y}$                  |
+| 2                     | $\textstyle{y^{2}}$              |
+
+In practise, it is advised to choose the value from the table rather
+than the precise value if the estimated transformation parameter is
+close to one of the values of the previous table because the value from
+the table is simpler to understand.
+
+## The boxcox function from the MASS package
+
+The boxcox function from the MASS package in R can be used to estimate
+the transformation parameter using maximum likelihood estimation.
+
+We will also receive the parameter’s 95% confidence interval from this
+function. The following are the arguments for the function:
 
 ``` r
-summary(cars)
+boxcox(object,    
+       lambda = seq(-2, 2, 1/10), 
+       plotit = TRUE,  
+       interp,         
+       eps = 1/50,     
+       xlab = expression(lambda), 
+       ylab = "log-Likelihood",   
+       …)
 ```
 
-    ##      speed           dist       
-    ##  Min.   : 4.0   Min.   :  2.00  
-    ##  1st Qu.:12.0   1st Qu.: 26.00  
-    ##  Median :15.0   Median : 36.00  
-    ##  Mean   :15.4   Mean   : 42.98  
-    ##  3rd Qu.:19.0   3rd Qu.: 56.00  
-    ##  Max.   :25.0   Max.   :120.00
+## Application of the transformation on the example of residential real estate market data in the city of Almaty.
 
-## Including Plots
+Let’s take a look at a set of data on the residential real estate market
+in Almaty. To do this, let’s create a dataframe.
 
-You can also embed plots, for example:
+``` r
+almatyAparts <- read.csv('almaty-apts-2019-1.csv',
+                         header = TRUE,
+                         sep = ',',
+                         dec = '.')
+myvars <- c('price.m')
+almatyAparts <- almatyAparts[myvars]
+```
 
-![](Box-Cox-transformation_files/figure-gfm/pressure-1.png)<!-- -->
+Let’s create some basic descriptive statistics.
 
-Note that the `echo = FALSE` parameter was added to the code chunk to
-prevent printing of the R code that generated the plot.
+``` r
+summary(almatyAparts$price.m)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    ##  117000  300000  344432  361554  400000  928571
+
+And calculate the number of observations.
+
+``` r
+nrow(almatyAparts)
+```
+
+    ## [1] 2355
+
+And now let’s plot a histogram.
+
+``` r
+options('scipen'=2, 'digits'=3)
+hist(almatyAparts$price.m, freq=FALSE,
+     main = 'Price per meter histogram',
+     xlab = 'price per meter, kaz tenge',
+     ylab = 'probability')
+```
+
+![](Box-Cox-transformation_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+Let us test the hypothesis of the normality of the distribution of unit
+offer prices. We will use five tests. So we need some additional
+libraries.
+
+``` r
+library(normtest)
+library(nortest)
+```
+
+The Shapiro–Wilk test.
+
+``` r
+shapiro.test(almatyAparts$price.m)
+```
+
+    ## 
+    ##  Shapiro-Wilk normality test
+    ## 
+    ## data:  almatyAparts$price.m
+    ## W = 0.9, p-value <2e-16
+
+The Shapiro–Francia test.
+
+``` r
+sf.test(almatyAparts$price.m)
+```
+
+    ## 
+    ##  Shapiro-Francia normality test
+    ## 
+    ## data:  almatyAparts$price.m
+    ## W = 0.9, p-value <2e-16
+
+The Anderson–Darling test.
+
+``` r
+ad.test(almatyAparts$price.m)
+```
+
+    ## 
+    ##  Anderson-Darling normality test
+    ## 
+    ## data:  almatyAparts$price.m
+    ## A = 56, p-value <2e-16
+
+The adjusted Jarque–Bera test.
+
+``` r
+ajb.norm.test(almatyAparts$price.m)
+```
+
+    ## 
+    ##  Adjusted Jarque-Bera test for normality
+    ## 
+    ## data:  almatyAparts$price.m
+    ## AJB = 2579, p-value <2e-16
+
+The Lilliefors (Kolmogorov–Smirnov) test.
+
+``` r
+lillie.test(almatyAparts$price.m)
+```
+
+    ## 
+    ##  Lilliefors (Kolmogorov-Smirnov) normality test
+    ## 
+    ## data:  almatyAparts$price.m
+    ## D = 0.1, p-value <2e-16
+
+As we can see, the p-value of all five tests is much lower than the
+threshold value of 0.05. This allows us to reject unambiguously the null
+hypothesis about the normality of the distribution of unit offer prices.
+
+Let’s try to transform the data to a normal distribution. To do this,
+let’s create a linear model that allows us to determine the appropriate
+“lambda” value.
+
+``` r
+library(MASS)
+boxcox(lm(almatyAparts$price.m ~ 1))
+```
+
+![](Box-Cox-transformation_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+Keep in mind that the others reflect the 95% confidence interval of the
+estimation, and the dashed vertical line in the middle represents the
+estimated parameter lambda hat ($\textstyle{\hat{\lambda}}$).
+
+The best choice is to apply this transformation
+$\textstyle{\frac{1}{\sqrt{y}}}$ because the preceding plot indicates
+that the -0.5 is inside the confidence interval of the optimal “lambda”
+and because the estimation of the parameter in this example is quite
+near to -0.5. (see the above table).
+
+Let’s apply this transformation to our data.
+
+``` r
+almatyAparts$price.m.t <- 1/sqrt(almatyAparts$price.m)
+```
+
+``` r
+summary(almatyAparts$price.m.t)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    ## 0.00104 0.00158 0.00170 0.00170 0.00183 0.00292
+
+``` r
+options('scipen'=2, 'digits'=3)
+hist(almatyAparts$price.m.t, freq=FALSE,
+     main = 'Price per meter histogram',
+     xlab = 'price per meter, kaz tenge',
+     ylab = 'probability')
+```
+
+![](Box-Cox-transformation_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+The Shapiro–Wilk test.
+
+``` r
+shapiro.test(almatyAparts$price.m.t)
+```
+
+    ## 
+    ##  Shapiro-Wilk normality test
+    ## 
+    ## data:  almatyAparts$price.m.t
+    ## W = 1, p-value = 6e-14
+
+The Shapiro–Francia test.
+
+``` r
+sf.test(almatyAparts$price.m.t)
+```
+
+    ## 
+    ##  Shapiro-Francia normality test
+    ## 
+    ## data:  almatyAparts$price.m.t
+    ## W = 1, p-value = 2e-13
+
+The Anderson–Darling test.
+
+``` r
+ad.test(almatyAparts$price.m.t)
+```
+
+    ## 
+    ##  Anderson-Darling normality test
+    ## 
+    ## data:  almatyAparts$price.m.t
+    ## A = 6, p-value = 3e-15
+
+The adjusted Jarque–Bera test.
+
+``` r
+ajb.norm.test(almatyAparts$price.m.t)
+```
+
+    ## 
+    ##  Adjusted Jarque-Bera test for normality
+    ## 
+    ## data:  almatyAparts$price.m.t
+    ## AJB = 193, p-value <2e-16
+
+The Lilliefors (Kolmogorov–Smirnov) test.
+
+``` r
+lillie.test(almatyAparts$price.m.t)
+```
+
+    ## 
+    ##  Lilliefors (Kolmogorov-Smirnov) normality test
+    ## 
+    ## data:  almatyAparts$price.m.t
+    ## D = 0.04, p-value = 8e-08
+
+``` r
+library(geoR)
+```
+
+    ## --------------------------------------------------------------
+    ##  Analysis of Geostatistical Data
+    ##  For an Introduction to geoR go to http://www.leg.ufpr.br/geoR
+    ##  geoR version 1.9-2 (built on 2022-08-09) is now loaded
+    ## --------------------------------------------------------------
+
+``` r
+bc2 <- boxcoxfit(almatyAparts$price.m, lambda2 = TRUE)
+lambda1 <- bc2$lambda[1]
+lambda2 <- bc2$lambda[2]
+print(lambda1)
+```
+
+    ## lambda 
+    ## -0.427
+
+``` r
+print(lambda2)
+```
+
+    ##  lambda2 
+    ## 6.49e-07
 
 ## \## Bibliography
 
-nocite: \| Wikipedia (n.d.) —
+## Wikipedia (n.d.)
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 
