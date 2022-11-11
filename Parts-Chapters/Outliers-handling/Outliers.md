@@ -40,21 +40,21 @@ First of all, it should be said that it is hardly possible to draw up an exhaust
 ### Normal or approximately normal distribution
 In this case we can use **empirical relations of Normal distribution (The z-score approach)**. The data points which fall below $\bar y - 3\sigma$ or above $\bar y + 3\sigma$ are outliers, where $\bar y$ and $\sigma$ are the mean and the standard deviation respectively.
 
-![Fig.-Characteristics-of-a-Normal-Distribution](attachment:The_Normal_Distribution.svg)
+![Fig. Characteristics of a Normal Distribution](The_Normal_Distribution.svg)
 
 This figure was taken from the Wikipedia article __['Standard score'](https://en.wikipedia.org/wiki/Standard_score)__.
 
 ### Skewed distribution
 In this case we should prefer **Tukey's fences (or the Inter-Quartile Range (IQR) proximity rule)**. The data points which fall below $Q1 – 1.5\cdot IQR$ or above $Q3 + 1.5\cdot IQR$ are outliers, where $Q1$ and $Q3$ are the $0.25$ and $0.75$ quantiles of the dataset respectively, and IQR represents the inter-quartile range and given by $Q3 – Q1$.
 
-![IQR-tukeys-fences.png](attachment:IQR-tukeys-fences.png)
+![Fig. IQR (Tukey's fences.png](IQR-tukeys-fences.png)
 
 This figure was taken from article __['Practical Guide to Outlier Detection Methods'](https://towardsdatascience.com/practical-guide-to-outlier-detection-methods-6b9f947a161e)__.
 
 ### Unknown distribution
 It's reasonable to use **The percentile-based approach** in such a case. *For example*, we can set by ourselves that data points that are greater than from 0.99 quantile and less than 0.01 auantile are considered to be an outlier.
 
-![PR_and_NCE.gif](attachment:PR_and_NCE.gif)
+![Fig. PR and NCE.gif](PR_and_NCE.gif)
 
 ## Practical implementation in Python
 
