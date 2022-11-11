@@ -428,7 +428,7 @@ plt.show()
     
 
 
-As you can see, all extreme values were equalized to the upper boundary value; and they have form one group. 
+As you can see, all extreme values were equalized to the upper boundary value; and they have formed one group. 
 
 
 ```python
