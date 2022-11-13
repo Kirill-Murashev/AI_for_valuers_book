@@ -10,13 +10,15 @@ The best practice in valuation is to work with data that is directly observable 
 <li>what are the basic ways of handling outliers?</li>
 <li>how to detect and handle outliers using Python?</li>
 </ul>
-In all, we will look at three simple ways to handle outliers. Python is more a language for business and professional activities than for science. A number of more complex methods of handling outliers will be discussed in a separate material containing code in R. In this paper we will limit ourselves to the following methods: 
+In all, we will look at three simple ways to handle outliers. A number of more complex methods of handling outliers will be discussed in a separate material. In this paper we will limit ourselves to the following methods: 
 <ol>
 <li>the aprroach based on the empirical relations of the Normal distribution (The z-score approach);</li>
 <li>Tukey's fences (or the interquartile range (IQR) proximity rule);</li>
-<li>the quantile-based approach.</li>
+<li>The quantile-based approach.</li>
 </ol>
 This list of methods is not exhaustive. However, they will help cover the needs of an appraiser who is beginning to apply machine learning and mathematical statistics methods to his or her work.
+
+
 
 
 ## Possible ways to handle outliers
@@ -24,12 +26,12 @@ Before we proceed directly to work with the data, let us answer the question of 
 
 **Retention** Even when a normal distribution model is appropriate to the data being analyzed, outliers are expected for large sample sizes and should not automatically be discarded if that is the case. The application should use a classification algorithm that is robust to outliers to model data with naturally occurring outlier points. 
 
-**Exclusion** Deletion of outlier data is a controversial practice frowned upon by many scientists. While mathematical criteria provide an objective and quantitative method for data rejection, they do not make the practice more scientifically or methodologically sound, especially in small sets or where a normal distribution cannot be assumed. Rejection of outliers is more acceptable in areas of practice where the underlying model of the market being measured and the usual distribution of measurement error are confidently known. An outlier resulting from a data collection error or clear error in the source may be excluded, but it is desirable that the source is at least verified. In any case, appraiser must clear disclose data about the initial set of observations as well as the reason of its part exclusion.
+**Exclusion** Deletion of outlier data is a controversial practice frowned upon by many scientists. While mathematical criteria provide an objective and quantitative method for data rejection, they do not make the practice more scientifically or methodologically sound, especially in small sets or where a normal distribution cannot be assumed. Rejection of outliers is more acceptable in areas of practice where the underlying model of the market being measured and the usual distribution of measurement error are confidently known. An outlier resulting from a data collection error or clear error in the source may be excluded, but it is desirable that the source is at least verified. In any case, the appraiser must clearly disclose information about the initial set of observations as well as the reason for its part exclusion.
 
 The two common approaches to exclude outliers are __[truncation](https://en.wikipedia.org/wiki/Truncation_(statistics))__ (or __[trimming](https://en.wikipedia.org/wiki/Trimmed_estimator)__) and __[Winsorizing](https://en.wikipedia.org/wiki/Winsorizing)__ (or winsorization as well as capping). Trimming discards the outliers whereas Winsorising replaces the outliers with the nearest 'nonsuspect' data.
 <ul>
 <li><b>Truncation</b> This method excludes the outlier values from our analysis. By applying this technique, we lose some data. Its main advantages are its simplest and fastest nature. The more outliers, the less reliable the final model will be, because it will be based on an increasingly smaller sample.</li>
-    <li><b>Winsorizing</b> &#151 is the transformation of statistics by limiting extreme values in the statistical data to reduce the effect of possibly spurious outliers. Note that winsorizing is not equivalent to aforementioned simply excluding data, which is a simpler procedure, called trimming or truncation, but is a method of censoring data. </li>
+    <li><b>Winsorizing</b> &#151 is the transformation of statistics by limiting extreme values in the sample data to reduce the effect of possibly spurious outliers. Note that winsorizing is not equivalent to aforementioned simply excluding data, which is a simpler procedure, called trimming or truncation, but is a method of censoring data. </li>
 </ul>
 
 **Treating outliers as a missing value** By assuming outliers as the missing observations, treat them accordingly, i.e, same as those of missing values. You can read, for example, __[this brief introduction](https://www.analyticsvidhya.com/blog/2021/04/how-to-handle-missing-values-of-categorical-variables/)__ to the possible ways to handle missing values. Let me remind you that we are now looking at the very basics of machine learning in valuation.  Therefore, all of the methods, articles, and materials referenced in this paper are intended as an introduction to the topic.
@@ -37,7 +39,7 @@ The two common approaches to exclude outliers are __[truncation](https://en.wiki
 Of course, there are a number of other more sophisticated methods. However, it is possible to limit yourself to these methods outlined above to begin to handle outliers successfully.
 
 ## Possible ways to detect outliers
-First of all, it should be said that it is hardly possible to draw up an exhaustive list of methods for identifying outliers. We can only mention some well-known well-developed methods such as __[Chauvenet's criterion](https://en.wikipedia.org/wiki/Chauvenet%27s_criterion)__, __[Peirce's criterion](https://en.wikipedia.org/wiki/Peirce%27s_criterion)__, __[Local Outlier Factor](https://en.wikipedia.org/wiki/Local_Outlier_Factor)__, __[Modified Thompson Tau test](https://en.wikipedia.org/wiki/Studentized_residual#Distribution)__, __[Grubbs's test](https://en.wikipedia.org/wiki/Grubbs%27s_test)__, __[Dixon's Q test](https://en.wikipedia.org/wiki/Dixon%27s_Q_test)__, __[Rosner's Outlier Test](https://vsp.pnnl.gov/help/vsample/rosners_outlier_test.htm)__. etc. But in this paper, we will consider some of the simplest and most intuitive methods that do not require special knowledge of mathematical statistics and machine learning. Therefore, we will limit ourselves to three methods, the choice of which depends on the distribution of the data in the sample.
+First of all, it should be said that it is hardly possible to draw up an exhaustive list of methods for identifying outliers. We can only mention some well-known well-developed methods such as __[Chauvenet's criterion](https://en.wikipedia.org/wiki/Chauvenet%27s_criterion)__, __[Peirce's criterion](https://en.wikipedia.org/wiki/Peirce%27s_criterion)__, __[Local Outlier Factor](https://en.wikipedia.org/wiki/Local_Outlier_Factor)__, __[Modified Thompson Tau test](https://en.wikipedia.org/wiki/Studentized_residual#Distribution)__, __[Grubbs's test](https://en.wikipedia.org/wiki/Grubbs%27s_test)__, __[Dixon's Q test](https://en.wikipedia.org/wiki/Dixon%27s_Q_test)__, __[Rosner's Outlier Test](https://vsp.pnnl.gov/help/vsample/rosners_outlier_test.htm)__, etc. But in this paper, we will consider some of the simplest and most intuitive methods that do not require special knowledge of mathematical statistics and machine learning. Therefore, we will limit ourselves to three methods, the choice of which depends on the distribution of the data in the sample.
 
 ### Normal or approximately normal distribution
 In this case we can use **empirical relations of Normal distribution (The z-score approach)**. The data points which fall below $\bar y - 3\sigma$ or above $\bar y + 3\sigma$ are outliers, where $\bar y$ and $\sigma$ are the mean and the standard deviation respectively.
@@ -54,9 +56,11 @@ In this case we should prefer **Tukey's fences (or the Inter-Quartile Range (IQR
 This figure was taken from article __['Practical Guide to Outlier Detection Methods'](https://towardsdatascience.com/practical-guide-to-outlier-detection-methods-6b9f947a161e)__.
 
 ### Unknown distribution
-It's reasonable to use **The percentile-based approach** in such a case. *For example*, we can set by ourselves that data points that are greater than from 0.99 quantile and less than 0.01 auantile are considered to be an outlier.
+It's reasonable to use **The percentile-based approach** in such a case. *For example*, we can set by ourselves that data points that are greater than $0.99$ quantile and less than $0.01$ quantile are considered to be an outlier.
 
 ![Fig. PR and NCE.gif](PR_and_NCE.gif)
+
+This figure was taken from the Wikipedia article __['Percentile rank'](https://en.wikipedia.org/wiki/Percentile_rank)__.
 
 ## Practical implementation in Python
 
@@ -133,38 +137,14 @@ almatyApts.sample(5)
   </thead>
   <tbody>
     <tr>
-      <th>444</th>
-      <td>445</td>
-      <td>26000000</td>
-      <td>342105</td>
-      <td>76.0</td>
-      <td>58.0</td>
-      <td>0.76</td>
-      <td>4</td>
-      <td>10</td>
-      <td>12</td>
-      <td>1</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1991</td>
-      <td>m</td>
-      <td>good</td>
-      <td>342.1</td>
-      <td>2</td>
-      <td>NBH aksaj-2</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th>1858</th>
-      <td>1859</td>
+      <th>902</th>
+      <td>903</td>
       <td>22000000</td>
-      <td>456432</td>
-      <td>48.2</td>
-      <td>25.2</td>
-      <td>0.52</td>
-      <td>2</td>
+      <td>285714</td>
+      <td>77.0</td>
+      <td>48.0</td>
+      <td>0.62</td>
+      <td>3</td>
       <td>1</td>
       <td>5</td>
       <td>0</td>
@@ -172,85 +152,109 @@ almatyApts.sample(5)
       <td>0</td>
       <td>1</td>
       <td>0</td>
-      <td>1984</td>
-      <td>k</td>
-      <td>high</td>
-      <td>456.4</td>
-      <td>1</td>
-      <td>NBH 11</td>
-      <td>44</td>
-    </tr>
-    <tr>
-      <th>2332</th>
-      <td>2333</td>
-      <td>17500000</td>
-      <td>426829</td>
-      <td>41.0</td>
-      <td>32.0</td>
-      <td>0.78</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
       <td>1989</td>
       <td>k</td>
-      <td>good</td>
-      <td>426.8</td>
-      <td>2</td>
-      <td>NBH koktem-1</td>
-      <td>56</td>
+      <td>average</td>
+      <td>285.7</td>
+      <td>1</td>
+      <td>NBH altaj-2</td>
+      <td>5</td>
     </tr>
     <tr>
-      <th>323</th>
-      <td>324</td>
-      <td>25000000</td>
-      <td>287356</td>
-      <td>87.0</td>
-      <td>55.0</td>
-      <td>0.63</td>
-      <td>4</td>
-      <td>4</td>
+      <th>112</th>
+      <td>113</td>
+      <td>68000000</td>
+      <td>503704</td>
+      <td>135.0</td>
+      <td>128.0</td>
+      <td>0.95</td>
+      <td>3</td>
       <td>5</td>
+      <td>11</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2012</td>
+      <td>m</td>
+      <td>high</td>
+      <td>503.7</td>
+      <td>2</td>
+      <td>NBH zhetysu-3</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>2229</th>
+      <td>2230</td>
+      <td>26000000</td>
+      <td>274551</td>
+      <td>94.7</td>
+      <td>60.5</td>
+      <td>0.64</td>
+      <td>3</td>
+      <td>4</td>
+      <td>9</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2007</td>
+      <td>m</td>
+      <td>high</td>
+      <td>274.6</td>
+      <td>0</td>
+      <td>NBH zhuldyz</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>1867</th>
+      <td>1868</td>
+      <td>17500000</td>
+      <td>364583</td>
+      <td>48.0</td>
+      <td>48.0</td>
+      <td>1.00</td>
+      <td>2</td>
+      <td>4</td>
+      <td>4</td>
       <td>1</td>
       <td>...</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1990</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1986</td>
       <td>p</td>
-      <td>good</td>
-      <td>287.4</td>
-      <td>0</td>
-      <td>NBH aksaj-3a</td>
-      <td>21</td>
+      <td>high</td>
+      <td>364.6</td>
+      <td>2</td>
+      <td>NBH 10 a</td>
+      <td>43</td>
     </tr>
     <tr>
-      <th>1212</th>
-      <td>1213</td>
-      <td>23000000</td>
-      <td>410714</td>
-      <td>56.0</td>
-      <td>40.0</td>
-      <td>0.71</td>
-      <td>2</td>
-      <td>2</td>
+      <th>4</th>
       <td>5</td>
+      <td>12300000</td>
+      <td>323684</td>
+      <td>38.0</td>
+      <td>36.0</td>
+      <td>0.95</td>
       <td>1</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0</td>
       <td>...</td>
       <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1993</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1991</td>
       <td>k</td>
       <td>good</td>
-      <td>410.7</td>
-      <td>2</td>
-      <td>NBH taugulь-2</td>
-      <td>52</td>
+      <td>323.7</td>
+      <td>0</td>
+      <td>NBH zhetysu-1</td>
+      <td>13</td>
     </tr>
   </tbody>
 </table>
@@ -293,7 +297,7 @@ plt.show()
 
 
     
-![png](output_23_0.png)
+![png](output_25_0.png)
     
 
 
@@ -348,7 +352,7 @@ plt.show()
 
 
     
-![png](output_30_0.png)
+![png](output_32_0.png)
     
 
 
@@ -389,7 +393,7 @@ plt.show()
 
 
     
-![png](output_35_0.png)
+![png](output_37_0.png)
     
 
 
@@ -438,7 +442,7 @@ plt.show()
 
 
     
-![png](output_39_0.png)
+![png](output_41_0.png)
     
 
 
@@ -485,12 +489,12 @@ plt.show()
 
 
     
-![png](output_42_0.png)
+![png](output_44_0.png)
     
 
 
 ### Tukey's fences
-This approach is preferable when we deal with a skewed distribution. The first four steps are the same as in The z-score approach.
+This approach is preferable when we deal a skewed distribution. The first four steps are the same as in The z-score approach.
 
 Step 5: plot a Box&Whiskers diagram for the skewed feature.
 
@@ -507,7 +511,7 @@ ax.title.set_text('Boxplot of the initial data')
 
 
     
-![png](output_45_0.png)
+![png](output_47_0.png)
     
 
 
@@ -518,14 +522,14 @@ Step 6: calculate 0.25th and 0.75th quantiles.
 quantile25 = almatyApts['price_m'].quantile(0.25)
 quantile75 = almatyApts['price_m'].quantile(0.75)
 iqr = quantile75 - quantile25
-print(quantile25)
-print(quantile75)
-print(iqr)
+print('The value of 0.25th quantile is', quantile25)
+print('The value of 0.27th quantile is', quantile75)
+print('The value of IQR is', iqr)
 ```
 
-    300000.0
-    400000.0
-    100000.0
+    The value of 0.25th quantile is 300000.0
+    The value of 0.27th quantile is 400000.0
+    The value of IQR is 100000.0
 
 
 Step 7: calculate the upper and lower limits.
@@ -577,7 +581,7 @@ plt.show()
 
 
     
-![png](output_53_0.png)
+![png](output_55_0.png)
     
 
 
@@ -615,7 +619,7 @@ plt.show()
 
 
     
-![png](output_57_0.png)
+![png](output_59_0.png)
     
 
 
@@ -664,7 +668,7 @@ plt.show()
 
 
     
-![png](output_61_0.png)
+![png](output_63_0.png)
     
 
 
@@ -699,7 +703,6 @@ sns.boxplot(data=almatyApts, x = 'price_m_tw', whis=[0, 100],
             width=.6, palette="vlag", orient='h')
 sns.stripplot(data=almatyApts, x = 'price_m_tw',
               size=4, color=".3", linewidth=0)
-ax3 = plt.subplot(3,2,3)
 ax1.title.set_text('Histogram of the initial data')
 ax2.title.set_text('Boxplot of the initial data')
 ax3.title.set_text('Histogram of the data trimmed by The t-approach')
@@ -711,7 +714,7 @@ plt.show()
 
 
     
-![png](output_64_0.png)
+![png](output_66_0.png)
     
 
 
@@ -768,7 +771,7 @@ plt.show()
 
 
     
-![png](output_71_0.png)
+![png](output_73_0.png)
     
 
 
@@ -804,7 +807,7 @@ plt.show()
 
 
     
-![png](output_74_0.png)
+![png](output_76_0.png)
     
 
 
@@ -852,7 +855,7 @@ plt.show()
 
 
     
-![png](output_78_0.png)
+![png](output_80_0.png)
     
 
 
@@ -885,7 +888,6 @@ sns.boxplot(data=almatyApts, x = 'price_m_qw', whis=[0, 100],
             width=.6, palette="vlag", orient='h')
 sns.stripplot(data=almatyApts, x = 'price_m_qw',
               size=4, color=".3", linewidth=0)
-ax3 = plt.subplot(3,2,3)
 ax1.title.set_text('Histogram of the initial data')
 ax2.title.set_text('Boxplot of the initial data')
 ax3.title.set_text('Histogram of the data trimmed by The q-approach')
@@ -897,9 +899,132 @@ plt.show()
 
 
     
-![png](output_80_0.png)
+![png](output_82_0.png)
     
 
+
+### Comparison of the results got from the three approaches
+It's not fair to say that one or another approach is the best at all. The choice should depend on the distribution shape and valuation purposes. I can only say that the most common situation in open markets (at least in Northern Eurasia) is the heavy right tail, processing of which is an important task. At the same time, heavy left tail may occur due to some specific challenges in the questions of rights to a specific property.
+
+Relatively to the methods of processing of outliers, it is reasonable to say that choice should depend firstly on the further type of modelling. Let's consider advantages and disadvantages of each method and assume the most suitable, depending on further modelling. 
+
+| Method | Key advantages | Key disasdantages | Intended model type |
+| :- | :- | :- | :- |
+|Retention| It keeeps all market information | May cause a biased estimation in the case of presence of the data points belonging to another distribution | Machine learning methods based on The Bayesian approach to the concept of probability |
+| Truncation | It eliminates the problem of outliers at all and simplify the shape of distribution, making it more suitable for further transformations | It causes losing part of market data which reflecting an objective picture of the open market. The mere fact that there are extreme values does not mean that such observations exist outside the context of the market | Methods of the traditional statistics based on The Frequentist approach to the concept of probability |
+| Winsorization | It provides such a compromise between keeping all data points and avoiding of biased estimators that makes possible the implementations of many models. In practice, it also could be useful in designing some recommendation systems, which can be applicable in the collateral lending in particular in the mortgage secured lending as well as in insurance, taxation, etc. | It causes to arising a new shape of distribution that actually does not exist on the open market under consider | It's applicable for the both approaches to the concept of probability |
+|Treatinng as missing value| It helps to avoid the problem of outliers in the case of applying methods based on The Frequentist approach to the concept of probability, but to keep all data points for the Bayesian-based methods | It keeps all challenges which are specific for trimming or retention depending on model that would be chosen further | It's applicable for the both approaches to the concept of probability and allows switching between them |
+
+Since this paper is designed for beginner appraisers who use The Frequentist approach to the concept of probability, its focus is on two methods, which are truncation and winsorization. Let's see on histograms and boxplots got by applying different approaches and methods.
+
+**Truncation**
+
+
+```python
+warnings.filterwarnings('ignore')
+plt.figure(figsize=(25,8))
+plt.subplots_adjust(wspace=0.05,
+                    hspace=0.8)
+ax1 = plt.subplot(4,2,1)
+sns.distplot(almatyApts['price_m'])
+ax2 = plt.subplot(4,2,2)
+sns.boxplot(data=almatyApts, x = 'price_m', whis=[0, 100],
+            width=.6, palette="vlag", orient='h')
+sns.stripplot(data=almatyApts, x = 'price_m',
+              size=4, color=".3", linewidth=0)
+ax3 = plt.subplot(4,2,3)
+sns.distplot(almatyAptsZTrim['price_m'])
+ax4 = plt.subplot(4,2,4)
+sns.boxplot(data=almatyAptsZTrim, x = 'price_m', whis=[0, 100],
+            width=.6, palette="vlag", orient='h')
+sns.stripplot(data=almatyAptsZTrim, x = 'price_m',
+              size=4, color=".3", linewidth=0)
+ax5 = plt.subplot(4,2,5)
+sns.distplot(almatyAptsTTrim['price_m'])
+ax6 = plt.subplot(4,2,6)
+sns.boxplot(data=almatyAptsTTrim, x = 'price_m', whis=[0, 100],
+            width=.6, palette="vlag", orient='h')
+sns.stripplot(data=almatyAptsTTrim, x = 'price_m',
+              size=4, color=".3", linewidth=0)
+ax7 = plt.subplot(4,2,7)
+sns.distplot(almatyAptsQTrim['price_m'])
+ax8 = plt.subplot(4,2,8)
+sns.boxplot(data=almatyAptsQTrim, x = 'price_m', whis=[0, 100],
+            width=.6, palette="vlag", orient='h')
+sns.stripplot(data=almatyAptsQTrim, x = 'price_m',
+              size=4, color=".3", linewidth=0)
+ax1.title.set_text('Histogram of the initial data')
+ax2.title.set_text('Boxplot of the initial data')
+ax3.title.set_text('Histogram of the data trimmed by The z-approach')
+ax4.title.set_text('Boxplot of the data trimmed by The z-approach')
+ax5.title.set_text('Histogram of the data trimmed by The t-approach')
+ax6.title.set_text('Boxplot of the data trimmed by The t-approach')
+ax7.title.set_text('Histogram of the data trimmed by The q-approach')
+ax8.title.set_text('Boxplot of the data trimmed by The q-approach')
+plt.show()
+```
+
+
+    
+![png](output_85_0.png)
+    
+
+
+**Winsorization**
+
+
+```python
+warnings.filterwarnings('ignore')
+plt.figure(figsize=(25,8))
+plt.subplots_adjust(wspace=0.05,
+                    hspace=0.8)
+ax1 = plt.subplot(4,2,1)
+sns.distplot(almatyApts['price_m'])
+ax2 = plt.subplot(4,2,2)
+sns.boxplot(data=almatyApts, x = 'price_m', whis=[0, 100],
+            width=.6, palette="vlag", orient='h')
+sns.stripplot(data=almatyApts, x = 'price_m',
+              size=4, color=".3", linewidth=0)
+ax3 = plt.subplot(4,2,3)
+sns.distplot(almatyApts['price_m_zw'])
+ax4 = plt.subplot(4,2,4)
+sns.boxplot(data=almatyApts, x = 'price_m_zw', whis=[0, 100],
+            width=.6, palette="vlag", orient='h')
+sns.stripplot(data=almatyApts, x = 'price_m_zw',
+              size=4, color=".3", linewidth=0)
+ax5 = plt.subplot(4,2,5)
+sns.distplot(almatyApts['price_m_tw'])
+ax6 = plt.subplot(4,2,6)
+sns.boxplot(data=almatyApts, x = 'price_m_tw', whis=[0, 100],
+            width=.6, palette="vlag", orient='h')
+sns.stripplot(data=almatyApts, x = 'price_m_tw',
+              size=4, color=".3", linewidth=0)
+ax7 = plt.subplot(4,2,7)
+sns.distplot(almatyApts['price_m_qw'])
+ax8 = plt.subplot(4,2,8)
+sns.boxplot(data=almatyApts, x = 'price_m_qw', whis=[0, 100],
+            width=.6, palette="vlag", orient='h')
+sns.stripplot(data=almatyApts, x = 'price_m_qw',
+              size=4, color=".3", linewidth=0)
+ax1.title.set_text('Histogram of the initial data')
+ax2.title.set_text('Boxplot of the initial data')
+ax3.title.set_text('Histogram of the data winsorized by The z-approach')
+ax4.title.set_text('Boxplot of the data winsorized by The z-approach')
+ax5.title.set_text('Histogram of the data winsorized by The t-approach')
+ax6.title.set_text('Boxplot of the data winsorized by The t-approach')
+ax7.title.set_text('Histogram of the data winsorized by The q-approach')
+ax8.title.set_text('Boxplot of the data winsorized by The q-approach')
+plt.show()
+```
+
+
+    
+![png](output_87_0.png)
+    
+
+
+## Afterword
+We have considered the basic issues of handling outliers by tools of the Python language. I hope that this article will be useful for the appraisers who want to apply contemporary methods of valuation using machine learning and statistics.  Future comes. The future of valuation lies in the application of the Artificial Intelligence practices. If you need for any clarification, do not hesitate to __[contact me](https://www.facebook.com/murashev.kirill)__. And also join __[my community on Facebook](https://www.facebook.com/groups/1977067932456703)__ as well as __[my channel in Telegram](https://t.me/AIinValuation)__.
 
 
 ```python
