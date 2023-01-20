@@ -24,4 +24,8 @@ fit <- glm(violation ~ app_region + app_sex + app_age + app_experience +
              ratio_aan_to_ean, reports, family = "binomial")
 
 coef(fit)
+summary(fit)
 summary <- summary(fit)$coefficients
+
+newdata <- read.csv("~/TresoritDrive/Methodics/My/AI_for_valuers/Book/AI_for_valuers_book/Parts-Chapters/Reports-check/newdata.csv")
+predict(fit, newdata = newdata)

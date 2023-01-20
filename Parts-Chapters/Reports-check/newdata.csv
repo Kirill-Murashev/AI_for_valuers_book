@@ -1,0 +1,11 @@
+id,app_region,app_sex,app_age,app_experience,obj_region,obj_type,obj_square_quantile,obj_price_quantile,obj_unit_price_quantile,Method,analogues_num,factors_num,ratio_aan_to_ean
+1,SPB,Male,28,4,NW,Premise,45,45,55,Modelling,98,6,1.53125
+2,MSK,Male,32,5,CN,Building,39,64,65,Modelling,48,5,1.50000
+3,VO,Female,52,12,UR,Land,67,57,47,Adjustments,8,5,0.25000
+4,SU,Male,41,10,CN,Apartment,47,29,58,Adjustments,7,4,0.43750
+5,SY,Female,33,6,CN,Residential,45,96,61,Adjustments,6,3,0.75000
+6,NC,Male,49,1,NC,Land,45,98,99,Adjustments,2,4,0.12500
+7,UR,Female,52,15,SY,Premise,74,21,32,Adjustments,3,2,0.75000
+8,SU,Male,58,2,NC,Land,84,80,95,Adjustments,2,8,0.00781
+9,FE,Female,61,3,FE,Land,84,38,97,Adjustments,6,6,0.09375
+10,SY,Female,25,2,MSK,Apartment,32,52,19,Adjustments,7,5,0.21875
